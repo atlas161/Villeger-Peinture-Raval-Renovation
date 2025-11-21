@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page non trouvée | PeintureRavalRénovation</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="La page demandée n'existe pas ou a été déplacée." />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="/media/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/media/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/media/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PeintureRavalRénovation" />
+    <link rel="manifest" href="/media/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="/" class="logo" aria-label="Retour à l'accueil"><img src="media/logo_stephanev2.png" class="logo-img" alt="" /></a>
+        <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
+          <ul class="menu">
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="/" data-nav="home">Accueil</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="/#services" data-nav="services">Services</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="/#galerie" data-nav="galerie">Galerie</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="/#contact" data-nav="contact">Contact</a>
+            </li>
+            <li class="menu-cta">
+              <a class="btn btn-primary" href="/#contact">Obtenir un devis</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="error-hero" aria-label="Erreur 404">
+        <div class="error-wrap">
+          <h1 class="error-title">Oups, page introuvable</h1>
+          <p class="error-subtitle">La page que vous cherchez n'existe pas ou a été déplacée.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" aria-label="Pied de page">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <div class="logo">PeintureRavalRénovation</div>
+          <div class="copyright">© <span id="year"></span> PeintureRavalRénovation. Tous droits réservés.</div>
+        </div>
+        <div class="footer-col">
+          <h3>Liens rapides</h3>
+          <ul class="footer-links">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#galerie">Galerie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Coordonnées</h3>
+          <ul class="footer-contacts">
+            <li>Téléphone : <a href="tel:+33659268623">06 59 26 86 23</a></li>
+            <li>Email : <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
+          </ul>
+          <div class="socials" aria-label="Réseaux sociaux">
+            <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-badge"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script defer src="assets/js/main.js"></script>
+    <script type="text/plain">
+      (function(){
+        const base = window.location.origin;
+        const path = window.location.pathname;
+        const msg = document.getElementById('msg');
+        const box = document.getElementById('suggestions');
+        const known = [
+          { label: 'Accueil', href: '/' },
+          { label: 'Services', href: '/#services' },
+          { label: 'Galerie', href: '/#galerie' },
+          { label: 'Contact', href: '/#contact' },
+          { label: 'Administration', href: '/admin' }
+        ];
+
+        function lev(a, b){
+          const m = Array.from({length: a.length+1}, (_,i)=>[i].concat(Array(b.length).fill(0)));
+          for(let j=0;j<=b.length;j++) m[0][j]=j;
+          for(let i=1;i<=a.length;i++){
+            for(let j=1;j<=b.length;j++){
+              const cost = a[i-1]===b[j-1]?0:1;
+              m[i][j] = Math.min(m[i-1][j]+1, m[i][j-1]+1, m[i-1][j-1]+cost);
+            }
+          }
+          return m[a.length][b.length];
+        }
+
+        function suggest(from){
+          const term = from.replace(/[\/#!]/g,'').toLowerCase();
+          const scored = known.map(k=>({k, score: lev(term, k.label.toLowerCase())})).sort((a,b)=>a.score-b.score);
+          const top = scored.slice(0,3).map(s=>`<a class="btn" href="${s.k.href}">${s.k.label}</a>`).join(' ');
+          box.innerHTML = `<p>Suggestions de navigation à partir de "${from}":</p><div style="display:flex; gap:0.5rem; justify-content:center;">${top}</div>`;
+        }
+
+        if (path.startsWith('/admin') || path.startsWith('/api')) {
+          msg.textContent = 'Accès restreint ou non autorisé. Veuillez utiliser les liens officiels de navigation.';
+        } else {
+          suggest(path);
+        }
+
+        const form = document.getElementById('site-search');
+        form.addEventListener('submit', (e)=>{
+          e.preventDefault();
+          const q = (document.getElementById('q').value||'').toLowerCase();
+          if (!q) return;
+          if (q.includes('service') || q.includes('peinture') || q.includes('raval') || q.includes('isolation')) {
+            window.location.href = base + '/#services';
+            return;
+          }
+          if (q.includes('gal') || q.includes('insta')) {
+            window.location.href = base + '/#galerie';
+            return;
+          }
+          if (q.includes('contact') || q.includes('devis')) {
+            window.location.href = base + '/#contact';
+            return;
+          }
+          window.location.href = base + '/';
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+.hero {
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  color: var(--color-text);
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  gap: 0rem;
+}
+
+.hero-content {
+  text-align: left;
+  padding-block: 0rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-media {
+  width: 100%;
+  max-width: 92vw;
+  aspect-ratio: 16 / 9;
+  justify-self: center;
+  align-self: center;
+  overflow: visible;
+  margin: 0 auto;
+}
+
+.hero-media a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  border-radius: var(--radius);
+  overflow: visible;
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+  box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.2);
+  position: relative;
+  background-color: var(--color-panel);
+}
+
+.hero-media a:hover img { filter: brightness(0.98); }
+
+.hero h1 {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  margin: 0 0 1.5rem 0;
+  color: var(--color-primary);
+  text-shadow: none;
+  max-width: 22ch;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background: none;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-inline: 1rem;
+    justify-items: center;
+    gap: 2rem;
+  }
+  .hero-content {
+    text-align: left;
+    justify-self: start;
+    padding: 3rem 1rem;
+  }
+  .hero-media { max-width: 48vw; aspect-ratio: 4 / 3; }
+  .hero-media img { height: 100%; }
+}
+
+@media (max-width: 767px) {
+  .hero .btn { margin-inline: 0; }
+  .hero-media { margin-top: 1rem; }
+}
+
+@media (min-width: 1200px) {
+  .hero { grid-template-columns: 1fr 1fr; max-width: 1280px; min-height: 80vh; }
+  .hero-content { max-width: 880px; padding-block: 5rem; }
+  .hero h1 { font-size: clamp(2.2rem, 3.2vw, 4rem); max-width: 26ch; }
+  .hero .btn { padding: 1.05rem 1.6rem; font-size: 1.1rem; }
+  .hero-media { max-width: min(48vw, 900px); aspect-ratio: 16 / 10; }
+}
