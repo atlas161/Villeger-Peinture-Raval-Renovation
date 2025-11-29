@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales - Villéger Peinture Raval Rénovation</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="/media/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/media/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/media/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PeintureRavalRénovation" />
+    <link rel="manifest" href="/media/favicon/site.webmanifest" />
+    <style>
+        .legal-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-panel);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+        .legal-container h1 {
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .legal-section {
+            margin-bottom: 2.5rem;
+        }
+        .legal-section h2 {
+            color: var(--color-primary);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+        }
+        .legal-section p, .legal-section ul {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .legal-section ul {
+            padding-left: 1.5rem;
+        }
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-to-home:hover {
+            text-decoration: underline;
+        }
+        .btn-delete-data {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        .btn-delete-data:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header" id="top">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+                <img src="media/logo_stephanev3.png" class="logo-img" alt="Villéger Peinture Raval Rénovation" />
+            </a>
+            <nav class="primary-nav" id="primary-nav">
+                <ul class="menu">
+                    <li><a class="nav-link" href="index.html">Retour au site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="legal-container">
+        <h1>Mentions Légales</h1>
+        
+        <div class="legal-section">
+            <h2>1. Éditeur du site</h2>
+            <p>Le site <strong>vprr.fr</strong> est édité par :</p>
+            <p><strong>Villéger Peinture Raval Rénovation</strong><br>
+            Entreprise Individuelle<br>
+            N° SIRET : [NUMÉRO SIRET]<br>
+            Siège social : [ADRESSE COMPLÈTE]</p>
+            <p>Téléphone : <a href="tel:+33659268623">06 59 26 86 23</a><br>
+            Email : <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></p>
+            <p>Directeur de la publication : Stéphane Villéger</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>2. Hébergement</h2>
+            <p>Le site est hébergé par :<br>
+            [NOM DE L'HÉBERGEUR]<br>
+            [ADRESSE DE L'HÉBERGEUR]<br>
+            Téléphone : [TÉLÉPHONE]</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>3. Propriété intellectuelle</h2>
+            <p>L'ensemble des éléments constituant le site (textes, images, vidéos, logos, etc.) est la propriété exclusive de Villéger Peinture Raval Rénovation ou de ses partenaires. Toute reproduction, représentation, utilisation ou adaptation, sous quelque forme que ce soit, de tout ou partie des éléments du site sans l'accord préalable et écrit de l'éditeur est strictement interdite et constituerait un acte de contrefaçon sanctionné par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>4. Données personnelles</h2>
+            <p>Conformément à la réglementation en vigueur, vous disposez d'un droit d'accès, de rectification, de portabilité et d'effacement de vos données ou encore de limitation du traitement. Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.</p>
+            <p>Pour exercer ces droits, vous pouvez nous contacter :</p>
+            <ul>
+                <li>Par email : <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
+                <li>Par téléphone : <a href="tel:+33659268623">06 59 26 86 23</a></li>
+            </ul>
+            
+            <h3>Suppression de vos données</h3>
+            <p>Vous pouvez demander la suppression de vos données personnelles en cliquant sur le bouton ci-dessous :</p>
+            <button id="deleteDataBtn" class="btn-delete-data">
+                <i class="fas fa-trash-alt"></i> Demander la suppression de mes données
+            </button>
+            <p id="deleteMessage" style="display: none; color: #27ae60; margin-top: 10px;">
+                Votre demande a bien été prise en compte. Nous traiterons votre demande dans les plus brefs délais.
+            </p>
+        </div>
+
+        <div class="legal-section">
+            <h2>5. Cookies</h2>
+            <p>Ce site utilise des cookies pour analyser le trafic et améliorer votre expérience. Vous pouvez accepter ou refuser ces cookies en cliquant sur les boutons appropriés de la bannière d'information sur les cookies.</p>
+            <p>Pour en savoir plus sur notre politique de cookies, <a href="#" id="cookieSettings">cliquez ici</a>.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>6. Droit applicable et juridiction compétente</h2>
+            <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+        </div>
+
+        <a href="index.html" class="back-to-home">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </a>
+    </main>
+
+    <footer class="site-footer" aria-label="Pied de page">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">VillégerPeintureRavalRénovation</div>
+                <div class="copyright">© <span id="year"></span> VillégerPeintureRavalRénovation.<br>Tous droits réservés.</div>
+            </div>
+            <div class="footer-col">
+                <h3>Liens rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#galerie">Galerie</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Coordonnées</h3>
+                <ul class="footer-contacts">
+                    <li>Téléphone : <a href="tel:+33659268623">06 59 26 86 23</a></li>
+                    <li>Email : <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
+                </ul>
+                <div class="socials" aria-label="Réseaux sociaux">
+                    <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-badge"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mise à jour de l'année du copyright
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Gestion du bouton de suppression des données
+        document.getElementById('deleteDataBtn').addEventListener('click', function() {
+            const message = document.getElementById('deleteMessage');
+            const email = 'villergerstephane204@gmail.com';
+            const subject = 'Demande de suppression des données personnelles';
+            const body = 'Bonjour,\n\nJe souhaite exercer mon droit à l\'effacement de mes données personnelles conformément au RGPD.\n\nVoici les informations me concernant :\n- Nom : \n- Prénom : \n- Email : \n- Téléphone : \n\nCordialement,';
+            
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Afficher le message de confirmation
+            message.style.display = 'block';
+            
+            // Masquer le message après 10 secondes
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 10000);
+        });
+
+        // Gestion des paramètres de cookies
+        document.getElementById('cookieSettings').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Ici, vous pouvez ajouter le code pour ouvrir une fenêtre modale de paramètres de cookies
+            alert('Fonctionnalité de paramétrage des cookies à implémenter.');
+        });
+    </script>
+</body>
+</html>

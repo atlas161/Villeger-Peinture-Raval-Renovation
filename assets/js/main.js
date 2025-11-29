@@ -1,14 +1,32 @@
-// Initialisation du comportement de la page
+/**
+ * @file Script principal pour l'interactivité du site VPRR.
+ * Gère le preloader, la navigation mobile, le scroll-spy, les animations et la carte.
+ */
+
+// Attend que le DOM soit entièrement chargé avant d'exécuter le script.
 document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById('preloader');
   const bar = preloader ? preloader.querySelector('.progress .fill') : null;
   if (bar) bar.style.width = '40%';
-  // Gestion du bouton burger et de l’ouverture/fermeture du menu
+  
+  // --- GESTION DE LA NAVIGATION ---
+
+  // Sélection des éléments du DOM nécessaires pour la navigation
   const burger = document.querySelector(".burger");
   const nav = document.querySelector(".primary-nav");
   const navLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link'));
   const navButtons = Array.from(document.querySelectorAll('.primary-nav .menu a.btn'));
-  navButtons.forEach((b) => { b.classList.remove('active'); b.removeAttribute('aria-current'); });
+  
+  // S'assure que les boutons CTA ne sont pas considérés comme des liens de navigation actifs.
+  navButtons.forEach((b) => { 
+    b.classList.remove('active'); 
+    b.removeAttribute('aria-current'); 
+  });
+  
+  /**
+   * Met à jour l'état visuel du lien de navigation actif.
+   * @param {HTMLElement} link - Le lien à marquer comme actif.
+   */
   const setActive = (link) => {
     navLinks.forEach(a => {
       a.classList.remove('active');
@@ -20,14 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // --- GESTION DU MENU MOBILE ---
   if (burger && nav) {
+    // Au clic sur le burger, ouvre/ferme le menu overlay.
     burger.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("open");
       burger.setAttribute("aria-expanded", String(isOpen));
       document.body.classList.toggle('nav-open', isOpen);
     });
 
-    // Fermeture avec la touche Échap (accessibilité)
+    // Amélioration de l'accessibilité : ferme le menu avec la touche 'Échap'.
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && nav.classList.contains('open')) {
         nav.classList.remove('open');
@@ -37,24 +57,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, { passive: true });
 
-    // Fermer le menu après un clic sur un lien de navigation (mobile)
+    // Ferme automatiquement le menu mobile après avoir cliqué sur un lien.
     nav.querySelectorAll("a[href^='#']").forEach((link) => {
       link.addEventListener("click", (e) => {
         setActive(link);
-        // fermeture menu mobile
+        // Fermeture du menu mobile
         nav.classList.remove("open");
         burger.setAttribute("aria-expanded", "false");
         document.body.classList.remove('nav-open');
-        // scroll doux quand nécessaire
+        
+        // Gère le défilement pour le lien '#top'
         const href = link.getAttribute('href') || '';
         if (href === '#top') {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      }, { passive: true });
+      });
     });
 
-    // Navigation clavier entre les liens (flèches gauche/droite)
+    // Amélioration de l'accessibilité : permet la navigation au clavier dans le menu.
     navLinks.forEach((a, idx) => {
       a.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight') {
@@ -70,21 +91,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
-  // Mettre l’année en pied de page
-  const yearEl = document.getElementById("year");
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-
-  const topLinks = document.querySelectorAll('a[href="#top"]');
-  topLinks.forEach((link) => {
+  // --- SMOOTH SCROLL AMÉLIORÉ ---
+  // Gère le défilement fluide pour tous les liens d'ancrage
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const href = link.getAttribute('href');
+      if (href === '#top') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 72;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
+  // --- SCROLL SPY AMÉLIORÉ ---
+  // Met en surbrillance le lien de navigation correspondant à la section visible à l'écran.
   const sectionLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link[href^="#"]'));
   const idFromHref = (href) => href.replace('#','');
   const targets = sectionLinks
@@ -92,44 +125,329 @@ document.addEventListener("DOMContentLoaded", () => {
     .filter(x => !!x.el);
 
   const observeSections = () => {
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const id = entry.target.id;
-          const link = sectionLinks.find(a => idFromHref(a.getAttribute('href')) === id);
-          if (!link) return;
-          if (entry.isIntersecting) {
-            setActive(link);
-          }
-        });
-      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.25 });
-      targets.forEach(t => io.observe(t.el));
-      return;
-    }
-    // Fallback: scroll spy basique
+    // Utilisation d'un système de scroll basé sur la position pour plus de fiabilité
     const onScroll = () => {
-      let best = null;
+      const scrollPosition = window.scrollY + window.innerHeight / 3; // Point de référence à 1/3 de l'écran
+      let currentSection = null;
+      
       targets.forEach(({ a, el }) => {
         const rect = el.getBoundingClientRect();
-        const score = Math.min(Math.abs(rect.top), Math.abs(rect.bottom));
-        if (best === null || score < best.score) best = { a, score };
+        const elementTop = rect.top + window.scrollY;
+        const elementBottom = elementTop + rect.height;
+        
+        // Vérifier si la position de scroll est dans cette section
+        if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+          currentSection = a;
+        }
       });
-      if (best) setActive(best.a);
+      
+      // Si aucune section n'est trouvée, prendre la plus proche
+      if (!currentSection) {
+        let best = null;
+        let bestDistance = Infinity;
+        
+        targets.forEach(({ a, el }) => {
+          const rect = el.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const distance = Math.abs(scrollPosition - elementTop);
+          
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            best = a;
+          }
+        });
+        
+        currentSection = best;
+      }
+      
+      if (currentSection) {
+        setActive(currentSection);
+        // Mise à jour de l'URL sans rechargement
+        const href = currentSection.getAttribute('href');
+        if (history.replaceState && href) {
+          history.replaceState(null, null, href);
+        }
+      }
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    
+    // Throttle pour les performances
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          onScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    window.addEventListener('resize', throttledScroll, { passive: true });
+    onScroll(); // Appel initial
   };
 
   observeSections();
 
+  // --- SCROLL REVEAL ANIMATIONS ---
+  const initScrollReveal = () => {
+    const revealElements = document.querySelectorAll(
+      '.service-card, .faq-item, .contact-panel, .zone-map-container, .zone-address, .zone-cities, .zone-note'
+    );
+    
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // Ajouter la classe initiale
+      revealElements.forEach(el => {
+        el.classList.add('reveal-hidden');
+      });
+      
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Délai progressif pour effet cascade
+            setTimeout(() => {
+              entry.target.classList.add('reveal-visible');
+              entry.target.classList.remove('reveal-hidden');
+            }, index * 100);
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      
+      revealElements.forEach(el => revealObserver.observe(el));
+    }
+  };
   
+  initScrollReveal();
 
+  // --- GESTION FAQ ACCORDION (Exclusif) ---
+  const details = document.querySelectorAll("details");
+
+  details.forEach((detail) => {
+    detail.addEventListener("toggle", (e) => {
+      if (detail.open) {
+        details.forEach((otherDetail) => {
+          if (otherDetail !== detail && otherDetail.open) {
+            otherDetail.removeAttribute("open");
+          }
+        });
+      }
+    });
+  });
+
+  // --- CARTE ZONE D'INTERVENTION CHARENTE ---
+  const initZoneMap = () => {
+    const mapContainer = document.getElementById('zone-map');
+    if (!mapContainer || typeof L === 'undefined') return;
+
+    // Coordonnées précises de L'Isle-d'Espagnac (siège)
+    const headquarters = [45.6580, 0.1920];
+
+    // Initialisation de la carte (statique et centrée sur la Charente)
+    const map = L.map('zone-map', {
+      center: [45.65, 0.15],
+      zoom: 9,
+      zoomControl: false,
+      scrollWheelZoom: false,
+      doubleClickZoom: false,
+      boxZoom: false,
+      keyboard: false,
+      dragging: false,
+      touchZoom: false,
+      attributionControl: false
+    });
+
+    // Fond de carte discret
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '',
+      subdomains: 'abcd',
+      maxZoom: 19,
+      opacity: 0.6
+    }).addTo(map);
+
+    // Chargement des contours précis de la Charente depuis GitHub
+    fetch('https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson')
+      .then(response => response.json())
+      .then(data => {
+        // Filtrer pour obtenir uniquement la Charente (code 16)
+        const charenteFeature = data.features.find(feature => 
+          feature.properties.code === '16' || feature.properties.nom === 'Charente'
+        );
+        
+        if (charenteFeature) {
+          // Ajouter les contours de la Charente avec style marron
+          L.geoJSON(charenteFeature, {
+            style: {
+              color: '#673A12',
+              weight: 3,
+              opacity: 0.9,
+              fillColor: '#A88B5E',
+              fillOpacity: 0.15,
+              lineCap: 'round',
+              lineJoin: 'round'
+            }
+          }).addTo(map);
+          
+          // Ajuster la vue sur la Charente
+          const charenteLayer = L.geoJSON(charenteFeature);
+          map.fitBounds(charenteLayer.getBounds(), { padding: [20, 20] });
+        }
+      })
+      .catch(error => {
+        console.warn('Impossible de charger les contours de la Charente:', error);
+        // Fallback avec contours approximatifs
+        const charenteBounds = [
+          [46.1500, 0.1833], [46.1333, 0.3667], [46.0167, 0.4500], [45.9833, 0.6333],
+          [45.9500, 0.6500], [45.8667, 0.6500], [45.7833, 0.6333], [45.7000, 0.6167],
+          [45.6167, 0.5833], [45.5333, 0.5167], [45.4500, 0.4333], [45.3833, 0.3167],
+          [45.3333, 0.2000], [45.3000, 0.0833], [45.2833, -0.0333], [45.3000, -0.1500],
+          [45.3500, -0.2667], [45.4167, -0.3500], [45.5000, -0.4333], [45.5833, -0.4667],
+          [45.6667, -0.4500], [45.7500, -0.3333], [45.8333, -0.2000], [45.9167, -0.1167],
+          [46.0000, -0.0500], [46.0833, 0.0500], [46.1500, 0.1833]
+        ];
+        
+        L.polygon(charenteBounds, {
+          color: '#673A12',
+          weight: 3,
+          opacity: 0.8,
+          fillColor: '#A88B5E',
+          fillOpacity: 0.12,
+          lineCap: 'round',
+          lineJoin: 'round'
+        }).addTo(map);
+      });
+
+    // Marqueur siège avec animation pulse corrigée
+    const hqIcon = L.divIcon({
+      className: 'hq-marker-centered',
+      html: `
+        <div class="hq-pulse-ring"></div>
+        <div class="hq-marker-dot"></div>
+      `,
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
+    });
+    
+    const hqMarker = L.marker(headquarters, { 
+      icon: hqIcon, 
+      zIndexOffset: 1000 
+    }).addTo(map);
+
+    // Popup avec adresse et itinéraire
+    hqMarker.bindPopup(`
+      <div class="zone-popup-hq-new">
+        <div class="popup-address">
+          <strong>136 Avenue de la République</strong><br>
+          16340 L'Isle-d'Espagnac
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=136+Avenue+de+la+R%C3%A9publique,+16340+L'Isle-d'Espagnac" 
+           target="_blank" 
+           class="popup-directions-btn">
+          Lancer l'itinéraire
+        </a>
+      </div>
+    `, {
+      className: 'zone-popup-new',
+      closeButton: false,
+      offset: [0, -15],
+      autoPan: false
+    });
+
+    // Ouvrir le popup automatiquement après un délai
+    setTimeout(() => {
+      hqMarker.openPopup();
+    }, 1500);
+  };
+
+  // Initialiser la carte quand Leaflet est chargé
+  if (typeof L !== 'undefined') {
+    initZoneMap();
+  } else {
+    // Attendre que Leaflet soit chargé
+    window.addEventListener('load', () => {
+      setTimeout(initZoneMap, 100);
+    });
+  }
+  
+  // --- APPLE SELECT PERSONNALISÉ ---
+  const initAppleSelect = () => {
+    const appleSelect = document.getElementById('apple-select');
+    if (!appleSelect) return;
+
+    const trigger = appleSelect.querySelector('.apple-select-trigger');
+    const dropdown = appleSelect.querySelector('.apple-select-dropdown');
+    const valueSpan = appleSelect.querySelector('.apple-select-value');
+    const hiddenInput = appleSelect.querySelector('input[type="hidden"]');
+    const options = appleSelect.querySelectorAll('.apple-select-option');
+
+    // Ouvrir/fermer le dropdown
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      appleSelect.classList.toggle('active');
+    });
+
+    // Sélectionner une option
+    options.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Retirer la classe selected de toutes les options
+        options.forEach(opt => opt.classList.remove('selected'));
+        
+        // Ajouter selected à l'option cliquée
+        option.classList.add('selected');
+        
+        // Mettre à jour la valeur affichée
+        const value = option.getAttribute('data-value');
+        const text = option.textContent;
+        
+        valueSpan.textContent = text;
+        valueSpan.classList.remove('placeholder');
+        hiddenInput.value = value;
+        
+        // Fermer le dropdown
+        appleSelect.classList.remove('active');
+      });
+    });
+
+    // Fermer le dropdown si on clique ailleurs
+    document.addEventListener('click', (e) => {
+      if (!appleSelect.contains(e.target)) {
+        appleSelect.classList.remove('active');
+      }
+    });
+
+    // Gestion du clavier
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        appleSelect.classList.toggle('active');
+      } else if (e.key === 'Escape') {
+        appleSelect.classList.remove('active');
+      }
+    });
+  };
+
+  // --- ANNÉE DYNAMIQUE DANS LE FOOTER ---
+  const updateCurrentYear = () => {
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  };
+
+  // --- GESTION DU PRELOADER ---
   window.addEventListener('load', () => {
     if (bar) bar.style.width = '100%';
     if (preloader) {
       preloader.classList.add('hide');
       setTimeout(() => { preloader.remove(); }, 300);
     }
+    
+    // Initialiser le select Apple
+    initAppleSelect();
+    
+    // Mettre à jour l'année
+    updateCurrentYear();
   }, { once: true });
-  
 });

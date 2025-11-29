@@ -1,0 +1,170 @@
+================================================================================
+  VILLÉGER PEINTURE RAVAL RÉNOVATION - ROADMAP
+  Dernière mise à jour : 29 novembre 2025
+================================================================================
+
+## STATUT ACTUEL
+--------------------------------------------------------------------------------
+✅ Design System Apple-style implémenté
+✅ Responsive corrigé pour la section contact
+✅ Hero avec image visible sur mobile
+✅ Formulaire de contact simplifié (5 champs)
+✅ Animations fluides et transitions Apple-style
+✅ Section Zone d'intervention avec carte Leaflet
+✅ Performance optimisée (preload, lazy loading)
+✅ Accessibilité améliorée (skip-to-content, ARIA)
+✅ SEO enrichi (Schema.org FAQ, sitemap)
+✅ Scroll reveal animations
+✅ Navigation avec indicateur actif au scroll
+
+================================================================================
+  AMÉLIORATIONS PRIORITAIRES
+================================================================================
+
+### 🔴 HAUTE PRIORITÉ
+
+1. [ ] SECTION CONTACT - Améliorations UX
+   - [ ] Ajouter validation en temps réel des champs
+   - [ ] Message de succès après envoi du formulaire
+   - [ ] Animation de loading sur le bouton "Envoyer"
+   - [ ] Gestion des erreurs visuelles (champs invalides)
+
+2. [x] PERFORMANCE ✅ COMPLÉTÉ
+   - [x] Optimiser les images (lazy loading ajouté)
+   - [x] Ajouter preload pour les fonts critiques
+   - [x] Preconnect et dns-prefetch ajoutés
+   - [ ] Minifier CSS/JS pour production (à faire via build)
+   - [ ] Vérifier le score Lighthouse
+
+3. [x] ACCESSIBILITÉ (A11Y) ✅ COMPLÉTÉ
+   - [x] Ajouter skip-to-content link
+   - [x] Améliorer les labels ARIA
+   - [ ] Vérifier les contrastes de couleurs (WCAG AA)
+   - [ ] Test avec lecteur d'écran
+
+================================================================================
+  AMÉLIORATIONS MOYENNES
+================================================================================
+
+### 🟡 PRIORITÉ MOYENNE
+
+4. [ ] SECTION GALERIE
+   - [ ] Remplacer widget Elfsight par galerie native
+   - [ ] Lightbox pour agrandir les images
+   - [ ] Filtres par type de projet (ravalement, peinture, isolation)
+   - [ ] Lazy loading des images
+
+5. [ ] SECTION FAQ
+   - [ ] Ajouter plus de questions fréquentes
+   - [ ] Animation d'ouverture/fermeture améliorée
+   - [ ] Possibilité de recherche dans les FAQ
+
+6. [ ] FOOTER
+   - [ ] Ajouter un formulaire newsletter (optionnel)
+   - [ ] Liens vers réseaux sociaux supplémentaires
+
+7. [x] NAVIGATION ✅ COMPLÉTÉ
+   - [x] Indicateur de section active au scroll
+   - [x] Smooth scroll amélioré
+   - [ ] Breadcrumbs sur pages secondaires
+
+8. [x] SECTION ZONE D'INTERVENTION ✅ NOUVELLE
+   - [x] Carte interactive Leaflet
+   - [x] Marqueurs pour toutes les villes desservies
+   - [x] Cercle de zone d'intervention
+   - [x] Liste des villes avec style Apple
+   - [x] Note pour autres localités
+
+================================================================================
+  AMÉLIORATIONS FUTURES
+================================================================================
+
+### 🟢 BASSE PRIORITÉ (Nice to have)
+
+9. [ ] NOUVELLES PAGES
+   - [ ] Page "À propos" avec histoire de l'entreprise
+   - [ ] Page "Réalisations" dédiée avec études de cas
+   - [ ] Page "Devis en ligne" avec formulaire détaillé
+   - [ ] Blog/Actualités (conseils rénovation)
+
+10. [ ] FONCTIONNALITÉS AVANCÉES
+    - [ ] Calculateur de devis estimatif
+    - [ ] Témoignages clients avec carrousel
+    - [ ] Intégration Google Reviews
+    - [ ] Chat en direct (optionnel)
+
+11. [x] ANIMATIONS & MICRO-INTERACTIONS ✅ COMPLÉTÉ
+    - [x] Scroll reveal animations (sections)
+    - [x] Parallax subtil sur hero (préparé)
+    - [x] Hover effects élaborés sur les cartes
+    - [ ] Curseur personnalisé (optionnel)
+
+12. [x] SEO & MARKETING ✅ COMPLÉTÉ
+    - [x] Schema.org enrichi (Business + FAQ)
+    - [x] Open Graph images configurées
+    - [x] Sitemap XML mis à jour
+    - [x] Google Analytics 4 via GTM (déjà en place)
+
+13. [ ] TECHNIQUE
+    - [ ] Migration vers un framework (Astro, Next.js)
+    - [ ] CMS headless pour gestion contenu
+    - [ ] Tests automatisés (Playwright)
+    - [ ] CI/CD pipeline
+
+================================================================================
+  BUGS CONNUS / À SURVEILLER
+================================================================================
+
+- [ ] Vérifier le responsive entre 768px et 860px (zone intermédiaire)
+- [ ] Tester sur Safari iOS (backdrop-filter)
+- [ ] Vérifier le formulaire Netlify en production
+- [x] Email trop long peut déborder (corrigé avec word-break)
+
+================================================================================
+  NOTES DE DESIGN
+================================================================================
+
+PALETTE DE COULEURS (à conserver) :
+- Primary : #673A12 (marron terreux)
+- Accent  : #A88B5E (doré/pierre)
+- Background : #F9F7F5 (crème clair)
+- Text : #2D241E (presque noir)
+
+TYPOGRAPHIE :
+- Font : Inter (400, 500, 600, 700)
+- Style : Apple-inspired, clean, minimal
+
+PRINCIPES :
+- Espacement généreux (système 8px)
+- Animations subtiles et fluides
+- Focus sur la lisibilité
+- Mobile-first approach
+
+ZONE D'INTERVENTION :
+- Siège : L'Isle-d'Espagnac (16340)
+- Villes : Angoulême, Soyaux, Cognac, Mornac, La Couronne, 
+  Fléac, Saint-Michel, Ruelle-sur-Touvre, Rivières, 
+  Champniers, Magnac-sur-Touvre, La Rochefoucauld, Saint-Yrieix-sur-Charente
+
+================================================================================
+  CHANGELOG
+================================================================================
+
+[29/11/2025 - Session 2]
+- ✅ Section Zone d'intervention avec carte Leaflet
+- ✅ Performance : preload fonts, preconnect, dns-prefetch
+- ✅ Accessibilité : skip-to-content, ARIA amélioré
+- ✅ SEO : Schema.org enrichi (adresse, FAQ), sitemap mis à jour
+- ✅ Navigation : indicateur actif au scroll, smooth scroll amélioré
+- ✅ Animations : scroll reveal sur les sections
+- ✅ Marqueurs personnalisés sur la carte
+
+[29/11/2025 - Session 1]
+- ✅ Refonte complète du design system
+- ✅ Style Apple-like appliqué sur tout le site
+- ✅ Section contact refaite avec formulaire simplifié
+- ✅ Responsive corrigé (contact, hero)
+- ✅ Image hero visible sur mobile
+- ✅ Animations d'entrée ajoutées
+
+================================================================================
