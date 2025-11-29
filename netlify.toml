@@ -1,6 +1,28 @@
 [build]
   publish = "."
 
+# Configuration des formulaires Netlify
+[forms]
+  # Configuration pour le formulaire de contact
+  [forms.contact]
+    # Email de notification automatique vers le client
+    notification_email = "villergerstephane204@gmail.com"
+    # Template d'email personnalisé
+    email_template = """
+    Nouveau message de contact reçu :
+
+    Nom : {{ nom }}
+    Email : {{ email }}
+    Téléphone : {{ telephone }}
+    Type de projet : {{ prestation }}
+
+    Message :
+    {{ message }}
+
+    ---
+    Message envoyé depuis le site web Villéger Peinture Raval Rénovation
+    """
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
