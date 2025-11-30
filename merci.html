@@ -21,22 +21,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        .thank-you-page {
-            min-height: 100vh;
+        .thank-you-main {
+            min-height: calc(80vh - var(--header-height));
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
-            padding: var(--space-lg);
+            padding: var(--space-xl) var(--space-lg);
+            margin-top: var(--header-height); /* Ajout pour éviter que le header fixe ne cache le contenu */
         }
         .thank-you-card {
             background: var(--color-white);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-lg);
-            padding: var(--space-3xl);
+            padding: var(--space-2xl);
             text-align: center;
             max-width: 500px;
             width: 100%;
+            animation: fadeInUp 0.6s ease-out forwards;
         }
         .thank-you-icon {
             width: 80px;
@@ -48,18 +50,19 @@
             justify-content: center;
             margin: 0 auto var(--space-lg) auto;
             color: var(--color-white);
-            font-size: 2rem;
+            font-size: 2.5rem;
+            box-shadow: var(--shadow-md);
         }
         .thank-you-title {
-            font-size: 1.75rem;
-            font-weight: var(--font-weight-bold);
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
             color: var(--color-text);
-            margin-bottom: var(--space-md);
         }
         .thank-you-text {
             color: var(--color-text-light);
             line-height: 1.6;
             margin-bottom: var(--space-xl);
+            font-size: 1.1rem;
         }
         .thank-you-actions {
             display: flex;
@@ -72,10 +75,37 @@
                 justify-content: center;
             }
         }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <div class="thank-you-page">
+    <!-- Header -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="/" class="logo" aria-label="Retour à l'accueil"><img src="media/VPRR-LOGO.png" class="logo-img" alt="Villeger Peinture Raval Rénovation" /></a>
+        <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
+          <ul class="menu">
+            <li><a class="nav-link" href="/">Accueil</a></li>
+            <li><a class="nav-link" href="/#services">Services</a></li>
+            <li><a class="nav-link" href="/#galerie">Galerie</a></li>
+            <li><a class="nav-link" href="/#contact">Contact</a></li>
+            <li class="menu-cta">
+              <a class="btn btn-primary" href="/#contact">Obtenir un devis</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="thank-you-main">
         <div class="thank-you-card">
             <div class="thank-you-icon">
                 <i class="fa-solid fa-check"></i>
@@ -86,12 +116,45 @@
             </p>
             <div class="thank-you-actions">
                 <a href="/" class="btn btn-primary">Retour à l'accueil</a>
-                <a href="tel:+33659268623" class="btn btn-secondary">
-                    <i class="fa-solid fa-phone"></i>
-                    Nous appeler
+                <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" class="btn btn-secondary">
+                    <i class="fa-brands fa-instagram"></i>
+                    Suivez-nous
                 </a>
             </div>
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" aria-label="Pied de page">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <div class="logo">PeintureRavalRénovation</div>
+          <div class="copyright"> <span id="year"></span> PeintureRavalRénovation.<br>Tous droits réservés.</div>
+        </div>
+        <div class="footer-col">
+          <h3>Liens rapides</h3>
+          <ul class="footer-links">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#galerie">Galerie</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Coordonnées</h3>
+          <ul class="footer-contacts">
+            <li>Téléphone : <a href="tel:+33659268623">06 59 26 86 23</a></li>
+            <li>Email : <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
+          </ul>
+          <div class="socials" aria-label="Réseaux sociaux">
+            <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-badge"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
