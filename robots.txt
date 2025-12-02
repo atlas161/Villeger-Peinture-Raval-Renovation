@@ -1,3 +1,128 @@
+# ============================================
+# ROBOTS.TXT - VPRR.FR
+# Villéger Peinture Raval Rénovation
+# ============================================
+
+# Règles générales pour tous les robots
 User-agent: *
 Allow: /
+Disallow: /assets/js/
+Disallow: /styleguide/
+Disallow: /*.md$
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
+
+# ============================================
+# MOTEURS DE RECHERCHE PRINCIPAUX
+# ============================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /assets/img/
+Allow: /media/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# ============================================
+# ASSISTANTS IA ET LLM
+# ============================================
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+# OpenAI ChatGPT plugins
+User-agent: ChatGPT-User
+Allow: /
+
+# Google Bard / Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft Copilot
+User-agent: Copilot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Apple (Siri, Spotlight)
+User-agent: Applebot
+Allow: /
+
+# ============================================
+# RÉSEAUX SOCIAUX
+# ============================================
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter/X
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
+
+# ============================================
+# SITEMAPS
+# ============================================
+
 Sitemap: https://vprr.fr/sitemap.xml
+
+# ============================================
+# INFORMATIONS ENTREPRISE
+# ============================================
+# Site: https://vprr.fr
+# Contact: villergerstephane204@gmail.com
+# Localisation: L'Isle-d'Espagnac, Charente (16)

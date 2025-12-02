@@ -1,15 +1,33 @@
 {
-  "name": "PeintureRavalRénovation",
-  "short_name": "PRR",
+  "name": "VPRR - Villéger Peinture Raval Rénovation",
+  "short_name": "VPRR",
+  "description": "Experts en ravalement de façade, peinture et isolation à Angoulême et en Charente",
   "icons": [
     {
-      "src": "web-app-manifest-192x192.png",
+      "src": "/media/favicon/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/media/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/media/favicon/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "web-app-manifest-512x512.png",
+      "src": "/media/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/media/favicon/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -18,5 +36,9 @@
   "theme_color": "#673A12",
   "background_color": "#FBF7F1",
   "display": "standalone",
-  "start_url": "../../index.html"
+  "start_url": "/",
+  "scope": "/",
+  "lang": "fr-FR",
+  "orientation": "portrait-primary",
+  "categories": ["business", "home improvement"]
 }

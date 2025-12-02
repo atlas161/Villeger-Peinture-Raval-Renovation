@@ -1,45 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Page d'accueil principale -->
   <url>
     <loc>https://vprr.fr/</loc>
-    <lastmod>2025-11-29</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/hero.jpg</image:loc>
+      <image:title>Ravalement de façade et rénovation à Angoulême</image:title>
+      <image:caption>VPRR - Experts en peinture et ravalement en Charente</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/VPRR-LOGO.png</image:loc>
+      <image:title>Logo VPRR - Villéger Peinture Raval Rénovation</image:title>
+    </image:image>
   </url>
+  
+  <!-- Section Services - Important pour sitelinks -->
   <url>
     <loc>https://vprr.fr/#services</loc>
-    <lastmod>2025-11-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vprr.fr/#galerie</loc>
-    <lastmod>2025-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vprr.fr/#zone</loc>
-    <lastmod>2025-11-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vprr.fr/#faq</loc>
-    <lastmod>2025-11-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://vprr.fr/#contact</loc>
-    <lastmod>2025-11-29</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- Section Galerie -->
+  <url>
+    <loc>https://vprr.fr/#galerie</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Section Zone d'intervention -->
+  <url>
+    <loc>https://vprr.fr/#zone</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Section FAQ -->
+  <url>
+    <loc>https://vprr.fr/#faq</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Section Contact - Important pour sitelinks -->
+  <url>
+    <loc>https://vprr.fr/#contact</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Mentions légales -->
   <url>
     <loc>https://vprr.fr/mentions-legales.html</loc>
-    <lastmod>2025-11-29</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  
+  <!-- Page de remerciement -->
+  <url>
+    <loc>https://vprr.fr/merci.html</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>

@@ -22,20 +22,39 @@
     </script>
     
     <!-- Métadonnées de base pour le SEO et l'affichage du site -->
-    <title>VPRR : Peintre & Façadier à Angoulême - Rénovation (16)</title>
-    <meta name="description" content="Experts en ravalement de façade, peinture et isolation à Angoulême. Devis rapide et gratuit pour vos projets de rénovation." />
-    <meta name="robots" content="index, follow" />
+    <title>Rénovation à Angoulême | Villéger Peinture · Ravalement · Isolation</title>
+    <meta name="description" content="Expert en rénovation extérieure et intérieure à Angoulême. Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente. Devis gratuit." />
+    <meta name="keywords" content="ravalement façade Angoulême, peintre Angoulême, isolation thermique Charente, rénovation maison 16, façadier L'Isle-d'Espagnac, peinture intérieure extérieure, hydro-gommage, VPRR" />
+    <meta name="author" content="Villéger Peinture Raval Rénovation" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <meta name="bingbot" content="index, follow" />
     <meta name="theme-color" content="#673A12" />
+    <meta name="msapplication-TileColor" content="#673A12" />
+    <meta name="geo.region" content="FR-16" />
+    <meta name="geo.placename" content="L'Isle-d'Espagnac, Angoulême" />
+    <meta name="geo.position" content="45.6667;0.1833" />
+    <meta name="ICBM" content="45.6667, 0.1833" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Peinture · Ravalement · Rénovation · Toiture · Isolation | PeintureRavalRénovation" />
-    <meta property="og:description" content="Entreprise spécialisée en ravalement de façade, peinture intérieure/extérieure et isolation." />
+    <meta property="og:site_name" content="VPRR - Villéger Peinture Raval Rénovation" />
+    <meta property="og:title" content="Rénovation à Angoulême | Villéger Peinture · Ravalement · Isolation" />
+    <meta property="og:description" content="Expert en rénovation extérieure et intérieure à Angoulême. Spécialistes du ravalement de façade, de la peinture et de l'isolation en Charente. Devis gratuit." />
     <meta property="og:url" content="https://vprr.fr/" />
     <meta property="og:image" content="https://vprr.fr/assets/img/hero.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="VPRR - Ravalement de façade et rénovation à Angoulême" />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PeintureRavalRénovation | VPRR" />
-    <meta name="twitter:description" content="Ravalement, peinture, isolation — devis gratuit." />
+    <meta name="twitter:title" content="Rénovation à Angoulême | VPRR - Peinture · Ravalement · Isolation" />
+    <meta name="twitter:description" content="Expert en ravalement de façade, peinture et isolation à Angoulême. Devis gratuit." />
     <meta name="twitter:image" content="https://vprr.fr/assets/img/hero.jpg" />
-
+    <meta name="twitter:image:alt" content="VPRR - Rénovation à Angoulême" />
+    
     <!-- Feuilles de style CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
@@ -53,21 +72,96 @@
     <link rel="icon" type="image/svg+xml" href="media/favicon/favicon.svg" />
     <link rel="shortcut icon" href="media/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="PeintureRavalRénovation" />
-    <link rel="manifest" href="media/favicon/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="VPRR" />
+    <link rel="manifest" href="/media/favicon/site.webmanifest" />
+    
+    <!-- Schema.org WebSite pour sitelinks Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://vprr.fr/#website",
+        "name": "VPRR - Villéger Peinture Raval Rénovation",
+        "alternateName": ["VPRR", "Villéger Peinture", "Peinture Raval Rénovation"],
+        "url": "https://vprr.fr/",
+        "description": "Experts en ravalement de façade, peinture et isolation à Angoulême et en Charente. Devis gratuit.",
+        "inLanguage": "fr-FR",
+        "publisher": {
+          "@id": "https://vprr.fr/#business"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://vprr.fr/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- Schema.org SiteNavigationElement pour sitelinks -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-services",
+            "name": "Nos Services",
+            "description": "Ravalement de façade, peinture intérieure et extérieure, isolation thermique, rénovation",
+            "url": "https://vprr.fr/#services"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-contact",
+            "name": "Contact",
+            "description": "Demandez un devis gratuit pour vos travaux de rénovation à Angoulême",
+            "url": "https://vprr.fr/#contact"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-galerie",
+            "name": "Galerie",
+            "description": "Découvrez nos réalisations en ravalement et peinture",
+            "url": "https://vprr.fr/#galerie"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-zone",
+            "name": "Zone d'intervention",
+            "description": "Angoulême, L'Isle-d'Espagnac et toute la Charente",
+            "url": "https://vprr.fr/#zone"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-faq",
+            "name": "FAQ",
+            "description": "Questions fréquentes sur nos services de rénovation",
+            "url": "https://vprr.fr/#faq"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Schema.org LocalBusiness / HomeAndConstructionBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "HomeAndConstructionBusiness",
         "@id": "https://vprr.fr/#business",
         "name": "Villéger Peinture Raval Rénovation",
+        "alternateName": "VPRR",
         "url": "https://vprr.fr/",
+        "logo": "https://vprr.fr/media/VPRR-LOGO.png",
+        "image": "https://vprr.fr/assets/img/hero.jpg",
         "email": "villergerstephane204@gmail.com",
-        "telephone": "+33 6 59 26 86 23",
+        "telephone": "+33659268623",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "136 Avenue de la République",
           "addressLocality": "L'Isle-d'Espagnac",
-          "addressRegion": "Charente",
+          "addressRegion": "Nouvelle-Aquitaine",
           "postalCode": "16340",
           "addressCountry": "FR"
         },
@@ -76,22 +170,74 @@
           "latitude": 45.6667,
           "longitude": 0.1833
         },
-        "areaServed": [
-          "Angoulême", "L'Isle-d'Espagnac", "Soyaux", "Cognac", "Mornac", 
-          "La Couronne", "Fléac", "Saint-Michel", "Ruelle-sur-Touvre", 
-          "Rivières", "Champniers", "Magnac-sur-Touvre", "La Rochefoucauld",
-          "Saint-Yrieix-sur-Charente"
-        ],
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.6500,
+            "longitude": 0.1500
+          },
+          "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services de rénovation",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Ravalement de façade",
+                "description": "Ravalement complet, hydro-gommage, démoussage et peinture extérieure"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Peinture intérieure",
+                "description": "Peinture intérieure, plâtrerie et finitions"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Isolation thermique",
+                "description": "Isolation des combles, murs (ITI/ITE) et remplacement de fenêtres"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Toiture et couverture",
+                "description": "Entretien, réfection de toiture, gouttières et zinguerie"
+              }
+            }
+          ]
+        },
         "sameAs": [
           "https://www.instagram.com/peinture_raval_renovation/"
         ],
-        "serviceType": [
-          "Ravalement de façade",
-          "Peinture intérieure",
-          "Peinture extérieure",
-          "Isolation thermique"
+        "priceRange": "€€",
+        "paymentAccepted": ["Espèces", "Chèque", "Virement bancaire"],
+        "currenciesAccepted": "EUR",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
         ],
-        "priceRange": "€€"
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "10",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
       }
     </script>
     
