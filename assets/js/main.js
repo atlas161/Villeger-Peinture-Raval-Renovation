@@ -1,17 +1,10 @@
 /**
  * @file Script principal pour l'interactivité du site VPRR.
- * Gère le preloader, la navigation mobile, le scroll-spy, les animations et la carte.
+ * Gère la navigation mobile, le scroll-spy, les animations et la carte.
  */
 
 // Attend que le DOM soit entièrement chargé avant d'exécuter le script.
 document.addEventListener("DOMContentLoaded", () => {
-  // Utiliser requestAnimationFrame pour éviter le layout thrashing
-  const preloader = document.getElementById('preloader');
-  const bar = preloader ? preloader.querySelector('.progress .fill') : null;
-  requestAnimationFrame(() => {
-    if (bar) bar.style.width = '40%';
-  });
-  
   // --- GESTION DE LA NAVIGATION ---
 
   // Sélection des éléments du DOM nécessaires pour la navigation
@@ -131,21 +124,31 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cache des positions des sections (évite le layout thrashing)
     let sectionPositions = [];
     let lastActiveHref = null;
+    let positionsReady = false;
     
     // Calculer les positions une seule fois, puis recalculer au resize
     const updatePositions = () => {
-      sectionPositions = targets.map(({ a, el }) => {
+      // Lire toutes les dimensions en une seule passe (batch read)
+      const positions = [];
+      const scrollY = window.scrollY;
+      
+      for (const { a, el } of targets) {
         const rect = el.getBoundingClientRect();
-        return {
+        positions.push({
           a,
-          top: rect.top + window.scrollY,
-          bottom: rect.top + window.scrollY + rect.height
-        };
-      });
+          top: rect.top + scrollY,
+          bottom: rect.top + scrollY + rect.height
+        });
+      }
+      
+      sectionPositions = positions;
+      positionsReady = true;
     };
     
-    // Appel initial pour calculer les positions
-    updatePositions();
+    // Différer le calcul initial après le premier rendu
+    requestAnimationFrame(() => {
+      requestAnimationFrame(updatePositions);
+    });
     
     const onScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -467,14 +470,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // --- GESTION DU PRELOADER ---
+  // --- INITIALISATION AU CHARGEMENT ---
   window.addEventListener('load', () => {
-    if (bar) bar.style.width = '100%';
-    if (preloader) {
-      preloader.classList.add('hide');
-      setTimeout(() => { preloader.remove(); }, 300);
-    }
-    
     // Initialiser le select Apple
     initAppleSelect();
     
