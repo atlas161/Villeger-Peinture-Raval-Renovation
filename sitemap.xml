@@ -2,79 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+                            http://www.google.com/schemas/sitemap-image/1.1
+                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
   
-  <!-- Page d'accueil principale -->
+  <!-- ============================================ -->
+  <!-- PAGE D'ACCUEIL PRINCIPALE -->
+  <!-- ============================================ -->
   <url>
     <loc>https://vprr.fr/</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://vprr.fr/assets/img/hero.jpg</image:loc>
-      <image:title>Ravalement de façade et rénovation à Angoulême</image:title>
-      <image:caption>VPRR - Experts en peinture et ravalement en Charente</image:caption>
+      <image:title>Ravalement de façade et rénovation à Angoulême - VPRR</image:title>
+      <image:caption>Villéger Peinture Raval Rénovation - Experts en ravalement, peinture et isolation en Charente</image:caption>
+      <image:geo_location>Angoulême, Charente, France</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://vprr.fr/media/VPRR-LOGO.png</image:loc>
       <image:title>Logo VPRR - Villéger Peinture Raval Rénovation</image:title>
+      <image:caption>Logo officiel de l'entreprise VPRR basée à Angoulême</image:caption>
     </image:image>
   </url>
   
-  <!-- Section Services - Important pour sitelinks -->
+  <!-- ============================================ -->
+  <!-- SECTION SERVICES - Nos expertises -->
+  <!-- ============================================ -->
   <url>
     <loc>https://vprr.fr/#services</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Section Galerie -->
+  <!-- Sous-sections Services individuels pour meilleur référencement -->
+  <url>
+    <loc>https://vprr.fr/#services-ravalement</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://vprr.fr/#services-toiture</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://vprr.fr/#services-isolation</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://vprr.fr/#services-renovation</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- ============================================ -->
+  <!-- SECTION GALERIE - Nos réalisations -->
+  <!-- ============================================ -->
   <url>
     <loc>https://vprr.fr/#galerie</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Section Zone d'intervention -->
+  <!-- ============================================ -->
+  <!-- SECTION ZONE - Zone d'intervention -->
+  <!-- ============================================ -->
   <url>
     <loc>https://vprr.fr/#zone</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   
-  <!-- Section FAQ -->
+  <!-- ============================================ -->
+  <!-- SECTION FAQ - Questions fréquentes -->
+  <!-- ============================================ -->
   <url>
     <loc>https://vprr.fr/#faq</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Section Contact - Important pour sitelinks -->
+  <!-- ============================================ -->
+  <!-- SECTION CONTACT - Demande de devis -->
+  <!-- ============================================ -->
   <url>
     <loc>https://vprr.fr/#contact</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
+  <!-- ============================================ -->
+  <!-- PAGES SECONDAIRES -->
+  <!-- ============================================ -->
+  
   <!-- Mentions légales -->
   <url>
     <loc>https://vprr.fr/mentions-legales.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
-  <!-- Page de remerciement -->
+  <!-- Page de remerciement (après formulaire) -->
   <url>
     <loc>https://vprr.fr/merci.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+  <!-- ============================================ -->
+  <!-- RESSOURCES POUR LES IA -->
+  <!-- ============================================ -->
+  
+  <!-- Fichier d'information pour les LLMs -->
+  <url>
+    <loc>https://vprr.fr/llms.txt</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Configuration du site (pour référence) -->
+  <url>
+    <loc>https://vprr.fr/data/config.json</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Fichier humans.txt -->
+  <url>
+    <loc>https://vprr.fr/humans.txt</loc>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
 </urlset>

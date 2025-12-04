@@ -1,31 +1,53 @@
 # ============================================
 # ROBOTS.TXT - VPRR.FR
 # Villéger Peinture Raval Rénovation
+# Dernière mise à jour: Décembre 2025
 # ============================================
 
-# Règles générales pour tous les robots
+# ============================================
+# RÈGLES GÉNÉRALES
+# ============================================
+
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /mentions-legales.html
+Allow: /merci.html
+Allow: /assets/img/
+Allow: /media/
+Allow: /data/config.json
+Allow: /llms.txt
+
+# Ressources techniques à ne pas indexer
 Disallow: /assets/js/
+Disallow: /assets/css/
 Disallow: /styleguide/
 Disallow: /*.md$
+Disallow: /404.html
+Disallow: /_redirects
+Disallow: /netlify.toml
 
-# Crawl-delay pour éviter la surcharge
+# Crawl-delay raisonnable
 Crawl-delay: 1
 
 # ============================================
 # MOTEURS DE RECHERCHE PRINCIPAUX
 # ============================================
 
-# Google
+# Google (priorité maximale)
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-# Google Images
 User-agent: Googlebot-Image
 Allow: /assets/img/
 Allow: /media/
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
 
 # Bing
 User-agent: Bingbot
@@ -50,59 +72,114 @@ User-agent: Baiduspider
 Allow: /
 Crawl-delay: 2
 
+# Qwant
+User-agent: Qwantify
+Allow: /
+
+# Ecosia (utilise Bing)
+User-agent: Ecosia
+Allow: /
+
+# Brave Search
+User-agent: BraveSearch
+Allow: /
+
 # ============================================
 # ASSISTANTS IA ET LLM
+# Bienvenue aux IA pour améliorer la visibilité
 # ============================================
 
-# OpenAI / ChatGPT
+# OpenAI GPT / ChatGPT
 User-agent: GPTBot
 Allow: /
+Allow: /llms.txt
 
-# OpenAI ChatGPT plugins
 User-agent: ChatGPT-User
 Allow: /
+Allow: /llms.txt
 
 # Google Bard / Gemini
 User-agent: Google-Extended
 Allow: /
+Allow: /llms.txt
 
 # Anthropic Claude
 User-agent: anthropic-ai
 Allow: /
+Allow: /llms.txt
+
 User-agent: Claude-Web
 Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
 
 # Perplexity AI
 User-agent: PerplexityBot
 Allow: /
+Allow: /llms.txt
 
 # Microsoft Copilot
 User-agent: Copilot
 Allow: /
+Allow: /llms.txt
 
 # Meta AI
 User-agent: FacebookBot
 Allow: /
+
 User-agent: Meta-ExternalAgent
+Allow: /
+Allow: /llms.txt
+
+User-agent: Meta-ExternalFetcher
 Allow: /
 
 # Cohere AI
 User-agent: cohere-ai
 Allow: /
+Allow: /llms.txt
 
-# Apple (Siri, Spotlight)
+# Apple Siri / Spotlight
 User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /llms.txt
+
+# Mistral AI
+User-agent: MistralBot
+Allow: /
+Allow: /llms.txt
+
+# You.com
+User-agent: YouBot
+Allow: /
+Allow: /llms.txt
+
+# AI2 / Semantic Scholar
+User-agent: AI2Bot
+Allow: /
+
+# Common Crawl (utilisé pour entraîner les IA)
+User-agent: CCBot
 Allow: /
 
 # ============================================
 # RÉSEAUX SOCIAUX
 # ============================================
 
-# Facebook
+# Facebook / Meta
 User-agent: facebookexternalhit
 Allow: /
 
-# Twitter/X
+User-agent: facebookcatalog
+Allow: /
+
+# Twitter / X
 User-agent: Twitterbot
 Allow: /
 
@@ -113,16 +190,62 @@ Allow: /
 # Pinterest
 User-agent: Pinterest
 Allow: /
+Allow: /assets/img/
+Allow: /media/
+
+# WhatsApp
+User-agent: WhatsApp
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# Discord
+User-agent: Discordbot
+Allow: /
+
+# Slack
+User-agent: Slackbot
+Allow: /
 
 # ============================================
-# SITEMAPS
+# OUTILS SEO ET ANALYTICS
+# ============================================
+
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 5
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 5
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 5
+
+User-agent: DotBot
+Allow: /
+Crawl-delay: 5
+
+# ============================================
+# SITEMAPS ET RESSOURCES
 # ============================================
 
 Sitemap: https://vprr.fr/sitemap.xml
+
+# Fichier d'information pour les IA
+# Voir: https://vprr.fr/llms.txt
 
 # ============================================
 # INFORMATIONS ENTREPRISE
 # ============================================
 # Site: https://vprr.fr
+# Entreprise: Villéger Peinture Raval Rénovation (VPRR)
 # Contact: villergerstephane204@gmail.com
-# Localisation: L'Isle-d'Espagnac, Charente (16)
+# Téléphone: +33 6 59 26 86 23
+# Adresse: 136 Avenue de la République, 16340 L'Isle-d'Espagnac
+# Région: Charente (16), Nouvelle-Aquitaine, France
+# Services: Ravalement, Peinture, Isolation, Rénovation
+# ============================================

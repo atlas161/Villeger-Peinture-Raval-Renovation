@@ -1,0 +1,313 @@
+{
+  "_comment": "═══════════════════════════════════════════════════════════════════════════════",
+  "_title": "CONFIGURATION DU SITE VPRR - Villéger Peinture Raval Rénovation",
+  "_instructions": "Modifiez les valeurs ci-dessous, puis faites: git add . && git commit -m 'update' && git push",
+  "_documentation": "Voir data/README.md pour plus de détails",
+  "_lastUpdated": "2025-12-04",
+  "_comment_end": "═══════════════════════════════════════════════════════════════════════════════",
+
+
+
+  "_section_1": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_1_title": "║  INFORMATIONS GÉNÉRALES DU SITE                                               ║",
+  "_section_1_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "site": {
+    "_comment": "Informations générales affichées dans les onglets et moteurs de recherche",
+    
+    "name": "VPRR - Villéger Peinture Raval Rénovation",
+    "shortName": "VPRR",
+    "url": "https://vprr.fr",
+    "description": "Expert en rénovation extérieure et intérieure à Angoulême. Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente.",
+    "keywords": "ravalement façade Angoulême, peintre Angoulême, isolation thermique Charente, rénovation maison 16, façadier L'Isle-d'Espagnac, peinture intérieure extérieure, hydro-gommage, VPRR",
+    "themeColor": "#673A12",
+    "language": "fr-FR"
+  },
+
+
+
+  "_section_2": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_2_title": "║  COORDONNÉES DE L'ENTREPRISE                                                  ║",
+  "_section_2_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "business": {
+    "_comment": "Ces informations apparaissent dans le footer, la section contact, et les métadonnées Google",
+
+    "legalName": "Villéger Peinture Raval Rénovation",
+    "owner": "Stéphane Villéger",
+
+    "_comment_contact": "── Contact ──",
+    "email": "villergerstephane204@gmail.com",
+    "phone": "+33659268623",
+    "phoneDisplay": "06 59 26 86 23",
+
+    "_comment_address": "── Adresse ──",
+    "address": {
+      "street": "136 Avenue de la République",
+      "city": "L'Isle-d'Espagnac",
+      "postalCode": "16340",
+      "region": "Nouvelle-Aquitaine",
+      "country": "FR",
+      "full": "136 Avenue de la République, 16340 L'Isle-d'Espagnac"
+    },
+
+    "_comment_geo": "── Coordonnées GPS (pour Google Maps) ──",
+    "geo": {
+      "latitude": 45.6667,
+      "longitude": 0.1833
+    },
+
+    "_comment_hours": "── Horaires d'ouverture ──",
+    "openingHours": {
+      "days": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+
+    "_comment_social": "── Réseaux sociaux ──",
+    "socialMedia": {
+      "instagram": "https://www.instagram.com/peinture_raval_renovation/",
+      "instagramHandle": "@peinture_raval_renovation",
+      "googleReview": "https://g.page/r/CZZJ5Bogt13fEBM/review"
+    },
+
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=136+Avenue+de+la+R%C3%A9publique,+16340+L'Isle-d'Espagnac"
+  },
+
+
+
+  "_section_3": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_3_title": "║  SECTION HERO (Accueil)                                                       ║",
+  "_section_3_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "hero": {
+    "_comment": "C'est la première chose que les visiteurs voient en arrivant sur le site",
+
+    "_comment_textes": "── Textes principaux ──",
+    "title": "Expert en rénovation extérieure et intérieure à Angoulême",
+    "subtitle": "Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente. Nous donnons vie à vos projets de rénovation avec expertise et soin.",
+
+    "_comment_image": "── Image de fond (mettre le fichier dans assets/img/) ──",
+    "image": "assets/img/hero.jpg",
+    "imageAlt": "Ravalement de façade et peinture à Angoulême — réalisations",
+
+    "_comment_boutons": "── Boutons d'action ──",
+    "ctaPrimary": {
+      "text": "Demander un devis gratuit",
+      "link": "#contact"
+    },
+    "ctaSecondary": {
+      "text": "Voir nos réalisations",
+      "link": "#galerie"
+    }
+  },
+
+
+
+  "_section_4": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_4_title": "║  SERVICES (Les 4 cartes de services)                                         ║",
+  "_section_4_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "_services_help": "Icônes disponibles: https://fontawesome.com/search?o=r&m=free&s=solid",
+
+  "services": [
+    {
+      "_comment": "──────────── SERVICE 1: Ravalement ────────────",
+      "id": "ravalement",
+      "icon": "fa-solid fa-paint-roller",
+      "title": "Ravalement & Façade",
+      "description": "Redonnez vie à vos façades : ravalement complet, nettoyage technique, peinture extérieure et traitements d'imperméabilisation.",
+      "details": [
+        "Ravalement complet",
+        "Hydro-gommage & démoussage",
+        "Peinture extérieure",
+        "Traitement de l'humidité"
+      ]
+    },
+    {
+      "_comment": "──────────── SERVICE 2: Toiture ────────────",
+      "id": "toiture",
+      "icon": "fa-solid fa-house-chimney",
+      "title": "Toiture & Couverture",
+      "description": "Protection et entretien de votre toiture : réfection, zinguerie, étanchéité et interventions d'urgence après intempéries.",
+      "details": [
+        "Entretien & démoussage",
+        "Réfection de toiture",
+        "Gouttières & zinguerie",
+        "Pose de Velux"
+      ]
+    },
+    {
+      "_comment": "──────────── SERVICE 3: Isolation ────────────",
+      "id": "isolation",
+      "icon": "fa-solid fa-leaf",
+      "title": "Isolation & Performance Énergétique",
+      "description": "Améliorez votre confort et réduisez vos factures : isolation des combles, murs et remplacement d'huisseries.",
+      "details": [
+        "Isolation des combles",
+        "Isolation des cloisons",
+        "Remplacement de fenêtres",
+        "Traitement de l'humidité"
+      ]
+    },
+    {
+      "_comment": "──────────── SERVICE 4: Rénovation intérieure ────────────",
+      "id": "renovation",
+      "icon": "fa-solid fa-hammer",
+      "title": "Rénovation Intérieure & Aménagement",
+      "description": "Transformez votre intérieur : peinture, plâtrerie, sols, cuisines et salles de bains. Du sol au plafond.",
+      "details": [
+        "Peinture intérieure",
+        "Plâtrerie & cloisons",
+        "Carrelage & parquet",
+        "Rénovation pièces d'eau"
+      ]
+    }
+  ],
+
+
+
+  "_section_5": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_5_title": "║  FAQ (Questions fréquentes)                                                   ║",
+  "_section_5_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "_faq_help": "Vous pouvez utiliser <strong>gras</strong> et <em>italique</em> dans les réponses",
+
+  "faq": [
+    {
+      "_comment": "Question 1",
+      "question": "Faut-il une autorisation de la mairie pour refaire sa façade ?",
+      "answer": "Oui, une déclaration préalable de travaux (DP) est souvent nécessaire, surtout si l'aspect extérieur change. C'est une démarche parfois complexe, mais ne vous inquiétez pas : <strong>nous pouvons vous accompagner dans la constitution du dossier</strong> pour garantir que votre projet respecte les règles d'urbanisme locales."
+    },
+    {
+      "_comment": "Question 2",
+      "question": "L'hydro-gommage risque-t-il d'abîmer ma façade (pierre, brique) ?",
+      "answer": "<strong>Au contraire, c'est la méthode la plus douce qui existe.</strong> Contrairement au sablage ou au nettoyage haute pression qui peuvent être agressifs, l'hydro-gommage utilise un mélange d'eau et de poudre minérale projeté à basse pression. Cela permet de retirer la pollution, les graffitis ou les anciennes peintures <em>sans altérer la surface ni la protection naturelle de la pierre</em>. C'est la technique idéale pour rénover sans dégrader."
+    },
+    {
+      "_comment": "Question 3",
+      "question": "Comment protégez-vous mon intérieur et mes meubles pendant les travaux ?",
+      "answer": "La préparation et la protection sont aussi importantes que la peinture elle-même. <strong>Nous bâchons systématiquement</strong> vos sols, vos meubles et vos fenêtres avant le moindre coup de pinceau. Nous nous engageons à laisser le chantier propre et rangé à la fin de chaque journée."
+    },
+    {
+      "_comment": "Question 4",
+      "question": "Êtes-vous assurés en cas de problème ?",
+      "answer": "<strong>Absolument. C'est une obligation légale et une sécurité pour vous.</strong> Nous possédons une Garantie Décennale (qui couvre les gros ouvrages pendant 10 ans) ainsi qu'une Responsabilité Civile Professionnelle. Nos attestations d'assurance sont à jour et disponibles sur simple demande avant le début du chantier."
+    }
+  ],
+
+
+
+  "_section_6": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_6_title": "║  ZONE D'INTERVENTION                                                         ║",
+  "_section_6_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "zone": {
+    "_comment": "Liste des villes où vous intervenez (affichées sur la carte)",
+    
+    "title": "Nous intervenons en Charente",
+    "subtitle": "Basés à L'Isle-d'Espagnac, nous couvrons Angoulême et toute la Charente pour vos projets de rénovation.",
+    "radiusKm": 50,
+    
+    "_comment_cities": "Ajoutez ou supprimez des villes selon votre zone réelle",
+    "cities": [
+      "Angoulême",
+      "L'Isle-d'Espagnac",
+      "Soyaux",
+      "Cognac",
+      "Mornac",
+      "La Couronne",
+      "Fléac",
+      "Saint-Michel",
+      "Ruelle-sur-Touvre",
+      "Rivières",
+      "Champniers",
+      "Magnac-sur-Touvre",
+      "La Rochefoucauld",
+      "Saint-Yrieix-sur-Charente"
+    ]
+  },
+
+
+
+  "_section_7": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_7_title": "║  OPTIONS DU FORMULAIRE DE CONTACT                                            ║",
+  "_section_7_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "contactForm": {
+    "_comment": "Options du menu déroulant 'Type de projet'",
+    
+    "prestationOptions": [
+      { "value": "ravalement", "label": "Ravalement de façade" },
+      { "value": "peinture", "label": "Peinture" },
+      { "value": "isolation", "label": "Isolation" },
+      { "value": "toiture", "label": "Toiture & Couverture" },
+      { "value": "renovation", "label": "Rénovation intérieure" },
+      { "value": "autre", "label": "Autre" }
+    ]
+  },
+
+
+
+  "_section_8": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_8_title": "║  TITRES DES SECTIONS                                                         ║",
+  "_section_8_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "sections": {
+    "_comment": "Personnalisez les titres et sous-titres de chaque section du site",
+
+    "services": {
+      "eyebrow": "Services",
+      "title": "Nos expertises en rénovation",
+      "subtitle": "Des solutions complètes pour le ravalement de façade, la peinture et l'isolation de votre habitat."
+    },
+
+    "galerie": {
+      "eyebrow": "Galerie",
+      "title": "Nos réalisations",
+      "subtitle": "Découvrez nos derniers projets de ravalement, peinture et rénovation."
+    },
+
+    "zone": {
+      "eyebrow": "Zone d'intervention",
+      "title": "Nous intervenons en Charente",
+      "subtitle": "Basés à L'Isle-d'Espagnac, nous couvrons Angoulême et toute la Charente pour vos projets de rénovation."
+    },
+
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions fréquentes",
+      "subtitle": "Retrouvez les réponses aux questions les plus courantes sur nos services."
+    },
+
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Parlons de votre projet",
+      "subtitle": "Une question, un devis ? Contactez-nous et recevez une réponse personnalisée."
+    }
+  },
+
+
+
+  "_section_9": "╔═══════════════════════════════════════════════════════════════════════════════╗",
+  "_section_9_title": "║  SEO & RÉFÉRENCEMENT                                                         ║",
+  "_section_9_end": "╚═══════════════════════════════════════════════════════════════════════════════╝",
+
+  "seo": {
+    "_comment": "Ces informations sont utilisées par Google et les réseaux sociaux",
+    
+    "title": "Rénovation à Angoulême | Villéger Peinture · Ravalement · Isolation",
+    "description": "Expert en rénovation extérieure et intérieure à Angoulême. Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente. Devis gratuit.",
+    "ogImage": "https://vprr.fr/assets/img/hero.jpg",
+    "twitterCard": "summary_large_image"
+  },
+
+  "ratings": {
+    "_comment": "Note Google (mise à jour manuelle selon vos vrais avis)",
+    
+    "aggregateRating": 5,
+    "reviewCount": 10,
+    "bestRating": 5,
+    "worstRating": 1
+  }
+}

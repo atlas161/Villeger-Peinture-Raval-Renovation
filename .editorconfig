@@ -1,163 +1,60 @@
 # ═══════════════════════════════════════════════════════════════════════════════
-# NETLIFY.TOML - Configuration de déploiement VPRR
+# EditorConfig - Configuration universelle pour tous les éditeurs
+# https://editorconfig.org
 # ═══════════════════════════════════════════════════════════════════════════════
 
-[build]
-  publish = "."
+root = true
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# OPTIMISATION DE LA PERFORMANCE
+# Règles par défaut pour tous les fichiers
 # ─────────────────────────────────────────────────────────────────────────────────
-
-[build.processing]
-  skip_processing = false
-
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = true
-  minify = true
-
-[build.processing.html]
-  pretty_urls = true
-
-[build.processing.images]
-  compress = true
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# REDIRECTIONS
+# HTML
 # ─────────────────────────────────────────────────────────────────────────────────
-
-# API Netlify Functions
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-
-# Redirection www vers non-www
-[[redirects]]
-  from = "https://www.vprr.fr/*"
-  to = "https://vprr.fr/:splat"
-  status = 301
-  force = true
-
-# Page 404 personnalisée
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
+[*.html]
+indent_size = 2
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# HEADERS DE SÉCURITÉ
+# CSS
 # ─────────────────────────────────────────────────────────────────────────────────
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    # Sécurité
-    X-Frame-Options = "SAMEORIGIN"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(self)"
-    
-    # HSTS (force HTTPS)
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+[*.css]
+indent_size = 2
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# CACHE DES ASSETS STATIQUES
+# JavaScript
 # ─────────────────────────────────────────────────────────────────────────────────
-
-# Images - Cache long (1 an)
-[[headers]]
-  for = "/assets/img/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/media/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# CSS - Cache moyen (1 semaine)
-[[headers]]
-  for = "/assets/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-# JavaScript - Cache moyen (1 semaine)
-[[headers]]
-  for = "/assets/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-# Fonts - Cache long (1 an)
-[[headers]]
-  for = "/assets/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Access-Control-Allow-Origin = "*"
-
-# Favicon - Cache long (1 an)
-[[headers]]
-  for = "/media/favicon/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[*.js]
+indent_size = 2
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# FICHIERS SEO ET ROBOTS
+# JSON
 # ─────────────────────────────────────────────────────────────────────────────────
-
-# robots.txt - Cache court (1 jour)
-[[headers]]
-  for = "/robots.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "text/plain; charset=utf-8"
-
-# sitemap.xml - Cache court (1 jour)
-[[headers]]
-  for = "/sitemap.xml"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "application/xml; charset=utf-8"
-
-# llms.txt - Cache court (1 jour)
-[[headers]]
-  for = "/llms.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "text/plain; charset=utf-8"
-
-# security.txt
-[[headers]]
-  for = "/.well-known/security.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "text/plain; charset=utf-8"
+[*.json]
+indent_size = 2
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# CONFIG JSON (pour le système de configuration)
+# Markdown
 # ─────────────────────────────────────────────────────────────────────────────────
-
-[[headers]]
-  for = "/data/config.json"
-  [headers.values]
-    Cache-Control = "no-cache, must-revalidate"
-    Content-Type = "application/json; charset=utf-8"
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# HTML - Pas de cache (toujours frais)
+# YAML
 # ─────────────────────────────────────────────────────────────────────────────────
+[*.{yml,yaml}]
+indent_size = 2
 
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "no-cache, must-revalidate"
-
-[[headers]]
-  for = "/"
-  [headers.values]
-    Cache-Control = "no-cache, must-revalidate"
+# ─────────────────────────────────────────────────────────────────────────────────
+# Fichiers de configuration Netlify
+# ─────────────────────────────────────────────────────────────────────────────────
+[netlify.toml]
+indent_size = 2

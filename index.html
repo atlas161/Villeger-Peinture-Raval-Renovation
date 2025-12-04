@@ -4,13 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <!-- Preload des ressources critiques -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
-    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <!-- Preconnect pour les ressources externes (priorité haute) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    
+    <!-- DNS Prefetch pour les ressources secondaires -->
     <link rel="dns-prefetch" href="https://elfsightcdn.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Preload des ressources critiques (above the fold) -->
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="preload" href="assets/css/hero.css" as="style" />
+    <link rel="preload" href="assets/css/nav.css" as="style" />
+    <link rel="preload" href="media/VPRR-LOGO.png" as="image" />
+    <link rel="preload" href="assets/img/hero.jpg" as="image" fetchpriority="high" />
     
     <!-- Google Tag Manager -->
     <script>
@@ -36,6 +45,10 @@
     <meta name="geo.position" content="45.6667;0.1833" />
     <meta name="ICBM" content="45.6667, 0.1833" />
     
+    <!-- Métadonnées pour les IA et LLMs -->
+    <meta name="ai-content-declaration" content="human-created" />
+    <meta name="llms-txt" content="https://vprr.fr/llms.txt" />
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="VPRR - Villéger Peinture Raval Rénovation" />
@@ -55,19 +68,35 @@
     <meta name="twitter:image" content="https://vprr.fr/assets/img/hero.jpg" />
     <meta name="twitter:image:alt" content="VPRR - Rénovation à Angoulême" />
     
-    <!-- Feuilles de style CSS -->
+    <!-- CSS Critique (above the fold) - Chargement synchrone -->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
     <link rel="stylesheet" href="assets/css/hero.css" />
-    <link rel="stylesheet" href="assets/css/contact.css" />
-    <link rel="stylesheet" href="assets/css/cookies.css" />
-    <link rel="stylesheet" href="assets/css/faq.css" />
-    <link rel="stylesheet" href="assets/css/zone.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     
-    <!-- Leaflet CSS pour la carte -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- CSS Non-critique - Chargement asynchrone -->
+    <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/cookies.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/faq.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/zone.css" media="print" onload="this.media='all'" />
+    
+    <!-- Google Fonts avec display=swap pour éviter FOIT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    
+    <!-- Font Awesome - Chargement différé -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+    
+    <!-- Leaflet CSS - Chargé uniquement quand nécessaire -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'" />
+    
+    <!-- Fallback pour navigateurs sans JS -->
+    <noscript>
+      <link rel="stylesheet" href="assets/css/contact.css" />
+      <link rel="stylesheet" href="assets/css/cookies.css" />
+      <link rel="stylesheet" href="assets/css/faq.css" />
+      <link rel="stylesheet" href="assets/css/zone.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </noscript>
     
     <!-- Favicon - URLs absolues pour Google -->
     <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96" />
@@ -78,6 +107,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://vprr.fr/media/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="VPRR" />
     <link rel="manifest" href="https://vprr.fr/media/favicon/site.webmanifest" />
+    
+    <!-- Fichiers standards web -->
+    <link rel="author" href="/humans.txt" type="text/plain" />
     
     <!-- Schema.org WebSite pour sitelinks Google -->
     <script type="application/ld+json">
@@ -101,6 +133,52 @@
           },
           "query-input": "required name=search_term_string"
         }
+      }
+    </script>
+
+    <!-- Schema.org BreadcrumbList pour navigation structurée -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://vprr.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://vprr.fr/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Galerie",
+            "item": "https://vprr.fr/#galerie"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Zone d'intervention",
+            "item": "https://vprr.fr/#zone"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "FAQ",
+            "item": "https://vprr.fr/#faq"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Contact",
+            "item": "https://vprr.fr/#contact"
+          }
+        ]
       }
     </script>
 
@@ -208,7 +286,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Isolation thermique",
-                "description": "Isolation des combles, murs (ITI/ITE) et remplacement de fenêtres"
+                "description": "Isolation des combles, murs et remplacement de fenêtres"
               }
             },
             {
@@ -289,11 +367,16 @@
 
     <link rel="canonical" href="https://vprr.fr/" />
     
-    <!-- JavaScript principal -->
+    <!-- JavaScript critique (chargé en premier) -->
+    <script defer src="assets/js/performance.js"></script>
     <script defer src="assets/js/main.js"></script>
+    
+    <!-- JavaScript non-critique (chargé après) -->
+    <script defer src="assets/js/config-loader.js"></script>
+    <script defer src="assets/js/form-security.js"></script>
     <script defer src="assets/js/cookies.js"></script>
     
-    <!-- Leaflet JS pour la carte -->
+    <!-- Leaflet JS pour la carte (chargé en dernier) -->
     <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   </head>
   <body>
@@ -367,50 +450,62 @@
             <h2 id="services-title">Nos expertises en rénovation</h2>
             <p>Des solutions complètes pour le ravalement de façade, la peinture et l'isolation de votre habitat.</p>
           </header>
-          <div class="services-grid">
-            <article class="service-card">
+          <div class="services-grid" itemscope itemtype="https://schema.org/ItemList">
+            <article id="services-ravalement" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+              <meta itemprop="position" content="1" />
               <div class="service-icon"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i></div>
-              <h3>Ravalement & Façade</h3>
-              <p>Redonnez vie à vos façades : ravalement complet, nettoyage technique, peinture extérieure et traitements d'imperméabilisation.</p>
+              <h3 itemprop="name">Ravalement & Façade</h3>
+              <p itemprop="description">Redonnez vie à vos façades : ravalement complet, nettoyage technique, peinture extérieure et traitements d'imperméabilisation.</p>
               <ul class="service-details">
                 <li>Ravalement complet</li>
                 <li>Hydro-gommage & démoussage</li>
                 <li>Peinture extérieure</li>
                 <li>Traitement de l'humidité</li>
               </ul>
+              <meta itemprop="areaServed" content="Angoulême, Charente" />
+              <link itemprop="url" href="https://vprr.fr/#services-ravalement" />
             </article>
-            <article class="service-card">
+            <article id="services-toiture" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+              <meta itemprop="position" content="2" />
               <div class="service-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
-              <h3>Toiture & Couverture</h3>
-              <p>Protection et entretien de votre toiture : réfection, zinguerie, étanchéité et interventions d'urgence après intempéries.</p>
+              <h3 itemprop="name">Toiture & Couverture</h3>
+              <p itemprop="description">Protection et entretien de votre toiture : réfection, zinguerie, étanchéité et interventions d'urgence après intempéries.</p>
               <ul class="service-details">
                 <li>Entretien & démoussage</li>
                 <li>Réfection de toiture</li>
                 <li>Gouttières & zinguerie</li>
                 <li>Pose de Velux</li>
               </ul>
+              <meta itemprop="areaServed" content="Angoulême, Charente" />
+              <link itemprop="url" href="https://vprr.fr/#services-toiture" />
             </article>
-            <article class="service-card">
+            <article id="services-isolation" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+              <meta itemprop="position" content="3" />
               <div class="service-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-              <h3>Isolation & Performance Énergétique</h3>
-              <p>Améliorez votre confort et réduisez vos factures : isolation des combles, murs et remplacement d'huisseries.</p>
+              <h3 itemprop="name">Isolation & Performance Énergétique</h3>
+              <p itemprop="description">Améliorez votre confort et réduisez vos factures : isolation des combles, murs et remplacement d'huisseries.</p>
               <ul class="service-details">
                 <li>Isolation des combles</li>
-                <li>Isolation des murs (ITI/ITE)</li>
+                <li>Isolation des cloisons</li>
                 <li>Remplacement de fenêtres</li>
                 <li>Traitement de l'humidité</li>
               </ul>
+              <meta itemprop="areaServed" content="Angoulême, Charente" />
+              <link itemprop="url" href="https://vprr.fr/#services-isolation" />
             </article>
-            <article class="service-card">
+            <article id="services-renovation" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+              <meta itemprop="position" content="4" />
               <div class="service-icon"><i class="fa-solid fa-hammer" aria-hidden="true"></i></div>
-              <h3>Rénovation Intérieure & Aménagement</h3>
-              <p>Transformez votre intérieur : peinture, plâtrerie, sols, cuisines et salles de bains. Du sol au plafond.</p>
+              <h3 itemprop="name">Rénovation Intérieure & Aménagement</h3>
+              <p itemprop="description">Transformez votre intérieur : peinture, plâtrerie, sols, cuisines et salles de bains. Du sol au plafond.</p>
               <ul class="service-details">
                 <li>Peinture intérieure</li>
                 <li>Plâtrerie & cloisons</li>
                 <li>Carrelage & parquet</li>
                 <li>Rénovation pièces d'eau</li>
               </ul>
+              <meta itemprop="areaServed" content="Angoulême, Charente" />
+              <link itemprop="url" href="https://vprr.fr/#services-renovation" />
             </article>
           </div>
         </div>
@@ -532,8 +627,14 @@
             <p>Une question, un devis ? Contactez-nous et recevez une réponse personnalisée.</p>
           </header>
           <div class="contact-panel">
-            <form class="contact-form" name="contact" method="POST" data-netlify="true">
+            <form class="contact-form" name="contact" method="POST" action="/merci.html" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
               <input type="hidden" name="form-name" value="contact" />
+              <!-- Honeypot anti-bot (champ invisible pour les humains) -->
+              <p class="visually-hidden" aria-hidden="true">
+                <label>Ne pas remplir si vous êtes humain: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+              </p>
+              <!-- Timestamp anti-bot (détecte les soumissions trop rapides) -->
+              <input type="hidden" name="form-timestamp" id="form-timestamp" value="" />
               <div class="contact-form-row">
                 <div class="form-field">
                   <label for="contact-nom">Nom</label>

@@ -1,163 +1,91 @@
 # ═══════════════════════════════════════════════════════════════════════════════
-# NETLIFY.TOML - Configuration de déploiement VPRR
+# GITIGNORE - VPRR Site Web
 # ═══════════════════════════════════════════════════════════════════════════════
 
-[build]
-  publish = "."
+# ─────────────────────────────────────────────────────────────────────────────────
+# Système d'exploitation
+# ─────────────────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# OPTIMISATION DE LA PERFORMANCE
+# Éditeurs et IDE
 # ─────────────────────────────────────────────────────────────────────────────────
-
-[build.processing]
-  skip_processing = false
-
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = true
-  minify = true
-
-[build.processing.html]
-  pretty_urls = true
-
-[build.processing.images]
-  compress = true
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# REDIRECTIONS
+# Node.js (si utilisé pour des outils de build)
 # ─────────────────────────────────────────────────────────────────────────────────
-
-# API Netlify Functions
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-
-# Redirection www vers non-www
-[[redirects]]
-  from = "https://www.vprr.fr/*"
-  to = "https://vprr.fr/:splat"
-  status = 301
-  force = true
-
-# Page 404 personnalisée
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# HEADERS DE SÉCURITÉ
+# Build et cache
 # ─────────────────────────────────────────────────────────────────────────────────
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    # Sécurité
-    X-Frame-Options = "SAMEORIGIN"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(self)"
-    
-    # HSTS (force HTTPS)
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+dist/
+build/
+.cache/
+.parcel-cache/
+.temp/
+.tmp/
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# CACHE DES ASSETS STATIQUES
+# Environnement et secrets
 # ─────────────────────────────────────────────────────────────────────────────────
-
-# Images - Cache long (1 an)
-[[headers]]
-  for = "/assets/img/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/media/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# CSS - Cache moyen (1 semaine)
-[[headers]]
-  for = "/assets/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-# JavaScript - Cache moyen (1 semaine)
-[[headers]]
-  for = "/assets/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
-
-# Fonts - Cache long (1 an)
-[[headers]]
-  for = "/assets/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Access-Control-Allow-Origin = "*"
-
-# Favicon - Cache long (1 an)
-[[headers]]
-  for = "/media/favicon/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+.env
+.env.local
+.env.*.local
+*.env
+.secrets
+*.pem
+*.key
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# FICHIERS SEO ET ROBOTS
+# Logs
 # ─────────────────────────────────────────────────────────────────────────────────
-
-# robots.txt - Cache court (1 jour)
-[[headers]]
-  for = "/robots.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "text/plain; charset=utf-8"
-
-# sitemap.xml - Cache court (1 jour)
-[[headers]]
-  for = "/sitemap.xml"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "application/xml; charset=utf-8"
-
-# llms.txt - Cache court (1 jour)
-[[headers]]
-  for = "/llms.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "text/plain; charset=utf-8"
-
-# security.txt
-[[headers]]
-  for = "/.well-known/security.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-    Content-Type = "text/plain; charset=utf-8"
+logs/
+*.log
+npm-debug.log*
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# CONFIG JSON (pour le système de configuration)
+# Fichiers temporaires et backups
 # ─────────────────────────────────────────────────────────────────────────────────
-
-[[headers]]
-  for = "/data/config.json"
-  [headers.values]
-    Cache-Control = "no-cache, must-revalidate"
-    Content-Type = "application/json; charset=utf-8"
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*~
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# HTML - Pas de cache (toujours frais)
+# Fichiers de test et développement
 # ─────────────────────────────────────────────────────────────────────────────────
+test-results/
+coverage/
+.nyc_output/
 
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "no-cache, must-revalidate"
+# ─────────────────────────────────────────────────────────────────────────────────
+# Netlify
+# ─────────────────────────────────────────────────────────────────────────────────
+.netlify/
 
-[[headers]]
-  for = "/"
-  [headers.values]
-    Cache-Control = "no-cache, must-revalidate"
+# ─────────────────────────────────────────────────────────────────────────────────
+# Fichiers spécifiques au projet à ignorer
+# ─────────────────────────────────────────────────────────────────────────────────
+# Rien pour l'instant

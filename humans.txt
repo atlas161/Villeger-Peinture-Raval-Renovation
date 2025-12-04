@@ -1,0 +1,31 @@
+/* TEAM */
+Artisan: Stéphane Villéger
+Role: Fondateur & Artisan Peintre
+Location: L'Isle-d'Espagnac, Charente, France
+
+/* SITE */
+Name: VPRR - Villéger Peinture Raval Rénovation
+URL: https://vprr.fr
+Description: Expert en rénovation extérieure et intérieure à Angoulême
+Services: Ravalement, Peinture, Isolation, Rénovation
+Location: Charente (16), Nouvelle-Aquitaine, France
+
+/* THANKS */
+Fonts: Inter (Google Fonts)
+Icons: Font Awesome
+Maps: Leaflet + OpenStreetMap
+Hosting: Netlify
+Instagram Widget: Elfsight
+
+/* TECHNOLOGY */
+HTML5, CSS3, JavaScript (Vanilla)
+No framework, pure performance
+Static site, blazing fast
+
+/* CONTACT */
+Email: villergerstephane204@gmail.com
+Phone: +33 6 59 26 86 23
+Instagram: @peinture_raval_renovation
+
+/* LAST UPDATE */
+2025-12-04

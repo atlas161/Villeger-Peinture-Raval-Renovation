@@ -1,0 +1,26 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECURITY.TXT - VPRR.FR
+# Standard RFC 9116 pour la divulgation responsable de vulnérabilités
+# https://securitytxt.org/
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# Contact pour signaler une vulnérabilité de sécurité
+Contact: mailto:villergerstephane204@gmail.com
+Contact: https://vprr.fr/#contact
+
+# Langue préférée pour les communications
+Preferred-Languages: fr, en
+
+# Date d'expiration de ce fichier (à renouveler chaque année)
+Expires: 2026-12-31T23:59:59.000Z
+
+# Lien vers la politique de sécurité (optionnel)
+# Policy: https://vprr.fr/securite
+
+# Remerciements aux chercheurs en sécurité (optionnel)
+# Acknowledgments: https://vprr.fr/remerciements-securite
+
+# Informations sur le site
+# Site: https://vprr.fr
+# Entreprise: Villéger Peinture Raval Rénovation
+# Localisation: L'Isle-d'Espagnac, Charente (16), France
