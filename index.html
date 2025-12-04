@@ -21,23 +21,10 @@
     <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
     <link rel="preload" href="data/hero-800w.webp" as="image" type="image/webp" fetchpriority="high" />
     
-    <!-- Google Tag Manager - Chargé après interaction utilisateur pour performance -->
+    <!-- Google Tag Manager - Chargé uniquement après consentement cookies (voir cookies.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function loadGTM() {
-        if (window.gtmLoaded) return;
-        window.gtmLoaded = true;
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NKPGDBPG';
-        document.head.appendChild(s);
-        dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-      }
-      // Charger GTM après interaction ou après 3 secondes
-      ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(e) {
-        window.addEventListener(e, loadGTM, {once: true, passive: true});
-      });
-      setTimeout(loadGTM, 3000);
+      window.GTM_ID = 'GTM-NKPGDBPG';
     </script>
     
     <!-- Métadonnées de base pour le SEO et l'affichage du site -->
@@ -386,10 +373,21 @@
     <script defer src="assets/js/form-security.js"></script>
     <script defer src="assets/js/cookies.js"></script>
     
-    <!-- Leaflet JS - Chargé uniquement quand la section zone est visible -->
+    <!-- Scripts tiers - Chargés en lazy-load quand les sections deviennent visibles -->
     <script>
-      // Lazy load Leaflet quand la section zone devient visible
       if ('IntersectionObserver' in window) {
+        // Lazy load Elfsight (Galerie Instagram)
+        var galerieObserver = new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) {
+            var s = document.createElement('script');
+            s.src = 'https://elfsightcdn.com/platform.js';
+            s.async = true;
+            document.head.appendChild(s);
+            galerieObserver.disconnect();
+          }
+        }, {rootMargin: '300px'});
+        
+        // Lazy load Leaflet (Carte zone)
         var zoneObserver = new IntersectionObserver(function(entries) {
           if (entries[0].isIntersecting) {
             var s = document.createElement('script');
@@ -400,8 +398,11 @@
             zoneObserver.disconnect();
           }
         }, {rootMargin: '200px'});
+        
         document.addEventListener('DOMContentLoaded', function() {
+          var galerie = document.getElementById('galerie');
           var zone = document.getElementById('zone');
+          if (galerie) galerieObserver.observe(galerie);
           if (zone) zoneObserver.observe(zone);
         });
       }
@@ -557,7 +558,7 @@
             <h2 id="galerie-title">Nos réalisations</h2>
             <p>Découvrez nos derniers projets de ravalement, peinture et rénovation.</p>
           </header>
-          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <!-- Elfsight chargé en lazy-load quand la galerie devient visible -->
           <div class="elfsight-app-aecb5ffb-c6a1-47d1-806c-c203539d710c" data-elfsight-app-lazy></div>
           <div id="ig-feed"></div>
         </div>
