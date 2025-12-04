@@ -1,7 +1,6 @@
 /**
  * Script d'optimisation de l'image hero
  * Crée des versions responsives pour différentes tailles d'écran
- * Basé sur les dimensions réelles d'affichage de PageSpeed Insights
  */
 
 const sharp = require('sharp');
@@ -11,12 +10,11 @@ const fs = require('fs');
 const inputPath = path.join(__dirname, '..', 'data', 'hero.webp');
 const outputDir = path.join(__dirname, '..', 'data');
 
-// Tailles responsives basées sur les dimensions réelles d'affichage
-// Mobile: 382x255, Tablet: ~600px, Desktop: 779x520
+// Tailles responsives (largeur en pixels)
 const sizes = [
-  { width: 400, suffix: '-400w', quality: 75 },   // Mobile (382px affiché)
-  { width: 600, suffix: '-600w', quality: 75 },   // Tablet small
-  { width: 800, suffix: '-800w', quality: 75 },   // Desktop (779px affiché)
+  { width: 400, suffix: '-400w' },   // Mobile
+  { width: 800, suffix: '-800w' },   // Tablet
+  { width: 1200, suffix: '-1200w' }, // Desktop
 ];
 
 async function optimizeHero() {
@@ -42,9 +40,8 @@ async function optimizeHero() {
         fit: 'inside'
       })
       .webp({ 
-        quality: size.quality,
-        effort: 6,
-        smartSubsample: true
+        quality: 80,
+        effort: 6 
       })
       .toFile(outputPath);
     
@@ -52,25 +49,20 @@ async function optimizeHero() {
     console.log(`✅ hero${size.suffix}.webp: ${(newSize / 1024).toFixed(0)} KB`);
   }
 
-  // Version principale (800w = desktop standard)
-  const mainPath = path.join(outputDir, 'hero.webp');
-  // Backup de l'original si nécessaire
-  const backupPath = path.join(outputDir, 'hero-original.webp');
-  if (!fs.existsSync(backupPath)) {
-    fs.copyFileSync(inputPath, backupPath);
-    console.log(`\n💾 Backup créé: hero-original.webp`);
-  }
-  
-  // Remplacer hero.webp par la version 800w optimisée
+  // Créer aussi une version optimisée de l'original (compressée)
+  const optimizedPath = path.join(outputDir, 'hero-optimized.webp');
   await sharp(inputPath)
-    .resize(800, null, { withoutEnlargement: true })
-    .webp({ quality: 75, effort: 6, smartSubsample: true })
-    .toFile(mainPath);
+    .resize(1200, null, { withoutEnlargement: true })
+    .webp({ quality: 80, effort: 6 })
+    .toFile(optimizedPath);
   
-  const mainSize = fs.statSync(mainPath).size;
-  console.log(`\n🎯 hero.webp (principal): ${(mainSize / 1024).toFixed(0)} KB`);
+  const optimizedSize = fs.statSync(optimizedPath).size;
+  console.log(`\n🎯 hero-optimized.webp (principal): ${(optimizedSize / 1024).toFixed(0)} KB`);
   
   console.log('\n✨ Optimisation terminée!');
+  console.log('\n📝 Prochaines étapes:');
+  console.log('   1. Remplacer data/hero.webp par data/hero-optimized.webp');
+  console.log('   2. Ou utiliser les versions responsives avec srcset');
 }
 
 optimizeHero().catch(console.error);

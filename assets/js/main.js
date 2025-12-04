@@ -4,6 +4,13 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+<<<<<<< HEAD
+=======
+  const preloader = document.getElementById('preloader');
+  const bar = preloader ? preloader.querySelector('.progress .fill') : null;
+  if (bar) bar.style.width = '40%';
+  
+>>>>>>> parent of 3a914d6 (update)
   // --- GESTION DE LA NAVIGATION ---
   const burger = document.querySelector(".burger");
   const nav = document.querySelector(".primary-nav");
@@ -99,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .filter(x => !!x.el);
 
   const observeSections = () => {
+<<<<<<< HEAD
     let sectionPositions = [];
     let lastActiveHref = null;
     let cachedViewportHeight = window.innerHeight;
@@ -131,28 +139,62 @@ document.addEventListener("DOMContentLoaded", () => {
         if (scrollPosition >= section.top && scrollPosition < section.bottom) {
           currentSection = section.a;
           break;
-        }
-      }
+=======
+    // Utilisation d'un système de scroll basé sur la position pour plus de fiabilité
+    const onScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3; // Point de référence à 1/3 de l'écran
+      let currentSection = null;
       
+      targets.forEach(({ a, el }) => {
+        const rect = el.getBoundingClientRect();
+        const elementTop = rect.top + window.scrollY;
+        const elementBottom = elementTop + rect.height;
+        
+        // Vérifier si la position de scroll est dans cette section
+        if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+          currentSection = a;
+>>>>>>> parent of 3a914d6 (update)
+        }
+      });
+      
+<<<<<<< HEAD
       if (!currentSection && sectionPositions.length > 0) {
+=======
+      // Si aucune section n'est trouvée, prendre la plus proche
+      if (!currentSection) {
+        let best = null;
+>>>>>>> parent of 3a914d6 (update)
         let bestDistance = Infinity;
-        for (const section of sectionPositions) {
-          const distance = Math.abs(scrollPosition - section.top);
+        
+        targets.forEach(({ a, el }) => {
+          const rect = el.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const distance = Math.abs(scrollPosition - elementTop);
+          
           if (distance < bestDistance) {
             bestDistance = distance;
-            currentSection = section.a;
+            best = a;
           }
-        }
+        });
+        
+        currentSection = best;
       }
       
       if (currentSection) {
+        setActive(currentSection);
+        // Mise à jour de l'URL sans rechargement
         const href = currentSection.getAttribute('href');
+<<<<<<< HEAD
         if (href !== lastActiveHref) {
           lastActiveHref = href;
           setActive(currentSection);
           if (history.replaceState && href) {
             history.replaceState(null, null, href);
           }
+=======
+        if (history.replaceState && href) {
+          history.replaceState(null, null, href);
+>>>>>>> parent of 3a914d6 (update)
         }
       }
     };
@@ -168,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
     
+<<<<<<< HEAD
     let resizeTimeout;
     const onResize = () => {
       clearTimeout(resizeTimeout);
@@ -180,6 +223,11 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(() => {
       requestAnimationFrame(onScroll);
     });
+=======
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    window.addEventListener('resize', throttledScroll, { passive: true });
+    onScroll(); // Appel initial
+>>>>>>> parent of 3a914d6 (update)
   };
 
   requestAnimationFrame(observeSections);
