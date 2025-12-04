@@ -295,36 +295,33 @@ document.addEventListener("DOMContentLoaded", () => {
       opacity: 0.6
     }).addTo(map);
 
-    // Chargement des contours précis de la Charente depuis GitHub
-    fetch('https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson')
-      .then(response => response.json())
+    // Chargement des contours précis de la Charente depuis le fichier local
+    fetch('data/charente.geojson')
+      .then(response => {
+        if (!response.ok) throw new Error('Erreur réseau');
+        return response.json();
+      })
       .then(data => {
-        // Filtrer pour obtenir uniquement la Charente (code 16)
-        const charenteFeature = data.features.find(feature => 
-          feature.properties.code === '16' || feature.properties.nom === 'Charente'
-        );
+        // Ajouter les contours de la Charente avec style marron
+        // Le fichier local contient déjà uniquement la Charente
+        L.geoJSON(data, {
+          style: {
+            color: '#673A12',
+            weight: 3,
+            opacity: 0.9,
+            fillColor: '#A88B5E',
+            fillOpacity: 0.15,
+            lineCap: 'round',
+            lineJoin: 'round'
+          }
+        }).addTo(map);
         
-        if (charenteFeature) {
-          // Ajouter les contours de la Charente avec style marron
-          L.geoJSON(charenteFeature, {
-            style: {
-              color: '#673A12',
-              weight: 3,
-              opacity: 0.9,
-              fillColor: '#A88B5E',
-              fillOpacity: 0.15,
-              lineCap: 'round',
-              lineJoin: 'round'
-            }
-          }).addTo(map);
-          
-          // Ajuster la vue sur la Charente
-          const charenteLayer = L.geoJSON(charenteFeature);
-          map.fitBounds(charenteLayer.getBounds(), { padding: [20, 20] });
-        }
+        // Ajuster la vue sur la Charente
+        const charenteLayer = L.geoJSON(data);
+        map.fitBounds(charenteLayer.getBounds(), { padding: [20, 20] });
       })
       .catch(error => {
-        console.warn('Impossible de charger les contours de la Charente:', error);
+        console.warn('Impossible de charger les contours de la Charente (local):', error);
         // Fallback avec contours approximatifs
         const charenteBounds = [
           [46.1500, 0.1833], [46.1333, 0.3667], [46.0167, 0.4500], [45.9833, 0.6333],
