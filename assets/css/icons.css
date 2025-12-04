@@ -52,9 +52,6 @@
    =================================================================== */
 
 /* Services */
-.fa-house::before { content: "\f015"; }
-.fa-brush::before { content: "\f55d"; }
-.fa-temperature-low::before { content: "\f76b"; }
 .fa-paint-roller::before { content: "\f5aa"; }
 .fa-house-chimney::before { content: "\e3af"; }
 .fa-leaf::before { content: "\f06c"; }
@@ -62,7 +59,6 @@
 
 /* Zone */
 .fa-location-dot::before { content: "\f3c5"; }
-.fa-map::before { content: "\f279"; }
 .fa-map-marker-alt::before { content: "\f3c5"; }
 .fa-arrow-right::before { content: "\f061"; }
 .fa-circle-info::before { content: "\f05a"; }
