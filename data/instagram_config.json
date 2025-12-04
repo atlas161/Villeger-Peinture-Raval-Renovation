@@ -1,8 +1,0 @@
-{
-  "enabled": true,
-  "limit": 6,
-  "order": "desc",
-  "hashtags": [],
-  "media_types": ["IMAGE", "CAROUSEL_ALBUM", "VIDEO"],
-  "selected_ids": []
-}

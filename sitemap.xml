@@ -17,15 +17,15 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://vprr.fr/assets/img/hero.jpg</image:loc>
+      <image:loc>https://vprr.fr/data/hero.webp</image:loc>
       <image:title>Ravalement de façade et rénovation à Angoulême - VPRR</image:title>
       <image:caption>Villéger Peinture Raval Rénovation - Experts en ravalement, peinture et isolation en Charente</image:caption>
       <image:geo_location>Angoulême, Charente, France</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://vprr.fr/media/VPRR-LOGO.png</image:loc>
+      <image:loc>https://vprr.fr/media/VPRR-LOGO.svg</image:loc>
       <image:title>Logo VPRR - Villéger Peinture Raval Rénovation</image:title>
-      <image:caption>Logo officiel de l'entreprise VPRR basée à Angoulême</image:caption>
+      <image:caption>Logo officiel de l'entreprise VPRR basée à L'Isle-d'Espagnac</image:caption>
     </image:image>
   </url>
   

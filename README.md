@@ -30,14 +30,15 @@ vprr.fr/
 │   ├── 📁 js/                 # Scripts JavaScript
 │   │   ├── main.js            # Script principal
 │   │   ├── config-loader.js   # Chargeur de configuration
-│   │   ├── contact.js         # Formulaire de contact
+│   │   ├── form-security.js   # Sécurité formulaire anti-spam
+│   │   ├── performance.js     # Optimisations de performance
 │   │   └── cookies.js         # Gestion des cookies
 │   │
 │   ├── 📁 img/                # Images du site
 │   └── 📁 fonts/              # Polices personnalisées
 │
 ├── 📁 media/                  # Médias de l'entreprise
-│   ├── VPRR-LOGO.png          # Logo principal
+│   ├── VPRR-LOGO.svg          # Logo principal (vectoriel)
 │   └── 📁 favicon/            # Favicons
 │
 ├── 📁 data/                   # Données configurables

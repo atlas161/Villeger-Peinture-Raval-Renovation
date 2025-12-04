@@ -88,7 +88,7 @@
     "subtitle": "Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente. Nous donnons vie à vos projets de rénovation avec expertise et soin.",
 
     "_comment_image": "── Image de fond (mettre le fichier dans assets/img/) ──",
-    "image": "assets/img/hero.jpg",
+    "image": "data/hero.webp",
     "imageAlt": "Ravalement de façade et peinture à Angoulême — réalisations",
 
     "_comment_boutons": "── Boutons d'action ──",

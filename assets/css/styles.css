@@ -3,6 +3,21 @@
    =================================================================== */
 
 /* ===================================================================
+   0. FONT-FACE AVEC FALLBACK METRICS (évite CLS)
+   =================================================================== */
+
+/* Fallback font avec métriques ajustées pour Inter */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  font-display: swap;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 107%;
+}
+
+/* ===================================================================
    1. VARIABLES & TOKENS
    =================================================================== */
 
@@ -55,8 +70,8 @@
   --container-narrow: 800px;
   --header-height: 72px;
 
-  /* Typographie */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  /* Typographie avec fallback optimisé */
+  --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
