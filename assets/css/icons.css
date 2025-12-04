@@ -54,6 +54,9 @@
 /* Services */
 .fa-paint-roller::before { content: "\f5aa"; }
 .fa-house-chimney::before { content: "\e3af"; }
+.fa-house::before { content: "\f015"; }
+.fa-brush::before { content: "\f55d"; }
+.fa-temperature-low::before { content: "\f76b"; }
 .fa-leaf::before { content: "\f06c"; }
 .fa-hammer::before { content: "\f6e3"; }
 
