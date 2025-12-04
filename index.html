@@ -1,782 +1,190 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NKPGDBPG');
+    </script>
+    <!-- Métadonnées de base -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- Preconnect pour les ressources externes (priorité haute) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    
-    <!-- DNS Prefetch pour les ressources secondaires -->
-    <link rel="dns-prefetch" href="https://elfsightcdn.com" />
-    <link rel="dns-prefetch" href="https://unpkg.com" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    
-    <!-- Preload des ressources critiques (above the fold) -->
-    <link rel="preload" href="assets/css/styles.css" as="style" />
-    <link rel="preload" href="assets/css/hero.css" as="style" />
-    <link rel="preload" href="assets/css/nav.css" as="style" />
-    <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
-    <link rel="preload" href="data/hero-600w.webp" as="image" type="image/webp" fetchpriority="high" />
-    
-    <!-- Google Tag Manager - Chargé uniquement après consentement cookies (voir cookies.js) -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      window.GTM_ID = 'GTM-NKPGDBPG';
-    </script>
-    
-    <!-- Métadonnées de base pour le SEO et l'affichage du site -->
-    <title>Rénovation à Angoulême | Villéger Peinture · Ravalement · Isolation</title>
-    <meta name="description" content="Expert en rénovation extérieure et intérieure à Angoulême. Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente. Devis gratuit." />
-    <meta name="keywords" content="ravalement façade Angoulême, peintre Angoulême, isolation thermique Charente, rénovation maison 16, façadier L'Isle-d'Espagnac, peinture intérieure extérieure, hydro-gommage, VPRR" />
-    <meta name="author" content="Villéger Peinture Raval Rénovation" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-image-preview:large" />
-    <meta name="bingbot" content="index, follow" />
+    <title>VillégerPeintureRavalRénovation | Peinture · Ravalement · Isolation</title>
+    <meta name="description" content="Experts en rénovation de façade, peinture et isolation. Devis rapide et gratuit." />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#673A12" />
-    <meta name="msapplication-TileColor" content="#673A12" />
-    <meta name="geo.region" content="FR-16" />
-    <meta name="geo.placename" content="L'Isle-d'Espagnac, Angoulême" />
-    <meta name="geo.position" content="45.6667;0.1833" />
-    <meta name="ICBM" content="45.6667, 0.1833" />
-    
-    <!-- Métadonnées pour les IA et LLMs -->
-    <meta name="ai-content-declaration" content="human-created" />
-    <meta name="llms-txt" content="https://vprr.fr/llms.txt" />
-    
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="VPRR - Villéger Peinture Raval Rénovation" />
-    <meta property="og:title" content="Rénovation à Angoulême | Villéger Peinture · Ravalement · Isolation" />
-    <meta property="og:description" content="Expert en rénovation extérieure et intérieure à Angoulême. Spécialistes du ravalement de façade, de la peinture et de l'isolation en Charente. Devis gratuit." />
+    <meta property="og:title" content="Peinture · Ravalement · Isolation | PeintureRavalRénovation" />
+    <meta property="og:description" content="Entreprise spécialisée en ravalement de façade, peinture intérieure/extérieure et isolation." />
     <meta property="og:url" content="https://vprr.fr/" />
-    <meta property="og:image" content="https://vprr.fr/data/hero.webp" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="VPRR - Ravalement de façade et rénovation à Angoulême" />
-    <meta property="og:locale" content="fr_FR" />
-    
-    <!-- Twitter Card -->
+    <meta property="og:image" content="https://vprr.fr/assets/img/hero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Rénovation à Angoulême | VPRR - Peinture · Ravalement · Isolation" />
-    <meta name="twitter:description" content="Expert en ravalement de façade, peinture et isolation à Angoulême. Devis gratuit." />
-    <meta name="twitter:image" content="https://vprr.fr/data/hero.webp" />
-    <meta name="twitter:image:alt" content="VPRR - Rénovation à Angoulême" />
+    <meta name="twitter:title" content="PeintureRavalRénovation" />
+    <meta name="twitter:description" content="Ravalement, peinture, isolation — devis gratuit." />
+    <meta name="twitter:image" content="https://vprr.fr/assets/img/hero.jpg" />
+
     
-    <!-- CSS Critique (above the fold) - Chargement synchrone -->
+    <!-- Feuille de style principale -->
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/nav.css" />
     <link rel="stylesheet" href="assets/css/hero.css" />
-    
-    <!-- CSS Non-critique - Chargement asynchrone -->
-    <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/cookies.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/faq.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/zone.css" media="print" onload="this.media='all'" />
-    
-    <!-- Google Fonts avec display=swap pour éviter FOIT -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    
-    <!-- Font Awesome - Subset personnalisé (uniquement icônes utilisées) -->
-    <link rel="stylesheet" href="assets/css/icons.css" media="print" onload="this.media='all'" />
-    
-    <!-- Leaflet CSS - Chargé uniquement quand nécessaire -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'" />
-    
-    <!-- Fallback pour navigateurs sans JS -->
-    <noscript>
-      <link rel="stylesheet" href="assets/css/contact.css" />
-      <link rel="stylesheet" href="assets/css/cookies.css" />
-      <link rel="stylesheet" href="assets/css/faq.css" />
-      <link rel="stylesheet" href="assets/css/zone.css" />
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    </noscript>
-    
-    <!-- Favicon - URLs absolues pour Google -->
-    <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="16x16" />
-    <link rel="icon" type="image/svg+xml" href="https://vprr.fr/media/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="https://vprr.fr/media/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://vprr.fr/media/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="VPRR" />
-    <link rel="manifest" href="https://vprr.fr/media/favicon/site.webmanifest" />
-    
-    <!-- Fichiers standards web -->
-    <link rel="author" href="/humans.txt" type="text/plain" />
-    
-    <!-- Schema.org WebSite pour sitelinks Google -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://vprr.fr/#website",
-        "name": "VPRR - Villéger Peinture Raval Rénovation",
-        "alternateName": ["VPRR", "Villéger Peinture", "Peinture Raval Rénovation"],
-        "url": "https://vprr.fr/",
-        "description": "Experts en ravalement de façade, peinture et isolation à Angoulême et en Charente. Devis gratuit.",
-        "inLanguage": "fr-FR",
-        "publisher": {
-          "@id": "https://vprr.fr/#business"
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://vprr.fr/?s={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-
-    <!-- Schema.org BreadcrumbList pour navigation structurée -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://vprr.fr/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://vprr.fr/#services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Galerie",
-            "item": "https://vprr.fr/#galerie"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Zone d'intervention",
-            "item": "https://vprr.fr/#zone"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "FAQ",
-            "item": "https://vprr.fr/#faq"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Contact",
-            "item": "https://vprr.fr/#contact"
-          }
-        ]
-      }
-    </script>
-
-    <!-- Schema.org SiteNavigationElement pour sitelinks -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "SiteNavigationElement",
-            "@id": "https://vprr.fr/#nav-services",
-            "name": "Nos Services",
-            "description": "Ravalement de façade, peinture intérieure et extérieure, isolation thermique, rénovation",
-            "url": "https://vprr.fr/#services"
-          },
-          {
-            "@type": "SiteNavigationElement",
-            "@id": "https://vprr.fr/#nav-contact",
-            "name": "Contact",
-            "description": "Demandez un devis gratuit pour vos travaux de rénovation à Angoulême",
-            "url": "https://vprr.fr/#contact"
-          },
-          {
-            "@type": "SiteNavigationElement",
-            "@id": "https://vprr.fr/#nav-galerie",
-            "name": "Galerie",
-            "description": "Découvrez nos réalisations en ravalement et peinture",
-            "url": "https://vprr.fr/#galerie"
-          },
-          {
-            "@type": "SiteNavigationElement",
-            "@id": "https://vprr.fr/#nav-zone",
-            "name": "Zone d'intervention",
-            "description": "Angoulême, L'Isle-d'Espagnac et toute la Charente",
-            "url": "https://vprr.fr/#zone"
-          },
-          {
-            "@type": "SiteNavigationElement",
-            "@id": "https://vprr.fr/#nav-faq",
-            "name": "FAQ",
-            "description": "Questions fréquentes sur nos services de rénovation",
-            "url": "https://vprr.fr/#faq"
-          }
-        ]
-      }
-    </script>
-
-    <!-- Schema.org LocalBusiness / HomeAndConstructionBusiness -->
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="/media/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/media/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/media/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PeintureRavalRénovation" />
+    <link rel="manifest" href="/media/favicon/site.webmanifest" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "HomeAndConstructionBusiness",
         "@id": "https://vprr.fr/#business",
         "name": "Villéger Peinture Raval Rénovation",
-        "alternateName": "VPRR",
         "url": "https://vprr.fr/",
-        "logo": "https://vprr.fr/media/VPRR-LOGO.svg",
-        "image": "https://vprr.fr/data/hero.webp",
         "email": "villergerstephane204@gmail.com",
-        "telephone": "+33659268623",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "136 Avenue de la République",
-          "addressLocality": "L'Isle-d'Espagnac",
-          "addressRegion": "Nouvelle-Aquitaine",
-          "postalCode": "16340",
-          "addressCountry": "FR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 45.6667,
-          "longitude": 0.1833
-        },
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 45.6500,
-            "longitude": 0.1500
-          },
-          "geoRadius": "50000"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Services de rénovation",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Ravalement de façade",
-                "description": "Ravalement complet, hydro-gommage, démoussage et peinture extérieure"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Peinture intérieure",
-                "description": "Peinture intérieure, plâtrerie et finitions"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Isolation thermique",
-                "description": "Isolation des combles, murs et remplacement de fenêtres"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Toiture et couverture",
-                "description": "Entretien, réfection de toiture, gouttières et zinguerie"
-              }
-            }
-          ]
-        },
+        "telephone": "+33 6 59 26 86 23",
+        "areaServed": "France",
         "sameAs": [
           "https://www.instagram.com/peinture_raval_renovation/"
         ],
-        "priceRange": "€€",
-        "paymentAccepted": ["Espèces", "Chèque", "Virement bancaire"],
-        "currenciesAccepted": "EUR",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:00",
-            "closes": "18:00"
-          }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "10",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
-      }
-    </script>
-    
-    <!-- Schema.org FAQ -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Faut-il une autorisation de la mairie pour refaire sa façade ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, une déclaration préalable de travaux (DP) est souvent nécessaire, surtout si l'aspect extérieur change. Nous pouvons vous accompagner dans la constitution du dossier pour garantir que votre projet respecte les règles d'urbanisme locales."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "L'hydro-gommage risque-t-il d'abîmer ma façade (pierre, brique) ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Au contraire, c'est la méthode la plus douce qui existe. L'hydro-gommage utilise un mélange d'eau et de poudre minérale projeté à basse pression. Cela permet de retirer la pollution, les graffitis ou les anciennes peintures sans altérer la surface ni la protection naturelle de la pierre."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Comment protégez-vous mon intérieur et mes meubles pendant les travaux ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nous bâchons systématiquement vos sols, vos meubles et vos fenêtres avant le moindre coup de pinceau. Nous nous engageons à laisser le chantier propre et rangé à la fin de chaque journée."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Êtes-vous assurés en cas de problème ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolument. Nous possédons une Garantie Décennale (qui couvre les gros ouvrages pendant 10 ans) ainsi qu'une Responsabilité Civile Professionnelle. Nos attestations d'assurance sont disponibles sur demande."
-            }
-          }
+        "serviceType": [
+          "Ravalement de façade",
+          "Peinture intérieure",
+          "Peinture extérieure",
+          "Isolation thermique"
         ]
       }
     </script>
 
-    <link rel="canonical" href="https://vprr.fr/" />
-    
-    <!-- JavaScript critique (chargé en premier) -->
-    <script defer src="assets/js/performance.js"></script>
+    <!-- JavaScript principal -->
     <script defer src="assets/js/main.js"></script>
-    
-    <!-- JavaScript non-critique (chargé après) -->
-    <script defer src="assets/js/config-loader.js"></script>
-    <script defer src="assets/js/form-security.js"></script>
-    <script defer src="assets/js/cookies.js"></script>
-    
-    <!-- Scripts tiers - Chargés en lazy-load quand les sections deviennent visibles -->
-    <script>
-      if ('IntersectionObserver' in window) {
-        // Lazy load Elfsight (Galerie Instagram)
-        var galerieObserver = new IntersectionObserver(function(entries) {
-          if (entries[0].isIntersecting) {
-            var s = document.createElement('script');
-            s.src = 'https://elfsightcdn.com/platform.js';
-            s.async = true;
-            document.head.appendChild(s);
-            galerieObserver.disconnect();
-          }
-        }, {rootMargin: '300px'});
-        
-        // Lazy load Leaflet (Carte zone)
-        var zoneObserver = new IntersectionObserver(function(entries) {
-          if (entries[0].isIntersecting) {
-            var s = document.createElement('script');
-            s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-            s.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
-            s.crossOrigin = '';
-            document.head.appendChild(s);
-            zoneObserver.disconnect();
-          }
-        }, {rootMargin: '200px'});
-        
-        document.addEventListener('DOMContentLoaded', function() {
-          var galerie = document.getElementById('galerie');
-          var zone = document.getElementById('zone');
-          if (galerie) galerieObserver.observe(galerie);
-          if (zone) zoneObserver.observe(zone);
-        });
-      }
-    </script>
   </head>
   <body>
-    <!-- Skip to content pour accessibilité -->
-    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
-    
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKPGDBPG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <!-- En-tête du site (contient le logo et la navigation) -->
+    <div id="preloader" class="preloader" aria-hidden="true">
+      <div class="preloader-inner">
+        <div class="spinner" aria-hidden="true"></div>
+        <div class="progress" aria-hidden="true"><div class="fill"></div></div>
+      </div>
+    </div>
+    <!-- En-tête sticky avec logo et navigation -->
     <header class="site-header" id="top">
       <div class="container header-inner">
-                <!-- Logo du site, cliquable pour revenir en haut -->
-        <a href="#top" class="logo" aria-label="RavalRenovation - Accueil"><img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villeger Peinture Raval Rénovation" width="150" height="40" /></a>
+        <!-- Logo placeholder -->
+        <a href="#top" class="logo" aria-label="RavalRenovation - Accueil"><img src="media/logo_stephanev3.png" class="logo-img" alt="Villéger Peinture Raval Rénovation" /></a>
 
-                <!-- Bouton 'Burger' pour afficher le menu sur les appareils mobiles -->
+        <!-- Bouton menu burger (mobile) -->
         <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
           <span class="burger-bar" aria-hidden="true"></span>
           <span class="burger-bar" aria-hidden="true"></span>
           <span class="burger-bar" aria-hidden="true"></span>
         </button>
 
-                <!-- Navigation principale du site -->
+        <!-- Navigation principale (Apple-like) -->
         <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
+          <!-- Liste de navigation Mobile First -->
           <ul class="menu">
-            <li><a class="nav-link" href="#home" data-nav="home">Accueil</a></li>
-            <li><a class="nav-link" href="#services" data-nav="services">Services</a></li>
-            <li><a class="nav-link" href="#galerie" data-nav="galerie">Galerie</a></li>
-            <li><a class="nav-link" href="#zone" data-nav="zone">Zone d'intervention</a></li>
-            <li><a class="nav-link" href="#faq" data-nav="faq">FAQ</a></li>
-            <li><a class="nav-link" href="#contact" data-nav="contact">Contact</a></li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="#top" data-nav="home">Accueil</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="#services" data-nav="services">Services</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="#galerie" data-nav="galerie">Galerie</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="#contact" data-nav="contact">Contact</a>
+            </li>
             <li class="menu-cta">
-              <a class="btn btn-primary" href="#contact">Obtenez un devis</a>
+              <a class="btn btn-primary" href="mailto:villergerstephane204@gmail.com">Obtenez un devis</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-        <!-- Contenu principal de la page -->
-    <main id="main-content">
-      <!-- Section 'Hero' : première section visible avec titre et appel à l'action -->
-      <section id="home" class="hero" aria-label="Haut de page">
-        <div class="hero-content">
-          <h1>Expert en rénovation extérieure et intérieure à Angoulême</h1>
-          <p>Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente. Nous donnons vie à vos projets de rénovation avec expertise et soin.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Demander un devis gratuit</a>
-            <a class="btn btn-secondary" href="#galerie">Voir nos réalisations</a>
-          </div>
+    <!-- Section Hero avec image de fond et CTA -->
+    <main>
+      <section class="hero" aria-label="Haut de page">
+        <div class="hero-content container">
+          <h1>Experts en rénovation<br>extérieur et intérieur</h1>
+          <a class="btn btn-primary" href="mailto:villergerstephane204@gmail.com">Obtenez un devis gratuit !</a>
         </div>
         <div class="hero-media" aria-hidden="true">
-          <picture>
-            <source 
-              type="image/webp"
-              srcset="data/hero-400w.webp 400w,
-                      data/hero-600w.webp 600w,
-                      data/hero-800w.webp 800w"
-              sizes="(max-width: 480px) 400px,
-                     (max-width: 768px) 600px,
-                     800px" />
-            <img src="assets/img/hero.jpg" alt="Ravalement de façade et peinture à Angoulême — réalisations" loading="eager" width="800" height="534" fetchpriority="high" decoding="async" />
-          </picture>
+          <a href="#galerie" aria-label="Voir la galerie">
+            <img src="assets/img/hero.jpg" alt="Ravalement de façade et peinture — réalisations" />
+          </a>
         </div>
       </section>
 
-            <!-- Séparateur visuel entre les sections -->
       <div class="section-divider" role="separator" aria-hidden="true"></div>
 
-            <!-- Section 'Services' : présentation des expertises -->
+      <!-- Section Services -->
       <section id="services" class="section" aria-labelledby="services-title">
         <div class="container">
-          <header class="section-header">
-            <p class="section-eyebrow">Services</p>
-            <h2 id="services-title">Nos expertises en rénovation</h2>
-            <p>Des solutions complètes pour le ravalement de façade, la peinture et l'isolation de votre habitat.</p>
-          </header>
-          <div class="services-grid" itemscope itemtype="https://schema.org/ItemList">
-            <article id="services-ravalement" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
-              <meta itemprop="position" content="1" />
-              <div class="service-icon"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Ravalement & Façade</h3>
-              <p itemprop="description">Redonnez vie à vos façades : ravalement complet, nettoyage technique, peinture extérieure et traitements d'imperméabilisation.</p>
-              <ul class="service-details">
-                <li>Ravalement complet</li>
-                <li>Hydro-gommage & démoussage</li>
-                <li>Peinture extérieure</li>
-                <li>Traitement de l'humidité</li>
-              </ul>
-              <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-ravalement" />
+          <h2 id="services-title">Nos expertises</h2>
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></div>
+              <h3>Ravalement</h3>
+              <p>Redonnez vie à vos façades en pierre : traitement complet, nettoyage soigné, protection durable et finitions détaillées.</p>
             </article>
-            <article id="services-toiture" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
-              <meta itemprop="position" content="2" />
-              <div class="service-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Toiture & Couverture</h3>
-              <p itemprop="description">Protection et entretien de votre toiture : réfection, zinguerie, étanchéité et interventions d'urgence après intempéries.</p>
-              <ul class="service-details">
-                <li>Entretien & démoussage</li>
-                <li>Réfection de toiture</li>
-                <li>Gouttières & zinguerie</li>
-                <li>Pose de Velux</li>
-              </ul>
-              <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-toiture" />
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-brush" aria-hidden="true"></i></div>
+              <h3>Peinture</h3>
+              <p>Intérieur et extérieur, conseils colorimétriques, finitions premium. Un rendu optimum qui dure dans le temps.</p>
             </article>
-            <article id="services-isolation" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
-              <meta itemprop="position" content="3" />
-              <div class="service-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Isolation & Performance Énergétique</h3>
-              <p itemprop="description">Améliorez votre confort et réduisez vos factures : isolation des combles, murs et remplacement d'huisseries.</p>
-              <ul class="service-details">
-                <li>Isolation des combles</li>
-                <li>Isolation des cloisons</li>
-                <li>Remplacement de fenêtres</li>
-                <li>Traitement de l'humidité</li>
-              </ul>
-              <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-isolation" />
-            </article>
-            <article id="services-renovation" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
-              <meta itemprop="position" content="4" />
-              <div class="service-icon"><i class="fa-solid fa-hammer" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Rénovation Intérieure & Aménagement</h3>
-              <p itemprop="description">Transformez votre intérieur : peinture, plâtrerie, sols, cuisines et salles de bains. Du sol au plafond.</p>
-              <ul class="service-details">
-                <li>Peinture intérieure</li>
-                <li>Plâtrerie & cloisons</li>
-                <li>Carrelage & parquet</li>
-                <li>Rénovation pièces d'eau</li>
-              </ul>
-              <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-renovation" />
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-temperature-low" aria-hidden="true"></i></div>
+              <h3>Isolation</h3>
+              <p>Réduisez vos dépenses et gagnez en confort, pour garder une bonne température ambiante.</p>
             </article>
           </div>
         </div>
       </section>
 
-            <!-- Section 'Galerie' : affiche les réalisations via un widget Instagram (Elfsight) -->
+      <!-- Section Galerie (EmbedSocial) -->
       <section id="galerie" class="section" aria-labelledby="galerie-title">
         <div class="container">
-          <header class="section-header">
-            <p class="section-eyebrow">Galerie</p>
-            <h2 id="galerie-title">Nos réalisations</h2>
-            <p>Découvrez nos derniers projets de ravalement, peinture et rénovation.</p>
-          </header>
-          <!-- Elfsight chargé en lazy-load quand la galerie devient visible -->
+          <h2 id="galerie-title">Nos réalisations</h2>
+          <script src="https://elfsightcdn.com/platform.js" async></script>
           <div class="elfsight-app-aecb5ffb-c6a1-47d1-806c-c203539d710c" data-elfsight-app-lazy></div>
           <div id="ig-feed"></div>
         </div>
       </section>
 
-            <!-- Section 'Zone d'intervention' : carte interactive -->
-      <section id="zone" class="section zone-section" aria-labelledby="zone-title">
-        <div class="container">
-          <header class="zone-header">
-            <p class="zone-eyebrow">Zone d'intervention</p>
-            <h2 id="zone-title">Nous intervenons en Charente</h2>
-            <p>Basés à L'Isle-d'Espagnac, nous couvrons Angoulême et toute la Charente pour vos projets de rénovation.</p>
-          </header>
-          
-          <div class="zone-content">
-            <div class="zone-map-container">
-              <div id="zone-map" class="zone-map" role="application" aria-label="Carte de la zone d'intervention"></div>
-            </div>
-            
-            <div class="zone-info">
-              <a href="https://www.google.com/maps/dir/?api=1&destination=136+Avenue+de+la+R%C3%A9publique,+16340+L'Isle-d'Espagnac" target="_blank" rel="noopener noreferrer" class="zone-address zone-address-link">
-                <div class="zone-info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
-                <div class="zone-info-content">
-                  <h3>Notre adresse</h3>
-                  <address>
-                    136 Avenue de la République<br>
-                    16340 L'Isle-d'Espagnac<br>
-                    Charente, France
-                  </address>
-                  <span class="zone-address-cta">Lancer l'itinéraire <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
-              </a>
-              
-              <div class="zone-cities">
-                <h3><i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i> Villes desservies</h3>
-                <ul class="zone-cities-list">
-                  <li>Angoulême</li>
-                  <li>L'Isle-d'Espagnac</li>
-                  <li>Soyaux</li>
-                  <li>Cognac</li>
-                  <li>Mornac</li>
-                  <li>La Couronne</li>
-                  <li>Fléac</li>
-                  <li>Saint-Michel</li>
-                  <li>Ruelle-sur-Touvre</li>
-                  <li>Rivières</li>
-                  <li>Champniers</li>
-                  <li>Magnac-sur-Touvre</li>
-                  <li>La Rochefoucauld</li>
-                  <li>Saint-Yrieix-sur-Charente</li>
-                </ul>
-              </div>
-              
-              <div class="zone-note">
-                <p><i class="fa-solid fa-circle-info" aria-hidden="true"></i> <strong>Autre localité ?</strong> Contactez-nous pour vérifier si nous intervenons dans votre secteur.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-            <!-- Section FAQ -->
-      <section id="faq" class="section" aria-labelledby="faq-title">
-        <div class="container">
-          <header class="section-header">
-            <p class="section-eyebrow">FAQ</p>
-            <h2 id="faq-title">Questions fréquentes</h2>
-            <p>Retrouvez les réponses aux questions les plus courantes sur nos services.</p>
-          </header>
-          <div class="faq-accordion">
-            <details class="faq-item">
-              <summary class="faq-question">Faut-il une autorisation de la mairie pour refaire sa façade ?</summary>
-              <div class="faq-answer">
-                <p>Oui, une déclaration préalable de travaux (DP) est souvent nécessaire, surtout si l'aspect extérieur change. C'est une démarche parfois complexe, mais ne vous inquiétez pas : <strong>nous pouvons vous accompagner dans la constitution du dossier</strong> pour garantir que votre projet respecte les règles d'urbanisme locales.</p>
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-question">L'hydro-gommage risque-t-il d'abîmer ma façade (pierre, brique) ?</summary>
-              <div class="faq-answer">
-                <p><strong>Au contraire, c'est la méthode la plus douce qui existe.</strong> Contrairement au sablage ou au nettoyage haute pression qui peuvent être agressifs, l'hydro-gommage utilise un mélange d'eau et de poudre minérale projeté à basse pression. Cela permet de retirer la pollution, les graffitis ou les anciennes peintures <em>sans altérer la surface ni la protection naturelle de la pierre</em>. C'est la technique idéale pour rénover sans dégrader.</p>
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-question">Comment protégez-vous mon intérieur et mes meubles pendant les travaux ?</summary>
-              <div class="faq-answer">
-                <p>La préparation et la protection sont aussi importantes que la peinture elle-même. <strong>Nous bâchons systématiquement</strong> vos sols, vos meubles et vos fenêtres avant le moindre coup de pinceau. Nous nous engageons à laisser le chantier propre et rangé à la fin de chaque journée.</p>
-              </div>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-question">Êtes-vous assurés en cas de problème ?</summary>
-              <div class="faq-answer">
-                <p><strong>Absolument. C'est une obligation légale et une sécurité pour vous.</strong> Nous possédons une Garantie Décennale (qui couvre les gros ouvrages pendant 10 ans) ainsi qu'une Responsabilité Civile Professionnelle. Nos attestations d'assurance sont à jour et disponibles sur simple demande avant le début du chantier.</p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-            <!-- Section 'Contact' : formulaire simplifié et informations de contact -->
+      <!-- Section Contact avec CTA externe -->
       <section id="contact" class="section" aria-labelledby="contact-title">
         <div class="container contact-inner">
-          <header class="contact-header">
-            <p class="contact-eyebrow">Contact</p>
-            <h2 id="contact-title">Parlons de votre projet</h2>
-            <p>Une question, un devis ? Contactez-nous et recevez une réponse personnalisée.</p>
-          </header>
-          <div class="contact-panel">
-            <form class="contact-form" name="contact" method="POST" action="/merci.html" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
-              <input type="hidden" name="form-name" value="contact" />
-              <!-- Honeypot anti-bot (champ invisible pour les humains) -->
-              <p class="visually-hidden" aria-hidden="true">
-                <label>Ne pas remplir si vous êtes humain: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-              </p>
-              <!-- Timestamp anti-bot (détecte les soumissions trop rapides) -->
-              <input type="hidden" name="form-timestamp" id="form-timestamp" value="" />
-              <div class="contact-form-row">
-                <div class="form-field">
-                  <label for="contact-nom">Nom</label>
-                  <input type="text" id="contact-nom" name="nom" placeholder="Votre nom" autocomplete="name" required />
-                </div>
-                <div class="form-field">
-                  <label for="contact-telephone">Téléphone</label>
-                  <input type="tel" id="contact-telephone" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel" required />
-                </div>
-              </div>
-              <div class="form-field">
-                <label for="contact-email">Email</label>
-                <input type="email" id="contact-email" name="email" placeholder="votre@email.com" autocomplete="email" required />
-              </div>
-              <div class="form-field">
-                <label for="contact-prestation">Type de projet</label>
-                <div class="apple-select" id="apple-select">
-                  <div class="apple-select-trigger">
-                    <span class="apple-select-value placeholder">Choisir un service</span>
-                    <i class="fa-solid fa-chevron-down apple-select-arrow"></i>
-                  </div>
-                  <div class="apple-select-dropdown">
-                    <div class="apple-select-option" data-value="ravalement">Ravalement de façade</div>
-                    <div class="apple-select-option" data-value="peinture">Peinture</div>
-                    <div class="apple-select-option" data-value="isolation">Isolation</div>
-                    <div class="apple-select-option" data-value="autre">Autre</div>
-                  </div>
-                  <input type="hidden" id="contact-prestation" name="prestation" required />
-                </div>
-              </div>
-              <div class="form-field">
-                <label for="contact-message">Votre message</label>
-                <textarea id="contact-message" name="message" placeholder="Décrivez brièvement votre projet..." rows="4" required></textarea>
-              </div>
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Envoyer</button>
-              </div>
-            </form>
-            <div class="contact-info">
-              <h3 class="contact-info-title">Contact direct</h3>
-              <ul class="contact-info-list">
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Téléphone</span>
-                    <a href="tel:+33659268623">06 59 26 86 23</a>
-                  </div>
-                </li>
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Email</span>
-                    <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a>
-                  </div>
-                </li>
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Instagram</span>
-                    <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" rel="noopener noreferrer">@peinture_raval_renovation</a>
-                  </div>
-                </li>
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Adresse</span>
-                    <p>136 Av. de la République, 16340 L'Isle d'Espagnac</p>
-                  </div>
-                </li>
-              </ul>
-              <!-- Section avis Google -->
-              <div class="google-reviews-section">
-                <h4 class="google-reviews-title">
-                  <i class="fa-brands fa-google" aria-hidden="true"></i>
-                  Votre avis nous aide beaucoup !
-                </h4>
-                <p class="google-reviews-text">
-                  Vous êtes satisfait de nos services ? Laissez-nous un avis sur Google.
-                </p>
-                <a href="https://g.page/r/CZZJ5Bogt13fEBM/review" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="btn btn-google-review">
-                  Laisser un avis Google
-                </a>
-              </div>
-            </div>
+          <figure class="contact-illustration">
+            <img src="media/image_contact.png" alt="Artisan sur chantier travaillant la pierre" loading="lazy" decoding="async" />
+          </figure>
+          <div class="contact-copy">
+            <h2 id="contact-title">Contactez-nous !</h2>
+            <p>Parlez-nous de votre projet : nous vous répondrons rapidement avec un devis clair et sans engagement.</p>
+            <a class="btn btn-primary" href="mailto:villergerstephane204@gmail.com">Contactez-nous</a>
           </div>
         </div>
       </section>
-
     </main>
 
-        <!-- Pied de page du site -->
+    <!-- Pied de page -->
     <footer class="site-footer" aria-label="Pied de page">
       <div class="container footer-grid">
         <div class="footer-col">
           <div class="logo">VillégerPeintureRavalRénovation</div>
-          <div class="copyright"> <span id="current-year">2025</span> VillégerPeintureRavalRénovation.<br>Tous droits réservés.</div>
+          <div class="copyright">© <span id="year"></span> VillégerPeintureRavalRénovation.<br>Tous droits réservés.</div>
         </div>
         <div class="footer-col">
           <h3>Liens rapides</h3>
           <ul class="footer-links">
-            <li><a href="#home">Accueil</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#galerie">Galerie</a></li>
-            <li><a href="#zone">Zone d'intervention</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -791,34 +199,9 @@
         </div>
       </div>
     </footer>
-
-    <!-- Bannière de consentement aux cookies -->
-    <div id="cookie-banner">
-        <div class="cookie-banner-content">
-            <p>Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation des cookies.</p>
-            <div class="cookie-banner-actions">
-                <button id="accept-cookies" class="btn btn-primary">Accepter</button>
-                <button id="reject-cookies" class="btn btn-secondary">Refuser</button>
-                <button id="cookie-settings" class="btn btn-secondary">Paramètres</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modale de paramètres des cookies -->
-    <div id="cookie-settings-modal">
-        <div class="cookie-modal-content">
-            <h3>Paramètres des cookies</h3>
-            <p>Choisissez les types de cookies que vous acceptez.</p>
-            <div class="cookie-option">
-                <input type="checkbox" id="necessary-cookies" checked disabled>
-                <label for="necessary-cookies">Cookies strictement nécessaires</label>
-            </div>
-            <div class="cookie-option">
-                <input type="checkbox" id="analytics-cookies" checked>
-                <label for="analytics-cookies">Cookies d'analyse</label>
-            </div>
-            <button id="save-cookie-settings" class="btn btn-primary">Enregistrer</button>
-        </div>
-    </div>
   </body>
-</html>
+  </html>
+    <link rel="canonical" href="https://vprr.fr/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://elfsightcdn.com">

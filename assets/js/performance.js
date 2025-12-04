@@ -126,10 +126,7 @@
     // Vérifier si les fonts sont déjà en cache
     if ('fonts' in document) {
       document.fonts.ready.then(() => {
-        // Différer la modification du DOM pour éviter le layout thrashing
-        requestAnimationFrame(() => {
-          document.body.classList.add('fonts-loaded');
-        });
+        document.body.classList.add('fonts-loaded');
       });
     }
   }
@@ -139,34 +136,17 @@
   // ═══════════════════════════════════════════════════════════════════════════
   
   function reduceCLS() {
-    // Différer pour ne pas bloquer le rendu initial
-    requestAnimationFrame(() => {
-      // Ajouter des dimensions aux images sans dimensions
-      const images = document.querySelectorAll('img:not([width]):not([height])');
-      
-      // Batch les lectures puis les écritures pour éviter le layout thrashing
-      const imagesToUpdate = [];
-      
-      images.forEach(img => {
-        if (img.complete && img.naturalWidth) {
-          imagesToUpdate.push({ img, w: img.naturalWidth, h: img.naturalHeight });
-        } else {
-          img.addEventListener('load', () => {
-            requestAnimationFrame(() => {
-              img.setAttribute('width', img.naturalWidth);
-              img.setAttribute('height', img.naturalHeight);
-            });
-          }, { once: true });
-        }
-      });
-      
-      // Écrire toutes les dimensions en une seule passe
-      requestAnimationFrame(() => {
-        imagesToUpdate.forEach(({ img, w, h }) => {
-          img.setAttribute('width', w);
-          img.setAttribute('height', h);
-        });
-      });
+    // Ajouter des dimensions aux images sans dimensions
+    document.querySelectorAll('img:not([width]):not([height])').forEach(img => {
+      if (img.complete && img.naturalWidth) {
+        img.setAttribute('width', img.naturalWidth);
+        img.setAttribute('height', img.naturalHeight);
+      } else {
+        img.addEventListener('load', () => {
+          img.setAttribute('width', img.naturalWidth);
+          img.setAttribute('height', img.naturalHeight);
+        }, { once: true });
+      }
     });
   }
 
@@ -177,13 +157,9 @@
   function optimizeAnimations() {
     // Désactiver les animations si l'utilisateur préfère
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      // Batch les écritures de style
-      requestAnimationFrame(() => {
-        const style = document.documentElement.style;
-        style.setProperty('--duration-fast', '0ms');
-        style.setProperty('--duration-normal', '0ms');
-        style.setProperty('--duration-slow', '0ms');
-      });
+      document.documentElement.style.setProperty('--duration-fast', '0ms');
+      document.documentElement.style.setProperty('--duration-normal', '0ms');
+      document.documentElement.style.setProperty('--duration-slow', '0ms');
     }
   }
 
