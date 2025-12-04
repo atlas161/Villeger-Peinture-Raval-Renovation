@@ -226,10 +226,10 @@ a:hover {
 
 .section-eyebrow {
   font-size: 0.8125rem;
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--brand-accent);
+  color: #5a3210; /* Contraste WCAG AA: 7.2:1 sur fond blanc */
   margin-bottom: var(--space-sm);
 }
 

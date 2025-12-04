@@ -330,8 +330,18 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const hqMarker = L.marker(headquarters, { 
       icon: hqIcon, 
-      zIndexOffset: 1000 
+      zIndexOffset: 1000,
+      alt: 'Siège VPRR - 136 Avenue de la République, L\'Isle-d\'Espagnac',
+      title: 'Siège VPRR - L\'Isle-d\'Espagnac'
     }).addTo(map);
+    
+    // Ajouter aria-label au marqueur pour l'accessibilité
+    setTimeout(() => {
+      const markerElement = document.querySelector('.hq-marker-centered');
+      if (markerElement) {
+        markerElement.setAttribute('aria-label', 'Siège VPRR - 136 Avenue de la République, L\'Isle-d\'Espagnac');
+      }
+    }, 100);
 
     // Popup avec adresse et itinéraire
     hqMarker.bindPopup(`

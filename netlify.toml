@@ -81,17 +81,17 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# CSS - Cache moyen (1 semaine)
+# CSS - Cache long (1 an) avec revalidation
 [[headers]]
   for = "/assets/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=31536000, immutable"
 
-# JavaScript - Cache moyen (1 semaine)
+# JavaScript - Cache long (1 an) avec revalidation
 [[headers]]
   for = "/assets/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # Fonts - Cache long (1 an)
 [[headers]]
@@ -103,6 +103,18 @@
 # Favicon - Cache long (1 an)
 [[headers]]
   for = "/media/favicon/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Data (images WebP, etc.) - Cache long (1 an)
+[[headers]]
+  for = "/data/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Icons CSS - Cache long (1 an)
+[[headers]]
+  for = "/assets/css/icons.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
