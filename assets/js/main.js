@@ -124,13 +124,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cache des positions des sections (évite le layout thrashing)
     let sectionPositions = [];
     let lastActiveHref = null;
-    let positionsReady = false;
+    let cachedViewportHeight = window.innerHeight; // Cache la hauteur viewport
     
     // Calculer les positions une seule fois, puis recalculer au resize
     const updatePositions = () => {
       // Lire toutes les dimensions en une seule passe (batch read)
       const positions = [];
       const scrollY = window.scrollY;
+      cachedViewportHeight = window.innerHeight; // Mettre à jour au resize
       
       for (const { a, el } of targets) {
         const rect = el.getBoundingClientRect();
@@ -142,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       sectionPositions = positions;
-      positionsReady = true;
     };
     
     // Différer le calcul initial après le premier rendu
@@ -151,7 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     const onScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      // Utiliser la hauteur viewport cachée (pas de lecture DOM)
+      const scrollPosition = window.scrollY + cachedViewportHeight / 3;
       let currentSection = null;
       
       // Utiliser les positions cachées (pas de getBoundingClientRect)
@@ -208,10 +209,15 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.addEventListener('scroll', throttledScroll, { passive: true });
     window.addEventListener('resize', onResize, { passive: true });
-    onScroll(); // Appel initial
+    
+    // Différer l'appel initial pour ne pas bloquer le rendu
+    requestAnimationFrame(() => {
+      requestAnimationFrame(onScroll);
+    });
   };
 
-  observeSections();
+  // Différer l'initialisation du scroll spy
+  requestAnimationFrame(observeSections);
 
   // --- SCROLL REVEAL ANIMATIONS ---
   const initScrollReveal = () => {
@@ -393,14 +399,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1500);
   };
 
-  // Initialiser la carte quand Leaflet est chargé
-  if (typeof L !== 'undefined') {
-    initZoneMap();
+  // Initialiser la carte quand Leaflet est chargé (lazy-loaded)
+  // Leaflet est chargé dynamiquement quand la section zone devient visible
+  const waitForLeaflet = () => {
+    if (typeof L !== 'undefined') {
+      initZoneMap();
+    } else {
+      // Réessayer toutes les 200ms jusqu'à ce que Leaflet soit chargé
+      const checkLeaflet = setInterval(() => {
+        if (typeof L !== 'undefined') {
+          clearInterval(checkLeaflet);
+          initZoneMap();
+        }
+      }, 200);
+      
+      // Arrêter après 10 secondes si Leaflet n'est jamais chargé
+      setTimeout(() => clearInterval(checkLeaflet), 10000);
+    }
+  };
+  
+  // Démarrer la vérification après le chargement de la page
+  if (document.readyState === 'complete') {
+    waitForLeaflet();
   } else {
-    // Attendre que Leaflet soit chargé
-    window.addEventListener('load', () => {
-      setTimeout(initZoneMap, 100);
-    });
+    window.addEventListener('load', waitForLeaflet, { once: true });
   }
   
   // --- APPLE SELECT PERSONNALISÉ ---

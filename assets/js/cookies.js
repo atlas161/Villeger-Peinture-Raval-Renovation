@@ -10,7 +10,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Vérifier si l'utilisateur a déjà fait un choix concernant les cookies
     if (!getCookie('cookie_consent')) {
-        if (cookieBanner) cookieBanner.style.display = 'block';
+        // Différer l'affichage de la bannière pour ne pas impacter le LCP
+        // Attendre que le contenu principal soit affiché (après 2.5s ou interaction)
+        const showBanner = () => {
+            if (cookieBanner) {
+                cookieBanner.style.display = 'block';
+                cookieBanner.classList.add('cookie-banner-visible');
+            }
+        };
+        
+        // Afficher après 2.5s ou à la première interaction
+        const bannerTimeout = setTimeout(showBanner, 2500);
+        ['scroll', 'click', 'touchstart'].forEach(function(e) {
+            window.addEventListener(e, function handler() {
+                clearTimeout(bannerTimeout);
+                showBanner();
+                window.removeEventListener(e, handler);
+            }, { once: true, passive: true });
+        });
     } else if (getCookie('cookie_consent') === 'all' && getCookie('analytics_cookies') === 'true') {
         // Charger GTM si déjà accepté
         loadGoogleTagManager();

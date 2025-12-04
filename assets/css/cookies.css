@@ -18,6 +18,15 @@
   border: 1px solid var(--color-border-light);
   max-width: 480px;
   margin-left: auto;
+  /* Animation d'apparition différée (n'impacte pas le LCP) */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+#cookie-banner.cookie-banner-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cookie-banner-content {
