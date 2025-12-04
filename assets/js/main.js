@@ -5,9 +5,12 @@
 
 // Attend que le DOM soit entièrement chargé avant d'exécuter le script.
 document.addEventListener("DOMContentLoaded", () => {
+  // Utiliser requestAnimationFrame pour éviter le layout thrashing
   const preloader = document.getElementById('preloader');
   const bar = preloader ? preloader.querySelector('.progress .fill') : null;
-  if (bar) bar.style.width = '40%';
+  requestAnimationFrame(() => {
+    if (bar) bar.style.width = '40%';
+  });
   
   // --- GESTION DE LA NAVIGATION ---
 
@@ -125,47 +128,58 @@ document.addEventListener("DOMContentLoaded", () => {
     .filter(x => !!x.el);
 
   const observeSections = () => {
-    // Utilisation d'un système de scroll basé sur la position pour plus de fiabilité
+    // Cache des positions des sections (évite le layout thrashing)
+    let sectionPositions = [];
+    let lastActiveHref = null;
+    
+    // Calculer les positions une seule fois, puis recalculer au resize
+    const updatePositions = () => {
+      sectionPositions = targets.map(({ a, el }) => {
+        const rect = el.getBoundingClientRect();
+        return {
+          a,
+          top: rect.top + window.scrollY,
+          bottom: rect.top + window.scrollY + rect.height
+        };
+      });
+    };
+    
+    // Appel initial pour calculer les positions
+    updatePositions();
+    
     const onScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3; // Point de référence à 1/3 de l'écran
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
       let currentSection = null;
       
-      targets.forEach(({ a, el }) => {
-        const rect = el.getBoundingClientRect();
-        const elementTop = rect.top + window.scrollY;
-        const elementBottom = elementTop + rect.height;
-        
-        // Vérifier si la position de scroll est dans cette section
-        if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
-          currentSection = a;
+      // Utiliser les positions cachées (pas de getBoundingClientRect)
+      for (const section of sectionPositions) {
+        if (scrollPosition >= section.top && scrollPosition < section.bottom) {
+          currentSection = section.a;
+          break;
         }
-      });
+      }
       
-      // Si aucune section n'est trouvée, prendre la plus proche
-      if (!currentSection) {
-        let best = null;
+      // Si aucune section trouvée, prendre la plus proche
+      if (!currentSection && sectionPositions.length > 0) {
         let bestDistance = Infinity;
-        
-        targets.forEach(({ a, el }) => {
-          const rect = el.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          const distance = Math.abs(scrollPosition - elementTop);
-          
+        for (const section of sectionPositions) {
+          const distance = Math.abs(scrollPosition - section.top);
           if (distance < bestDistance) {
             bestDistance = distance;
-            best = a;
+            currentSection = section.a;
           }
-        });
-        
-        currentSection = best;
+        }
       }
       
       if (currentSection) {
-        setActive(currentSection);
-        // Mise à jour de l'URL sans rechargement
         const href = currentSection.getAttribute('href');
-        if (history.replaceState && href) {
-          history.replaceState(null, null, href);
+        // Éviter les mises à jour inutiles
+        if (href !== lastActiveHref) {
+          lastActiveHref = href;
+          setActive(currentSection);
+          if (history.replaceState && href) {
+            history.replaceState(null, null, href);
+          }
         }
       }
     };
@@ -182,8 +196,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
     
+    // Recalculer les positions au resize (debounced)
+    let resizeTimeout;
+    const onResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(updatePositions, 150);
+    };
+    
     window.addEventListener('scroll', throttledScroll, { passive: true });
-    window.addEventListener('resize', throttledScroll, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
     onScroll(); // Appel initial
   };
 
