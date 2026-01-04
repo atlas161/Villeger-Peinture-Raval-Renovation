@@ -422,64 +422,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('load', waitForLeaflet, { once: true });
   }
   
-  // --- APPLE SELECT PERSONNALISÉ ---
-  const initAppleSelect = () => {
-    const appleSelect = document.getElementById('apple-select');
-    if (!appleSelect) return;
-
-    const trigger = appleSelect.querySelector('.apple-select-trigger');
-    const dropdown = appleSelect.querySelector('.apple-select-dropdown');
-    const valueSpan = appleSelect.querySelector('.apple-select-value');
-    const hiddenInput = appleSelect.querySelector('input[type="hidden"]');
-    const options = appleSelect.querySelectorAll('.apple-select-option');
-
-    // Ouvrir/fermer le dropdown
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      appleSelect.classList.toggle('active');
-    });
-
-    // Sélectionner une option
-    options.forEach(option => {
-      option.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        // Retirer la classe selected de toutes les options
-        options.forEach(opt => opt.classList.remove('selected'));
-        
-        // Ajouter selected à l'option cliquée
-        option.classList.add('selected');
-        
-        // Mettre à jour la valeur affichée
-        const value = option.getAttribute('data-value');
-        const text = option.textContent;
-        
-        valueSpan.textContent = text;
-        valueSpan.classList.remove('placeholder');
-        hiddenInput.value = value;
-        
-        // Fermer le dropdown
-        appleSelect.classList.remove('active');
-      });
-    });
-
-    // Fermer le dropdown si on clique ailleurs
-    document.addEventListener('click', (e) => {
-      if (!appleSelect.contains(e.target)) {
-        appleSelect.classList.remove('active');
-      }
-    });
-
-    // Gestion du clavier
-    trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        appleSelect.classList.toggle('active');
-      } else if (e.key === 'Escape') {
-        appleSelect.classList.remove('active');
-      }
-    });
-  };
 
   // --- ANNÉE DYNAMIQUE DANS LE FOOTER ---
   const updateCurrentYear = () => {
@@ -491,8 +433,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- INITIALISATION AU CHARGEMENT ---
   window.addEventListener('load', () => {
-    // Initialiser le select Apple
-    initAppleSelect();
     
     // Mettre à jour l'année
     updateCurrentYear();
