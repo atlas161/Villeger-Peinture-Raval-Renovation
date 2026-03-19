@@ -237,7 +237,7 @@ La basse pression préserve les joints et évite l'effritement.
     
 *   Crépi ancien
     
-*   Enduits monocouches
+*   Enduits monocouches (grésé)
     
 
 Attention : tester impérativement sur une zone cachée avant traitement complet.
