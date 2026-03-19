@@ -194,7 +194,7 @@ Un devis professionnel comprend :
     
 *   Rinçage final
     
-*   Nettoyage et évacuation des déchets
+*   Nettoyage et évacuation des déchets en structure spécialisée
     
 *   Garantie décennale
     
