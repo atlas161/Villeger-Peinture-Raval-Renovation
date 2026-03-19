@@ -8,7 +8,7 @@
     <meta name="description" content="La page demandée n'existe pas ou a été déplacée." />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="icon" type="image/png" href="media/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="media/favicon/favicon.svg" />
     <link rel="shortcut icon" href="media/favicon/favicon.ico" />
@@ -64,13 +64,28 @@
         <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
           <ul class="menu">
             <li>
-              <a class="nav-link inline-flex items-center gap-2" href="/" data-nav="home">Accueil</a>
+              <a class="nav-link inline-flex items-center gap-2" href="/#home" data-nav="home">Accueil</a>
             </li>
-            <li>
+            <li class="has-submenu">
               <a class="nav-link inline-flex items-center gap-2" href="/#services" data-nav="services">Services</a>
+              <ul class="submenu" aria-label="Pages services">
+                <li><a href="/nettoyage-facade-angouleme.html">Nettoyage de façade <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="/ravalement-facade-angouleme.html">Ravalement de façade <span class="submenu-meta">Charente</span></a></li>
+                <li><a href="/nettoyage-toiture-angouleme.html">Nettoyage de toiture <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="/peinture-exterieure-charente.html">Peinture extérieure <span class="submenu-meta">Charente</span></a></li>
+              </ul>
             </li>
             <li>
               <a class="nav-link inline-flex items-center gap-2" href="/#galerie" data-nav="galerie">Galerie</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="/#blog" data-nav="blog">Blog</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="/#zone" data-nav="zone">Zone d'intervention</a>
+            </li>
+            <li>
+              <a class="nav-link inline-flex items-center gap-2" href="/#faq" data-nav="faq">FAQ</a>
             </li>
             <li>
               <a class="nav-link inline-flex items-center gap-2" href="/#contact" data-nav="contact">Contact</a>
@@ -109,7 +124,7 @@
         <div class="footer-col">
           <h3>Coordonnées</h3>
           <ul class="footer-contacts">
-            <li>Téléphone&nbsp;: <a href="tel:+33659268623">06 59 26 86 23</a></li>
+            <li>Téléphone&nbsp;: <a href="tel:+33545912270">05 45 91 22 70</a></li>
             <li>Email&nbsp;: <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
           </ul>
           <div class="socials" aria-label="Réseaux sociaux">

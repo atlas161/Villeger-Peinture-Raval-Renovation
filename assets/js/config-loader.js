@@ -84,6 +84,12 @@
     // Image
     const img = heroSection.querySelector('.hero-media img');
     if (img && hero.image) {
+      const picture = img.closest('picture');
+      const source = picture ? picture.querySelector('source[type="image/webp"]') : null;
+      if (source && typeof hero.image === 'string' && hero.image.toLowerCase().endsWith('hero.webp')) {
+        const base = hero.image.slice(0, -'hero.webp'.length);
+        source.srcset = `${base}hero-400w.webp 400w, ${base}hero-600w.webp 600w, ${base}hero-800w.webp 800w, ${base}hero-1200w.webp 1200w`;
+      }
       img.src = hero.image;
       if (hero.imageAlt) img.alt = hero.imageAlt;
     }

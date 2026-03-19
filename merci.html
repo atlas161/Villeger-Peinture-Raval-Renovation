@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .thank-you-main {
             min-height: calc(80vh - var(--header-height));
@@ -93,9 +93,20 @@
         </button>
         <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
           <ul class="menu">
-            <li><a class="nav-link" href="/">Accueil</a></li>
-            <li><a class="nav-link" href="/#services">Services</a></li>
+            <li><a class="nav-link" href="/#home">Accueil</a></li>
+            <li class="has-submenu">
+              <a class="nav-link" href="/#services">Services</a>
+              <ul class="submenu" aria-label="Pages services">
+                <li><a href="/nettoyage-facade-angouleme.html">Nettoyage de façade <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="/ravalement-facade-angouleme.html">Ravalement de façade <span class="submenu-meta">Charente</span></a></li>
+                <li><a href="/nettoyage-toiture-angouleme.html">Nettoyage de toiture <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="/peinture-exterieure-charente.html">Peinture extérieure <span class="submenu-meta">Charente</span></a></li>
+              </ul>
+            </li>
             <li><a class="nav-link" href="/#galerie">Galerie</a></li>
+            <li><a class="nav-link" href="/#blog">Blog</a></li>
+            <li><a class="nav-link" href="/#zone">Zone d'intervention</a></li>
+            <li><a class="nav-link" href="/#faq">FAQ</a></li>
             <li><a class="nav-link" href="/#contact">Contact</a></li>
             <li class="menu-cta">
               <a class="btn btn-primary" href="/#contact">Obtenir un devis</a>
@@ -124,33 +135,8 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer" aria-label="Pied de page">
-      <div class="container footer-grid">
-        <div class="footer-col">
-          <div class="logo">PeintureRavalRénovation</div>
-          <div class="copyright"> <span id="year"></span> PeintureRavalRénovation.<br>Tous droits réservés.</div>
-        </div>
-        <div class="footer-col">
-          <h3>Liens rapides</h3>
-          <ul class="footer-links">
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/#galerie">Galerie</a></li>
-            <li><a href="/mentions-legales.html">Mentions légales</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Coordonnées</h3>
-          <ul class="footer-contacts">
-            <li>Téléphone&nbsp;: <a href="tel:+33659268623">06 59 26 86 23</a></li>
-            <li>Email&nbsp;: <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
-          </ul>
-          <div class="socials" aria-label="Réseaux sociaux">
-            <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-badge"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer sera inclus dynamiquement -->
+    <script src="assets/js/footer.js"></script>
 
     <script defer src="assets/js/main.js"></script>
     <script>

@@ -7,30 +7,13 @@
    MENU MOBILE - FOND SOLIDE (correction transparence)
    =========================================== */
 @media (max-width: 991px) {
-  /* Correction du fond transparent du menu mobile */
+  /* Suppression des styles conflictuels car styles.css gère maintenant le plein écran */
   #primary-nav.primary-nav {
     background-color: #FBF7F1 !important;
     background: #FBF7F1 !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    /* Force full screen coverage */
-    min-height: 100vh !important;
-    height: 100vh !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    position: fixed !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
   }
 
-  /* S'assurer que les liens sont lisibles */
-  #primary-nav.primary-nav .nav-link {
-    color: #2C1810 !important;
-  }
-
-  #primary-nav.primary-nav .nav-link:hover,
-  #primary-nav.primary-nav .nav-link:focus {
-    background: rgba(103, 58, 18, 0.1) !important;
-    color: #673A12 !important;
-  }
+  /* Les liens sont gérés par styles.css */
 }

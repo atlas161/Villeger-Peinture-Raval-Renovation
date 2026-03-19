@@ -10,6 +10,81 @@
   margin: var(--space-xl) auto 0 auto;
 }
 
+.faq-page-controls {
+  max-width: 920px;
+  margin: var(--space-xl) auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.faq-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 6px 2px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.faq-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.faq-filter-btn {
+  border: 1px solid rgba(103, 58, 18, 0.14);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: var(--font-weight-medium);
+  font-size: 0.9375rem;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.faq-filter-btn:hover {
+  background: rgba(103, 58, 18, 0.06);
+  transform: translateY(-1px);
+}
+
+.faq-filter-btn.active {
+  background: rgba(103, 58, 18, 0.12);
+  border-color: rgba(103, 58, 18, 0.25);
+  color: var(--color-primary);
+}
+
+.faq-bulk {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-bulk-btn {
+  padding: 0.7rem 1rem;
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 640px) {
+  .faq-page-controls {
+    align-items: stretch;
+  }
+
+  .faq-bulk {
+    width: 100%;
+  }
+
+  .faq-bulk-btn {
+    width: 50%;
+    justify-content: center;
+  }
+}
+
 .faq-item {
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
@@ -97,5 +172,32 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+}
+
+.faq-actions {
+  text-align: center;
+  margin-top: var(--space-3xl);
+}
+
+.faq-actions-text {
+  font-size: 1.0625rem;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-lg) 0;
+  line-height: 1.6;
+}
+
+.faq-actions-btn {
+  padding: 0.9rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .faq-actions-btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 360px;
   }
 }

@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
-                            http://www.google.com/schemas/sitemap-image/1.1
-                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
-  
-  <!-- ============================================ -->
-  <!-- PAGE D'ACCUEIL PRINCIPALE -->
-  <!-- ============================================ -->
-  <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
     <loc>https://vprr.fr/</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -28,132 +17,174 @@
       <image:caption>Logo officiel de l'entreprise VPRR basée à L'Isle-d'Espagnac</image:caption>
     </image:image>
   </url>
-  
-  <!-- ============================================ -->
-  <!-- SECTION SERVICES - Nos expertises -->
-  <!-- ============================================ -->
-  <url>
+<url>
     <loc>https://vprr.fr/#services</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Sous-sections Services individuels pour meilleur référencement -->
-  <url>
+<url>
     <loc>https://vprr.fr/#services-ravalement</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  
-  <url>
+<url>
     <loc>https://vprr.fr/#services-toiture</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  
-  <url>
+<url>
     <loc>https://vprr.fr/#services-isolation</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  
-  <url>
+<url>
     <loc>https://vprr.fr/#services-renovation</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  
-  <!-- ============================================ -->
-  <!-- SECTION GALERIE - Nos réalisations -->
-  <!-- ============================================ -->
-  <url>
+<url>
     <loc>https://vprr.fr/#galerie</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- ============================================ -->
-  <!-- SECTION ZONE - Zone d'intervention -->
-  <!-- ============================================ -->
-  <url>
+<url>
     <loc>https://vprr.fr/#zone</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- ============================================ -->
-  <!-- SECTION FAQ - Questions fréquentes -->
-  <!-- ============================================ -->
-  <url>
+<url>
     <loc>https://vprr.fr/#faq</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- ============================================ -->
-  <!-- SECTION CONTACT - Demande de devis -->
-  <!-- ============================================ -->
-  <url>
+<url>
     <loc>https://vprr.fr/#contact</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- ============================================ -->
-  <!-- PAGES SECONDAIRES -->
-  <!-- ============================================ -->
-  
-  <!-- Mentions légales -->
-  <url>
+<url>
+    <loc>https://vprr.fr/nettoyage-facade-angouleme.html</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/nettoyage_facade/facade_avant-1200w.webp</image:loc>
+      <image:title>Nettoyage de façade à Angoulême - Avant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/nettoyage_facade/facade_apres-1200w.webp</image:loc>
+      <image:title>Nettoyage de façade à Angoulême - Après</image:title>
+    </image:image>
+  </url>
+<url>
+    <loc>https://vprr.fr/nettoyage-toiture-angouleme.html</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/nettoyag_toiture/toiture_avant-1200w.webp</image:loc>
+      <image:title>Nettoyage de toiture à Angoulême - Avant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/nettoyag_toiture/toiture_apres-1200w.webp</image:loc>
+      <image:title>Nettoyage de toiture à Angoulême - Après</image:title>
+    </image:image>
+  </url>
+<url>
+    <loc>https://vprr.fr/ravalement-facade-angouleme.html</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/ravalement_facade/ravalement_avant-1200w.webp</image:loc>
+      <image:title>Ravalement de façade à Angoulême - Avant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/ravalement_facade/ravalement_apres-1200w.webp</image:loc>
+      <image:title>Ravalement de façade à Angoulême - Après</image:title>
+    </image:image>
+  </url>
+<url>
+    <loc>https://vprr.fr/peinture-exterieure-charente.html</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/peinture_exterieur/peinture_avant-1200w.webp</image:loc>
+      <image:title>Peinture extérieure en Charente - Avant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/peinture_exterieur/peinture_apres-1200w.webp</image:loc>
+      <image:title>Peinture extérieure en Charente - Après</image:title>
+    </image:image>
+  </url>
+<url>
+    <loc>https://vprr.fr/faq-renovation-angouleme.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://vprr.fr/zone-desservie-charente.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
     <loc>https://vprr.fr/mentions-legales.html</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- Page de remerciement (après formulaire) -->
-  <url>
+<url>
     <loc>https://vprr.fr/merci.html</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
   </url>
-  
-  <!-- ============================================ -->
-  <!-- RESSOURCES POUR LES IA -->
-  <!-- ============================================ -->
-  
-  <!-- Fichier d'information pour les LLMs -->
-  <url>
+<url>
     <loc>https://vprr.fr/llms.txt</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
-  <!-- Configuration du site (pour référence) -->
-  <url>
+<url>
     <loc>https://vprr.fr/data/config.json</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
   </url>
-  
-  <!-- Fichier humans.txt -->
-  <url>
+<url>
     <loc>https://vprr.fr/humans.txt</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
-
+  <url>
+    <loc>https://vprr.fr/blog/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/choisir-peinture-exterieure.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/nettoyage-facade-hydrogommage.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

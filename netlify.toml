@@ -112,12 +112,6 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Icons CSS - Cache long (1 an)
-[[headers]]
-  for = "/assets/css/icons.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
 # ─────────────────────────────────────────────────────────────────────────────────
 # FICHIERS SEO ET ROBOTS
 # ─────────────────────────────────────────────────────────────────────────────────

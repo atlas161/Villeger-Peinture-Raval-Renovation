@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- === MÉTADONNÉES DYNAMIQUES (remplacées par le script de build) === -->
+  <title>{{TITLE}} | Guides & Conseils VPRR</title>
+  <meta name="description" content="{{DESCRIPTION}}" />
+  <meta name="keywords" content="{{TAGS}}, rénovation, Angoulême, Charente, VPRR" />
+  <meta name="author" content="Villéger Peinture Raval Rénovation">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="geo.region" content="FR-16">
+  <meta name="geo.placename" content="Angoulême">
+  <meta name="theme-color" content="#673A12">
+  
+  <!-- === OPEN GRAPH (Réseaux sociaux) === -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="VPRR - Guides & Conseils">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="https://vprr.fr/blog/{{SLUG}}.html">
+  <meta property="og:image" content="{{OG_IMAGE_URL}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="{{TITLE}}">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="article:published_time" content="{{DATE_ISO}}">
+  <meta property="article:modified_time" content="{{DATE_MODIFIED}}">
+  <meta property="article:section" content="{{CATEGORY}}">
+  <meta property="article:tag" content="{{TAGS}}">
+  
+  <!-- === TWITTER CARD === -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{TITLE}}">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <meta name="twitter:image" content="{{OG_IMAGE_URL}}">
+  <meta name="twitter:image:alt" content="{{TITLE}}">
+  
+  <!-- === CSS === -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/nav.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="../assets/css/blog.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="article.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://vprr.fr/media/favicon/apple-touch-icon.png">
+  
+  <link rel="canonical" href="https://vprr.fr/blog/{{SLUG}}.html">
+  
+  <!-- === DONNÉES STRUCTURÉES JSON-LD === -->
+  
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{TITLE}}",
+      "description": "{{DESCRIPTION}}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{OG_IMAGE_URL}}",
+        "width": 1200,
+        "height": 675
+      },
+      "datePublished": "{{DATE_ISO}}",
+      "dateModified": "{{DATE_MODIFIED}}",
+      "author": {
+        "@type": "Organization",
+        "name": "Villéger Peinture Raval Rénovation",
+        "url": "https://vprr.fr/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vprr.fr/media/VPRR-LOGO.svg"
+        }
+      },
+      "publisher": {
+        "@id": "https://vprr.fr/#business"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vprr.fr/blog/{{SLUG}}.html"
+      },
+      "articleSection": "{{CATEGORY}}",
+      "keywords": "{{TAGS}}",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".article-title", ".article-content"]
+      }
+    }
+  </script>
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://vprr.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides & Conseils",
+          "item": "https://vprr.fr/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{TITLE}}",
+          "item": "https://vprr.fr/blog/{{SLUG}}.html"
+        }
+      ]
+    }
+  </script>
+  
+  <script defer src="../assets/js/main.js"></script>
+</head>
+<body class="blog-page">
+  <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+  
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="../index.html#top" class="logo" aria-label="RavalRenovation - Accueil">
+        <img src="../media/vprr-logo.svg" class="logo-img" alt="Villeger Peinture Raval Rénovation" width="150" height="40" />
+      </a>
+      
+      <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+        <span class="burger-bar" aria-hidden="true"></span>
+        <span class="burger-bar" aria-hidden="true"></span>
+        <span class="burger-bar" aria-hidden="true"></span>
+      </button>
+      
+      <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a class="nav-link" href="../index.html#home" data-nav="home">Accueil</a></li>
+          <li class="has-submenu">
+            <a class="nav-link" href="../index.html#services" data-nav="services">Services</a>
+            <ul class="submenu" aria-label="Pages services">
+              <li><a href="../nettoyage-facade-angouleme.html">Nettoyage de façade <span class="submenu-meta">Angoulême</span></a></li>
+              <li><a href="../ravalement-facade-angouleme.html">Ravalement de façade <span class="submenu-meta">Charente</span></a></li>
+              <li><a href="../nettoyage-toiture-angouleme.html">Nettoyage de toiture <span class="submenu-meta">Angoulême</span></a></li>
+              <li><a href="../peinture-exterieure-charente.html">Peinture extérieure <span class="submenu-meta">Charente</span></a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="../index.html#galerie" data-nav="galerie">Galerie</a></li>
+          <li><a class="nav-link" href="../blog/" data-nav="blog">Blog</a></li>
+          <li><a class="nav-link" href="../index.html#zone" data-nav="zone">Zone d'intervention</a></li>
+          <li><a class="nav-link" href="../index.html#faq" data-nav="faq">FAQ</a></li>
+          <li><a class="nav-link" href="../index.html#contact" data-nav="contact">Contact</a></li>
+          <li class="menu-cta">
+            <a class="btn btn-primary" href="../index.html#contact">Obtenez un devis</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href="../index.html">
+              <i class="fa-solid fa-home" aria-hidden="true"></i>
+              <span>Accueil</span>
+            </a>
+          </li>
+          <li class="breadcrumb-separator" aria-hidden="true">
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="./">Guides & Conseils</a>
+          </li>
+          <li class="breadcrumb-separator" aria-hidden="true">
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+          <li class="breadcrumb-item current" aria-current="page">
+            <span>{{TITLE}}</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="container">
+        <div class="article-meta-header">
+          <span class="article-tag">{{CATEGORY}}</span>
+          <div class="article-meta-info">
+            <time datetime="{{DATE_ISO}}">{{DATE_FORMATTED}}</time>
+            <span class="meta-separator">·</span>
+            <span class="read-time">
+              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              {{READ_TIME}} min de lecture
+            </span>
+          </div>
+        </div>
+        <h1 class="article-title">{{TITLE}}</h1>
+        <p class="article-description">{{DESCRIPTION}}</p>
+      </div>
+    </header>
+
+    <!-- Article Hero Image -->
+    <div class="article-hero-image">
+      <div class="container">
+        <figure class="hero-image-wrapper">
+          <img src="{{HERO_IMAGE_SRC}}" srcset="{{HERO_IMAGE_SRCSET}}" sizes="{{HERO_IMAGE_SIZES}}" alt="{{TITLE}}" width="1200" height="675" loading="eager" fetchpriority="high">
+        </figure>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-body">
+      <div class="container">
+        <div class="article-content-wrapper">
+          <!-- Sidebar avec sommaire (sticky) -->
+          <aside class="article-sidebar" aria-label="Sommaire de l'article">
+            <div class="sidebar-sticky">
+              <h2 class="sidebar-title">Sommaire</h2>
+              <nav class="toc" aria-label="Table des matières">
+                {{TOC}}
+              </nav>
+              
+              <div class="sidebar-cta">
+                <p>Besoin d'aide pour votre projet ?</p>
+                <a href="../index.html#contact" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  Contactez-nous
+                </a>
+              </div>
+            </div>
+          </aside>
+          
+          <!-- Contenu principal -->
+          <div class="article-content">
+            {{CONTENT}}
+            
+            <!-- Tags -->
+            <div class="article-tags" aria-label="Tags de l'article">
+              <span class="tags-label">
+                <i class="fa-solid fa-tags" aria-hidden="true"></i>
+                Tags :
+              </span>
+              {{TAGS_LIST}}
+            </div>
+            
+            <!-- Share buttons -->
+            <div class="article-share">
+              <span class="share-label">Partager :</span>
+              <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{URL_ENCODED}}" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="share-btn facebook"
+                   aria-label="Partager sur Facebook">
+                  <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url={{URL_ENCODED}}&text={{TITLE_ENCODED}}" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="share-btn twitter"
+                   aria-label="Partager sur X (Twitter)">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{URL_ENCODED}}" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="share-btn linkedin"
+                   aria-label="Partager sur LinkedIn">
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:?subject={{TITLE_ENCODED}}&body={{URL_ENCODED}}" 
+                   class="share-btn email"
+                   aria-label="Partager par email">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </a>
+                <button class="share-btn copy" onclick="copyToClipboard()" aria-label="Copier le lien">
+                  <i class="fa-solid fa-link" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Navigation vers autres articles -->
+    <nav class="article-navigation" aria-label="Navigation entre articles">
+      <div class="container">
+        <div class="nav-articles">
+          <a href="{{PREV_ARTICLE_URL}}" class="nav-article prev {{PREV_DISABLED}}">
+            <span class="nav-label">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              Article précédent
+            </span>
+            <span class="nav-title">{{PREV_ARTICLE_TITLE}}</span>
+          </a>
+          <a href="./" class="nav-back">
+            <i class="fa-solid fa-th-large" aria-hidden="true"></i>
+            Tous les articles
+          </a>
+          <a href="{{NEXT_ARTICLE_URL}}" class="nav-article next {{NEXT_DISABLED}}">
+            <span class="nav-label">
+              Article suivant
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+            <span class="nav-title">{{NEXT_ARTICLE_TITLE}}</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CTA Section -->
+    <section class="article-cta" aria-label="Contactez-nous">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-icon">
+            <i class="fa-solid fa-helmet-safety" aria-hidden="true"></i>
+          </div>
+          <div class="cta-content">
+            <h2>Prêt à démarrer votre projet ?</h2>
+            <p>Notre équipe d'experts est à votre disposition pour transformer vos idées en réalité. Devis gratuit et sans engagement.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="tel:+33545912270" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              05 45 91 22 70
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer sera inclus dynamiquement -->
+  <script src="../assets/js/footer.js"></script>
+
+  <!-- Script pour copier le lien -->
+  <script>
+    function copyToClipboard() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        alert('Lien copié dans le presse-papier !');
+      }, function(err) {
+        console.error('Erreur lors de la copie :', err);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "choisir-peinture-exterieure",
+    "title": "Comment choisir sa peinture extérieure ?",
+    "description": "Guide complet pour sélectionner la peinture adaptée à votre façade : types de peinture, finitions, préparation et budget.",
+    "date": "2026-03-18",
+    "image": "/media/blog/peinture_ext.webp",
+    "tags": [
+      "peinture",
+      "exterieur",
+      "conseils",
+      "facade"
+    ],
+    "readtime": "5",
+    "category": "Peinture"
+  },
+  {
+    "slug": "nettoyage-facade-hydrogommage",
+    "title": "Nettoyage de façade par hydro-gommage : le guide complet 2026",
+    "description": "Découvrez l'hydro-gommage pour nettoyer votre façade à Angoulême : technique douce, efficace et respectueuse. Prix, avantages et conseils d'experts.",
+    "date": "2026-03-18",
+    "image": "/media/blog/facade_hydrogommage.webp",
+    "tags": [
+      "nettoyage",
+      "facade",
+      "hydrogommage",
+      "entretien"
+    ],
+    "readtime": "7",
+    "category": "Façade"
+  }
+]

@@ -1,0 +1,184 @@
+$zone-brown: #673A12;
+$zone-gold: #A88B5E;
+
+.zone-map-container {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: clamp(220px, 56vw, 320px);
+  align-self: stretch;
+}
+
+.zone-map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+
+  min-height: inherit;
+
+  &.map-loading {
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-border-light) 100%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0 -20px;
+      border: 3px solid rgba(103, 58, 18, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--color-primary);
+      animation: mapSpin 1s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    &::after {
+      content: 'Chargement de la carte...';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 30px);
+      color: var(--color-text-light);
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-medium);
+      z-index: 10;
+    }
+
+    .map-tiles,
+    .osm-tiles {
+      opacity: 0;
+    }
+  }
+
+  &.map-loaded {
+    background: transparent;
+
+    .map-tiles,
+    .osm-tiles {
+      opacity: 1;
+    }
+  }
+
+  .map-tiles,
+  .osm-tiles {
+    transition: opacity 0.3s ease;
+  }
+
+  .leaflet-tile-pane {
+    filter: sepia(0.75) saturate(1.25) hue-rotate(-12deg) brightness(0.94) contrast(1.05);
+  }
+
+  &.leaflet-container {
+    font-family: var(--font-sans);
+  }
+
+  &.osm-fallback {
+    display: grid;
+    place-items: center;
+    padding: var(--space-xl);
+    background: radial-gradient(circle at 20% 20%, rgba($zone-gold, 0.18), transparent 55%),
+      linear-gradient(135deg, #fbfaf9, #f2eeea);
+  }
+}
+
+@media (min-width: 769px) {
+  .zone-map-container {
+    aspect-ratio: auto;
+    min-height: unset;
+    height: 100%;
+  }
+
+  .zone-map {
+    min-height: 100%;
+  }
+}
+
+/* Bouton unique "Lancer l'itinéraire" */
+.zone-map-route {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba($zone-brown, 0.12);
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba($zone-brown, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: gap 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  color: #8B4513;
+  max-width: calc(100% - 32px);
+  white-space: nowrap;
+
+  &:visited {
+    color: #8B4513;
+  }
+
+  i {
+    color: #8B4513;
+  }
+
+  &:hover {
+    gap: 10px;
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 14px 30px rgba($zone-brown, 0.16);
+  }
+}
+
+.zone-map-fallback {
+  max-width: 420px;
+  text-align: center;
+}
+
+.zone-map-fallback-title {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.zone-map-fallback-text {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.zone-map-fallback-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-primary), #8b5a2b);
+  color: var(--color-white);
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(103, 58, 18, 0.18);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+
+  &:hover {
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes mapSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,413 @@
+/* ===================================================================
+   RESPONSIVE IMPROVEMENTS - Blog et Services
+   =================================================================== */
+
+/* Mobile First - Améliorations responsives */
+
+/* Blog Pages */
+@media (max-width: 768px) {
+  .blog-page .article-header {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .blog-page .article-content {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .blog-page .article-meta {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+  
+  .blog-page .article-share {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  
+  .blog-page .share-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .blog-page .blog-preview-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .blog-page .blog-preview-card {
+    margin: 0;
+  }
+  
+  .blog-page .blog-preview-content h3 {
+    font-size: 1.125rem;
+  }
+  
+  .blog-page .blog-preview-content p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-page .article-header h1 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+  
+  .blog-page .article-content {
+    padding: var(--space-md) var(--space-sm);
+  }
+  
+  .blog-page .article-content h2 {
+    font-size: 1.375rem;
+  }
+  
+  .blog-page .article-content h3 {
+    font-size: 1.125rem;
+  }
+  
+  .blog-page .share-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .blog-page .article-cta .cta-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+  
+  .blog-page .article-cta .cta-actions {
+    width: 100%;
+  }
+  
+  .blog-page .article-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Service Pages */
+@media (max-width: 768px) {
+  .service-page .reassurance-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .service-page .reassurance-item {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-lg);
+  }
+  
+  .service-page .reassurance-icon {
+    margin: 0 auto var(--space-md);
+  }
+  
+  .service-page .reassurance-text h3 {
+    font-size: 1.125rem;
+  }
+  
+  .service-page .reassurance-text p {
+    font-size: 0.875rem;
+  }
+  
+  .service-page .faq-item {
+    padding: var(--space-md);
+  }
+  
+  .service-page .faq-question {
+    font-size: 1rem;
+    padding-right: var(--space-lg);
+  }
+  
+  .service-page .faq-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-page .reassurance-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+  }
+  
+  .service-page .reassurance-icon i {
+    font-size: 1.25rem;
+  }
+  
+  .service-page .reassurance-item {
+    padding: var(--space-md);
+  }
+  
+  .service-page .faq-answer {
+    padding-top: var(--space-sm);
+    font-size: 0.875rem;
+  }
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+  .site-footer {
+    padding-block: var(--space-2xl) var(--space-lg);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+  
+  .footer-col {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .footer-col h3 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .footer-links,
+  .footer-contacts {
+    text-align: center;
+  }
+  
+  .socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding-block: var(--space-xl) var(--space-md);
+    font-size: 0.875rem;
+  }
+  
+  .footer-col h3 {
+    font-size: 0.75rem;
+  }
+  
+  .footer-links a,
+  .footer-contacts a {
+    font-size: 0.875rem;
+  }
+  
+  .social-badge {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Navigation Responsive */
+@media (max-width: 768px) {
+  .primary-nav .menu {
+    padding: var(--space-lg);
+  }
+  
+  .primary-nav .menu li {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .primary-nav .menu-cta {
+    margin-top: var(--space-md);
+    text-align: center;
+  }
+  
+  .primary-nav .menu-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Header Responsive */
+@media (max-width: 768px) {
+  .site-header {
+    padding: var(--space-md) 0;
+  }
+  
+  .header-inner {
+    padding: 0 var(--space-md);
+  }
+  
+  .logo-img {
+    width: 120px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: var(--space-sm) 0;
+  }
+  
+  .header-inner {
+    padding: 0 var(--space-sm);
+  }
+  
+  .logo-img {
+    width: 100px;
+    height: 27px;
+  }
+}
+
+/* CTA Sections Responsive */
+@media (max-width: 768px) {
+  .article-cta .cta-card,
+  .service-cta .cta-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+  
+  .article-cta .cta-actions,
+  .service-cta .cta-actions {
+    width: 100%;
+  }
+  
+  .article-cta .btn,
+  .service-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Table Responsive */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.875rem;
+  }
+  
+  th,
+  td {
+    padding: var(--space-sm);
+  }
+  
+  .article-content table {
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+/* Blockquote Responsive */
+@media (max-width: 768px) {
+  blockquote {
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+  }
+  
+  blockquote p {
+    font-size: 1rem;
+  }
+}
+
+/* Code Blocks Responsive */
+@media (max-width: 768px) {
+  pre {
+    padding: var(--space-lg);
+    font-size: 0.875rem;
+    overflow-x: auto;
+  }
+  
+  code {
+    font-size: 0.875rem;
+  }
+}
+
+/* CTA Final Responsive - Layout équilibré */
+@media (max-width: 1024px) {
+  .cta-final-compact {
+    gap: var(--space-xl) !important;
+    padding: var(--space-xl) var(--space-2xl) !important;
+  }
+  
+  .cta-final-compact h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .cta-final-compact .btn {
+    min-width: 180px !important;
+    padding: var(--space-md) var(--space-xl) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-final-compact {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: var(--space-xl) !important;
+    gap: var(--space-lg) !important;
+    margin: var(--space-xl) var(--space-md) !important;
+  }
+  
+  .cta-final-compact > div:first-child {
+    order: 2;
+    min-width: auto !important;
+  }
+  
+  .cta-final-compact > div:last-child {
+    order: 1;
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-md) !important;
+  }
+  
+  .cta-final-compact h2 {
+    font-size: 1.375rem !important;
+    margin-bottom: var(--space-sm) !important;
+  }
+  
+  .cta-final-compact p {
+    font-size: 1rem !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .cta-final-compact .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: var(--space-md) var(--space-lg) !important;
+    min-width: auto !important;
+  }
+  
+  .cta-final-compact a[href^="tel:"] {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: var(--space-md) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-final-compact {
+    padding: var(--space-lg) !important;
+  }
+  
+  .cta-final-compact h2 {
+    font-size: 1.125rem !important;
+  }
+  
+  .cta-final-compact p {
+    font-size: 0.875rem !important;
+  }
+  
+  .cta-final-compact .btn {
+    padding: var(--space-sm) var(--space-md) !important;
+    font-size: 0.9375rem !important;
+  }
+  
+  .cta-final-compact a[href^="tel:"] {
+    font-size: 0.875rem !important;
+  }
+  
+  .cta-final-compact a[href^="tel:"] span {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  .cta-final-compact a[href^="tel:"] span i {
+    font-size: 0.875rem !important;
+  }
+}

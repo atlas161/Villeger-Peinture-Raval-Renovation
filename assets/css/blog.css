@@ -1,0 +1,245 @@
+/* ===================================================================
+   BLOG STYLES - Corrections des couleurs et navbar
+   =================================================================== */
+
+/* Navbar sur pages blog */
+.blog-page .site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.blog-page .logo {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.blog-page .logo:hover {
+  opacity: 0.8;
+}
+
+.blog-page .burger {
+  background: transparent;
+  border: none;
+  padding: var(--space-sm);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.blog-page .burger-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 5px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+/* Overlay sombre derrière le menu sur pages blog */
+.blog-page body.nav-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  pointer-events: all;
+}
+
+/* Footer sur pages blog - correction du contraste */
+.blog-page .site-footer,
+article .site-footer {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5A2F0F 100%);
+  color: var(--color-white) !important;
+}
+
+.blog-page .footer-col h3,
+article .footer-col h3 {
+  color: var(--color-white) !important;
+}
+
+.blog-page .footer-links a,
+.blog-page .footer-contacts a,
+article .footer-links a,
+article .footer-contacts a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.blog-page .footer-links a:hover,
+.blog-page .footer-contacts a:hover,
+article .footer-links a:hover,
+article .footer-contacts a:hover {
+  color: var(--color-white) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.blog-page .footer-col .logo,
+article .footer-col .logo {
+  color: var(--color-white) !important;
+}
+
+.blog-page .copyright,
+article .copyright {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Forcer les couleurs sur tous les éléments du footer */
+.blog-page .site-footer *,
+article .site-footer * {
+  color: inherit !important;
+}
+
+.blog-page .site-footer a,
+article .site-footer a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.blog-page .site-footer a:hover,
+article .site-footer a:hover {
+  color: var(--color-white) !important;
+}
+
+/* Styles ultra-spécifiques pour forcer les couleurs - identiques à la page d'accueil */
+body.blog-page .site-footer {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.blog-page .site-footer .footer-links a,
+body.blog-page .site-footer .footer-contacts a {
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+  font-size: 0.9375rem;
+}
+
+body.blog-page .site-footer .footer-links a:hover,
+body.blog-page .site-footer .footer-contacts a:hover {
+  color: var(--color-white) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+body.blog-page .site-footer .footer-col h3,
+body.blog-page .site-footer .footer-col .logo {
+  color: var(--color-white) !important;
+}
+
+body.blog-page .site-footer .copyright {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.blog-page .social-badge,
+article .social-badge {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: var(--color-white) !important;
+}
+
+.blog-page .social-badge:hover,
+article .social-badge:hover {
+  background: var(--brand-accent) !important;
+  color: var(--color-white) !important;
+}
+
+/* Icônes de partage dans les articles */
+.article-share {
+  display: flex;
+  gap: var(--space-sm);
+  margin: var(--space-xl) 0;
+}
+
+.share-buttons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(103, 58, 18, 0.1) !important;
+  color: var(--color-primary) !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(103, 58, 18, 0.2);
+}
+
+.share-btn:hover {
+  background: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(103, 58, 18, 0.3);
+}
+
+.share-btn i {
+  font-size: 1.125rem;
+  color: inherit !important;
+}
+
+/* Correction spécifique pour les réseaux sociaux */
+.share-btn.facebook:hover {
+  background: #1877F2;
+  border-color: #1877F2;
+}
+
+.share-btn.twitter:hover {
+  background: #1DA1F2;
+  border-color: #1DA1F2;
+}
+
+.share-btn.linkedin:hover {
+  background: #0077B5;
+  border-color: #0077B5;
+}
+
+.share-btn.email:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Sidebar CTA - Correction contraste */
+.sidebar-cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #522e0e 100%);
+  border-radius: 16px;
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.sidebar-cta p {
+  font-size: 0.9375rem;
+  margin-bottom: var(--space-md);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sidebar-cta .btn {
+  width: 100%;
+  justify-content: center;
+  border-radius: 12px !important;
+}
+
+.sidebar-cta .btn-primary {
+  background: var(--color-white) !important;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-white) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25) !important;
+}
+
+.sidebar-cta .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: var(--color-primary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35) !important;
+}
+
+.sidebar-cta .btn-primary i {
+  color: var(--color-primary) !important;
+}

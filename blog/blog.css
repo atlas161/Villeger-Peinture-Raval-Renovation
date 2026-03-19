@@ -1,0 +1,510 @@
+/* ===================================================================
+   VPRR BLOG - Styles spécifiques (Apple-inspired Design)
+   =================================================================== */
+
+/* ===================================================================
+   1. VARIABLES BLOG
+   =================================================================== */
+
+:root {
+  --blog-radius-sm: 16px;
+  --blog-radius: 24px;
+  --blog-radius-lg: 32px;
+  --blog-shadow-card: 0 4px 24px rgba(45, 36, 30, 0.08);
+  --blog-shadow-card-hover: 0 12px 40px rgba(45, 36, 30, 0.12);
+  --blog-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===================================================================
+   2. HERO BLOG
+   =================================================================== */
+
+.blog-hero {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blog-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-accent);
+  margin-bottom: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--brand-accent-light);
+  border-radius: var(--radius-pill);
+}
+
+.blog-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.text-accent {
+  color: var(--brand-accent);
+}
+
+.blog-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===================================================================
+   3. FILTRES PAR CATÉGORIE
+   =================================================================== */
+
+.blog-filters {
+  padding: var(--space-xl) 0;
+  background: var(--color-bg);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filters-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  padding: var(--space-sm) var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--blog-transition);
+  white-space: nowrap;
+  min-height: 44px; /* Minimum WCAG touch target height */
+}
+
+.filter-btn:hover {
+  color: var(--color-text);
+  border-color: var(--brand-accent);
+  box-shadow: var(--blog-shadow-card);
+}
+
+.filter-btn.active {
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: var(--blog-shadow-card);
+}
+
+.filter-btn i {
+  font-size: 0.875rem;
+}
+
+/* ===================================================================
+   4. GRILLE D'ARTICLES
+   =================================================================== */
+
+.blog-grid-section {
+  padding: var(--space-3xl) 0;
+  min-height: 400px;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Carte d'article - Style Apple */
+.article-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--blog-radius);
+  overflow: hidden;
+  box-shadow: var(--blog-shadow-card);
+  transition: var(--blog-transition);
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--blog-shadow-card-hover);
+}
+
+.article-card:hover .article-image img {
+  transform: scale(1.05);
+}
+
+.article-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-surface-alt);
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.article-tag {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.article-content {
+  padding: var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.article-meta i {
+  font-size: 0.75rem;
+}
+
+.article-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.article-title {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-excerpt {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  margin-bottom: var(--space-md);
+}
+
+.article-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  margin-top: auto;
+}
+
+.article-cta i {
+  font-size: 0.875rem;
+  transition: transform 0.2s ease;
+}
+
+.article-card:hover .article-cta i {
+  transform: translateX(4px);
+}
+
+/* ===================================================================
+   5. ÉTATS DE CHARGEMENT ET VIDE
+   =================================================================== */
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4xl) 0;
+  grid-column: 1 / -1;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--brand-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--space-md);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4xl) 0;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  color: var(--brand-accent);
+  margin-bottom: var(--space-lg);
+  opacity: 0.5;
+}
+
+.empty-state h2 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.empty-state p {
+  color: var(--color-text-light);
+}
+
+/* ===================================================================
+   6. PAGINATION
+   =================================================================== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.page-info {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  font-weight: var(--font-weight-medium);
+}
+
+.pagination .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===================================================================
+   7. CTA SECTION
+   =================================================================== */
+
+.blog-cta {
+  padding: var(--space-3xl) 0 var(--space-4xl);
+  background: var(--color-bg);
+}
+
+.cta-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  padding: var(--space-3xl);
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+  border-radius: var(--blog-radius-lg);
+  box-shadow: var(--blog-shadow-card);
+}
+
+.cta-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cta-content h2 {
+  text-align: left;
+  font-size: 1.75rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cta-content p {
+  font-size: 1.0625rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.btn-lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1rem;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: var(--blog-transition);
+}
+
+.btn-outline:hover {
+  background: var(--color-surface-alt);
+  border-color: var(--brand-accent);
+  color: var(--color-text);
+}
+
+/* ===================================================================
+   8. FOOTER BLOG (Supprimé car géré par assets/js/footer.js)
+   =================================================================== */
+
+.blog-footer {
+  display: none;
+}
+
+/* ===================================================================
+   9. RESPONSIVE
+   =================================================================== */
+
+@media (max-width: 768px) {
+  .blog-hero {
+    padding: var(--space-3xl) 0 var(--space-2xl);
+  }
+  
+  .blog-title {
+    font-size: 2rem;
+  }
+  
+  .blog-subtitle {
+    font-size: 1.0625rem;
+  }
+  
+  .blog-filters {
+    padding: var(--space-md) 0;
+    position: relative;
+    top: 0; /* Remove sticky on mobile to avoid layout shifts */
+  }
+  
+  .filters-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs);
+    padding: 0 var(--space-md);
+  }
+  
+  .filter-btn {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8125rem;
+    min-height: 48px; /* Slightly larger for mobile fingers */
+    border-radius: 12px; /* Less rounded for better grid appearance */
+  }
+  
+  .filter-btn.active {
+    box-shadow: 0 4px 12px rgba(103, 58, 18, 0.2);
+  }
+  
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .cta-card {
+    padding: var(--space-xl);
+  }
+  
+  .cta-content h2 {
+    font-size: 1.375rem;
+  }
+  
+  .cta-actions {
+    width: 100%;
+  }
+  
+  .cta-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-content {
+    padding: var(--space-md);
+  }
+  
+  .article-title {
+    font-size: 1.125rem;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .pagination .btn {
+    width: 100%;
+  }
+}

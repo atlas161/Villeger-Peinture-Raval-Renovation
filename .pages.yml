@@ -1,0 +1,32 @@
+media:
+  - name: images
+    label: Images du Blog
+    input: assets/img/blog
+    output: /assets/img/blog
+
+content:
+  - name: posts
+    label: Articles de Blog
+    type: collection
+    path: content/blog
+    filename: '{year}-{month}-{day}-{primary}.md'
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Titre de l'article (H1)
+        type: string
+        required: true
+      - name: description
+        label: Description SEO (Meta)
+        type: string
+        required: true
+      - name: date
+        label: Date de publication
+        type: date
+        required: true
+      - name: image
+        label: Image de couverture
+        type: image
+      - name: body
+        label: Contenu de l'article
+        type: rich-text

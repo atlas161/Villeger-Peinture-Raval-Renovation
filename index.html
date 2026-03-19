@@ -12,6 +12,7 @@
     <!-- DNS Prefetch pour les ressources secondaires -->
     <link rel="dns-prefetch" href="https://elfsightcdn.com" />
     <link rel="dns-prefetch" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://tile.openstreetmap.org" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
     <!-- Preload des ressources critiques (above the fold) -->
@@ -74,13 +75,13 @@
     <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/css/cookies.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/css/faq.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/zone.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/zone.css" />
     
     <!-- Google Fonts avec display=swap pour éviter FOIT -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     
-    <!-- Font Awesome - Subset personnalisé (uniquement icônes utilisées) -->
-    <link rel="stylesheet" href="assets/css/icons.css" media="print" onload="this.media='all'" />
+    <!-- Font Awesome CDN complet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Leaflet CSS - Chargé uniquement quand nécessaire -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'" />
@@ -92,7 +93,7 @@
       <link rel="stylesheet" href="assets/css/faq.css" />
       <link rel="stylesheet" href="assets/css/zone.css" />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     </noscript>
     
     <!-- Favicon - URLs absolues pour Google -->
@@ -160,18 +161,30 @@
           {
             "@type": "ListItem",
             "position": 4,
+            "name": "Blog",
+            "item": "https://vprr.fr/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
             "name": "Zone d'intervention",
             "item": "https://vprr.fr/#zone"
           },
           {
             "@type": "ListItem",
-            "position": 5,
+            "position": 6,
             "name": "FAQ",
             "item": "https://vprr.fr/#faq"
           },
           {
             "@type": "ListItem",
-            "position": 6,
+            "position": 7,
+            "name": "Avis Google",
+            "item": "https://vprr.fr/#avis"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
             "name": "Contact",
             "item": "https://vprr.fr/#contact"
           }
@@ -190,6 +203,13 @@
             "name": "Nos Services",
             "description": "Ravalement de façade, peinture intérieure et extérieure, isolation thermique, rénovation",
             "url": "https://vprr.fr/#services"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-blog",
+            "name": "Blog",
+            "description": "Guides et conseils pour vos projets de rénovation à Angoulême et en Charente",
+            "url": "https://vprr.fr/blog/"
           },
           {
             "@type": "SiteNavigationElement",
@@ -218,6 +238,20 @@
             "name": "FAQ",
             "description": "Questions fréquentes sur nos services de rénovation",
             "url": "https://vprr.fr/#faq"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-faq-page",
+            "name": "FAQ Rénovation",
+            "description": "FAQ complète sur nos prestations de rénovation en Charente",
+            "url": "https://vprr.fr/faq-renovation-angouleme.html"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vprr.fr/#nav-zone-page",
+            "name": "Villes desservies",
+            "description": "Carte et villes desservies autour d'Angoulême en Charente",
+            "url": "https://vprr.fr/zone-desservie-charente.html"
           }
         ]
       }
@@ -235,7 +269,7 @@
         "logo": "https://vprr.fr/media/VPRR-LOGO.svg",
         "image": "https://vprr.fr/data/hero.webp",
         "email": "villergerstephane204@gmail.com",
-        "telephone": "+33659268623",
+        "telephone": "+33545912270",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "136 Avenue de la République",
@@ -366,12 +400,14 @@
     
     <!-- JavaScript critique (chargé en premier) -->
     <script defer src="assets/js/performance.js"></script>
+    <script defer src="assets/js/zone-map-leaflet.js"></script>
     <script defer src="assets/js/main.js"></script>
     
-    <!-- JavaScript non-critique (chargé après) -->
-    <script defer src="assets/js/config-loader.js"></script>
-    <script defer src="assets/js/form-security.js"></script>
-    <script defer src="assets/js/cookies.js"></script>
+    <!-- Scripts -->
+  <script src="assets/js/config-loader.js"></script>
+  <script src="assets/js/form-security.js"></script>
+  <script src="assets/js/cookies.js"></script>
+  <script src="assets/js/blog-home.js"></script>
     
     <!-- Scripts tiers - Chargés en lazy-load quand les sections deviennent visibles -->
     <script>
@@ -387,23 +423,9 @@
           }
         }, {rootMargin: '300px'});
         
-        // Lazy load Leaflet (Carte zone)
-        var zoneObserver = new IntersectionObserver(function(entries) {
-          if (entries[0].isIntersecting) {
-            var s = document.createElement('script');
-            s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-            s.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
-            s.crossOrigin = '';
-            document.head.appendChild(s);
-            zoneObserver.disconnect();
-          }
-        }, {rootMargin: '200px'});
-        
         document.addEventListener('DOMContentLoaded', function() {
           var galerie = document.getElementById('galerie');
-          var zone = document.getElementById('zone');
           if (galerie) galerieObserver.observe(galerie);
-          if (zone) zoneObserver.observe(zone);
         });
       }
     </script>
@@ -431,8 +453,17 @@
         <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
           <ul class="menu">
             <li><a class="nav-link" href="#home" data-nav="home">Accueil</a></li>
-            <li><a class="nav-link" href="#services" data-nav="services">Services</a></li>
+            <li class="has-submenu">
+              <a class="nav-link" href="#services" data-nav="services">Services</a>
+              <ul class="submenu" aria-label="Pages services">
+                <li><a href="nettoyage-facade-angouleme.html">Nettoyage de façade <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="ravalement-facade-angouleme.html">Ravalement de façade <span class="submenu-meta">Charente</span></a></li>
+                <li><a href="nettoyage-toiture-angouleme.html">Nettoyage de toiture <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="peinture-exterieure-charente.html">Peinture extérieure <span class="submenu-meta">Charente</span></a></li>
+              </ul>
+            </li>
             <li><a class="nav-link" href="#galerie" data-nav="galerie">Galerie</a></li>
+            <li><a class="nav-link" href="#blog" data-nav="blog">Blog</a></li>
             <li><a class="nav-link" href="#zone" data-nav="zone">Zone d'intervention</a></li>
             <li><a class="nav-link" href="#faq" data-nav="faq">FAQ</a></li>
             <li><a class="nav-link" href="#contact" data-nav="contact">Contact</a></li>
@@ -462,11 +493,12 @@
               type="image/webp"
               srcset="data/hero-400w.webp 400w,
                       data/hero-600w.webp 600w,
-                      data/hero-800w.webp 800w"
+                      data/hero-800w.webp 800w,
+                      data/hero-1200w.webp 1200w"
               sizes="(max-width: 480px) 400px,
                      (max-width: 768px) 600px,
-                     800px" />
-            <img src="data/hero.webp" alt="Ravalement de façade et peinture à Angoulême — réalisations" loading="eager" width="800" height="534" fetchpriority="high" decoding="async" />
+                     900px" />
+            <img src="data/hero.webp" alt="Ravalement de façade et peinture à Angoulême — réalisations" loading="eager" width="800" height="450" fetchpriority="high" decoding="async" />
           </picture>
         </div>
       </section>
@@ -489,11 +521,15 @@
               <h3 itemprop="name">Ravalement & Façade</h3>
               <p itemprop="description">Redonnez vie à vos façades&nbsp;: ravalement complet, nettoyage technique, peinture extérieure et traitements d'imperméabilisation.</p>
               <ul class="service-details">
-                <li>Ravalement complet</li>
-                <li>Hydro-gommage & démoussage</li>
-                <li>Peinture extérieure</li>
+                <li><a href="ravalement-facade-angouleme.html">Ravalement complet</a></li>
+                <li><a href="nettoyage-facade-angouleme.html">Hydro-gommage & démoussage</a></li>
+                <li><a href="peinture-exterieure-charente.html">Peinture extérieure</a></li>
                 <li>Traitement de l'humidité</li>
               </ul>
+              <div class="service-cta">
+                <a href="nettoyage-facade-angouleme.html" class="btn btn-secondary btn--sm">Nettoyage de façade</a>
+                <a href="ravalement-facade-angouleme.html" class="btn btn-secondary btn--sm">Ravalement</a>
+              </div>
               <meta itemprop="areaServed" content="Angoulême, Charente" />
               <link itemprop="url" href="https://vprr.fr/#services-ravalement" />
             </article>
@@ -503,11 +539,14 @@
               <h3 itemprop="name">Toiture & Couverture</h3>
               <p itemprop="description">Protection et entretien de votre toiture&nbsp;: réfection, zinguerie, étanchéité et interventions d'urgence après intempéries.</p>
               <ul class="service-details">
-                <li>Entretien & démoussage</li>
+                <li><a href="nettoyage-toiture-angouleme.html">Entretien & démoussage</a></li>
                 <li>Réfection de toiture</li>
                 <li>Gouttières & zinguerie</li>
                 <li>Pose de Velux</li>
               </ul>
+              <div class="service-cta">
+                <a href="nettoyage-toiture-angouleme.html" class="btn btn-secondary btn--sm">Nettoyage de toiture</a>
+              </div>
               <meta itemprop="areaServed" content="Angoulême, Charente" />
               <link itemprop="url" href="https://vprr.fr/#services-toiture" />
             </article>
@@ -540,6 +579,74 @@
               <link itemprop="url" href="https://vprr.fr/#services-renovation" />
             </article>
           </div>
+          
+          <!-- CTA vers les pages service détaillées -->
+          <div class="services-cta-showcase">
+            <div class="services-cta-content">
+              <div class="services-cta-header">
+                <div class="services-cta-badge">
+                  <i class="fa-solid fa-star"></i>
+                  <span>Nos spécialités</span>
+                </div>
+                <h3 class="services-cta-title">Découvrez nos services en détail</h3>
+                <p class="services-cta-description">Consultez nos pages dédiées pour en savoir plus sur chaque prestation et obtenir un devis personnalisé.</p>
+              </div>
+              
+              <div class="services-cta-grid">
+                <a href="nettoyage-facade-angouleme.html" class="service-cta-card primary">
+                  <div class="service-cta-icon">
+                    <i class="fa-solid fa-spray-can-sparkles"></i>
+                  </div>
+                  <div class="service-cta-text">
+                    <h4>Nettoyage de Façade</h4>
+                    <span>Hydro-gommage expert</span>
+                  </div>
+                  <div class="service-cta-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </a>
+                
+                <a href="nettoyage-toiture-angouleme.html" class="service-cta-card primary">
+                  <div class="service-cta-icon">
+                    <i class="fa-solid fa-house-chimney"></i>
+                  </div>
+                  <div class="service-cta-text">
+                    <h4>Nettoyage de Toiture</h4>
+                    <span>Démoussage professionnel</span>
+                  </div>
+                  <div class="service-cta-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </a>
+                
+                <a href="ravalement-facade-angouleme.html" class="service-cta-card secondary">
+                  <div class="service-cta-icon">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                  </div>
+                  <div class="service-cta-text">
+                    <h4>Ravalement de Façade</h4>
+                    <span>Rénovation complète</span>
+                  </div>
+                  <div class="service-cta-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </a>
+                
+                <a href="peinture-exterieure-charente.html" class="service-cta-card secondary">
+                  <div class="service-cta-icon">
+                    <i class="fa-solid fa-palette"></i>
+                  </div>
+                  <div class="service-cta-text">
+                    <h4>Peinture Extérieure</h4>
+                    <span>Finitions premium</span>
+                  </div>
+                  <div class="service-cta-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -557,6 +664,61 @@
         </div>
       </section>
 
+      <!-- Section Blog : Derniers articles -->
+      <section id="blog" class="section" aria-labelledby="blog-title" style="background: linear-gradient(180deg, #FAFAF9 0%, #FFFFFF 100%); padding: var(--space-3xl) 0;">
+        <div class="container">
+          <header class="section-header" style="max-width: 800px; margin: 0 auto var(--space-2xl); text-align: center;">
+            <p class="section-eyebrow" style="color: #673A12; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--space-sm);">Blog</p>
+            <h2 id="blog-title" style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; color: #2D241E; margin-bottom: var(--space-md); line-height: 1.2;">Guides & Conseils</h2>
+            <p style="font-size: 1.125rem; color: #6B5D52; line-height: 1.6; max-width: 600px; margin: 0 auto;">Conseils d'experts et guides pratiques pour réussir vos projets de rénovation, peinture et ravalement.</p>
+          </header>
+          
+          <div class="blog-preview-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-xl); margin-bottom: var(--space-2xl);">
+            <!-- Article 1 -->
+            <article class="blog-preview-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.08); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(103, 58, 18, 0.08);">
+              <a href="blog/choisir-peinture-exterieure.html" class="blog-preview-link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+                <div class="blog-preview-image" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #F5F2EE;">
+                  <img src="media/blog/peinture_ext-600w.webp" srcset="media/blog/peinture_ext-400w.webp 400w, media/blog/peinture_ext-600w.webp 600w, media/blog/peinture_ext-800w.webp 800w, media/blog/peinture_ext-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, 520px" alt="Comment choisir sa peinture extérieure ?" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                  <div style="position: absolute; top: 16px; left: 16px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #673A12; letter-spacing: 0.02em;">Peinture</div>
+                </div>
+                <div class="blog-preview-content" style="padding: var(--space-lg); flex: 1; display: flex; flex-direction: column;">
+                  <h3 style="font-size: 1.25rem; font-weight: 600; color: #2D241E; margin-bottom: var(--space-sm); line-height: 1.4; transition: color 0.2s ease;">Comment choisir sa peinture extérieure ?</h3>
+                  <p style="font-size: 0.9375rem; color: #6B5D52; line-height: 1.6; margin-bottom: var(--space-md); flex: 1;">Guide complet pour sélectionner la peinture adaptée à votre façade : types, finitions et budget.</p>
+                  <div style="display: flex; align-items: center; gap: var(--space-sm); color: #8B7355; font-size: 0.875rem;">
+                    <i class="fa-regular fa-clock" aria-hidden="true" style="font-size: 0.875rem;"></i>
+                    <span>5 min de lecture</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true" style="margin-left: auto; font-size: 0.875rem; transition: transform 0.2s ease;"></i>
+                  </div>
+                </div>
+              </a>
+            </article>
+            
+            <!-- Article 2 (CTA vers tous les articles) -->
+            <article class="blog-preview-card" style="background: linear-gradient(135deg, #673A12 0%, #8B5A2B 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(103, 58, 18, 0.25); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;">
+              <a href="blog/" class="blog-preview-link" style="text-decoration: none; color: white; display: flex; flex-direction: column; height: 100%; padding: var(--space-xl); justify-content: center; align-items: center; text-align: center; min-height: 360px;">
+                <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-lg); transition: transform 0.3s ease;">
+                  <i class="fa-solid fa-book-open" style="font-size: 2rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: var(--space-md); line-height: 1.3;">Explorez tous nos articles</h3>
+                <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: var(--space-lg); max-width: 280px;">Découvrez notre bibliothèque complète de guides et conseils pour vos projets de rénovation.</p>
+                <div style="display: inline-flex; align-items: center; gap: var(--space-sm); padding: 12px 24px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 12px; font-weight: 600; font-size: 0.9375rem; transition: all 0.2s ease;">
+                  <span>Voir le blog</span>
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true" style="font-size: 0.875rem;"></i>
+                </div>
+              </a>
+            </article>
+          </div>
+          
+          <div style="text-align: center; padding-top: var(--space-lg); border-top: 1px solid rgba(103, 58, 18, 0.1);">
+            <p style="color: #8B7355; font-size: 0.9375rem; margin-bottom: var(--space-md);">Plus de guides à venir chaque semaine</p>
+            <a href="blog/" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: var(--space-sm); padding: 14px 28px; font-size: 1rem; font-weight: 600; border-radius: 12px; transition: all 0.2s ease;">
+              <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+              Tous les articles
+            </a>
+          </div>
+        </div>
+      </section>
+
             <!-- Section 'Zone d'intervention' : carte interactive -->
       <section id="zone" class="section zone-section" aria-labelledby="zone-title">
         <div class="container">
@@ -568,7 +730,12 @@
           
           <div class="zone-content">
             <div class="zone-map-container">
-              <div id="zone-map" class="zone-map" role="application" aria-label="Carte de la zone d'intervention"></div>
+              <div id="zone-map" class="zone-map" role="application" aria-label="Carte de la zone d'intervention">
+                <div class="zone-map-fallback" role="note" aria-label="Chargement de la carte">
+                  <div class="zone-map-fallback-title">Chargement de la carte…</div>
+                  <div class="zone-map-fallback-text">Si rien ne s’affiche, vérifiez votre connexion.</div>
+                </div>
+              </div>
             </div>
             
             <div class="zone-info">
@@ -607,6 +774,13 @@
               
               <div class="zone-note">
                 <p><i class="fa-solid fa-circle-info" aria-hidden="true"></i> <strong>Autre localité&nbsp;?</strong> Contactez-nous pour vérifier si nous intervenons dans votre secteur.</p>
+              </div>
+
+              <div class="zone-actions">
+                <a href="zone-desservie-charente.html" class="btn btn-secondary zone-actions-btn">
+                  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                  Voir toutes les villes desservies
+                </a>
               </div>
             </div>
           </div>
@@ -653,6 +827,165 @@
                 <p><strong>Absolument. C'est une obligation légale et une sécurité pour vous.</strong> Nous possédons une Garantie Décennale (qui couvre les gros ouvrages pendant 10 ans) ainsi qu'une Responsabilité Civile Professionnelle. Nos attestations d'assurance sont à jour et disponibles sur simple demande avant le début du chantier.</p>
               </div>
             </details>
+          </div>
+
+          <div class="faq-actions">
+            <p class="faq-actions-text">
+              Besoin de plus de réponses sur nos services à Angoulême et en Charente&nbsp;?
+            </p>
+            <a href="faq-renovation-angouleme.html" class="btn btn-secondary faq-actions-btn">
+              <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+              Voir la FAQ complète
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="avis" class="section reviews-section" aria-labelledby="reviews-title">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-eyebrow">Avis Google</p>
+            <h2 id="reviews-title">Ils nous font confiance</h2>
+            <p>Découvrez ce que nos clients disent de nos prestations de rénovation à Angoulême et en Charente.</p>
+          </header>
+
+          <div class="reviews-grid">
+            <div class="reviews-carousel" data-reviews-carousel>
+              <div class="reviews-carousel-top">
+                <div class="reviews-summary" aria-label="Résumé des avis Google">
+                  <div class="reviews-stars" aria-hidden="true">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div class="reviews-summary-text">5,0 • 6 avis</div>
+                </div>
+
+                <div class="reviews-controls" aria-label="Contrôles du carrousel">
+                  <button type="button" class="reviews-btn" data-reviews-prev aria-label="Avis précédents">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  </button>
+                  <button type="button" class="reviews-btn" data-reviews-next aria-label="Avis suivants">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="reviews-viewport" data-reviews-viewport>
+                <div class="reviews-track" data-reviews-track>
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-author-block">
+                        <div class="review-avatar" aria-hidden="true">HB</div>
+                        <div class="review-author-wrap">
+                          <div class="review-author">Hélène Boireau</div>
+                          <div class="review-source">Avis Google</div>
+                        </div>
+                      </div>
+                      <div class="review-stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="review-text">J'ai fait appel à cette société pour un nettoyage de ma toiture et l'application d'un produit hydrofuge. Artisan de bon conseil. Travail soigneux, ils ont pris le temps de mettre à l'abri éléments extérieurs qui auraient pu craindre. Bon résultat et bon rapport qualité-prix.</p>
+                    <button type="button" class="review-more" data-review-more aria-expanded="false">Lire la suite</button>
+                  </article>
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-author-block">
+                        <div class="review-avatar" aria-hidden="true">GT</div>
+                        <div class="review-author-wrap">
+                          <div class="review-author">Gregory Themot</div>
+                          <div class="review-source">Avis Google</div>
+                        </div>
+                      </div>
+                      <div class="review-stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="review-text">Entreprise qui a toujours su répondre parfaitement à nos attentes. Travaux réalisés dans les temps, de qualité, je recommande.</p>
+                    <button type="button" class="review-more" data-review-more aria-expanded="false">Lire la suite</button>
+                  </article>
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-author-block">
+                        <div class="review-avatar" aria-hidden="true">SB</div>
+                        <div class="review-author-wrap">
+                          <div class="review-author">Sylvie B.</div>
+                          <div class="review-source">Avis Google</div>
+                        </div>
+                      </div>
+                      <div class="review-stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="review-text">Très belle expérience avec VPRR Rénovation. J'ai demandé un devis rénovation maison pour une rénovation toiture complète et j'ai été super bien conseillé. Réactivité au top et artisans vraiment sérieux. Merci à l'équipe.</p>
+                    <button type="button" class="review-more" data-review-more aria-expanded="false">Lire la suite</button>
+                  </article>
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-author-block">
+                        <div class="review-avatar" aria-hidden="true">FP</div>
+                        <div class="review-author-wrap">
+                          <div class="review-author">Florence Pluvieux</div>
+                          <div class="review-source">Avis Google</div>
+                        </div>
+                      </div>
+                      <div class="review-stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="review-text">Nous avons fait appel à la société de Mr Villeger pour la réfection d’une toiture et d’un mur en pierre de parement et sommes très satisfaits de ses interventions. Son équipe et lui sont très réactifs et toujours à l’écoute.</p>
+                    <button type="button" class="review-more" data-review-more aria-expanded="false">Lire la suite</button>
+                  </article>
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-author-block">
+                        <div class="review-avatar" aria-hidden="true">JL</div>
+                        <div class="review-author-wrap">
+                          <div class="review-author">Jeanne Lazard</div>
+                          <div class="review-source">Avis Google</div>
+                        </div>
+                      </div>
+                      <div class="review-stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="review-text">J’ai fait appel à VPRR Rénovation pour le nettoyage de ma toiture, de la façade et le changement d’une gouttière et je suis très satisfaite du début à la fin&nbsp;: rapidité pour réaliser le devis et ensuite pour intervenir, disponibilité de toute l’équipe et le rendu est parfait. Merci beaucoup à vous.</p>
+                    <button type="button" class="review-more" data-review-more aria-expanded="false">Lire la suite</button>
+                  </article>
+                  <article class="review-card">
+                    <div class="review-card-top">
+                      <div class="review-author-block">
+                        <div class="review-avatar" aria-hidden="true">MD</div>
+                        <div class="review-author-wrap">
+                          <div class="review-author">Marc Deschamps</div>
+                          <div class="review-source">Avis Google</div>
+                        </div>
+                      </div>
+                      <div class="review-stars" aria-hidden="true">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="review-text">J'ai contacté cette entreprise de rénovation pour un ravalement de façade et le résultat est impeccable. Devis gratuit et très rapide, équipe ponctuelle et chantier laissé propre. Je recommande vivement Mr Villeger&nbsp;!</p>
+                    <button type="button" class="review-more" data-review-more aria-expanded="false">Lire la suite</button>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="reviews-cta">
+              <div class="google-reviews-section google-reviews-section--wide">
+                <div class="google-reviews-content">
+                  <h4 class="google-reviews-title"><i class="fa-brands fa-google" aria-hidden="true"></i> Votre avis nous aide beaucoup&nbsp;!</h4>
+                  <p class="google-reviews-text">Vous êtes satisfait de nos services&nbsp;? Laissez-nous un avis sur Google.</p>
+                </div>
+                <a href="https://g.page/r/CZZJ5Bogt13fEBM/review" target="_blank" rel="noopener noreferrer" class="btn btn-google-review">
+                  Laisser un avis Google
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -719,7 +1052,7 @@
                   <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
                   <div class="contact-info-text">
                     <span class="contact-info-label">Téléphone</span>
-                    <a href="tel:+33659268623">06 59 26 86 23</a>
+                    <a href="tel:+33545912270">05 45 91 22 70</a>
                   </div>
                 </li>
                 <li class="contact-info-item">
@@ -754,71 +1087,15 @@
                    class="btn btn-google-review">
                   Laisser un avis Google
                 </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
     </main>
 
-        <!-- Pied de page du site -->
-    <footer class="site-footer" aria-label="Pied de page">
-      <div class="container footer-grid">
-        <div class="footer-col">
-          <div class="logo">VillégerPeintureRavalRénovation</div>
-          <div class="copyright"> <span id="current-year">2025</span> VillégerPeintureRavalRénovation.<br>Tous droits réservés.</div>
-        </div>
-        <div class="footer-col">
-          <h3>Liens rapides</h3>
-          <ul class="footer-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#galerie">Galerie</a></li>
-            <li><a href="#zone">Zone d'intervention</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Coordonnées</h3>
-          <ul class="footer-contacts">
-            <li>Téléphone : <a href="tel:+33659268623">06 59 26 86 23</a></li>
-            <li>Email : <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
-          </ul>
-          <div class="socials" aria-label="Réseaux sociaux">
-            <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-badge"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Bannière de consentement aux cookies -->
-    <div id="cookie-banner">
-        <div class="cookie-banner-content">
-            <p>Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation des cookies.</p>
-            <div class="cookie-banner-actions">
-                <button id="accept-cookies" class="btn btn-primary">Accepter</button>
-                <button id="reject-cookies" class="btn btn-secondary">Refuser</button>
-                <button id="cookie-settings" class="btn btn-secondary">Paramètres</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modale de paramètres des cookies -->
-    <div id="cookie-settings-modal">
-        <div class="cookie-modal-content">
-            <h3>Paramètres des cookies</h3>
-            <p>Choisissez les types de cookies que vous acceptez.</p>
-            <div class="cookie-option">
-                <input type="checkbox" id="necessary-cookies" checked disabled>
-                <label for="necessary-cookies">Cookies strictement nécessaires</label>
-            </div>
-            <div class="cookie-option">
-                <input type="checkbox" id="analytics-cookies" checked>
-                <label for="analytics-cookies">Cookies d'analyse</label>
-            </div>
-            <button id="save-cookie-settings" class="btn btn-primary">Enregistrer</button>
-        </div>
-    </div>
+        <!-- Footer sera inclus dynamiquement -->
+    <script src="assets/js/footer.js"></script>
   </body>
 </html>

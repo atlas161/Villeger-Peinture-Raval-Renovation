@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="icon" type="image/png" href="media/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="media/favicon/favicon.svg" />
     <link rel="shortcut icon" href="media/favicon/favicon.ico" />
@@ -74,12 +74,34 @@
 <body>
     <header class="site-header" id="top">
         <div class="container header-inner">
-            <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+            <a href="index.html#top" class="logo" aria-label="Retour à l'accueil">
                 <img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villéger Peinture Raval Rénovation" width="150" height="40" />
             </a>
-            <nav class="primary-nav" id="primary-nav">
+            <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+                <span class="burger-bar" aria-hidden="true"></span>
+                <span class="burger-bar" aria-hidden="true"></span>
+                <span class="burger-bar" aria-hidden="true"></span>
+            </button>
+            <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
                 <ul class="menu">
-                    <li><a class="nav-link" href="index.html">Retour au site</a></li>
+                    <li><a class="nav-link" href="index.html#home">Accueil</a></li>
+                    <li class="has-submenu">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                        <ul class="submenu" aria-label="Pages services">
+                            <li><a href="nettoyage-facade-angouleme.html">Nettoyage de façade <span class="submenu-meta">Angoulême</span></a></li>
+                            <li><a href="ravalement-facade-angouleme.html">Ravalement de façade <span class="submenu-meta">Charente</span></a></li>
+                            <li><a href="nettoyage-toiture-angouleme.html">Nettoyage de toiture <span class="submenu-meta">Angoulême</span></a></li>
+                            <li><a href="peinture-exterieure-charente.html">Peinture extérieure <span class="submenu-meta">Charente</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link" href="index.html#galerie">Galerie</a></li>
+                    <li><a class="nav-link" href="index.html#blog">Blog</a></li>
+                    <li><a class="nav-link" href="index.html#zone">Zone d'intervention</a></li>
+                    <li><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                    <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+                    <li class="menu-cta">
+                        <a class="btn btn-primary" href="index.html#contact">Obtenir un devis</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -95,7 +117,7 @@
             Entreprise Individuelle<br>
             N° SIRET : 93401021600018<br>
             Siège social&nbsp;: 136 Avenue de la République, 16340 L'Isle d'Espagnac</p>
-            <p>Téléphone&nbsp;: <a href="tel:+33659268623">06 59 26 86 23</a><br>
+            <p>Téléphone&nbsp;: <a href="tel:+33545912270">05 45 91 22 70</a><br>
             Email&nbsp;: <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></p>
             <p>Directeur de la publication&nbsp;: Stéphane Villéger</p>
         </div>
@@ -106,6 +128,10 @@
             Eagle Production<br>
             contact@eagle-prod.fr<br>
             Téléphone&nbsp;: +33 6 99 36 17 15</p>
+            <a href="https://eagle-prod.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: var(--space-sm); margin-top: var(--space-sm);">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                Visiter eagle-prod.com
+            </a>
         </div>
 
         <div class="legal-section">
@@ -119,7 +145,7 @@
             <p>Pour exercer ces droits, vous pouvez nous contacter&nbsp;:</p>
             <ul>
                 <li>Par email&nbsp;: <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
-                <li>Par téléphone&nbsp;: <a href="tel:+33659268623">06 59 26 86 23</a></li>
+                <li>Par téléphone&nbsp;: <a href="tel:+33545912270">05 45 91 22 70</a></li>
             </ul>
             
             <h3>Suppression de vos données</h3>
@@ -148,32 +174,10 @@
         </a>
     </main>
 
-    <footer class="site-footer" aria-label="Pied de page">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <div class="logo">VillégerPeintureRavalRénovation</div>
-                <div class="copyright">© <span id="year"></span> VillégerPeintureRavalRénovation.<br>Tous droits réservés.</div>
-            </div>
-            <div class="footer-col">
-                <h3>Liens rapides</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#galerie">Galerie</a></li>
-                    <li><a href="mentions-legales.html">Mentions légales</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Coordonnées</h3>
-                <ul class="footer-contacts">
-                    <li>Téléphone&nbsp;: <a href="tel:+33659268623">06 59 26 86 23</a></li>
-                    <li>Email&nbsp;: <a href="mailto:villergerstephane204@gmail.com">villergerstephane204@gmail.com</a></li>
-                </ul>
-                <div class="socials" aria-label="Réseaux sociaux">
-                    <a href="https://www.instagram.com/peinture_raval_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-badge"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script defer src="assets/js/main.js"></script>
+
+    <!-- Footer sera inclus dynamiquement -->
+    <script src="assets/js/footer.js"></script>
 
     <script>
         // Mise à jour de l'année du copyright

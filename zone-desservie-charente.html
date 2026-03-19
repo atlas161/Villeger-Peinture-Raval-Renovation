@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
+
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="preload" href="assets/css/nav.css" as="style" />
+    <link rel="preload" href="assets/css/zone.css" as="style" />
+    <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
+
+    <title>Zone desservie en Charente (16) | Angoulême, Cognac, alentours | VPRR</title>
+    <meta name="description" content="Zone d'intervention VPRR en Charente : Angoulême, Cognac, Soyaux, La Couronne, Champniers, Ruelle-sur-Touvre, Mansle, Barbezieux et alentours. Carte et villes desservies." />
+    <meta name="keywords" content="zone intervention Charente, artisan Angoulême, ravalement Charente 16, peinture Angoulême, nettoyage façade Cognac, démoussage toiture Charente, entreprise rénovation L'Isle-d'Espagnac" />
+    <meta name="author" content="Villéger Peinture Raval Rénovation" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#673A12" />
+    <link rel="canonical" href="https://vprr.fr/zone-desservie-charente.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VPRR - Villéger Peinture Raval Rénovation" />
+    <meta property="og:title" content="Zone desservie en Charente (16) | VPRR" />
+    <meta property="og:description" content="Carte et liste des villes desservies autour d'Angoulême : Charente et alentours." />
+    <meta property="og:url" content="https://vprr.fr/zone-desservie-charente.html" />
+    <meta property="og:image" content="https://vprr.fr/data/hero.webp" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zone desservie Charente (16) | VPRR" />
+    <meta name="twitter:description" content="Intervention à Angoulême, Cognac et en Charente : carte et villes desservies." />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/zone.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    </noscript>
+
+    <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://vprr.fr/media/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="https://vprr.fr/media/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://vprr.fr/media/favicon/apple-touch-icon.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://vprr.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zone desservie",
+            "item": "https://vprr.fr/zone-desservie-charente.html"
+          }
+        ]
+      }
+    </script>
+
+    <script defer src="assets/js/performance.js"></script>
+    <script defer src="assets/js/zone-map-leaflet.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="index.html#top" class="logo" aria-label="VPRR - Accueil">
+          <img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villeger Peinture Raval Rénovation" width="150" height="40" />
+        </a>
+
+        <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
+          <ul class="menu">
+            <li><a class="nav-link" href="index.html#home">Accueil</a></li>
+            <li class="has-submenu">
+              <a class="nav-link" href="index.html#services">Services</a>
+              <ul class="submenu" aria-label="Pages services">
+                <li><a href="nettoyage-facade-angouleme.html">Nettoyage de façade <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="ravalement-facade-angouleme.html">Ravalement de façade <span class="submenu-meta">Charente</span></a></li>
+                <li><a href="nettoyage-toiture-angouleme.html">Nettoyage de toiture <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="peinture-exterieure-charente.html">Peinture extérieure <span class="submenu-meta">Charente</span></a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link" href="index.html#galerie">Galerie</a></li>
+            <li><a class="nav-link" href="index.html#blog">Blog</a></li>
+            <li><a class="nav-link" href="#zone" aria-current="page">Zone d'intervention</a></li>
+            <li><a class="nav-link" href="index.html#faq">FAQ</a></li>
+            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+            <li class="menu-cta">
+              <a class="btn btn-primary" href="index.html#contact">Obtenir un devis</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section zone-section" id="zone" aria-labelledby="zone-page-title">
+        <div class="container">
+          <header class="zone-header">
+            <p class="zone-eyebrow">Zone d'intervention</p>
+            <h1 id="zone-page-title">Nos zones desservies en Charente (16)</h1>
+            <p>Basés à L'Isle-d'Espagnac, nous intervenons autour d'Angoulême et dans toute la Charente pour vos travaux de ravalement, peinture et entretien de façade/toiture.</p>
+          </header>
+
+          <div class="zone-content">
+            <div class="zone-map-container">
+              <div id="zone-map" class="zone-map" role="application" aria-label="Carte de la zone d'intervention">
+                <div class="zone-map-fallback" role="note" aria-label="Chargement de la carte">
+                  <div class="zone-map-fallback-title">Chargement de la carte…</div>
+                  <div class="zone-map-fallback-text">Si rien ne s’affiche, vérifiez votre connexion.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="zone-info">
+              <div class="zone-note">
+                <p><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Cette page est dédiée à notre zone de déplacement pour faciliter votre recherche locale en Charente.</p>
+              </div>
+
+              <div class="zone-cities">
+                <h3><i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i> Villes desservies</h3>
+                <ul class="zone-cities-list">
+                  <li>Angoulême</li>
+                  <li>L'Isle-d'Espagnac</li>
+                  <li>Soyaux</li>
+                  <li>Ruelle-sur-Touvre</li>
+                  <li>Champniers</li>
+                  <li>La Couronne</li>
+                  <li>Fléac</li>
+                  <li>Saint-Michel</li>
+                  <li>Cognac</li>
+                  <li>Jarnac</li>
+                  <li>Barbezieux-Saint-Hilaire</li>
+                  <li>Mansle</li>
+                  <li>La Rochefoucauld-en-Angoumois</li>
+                  <li>Ruffec</li>
+                  <li>Confolens</li>
+                  <li>Saintes</li>
+                  <li>Niort</li>
+                  <li>Poitiers</li>
+                  <li>Périgueux</li>
+                </ul>
+              </div>
+
+              <div class="zone-actions">
+                <a href="index.html#contact" class="btn btn-primary zone-actions-btn">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  Vérifier votre commune et obtenir un devis
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-divider" role="separator" aria-hidden="true"></div>
+
+          <section class="section" aria-label="Informations sur la zone d'intervention">
+            <div class="container">
+              <header class="section-header">
+                <p class="section-eyebrow">Localisation</p>
+                <h2>Rénovation, façade et toiture autour d'Angoulême</h2>
+                <p>Nous nous déplaçons sur tout le département de la Charente (16) et, selon les projets, dans les secteurs limitrophes. Notre objectif&nbsp;: vous proposer un chantier soigné, des finitions propres et un accompagnement clair.</p>
+              </header>
+
+              <div class="services-cta-showcase" style="margin-top: var(--space-2xl);">
+                <div class="services-cta-content">
+                  <div class="services-cta-header">
+                    <div class="services-cta-badge">
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <span>Services</span>
+                    </div>
+                    <h3 class="services-cta-title">Besoin d'une page service détaillée&nbsp;?</h3>
+                    <p class="services-cta-description">Accédez directement à nos pages de services les plus demandées en Charente.</p>
+                  </div>
+
+                  <div class="services-cta-grid">
+                    <a href="nettoyage-facade-angouleme.html" class="service-cta-card primary">
+                      <div class="service-cta-icon"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></div>
+                      <div class="service-cta-text">
+                        <h4>Nettoyage de Façade</h4>
+                        <span>Hydro-gommage expert</span>
+                      </div>
+                      <div class="service-cta-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+                    </a>
+                    <a href="ravalement-facade-angouleme.html" class="service-cta-card secondary">
+                      <div class="service-cta-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+                      <div class="service-cta-text">
+                        <h4>Ravalement de Façade</h4>
+                        <span>Rénovation complète</span>
+                      </div>
+                      <div class="service-cta-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+                    </a>
+                    <a href="nettoyage-toiture-angouleme.html" class="service-cta-card primary">
+                      <div class="service-cta-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
+                      <div class="service-cta-text">
+                        <h4>Nettoyage de Toiture</h4>
+                        <span>Démoussage professionnel</span>
+                      </div>
+                      <div class="service-cta-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+                    </a>
+                    <a href="peinture-exterieure-charente.html" class="service-cta-card secondary">
+                      <div class="service-cta-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+                      <div class="service-cta-text">
+                        <h4>Peinture Extérieure</h4>
+                        <span>Finitions premium</span>
+                      </div>
+                      <div class="service-cta-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/footer.js"></script>
+  </body>
+</html>

@@ -1,4 +1,13 @@
 {
+  "name": "vprr-seo",
+  "version": "1.0.0",
+  "description": "VPRR - Site vitrine avec blog optimisé SEO",
+  "scripts": {
+    "build:blog": "node scripts/build-blog.js",
+    "build": "npm run build:blog",
+    "dev": "npx serve .",
+    "test": "node --test"
+  },
   "devDependencies": {
     "sharp": "^0.34.5"
   }
