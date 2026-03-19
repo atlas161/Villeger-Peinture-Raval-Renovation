@@ -162,6 +162,8 @@ Dernière étape cruciale :
     
 *   Application d'un traitement hydrofuge (optionnel)
     
+*   Application 100% naturel lait de chaux (optionnel)
+    
 
 ## Combien coûte un nettoyage de façade par hydro-gommage ?
 
