@@ -368,7 +368,7 @@ Spécialistes du nettoyage de façade à Angoulême depuis plus de 15 ans, nous 
 
 ### Nos réalisations
 
-Plus de **500 façades nettoyées** en Charente :
+Plus de **300 façades nettoyées** en Charente :
 
 *   Maisons individuelles
     
