@@ -338,7 +338,7 @@ Pour maintenir votre façade propre :
 
 ### Combien de temps dure le résultat ?
 
-Avec un traitement hydrofuge, votre façade reste propre **10 à 15 ans**. Sans traitement, comptez **5 à 8 ans** selon l'exposition et l'environnement.
+Avec un traitement hydrofuge, votre façade reste propre **10 à 15 ans** selon l'exposition et l'environnement. Sans traitement, comptez **5 à 8 ans** selon l'exposition et l'environnement.
 
 ## Pourquoi choisir VPRR pour votre nettoyage de façade ?
 
