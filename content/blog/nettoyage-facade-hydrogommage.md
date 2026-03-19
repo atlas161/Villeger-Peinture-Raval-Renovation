@@ -314,7 +314,7 @@ Pour maintenir votre façade propre :
 
 **Déconseillé**. Cette technique nécessite :
 
-*   Un équipement professionnel spécifique (15 000-25 000€)
+*   Un équipement professionnel spécifique (20 000-30 000€)
     
 *   Une formation pour doser la pression et choisir l'abrasif
     
