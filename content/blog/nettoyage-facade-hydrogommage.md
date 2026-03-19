@@ -272,6 +272,25 @@ Après le nettoyage, nous conseillons d'appliquer un **traitement hydrofuge** :
 
 **Coût** : +5-8€/m² en complément du nettoyage
 
+### OU
+
+### Traitement lait de chaux recommandé
+
+Après le nettoyage, nous conseillons d'appliquer un **traitement lait de chaux** :
+
+*   Protège contre l'humidité et les infiltrations
+    
+*   Procédé 100% naturel, 0 pollution
+    
+*   Ralentit la réapparition des mousses
+    
+*   Prolonge la propreté de 5 à 10 ans
+    
+*   Laisse respirer le support (contrairement à un film étanche)
+    
+
+**Coût** : +5-8€/m² en complément du nettoyage
+
 ### Surveillance régulière
 
 Pour maintenir votre façade propre :
