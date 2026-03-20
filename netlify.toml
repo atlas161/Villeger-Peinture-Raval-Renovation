@@ -4,6 +4,7 @@
 
 [build]
   publish = "."
+  command = "npm run build"
 
 # ─────────────────────────────────────────────────────────────────────────────────
 # OPTIMISATION DE LA PERFORMANCE

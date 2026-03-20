@@ -88,109 +88,239 @@ function parseFrontmatter(content) {
  * Support : headers, gras, italique, liens, listes, images, vidéos, citations, tableaux
  */
 function markdownToHtml(markdown) {
-  let html = markdown;
-  
-  // Échapper le HTML dangereux
-  html = html.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  
-  // Images avec légende optionnelle
-  // Format: ![alt](url) ou ![alt](url "titre")
-  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\s*(?:"([^"]+)")?\)/g, (match, alt, url, title) => {
-    const titleAttr = title ? ` title="${title}"` : '';
-    const caption = title ? `<figcaption>${title}</figcaption>` : '';
-    return `<figure><img src="${url}" alt="${alt}" loading="lazy"${titleAttr}>${caption}</figure>`;
-  });
-  
-  // Vidéos YouTube/Vimeo (support embed)
-  html = html.replace(/\[video\]\((https?:\/\/[^)]+)\)/g, (match, url) => {
-    // YouTube
+  const normalizeNewlines = (s) => String(s || '').replace(/\r\n?/g, '\n');
+
+  const escapeHtml = (s) =>
+    String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+  const parseImage = (text) => {
+    const m = text.match(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)/);
+    if (!m) return null;
+    return { alt: m[1] || '', url: m[2] || '', title: m[3] || '' };
+  };
+
+  const renderInline = (text) => {
+    let out = escapeHtml(text);
+
+    out = out.replace(/(?<!!)\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+    out = out.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    out = out.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    out = out.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    out = out.replace(/___(.+?)___/g, '<strong><em>$1</em></strong>');
+    out = out.replace(/__(.+?)__/g, '<strong>$1</strong>');
+    out = out.replace(/_(.+?)_/g, '<em>$1</em>');
+
+    out = out.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)/g, (match, alt, url, title) => {
+      const titleAttr = title ? ` title="${escapeHtml(title)}"` : '';
+      return `<img src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" loading="lazy"${titleAttr}>`;
+    });
+
+    return out;
+  };
+
+  const renderVideo = (url) => {
     const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
     if (youtubeMatch) {
       const videoId = youtubeMatch[1];
       return `<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/${videoId}" title="Vidéo YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
     }
-    // Vimeo
     const vimeoMatch = url.match(/vimeo\.com\/(\d+)/);
     if (vimeoMatch) {
       const videoId = vimeoMatch[1];
       return `<div class="video-wrapper"><iframe src="https://player.vimeo.com/video/${videoId}" title="Vidéo Vimeo" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
     }
-    return `<p><a href="${url}" target="_blank" rel="noopener noreferrer">Voir la vidéo</a></p>`;
-  });
-  
-  // Headers avec IDs pour le TOC
-  const headers = [];
-  html = html.replace(/^(#{1,3})\s+(.+)$/gm, (match, hashes, text) => {
-    const level = hashes.length;
-    const id = text.toLowerCase()
+    const safeUrl = escapeHtml(url);
+    return `<p><a href="${safeUrl}" target="_blank" rel="noopener noreferrer">Voir la vidéo</a></p>`;
+  };
+
+  const slugify = (text) =>
+    String(text || '')
+      .toLowerCase()
+      .replace(/&amp;|&lt;|&gt;/g, ' ')
+      .replace(/<\/?[^>]+>/g, ' ')
       .replace(/[^\w\s-]/g, '')
       .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '')
       .substring(0, 50);
-    headers.push({ level, text, id });
-    return `<h${level} id="${id}">${text}</h${level}>`;
-  });
-  
-  // Gras et italique
-  html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-  
-  // Liens (mais pas les images déjà traitées)
-  html = html.replace(/(?<!!)\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-  
-  // Citations
-  html = html.replace(/^&gt;\s*(.+)$/gm, '<blockquote><p>$1</p></blockquote>');
-  
-  // Tableaux
-  html = html.replace(/\|(.+)\|/g, (match, content) => {
-    const cells = content.split('|').map(c => c.trim()).filter(c => c);
-    if (cells.length === 0) return match;
-    return '<tr>' + cells.map(c => `<td>${c}</td>`).join('') + '</tr>';
-  });
-  html = html.replace(/<tr>(.+?)<\/tr>/g, (match, content) => {
-    if (content.includes('---')) return ''; // Ligne de séparation
-    return match;
-  });
-  
-  // Listes
-  html = html.replace(/^-\s+(.+)$/gm, '<li>$1</li>');
-  html = html.replace(/(<li>.+<\/li>\n?)+/g, '<ul>$&</ul>');
-  html = html.replace(/<\/ul>\s*<ul>/g, '');
-  
-  // Paragraphes (ne pas wrapper si déjà dans un bloc)
-  const lines = html.split('\n');
-  const result = [];
-  let inBlock = false;
-  
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    
-    if (line.startsWith('<h') || line.startsWith('<ul') || line.startsWith('</ul') || 
-        line.startsWith('<blockquote') || line.startsWith('<figure') || 
-        line.startsWith('<div') || line.startsWith('<tr') || line.startsWith('<table') ||
-        line === '' || line.startsWith('<')) {
-      if (inBlock) {
-        result.push('</p>');
-        inBlock = false;
-      }
-      result.push(line);
-    } else if (line) {
-      if (!inBlock) {
-        result.push('<p>');
-        inBlock = true;
-      }
-      result.push(line);
+
+  const isHr = (line) => /^\s*([-*_]\s*){3,}$/.test(line);
+
+  const parseTableRow = (line) => {
+    const trimmed = line.trim();
+    const normalized = trimmed.replace(/^\|/, '').replace(/\|$/, '');
+    return normalized.split('|').map((c) => c.trim());
+  };
+
+  const isTableSeparatorRow = (line) => {
+    const cells = parseTableRow(line);
+    if (cells.length === 0) return false;
+    return cells.every((c) => /^:?-{3,}:?$/.test(c));
+  };
+
+  const looksLikeTableRow = (line) => {
+    const t = line.trim();
+    if (!t) return false;
+    if (!t.includes('|')) return false;
+    const cells = parseTableRow(t);
+    return cells.length >= 2;
+  };
+
+  const isUnorderedItem = (line) => /^\s*[-*+]\s+/.test(line);
+  const isOrderedItem = (line) => /^\s*\d+\.\s+/.test(line);
+  const stripUnorderedMarker = (line) => line.replace(/^\s*[-*+]\s+/, '');
+  const stripOrderedMarker = (line) => line.replace(/^\s*\d+\.\s+/, '');
+
+  const headers = [];
+  const lines = normalizeNewlines(markdown).split('\n');
+  const blocks = [];
+  let i = 0;
+
+  const isBlockStart = (line, nextLine) => {
+    const t = (line || '').trim();
+    if (!t) return false;
+    if (/^#{1,3}\s+/.test(t)) return true;
+    if (/^>\s?/.test(t)) return true;
+    if (isHr(t)) return true;
+    if (/^\s*!\[/.test(line) && /^\s*!\[[^\]]*\]\([^)]+\)\s*$/.test(line)) return true;
+    if (/^\s*\[video\]\((https?:\/\/[^)]+)\)\s*$/.test(line)) return true;
+    if (looksLikeTableRow(t) && nextLine && isTableSeparatorRow(nextLine)) return true;
+    if (isUnorderedItem(line) || isOrderedItem(line)) return true;
+    return false;
+  };
+
+  while (i < lines.length) {
+    const line = lines[i];
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      i += 1;
+      continue;
     }
+
+    const headerMatch = trimmed.match(/^(#{1,3})\s+(.+)$/);
+    if (headerMatch) {
+      const level = headerMatch[1].length;
+      const rawText = headerMatch[2].trim();
+      const inlineHtml = renderInline(rawText);
+      const id = slugify(inlineHtml) || `section-${headers.length + 1}`;
+      headers.push({ level, text: rawText, id });
+      blocks.push(`<h${level} id="${id}">${inlineHtml}</h${level}>`);
+      i += 1;
+      continue;
+    }
+
+    if (isHr(trimmed)) {
+      blocks.push('<hr>');
+      i += 1;
+      continue;
+    }
+
+    const imageOnlyMatch = line.match(/^\s*!\[[^\]]*\]\([^)]+\)\s*$/);
+    if (imageOnlyMatch) {
+      const img = parseImage(trimmed);
+      if (img) {
+        const titleAttr = img.title ? ` title="${escapeHtml(img.title)}"` : '';
+        const caption = img.title ? `<figcaption>${escapeHtml(img.title)}</figcaption>` : '';
+        blocks.push(`<figure><img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt)}" loading="lazy"${titleAttr}>${caption}</figure>`);
+        i += 1;
+        continue;
+      }
+    }
+
+    const videoMatch = trimmed.match(/^\[video\]\((https?:\/\/[^)]+)\)\s*$/);
+    if (videoMatch) {
+      blocks.push(renderVideo(videoMatch[1]));
+      i += 1;
+      continue;
+    }
+
+    if (trimmed.startsWith('>')) {
+      const quoteLines = [];
+      while (i < lines.length && lines[i].trim().startsWith('>')) {
+        quoteLines.push(lines[i].trim().replace(/^>\s?/, ''));
+        i += 1;
+      }
+      const quoteText = quoteLines.join(' ').trim();
+      blocks.push(`<blockquote><p>${renderInline(quoteText)}</p></blockquote>`);
+      continue;
+    }
+
+    if (looksLikeTableRow(trimmed) && i + 1 < lines.length && isTableSeparatorRow(lines[i + 1])) {
+      const headerCells = parseTableRow(lines[i]).map(renderInline);
+      i += 2;
+
+      const bodyRows = [];
+      while (i < lines.length && looksLikeTableRow(lines[i])) {
+        const rowCells = parseTableRow(lines[i]).map(renderInline);
+        bodyRows.push(rowCells);
+        i += 1;
+      }
+
+      const thead = `<thead><tr>${headerCells.map((c) => `<th scope="col">${c}</th>`).join('')}</tr></thead>`;
+      const tbody = bodyRows.length
+        ? `<tbody>${bodyRows
+            .map((row) => `<tr>${row.map((c) => `<td>${c}</td>`).join('')}</tr>`)
+            .join('')}</tbody>`
+        : '<tbody></tbody>';
+
+      blocks.push(`<div class="table-wrapper"><table>${thead}${tbody}</table></div>`);
+      continue;
+    }
+
+    if (isUnorderedItem(line) || isOrderedItem(line)) {
+      const ordered = isOrderedItem(line);
+      const items = [];
+
+      while (i < lines.length) {
+        const current = lines[i];
+        if (!current.trim()) {
+          i += 1;
+          continue;
+        }
+
+        const isItem = ordered ? isOrderedItem(current) : isUnorderedItem(current);
+        if (!isItem) break;
+
+        let itemText = ordered ? stripOrderedMarker(current) : stripUnorderedMarker(current);
+        i += 1;
+
+        while (i < lines.length && lines[i].trim() && !isBlockStart(lines[i], lines[i + 1])) {
+          itemText += ` ${lines[i].trim()}`;
+          i += 1;
+        }
+
+        items.push(itemText.trim());
+      }
+
+      const tag = ordered ? 'ol' : 'ul';
+      blocks.push(`<${tag}>${items.map((it) => `<li>${renderInline(it)}</li>`).join('')}</${tag}>`);
+      continue;
+    }
+
+    const paragraphLines = [];
+    while (i < lines.length) {
+      const cur = lines[i];
+      if (!cur.trim()) break;
+      if (isBlockStart(cur, lines[i + 1]) && paragraphLines.length > 0) break;
+      if (isBlockStart(cur, lines[i + 1]) && paragraphLines.length === 0) break;
+      paragraphLines.push(cur.trim());
+      i += 1;
+    }
+
+    if (paragraphLines.length) {
+      blocks.push(`<p>${renderInline(paragraphLines.join(' '))}</p>`);
+      continue;
+    }
+
+    i += 1;
   }
-  
-  if (inBlock) result.push('</p>');
-  
-  // Joindre et nettoyer les paragraphes vides
-  html = result.join('\n')
-    .replace(/<p>\s*<\/p>/g, '')
-    .replace(/<p>([^<]+)<\/p>/g, (match, content) => `<p>${content}</p>`);
-  
-  return { html, headers };
+
+  return { html: blocks.join('\n'), headers };
 }
 
 /**
@@ -338,11 +468,12 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
   const tagsString = Array.isArray(frontmatter.tags) ? frontmatter.tags.join(', ') : '';
   const readTime = frontmatter.readtime || 5;
   
-  const variants = deriveWebpVariants(frontmatter.image);
+  const coverImage = frontmatter.image || '/data/hero.webp';
+  const variants = deriveWebpVariants(coverImage);
   const ogImageUrl = variants.ogPublic?.startsWith('http')
     ? variants.ogPublic
     : `${CONFIG.siteUrl}${variants.ogPublic}`;
-  const heroImageSrc = variants.heroSrc || frontmatter.image || '';
+  const heroImageSrc = variants.heroSrc || coverImage || '';
   const heroImageSrcset = variants.heroSrcset || '';
   const heroImageSizes = variants.heroSizes || '(max-width: 768px) 100vw, 900px';
   
@@ -484,7 +615,10 @@ function generateArticlesJSON(articles) {
       title: a.title,
       description: a.description,
       date: a.date,
-      image: normalizePublicPath(a.image),
+      image: normalizePublicPath(a.image || '/data/hero.webp'),
+      imageSrc: deriveWebpVariants(a.image || '/data/hero.webp').heroSrc || normalizePublicPath(a.image || '/data/hero.webp'),
+      imageSrcset: deriveWebpVariants(a.image || '/data/hero.webp').heroSrcset || '',
+      imageSizes: deriveWebpVariants(a.image || '/data/hero.webp').heroSizes || '(max-width: 768px) 100vw, 600px',
       tags: a.tags,
       readtime: a.readtime || 5,
       category: getCategory(a.tags, a.title)

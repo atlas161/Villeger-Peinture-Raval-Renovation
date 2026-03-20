@@ -164,28 +164,16 @@ function createArticleCard(article) {
     return p.startsWith('/') ? p : `/${p}`;
   };
 
-  const deriveWebpVariant = (p, w) => {
-    const normalized = normalizePublicPath(p);
-    if (!normalized.toLowerCase().endsWith('.webp')) return normalized;
-    return normalized.slice(0, -'.webp'.length) + `-${w}w.webp`;
-  };
-
   const baseImage = normalizePublicPath(article.image);
-  const imageSrc = baseImage ? deriveWebpVariant(baseImage, 600) : '';
-  const imageSrcset = baseImage && baseImage.toLowerCase().endsWith('.webp')
-    ? [
-        `${deriveWebpVariant(baseImage, 400)} 400w`,
-        `${deriveWebpVariant(baseImage, 600)} 600w`,
-        `${deriveWebpVariant(baseImage, 800)} 800w`,
-        `${deriveWebpVariant(baseImage, 1200)} 1200w`
-      ].join(', ')
-    : '';
+  const imageSrc = normalizePublicPath(article.imageSrc) || baseImage;
+  const imageSrcset = typeof article.imageSrcset === 'string' ? article.imageSrcset : '';
+  const imageSizes = typeof article.imageSizes === 'string' ? article.imageSizes : '';
   
   return `
     <article class="article-card" data-category="${category}" data-date="${article.date}">
       <a href="./${article.slug}.html" class="article-link" aria-label="Lire ${article.title}">
         <div class="article-image">
-          <img src="${imageSrc || baseImage}" ${imageSrcset ? `srcset=\"${imageSrcset}\" sizes=\"(max-width: 768px) 100vw, 600px\"` : ''} alt="${article.title}" loading="lazy" width="600" height="338">
+          <img src="${imageSrc || baseImage}" ${imageSrcset ? `srcset=\"${imageSrcset}\"${imageSizes ? ` sizes=\"${imageSizes}\"` : ''}` : ''} alt="${article.title}" loading="lazy" width="600" height="338">
           <span class="article-tag">${categoryLabels[category] || 'Conseil'}</span>
         </div>
         <div class="article-content">

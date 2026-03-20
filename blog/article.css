@@ -401,6 +401,42 @@
   font-style: italic;
 }
 
+.article-content .table-wrapper {
+  overflow-x: auto;
+  margin: var(--space-xl) 0;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface-alt);
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+
+.article-content th,
+.article-content td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.article-content thead th {
+  background: rgba(103, 58, 18, 0.08);
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.article-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .article-content hr {
   border: none;
   height: 1px;

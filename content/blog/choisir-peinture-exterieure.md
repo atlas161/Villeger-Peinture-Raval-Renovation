@@ -3,7 +3,7 @@ title: "Comment choisir sa peinture extérieure ?"
 slug: "choisir-peinture-exterieure"
 description: "Guide complet pour sélectionner la peinture adaptée à votre façade : types de peinture, finitions, préparation et budget."
 date: "2026-03-18"
-image: "/media/blog/peinture_ext.webp"
+image: "/assets/img/blog/peinture_ext.webp"
 draft: false
 tags: ["peinture", "exterieur", "conseils", "facade"]
 readtime: 5
