@@ -15,6 +15,9 @@ tags:
   - charente
   - renovation
   - entretien
+  - rénovation toiture
+  - angoulême
+  - angouleme
 readtime: 9
 ---
 # Démoussage et nettoyage de toiture en Charente (16) : le guide complet
