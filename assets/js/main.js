@@ -599,12 +599,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (carousels.length === 0) return;
 
     carousels.forEach((carousel) => {
+      if (carousel.dataset && carousel.dataset.reviewsInit === '1') return;
+
       const track = carousel.querySelector('[data-reviews-track]');
       const prev = carousel.querySelector('[data-reviews-prev]');
       const next = carousel.querySelector('[data-reviews-next]');
       if (!track) return;
 
-      const baseCards = Array.from(track.querySelectorAll('.review-card'));
+      const baseCards = Array.from(track.querySelectorAll('.review-card:not([data-reviews-clone])'));
       if (baseCards.length === 0) return;
 
       const realCount = baseCards.length;
@@ -613,6 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let index = 0;
       let looping = false;
       let cloneCount = 0;
+      let ready = false;
 
       const getGap = () => {
         try {
@@ -632,10 +635,25 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       const getCardWidth = () => {
-        const card = track.querySelector('.review-card');
+        const card = track.querySelector('.review-card:not([data-reviews-clone])');
         if (!card) return 0;
         const rect = card.getBoundingClientRect();
         return rect && rect.width ? rect.width : card.offsetWidth || 0;
+      };
+
+      const isLayoutReady = () => {
+        try {
+          const trackStyle = window.getComputedStyle(track);
+          if (trackStyle.display !== 'flex') return false;
+          const card = track.querySelector('.review-card:not([data-reviews-clone])');
+          if (!card) return false;
+          const cardStyle = window.getComputedStyle(card);
+          if (!cardStyle.flexBasis || cardStyle.flexBasis === 'auto') return false;
+          const w = getCardWidth();
+          return w > 40;
+        } catch (_) {
+          return false;
+        }
       };
 
       const setTransitionEnabled = (enabled) => {
@@ -738,8 +756,9 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
+        removeClones();
         cloneCount = Math.min(MAX_CLONES, realCount);
-        const cards = Array.from(track.querySelectorAll('.review-card'));
+        const cards = Array.from(track.querySelectorAll('.review-card:not([data-reviews-clone])'));
         const prefix = cards.slice(-cloneCount).map((c) => {
           const clone = c.cloneNode(true);
           clone.setAttribute('data-reviews-clone', '');
@@ -813,6 +832,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
+          if (!ready) return;
           if (looping) {
             const realIndex = ((index - cloneCount) % realCount + realCount) % realCount;
             index = cloneCount + realIndex;
@@ -834,12 +854,32 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 120);
       }, { passive: true });
 
-      ensureLooping();
-      setTransitionEnabled(false);
-      applyTransform();
-      track.getBoundingClientRect();
-      setTransitionEnabled(true);
-      refreshReadMore();
+      const initWhenReady = (attempt = 0) => {
+        if (ready) return;
+        if (isLayoutReady()) {
+          ready = true;
+          if (carousel.dataset) carousel.dataset.reviewsInit = '1';
+          ensureLooping();
+          setTransitionEnabled(false);
+          applyTransform();
+          track.getBoundingClientRect();
+          setTransitionEnabled(true);
+          refreshReadMore();
+          return;
+        }
+
+        if (attempt > 90) {
+          ready = true;
+          if (carousel.dataset) carousel.dataset.reviewsInit = '1';
+          setButtonsState();
+          refreshReadMore();
+          return;
+        }
+
+        requestAnimationFrame(() => initWhenReady(attempt + 1));
+      };
+
+      initWhenReady();
     });
   };
 

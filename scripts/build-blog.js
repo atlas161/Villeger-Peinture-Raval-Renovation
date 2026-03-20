@@ -47,39 +47,125 @@ function parseFrontmatter(content) {
       body: content 
     };
   }
-  
+
   const frontmatter = {};
-  const lines = match[1].split('\n');
-  
-  for (const line of lines) {
-    const colonIndex = line.indexOf(':');
-    if (colonIndex > 0) {
-      const key = line.slice(0, colonIndex).trim();
-      let value = line.slice(colonIndex + 1).trim();
-      
-      // Nettoyer les guillemets
-      if ((value.startsWith('"') && value.endsWith('"')) || 
-          (value.startsWith("'") && value.endsWith("'"))) {
-        value = value.slice(1, -1);
-      }
-      
-      // Parser les arrays (tags)
-      if (value.startsWith('[') && value.endsWith(']')) {
-        try {
-          value = value.slice(1, -1).split(',').map(s => s.trim().replace(/['"]/g, ''));
-        } catch {
-          value = [];
-        }
-      }
-      
-      // Parser les booléens
-      if (value === 'true') value = true;
-      if (value === 'false') value = false;
-      
-      frontmatter[key] = value;
+  const raw = match[1].replace(/\r\n?/g, '\n');
+  const lines = raw.split('\n');
+
+  const isIndented = (line) => /^\s+/.test(line);
+  const stripIndent = (line) => line.replace(/^\s+/, '');
+
+  const coerceScalar = (value) => {
+    if (value === 'true') return true;
+    if (value === 'false') return false;
+    if (/^-?\d+(\.\d+)?$/.test(value)) return Number(value);
+    return value;
+  };
+
+  for (let i = 0; i < lines.length; ) {
+    const line = lines[i];
+    if (!line.trim()) {
+      i += 1;
+      continue;
     }
+
+    const m = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (!m) {
+      i += 1;
+      continue;
+    }
+
+    const key = m[1];
+    let value = m[2] ?? '';
+
+    if (value === '|' || value === '>') {
+      const mode = value;
+      i += 1;
+      const parts = [];
+      while (i < lines.length && (lines[i].trim() === '' || isIndented(lines[i]))) {
+        if (lines[i].trim() === '') {
+          parts.push('');
+          i += 1;
+          continue;
+        }
+        parts.push(stripIndent(lines[i]));
+        i += 1;
+      }
+      frontmatter[key] = mode === '>'
+        ? parts.join(' ').replace(/\s+/g, ' ').trim()
+        : parts.join('\n').replace(/\n+$/g, '');
+      continue;
+    }
+
+    if (value === '') {
+      const next = lines[i + 1];
+      if (typeof next === 'string' && /^\s*-\s+/.test(next)) {
+        i += 1;
+        const items = [];
+        while (i < lines.length && /^\s*-\s+/.test(lines[i])) {
+          items.push(lines[i].replace(/^\s*-\s+/, '').trim().replace(/^['"]|['"]$/g, ''));
+          i += 1;
+        }
+        frontmatter[key] = items;
+        continue;
+      }
+
+      if (typeof next === 'string' && isIndented(next)) {
+        i += 1;
+        const parts = [];
+        while (i < lines.length && (lines[i].trim() === '' || isIndented(lines[i]))) {
+          if (lines[i].trim() === '') {
+            parts.push('');
+            i += 1;
+            continue;
+          }
+          parts.push(stripIndent(lines[i]));
+          i += 1;
+        }
+        frontmatter[key] = parts.join(' ').replace(/\s+/g, ' ').trim();
+        continue;
+      }
+
+      frontmatter[key] = '';
+      i += 1;
+      continue;
+    }
+
+    if (value.startsWith('"') && !value.endsWith('"')) {
+      let combined = value;
+      i += 1;
+      while (i < lines.length) {
+        combined += `\n${lines[i]}`;
+        if (lines[i].trim().endsWith('"')) {
+          i += 1;
+          break;
+        }
+        i += 1;
+      }
+      const unquoted = combined.replace(/^"/, '').replace(/"$/, '');
+      frontmatter[key] = unquoted.replace(/\s+/g, ' ').trim();
+      continue;
+    }
+
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+
+    if (value.startsWith('[') && value.endsWith(']')) {
+      try {
+        value = value.slice(1, -1).split(',').map(s => s.trim().replace(/['"]/g, ''));
+      } catch {
+        value = [];
+      }
+      frontmatter[key] = value;
+      i += 1;
+      continue;
+    }
+
+    frontmatter[key] = coerceScalar(value);
+    i += 1;
   }
-  
+
   return { frontmatter, body: match[2].trim() };
 }
 
