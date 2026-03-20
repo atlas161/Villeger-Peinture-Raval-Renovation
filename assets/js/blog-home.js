@@ -10,7 +10,7 @@ const MAX_ARTICLES_DISPLAY = 3; // Afficher maximum 3 articles
  */
 async function loadBlogArticles() {
   try {
-    const response = await fetch('blog/articles.json');
+    const response = await fetch(`blog/articles.json?v=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) {
       console.warn('Impossible de charger les articles du blog');
       return;
@@ -79,9 +79,21 @@ function updateFirstArticle(existingCard, article) {
   
   // Mettre à jour l'image
   const img = existingCard.querySelector('.blog-preview-image img');
-  if (img && article.image) {
-    img.src = article.image;
-    img.alt = article.title;
+  if (img) {
+    const imageSrc = article.imageSrc || article.image || '';
+    const imageSrcset = article.imageSrcset || '';
+    const imageSizes = article.imageSizes || '';
+    if (imageSrc) {
+      img.src = imageSrc;
+    }
+    if (imageSrcset) {
+      img.setAttribute('srcset', imageSrcset);
+      if (imageSizes) img.setAttribute('sizes', imageSizes);
+    } else {
+      img.removeAttribute('srcset');
+      img.removeAttribute('sizes');
+    }
+    img.alt = article.title || img.alt;
   }
   
   // Mettre à jour le tag
@@ -112,11 +124,14 @@ function updateFirstArticle(existingCard, article) {
  * Crée une carte d'article pour la page d'accueil
  */
 function createArticleCard(article) {
+  const imgSrc = article.imageSrc || article.image || '';
+  const imgSrcset = article.imageSrcset || '';
+  const imgSizes = article.imageSizes || '';
   const template = `
     <article class="blog-preview-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.08); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(103, 58, 18, 0.08);">
       <a href="blog/${article.slug}.html" class="blog-preview-link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
         <div class="blog-preview-image" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #F5F2EE;">
-          <img src="${article.image}" alt="${article.title}" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          <img src="${imgSrc}" ${imgSrcset ? `srcset="${imgSrcset}"${imgSizes ? ` sizes="${imgSizes}"` : ''}` : ''} alt="${article.title}" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
           <div style="position: absolute; top: 16px; left: 16px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #673A12; letter-spacing: 0.02em;">${article.category || 'Conseil'}</div>
         </div>
         <div class="blog-preview-content" style="padding: var(--space-lg); flex: 1; display: flex; flex-direction: column;">
