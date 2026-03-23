@@ -1,4 +1,5 @@
 ---
+category: Conseils
 title: "Rénovation intérieure à Angoulême (Charente) : le guide complet 2026"
 slug: renovation-interieur-angouleme-charente
 description: "Spécialiste de la rénovation intérieure à Angoulême (Charente),
