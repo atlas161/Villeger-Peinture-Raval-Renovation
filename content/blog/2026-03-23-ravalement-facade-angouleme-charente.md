@@ -8,12 +8,16 @@ date: 2026-03-24
 image: /assets/img/blog/ravalement_apres-900w.webp
 draft: true
 tags:
-  - Angouleme
-  - Ravalement facade
+  - angouleme
+  - ravalement facade
   - facade
   - renovation
   - renovation facade
   - charente
+  - hydrogommage
+  - aerogommage
+  - enduit
+  - ravalement
 readtime: 7
 ---
 # Ravalement de façade à Angoulême : le guide complet 2026
@@ -236,7 +240,7 @@ Artisans passionnés à Angoulême, nous maîtrisons les codes architecturaux de
 - **Interlocuteur unique** tout au long de votre projet
 - **Garantie décennale** (10 ans de tranquillité)
 - **Assurance** responsabilité civile professionnelle
-- Chantier propre et respectueux de votre environnement
+- **Chantier propre** et respectueux de votre environnement
 
 ## Conclusion
 
