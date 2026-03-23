@@ -11,6 +11,9 @@ tags:
   - exterieur
   - conseils
   - facade
+  - angouleme
+  - peinture exterieur charente
+  - charente
 readtime: 5
 ---
 # Peinture extérieure à Angoulême : le guide complet 2026 pour sublimer votre façade
