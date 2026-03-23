@@ -1,4 +1,5 @@
 ---
+category: Peinture
 title: "Peinture extérieure à Angoulême (Charente) : le guide complet 2026 pour
   sublimer votre façade"
 slug: peinture-exterieure-facade-angouleme
