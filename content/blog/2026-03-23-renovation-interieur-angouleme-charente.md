@@ -7,7 +7,7 @@ description: "Spécialiste de la rénovation intérieure à Angoulême (Charente
   gratuit et sur-mesure !"
 date: 2026-01-01
 image: /assets/img/blog/image_renovation_interieur_angouleme.webp
-draft: true
+draft: false
 tags:
   - angouleme
   - charente
