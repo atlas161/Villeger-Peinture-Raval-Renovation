@@ -5,7 +5,7 @@ slug: renovation-interieur-angouleme-charente
 description: "Spécialiste de la rénovation intérieure à Angoulême (Charente),
   VPRR vous guide : isolation, placo, peinture et sols. Demandez votre devis
   gratuit et sur-mesure !"
-date: 2026-01-01
+date: 2026-02-04
 image: /assets/img/blog/image_renovation_interieur_angouleme.webp
 draft: false
 tags:
