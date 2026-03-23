@@ -1,8 +1,10 @@
 ---
-title: Comment choisir sa peinture extérieure ?
-slug: choisir-peinture-exterieure
-description: "Guide complet pour sélectionner la peinture adaptée à votre façade
-  : types de peinture, finitions, préparation et budget."
+title: "Peinture extérieure à Angoulême (Charente) : le guide complet 2026 pour
+  sublimer votre façade"
+slug: peinture-exterieure-angouleme-charente
+description: "Spécialiste de la peinture extérieure à Angoulême, VPRR vous guide
+  : choix de peinture, préparation et prix. Protégez votre façade en Charente.
+  Devis gratuit !"
 date: 2026-03-18
 image: /assets/img/blog/peinture_ext.webp
 draft: false
@@ -16,7 +18,7 @@ tags:
   - charente
 readtime: 5
 ---
-# Peinture extérieure à Angoulême : le guide complet 2026 pour sublimer votre façade
+# Peinture extérieure à Angoulême (Charente) : le guide complet 2026 pour sublimer votre façade
 
 *Choix des matériaux, préparation des murs, règles d'urbanisme, nuanciers locaux et prix au m² : tout ce qu'il faut savoir pour repeindre, assainir et protéger sa maison en Charente.*
 
