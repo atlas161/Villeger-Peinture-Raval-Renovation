@@ -7,7 +7,7 @@ description: "Rénovation complète et durable pour protéger et sublimer votre
   façade : principe, avantages, étapes et prix à Angoulême (Charente)."
 date: 2026-03-24
 image: /assets/img/blog/ravalement_apres-900w.webp
-draft: true
+draft: false
 tags:
   - angouleme
   - ravalement facade
