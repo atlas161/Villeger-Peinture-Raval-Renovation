@@ -23,19 +23,8 @@ content:
         label: Catégorie
         type: select
         options:
-          - label: Peinture
-            value: Peinture
-          - label: Façade
-            value: Façade
-          - label: Toiture
-            value: Toiture
-          - label: Rénovation
-            value: Rénovation
-          - label: Conseils
-            value: Conseils
-          - label: Entretien
-            value: Entretien
-        default: Conseils
+          values: [Peinture, Façade, Toiture, Rénovation, Conseils, Entretien]
+          default: Conseils
       - name: title
         label: Titre de l'article (H1)
         type: string
