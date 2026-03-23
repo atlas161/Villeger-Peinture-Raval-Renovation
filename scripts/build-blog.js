@@ -519,8 +519,17 @@ function deriveWebpVariants(imagePublicPath) {
 
 /**
  * Détermine la catégorie principale
+ * Utilise la catégorie du frontmatter si définie, sinon infère depuis les tags/titre
  */
-function getCategory(tags, title) {
+function getCategory(frontmatter) {
+  // Si une catégorie est explicitement définie dans le frontmatter, l'utiliser
+  if (frontmatter.category && typeof frontmatter.category === 'string' && frontmatter.category.trim()) {
+    return frontmatter.category.trim();
+  }
+  
+  const tags = frontmatter.tags;
+  const title = frontmatter.title || '';
+  
   const categoryMap = {
     'peinture': 'Peinture',
     'facade': 'Façade',
@@ -529,7 +538,14 @@ function getCategory(tags, title) {
     'isolation': 'Isolation',
     'conseils': 'Conseils',
     'renovation': 'Rénovation',
-    'raval': 'Ravalement'
+    'rénovation': 'Rénovation',
+    'raval': 'Ravalement',
+    'hydrogommage': 'Façade',
+    'aerogommage': 'Façade',
+    'demoussage': 'Toiture',
+    'nettoyage toiture': 'Toiture',
+    'placo': 'Rénovation',
+    'parquet': 'Rénovation'
   };
   
   const titleLower = title.toLowerCase();
@@ -550,7 +566,7 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
   const toc = generateTOC(headers);
   const tagsHtml = generateTags(frontmatter.tags);
   const date = formatDate(frontmatter.date);
-  const category = getCategory(frontmatter.tags, frontmatter.title);
+  const category = getCategory(frontmatter);
   const tagsString = Array.isArray(frontmatter.tags) ? frontmatter.tags.join(', ') : '';
   const readTime = frontmatter.readtime || 5;
   
@@ -707,7 +723,7 @@ function generateArticlesJSON(articles) {
       imageSizes: deriveWebpVariants(a.image || '/data/hero.webp').heroSizes || '(max-width: 768px) 100vw, 600px',
       tags: a.tags,
       readtime: a.readtime || 5,
-      category: getCategory(a.tags, a.title)
+      category: getCategory(a)
     }))
     .sort((a, b) => new Date(b.date) - new Date(a.date));
   
