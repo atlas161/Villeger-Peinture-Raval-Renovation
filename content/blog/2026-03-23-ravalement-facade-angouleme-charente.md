@@ -5,7 +5,7 @@ title: "Le guide complet du ravalement de façade à Angoulême (Charente) :
 slug: ravalement-facade-angouleme-charente
 description: "Rénovation complète et durable pour protéger et sublimer votre
   façade : principe, avantages, étapes et prix à Angoulême (Charente)."
-date: 2026-03-12
+date: 2026-02-04
 image: /assets/img/blog/ravalement_apres-900w.webp
 draft: false
 tags:
