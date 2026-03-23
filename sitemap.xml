@@ -171,9 +171,15 @@
   </url>
   <url>
     <loc>https://vprr.fr/blog/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/ravalement-facade-angouleme-charente.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vprr.fr/blog/demoussage-nettoyage-toiture-charente.html</loc>
@@ -190,6 +196,12 @@
   <url>
     <loc>https://vprr.fr/blog/nettoyage-facade-hydrogommage.html</loc>
     <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/renovation-interieur-angouleme-charente.html</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

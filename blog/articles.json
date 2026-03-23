@@ -1,7 +1,7 @@
 [
   {
     "slug": "demoussage-nettoyage-toiture-charente",
-    "title": "Démoussage et nettoyage de toiture en Charente (16) : le guide complet",
+    "title": "Démoussage et nettoyage de toiture à Angoulême (Charente): le guide complet 2026",
     "description": "Guide concret pour réussir un démoussage et un nettoyage de toiture en Charente (Angoulême, Cognac, Jarnac...) : méthodes, prix, erreurs à éviter, hydrofuge et entretien.",
     "date": "2026-03-20",
     "image": "/assets/img/blog/toiture_avant.webp",
@@ -15,7 +15,10 @@
       "hydrofuge",
       "charente",
       "renovation",
-      "entretien"
+      "entretien",
+      "rénovation toiture",
+      "angoulême",
+      "angouleme"
     ],
     "readtime": 9,
     "category": "Toiture"
@@ -40,7 +43,7 @@
   },
   {
     "slug": "nettoyage-facade-hydrogommage",
-    "title": "Nettoyage de façade par hydro-gommage : le guide complet 2026",
+    "title": "Nettoyage de façade par hydro-gommage à Angoulême (Charente): le guide complet 2026",
     "description": "Technique douce et précise pour nettoyer une façade sans l’abîmer : principe, avantages, étapes et prix à Angoulême (Charente).",
     "date": "2026-03-18",
     "image": "/assets/img/blog/facade_hydrogommage.webp",
@@ -58,5 +61,37 @@
     ],
     "readtime": 9,
     "category": "Façade"
+  },
+  {
+    "slug": "renovation-interieur-angouleme-charente",
+    "title": "Rénovation intérieure à Angoulême (Charente) : le guide complet 2026",
+    "description": "Spécialiste de la rénovation intérieure à Angoulême (Charente), VPRR vous guide : isolation, placo, peinture et sols. Demandez votre devis gratuit et sur-mesure !",
+    "date": "2026-01-01",
+    "image": "/assets/img/blog/image_renovation_interieur_angouleme.webp",
+    "imageSrc": "/assets/img/blog/image_renovation_interieur_angouleme.webp",
+    "imageSrcset": "",
+    "imageSizes": "(max-width: 768px) 100vw, 900px",
+    "tags": [
+      "angouleme",
+      "charente",
+      "renovation",
+      "renovation interieur ",
+      "rénovation intérieure Angoulême",
+      "entreprise rénovation Charente",
+      "artisan rénovation 16",
+      "travaux intérieur Soyaux",
+      "travaux intérieur Angoulême",
+      "travaux intérieur Gond-Pontouvre",
+      "aménagement intérieur Angoulême",
+      "pose de placo Angoulême",
+      "artisan peintre Charente",
+      "création faux plafond Angoulême",
+      "pose de parquet Angoulême",
+      "devis rénovation maison Angoulême",
+      "rénover maison ancienne Charente",
+      "entreprise aménagement intérieur"
+    ],
+    "readtime": 5,
+    "category": "Rénovation"
   }
 ]
