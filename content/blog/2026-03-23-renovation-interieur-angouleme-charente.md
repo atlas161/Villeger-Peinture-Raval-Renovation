@@ -172,7 +172,7 @@ C'est véritablement l'ossature de votre nouvel aménagement. Nous maîtrisons s
 - **Placo phonique** (bleu) avec cœur à haute densité pour isoler les chambres des bruits du salon.
 - **Aménagement de combles perdus**, création de dressings sur-mesure en plaques de plâtre, niches décoratives et habillages d'inserts.
 
-### 2. Travaux de Peinture Professionnelle
+### 2. Travaux de peinture professionnelle
 
 Une belle peinture nécessite avant tout une préparation du support irréprochable. Nous redonnons des couleurs à vos murs :
 
