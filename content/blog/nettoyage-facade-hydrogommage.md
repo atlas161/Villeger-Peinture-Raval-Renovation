@@ -1,4 +1,5 @@
 ---
+category: Façade
 title: "Nettoyage de façade par hydro-gommage à Angoulême (Charente): le guide
   complet 2026"
 slug: nettoyage-facade-hydrogommage
