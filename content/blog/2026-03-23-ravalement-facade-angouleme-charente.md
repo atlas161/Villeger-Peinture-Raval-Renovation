@@ -1,4 +1,5 @@
 ---
+category: Façade
 title: "Le guide complet du ravalement de façade à Angoulême (Charente) :
   sublimez et protégez votre maison en 2026"
 slug: ravalement-facade-angouleme-charente
