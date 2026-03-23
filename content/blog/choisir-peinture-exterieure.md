@@ -1,7 +1,7 @@
 ---
 title: "Peinture extérieure à Angoulême (Charente) : le guide complet 2026 pour
   sublimer votre façade"
-slug: peinture-exterieure-angouleme-charente
+slug: peinture-exterieure-facade-angouleme-charente
 description: "Spécialiste de la peinture extérieure à Angoulême, VPRR vous guide
   : choix de peinture, préparation et prix. Protégez votre façade en Charente.
   Devis gratuit !"
