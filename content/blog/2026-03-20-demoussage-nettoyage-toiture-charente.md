@@ -192,4 +192,4 @@ Si vous cherchez une intervention locale, adaptée aux toitures du 16, vous pouv
 
 ---
 
-*Besoin d’un devis de démoussage / nettoyage de toiture en Charente ? [Contactez-nous](/index.html#contact) pour une étude gratuite et personnalisée (Angoulême, Cognac, Jarnac, Barbezieux, Ruffec, Confolens et alentours).*
+*Besoin d’un devis de démoussage / nettoyage de toiture en Charente ? [Contactez-nous](https://vprr.fr/#contact) pour une étude gratuite et personnalisée (Angoulême, Cognac, Jarnac, Barbezieux, Ruffec, Confolens et alentours).*
