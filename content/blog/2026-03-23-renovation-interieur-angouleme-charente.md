@@ -230,4 +230,4 @@ Une rénovation intérieure réussie ne s'improvise pas. Elle demande de la mét
 
 **Votre intérieur est votre refuge, il mérite l'expertise de vrais professionnels locaux.** Faites appel à l'équipe VPRR pour repenser vos espaces, moderniser votre décoration, gagner un confort inestimable au quotidien et valoriser durablement votre patrimoine charentais.
 
-*Besoin d'un devis estimatif pour vos futurs travaux de rénovation intérieure à Angoulême, Soyaux, La Couronne, Gond-Pontouvre ou partout ailleurs en Charente ?* *[Contactez dès maintenant l'équipe VPRR sur vprr.fr](https://www.google.com/search?q=/index.html%23contact "null")* *pour planifier une visite technique gratuite et une étude entièrement personnalisée de votre projet.*
+*Besoin d'un devis estimatif pour vos futurs travaux de rénovation intérieure à Angoulême, Soyaux, La Couronne, Gond-Pontouvre ou partout ailleurs en Charente ?* *[Contactez dès maintenant l'équipe VPRR sur vprr.fr*](https://vprr.fr/#contact) *pour planifier une visite technique gratuite et une étude entièrement personnalisée de votre projet.*
