@@ -304,4 +304,4 @@ L'hydro-gommage est la technique de référence pour nettoyer votre façade en d
 
 ---
 
-*Besoin d'un devis pour le nettoyage de votre façade à Angoulême ?* *[Contactez-nous](/index.html#contact)* *pour une étude gratuite et personnalisée. Intervention rapide en Charente.*
+*Besoin d'un devis pour le nettoyage de votre façade à Angoulême ?* *[Contactez-nous](https://vprr.fr/#contact)* *pour une étude gratuite et personnalisée. Intervention rapide en Charente.*
