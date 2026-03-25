@@ -1,7 +1,7 @@
 ---
 category: Peinture
 title: "Les bienfaits insoupçonnés d'une peinture extérieure : Pourquoi
-  repeindre sa façade à Angoulême en Charenteest un investissement vital"
+  repeindre sa façade à Angoulême en Charente est un investissement vital"
 slug: bienfaits-peinture-exterieure-facade-angouleme
 description: "Découvrez les véritables bienfaits d'une peinture extérieure en
   Charente : protection, isolation et esthétique. Guide expert par vos artisans
