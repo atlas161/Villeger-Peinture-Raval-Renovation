@@ -249,4 +249,4 @@ Le ravalement de façade est l'investissement le plus rentable pour protéger vo
 
 **Votre maison mérite l'expertise de vrais artisans.** Confiez-nous vos murs pour un résultat esthétique, durable et réalisé dans les règles de l'art.
 
-*Besoin d'un devis pour le ravalement de votre façade à Angoulême ou en Charente ?* *[Contactez-nous sur vprr.fr](https://www.google.com/search?q=/index.html%23contact "null")* *pour une étude gratuite et personnalisée de votre projet.*
+*Besoin d'un devis pour le ravalement de votre façade à Angoulême ou en Charente ?* *[Contactez-nous sur vprr.fr](https://vprr.fr/#contact "null")* *pour une étude gratuite et personnalisée de votre projet.*
