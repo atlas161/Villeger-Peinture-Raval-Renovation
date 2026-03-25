@@ -1,6 +1,6 @@
 ---
 category: Façade
-title: "# Nettoyage de façade en pierre : comment l'hydrogommage a sauvé cette
+title: "Nettoyage de façade en pierre : comment l'hydrogommage a sauvé cette
   maison à Angoulême (Charente) en 2026"
 slug: etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme
 description: Façade en pierre noircie ? Découvrez comment notre nettoyage par
