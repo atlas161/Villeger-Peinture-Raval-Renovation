@@ -6,7 +6,7 @@ slug: bienfaits-peinture-exterieure-facade-angouleme
 description: "Découvrez les véritables bienfaits d'une peinture extérieure en
   Charente : protection, isolation et esthétique. Guide expert par vos artisans
   d'Angoulême"
-date: 2026-03-24
+date: 2026-03-23
 image: /assets/img/blog/bienfait_peinture_ext (1).webp
 draft: false
 tags:
