@@ -20,7 +20,7 @@
     <link rel="preload" href="assets/css/hero.css" as="style" />
     <link rel="preload" href="assets/css/nav.css" as="style" />
     <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
-    <link rel="preload" href="data/hero-600w.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="data/hero.webp" as="image" type="image/webp" fetchpriority="high" />
     
     <!-- Google Tag Manager - Chargé uniquement après consentement cookies (voir cookies.js) -->
     <script>
@@ -477,30 +477,73 @@
 
         <!-- Contenu principal de la page -->
     <main id="main-content">
-      <!-- Section 'Hero' : première section visible avec titre et appel à l'action -->
+      <!-- Section 'Hero' : vidéo cinématique plein écran avec preuve sociale -->
       <section id="home" class="hero" aria-label="Haut de page">
-        <div class="hero-content">
-          <h1>Expert en rénovation extérieure et intérieure à Angoulême</h1>
-          <p>Spécialistes du ravalement de façade, de la peinture et de l'isolation à Angoulême et en Charente. Nous donnons vie à vos projets de rénovation avec expertise et soin.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Demander un devis gratuit</a>
-            <a class="btn btn-secondary" href="#galerie">Voir nos réalisations</a>
+
+        <!-- Fond vidéo -->
+        <div class="hero-bg" aria-hidden="true">
+          <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="data/hero.webp">
+            <source src="media/téléchargement.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="hero-inner">
+          <div class="hero-body">
+
+            <!-- Eyebrow -->
+            <p class="hero-eyebrow">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              Artisan local · Angoulême · Charente
+            </p>
+
+            <!-- Titre principal -->
+            <h1 class="hero-title">
+              Votre façade, votre toiture,<br>
+              votre intérieur rénovés par<br>
+              <em class="hero-accent">un artisan local à Angoulême.</em>
+            </h1>
+
+            <!-- Sous-titre -->
+            <p class="hero-desc">
+              Fissures, façade abîmée, toiture à refaire&nbsp;? VPRR intervient sur Angoulême et toute la Charente - devis gratuit sous 48h, garantie décennale.
+            </p>
+
+            <!-- CTAs -->
+            <div class="hero-actions">
+              <a class="btn hero-btn-primary" href="#contact">
+                Demander un devis gratuit
+              </a>
+              <a class="btn hero-btn-ghost" href="#galerie">
+                Voir nos réalisations
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <!-- Chips de confiance -->
+            <div class="hero-chips" aria-label="Nos engagements">
+              <span class="hero-chip">
+                <span class="hero-chip-stars" aria-hidden="true">★★★★★</span>
+                <span>5,0 · 10 avis Google</span>
+              </span>
+              <span class="hero-chip">
+                <i class="fa-solid fa-medal" aria-hidden="true"></i>
+                <span>15 ans d'expérience</span>
+              </span>
+              <span class="hero-chip">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>Garanti décennal</span>
+              </span>
+              <span class="hero-chip">
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                <span>Devis sous 48h</span>
+              </span>
+            </div>
+
           </div>
         </div>
-        <div class="hero-media" aria-hidden="true">
-          <picture>
-            <source 
-              type="image/webp"
-              srcset="data/hero-400w.webp 400w,
-                      data/hero-600w.webp 600w,
-                      data/hero-800w.webp 800w,
-                      data/hero-1200w.webp 1200w"
-              sizes="(max-width: 480px) 400px,
-                     (max-width: 768px) 600px,
-                     900px" />
-            <img src="data/hero.webp" alt="Ravalement de façade et peinture à Angoulême — réalisations" loading="eager" width="800" height="450" fetchpriority="high" decoding="async" />
-          </picture>
-        </div>
+
       </section>
 
             <!-- Séparateur visuel entre les sections -->
@@ -511,142 +554,120 @@
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Services</p>
-            <h2 id="services-title">Nos expertises en rénovation</h2>
-            <p>Des solutions complètes pour le ravalement de façade, la peinture et l'isolation de votre habitat.</p>
+            <h2 id="services-title">Ce que nous faisons</h2>
+            <p>Du nettoyage de façade au ravalement complet, de la toiture à la rénovation intérieure - un seul artisan local pour tous vos travaux.</p>
           </header>
-          <div class="services-grid" itemscope itemtype="https://schema.org/ItemList">
-            <article id="services-ravalement" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+
+          <div class="svc-grid" itemscope itemtype="https://schema.org/ItemList">
+
+            <!-- Ravalement & Façade -->
+            <a href="ravalement-facade-angouleme.html" id="services-ravalement" class="svc-card"
+               itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
               <meta itemprop="position" content="1" />
-              <div class="service-icon"><i class="fa-solid fa-paint-roller" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Ravalement & Façade</h3>
-              <p itemprop="description">Redonnez vie à vos façades&nbsp;: ravalement complet, nettoyage technique, peinture extérieure et traitements d'imperméabilisation.</p>
-              <ul class="service-details">
-                <li><a href="ravalement-facade-angouleme.html">Ravalement complet</a></li>
-                <li><a href="nettoyage-facade-angouleme.html">Hydro-gommage & démoussage</a></li>
-                <li><a href="peinture-exterieure-charente.html">Peinture extérieure</a></li>
-                <li>Traitement de l'humidité</li>
-              </ul>
-              <div class="service-cta">
-                <a href="nettoyage-facade-angouleme.html" class="btn btn-secondary btn--sm">Nettoyage de façade</a>
-                <a href="ravalement-facade-angouleme.html" class="btn btn-secondary btn--sm">Ravalement</a>
-              </div>
               <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-ravalement" />
-            </article>
-            <article id="services-toiture" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+              <link itemprop="url" href="https://vprr.fr/ravalement-facade-angouleme.html" />
+              <div class="svc-icon" aria-hidden="true">
+                <i class="fa-solid fa-paint-roller"></i>
+              </div>
+              <div class="svc-body">
+                <h3 itemprop="name">Ravalement &amp; Façade</h3>
+                <p itemprop="description">Façade encrassée, peinture écaillée ou fissures&nbsp;? Nous remettons votre extérieur à neuf avec les techniques adaptées à chaque support.</p>
+                <ul class="svc-tags" aria-label="Prestations incluses">
+                  <li>Ravalement complet</li>
+                  <li>Hydro-gommage</li>
+                  <li>Démoussage</li>
+                  <li>Imperméabilisation</li>
+                </ul>
+              </div>
+              <div class="svc-footer">
+                <span>Découvrir ce service</span>
+                <span class="svc-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <!-- Toiture & Couverture -->
+            <a href="nettoyage-toiture-angouleme.html" id="services-toiture" class="svc-card"
+               itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
               <meta itemprop="position" content="2" />
-              <div class="service-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Toiture & Couverture</h3>
-              <p itemprop="description">Protection et entretien de votre toiture&nbsp;: réfection, zinguerie, étanchéité et interventions d'urgence après intempéries.</p>
-              <ul class="service-details">
-                <li><a href="nettoyage-toiture-angouleme.html">Entretien & démoussage</a></li>
-                <li>Réfection de toiture</li>
-                <li>Gouttières & zinguerie</li>
-                <li>Pose de Velux</li>
-              </ul>
-              <div class="service-cta">
-                <a href="nettoyage-toiture-angouleme.html" class="btn btn-secondary btn--sm">Nettoyage de toiture</a>
-              </div>
               <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-toiture" />
-            </article>
-            <article id="services-isolation" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+              <link itemprop="url" href="https://vprr.fr/nettoyage-toiture-angouleme.html" />
+              <div class="svc-icon" aria-hidden="true">
+                <i class="fa-solid fa-house-chimney"></i>
+              </div>
+              <div class="svc-body">
+                <h3 itemprop="name">Toiture &amp; Couverture</h3>
+                <p itemprop="description">Mousses, tuiles déplacées ou gouttières à refaire&nbsp;? Nous assurons l'entretien et la réfection de votre toiture en toute sécurité.</p>
+                <ul class="svc-tags" aria-label="Prestations incluses">
+                  <li>Démoussage toiture</li>
+                  <li>Réfection de tuiles</li>
+                  <li>Gouttières & zinguerie</li>
+                  <li>Pose de Velux</li>
+                </ul>
+              </div>
+              <div class="svc-footer">
+                <span>Découvrir ce service</span>
+                <span class="svc-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <!-- Isolation -->
+            <a href="#contact" id="services-isolation" class="svc-card"
+               itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
               <meta itemprop="position" content="3" />
-              <div class="service-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Isolation & Performance Énergétique</h3>
-              <p itemprop="description">Améliorez votre confort et réduisez vos factures&nbsp;: isolation des combles, murs et remplacement d'huisseries.</p>
-              <ul class="service-details">
-                <li>Isolation des combles</li>
-                <li>Isolation des cloisons</li>
-                <li>Remplacement de fenêtres</li>
-                <li>Traitement de l'humidité</li>
-              </ul>
               <meta itemprop="areaServed" content="Angoulême, Charente" />
               <link itemprop="url" href="https://vprr.fr/#services-isolation" />
-            </article>
-            <article id="services-renovation" class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+              <div class="svc-icon" aria-hidden="true">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div class="svc-body">
+                <h3 itemprop="name">Isolation &amp; Énergie</h3>
+                <p itemprop="description">Réduisez vos factures et améliorez votre confort&nbsp;: nous isolons combles, murs et remplaçons vos huisseries.</p>
+                <ul class="svc-tags" aria-label="Prestations incluses">
+                  <li>Isolation des combles</li>
+                  <li>Isolation des murs</li>
+                  <li>Remplacement fenêtres</li>
+                  <li>Traitement humidité</li>
+                </ul>
+              </div>
+              <div class="svc-footer">
+                <span>Demander un devis</span>
+                <span class="svc-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <!-- Rénovation Intérieure -->
+            <a href="#contact" id="services-renovation" class="svc-card"
+               itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
               <meta itemprop="position" content="4" />
-              <div class="service-icon"><i class="fa-solid fa-hammer" aria-hidden="true"></i></div>
-              <h3 itemprop="name">Rénovation Intérieure & Aménagement</h3>
-              <p itemprop="description">Transformez votre intérieur&nbsp;: peinture, plâtrerie, sols, cuisines et salles de bains. Du sol au plafond.</p>
-              <ul class="service-details">
-                <li>Peinture intérieure</li>
-                <li>Plâtrerie & cloisons</li>
-                <li>Carrelage & parquet</li>
-                <li>Rénovation pièces d'eau</li>
-              </ul>
               <meta itemprop="areaServed" content="Angoulême, Charente" />
               <link itemprop="url" href="https://vprr.fr/#services-renovation" />
-            </article>
-          </div>
-          
-          <!-- CTA vers les pages service détaillées -->
-          <div class="services-cta-showcase">
-            <div class="services-cta-content">
-              <div class="services-cta-header">
-                <div class="services-cta-badge">
-                  <i class="fa-solid fa-star"></i>
-                  <span>Nos spécialités</span>
-                </div>
-                <h3 class="services-cta-title">Découvrez nos services en détail</h3>
-                <p class="services-cta-description">Consultez nos pages dédiées pour en savoir plus sur chaque prestation et obtenir un devis personnalisé.</p>
+              <div class="svc-icon" aria-hidden="true">
+                <i class="fa-solid fa-hammer"></i>
               </div>
-              
-              <div class="services-cta-grid">
-                <a href="nettoyage-facade-angouleme.html" class="service-cta-card primary">
-                  <div class="service-cta-icon">
-                    <i class="fa-solid fa-spray-can-sparkles"></i>
-                  </div>
-                  <div class="service-cta-text">
-                    <h4>Nettoyage de Façade</h4>
-                    <span>Hydro-gommage expert</span>
-                  </div>
-                  <div class="service-cta-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </a>
-                
-                <a href="nettoyage-toiture-angouleme.html" class="service-cta-card primary">
-                  <div class="service-cta-icon">
-                    <i class="fa-solid fa-house-chimney"></i>
-                  </div>
-                  <div class="service-cta-text">
-                    <h4>Nettoyage de Toiture</h4>
-                    <span>Démoussage professionnel</span>
-                  </div>
-                  <div class="service-cta-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </a>
-                
-                <a href="ravalement-facade-angouleme.html" class="service-cta-card secondary">
-                  <div class="service-cta-icon">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                  </div>
-                  <div class="service-cta-text">
-                    <h4>Ravalement de Façade</h4>
-                    <span>Rénovation complète</span>
-                  </div>
-                  <div class="service-cta-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </a>
-                
-                <a href="peinture-exterieure-charente.html" class="service-cta-card secondary">
-                  <div class="service-cta-icon">
-                    <i class="fa-solid fa-palette"></i>
-                  </div>
-                  <div class="service-cta-text">
-                    <h4>Peinture Extérieure</h4>
-                    <span>Finitions premium</span>
-                  </div>
-                  <div class="service-cta-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </a>
+              <div class="svc-body">
+                <h3 itemprop="name">Rénovation Intérieure</h3>
+                <p itemprop="description">Du sol au plafond, nous transformons votre intérieur&nbsp;: peinture, plâtrerie, carrelage et pièces d'eau.</p>
+                <ul class="svc-tags" aria-label="Prestations incluses">
+                  <li>Peinture intérieure</li>
+                  <li>Plâtrerie & cloisons</li>
+                  <li>Carrelage & parquet</li>
+                  <li>Salle de bain & cuisine</li>
+                </ul>
               </div>
-            </div>
+              <div class="svc-footer">
+                <span>Demander un devis</span>
+                <span class="svc-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </a>
+
           </div>
+
+          <!-- CTA bas de section -->
+          <div class="svc-bottom-cta">
+            <p>Un projet hors du commun&nbsp;? On aime les défis.</p>
+            <a href="#contact" class="btn btn-primary">Obtenir un devis gratuit</a>
+          </div>
+
         </div>
       </section>
 
