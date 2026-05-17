@@ -1,12 +1,13 @@
 ---
+category: Façade
 title: "Le guide complet du ravalement de façade à Angoulême (Charente) :
   sublimez et protégez votre maison en 2026"
 slug: ravalement-facade-angouleme-charente
 description: "Rénovation complète et durable pour protéger et sublimer votre
   façade : principe, avantages, étapes et prix à Angoulême (Charente)."
-date: 2026-03-24
+date: 2026-02-04
 image: /assets/img/blog/ravalement_apres-900w.webp
-draft: true
+draft: false
 tags:
   - angouleme
   - ravalement facade
@@ -248,4 +249,4 @@ Le ravalement de façade est l'investissement le plus rentable pour protéger vo
 
 **Votre maison mérite l'expertise de vrais artisans.** Confiez-nous vos murs pour un résultat esthétique, durable et réalisé dans les règles de l'art.
 
-*Besoin d'un devis pour le ravalement de votre façade à Angoulême ou en Charente ?* *[Contactez-nous sur vprr.fr](https://www.google.com/search?q=/index.html%23contact "null")* *pour une étude gratuite et personnalisée de votre projet.*
+*Besoin d'un devis pour le ravalement de votre façade à Angoulême ou en Charente ?* *[Contactez-nous sur vprr.fr*](https://vprr.fr/#contact) *pour une étude gratuite et personnalisée de votre projet.*

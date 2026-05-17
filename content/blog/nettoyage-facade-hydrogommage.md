@@ -1,10 +1,11 @@
 ---
+category: Façade
 title: "Nettoyage de façade par hydro-gommage à Angoulême (Charente): le guide
   complet 2026"
 slug: nettoyage-facade-hydrogommage
 description: "Technique douce et précise pour nettoyer une façade sans l’abîmer
   : principe, avantages, étapes et prix à Angoulême (Charente)."
-date: 2026-03-18
+date: 2026-03-20
 image: /assets/img/blog/facade_hydrogommage.webp
 draft: false
 tags:
@@ -303,4 +304,4 @@ L'hydro-gommage est la technique de référence pour nettoyer votre façade en d
 
 ---
 
-*Besoin d'un devis pour le nettoyage de votre façade à Angoulême ?* *[Contactez-nous](/index.html#contact)* *pour une étude gratuite et personnalisée. Intervention rapide en Charente.*
+*Besoin d'un devis pour le nettoyage de votre façade à Angoulême ?* *[Contactez-nous](https://vprr.fr/#contact)* *pour une étude gratuite et personnalisée. Intervention rapide en Charente.*

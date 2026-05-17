@@ -1,11 +1,12 @@
 ---
+category: Toiture
 title: "Démoussage et nettoyage de toiture à Angoulême (Charente): le guide
   complet 2026"
 slug: demoussage-nettoyage-toiture-charente
 description: "Guide concret pour réussir un démoussage et un nettoyage de
   toiture en Charente (Angoulême, Cognac, Jarnac...) : méthodes, prix, erreurs à
   éviter, hydrofuge et entretien."
-date: 2026-03-20
+date: 2026-03-19
 image: /assets/img/blog/toiture_avant.webp
 draft: false
 tags:
@@ -191,4 +192,4 @@ Si vous cherchez une intervention locale, adaptée aux toitures du 16, vous pouv
 
 ---
 
-*Besoin d’un devis de démoussage / nettoyage de toiture en Charente ? [Contactez-nous](/index.html#contact) pour une étude gratuite et personnalisée (Angoulême, Cognac, Jarnac, Barbezieux, Ruffec, Confolens et alentours).*
+*Besoin d’un devis de démoussage / nettoyage de toiture en Charente ? [Contactez-nous](https://vprr.fr/#contact) pour une étude gratuite et personnalisée (Angoulême, Cognac, Jarnac, Barbezieux, Ruffec, Confolens et alentours).*

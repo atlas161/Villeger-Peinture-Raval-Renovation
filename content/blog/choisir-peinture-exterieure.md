@@ -1,11 +1,12 @@
 ---
+category: Peinture
 title: "Peinture extérieure à Angoulême (Charente) : le guide complet 2026 pour
   sublimer votre façade"
 slug: peinture-exterieure-facade-angouleme
 description: "Spécialiste de la peinture extérieure à Angoulême, VPRR vous guide
   : choix de peinture, préparation et prix. Protégez votre façade en Charente.
   Devis gratuit !"
-date: 2026-03-18
+date: 2026-02-02
 image: /assets/img/blog/peinture_ext.webp
 draft: false
 tags:
@@ -157,4 +158,4 @@ Le choix de votre peinture extérieure, la préparation minutieuse des murs et l
 
 **Ne laissez pas votre maison perdre de sa superbe et se dégrader face aux intempéries.** Confiez sa rénovation à des experts passionnés qui sauront la traiter et la mettre en valeur.
 
-*Besoin d'un diagnostic et d'un devis pour vos travaux de peinture extérieure à Angoulême, Champniers, La Couronne, Ruelle-sur-Touvre ou partout ailleurs en Charente ?* *[Contactez l'équipe VPRR dès aujourd'hui sur vprr.fr*](https://vprr.fr/#contact) *pour une étude gratuite et totalement personnalisée de votre projet.*
+*Besoin d'un diagnostic et d'un devis pour vos travaux de peinture extérieure à Angoulême, Champniers, La Couronne, Ruelle-sur-Touvre ou partout ailleurs en Charente ?* [Contactez l'équipe VPRR dès aujourd'hui sur vprr.fr](https://vprr.fr/#contact) *pour une étude gratuite et totalement personnalisée de votre projet.*
