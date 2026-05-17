@@ -89,7 +89,7 @@
 
     "_comment_image": "── Image de fond (mettre le fichier dans assets/img/) ──",
     "image": "data/hero.webp",
-    "imageAlt": "Ravalement de façade et peinture à Angoulême — réalisations",
+    "imageAlt": "Ravalement de façade et peinture à Angoulême - réalisations",
 
     "_comment_boutons": "── Boutons d'action ──",
     "ctaPrimary": {

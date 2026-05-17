@@ -13,12 +13,18 @@ content:
     format: yaml-frontmatter
     view:
       primary: title
-      fields: [title, date, slug, draft]
+      fields: [title, date, slug, draft, category]
       sort: [date, title]
       default:
         sort: date
         order: desc
     fields:
+      - name: category
+        label: Catégorie
+        type: select
+        options:
+          values: [Peinture, Façade, Toiture, Rénovation, Conseils, Entretien]
+          default: Conseils
       - name: title
         label: Titre de l'article (H1)
         type: string
