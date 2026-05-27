@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
     <loc>https://vprr.fr/</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -19,7 +19,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/nettoyage-facade-angouleme.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -33,7 +33,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/nettoyage-toiture-angouleme.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -47,7 +47,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/ravalement-facade-angouleme.html</loc>
-    <lastmod>2026-05-03T16:30:00+02:00</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -61,7 +61,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/peinture-exterieure-charente.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -75,39 +75,27 @@
   </url>
 <url>
     <loc>https://vprr.fr/faq-renovation-angouleme.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 <url>
     <loc>https://vprr.fr/zone-desservie-charente.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 <url>
     <loc>https://vprr.fr/mentions-legales.html</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-<url>
-    <loc>https://vprr.fr/merci.html</loc>
-    <lastmod>2025-12-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.1</priority>
   </url>
 <url>
     <loc>https://vprr.fr/llms.txt</loc>
     <lastmod>2025-12-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-<url>
-    <loc>https://vprr.fr/data/config.json</loc>
-    <lastmod>2025-12-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
   </url>
 <url>
     <loc>https://vprr.fr/humans.txt</loc>
@@ -117,38 +105,85 @@
   </url>
   <url>
     <loc>https://vprr.fr/blog/</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vprr.fr/blog/ravalement-facade-angouleme-charente.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://vprr.fr/blog/etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme.html</loc>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/hydrogommage_.webp</image:loc>
+      <image:title>Nettoyage de façade en pierre : comment l&apos;hydrogommage a sauvé cette maison à Angoulême (Charente) en 2026</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://vprr.fr/blog/demoussage-nettoyage-toiture-charente.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://vprr.fr/blog/bienfaits-peinture-exterieure-facade-angouleme.html</loc>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vprr.fr/blog/peinture-exterieure-facade-angouleme.html</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/bienfait_peinture_ext (1).webp</image:loc>
+      <image:title>Les bienfaits insoupçonnés d&apos;une peinture extérieure : Pourquoi repeindre sa façade à Angoulême en Charente est un investissement vital</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vprr.fr/blog/nettoyage-facade-hydrogommage.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/facade_hydrogommage-1200w.webp</image:loc>
+      <image:title>Nettoyage de façade par hydro-gommage à Angoulême (Charente): le guide complet 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/demoussage-nettoyage-toiture-charente.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/toiture_avant-1200w.webp</image:loc>
+      <image:title>Démoussage et nettoyage de toiture à Angoulême (Charente): le guide complet 2026</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vprr.fr/blog/renovation-interieur-angouleme-charente.html</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/image_renovation_interieur_angouleme.webp</image:loc>
+      <image:title>Rénovation intérieure à Angoulême (Charente) : le guide complet 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/ravalement-facade-angouleme-charente.html</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/ravalement_apres-900w.webp</image:loc>
+      <image:title>Le guide complet du ravalement de façade à Angoulême (Charente) : sublimez et protégez votre maison en 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/peinture-exterieure-facade-angouleme.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/peinture_ext-1200w.webp</image:loc>
+      <image:title>Peinture extérieure à Angoulême (Charente) : le guide complet 2026 pour sublimer votre façade</image:title>
+    </image:image>
   </url>
 </urlset>

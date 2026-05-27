@@ -864,6 +864,28 @@
   font-size: 0.9375rem;
 }
 
+@media (max-width: 480px) {
+  .review-card {
+    padding: var(--space-lg);
+  }
+
+  .review-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .review-stars {
+    margin-top: 0;
+  }
+
+  .review-author {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
+
 .review-card:not(.is-expanded) .review-text {
   display: -webkit-box;
   -webkit-line-clamp: 6;

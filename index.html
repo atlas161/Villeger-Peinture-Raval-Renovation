@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>document.documentElement.classList.add('vprr-loading');</script>
     
     <!-- Preconnect pour les ressources externes (priorité haute) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -270,6 +271,15 @@
         "image": "https://vprr.fr/data/hero.webp",
         "email": "villergerstephane204@gmail.com",
         "telephone": "+33545912270",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+33545912270",
+            "contactType": "customer service",
+            "areaServed": "FR-16",
+            "availableLanguage": ["fr", "fr-FR"]
+          }
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "136 Avenue de la République",
@@ -331,7 +341,8 @@
           ]
         },
         "sameAs": [
-          "https://www.instagram.com/peinture_raval_renovation/"
+          "https://www.instagram.com/peinture_raval_renovation/",
+          "https://g.page/r/CZZJ5Bogt13fEBM/review"
         ],
         "priceRange": "€€",
         "paymentAccepted": ["Espèces", "Chèque", "Virement bancaire"],
@@ -343,14 +354,7 @@
             "opens": "08:00",
             "closes": "18:00"
           }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "10",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
+        ]
       }
     </script>
     
@@ -433,6 +437,11 @@
   <body>
     <!-- Skip to content pour accessibilité -->
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+
+    <div class="page-loader" id="page-loader" aria-label="Chargement" role="status" aria-live="polite">
+      <img src="media/VPRR-LOGO.svg" alt="VPRR" width="180" height="48" />
+      <div class="page-loader-spinner" aria-hidden="true"></div>
+    </div>
     
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKPGDBPG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
@@ -482,9 +491,15 @@
 
         <!-- Fond vidéo -->
         <div class="hero-bg" aria-hidden="true">
-          <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="data/hero.webp">
-            <source src="media/téléchargement.mp4" type="video/mp4" />
-          </video>
+          <iframe
+            class="hero-video"
+            src="https://player.vimeo.com/video/1194659147?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="VPRR Angoulême vidéo drone "
+            tabindex="-1"
+          ></iframe>
           <div class="hero-overlay"></div>
         </div>
 
@@ -610,52 +625,52 @@
               </div>
             </a>
 
-            <!-- Isolation -->
-            <a href="#contact" id="services-isolation" class="svc-card"
+            <!-- Nettoyage de façade -->
+            <a href="nettoyage-facade-angouleme.html" id="services-facade" class="svc-card"
                itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
               <meta itemprop="position" content="3" />
               <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-isolation" />
+              <link itemprop="url" href="https://vprr.fr/nettoyage-facade-angouleme.html" />
               <div class="svc-icon" aria-hidden="true">
-                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid fa-spray-can-sparkles"></i>
               </div>
               <div class="svc-body">
-                <h3 itemprop="name">Isolation &amp; Énergie</h3>
-                <p itemprop="description">Réduisez vos factures et améliorez votre confort&nbsp;: nous isolons combles, murs et remplaçons vos huisseries.</p>
+                <h3 itemprop="name">Nettoyage de façade</h3>
+                <p itemprop="description">Façade noire, mousse, pollution&nbsp;? Nous nettoyons et traitons vos murs pour retrouver une façade propre et durable.</p>
                 <ul class="svc-tags" aria-label="Prestations incluses">
-                  <li>Isolation des combles</li>
-                  <li>Isolation des murs</li>
-                  <li>Remplacement fenêtres</li>
-                  <li>Traitement humidité</li>
+                  <li>Hydro-gommage</li>
+                  <li>Démoussage</li>
+                  <li>Traitement anti-pollution</li>
+                  <li>Nettoyage pierre</li>
                 </ul>
               </div>
               <div class="svc-footer">
-                <span>Demander un devis</span>
+                <span>Découvrir ce service</span>
                 <span class="svc-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </a>
 
-            <!-- Rénovation Intérieure -->
-            <a href="#contact" id="services-renovation" class="svc-card"
+            <!-- Peinture extérieure -->
+            <a href="peinture-exterieure-charente.html" id="services-peinture" class="svc-card"
                itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
               <meta itemprop="position" content="4" />
               <meta itemprop="areaServed" content="Angoulême, Charente" />
-              <link itemprop="url" href="https://vprr.fr/#services-renovation" />
+              <link itemprop="url" href="https://vprr.fr/peinture-exterieure-charente.html" />
               <div class="svc-icon" aria-hidden="true">
-                <i class="fa-solid fa-hammer"></i>
+                <i class="fa-solid fa-paintbrush"></i>
               </div>
               <div class="svc-body">
-                <h3 itemprop="name">Rénovation Intérieure</h3>
-                <p itemprop="description">Du sol au plafond, nous transformons votre intérieur&nbsp;: peinture, plâtrerie, carrelage et pièces d'eau.</p>
+                <h3 itemprop="name">Peinture extérieure</h3>
+                <p itemprop="description">Protégez et embellissez votre maison avec une peinture extérieure adaptée à votre support et à la météo en Charente.</p>
                 <ul class="svc-tags" aria-label="Prestations incluses">
-                  <li>Peinture intérieure</li>
-                  <li>Plâtrerie & cloisons</li>
-                  <li>Carrelage & parquet</li>
-                  <li>Salle de bain & cuisine</li>
+                  <li>Peinture façade</li>
+                  <li>Boiseries</li>
+                  <li>Portails & clôtures</li>
+                  <li>Préparation support</li>
                 </ul>
               </div>
               <div class="svc-footer">
-                <span>Demander un devis</span>
+                <span>Découvrir ce service</span>
                 <span class="svc-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </a>

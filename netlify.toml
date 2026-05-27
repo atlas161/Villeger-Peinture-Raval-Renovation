@@ -22,7 +22,7 @@
   minify = true
 
 [build.processing.html]
-  pretty_urls = true
+  pretty_urls = false
 
 [build.processing.images]
   compress = true
@@ -42,6 +42,67 @@
   from = "https://www.vprr.fr/*"
   to = "https://vprr.fr/:splat"
   status = 301
+  force = true
+
+# Canonicalisation: forcer les URLs .html (évite les doublons /page vs /page.html)
+[[redirects]]
+  from = "/ravalement-facade-angouleme"
+  to = "/ravalement-facade-angouleme.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nettoyage-facade-angouleme"
+  to = "/nettoyage-facade-angouleme.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nettoyage-toiture-angouleme"
+  to = "/nettoyage-toiture-angouleme.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/peinture-exterieure-charente"
+  to = "/peinture-exterieure-charente.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zone-desservie-charente"
+  to = "/zone-desservie-charente.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq-renovation-angouleme"
+  to = "/faq-renovation-angouleme.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mentions-legales"
+  to = "/mentions-legales.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/merci"
+  to = "/merci.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/blog/"
+  to = "/blog/index.html"
+  status = 200
   force = true
 
 # Page 404 personnalisée

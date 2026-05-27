@@ -13,6 +13,64 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link'));
   const navButtons = Array.from(document.querySelectorAll('.primary-nav .menu a.btn'));
 
+  const heroBg = document.querySelector('.hero-bg');
+  const heroVimeo = heroBg ? heroBg.querySelector('iframe.hero-video') : null;
+  const pageLoader = document.getElementById('page-loader');
+  const rootEl = document.documentElement;
+  const finishLoading = () => {
+    rootEl.classList.remove('vprr-loading');
+    rootEl.classList.add('vprr-ready');
+    if (!pageLoader) return;
+    if (pageLoader.classList.contains('is-hidden')) return;
+    pageLoader.classList.add('is-hidden');
+    window.setTimeout(() => {
+      try { pageLoader.remove(); } catch (_) {}
+    }, 450);
+  };
+
+  if (pageLoader) {
+    rootEl.classList.add('vprr-loading');
+    window.setTimeout(finishLoading, 9000);
+  }
+
+  if (heroBg && heroVimeo && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVimeo.remove();
+    finishLoading();
+  } else if (heroBg && heroVimeo) {
+    const ensureVimeoApi = () => new Promise((resolve, reject) => {
+      if (window.Vimeo && window.Vimeo.Player) return resolve();
+      const existing = document.querySelector('script[data-vimeo-player-api]');
+      if (existing) {
+        existing.addEventListener('load', () => resolve(), { once: true });
+        existing.addEventListener('error', () => reject(new Error('Vimeo Player API load error')), { once: true });
+        return;
+      }
+      const s = document.createElement('script');
+      s.src = 'https://player.vimeo.com/api/player.js';
+      s.async = true;
+      s.setAttribute('data-vimeo-player-api', '1');
+      s.addEventListener('load', () => resolve(), { once: true });
+      s.addEventListener('error', () => reject(new Error('Vimeo Player API load error')), { once: true });
+      document.head.appendChild(s);
+    });
+
+    ensureVimeoApi()
+      .then(() => {
+        const player = new window.Vimeo.Player(heroVimeo);
+        let isReady = false;
+        const onTimeUpdate = (data) => {
+          const t = data && typeof data.seconds === 'number' ? data.seconds : 0;
+          if (t > 0.05 && !isReady) {
+            isReady = true;
+            finishLoading();
+            try { player.off('timeupdate', onTimeUpdate); } catch (_) {}
+          }
+        };
+        player.on('timeupdate', onTimeUpdate);
+      })
+      .catch(() => finishLoading());
+  }
+
   const normalizePath = (p) => {
     const raw = typeof p === 'string' ? p : '';
     const noIndex = raw.replace(/\/index\.html$/i, '/');
@@ -245,8 +303,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Fonction pour fermer le menu mobile proprement
+    const closeAllMobileSubmenus = () => {
+      const openItems = nav.querySelectorAll('.has-submenu.submenu-open');
+      openItems.forEach((li) => {
+        li.classList.remove('submenu-open');
+        const trigger = li.querySelector('a.nav-link');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+      nav.classList.remove('submenu-active');
+      return openItems.length > 0;
+    };
+
     const closeMenu = () => {
       if (nav.classList.contains("open")) {
+        closeAllMobileSubmenus();
         nav.classList.remove("open");
         burger.setAttribute("aria-expanded", "false");
         document.body.classList.remove('nav-open');
@@ -263,11 +333,72 @@ document.addEventListener("DOMContentLoaded", () => {
       return false;
     };
 
+    const isMobileNav = () => {
+      if (!window.matchMedia) return false;
+      return window.matchMedia('(max-width: 991px)').matches;
+    };
+
+    const ensureSubmenuBack = (submenu, li) => {
+      if (!submenu || submenu.querySelector('.submenu-back-item')) return;
+      const backLi = document.createElement('li');
+      backLi.className = 'submenu-back-item';
+      const backBtn = document.createElement('button');
+      backBtn.type = 'button';
+      backBtn.className = 'submenu-back-btn';
+      backBtn.innerHTML = '<span>Retour</span>';
+      backBtn.addEventListener('click', (e) => {
+        if (e && typeof e.preventDefault === 'function') e.preventDefault();
+        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+        closeAllMobileSubmenus();
+      });
+      backLi.appendChild(backBtn);
+      submenu.insertBefore(backLi, submenu.firstChild);
+    };
+
+    const submenuItems = Array.from(nav.querySelectorAll('.has-submenu'));
+    submenuItems.forEach((li) => {
+      const trigger = li.querySelector('a.nav-link');
+      const submenu = li.querySelector('.submenu');
+      if (!trigger || !submenu) return;
+      if (li.__vprrMobileSubmenuBound) return;
+      li.__vprrMobileSubmenuBound = true;
+
+      trigger.setAttribute('aria-expanded', 'false');
+      ensureSubmenuBack(submenu, li);
+
+      trigger.addEventListener('click', (e) => {
+        if (!isMobileNav()) return;
+        if (!nav.classList.contains('open')) return;
+        if (e && typeof e.preventDefault === 'function') e.preventDefault();
+        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+        if (e && typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
+
+        const isOpen = li.classList.contains('submenu-open');
+        closeAllMobileSubmenus();
+        if (!isOpen) {
+          li.classList.add('submenu-open');
+          nav.classList.add('submenu-active');
+          trigger.setAttribute('aria-expanded', 'true');
+          ensureSubmenuBack(submenu, li);
+        }
+      }, { passive: false });
+
+      const submenuLinks = Array.from(submenu.querySelectorAll('a[href]'));
+      submenuLinks.forEach((a) => {
+        a.addEventListener('click', () => {
+          if (!isMobileNav()) return;
+          closeAllMobileSubmenus();
+          closeMenu();
+        });
+      });
+    });
+
     // Ferme automatiquement le menu mobile après avoir cliqué sur un lien.
     const allMenuLinks = nav.querySelectorAll("a.nav-link, a.btn");
     
     allMenuLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
+        if (isMobileNav() && nav.classList.contains('open') && link.closest && link.closest('.has-submenu')) return;
         const href = link.getAttribute('href');
         
         // Si c'est une ancre interne (hash sur la même page)
@@ -282,7 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Amélioration de l'accessibilité : ferme le menu avec la touche 'Échap'.
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeMenu();
+        if (!closeAllMobileSubmenus()) closeMenu();
       }
     }, { passive: true });
 
@@ -354,6 +485,88 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const initArticleNavCarousel = () => {
+    const navEl = document.querySelector('.article-navigation');
+    if (!navEl) return;
+    const row = navEl.querySelector('.nav-articles');
+    if (!row) return;
+    if (navEl.dataset && navEl.dataset.articleNavInit === '1') return;
+    navEl.dataset.articleNavInit = '1';
+
+    const isMobile = () => {
+      if (!window.matchMedia) return false;
+      return window.matchMedia('(max-width: 768px)').matches;
+    };
+
+    const ensureButtons = () => {
+      const hasPrev = navEl.querySelector('.article-nav-btn-prev');
+      const hasNext = navEl.querySelector('.article-nav-btn-next');
+      if (hasPrev && hasNext) return;
+
+      const prev = document.createElement('button');
+      prev.type = 'button';
+      prev.className = 'article-nav-btn article-nav-btn-prev';
+      prev.setAttribute('aria-label', 'Articles précédents');
+      prev.innerHTML = '<i class="fa-solid fa-chevron-left" aria-hidden="true"></i>';
+
+      const next = document.createElement('button');
+      next.type = 'button';
+      next.className = 'article-nav-btn article-nav-btn-next';
+      next.setAttribute('aria-label', 'Articles suivants');
+      next.innerHTML = '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>';
+
+      navEl.appendChild(prev);
+      navEl.appendChild(next);
+    };
+
+    const updateButtons = () => {
+      const prev = navEl.querySelector('.article-nav-btn-prev');
+      const next = navEl.querySelector('.article-nav-btn-next');
+      if (!prev || !next) return;
+      if (!isMobile()) {
+        prev.style.display = 'none';
+        next.style.display = 'none';
+        return;
+      }
+      prev.style.display = '';
+      next.style.display = '';
+      const maxScroll = row.scrollWidth - row.clientWidth;
+      prev.disabled = row.scrollLeft <= 4;
+      next.disabled = row.scrollLeft >= maxScroll - 4;
+    };
+
+    const scrollByPage = (dir) => {
+      const delta = Math.max(260, Math.floor(row.clientWidth * 0.9));
+      row.scrollBy({ left: dir * delta, behavior: 'smooth' });
+    };
+
+    ensureButtons();
+    const prev = navEl.querySelector('.article-nav-btn-prev');
+    const next = navEl.querySelector('.article-nav-btn-next');
+
+    if (prev && !prev.__vprrBound) {
+      prev.__vprrBound = true;
+      prev.addEventListener('click', () => scrollByPage(-1));
+    }
+    if (next && !next.__vprrBound) {
+      next.__vprrBound = true;
+      next.addEventListener('click', () => scrollByPage(1));
+    }
+
+    let raf = 0;
+    row.addEventListener('scroll', () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        updateButtons();
+      });
+    }, { passive: true });
+    window.addEventListener('resize', updateButtons);
+    updateButtons();
+  };
+
+  initArticleNavCarousel();
 
   // --- SCROLL SPY AMÉLIORÉ ---
   // Met en surbrillance le lien de navigation correspondant à la section visible à l'écran.
@@ -444,9 +657,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (hashPart && hashPart !== '#' && hashPart !== lastActiveHash) {
           lastActiveHash = hashPart;
           setActive(currentSection);
-          if (history.replaceState) {
-            history.replaceState(null, null, hashPart);
-          }
         }
       }
     };

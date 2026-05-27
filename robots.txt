@@ -12,20 +12,18 @@ User-agent: *
 Allow: /
 Allow: /index.html
 Allow: /mentions-legales.html
-Allow: /merci.html
 Allow: /assets/img/
 Allow: /media/
 Allow: /data/config.json
 Allow: /llms.txt
 
 # Ressources techniques à ne pas indexer
-Disallow: /assets/js/
-Disallow: /assets/css/
 Disallow: /styleguide/
 Disallow: /*.md$
 Disallow: /404.html
 Disallow: /_redirects
 Disallow: /netlify.toml
+Disallow: /merci.html
 
 # Crawl-delay raisonnable
 Crawl-delay: 1
@@ -243,8 +241,7 @@ Sitemap: https://vprr.fr/sitemap.xml
 # ============================================
 # Site: https://vprr.fr
 # Entreprise: Villéger Peinture Raval Rénovation (VPRR)
-# Contact: villergerstephane204@gmail.com
-# Téléphone: +33 6 59 26 86 23
+# Téléphone: +33 5 45 91 22 70
 # Adresse: 136 Avenue de la République, 16340 L'Isle-d'Espagnac
 # Région: Charente (16), Nouvelle-Aquitaine, France
 # Services: Ravalement, Peinture, Isolation, Rénovation

@@ -75,6 +75,7 @@ function initCarouselControls(carousel, viewport) {
 
   const prevBtn = carousel.querySelector('[data-carousel-prev]');
   const nextBtn = carousel.querySelector('[data-carousel-next]');
+  const track = carousel.querySelector('[data-carousel-track]');
 
   const updateButtons = () => {
     if (!prevBtn || !nextBtn) return;
@@ -102,6 +103,107 @@ function initCarouselControls(carousel, viewport) {
 
   window.addEventListener('resize', updateButtons);
   updateButtons();
+
+  let isPointerDown = false;
+  let startX = 0;
+  let startY = 0;
+  let startScrollLeft = 0;
+  let moved = false;
+  let activePointerId = null;
+  let suppressClickUntil = 0;
+  let startIndex = 0;
+
+  const getCards = () => {
+    if (!track) return [];
+    return Array.from(track.querySelectorAll('.blog-preview-card'));
+  };
+
+  const getNearestIndex = (scrollLeft) => {
+    const cards = getCards();
+    if (cards.length === 0) return 0;
+    let bestIdx = 0;
+    let bestDist = Infinity;
+    for (let i = 0; i < cards.length; i += 1) {
+      const dist = Math.abs(cards[i].offsetLeft - scrollLeft);
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestIdx = i;
+      }
+    }
+    return bestIdx;
+  };
+
+  const scrollToIndex = (idx) => {
+    const cards = getCards();
+    if (cards.length === 0) return;
+    const i = Math.max(0, Math.min(idx, cards.length - 1));
+    viewport.scrollTo({ left: cards[i].offsetLeft, behavior: 'smooth' });
+  };
+
+  const onPointerDown = (e) => {
+    if (!e || typeof e.pointerId !== 'number') return;
+    const target = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (target) return;
+    isPointerDown = true;
+    moved = false;
+    activePointerId = e.pointerId;
+    startX = e.clientX;
+    startY = e.clientY;
+    startScrollLeft = viewport.scrollLeft;
+    startIndex = getNearestIndex(startScrollLeft);
+  };
+
+  const onPointerMove = (e) => {
+    if (!isPointerDown) return;
+    if (activePointerId !== null && e.pointerId !== activePointerId) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    if (!moved) {
+      if (Math.abs(dx) < 10) return;
+      if (Math.abs(dy) > Math.abs(dx)) {
+        isPointerDown = false;
+        activePointerId = null;
+        return;
+      }
+      moved = true;
+      try { viewport.setPointerCapture(activePointerId); } catch (_) {}
+    }
+    e.preventDefault();
+    viewport.scrollLeft = startScrollLeft - dx;
+  };
+
+  const onPointerUp = (e) => {
+    if (activePointerId !== null && e.pointerId !== activePointerId) return;
+    if (moved) {
+      suppressClickUntil = Date.now() + 450;
+      const delta = viewport.scrollLeft - startScrollLeft;
+      const THRESHOLD = 24;
+      if (Math.abs(delta) <= THRESHOLD) {
+        scrollToIndex(startIndex);
+      } else {
+        scrollToIndex(startIndex + (delta > 0 ? 1 : -1));
+      }
+    }
+    isPointerDown = false;
+    activePointerId = null;
+    try { viewport.releasePointerCapture(e.pointerId); } catch (_) {}
+  };
+
+  if (!viewport.__vprrDragBound && 'PointerEvent' in window) {
+    viewport.__vprrDragBound = true;
+    viewport.addEventListener('pointerdown', onPointerDown, { passive: true });
+    viewport.addEventListener('pointermove', onPointerMove, { passive: false });
+    viewport.addEventListener('pointerup', onPointerUp, { passive: true });
+    viewport.addEventListener('pointercancel', onPointerUp, { passive: true });
+    viewport.addEventListener('pointerleave', onPointerUp, { passive: true });
+
+    viewport.addEventListener('click', (e) => {
+      if (Date.now() < suppressClickUntil) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  }
 }
 
 /**

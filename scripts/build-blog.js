@@ -265,6 +265,7 @@ function markdownToHtml(markdown) {
   const lines = normalizeNewlines(markdown).split('\n');
   const blocks = [];
   let i = 0;
+  let skippedPrimaryH1 = false;
 
   const isBlockStart = (line, nextLine) => {
     const t = (line || '').trim();
@@ -293,9 +294,15 @@ function markdownToHtml(markdown) {
       const level = headerMatch[1].length;
       const rawText = headerMatch[2].trim();
       const inlineHtml = renderInline(rawText);
+      if (level === 1 && !skippedPrimaryH1) {
+        skippedPrimaryH1 = true;
+        i += 1;
+        continue;
+      }
+      const outputLevel = level === 1 ? 2 : level;
       const id = slugify(inlineHtml) || `section-${headers.length + 1}`;
-      headers.push({ level, text: rawText, id });
-      blocks.push(`<h${level} id="${id}">${inlineHtml}</h${level}>`);
+      headers.push({ level: outputLevel, text: rawText, id });
+      blocks.push(`<h${outputLevel} id="${id}">${inlineHtml}</h${outputLevel}>`);
       i += 1;
       continue;
     }
@@ -558,6 +565,15 @@ function getCategory(frontmatter) {
   return 'Conseils';
 }
 
+function normalizeTextForMatch(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /**
  * Génère le HTML d'une page article avec navigation
  */
@@ -578,6 +594,40 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
   const heroImageSrc = variants.heroSrc || coverImage || '';
   const heroImageSrcset = variants.heroSrcset || '';
   const heroImageSizes = variants.heroSizes || '(max-width: 768px) 100vw, 900px';
+
+  const categoryKey = normalizeTextForMatch(category);
+  const serviceLinksByCategory = [
+    {
+      match: ['facade', 'ravalement'],
+      url: `${CONFIG.siteUrl}/ravalement-facade-angouleme.html`,
+      label: 'Ravalement de façade (Charente)'
+    },
+    {
+      match: ['toiture'],
+      url: `${CONFIG.siteUrl}/nettoyage-toiture-angouleme.html`,
+      label: 'Nettoyage de toiture (Charente)'
+    },
+    {
+      match: ['peinture'],
+      url: `${CONFIG.siteUrl}/peinture-exterieure-charente.html`,
+      label: 'Peinture extérieure (Charente)'
+    }
+  ];
+
+  const matchedService = serviceLinksByCategory.find((s) => s.match.some((m) => categoryKey.includes(m)));
+  const internalLinksHtml = matchedService
+    ? `
+<div class="article-seo-links">
+  <p><strong>Besoin d’un artisan en Charente (16) ?</strong></p>
+  <ul>
+    <li><a href="${matchedService.url}">${matchedService.label}</a></li>
+    <li><a href="${CONFIG.siteUrl}/#contact">Demander un devis gratuit</a></li>
+  </ul>
+</div>
+`.trim()
+    : '';
+
+  const bodyHtmlWithLinks = internalLinksHtml ? `${bodyHtml}\n\n${internalLinksHtml}` : bodyHtml;
   
   // Navigation prev/next
   const prevUrl = prevArticle ? `./${prevArticle.slug}.html` : '#';
@@ -603,7 +653,7 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
     '{{TAGS}}': tagsString,
     '{{CATEGORY}}': category,
     '{{READ_TIME}}': readTime,
-    '{{CONTENT}}': bodyHtml,
+    '{{CONTENT}}': bodyHtmlWithLinks,
     '{{TOC}}': toc,
     '{{TAGS_LIST}}': tagsHtml,
     '{{URL_ENCODED}}': encodeURIComponent(`${CONFIG.blogUrl}/${frontmatter.slug}.html`),
@@ -630,6 +680,14 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
 function updateSitemap(articles) {
   console.log('📄 Mise à jour du sitemap...');
   
+  const escapeXml = (value) =>
+    String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
+
   let sitemap;
   try {
     sitemap = fs.readFileSync(CONFIG.sitemapPath, 'utf-8');
@@ -674,16 +732,59 @@ function updateSitemap(articles) {
       return !isBlogUrl(loc);
     })
   );
+
+  const today = new Date().toISOString().split('T')[0];
+  const lastmodByLoc = new Map([
+    [`${CONFIG.siteUrl}/`, today],
+    [`${CONFIG.siteUrl}/ravalement-facade-angouleme.html`, today],
+    [`${CONFIG.siteUrl}/nettoyage-facade-angouleme.html`, today],
+    [`${CONFIG.siteUrl}/nettoyage-toiture-angouleme.html`, today],
+    [`${CONFIG.siteUrl}/peinture-exterieure-charente.html`, today],
+    [`${CONFIG.siteUrl}/zone-desservie-charente.html`, today],
+    [`${CONFIG.siteUrl}/faq-renovation-angouleme.html`, today],
+    [`${CONFIG.siteUrl}/mentions-legales.html`, today]
+  ]);
+
+  const upsertLastmod = (urlBlock, newDate) => {
+    if (/<lastmod>\s*[^<]+\s*<\/lastmod>/.test(urlBlock)) {
+      return urlBlock.replace(/<lastmod>\s*[^<]+\s*<\/lastmod>/, `<lastmod>${escapeXml(newDate)}</lastmod>`);
+    }
+
+    const locMatch = urlBlock.match(/(<loc>\s*[^<]+\s*<\/loc>\s*\n?)/);
+    if (!locMatch) return urlBlock;
+    return urlBlock.replace(locMatch[1], `${locMatch[1]}    <lastmod>${escapeXml(newDate)}</lastmod>\n`);
+  };
+
+  const nonBlogUrlsWithFreshLastmod = nonBlogUrls.map((b) => {
+    const loc = extractLoc(b);
+    const newDate = lastmodByLoc.get(loc);
+    return newDate ? upsertLastmod(b, newDate) : b;
+  });
   
   // Générer les URLs des articles
   const blogUrls = articles.map(article => {
     const date = new Date(article.date).toISOString().split('T')[0];
+
+    const coverImage = article.image || '/data/hero.webp';
+    const variants = deriveWebpVariants(coverImage);
+    const imageLoc = variants.ogPublic
+      ? (variants.ogPublic.startsWith('http') ? variants.ogPublic : `${CONFIG.siteUrl}${variants.ogPublic}`)
+      : '';
+
+    const imageBlock = imageLoc
+      ? `
+    <image:image>
+      <image:loc>${escapeXml(imageLoc)}</image:loc>
+      <image:title>${escapeXml(article.title || '')}</image:title>
+    </image:image>`.trimEnd()
+      : '';
+
     return `  <url>
     <loc>${CONFIG.blogUrl}/${article.slug}.html</loc>
     <lastmod>${date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>`;
+${imageBlock ? `${imageBlock}\n` : ''}  </url>`;
   });
   
   // URL de la page blog index
@@ -695,7 +796,7 @@ function updateSitemap(articles) {
   </url>`;
   
   // Reconstruire le sitemap
-  const allUrls = [...nonBlogUrls, blogIndexUrl, ...blogUrls];
+  const allUrls = [...nonBlogUrlsWithFreshLastmod, blogIndexUrl, ...blogUrls];
   const newSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${allUrls.join('\n')}
@@ -731,6 +832,196 @@ function generateArticlesJSON(articles) {
   console.log(`   ✅ articles.json généré (${publicArticles.length} articles)`);
 }
 
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function normalizeSlug(value, fallback) {
+  const raw = String(value || fallback || '').trim();
+  const withoutQuery = raw.split('?')[0].split('#')[0];
+  const lastSegment = withoutQuery.split('/').filter(Boolean).pop() || '';
+  const noExt = lastSegment.replace(/\.html?$/i, '');
+  return noExt;
+}
+
+function deriveCardImageVariants(imagePublicPath) {
+  const normalized = normalizePublicPath(imagePublicPath || '/data/hero.webp');
+  if (!normalized) return { src: '/data/hero.webp', srcset: '', sizes: '(max-width: 768px) 100vw, 600px' };
+  if (normalized.startsWith('http://') || normalized.startsWith('https://')) {
+    return { src: normalized, srcset: '', sizes: '(max-width: 768px) 100vw, 600px' };
+  }
+
+  const isWebp = normalized.toLowerCase().endsWith('.webp');
+  if (!isWebp) return { src: normalized, srcset: '', sizes: '(max-width: 768px) 100vw, 600px' };
+
+  const base = normalized.slice(0, -'.webp'.length);
+  const v400 = `${base}-400w.webp`;
+  const v600 = `${base}-600w.webp`;
+  const v800 = `${base}-800w.webp`;
+  const v1200 = `${base}-1200w.webp`;
+
+  const src = fileExistsFromRoot(v600) ? v600 : normalized;
+  const parts = [];
+  if (fileExistsFromRoot(v400)) parts.push(`${v400} 400w`);
+  if (fileExistsFromRoot(v600)) parts.push(`${v600} 600w`);
+  if (fileExistsFromRoot(v800)) parts.push(`${v800} 800w`);
+  if (fileExistsFromRoot(v1200)) parts.push(`${v1200} 1200w`);
+
+  return {
+    src,
+    srcset: parts.join(', '),
+    sizes: '(max-width: 768px) 100vw, 600px'
+  };
+}
+
+function getBlogCategorySlug(frontmatter) {
+  const label = getCategory(frontmatter);
+  const normalized = String(label || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  if (normalized.includes('peinture')) return 'peinture';
+  if (normalized.includes('toiture')) return 'toiture';
+  if (normalized.includes('isolation')) return 'isolation';
+  if (normalized.includes('facade')) return 'facade';
+  if (normalized.includes('ravalement')) return 'facade';
+  return 'conseils';
+}
+
+function formatDateLongFR(dateStr) {
+  const date = new Date(dateStr);
+  if (Number.isNaN(date.getTime())) return '';
+  return date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function renderBlogIndexCards(articles) {
+  const categoryLabels = {
+    peinture: 'Peinture',
+    facade: 'Façade',
+    toiture: 'Toiture',
+    isolation: 'Isolation',
+    conseils: 'Conseils'
+  };
+
+  const publicArticles = articles.filter(a => !a.draft);
+
+  return publicArticles.map((article) => {
+    const categorySlug = getBlogCategorySlug(article);
+    const dateLabel = formatDateLongFR(article.date);
+    const readTime = article.readtime || 5;
+    const { src, srcset, sizes } = deriveCardImageVariants(article.image || '/data/hero.webp');
+
+    const title = escapeHtml(article.title);
+    const description = escapeHtml(article.description);
+
+    const srcsetAttr = srcset ? ` srcset="${escapeHtml(srcset)}" sizes="${escapeHtml(sizes)}"` : '';
+
+    return `
+          <article class="article-card" data-category="${categorySlug}" data-date="${escapeHtml(article.date)}">
+            <a href="./${escapeHtml(article.slug)}.html" class="article-link" aria-label="Lire ${title}">
+              <div class="article-image">
+                <img src="${escapeHtml(src)}"${srcsetAttr} alt="${title}" loading="lazy" width="600" height="338">
+                <span class="article-tag">${categoryLabels[categorySlug] || 'Conseils'}</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${escapeHtml(dateLabel)}</span>
+                  <span class="meta-separator">·</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> ${escapeHtml(readTime)} min</span>
+                </div>
+                <h2 class="article-title">${title}</h2>
+                <p class="article-excerpt">${description}</p>
+                <span class="article-cta">
+                  Lire l'article
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </span>
+              </div>
+            </a>
+          </article>
+    `.trimEnd();
+  }).join('\n');
+}
+
+function replaceElementInnerHtmlById(html, elementId, newInnerHtml) {
+  const idNeedle = `id="${elementId}"`;
+  const idIndex = html.indexOf(idNeedle);
+  if (idIndex === -1) return html;
+
+  const startTagOpen = html.lastIndexOf('<', idIndex);
+  if (startTagOpen === -1) return html;
+
+  const startTagEnd = html.indexOf('>', idIndex);
+  if (startTagEnd === -1) return html;
+
+  const openTag = html.slice(startTagOpen, startTagEnd + 1);
+  const tagMatch = openTag.match(/^<([a-zA-Z0-9-]+)/);
+  const tagName = tagMatch ? tagMatch[1].toLowerCase() : '';
+  if (!tagName) return html;
+
+  const tokenRe = new RegExp(`<\\/?${tagName}\\b[^>]*>`, 'gi');
+  tokenRe.lastIndex = startTagEnd + 1;
+
+  let depth = 1;
+  let m;
+  while ((m = tokenRe.exec(html))) {
+    const token = m[0];
+    const isClose = token.startsWith(`</${tagName}`);
+    depth += isClose ? -1 : 1;
+    if (depth === 0) {
+      const endTagStart = m.index;
+      return `${html.slice(0, startTagEnd + 1)}\n${newInnerHtml}\n${html.slice(endTagStart)}`;
+    }
+  }
+
+  return html;
+}
+
+function upsertBlogItemListSchema(html, articles) {
+  const publicArticles = articles.filter(a => !a.draft);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: publicArticles.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'BlogPosting',
+        url: `${CONFIG.blogUrl}/${a.slug}.html`,
+        headline: a.title,
+        datePublished: new Date(a.date).toISOString().split('T')[0]
+      }
+    }))
+  };
+
+  const scriptId = 'vprr-blog-itemlist';
+  const existingRe = new RegExp(
+    `<script\\s+type="application/ld\\+json"\\s+id="${scriptId}"[^>]*>[\\s\\S]*?<\\/script>\\s*`,
+    'i'
+  );
+  const withoutExisting = html.replace(existingRe, '');
+
+  const json = JSON.stringify(schema, null, 2).split('\n').map(l => `  ${l}`).join('\n');
+  const snippet = `\n  <script type="application/ld+json" id="${scriptId}">\n${json}\n  </script>\n`;
+
+  return withoutExisting.replace(/<\/head>/i, `${snippet}</head>`);
+}
+
+function updateBlogIndexPage(articles) {
+  const blogIndexPath = path.join(CONFIG.outputDir, 'index.html');
+  if (!fs.existsSync(blogIndexPath)) return;
+
+  const raw = fs.readFileSync(blogIndexPath, 'utf-8');
+  const cardsHtml = renderBlogIndexCards(articles);
+
+  let html = replaceElementInnerHtmlById(raw, 'articles-grid', cardsHtml);
+  html = upsertBlogItemListSchema(html, articles);
+
+  fs.writeFileSync(blogIndexPath, html, 'utf-8');
+  console.log('   ✅ blog/index.html pré-rendu (cartes + ItemList)');
+}
+
 /**
  * Fonction principale
  */
@@ -763,6 +1054,7 @@ async function build() {
   // Première passe : parser tous les articles
   const parsedArticles = [];
   const errors = [];
+  const usedSlugs = new Set();
   
   for (const file of files) {
     try {
@@ -773,9 +1065,19 @@ async function build() {
       if (!frontmatter.title) {
         throw new Error('Titre manquant');
       }
-      if (!frontmatter.slug) {
-        frontmatter.slug = file.replace('.md', '');
+      const fallbackSlug = file.replace('.md', '');
+      const normalized = normalizeSlug(frontmatter.slug, fallbackSlug);
+      if (!normalized) {
+        throw new Error('Slug manquant');
       }
+      let uniqueSlug = normalized;
+      let i = 2;
+      while (usedSlugs.has(uniqueSlug)) {
+        uniqueSlug = `${normalized}-${i}`;
+        i += 1;
+      }
+      usedSlugs.add(uniqueSlug);
+      frontmatter.slug = uniqueSlug;
       
       parsedArticles.push({
         ...frontmatter,
@@ -827,6 +1129,9 @@ async function build() {
   
   // Générer articles.json
   generateArticlesJSON(parsedArticles);
+
+  // Pré-rendre la liste des articles sur /blog/ (SEO + fallback sans JS)
+  updateBlogIndexPage(parsedArticles);
   
   console.log('\n✅ Build terminé !');
   console.log(`   📁 Articles générés dans : ${CONFIG.outputDir}`);
