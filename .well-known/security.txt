@@ -5,7 +5,7 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 
 # Contact pour signaler une vulnérabilité de sécurité
-Contact: mailto:villergerstephane204@gmail.com
+Contact: mailto:villegerstephane204@gmail.com
 Contact: https://vprr.fr/#contact
 
 # Langue préférée pour les communications
