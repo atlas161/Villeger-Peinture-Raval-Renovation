@@ -16,6 +16,26 @@
       <image:title>Logo VPRR - Villéger Peinture Raval Rénovation</image:title>
       <image:caption>Logo officiel de l'entreprise VPRR basée à L'Isle-d'Espagnac</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/ravalement_facade/ravalement_apres-1200w.webp</image:loc>
+      <image:title>Ravalement de façade à Angoulême - Après travaux</image:title>
+      <image:geo_location>Angoulême, Charente, France</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/nettoyage_facade/facade_apres-1200w.webp</image:loc>
+      <image:title>Nettoyage de façade par hydrogommage à Angoulême - Après travaux</image:title>
+      <image:geo_location>Angoulême, Charente, France</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/nettoyag_toiture/toiture_apres-1200w.webp</image:loc>
+      <image:title>Nettoyage de toiture à Angoulême - Après travaux</image:title>
+      <image:geo_location>Angoulême, Charente, France</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://vprr.fr/media/services/peinture_exterieur/peinture_apres-1200w.webp</image:loc>
+      <image:title>Peinture extérieure à Angoulême - Après travaux</image:title>
+      <image:geo_location>Angoulême, Charente, France</image:geo_location>
+    </image:image>
   </url>
 <url>
     <loc>https://vprr.fr/nettoyage-facade-angouleme.html</loc>

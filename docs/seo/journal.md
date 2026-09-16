@@ -83,6 +83,19 @@ Le client confirme que le bon compte est `@vprr.16` (celui déjà lié à Google
 partout sur le site (`data/config.json`, `humans.txt`, `llms.txt`, `includes/footer.html`, `merci.html` et
 les 7 pages qui liaient l'ancien compte `@peinture_raval_renovation`).
 
+### Galerie avant/après ajoutée sur l'accueil (2026-09-16, suite)
+
+Ajout d'une vraie galerie avant/après hébergée sur le site (`index.html`, section `#galerie`), en
+complément du widget Instagram Elfsight (gardé, renommé "Suivez nos derniers chantiers"). 4 cartes
+utilisant les photos déjà disponibles dans `media/services/` (ravalement, nettoyage façade, nettoyage
+toiture, peinture extérieure), avec `alt` descriptifs incluant "Angoulême", liens vers chaque page de
+service. Images ajoutées au `sitemap.xml` (balises `image:image` sur l'URL d'accueil) pour l'indexation
+Google Images. Testé visuellement en local, rendu conforme au design system.
+
+Reste à faire si/quand disponible : remplacer par de vraies photos de chantiers récents (celles utilisées
+sont les mêmes que sur les pages de service, pas de nouveau contenu visuel pour l'instant) — voir aussi la
+note de la session précédente sur l'absence de photo pour la page Isolation.
+
 ### Pas fait / reste à faire
 
 - Fiche PagesJaunes orpheline (`pros/61413918`, nom "Peinture Raval Rénovation" sans "Villeger") non
