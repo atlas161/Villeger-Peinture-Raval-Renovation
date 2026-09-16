@@ -20,4 +20,6 @@ large), avec un intitulé et un contenu qui ne créent pas d'attente sur de l'IT
 extérieure et amélioration hydrofuge/isolante reste mentionné sur la page Peinture extérieure existante,
 pas comme un service d'isolation à part.
 
-**Statut** : à faire (voir `journal.md` / `README.md` pour l'avancement).
+**Statut** : fait le 2026-09-16 — page `isolation-interieure-charente.html` créée, liée depuis le menu, le
+footer, la page d'accueil (5ᵉ carte de service) et le sitemap. Une FAQ dédiée clarifie explicitement
+l'absence d'ITE et redirige vers les pages peinture extérieure / ravalement de façade.

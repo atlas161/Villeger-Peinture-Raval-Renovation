@@ -4,6 +4,36 @@ Log daté de toutes les sessions de travail sur le chantier SEO. Le plus récent
 
 ---
 
+## 2026-09-16 (suite) — Création de la page Isolation intérieure
+
+**Fait :**
+
+- Créé `isolation-interieure-charente.html`, sur le modèle des 4 autres pages de service (même structure :
+  hero, problème, solution, réassurance, zone d'intervention, tarifs, contact, FAQ, schémas JSON-LD
+  LocalBusiness/Service/BreadcrumbList/FAQPage).
+- Contenu cadré selon `decisions.md` : isolation des combles, des murs par l'intérieur et remplacement de
+  menuiseries — **pas d'ITE**. Une section et une question FAQ dédiées clarifient explicitement ce point et
+  redirigent vers les pages peinture extérieure / ravalement de façade pour les besoins liés à la façade.
+- Pas de photo de chantier "isolation" disponible dans `media/` → hero avec un visuel icône (`.hero-placeholder`,
+  déjà prévu dans le CSS existant) plutôt qu'une fausse photo avant/après. **À remplacer par de vraies photos
+  dès qu'un chantier d'isolation est documenté** (voir `blockers.md` si besoin de rappel).
+- Lien ajouté partout où les 4 autres services apparaissent : menu (toutes les pages + template blog),
+  footer (`includes/footer.html`), page d'accueil (5ᵉ carte `.svc-card`), `sitemap.xml`, redirection URL
+  propre dans `netlify.toml`.
+- Testé en local (`npx serve .`) : rendu visuel conforme au design system, carte homepage et page complète
+  vérifiées par capture d'écran.
+- `npm test` : 6/6 tests passent toujours après ces changements.
+
+**Pas fait / prochaine étape :**
+
+- Vraies photos de chantier isolation (dès disponibilité).
+- Vérifier si `data/config.json` doit être mis à jour pour refléter le nouveau périmètre (isolation
+  intérieure uniquement) — actuellement ce fichier n'est de toute façon pas rendu sur le site (voir
+  `architecture.md`, code mort `config-loader.js`), donc non bloquant, mais à nettoyer un jour pour éviter
+  la confusion.
+
+---
+
 ## 2026-09-16 — Audit initial + premières corrections urgentes
 
 **Contexte** : audit SEO complet demandé par le client (site + objectif Google Business Profile /

@@ -24,7 +24,7 @@ Voir [`journal.md`](./journal.md) pour le détail. Résumé rapide de ce qui est
 
 - [x] Titres `<title>` trop longs sur les 7 articles de blog → raccourcis via un nouveau champ `seoTitle`.
 - [x] Meta descriptions trop longues sur 5 pages principales → raccourcies.
-- [ ] Page de service dédiée "Isolation" (périmètre confirmé : isolation intérieure uniquement, pas d'ITE — voir `decisions.md`).
+- [x] Page de service dédiée "Isolation intérieure" (isolation intérieure uniquement, pas d'ITE — voir `decisions.md`).
 - [ ] Vraie galerie photos avant/après hébergée sur le site (en plus du widget Instagram).
 - [ ] Nettoyage des fiches PagesJaunes/Solocal incohérentes (nécessite accès, voir `blockers.md`).
 - [ ] Process de demande d'avis Google après chantier.

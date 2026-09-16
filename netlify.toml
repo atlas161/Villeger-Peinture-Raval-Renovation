@@ -70,6 +70,12 @@
   force = true
 
 [[redirects]]
+  from = "/isolation-interieure-charente"
+  to = "/isolation-interieure-charente.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/zone-desservie-charente"
   to = "/zone-desservie-charente.html"
   status = 301
