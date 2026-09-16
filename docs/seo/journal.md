@@ -67,10 +67,18 @@ mot de passe saisi). Audit en lecture seule, aucune modification faite sans vali
    vérification Solocal (~48h).
 4. **Solocal** : email corrigé `villergestephane204@gmail.com` → `villegerstephane204@gmail.com`.
 
+### Horaires harmonisés (2026-09-16, suite)
+
+Le client confirme que les horaires réels sont ceux de Google (Lun-Ven 9h-17h + Sam 9h-12h). Corrigé côté
+site : `data/config.json` (`openingHours` + nouveau `openingHoursSaturday`) et le schema JSON-LD
+`OpeningHoursSpecification` dans les 7 pages qui le portaient (`index.html`,
+`isolation-interieure-charente.html`, `nettoyage-facade-angouleme.html`,
+`nettoyage-toiture-angouleme.html`, `peinture-exterieure-charente.html`,
+`ravalement-facade-angouleme.html`, `zone-desservie-charente.html`). Aucun texte d'horaires n'était
+affiché visiblement sur le site (uniquement dans les données structurées), donc pas de changement visuel.
+
 ### Pas fait / reste à faire
 
-- Harmoniser les horaires (site : Lun-Ven 8h-18h, pas de samedi / GBP : Lun-Ven 9h-17h + Sam 9h-12h) —
-  décision à prendre côté client sur les horaires réels.
 - Vérifier le bon compte Instagram (site : `@peinture_raval_renovation` / GBP : `vprr.16`).
 - Publier des actualités/photos et connecter Facebook sur Solocal pour améliorer le score d'engagement
   (51% actuellement, secteur à 56%).

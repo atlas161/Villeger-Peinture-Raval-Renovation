@@ -60,8 +60,13 @@
     "_comment_hours": "── Horaires d'ouverture ──",
     "openingHours": {
       "days": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"],
-      "opens": "08:00",
-      "closes": "18:00"
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "openingHoursSaturday": {
+      "days": ["Samedi"],
+      "opens": "09:00",
+      "closes": "12:00"
     },
 
     "_comment_social": "── Réseaux sociaux ──",
