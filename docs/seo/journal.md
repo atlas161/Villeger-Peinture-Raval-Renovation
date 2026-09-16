@@ -4,6 +4,81 @@ Log daté de toutes les sessions de travail sur le chantier SEO. Le plus récent
 
 ---
 
+## 2026-09-16 (suite 2) — Audit Google Business Profile & Solocal Manager
+
+Accès obtenu via l'extension Claude in Chrome (session déjà connectée dans le Chrome du client, pas de
+mot de passe saisi). Audit en lecture seule, aucune modification faite sans validation préalable.
+
+### Google Business Profile
+
+- Fiche : **VPRR Rénovation**, validée, 299 interactions clients.
+- Catégorie principale : **Façadier**. Secondaires : Entreprise de construction, Peintre en bâtiment,
+  Remodeleur, **Entreprise de terrassement** (hors sujet — à retirer, voir ci-dessous).
+- Téléphones : 05 45 91 22 70 (principal) + 06 59 26 86 23 (secondaire).
+- Site web lié avec tracking : `https://vprr.fr/?utm_source=gmb` (bon réflexe déjà en place).
+- Réseau social lié : `instagram.com/vprr.16` — **différent** du compte utilisé sur le site
+  (`@peinture_raval_renovation`, dans `data/config.json`). À vérifier : deux comptes Instagram
+  différents, ou un des deux liens est obsolète ?
+- Horaires GBP : Lun-Ven 09:00-17:00 + Sam 09:00-12:00, fermé dimanche. **Différent** des horaires du
+  site (`data/config.json` : Lun-Ven 08:00-18:00, pas de samedi). Incohérence à corriger dans un sens ou
+  l'autre selon les horaires réels.
+- **Avis Google réels : 4,1★ (14 avis).** Le site affiche actuellement "5,0 · 10 avis Google" sur
+  l'accueil — **écart important, à corriger en priorité** (voir plan d'action). Tous les avis existants
+  ont déjà une réponse du propriétaire — bonne pratique déjà en place.
+- Fiche incomplète selon Google : suggestions actives — ajouter une photo d'intérieur, configurer la
+  réservation, créer une offre, ajouter une carte/itinéraire sur le site, activer la saisie
+  semi-automatique d'adresse.
+
+### Solocal Manager (compte lié à la fiche PagesJaunes `pros/63546590`)
+
+- Score d'engagement digital : **51%**, sous la moyenne du secteur bâtiment (56%). Actions suggérées par
+  Solocal : publier ≥4 actualités/promos, connecter Facebook (actuellement non connecté), ajouter une
+  photo, solliciter des avis récents sur PagesJaunes et sur Google.
+- **Email avec faute de frappe dans la fiche Solocal : `villergestephane204@gmail.com`** — encore une
+  troisième variante erronée (ni l'ancienne ni la nouvelle orthographe correcte utilisée sur le site).
+  À corriger dans Solocal Manager.
+- **Cause racine de la mauvaise catégorie "Terrassement" trouvée** : la liste "Activités et prestations"
+  PagesJaunes de cette fiche contient 14 catégories d'activité secondaires, dont beaucoup hors sujet :
+  plafonds (pose), plâtrerie, plaquistes, parquets, carrelages/dallages, **travaux publics** (→ mappé en
+  "Terrassement" dans les résultats publics), terrasses en bois, cloisons, revêtements de sols/murs — en
+  plus des catégories pertinentes (ravalement de façades, peinture, isolation, isolation des combles,
+  démoussage/traitement toitures, rénovation immobilière). Cette liste trop large dilue la pertinence de
+  la fiche sur les spécialités réelles de VPRR. Côté Google (même compte), la catégorie secondaire
+  "Entreprise de terrassement" est le même problème.
+- Zones desservies déclarées plus larges que sur le site : inclut Charente-Maritime (Saintes,
+  Châteaubernard) et mention "Dordogne (24)" dans la description — à vérifier si c'est voulu (site actuel
+  ne communique que sur la Charente).
+- Un seul établissement "VPRR Rénovation" dans ce compte Solocal — la deuxième fiche PagesJaunes trouvée
+  publiquement (`pros/61413918`, nom "Peinture Raval Rénovation") n'est pas gérée depuis ce compte : voir
+  `blockers.md`.
+
+### Corrections faites le même jour (validées par le client)
+
+1. **Site** : remplacé "5,0 · 10 avis Google" et "5,0 • 6 avis" par les vrais chiffres (4,1★, 14 avis)
+   à 7 endroits (`index.html` x2 + les 5 pages de service, y compris `isolation-interieure-charente.html`
+   qui reprenait la même formule). Étoiles ajustées visuellement (4 pleines + 1 demi/vide) pour rester
+   honnête.
+2. **Google Business Profile** : catégorie secondaire "Entreprise de terrassement" supprimée. Modification
+   soumise, en cours de validation Google (~10 min).
+3. **Solocal / PagesJaunes** : 9 activités secondaires hors sujet retirées (plafonds, plâtrerie,
+   plaquistes, parquets, carrelages/dallages, travaux publics, terrasses en bois, cloisons, revêtements de
+   sols/murs). Restent les 6 pertinentes : ravalement de façades, peinture, isolation, isolation des
+   combles, rénovation immobilière, démoussage/traitement des toitures. Modification soumise, en cours de
+   vérification Solocal (~48h).
+4. **Solocal** : email corrigé `villergestephane204@gmail.com` → `villegerstephane204@gmail.com`.
+
+### Pas fait / reste à faire
+
+- Harmoniser les horaires (site : Lun-Ven 8h-18h, pas de samedi / GBP : Lun-Ven 9h-17h + Sam 9h-12h) —
+  décision à prendre côté client sur les horaires réels.
+- Vérifier le bon compte Instagram (site : `@peinture_raval_renovation` / GBP : `vprr.16`).
+- Publier des actualités/photos et connecter Facebook sur Solocal pour améliorer le score d'engagement
+  (51% actuellement, secteur à 56%).
+- Vérifier après le délai de traitement (10 min Google / 48h Solocal) que les changements sont bien passés
+  en production sur les deux plateformes.
+
+---
+
 ## 2026-09-16 (suite) — Création de la page Isolation intérieure
 
 **Fait :**

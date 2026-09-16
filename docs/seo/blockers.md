@@ -1,36 +1,28 @@
 # Blocages — nécessitent une action de votre part
 
-Rien d'urgent n'est bloqué côté code pour l'instant, mais ces points ne peuvent pas avancer sans vous
-(accès à des comptes externes, ou décision qui n'est pas la mienne à prendre).
+## 1. Accès Google Business Profile — RÉSOLU (2026-09-16)
 
-## 1. Accès Google Business Profile
+Accès obtenu via l'extension Claude in Chrome (votre session Google déjà connectée dans Chrome). Audit
+fait, voir `journal.md` du 2026-09-16 pour le détail complet. Je ne peux toujours pas saisir de mot de
+passe ni modifier les paramètres du compte sans votre feu vert explicite à chaque fois — mais la
+consultation et les corrections de contenu (catégories, description, etc.) sont possibles avec votre
+accord ponctuel.
 
-Je ne peux pas me connecter à des comptes avec identifiant/mot de passe (règle de sécurité). Pour
-auditer et améliorer la fiche Google Business Profile en détail, deux options :
+## 2. Accès Solocal Manager — RÉSOLU (2026-09-16)
 
-- M'ajouter (ou ajouter l'agence) comme gérant secondaire de la fiche (Google Business Profile →
-  Paramètres → Utilisateurs → Ajouter), puis partager des captures d'écran des sections Aperçu,
-  Performances, Photos, Avis, Q&R, Catégorie.
-- Ou simplement partager des **captures d'écran** de ces sections.
+Même chose : accès obtenu via Claude in Chrome (session déjà connectée sur `manager.solocal.com`).
+C'est le même compte qui gère la fiche PagesJaunes `pagesjaunes.fr/pros/63546590`. Audit fait, voir
+`journal.md`.
 
-**Statut** : en attente.
+**Reste un vrai blocage** : la deuxième fiche PagesJaunes trouvée publiquement,
+`pagesjaunes.fr/pros/61413918` (nom "Peinture Raval Rénovation", sans "Villeger"), ne semble pas être
+gérée par ce même compte Solocal Manager (un seul établissement "VPRR Rénovation" apparaît dans le
+compte connecté). Il s'agit probablement d'une fiche orpheline créée séparément (ancien import,
+doublon automatique). Pour la faire fusionner ou supprimer, il faut passer par le formulaire de
+réclamation PagesJaunes en tant que représentant légal, ou contacter le support Solocal en signalant le
+doublon — je ne peux pas le faire à votre place.
 
-## 2. Accès / vérification Solocal & PagesJaunes
-
-Deux fiches PagesJaunes incohérentes repérées publiquement :
-
-- `pagesjaunes.fr/pros/63546590` — nom "Villeger Peinture Raval Rénovation", catégorie **"Terrassement"**
-  (faux, à corriger).
-- `pagesjaunes.fr/pros/61413918` — nom **"Peinture Raval Rénovation"** (sans "Villeger", incohérent avec
-  le nom légal), catégorie "Entreprise de peinture".
-
-PagesJaunes appartient au groupe Solocal : ces fiches se synchronisent souvent avec Solocal Pro. Pour
-corriger, il faut soit un compte Solocal Pro existant (identifiants), soit passer par le formulaire de
-réclamation/correction de fiche PagesJaunes en tant que représentant légal de l'entreprise.
-
-**Statut** : en attente — nécessite que vous (ou Stéphane Villéger, en tant que représentant légal)
-contactiez Solocal/PagesJaunes directement, je ne peux pas le faire à votre place (ni créer de compte,
-ni m'authentifier).
+**Statut** : en attente de votre action pour la fiche doublon uniquement.
 
 ## 3. Process de demande d'avis Google
 
