@@ -2,10 +2,13 @@
 category: Toiture
 title: "Démoussage et nettoyage de toiture à Angoulême (Charente): le guide
   complet 2026"
+seoTitle: "Démoussage toiture à Angoulême (Charente 16)"
 slug: demoussage-nettoyage-toiture-charente
 description: "Guide concret pour réussir un démoussage et un nettoyage de
   toiture en Charente (Angoulême, Cognac, Jarnac...) : méthodes, prix, erreurs à
   éviter, hydrofuge et entretien."
+metaDescription: "Guide démoussage et nettoyage de toiture en Charente
+  (Angoulême, Cognac, Jarnac) : méthodes, prix et erreurs à éviter."
 date: 2026-03-19
 image: /assets/img/blog/toiture_avant.webp
 draft: false

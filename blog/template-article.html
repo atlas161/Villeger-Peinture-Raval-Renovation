@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- === MÉTADONNÉES DYNAMIQUES (remplacées par le script de build) === -->
-  <title>{{TITLE}} | Guides & Conseils VPRR</title>
-  <meta name="description" content="{{DESCRIPTION}}" />
+  <title>{{SEO_TITLE}} | Guides & Conseils VPRR</title>
+  <meta name="description" content="{{META_DESCRIPTION}}" />
   <meta name="keywords" content="{{TAGS}}, rénovation, Angoulême, Charente, VPRR" />
   <meta name="author" content="Villéger Peinture Raval Rénovation">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -21,8 +21,8 @@
   <!-- === OPEN GRAPH (Réseaux sociaux) === -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="VPRR - Guides & Conseils">
-  <meta property="og:title" content="{{TITLE}}">
-  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:title" content="{{SEO_TITLE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
   <meta property="og:url" content="https://vprr.fr/blog/{{SLUG}}.html">
   <meta property="og:image" content="{{OG_IMAGE_URL}}">
   <meta property="og:image:width" content="1200">
@@ -36,8 +36,8 @@
   
   <!-- === TWITTER CARD === -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{TITLE}}">
-  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <meta name="twitter:title" content="{{SEO_TITLE}}">
+  <meta name="twitter:description" content="{{META_DESCRIPTION}}">
   <meta name="twitter:image" content="{{OG_IMAGE_URL}}">
   <meta name="twitter:image:alt" content="{{TITLE}}">
   
@@ -68,8 +68,8 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "{{TITLE}}",
-      "description": "{{DESCRIPTION}}",
+      "headline": "{{SEO_TITLE}}",
+      "description": "{{META_DESCRIPTION}}",
       "url": "https://vprr.fr/blog/{{SLUG}}.html",
       "inLanguage": "fr-FR",
       "isPartOf": {
@@ -131,7 +131,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "{{TITLE}}",
+          "name": "{{SEO_TITLE}}",
           "item": "https://vprr.fr/blog/{{SLUG}}.html"
         }
       ]
@@ -202,7 +202,7 @@
             <i class="fa-solid fa-chevron-right"></i>
           </li>
           <li class="breadcrumb-item current" aria-current="page">
-            <span>{{TITLE}}</span>
+            <span>{{SEO_TITLE}}</span>
           </li>
         </ol>
       </div>

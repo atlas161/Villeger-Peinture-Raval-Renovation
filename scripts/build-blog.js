@@ -638,10 +638,18 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
   const nextTitle = nextArticle ? nextArticle.title : 'Dernier article';
   const nextDisabled = nextArticle ? '' : 'disabled';
   
+  // SEO title/description : champs optionnels pour raccourcir ce que Google affiche
+  // (balise <title>, meta description, OG, Twitter, JSON-LD, breadcrumb) sans toucher
+  // au H1 ni au chapeau affichés sur la page, qui peuvent rester plus longs et descriptifs.
+  const seoTitle = (frontmatter.seoTitle && frontmatter.seoTitle.trim()) || frontmatter.title;
+  const metaDescription = (frontmatter.metaDescription && frontmatter.metaDescription.trim()) || frontmatter.description;
+
   // Remplacements dans le template
   const replacements = {
     '{{TITLE}}': frontmatter.title,
     '{{DESCRIPTION}}': frontmatter.description,
+    '{{SEO_TITLE}}': seoTitle,
+    '{{META_DESCRIPTION}}': metaDescription,
     '{{SLUG}}': frontmatter.slug,
     '{{DATE_ISO}}': date.iso,
     '{{DATE_MODIFIED}}': date.iso,

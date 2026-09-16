@@ -1,10 +1,13 @@
 ---
 category: Conseils
 title: "Rénovation intérieure à Angoulême (Charente) : le guide complet 2026"
+seoTitle: "Rénovation intérieure à Angoulême (Charente)"
 slug: renovation-interieur-angouleme-charente
 description: "Spécialiste de la rénovation intérieure à Angoulême (Charente),
   VPRR vous guide : isolation, placo, peinture et sols. Demandez votre devis
   gratuit et sur-mesure !"
+metaDescription: "Spécialiste rénovation intérieure à Angoulême (Charente) :
+  isolation, placo, peinture, sols. Devis gratuit sur-mesure."
 date: 2026-03-06
 image: /assets/img/blog/image_renovation_interieur_angouleme.webp
 draft: false

@@ -26,17 +26,25 @@ content:
           values: [Peinture, Façade, Toiture, Rénovation, Conseils, Entretien]
           default: Conseils
       - name: title
-        label: Titre de l'article (H1)
+        label: Titre de l'article (H1, affiché sur la page)
         type: string
         required: true
+      - name: seoTitle
+        label: Titre SEO (balise <title>, 55-60 caractères max)
+        type: string
+        description: "Optionnel. Si vide, reprend le champ Titre ci-dessus. À remplir uniquement si le Titre H1 dépasse 60 caractères, pour éviter que Google le tronque dans les résultats de recherche."
       - name: slug
         label: Slug (URL)
         type: string
         required: true
       - name: description
-        label: Description SEO (Meta)
+        label: Chapeau de l'article (affiché sous le H1)
         type: text
         required: true
+      - name: metaDescription
+        label: Meta description SEO (150-160 caractères max)
+        type: text
+        description: "Optionnel. Si vide, reprend le champ Chapeau ci-dessus. À remplir uniquement si le Chapeau dépasse 160 caractères, pour éviter que Google le tronque dans les résultats de recherche."
       - name: date
         label: Date de publication
         type: date
