@@ -77,9 +77,17 @@ site : `data/config.json` (`openingHours` + nouveau `openingHoursSaturday`) et l
 `ravalement-facade-angouleme.html`, `zone-desservie-charente.html`). Aucun texte d'horaires n'était
 affiché visiblement sur le site (uniquement dans les données structurées), donc pas de changement visuel.
 
+### Instagram harmonisé (2026-09-16, suite)
+
+Le client confirme que le bon compte est `@vprr.16` (celui déjà lié à Google Business Profile). Remplacé
+partout sur le site (`data/config.json`, `humans.txt`, `llms.txt`, `includes/footer.html`, `merci.html` et
+les 7 pages qui liaient l'ancien compte `@peinture_raval_renovation`).
+
 ### Pas fait / reste à faire
 
-- Vérifier le bon compte Instagram (site : `@peinture_raval_renovation` / GBP : `vprr.16`).
+- Fiche PagesJaunes orpheline (`pros/61413918`, nom "Peinture Raval Rénovation" sans "Villeger") non
+  gérée par le compte Solocal actuel — nécessite de contacter le support PagesJaunes directement pour la
+  faire fusionner/supprimer. Expliqué au client, pas prioritaire pour l'instant.
 - Publier des actualités/photos et connecter Facebook sur Solocal pour améliorer le score d'engagement
   (51% actuellement, secteur à 56%).
 - Vérifier après le délai de traitement (10 min Google / 48h Solocal) que les changements sont bien passés
