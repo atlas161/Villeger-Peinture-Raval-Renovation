@@ -85,8 +85,6 @@
     if (phoneField) {
       phoneField.addEventListener('input', formatPhoneNumber);
     }
-
-    console.log('[Form Security] Protection activée');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -164,7 +162,6 @@
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours...';
     }
 
-    console.log('[Form Security] Formulaire validé, envoi autorisé');
     return true;
   }
 
@@ -326,32 +323,20 @@
     // Créer le message d'erreur
     const errorDiv = document.createElement('div');
     errorDiv.className = 'form-error-global';
+    errorDiv.setAttribute('role', 'alert');
     errorDiv.innerHTML = `
-      <i class="fa-solid fa-exclamation-circle"></i>
+      <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>
       <span>${message}</span>
-    `;
-    errorDiv.style.cssText = `
-      background: #fee2e2;
-      border: 1px solid #ef4444;
-      color: #dc2626;
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      animation: shake 0.5s ease-in-out;
     `;
 
     // Insérer avant le formulaire
     const form = document.getElementById('contact-form');
     if (form) {
       form.insertBefore(errorDiv, form.firstChild);
-      
+
       // Scroll vers l'erreur
       errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      
+
       // Supprimer après 5 secondes
       setTimeout(() => {
         errorDiv.remove();
@@ -361,18 +346,17 @@
 
   function showFieldError(field, message) {
     clearFieldError(field);
-    
+
+    const errorId = field.id + '-error';
     const errorSpan = document.createElement('span');
     errorSpan.className = 'field-error';
+    errorSpan.id = errorId;
+    errorSpan.setAttribute('role', 'alert');
     errorSpan.textContent = message;
-    errorSpan.style.cssText = `
-      color: #dc2626;
-      font-size: 12px;
-      margin-top: 4px;
-      display: block;
-    `;
-    
-    field.style.borderColor = '#ef4444';
+
+    field.classList.add('invalid');
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', errorId);
     field.parentNode.appendChild(errorSpan);
   }
 
@@ -381,49 +365,15 @@
     if (existingError) {
       existingError.remove();
     }
-    field.style.borderColor = '';
-  }
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // STYLES CSS DYNAMIQUES
-  // ═══════════════════════════════════════════════════════════════════════════
-  
-  function injectStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: translateX(5px); }
-      }
-      
-      .visually-hidden {
-        position: absolute !important;
-        width: 1px !important;
-        height: 1px !important;
-        padding: 0 !important;
-        margin: -1px !important;
-        overflow: hidden !important;
-        clip: rect(0, 0, 0, 0) !important;
-        white-space: nowrap !important;
-        border: 0 !important;
-      }
-      
-      .contact-form button[type="submit"]:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-      }
-    `;
-    document.head.appendChild(style);
+    field.classList.remove('invalid');
+    field.removeAttribute('aria-invalid');
+    field.removeAttribute('aria-describedby');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
   // DÉMARRAGE
   // ═══════════════════════════════════════════════════════════════════════════
-  
-  // Injecter les styles
-  injectStyles();
-  
+
   // Initialiser quand le DOM est prêt
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
