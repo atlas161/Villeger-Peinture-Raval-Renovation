@@ -17,6 +17,18 @@
 
     let activeIndex = -1;
 
+    // Certaines pages pré-remplissent la valeur cachée avec le service de la page
+    // (ex. value="ravalement" sur la page Ravalement) : refléter cette pré-sélection
+    // visuellement et dans les attributs ARIA au chargement.
+    if (hiddenInput.value) {
+      const preselected = options.find((opt) => opt.dataset.value === hiddenInput.value);
+      if (preselected) {
+        preselected.classList.add('selected');
+        preselected.setAttribute('aria-selected', 'true');
+        valueLabel.classList.remove('placeholder');
+      }
+    }
+
     function open() {
       root.classList.add('active');
       trigger.setAttribute('aria-expanded', 'true');

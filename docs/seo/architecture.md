@@ -52,6 +52,33 @@ raccourcies.
 
 Ces deux champs sont aussi disponibles dans l'interface Pages CMS (`.pages.yml`).
 
+## Header/nav des 10 pages HTML : `scripts/sync-header.js`
+
+Le header (logo + navigation) était dupliqué à la main dans chacune des 10 pages HTML du site — un
+changement de menu devait être répété 10×. Depuis le 2026-09-18, un seul gabarit dans
+**`scripts/sync-header.js`** génère le header de chaque page.
+
+**Pour changer un lien du menu, l'ordre des sections ou le texte du CTA : éditez le gabarit dans
+`scripts/sync-header.js` (pas le HTML directement), puis lancez `npm run sync:header`.** Le script
+réinjecte le header généré entre `<header class="site-header" id="top">` et `</header>` dans chaque page.
+
+Contrairement à `build:blog`, cette commande n'est **pas** lancée automatiquement au déploiement
+(`npm run build`) : elle modifie en place le HTML source des pages (pas un dossier de sortie séparé), donc
+l'exécuter automatiquement à chaque déploiement écraserait silencieusement toute modification manuelle du
+header faite entre deux exécutions. À lancer à la main après une modification du gabarit.
+
+Deux vraies variations gérées par le script (pas des bugs, à préserver si vous modifiez le gabarit) :
+- `index.html` utilise des ancres nues (`#services`) ; toutes les autres pages préfixent par
+  `index.html#services` (sauf `zone-desservie-charente.html` et `faq-renovation-angouleme.html` qui
+  s'auto-lient en ancre nue + `aria-current="page"` sur leur propre item de menu, puisqu'elles ont leur
+  propre section `#zone`/`#faq`).
+- Le bouton CTA du menu affiche "Obtenez un devis" + lien `#contact` sur les pages qui ont leur propre
+  formulaire de contact (home + 5 pages de service), et "Obtenir un devis" + lien `index.html#contact` sur
+  les pages qui n'en ont pas (zone, FAQ, mentions légales, merci).
+
+**`404.html` est volontairement exclu** de la synchronisation : sa nav simplifiée (3 liens) est un choix
+délibéré pour une page d'erreur, pas un oubli à corriger.
+
 ## Pages de service (hors blog)
 
 Les pages comme `ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.html`,

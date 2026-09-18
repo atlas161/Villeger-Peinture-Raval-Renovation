@@ -28,7 +28,7 @@
   --color-primary-light: rgba(103, 58, 18, 0.08);
   --color-text: #2D241E;
   --color-text-light: #6B5D52;
-  --color-text-muted: #8B7D72;
+  --color-text-muted: #77695E; /* contraste WCAG AA (4.5:1+) sur fond blanc et --color-bg, était #8B7D72 (~3.7:1) */
   --brand-accent: #A88B5E;
   --brand-accent-light: rgba(168, 139, 94, 0.15);
   --color-bg: #F9F7F5;
