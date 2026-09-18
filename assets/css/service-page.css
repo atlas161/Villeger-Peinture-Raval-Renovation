@@ -500,3 +500,34 @@
   border-top: 1px solid var(--color-border-light);
 }
 
+.faq-answer > p:first-child {
+  margin-top: var(--space-lg);
+}
+
+.faq-answer > :where(*:not(:first-child)) {
+  margin-top: var(--space-md);
+}
+
+.faq-answer ul {
+  margin-top: var(--space-sm);
+  padding-left: var(--space-lg);
+}
+
+/* Icône dans les questions FAQ "Prix & Devis" (variante avec badge, distincte de
+   la FAQ simple partagée avec index.html) */
+.faq-icon-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border-radius: 12px; /* était 10px inline, forcé à 12px par *[style*="border-radius"] dans styles.css */
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.faq-icon-badge--accent {
+  background: #A88B5E;
+}
+
