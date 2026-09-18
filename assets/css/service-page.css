@@ -427,3 +427,107 @@
   transform: translateY(-2px);
 }
 
+/* Grille "Nos autres services" (section services, distincte de .feature-grid) */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.service-card {
+  border: 2px solid var(--color-border);
+  /* 12px et non 16px : styles.css:501 force border-radius: 12px !important sur tout
+     élément qui avait un style="...border-radius..." inline (voir commit history) */
+  border-radius: 12px;
+  padding: var(--space-xl);
+  transition: all 0.3s ease;
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--color-surface-alt);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 2px 8px rgba(45, 36, 30, 0.06);
+}
+
+/* FAQ (accordéon natif <details>/<summary>, implémentation propre à ces pages —
+   différente de assets/css/faq.css qui n'est pas chargé ici) */
+.faq-accordion {
+  max-width: 800px;
+  margin: var(--space-2xl) auto 0;
+}
+
+.faq-item {
+  background: var(--color-white);
+  /* 12px et non 16px : styles.css:501 force border-radius: 12px !important sur tout
+     élément qui avait un style="...border-radius..." inline (voir commit history) */
+  border-radius: 12px;
+  margin-bottom: var(--space-md);
+  border: 2px solid var(--color-border-light);
+  box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: var(--space-xl);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.125rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.faq-question .fa-chevron-down {
+  margin-left: auto;
+  color: var(--color-text-light);
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  padding: 0 var(--space-xl) var(--space-xl);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.faq-answer > p:first-child {
+  margin-top: var(--space-lg);
+}
+
+.faq-answer > :where(*:not(:first-child)) {
+  margin-top: var(--space-md);
+}
+
+.faq-answer ul {
+  margin-top: var(--space-sm);
+  padding-left: var(--space-lg);
+}
+
+/* Icône dans les questions FAQ "Prix & Devis" (variante avec badge, distincte de
+   la FAQ simple partagée avec index.html) */
+.faq-icon-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border-radius: 12px; /* était 10px inline, forcé à 12px par *[style*="border-radius"] dans styles.css */
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.faq-icon-badge--accent {
+  background: #A88B5E;
+}
+

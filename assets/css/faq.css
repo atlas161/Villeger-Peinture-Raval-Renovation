@@ -118,10 +118,6 @@
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.faq-question-text {
-  flex-grow: 1;
-}
-
 .faq-question:hover {
   color: var(--color-primary);
 }

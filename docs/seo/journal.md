@@ -4,8 +4,95 @@ Log daté de toutes les sessions de travail sur le chantier SEO. Le plus récent
 
 ---
 
-## 2026-09-18 — Audit qualité de code & correctifs fonctionnels (hors chantier SEO strict, mais impacte
-vitesse mobile / tracking / formulaire de contact)
+## 2026-09-18 (suite 4) — Suite du nettoyage inline + découverte d'un hack CSS sitewide
+
+**⚠️ Découverte à connaître avant de toucher à n'importe quel `border-radius` sur le site** :
+`assets/css/styles.css` contient depuis longtemps (bien avant les sessions de nettoyage récentes,
+commit `da8bd98`) une règle globale :
+
+```css
+/* Forcer même sur les éléments avec styles inline */
+*[style*="border-radius"] {
+  border-radius: 12px !important;
+}
+```
+
+Cette règle force **tout** élément du site ayant un `style="..."` inline contenant le texte
+"border-radius" à afficher un rayon de 12px, **quelle que soit la valeur écrite dans le style inline**.
+Conséquence concrète trouvée en vérifiant rigoureusement (comparaison des styles calculés, pas
+seulement des captures d'écran) l'extraction des styles inline de cette session : plusieurs éléments
+avaient un `border-radius` inline différent de 12px (ex. `18px`, `20px`, et même `border-radius: 50%`
+sur l'icône ronde du bloc "Explorez tous nos articles" du blog) — **tous rendus à 12px en production
+depuis toujours**, y compris l'icône censée être un cercle qui s'affichait en réalité comme un carré
+arrondi. Ce n'est probablement pas voulu, mais fait partie de l'état actuel du site — non corrigé
+(gardé à l'identique par prudence, voir `CLAUDE.md`), juste documenté ici. Si vous voulez un jour de
+vrais cercles/rayons différents à ces endroits, il faudra soit retirer/cibler cette règle, soit changer
+la valeur en dur dans les classes CSS correspondantes (`gallery-card`, `blog-preview-card`,
+`blog-preview-badge`, `blog-cta-icon`, `.service-card`, `.faq-item`...).
+
+**Suite du nettoyage des pages de service** : après le dédoublonnage du header/nav, poursuite du
+nettoyage des styles inline restants sur les 5 pages de service. ~53 chaînes de style inline
+identiques étaient répétées sur 4 ou 5 pages (accordéon FAQ, cartes "Nos autres services", grille de
+services) — c'est en fait le même genre de duplication que le `<style>` du `<head>` déjà traité, juste
+dans le corps de page. Extrait les 7 patterns les plus sûrs (déjà porteurs d'une classe existante, donc
+aucun risque de collision de nommage) vers `assets/css/service-page.css` :
+`.faq-accordion`, `.faq-item`, `.faq-question`, `.faq-answer`, `.services-grid`, `.service-card`,
+`.service-icon` — environ 236 des ~600 attributs `style=""` restants supprimés sur les 5 pages
+(`ravalement-facade-angouleme.html` : 174→~40 restants, etc.).
+
+Vérifié par comparaison des styles calculés (`getComputedStyle`) entre la version d'avant cette session
+(commit `82a9c05`) et la version actuelle, sur toutes les classes concernées, sur les 6 pages
+(home + 5 services) : **0 différence**.
+
+Reste à faire (pas traité, moins prioritaire, ~360 attributs `style=""` restants) : le contenu propre à
+chaque page (fiche chantier, section "pourquoi nous choisir", bandeau CTA final) n'est pas identique
+mot pour mot d'une page à l'autre (textes, couleurs d'accent parfois différentes) — l'extraire proprement
+demande de vérifier au cas par cas plutôt qu'un simple copier-coller de classes, laissé pour une session
+dédiée. Idem pour les ~174 `!important` restants (86 dans `styles.css`, dont potentiellement d'autres
+hacks du même genre que celui documenté ci-dessus).
+
+---
+
+## 2026-09-18 (suite 3) — Header/nav dédupliqués, audit responsive, bug formulaire majeur
+
+Suite de la session qualité de code. Client a demandé de continuer sur les tâches restantes +
+"revoir la partie responsive du site".
+
+- **Header/nav dédupliqués sur les 10 pages HTML** via un nouveau gabarit `scripts/sync-header.js`
+  (`npm run sync:header`) — voir `architecture.md`. Un changement de menu se fait maintenant à un seul
+  endroit. `404.html` volontairement exclu (nav minimaliste délibérée). Vérifié pixel par pixel (desktop
+  + mobile) + testé au clavier/clic (menu burger mobile).
+  - Au passage, corrigé : logo avec faute d'accent ("Villeger" → "Villéger") incohérente entre pages,
+    `aria-label` du logo incohérent sur la home ("RavalRenovation" → "VPRR - Accueil").
+- **Contraste WCAG corrigé** : `--color-text-muted` passé de `#8B7D72` (~3.7:1 sur blanc, sous le seuil
+  AA 4.5:1) à `#77695E` (~5.3:1). Vérifié visuellement, changement très subtil.
+- **FAQ home (`index.html`) : incohérence de markup corrigée** — 2 des 4 questions avaient un wrapper
+  `<div class="faq-question-icon">` (reliquat d'une ancienne version) causant un décalage visuel sur
+  mobile par rapport aux 2 autres questions en texte simple. Uniformisé sur le format simple, classe CSS
+  `.faq-question-text` désormais inutilisée supprimée de `faq.css`.
+- **Bug majeur trouvé pendant l'audit responsive** : `assets/js/form-security.js` (protection anti-spam/
+  rate-limiting du formulaire de contact) et `assets/js/apple-select.js` (le sélecteur "Type de projet")
+  n'étaient chargés **que sur `index.html`**, alors que les 5 pages de service ont chacune leur propre
+  formulaire de contact identique. Concrètement : sur `ravalement-facade-angouleme.html`,
+  `nettoyage-facade-angouleme.html`, `nettoyage-toiture-angouleme.html`,
+  `peinture-exterieure-charente.html` et `isolation-interieure-charente.html`, le menu "Type de projet"
+  était **totalement non cliquable** (aucun script ne le pilotait) et le formulaire n'avait **aucune**
+  protection anti-spam. Les deux scripts sont maintenant chargés sur les 5 pages. Testé : le menu
+  déroulant s'ouvre et se sélectionne correctement sur chacune des 5 pages.
+  - Ajout au passage : la valeur "Type de projet" pré-remplie selon la page (ex. "Ravalement de façade"
+    pré-sélectionné sur la page Ravalement) s'affichait en gris clair comme un placeholder non rempli
+    (classe CSS `placeholder` jamais retirée, aucun script n'existant avant pour le faire) — corrigé dans
+    `apple-select.js`, qui synchronise maintenant l'état visuel avec la valeur pré-remplie au chargement.
+- **Audit responsive (375px / 768px / 1024px)** sur `index.html`, les 5 pages de service, `zone-desservie-
+  charente.html` et `faq-renovation-angouleme.html` : pas d'overflow horizontal détecté, pas de texte
+  tronqué/chevauchant, menu burger mobile fonctionnel et complet. Deux "bugs" suspectés pendant l'audit
+  se sont révélés être des artefacts de capture d'écran plein-page de Playwright (animations `reveal-on-
+  scroll` et carte Leaflet capturées mi-transition lors du redimensionnement de viewport pour la capture)
+  et non des problèmes réels — vérifiés et écartés via des captures viewport-par-viewport avec scroll réel.
+
+Reste à faire (pas traité, moins prioritaire) : styles inline sur le contenu propre de chaque page de
+service (hors le bloc `<style>` du `<head>`, déjà traité), ~174 `!important` restants (86 dans
+`styles.css`, pas audités un par un).
 
 Demande du client : remettre le code du site aux bonnes pratiques (HTML/CSS/JS, a11y, perf) sans changer
 le design visuel. Audit complet effectué (voir résumé dans `CLAUDE.md` → Pièges connus). Bugs
