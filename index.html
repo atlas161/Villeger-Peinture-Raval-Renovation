@@ -23,7 +23,7 @@
     <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
     <link rel="preload" href="data/hero.webp" as="image" type="image/webp" fetchpriority="high" />
     
-    <!-- Google Tag Manager - Chargé uniquement après consentement cookies (voir cookies.js) -->
+    <!-- Google Tag Manager - Chargé uniquement après consentement cookies (voir assets/js/footer.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       window.GTM_ID = 'GTM-NKPGDBPG';
@@ -70,8 +70,10 @@
     <!-- CSS Critique (above the fold) - Chargement synchrone -->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="assets/css/hero.css" />
-    
+
     <!-- CSS Non-critique - Chargement asynchrone -->
     <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/css/cookies.css" media="print" onload="this.media='all'" />
@@ -89,6 +91,8 @@
     
     <!-- Fallback pour navigateurs sans JS -->
     <noscript>
+      <link rel="stylesheet" href="assets/css/utilities.css" />
+      <link rel="stylesheet" href="assets/css/responsive.css" />
       <link rel="stylesheet" href="assets/css/contact.css" />
       <link rel="stylesheet" href="assets/css/cookies.css" />
       <link rel="stylesheet" href="assets/css/faq.css" />
@@ -414,10 +418,9 @@
     <script defer src="assets/js/main.js"></script>
     
     <!-- Scripts -->
-  <script src="assets/js/config-loader.js"></script>
-  <script src="assets/js/form-security.js"></script>
-  <script src="assets/js/cookies.js"></script>
-  <script src="assets/js/blog-home.js"></script>
+  <script defer src="assets/js/apple-select.js"></script>
+  <script defer src="assets/js/form-security.js"></script>
+  <script defer src="assets/js/blog-home.js"></script>
     
     <!-- Scripts tiers - Chargés en lazy-load quand les sections deviennent visibles -->
     <script>
@@ -728,83 +731,83 @@
           </header>
 
           <!-- Galerie avant/après hébergée sur le site (indexable Google Images) -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl); margin-top: var(--space-2xl);">
+          <div class="gallery-grid">
 
-            <article style="background: var(--color-white); border-radius: 18px; border: 2px solid var(--color-border-light); overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);">
-              <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/ravalement_facade/ravalement_avant-600w.webp" srcset="media/services/ravalement_facade/ravalement_avant-600w.webp 600w, media/services/ravalement_facade/ravalement_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade abîmée avant ravalement à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Avant</figcaption>
+            <article class="gallery-card">
+              <div class="gallery-card-media">
+                <figure class="gallery-figure">
+                  <img src="media/services/ravalement_facade/ravalement_avant-600w.webp" srcset="media/services/ravalement_facade/ravalement_avant-600w.webp 600w, media/services/ravalement_facade/ravalement_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade abîmée avant ravalement à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Avant</figcaption>
                 </figure>
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/ravalement_facade/ravalement_apres-600w.webp" srcset="media/services/ravalement_facade/ravalement_apres-600w.webp 600w, media/services/ravalement_facade/ravalement_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade rénovée après ravalement à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Après</figcaption>
+                <figure class="gallery-figure">
+                  <img src="media/services/ravalement_facade/ravalement_apres-600w.webp" srcset="media/services/ravalement_facade/ravalement_apres-600w.webp 600w, media/services/ravalement_facade/ravalement_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade rénovée après ravalement à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Après</figcaption>
                 </figure>
               </div>
-              <div style="padding: var(--space-lg);">
-                <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-xs);">Ravalement de façade</h3>
-                <a href="ravalement-facade-angouleme.html" style="font-size: 0.9375rem; color: var(--color-primary); font-weight: 600; text-decoration: none;">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true" style="font-size: 0.8em;"></i></a>
+              <div class="gallery-card-body">
+                <h3>Ravalement de façade</h3>
+                <a href="ravalement-facade-angouleme.html" class="gallery-card-link">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </article>
 
-            <article style="background: var(--color-white); border-radius: 18px; border: 2px solid var(--color-border-light); overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);">
-              <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/nettoyage_facade/facade_avant-600w.webp" srcset="media/services/nettoyage_facade/facade_avant-600w.webp 600w, media/services/nettoyage_facade/facade_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade encrassée avant nettoyage par hydrogommage à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Avant</figcaption>
+            <article class="gallery-card">
+              <div class="gallery-card-media">
+                <figure class="gallery-figure">
+                  <img src="media/services/nettoyage_facade/facade_avant-600w.webp" srcset="media/services/nettoyage_facade/facade_avant-600w.webp 600w, media/services/nettoyage_facade/facade_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade encrassée avant nettoyage par hydrogommage à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Avant</figcaption>
                 </figure>
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/nettoyage_facade/facade_apres-600w.webp" srcset="media/services/nettoyage_facade/facade_apres-600w.webp 600w, media/services/nettoyage_facade/facade_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade propre après nettoyage par hydrogommage à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Après</figcaption>
-                </figure>
-              </div>
-              <div style="padding: var(--space-lg);">
-                <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-xs);">Nettoyage de façade</h3>
-                <a href="nettoyage-facade-angouleme.html" style="font-size: 0.9375rem; color: var(--color-primary); font-weight: 600; text-decoration: none;">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true" style="font-size: 0.8em;"></i></a>
-              </div>
-            </article>
-
-            <article style="background: var(--color-white); border-radius: 18px; border: 2px solid var(--color-border-light); overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);">
-              <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/nettoyag_toiture/toiture_avant-600w.webp" srcset="media/services/nettoyag_toiture/toiture_avant-600w.webp 600w, media/services/nettoyag_toiture/toiture_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Toiture envahie par la mousse avant démoussage à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Avant</figcaption>
-                </figure>
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/nettoyag_toiture/toiture_apres-600w.webp" srcset="media/services/nettoyag_toiture/toiture_apres-600w.webp 600w, media/services/nettoyag_toiture/toiture_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Toiture nettoyée après démoussage à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Après</figcaption>
+                <figure class="gallery-figure">
+                  <img src="media/services/nettoyage_facade/facade_apres-600w.webp" srcset="media/services/nettoyage_facade/facade_apres-600w.webp 600w, media/services/nettoyage_facade/facade_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade propre après nettoyage par hydrogommage à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Après</figcaption>
                 </figure>
               </div>
-              <div style="padding: var(--space-lg);">
-                <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-xs);">Nettoyage de toiture</h3>
-                <a href="nettoyage-toiture-angouleme.html" style="font-size: 0.9375rem; color: var(--color-primary); font-weight: 600; text-decoration: none;">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true" style="font-size: 0.8em;"></i></a>
+              <div class="gallery-card-body">
+                <h3>Nettoyage de façade</h3>
+                <a href="nettoyage-facade-angouleme.html" class="gallery-card-link">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </article>
 
-            <article style="background: var(--color-white); border-radius: 18px; border: 2px solid var(--color-border-light); overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);">
-              <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/peinture_exterieur/peinture_avant-600w.webp" srcset="media/services/peinture_exterieur/peinture_avant-600w.webp 600w, media/services/peinture_exterieur/peinture_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade avant peinture extérieure à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Avant</figcaption>
+            <article class="gallery-card">
+              <div class="gallery-card-media">
+                <figure class="gallery-figure">
+                  <img src="media/services/nettoyag_toiture/toiture_avant-600w.webp" srcset="media/services/nettoyag_toiture/toiture_avant-600w.webp 600w, media/services/nettoyag_toiture/toiture_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Toiture envahie par la mousse avant démoussage à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Avant</figcaption>
                 </figure>
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/peinture_exterieur/peinture_apres-600w.webp" srcset="media/services/peinture_exterieur/peinture_apres-600w.webp 600w, media/services/peinture_exterieur/peinture_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade repeinte après peinture extérieure à Angoulême" loading="lazy" decoding="async" style="display: block; width: 100%; height: 160px; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 8px; bottom: 8px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.75rem;">Après</figcaption>
+                <figure class="gallery-figure">
+                  <img src="media/services/nettoyag_toiture/toiture_apres-600w.webp" srcset="media/services/nettoyag_toiture/toiture_apres-600w.webp 600w, media/services/nettoyag_toiture/toiture_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Toiture nettoyée après démoussage à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Après</figcaption>
                 </figure>
               </div>
-              <div style="padding: var(--space-lg);">
-                <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-xs);">Peinture extérieure</h3>
-                <a href="peinture-exterieure-charente.html" style="font-size: 0.9375rem; color: var(--color-primary); font-weight: 600; text-decoration: none;">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true" style="font-size: 0.8em;"></i></a>
+              <div class="gallery-card-body">
+                <h3>Nettoyage de toiture</h3>
+                <a href="nettoyage-toiture-angouleme.html" class="gallery-card-link">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <div class="gallery-card-media">
+                <figure class="gallery-figure">
+                  <img src="media/services/peinture_exterieur/peinture_avant-600w.webp" srcset="media/services/peinture_exterieur/peinture_avant-600w.webp 600w, media/services/peinture_exterieur/peinture_avant-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade avant peinture extérieure à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Avant</figcaption>
+                </figure>
+                <figure class="gallery-figure">
+                  <img src="media/services/peinture_exterieur/peinture_apres-600w.webp" srcset="media/services/peinture_exterieur/peinture_apres-600w.webp 600w, media/services/peinture_exterieur/peinture_apres-900w.webp 900w" sizes="(max-width: 768px) 50vw, 25vw" alt="Façade repeinte après peinture extérieure à Angoulême" loading="lazy" decoding="async" />
+                  <figcaption>Après</figcaption>
+                </figure>
+              </div>
+              <div class="gallery-card-body">
+                <h3>Peinture extérieure</h3>
+                <a href="peinture-exterieure-charente.html" class="gallery-card-link">Voir ce service <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </article>
 
           </div>
 
           <!-- Instagram : derniers chantiers en photos -->
-          <div style="margin-top: var(--space-3xl);">
-            <header class="section-header" style="margin-bottom: var(--space-lg);">
+          <div class="gallery-instagram">
+            <header class="section-header">
               <p class="section-eyebrow">Instagram</p>
-              <h3 style="font-size: 1.375rem; color: var(--color-text);">Suivez nos derniers chantiers</h3>
+              <h3 class="gallery-instagram-title">Suivez nos derniers chantiers</h3>
             </header>
             <!-- Elfsight chargé en lazy-load quand la galerie devient visible -->
             <div class="elfsight-app-aecb5ffb-c6a1-47d1-806c-c203539d710c" data-elfsight-app-lazy></div>
@@ -814,12 +817,12 @@
       </section>
 
       <!-- Section Blog : Derniers articles -->
-      <section id="blog" class="section" aria-labelledby="blog-title" style="background: linear-gradient(180deg, #FAFAF9 0%, #FFFFFF 100%); padding: var(--space-3xl) 0;">
+      <section id="blog" class="section blog-section" aria-labelledby="blog-title">
         <div class="container">
-          <header class="section-header" style="max-width: 800px; margin: 0 auto var(--space-2xl); text-align: center;">
-            <p class="section-eyebrow" style="color: #673A12; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--space-sm);">Blog</p>
-            <h2 id="blog-title" style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; color: #2D241E; margin-bottom: var(--space-md); line-height: 1.2;">Guides & Conseils</h2>
-            <p style="font-size: 1.125rem; color: #6B5D52; line-height: 1.6; max-width: 600px; margin: 0 auto;">Conseils d'experts et guides pratiques pour réussir vos projets de rénovation, peinture et ravalement.</p>
+          <header class="section-header">
+            <p class="section-eyebrow">Blog</p>
+            <h2 id="blog-title">Guides & Conseils</h2>
+            <p>Conseils d'experts et guides pratiques pour réussir vos projets de rénovation, peinture et ravalement.</p>
           </header>
           
           <div class="blog-preview-carousel" data-blog-carousel>
@@ -828,34 +831,34 @@
             </button>
             <div class="blog-preview-viewport" data-carousel-viewport>
               <div class="blog-preview-track" data-carousel-track>
-                <article class="blog-preview-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.08); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(103, 58, 18, 0.08);">
-                  <a href="blog/choisir-peinture-exterieure.html" class="blog-preview-link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
-                    <div class="blog-preview-image" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #F5F2EE;">
-                      <img src="assets/img/blog/peinture_ext-600w.webp" srcset="assets/img/blog/peinture_ext-400w.webp 400w, assets/img/blog/peinture_ext-600w.webp 600w, assets/img/blog/peinture_ext-800w.webp 800w, assets/img/blog/peinture_ext-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, 520px" alt="Comment choisir sa peinture extérieure ?" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                      <div style="position: absolute; top: 16px; left: 16px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #673A12; letter-spacing: 0.02em;">Peinture</div>
+                <article class="blog-preview-card">
+                  <a href="blog/peinture-exterieure-facade-angouleme.html" class="blog-preview-link">
+                    <div class="blog-preview-image">
+                      <img src="assets/img/blog/peinture_ext-600w.webp" srcset="assets/img/blog/peinture_ext-400w.webp 400w, assets/img/blog/peinture_ext-600w.webp 600w, assets/img/blog/peinture_ext-800w.webp 800w, assets/img/blog/peinture_ext-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, 520px" alt="Comment choisir sa peinture extérieure ?" loading="lazy">
+                      <div class="blog-preview-badge">Peinture</div>
                     </div>
-                    <div class="blog-preview-content" style="padding: var(--space-lg); flex: 1; display: flex; flex-direction: column;">
-                      <h3 class="blog-preview-title" style="font-size: 1.25rem; font-weight: 600; color: #2D241E; margin-bottom: var(--space-sm); line-height: 1.4; transition: color 0.2s ease;">Comment choisir sa peinture extérieure ?</h3>
-                      <p class="blog-preview-excerpt" style="font-size: 0.9375rem; color: #6B5D52; line-height: 1.6; margin-bottom: var(--space-md); flex: 1;">Guide complet pour sélectionner la peinture adaptée à votre façade : types, finitions et budget.</p>
-                      <div style="display: flex; align-items: center; gap: var(--space-sm); color: #8B7355; font-size: 0.875rem;">
-                        <i class="fa-regular fa-clock" aria-hidden="true" style="font-size: 0.875rem;"></i>
+                    <div class="blog-preview-content">
+                      <h3 class="blog-preview-title">Comment choisir sa peinture extérieure ?</h3>
+                      <p class="blog-preview-excerpt">Guide complet pour sélectionner la peinture adaptée à votre façade : types, finitions et budget.</p>
+                      <div class="blog-preview-meta">
+                        <i class="fa-regular fa-clock" aria-hidden="true"></i>
                         <span>5 min de lecture</span>
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true" style="margin-left: auto; font-size: 0.875rem; transition: transform 0.2s ease;"></i>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                       </div>
                     </div>
                   </a>
                 </article>
 
-                <article class="blog-preview-card" data-blog-cta style="background: linear-gradient(135deg, #673A12 0%, #8B5A2B 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(103, 58, 18, 0.25); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;">
-                  <a href="blog/" class="blog-preview-link" style="text-decoration: none; color: white; display: flex; flex-direction: column; height: 100%; padding: var(--space-xl); justify-content: center; align-items: center; text-align: center; min-height: 360px;">
-                    <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-lg); transition: transform 0.3s ease;">
-                      <i class="fa-solid fa-book-open" style="font-size: 2rem; color: white;"></i>
+                <article class="blog-preview-card" data-blog-cta>
+                  <a href="blog/" class="blog-preview-link">
+                    <div class="blog-cta-icon">
+                      <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                     </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: var(--space-md); line-height: 1.3;">Explorez tous nos articles</h3>
-                    <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: var(--space-lg); max-width: 280px;">Découvrez notre bibliothèque complète de guides et conseils pour vos projets de rénovation.</p>
-                    <div style="display: inline-flex; align-items: center; gap: var(--space-sm); padding: 12px 24px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 12px; font-weight: 600; font-size: 0.9375rem; transition: all 0.2s ease;">
+                    <h3>Explorez tous nos articles</h3>
+                    <p>Découvrez notre bibliothèque complète de guides et conseils pour vos projets de rénovation.</p>
+                    <div class="blog-cta-pill">
                       <span>Voir le blog</span>
-                      <i class="fa-solid fa-arrow-right" aria-hidden="true" style="font-size: 0.875rem;"></i>
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                     </div>
                   </a>
                 </article>
@@ -865,10 +868,10 @@
               <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </button>
           </div>
-          
-          <div style="text-align: center; padding-top: var(--space-lg); border-top: 1px solid rgba(103, 58, 18, 0.1);">
-            <p style="color: #8B7355; font-size: 0.9375rem; margin-bottom: var(--space-md);">Plus de guides à venir chaque semaine</p>
-            <a href="blog/" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: var(--space-sm); padding: 14px 28px; font-size: 1rem; font-weight: 600; border-radius: 12px; transition: all 0.2s ease;">
+
+          <div class="blog-section-footer">
+            <p>Plus de guides à venir chaque semaine</p>
+            <a href="blog/" class="btn btn-secondary">
               <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
               Tous les articles
             </a>
@@ -979,7 +982,6 @@
                 <div class="faq-question-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
                 <div class="faq-question-text">Êtes-vous assurés en cas de problème&nbsp;?</div>
               </summary>
-              <summary class="faq-question">Êtes-vous assurés en cas de problème&nbsp;?</summary>
               <div class="faq-answer">
                 <p><strong>Absolument. C'est une obligation légale et une sécurité pour vous.</strong> Nous possédons une Garantie Décennale (qui couvre les gros ouvrages pendant 10 ans) ainsi qu'une Responsabilité Civile Professionnelle. Nos attestations d'assurance sont à jour et disponibles sur simple demande avant le début du chantier.</p>
               </div>
@@ -1179,17 +1181,19 @@
                 <input type="email" id="contact-email" name="email" placeholder="votre@email.com" autocomplete="email" required />
               </div>
               <div class="form-field">
-                <label for="contact-prestation">Type de projet</label>
+                <span id="contact-prestation-label">Type de projet</span>
                 <div class="apple-select" id="apple-select">
-                  <div class="apple-select-trigger">
+                  <div class="apple-select-trigger" role="combobox" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="contact-prestation-label" aria-controls="apple-select-dropdown">
                     <span class="apple-select-value placeholder">Choisir un service</span>
-                    <i class="fa-solid fa-chevron-down apple-select-arrow"></i>
+                    <i class="fa-solid fa-chevron-down apple-select-arrow" aria-hidden="true"></i>
                   </div>
-                  <div class="apple-select-dropdown">
-                    <div class="apple-select-option" data-value="ravalement">Ravalement de façade</div>
-                    <div class="apple-select-option" data-value="peinture">Peinture</div>
-                    <div class="apple-select-option" data-value="isolation">Isolation</div>
-                    <div class="apple-select-option" data-value="autre">Autre</div>
+                  <div class="apple-select-dropdown" id="apple-select-dropdown" role="listbox" aria-labelledby="contact-prestation-label">
+                    <div class="apple-select-option" role="option" aria-selected="false" tabindex="-1" data-value="ravalement">Ravalement de façade</div>
+                    <div class="apple-select-option" role="option" aria-selected="false" tabindex="-1" data-value="toiture">Toiture &amp; Couverture</div>
+                    <div class="apple-select-option" role="option" aria-selected="false" tabindex="-1" data-value="peinture">Peinture</div>
+                    <div class="apple-select-option" role="option" aria-selected="false" tabindex="-1" data-value="isolation">Isolation</div>
+                    <div class="apple-select-option" role="option" aria-selected="false" tabindex="-1" data-value="renovation">Rénovation intérieure</div>
+                    <div class="apple-select-option" role="option" aria-selected="false" tabindex="-1" data-value="autre">Autre</div>
                   </div>
                   <input type="hidden" id="contact-prestation" name="prestation" required />
                 </div>

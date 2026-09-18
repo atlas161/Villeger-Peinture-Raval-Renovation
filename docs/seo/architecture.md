@@ -59,27 +59,40 @@ Les pages comme `ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.
 `index.html` sont du **HTML statique écrit à la main**, pas généré. Toute modification se fait
 directement dans ces fichiers.
 
-## ⚠️ `config-loader.js` / `data/config.json` : code mort, ne pas s'y fier
+### CSS des 5 pages de service : `assets/css/service-page.css`
 
-`data/config.json` contient une section `services` (Ravalement, Toiture, **Isolation**, Rénovation
-intérieure) censée être injectée dynamiquement dans le DOM par `assets/js/config-loader.js` au chargement
-de la page, en ciblant les sélecteurs `.services-grid` / `.service-card` / `.service-icon`.
+`ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.html`, `nettoyage-toiture-angouleme.html`,
+`peinture-exterieure-charente.html` et `isolation-interieure-charente.html` partagent les mêmes
+composants visuels (`.service-hero`, `.before-after-slider`, `.feature-grid`, `.problem-section`,
+`.process-steps`, `.zone-list`...) via le fichier commun **`assets/css/service-page.css`**, chargé dans le
+`<head>` de chacune (avant `responsive.css`, pour que les breakpoints mobile de `responsive.css`
+l'emportent sans avoir besoin de `!important`).
 
-**Constat (2026-09-16) : ce script ne fait plus rien.** Le HTML réel de `index.html` utilise depuis une
-refonte les classes `.svc-grid` / `.svc-card` / `.svc-icon` (avec microdonnées `itemprop` en plus). Comme
-les sélecteurs ne correspondent plus, `applyServicesConfig()` trouve `servicesGrid === null` et sort
-immédiatement (`if (!servicesGrid) return;`) — sans erreur visible, silencieusement.
+Avant le 2026-09-18, ce CSS était dupliqué dans un `<style>` de ~500 lignes propre à chaque page — voir
+`journal.md` pour le détail. Certaines pages ont de petites vraies différences avec le gabarit commun
+(ex. bordure du `.zone-tag` sur `nettoyage-facade-angouleme.html`, style du `.hero-placeholder-text` sur
+`isolation-interieure-charente.html`) : ces différences sont préservées via un petit `<style>` de
+quelques lignes en fin de `<head>` de la page concernée, **après** le `<link>` vers `service-page.css`
+(pour gagner la cascade sans `!important`). Si vous ajoutez une 6e page de service, liez
+`service-page.css` plutôt que de recopier ces styles.
 
-Conséquence concrète : le service **Isolation**, entièrement décrit dans `config.json`
-(`"id": "isolation"`, description, détails), **n'apparaît nulle part sur le site**, alors même que le mot
-"isolation" est présent dans le titre de la page d'accueil et les meta-descriptions. C'est l'écart identifié
-dans l'audit SEO (priorité #3).
+## `config-loader.js` : supprimé le 2026-09-18
 
-Pas touché pour l'instant — voir `decisions.md` pour le plan retenu (page dédiée Isolation en HTML
-statique, cohérente avec les 4 autres pages de service, plutôt que de réparer ce pipeline JS legacy).
-Si un jour ce script est corrigé ou supprimé, vérifier qu'aucune autre section ne dépend encore de lui
-(`applyFaqConfig`, `applyZoneConfig`, `applyContactConfig` ciblent d'autres sélecteurs, à vérifier
-séparément avant de supprimer le fichier).
+`data/config.json` contenait une section `services` (Ravalement, Toiture, **Isolation**, Rénovation
+intérieure) injectée dynamiquement dans le DOM par `assets/js/config-loader.js` au chargement de la page.
+Ce fichier documentait auparavant `applyServicesConfig()` comme code mort (cible `.services-grid` /
+`.service-card`, sélecteurs remplacés par `.svc-grid` / `.svc-card` lors d'une refonte) — **mais un audit
+du 2026-09-18 a montré que les autres fonctions du même fichier (`applyFaqConfig`, `applyZoneConfig`,
+`applyContactConfig`, `applySectionHeaders`, `applyFormOptions`) étaient elles bien actives** et
+écrasaient silencieusement au chargement le FAQ, les villes de zone, les liens de contact, les titres de
+section et les options du formulaire de contact de `index.html` — avec un flash de contenu visible et une
+divergence HTML/JSON (le formulaire n'avait que 4 options en HTML statique contre 6 dans `config.json`).
+
+Décision retenue : `config-loader.js` a été supprimé, et le HTML statique de `index.html` est la seule
+source de vérité pour ce contenu (cohérent avec les 9 autres pages du site qui n'ont jamais utilisé ce
+script). Les 2 options de formulaire manquantes (Toiture & Couverture, Rénovation intérieure) ont été
+ajoutées en dur dans `index.html`. `data/config.json` reste dans le repo comme note de référence mais
+n'est plus lu par aucun script.
 
 ## Build & scripts disponibles
 

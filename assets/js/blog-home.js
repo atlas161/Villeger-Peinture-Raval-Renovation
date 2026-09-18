@@ -2,6 +2,9 @@
  * Blog Home - Affichage dynamique des derniers articles sur la page d'accueil
  */
 
+(function() {
+  'use strict';
+
 // Configuration
 const MAX_ARTICLES_DISPLAY = 12;
 
@@ -235,19 +238,19 @@ function createArticleCard(article) {
   if (!article.slug || !title) return null;
 
   const template = `
-    <article class="blog-preview-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.08); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(103, 58, 18, 0.08);">
-      <a href="blog/${escapeHtml(article.slug)}.html" class="blog-preview-link" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
-        <div class="blog-preview-image" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #F5F2EE;">
-          <img src="${escapeHtml(imgSrc)}" ${imgSrcset ? `srcset="${escapeHtml(imgSrcset)}"${imgSizes ? ` sizes="${escapeHtml(imgSizes)}"` : ''}` : ''} alt="${escapeHtml(title)}" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-          <div style="position: absolute; top: 16px; left: 16px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #673A12; letter-spacing: 0.02em;">${escapeHtml(category)}</div>
+    <article class="blog-preview-card">
+      <a href="blog/${escapeHtml(article.slug)}.html" class="blog-preview-link">
+        <div class="blog-preview-image">
+          <img src="${escapeHtml(imgSrc)}" ${imgSrcset ? `srcset="${escapeHtml(imgSrcset)}"${imgSizes ? ` sizes="${escapeHtml(imgSizes)}"` : ''}` : ''} alt="${escapeHtml(title)}" loading="lazy">
+          <div class="blog-preview-badge">${escapeHtml(category)}</div>
         </div>
-        <div class="blog-preview-content" style="padding: var(--space-lg); flex: 1; display: flex; flex-direction: column;">
-          <h3 class="blog-preview-title" style="font-size: 1.25rem; font-weight: 600; color: #2D241E; margin-bottom: var(--space-sm); line-height: 1.4; transition: color 0.2s ease;">${escapeHtml(title)}</h3>
-          <p class="blog-preview-excerpt" style="font-size: 0.9375rem; color: #6B5D52; line-height: 1.6; margin-bottom: var(--space-md); flex: 1;">${escapeHtml(description)}</p>
-          <div style="display: flex; align-items: center; gap: var(--space-sm); color: #8B7355; font-size: 0.875rem;">
-            <i class="fa-regular fa-clock" aria-hidden="true" style="font-size: 0.875rem;"></i>
+        <div class="blog-preview-content">
+          <h3 class="blog-preview-title">${escapeHtml(title)}</h3>
+          <p class="blog-preview-excerpt">${escapeHtml(description)}</p>
+          <div class="blog-preview-meta">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
             <span>${escapeHtml(readtime)} min de lecture</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true" style="margin-left: auto; font-size: 0.875rem; transition: transform 0.2s ease;"></i>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </div>
         </div>
       </a>
@@ -268,3 +271,5 @@ document.addEventListener('DOMContentLoaded', function() {
     loadBlogArticles();
   }
 });
+
+})();

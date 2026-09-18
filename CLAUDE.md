@@ -25,21 +25,27 @@ avant de proposer une nouvelle action SEO, et mettre à jour `docs/seo/journal.m
 Objectif du client : booster le référencement long terme du site, de la fiche Google Business Profile et
 de la fiche Solocal/PagesJaunes.
 
-## Infos business (source de vérité : `data/config.json`)
+## Infos business (source de vérité : le HTML statique de chaque page)
 
 - Téléphone : 05 45 91 22 70 · Adresse : 136 Avenue de la République, 16340 L'Isle-d'Espagnac.
 - Services réels : ravalement de façade, nettoyage de façade (hydrogommage, démoussage), nettoyage/
   démoussage de toiture, peinture extérieure, rénovation intérieure, **isolation intérieure** (pas
   d'isolation extérieure/ITE — voir [`docs/seo/decisions.md`](docs/seo/decisions.md)).
 - Zone d'intervention : Angoulême et Charente (16), rayon ~50 km autour de L'Isle-d'Espagnac.
+- `data/config.json` existe encore mais **n'est plus injecté dans le DOM** (voir piège ci-dessous) : il
+  ne sert plus que de note/brouillon, pas de source de vérité. Pour changer une info affichée (FAQ,
+  villes desservies, options du formulaire, textes de section), éditer directement le HTML de la page
+  concernée.
 
 ## Pièges connus
 
-- `assets/js/config-loader.js` est du **code mort** : il cible des classes CSS (`.services-grid`,
-  `.service-card`) qui n'existent plus dans `index.html` (renommées `.svc-grid`, `.svc-card`). Ne pas
-  supposer que modifier `data/config.json` change quoi que ce soit sur la page d'accueil — les pages
-  principales (`index.html`, pages de service) sont du HTML statique écrit à la main. Détail dans
-  `docs/seo/architecture.md`.
+- **(Résolu le 2026-09-18)** `assets/js/config-loader.js` a été supprimé. Il n'était pas totalement
+  mort comme documenté auparavant : il tournait sur `index.html` et écrasait silencieusement au
+  chargement le FAQ, les villes de zone, les liens de contact, les titres de section et les options du
+  formulaire (avec un flash de contenu et une divergence HTML/JSON — ex. le formulaire n'avait que 4
+  options en HTML statique contre 6 dans `config.json`). Le HTML statique de `index.html` est
+  maintenant la seule source de vérité pour ce contenu ; les 2 options manquantes (Toiture & Couverture,
+  Rénovation intérieure) ont été ajoutées en dur dans le formulaire.
 - Le champ `title` du frontmatter blog sert à la fois de H1 affiché et (historiquement) de balise
   `<title>` SEO. Utiliser le champ optionnel `seoTitle` (et `metaDescription` pour la meta description)
   pour raccourcir les balises SEO sans toucher au H1/chapeau affichés — voir

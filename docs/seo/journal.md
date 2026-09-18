@@ -4,6 +4,79 @@ Log daté de toutes les sessions de travail sur le chantier SEO. Le plus récent
 
 ---
 
+## 2026-09-18 — Audit qualité de code & correctifs fonctionnels (hors chantier SEO strict, mais impacte
+vitesse mobile / tracking / formulaire de contact)
+
+Demande du client : remettre le code du site aux bonnes pratiques (HTML/CSS/JS, a11y, perf) sans changer
+le design visuel. Audit complet effectué (voir résumé dans `CLAUDE.md` → Pièges connus). Bugs
+fonctionnels réels trouvés et corrigés :
+
+- **`config-loader.js` supprimé** — n'était pas du code mort comme documenté, il écrasait silencieusement
+  le FAQ, les villes, le contact, les titres de section et les options du formulaire de `index.html` au
+  chargement. Le HTML statique est maintenant la seule source de vérité. Détail dans
+  `docs/seo/architecture.md`.
+- **Formulaire de contact cassé** : le menu déroulant personnalisé "Type de projet" (`.apple-select`)
+  n'avait *aucun* script pour le faire fonctionner — impossible de choisir un service avant cette session.
+  Corrigé avec un composant accessible (`assets/js/apple-select.js`, pattern ARIA listbox + clavier) et
+  les 2 options manquantes (Toiture, Rénovation intérieure) ajoutées.
+- **Tracking (Google Tag Manager) cassé** : la bannière cookies réellement active (`footer.js`)
+  n'appelait jamais `loadGoogleTagManager()` — accepter les cookies ne chargeait pas les analytics. Le
+  vieux fichier `cookies.js` qui le faisait ne se déclenchait jamais (son `DOMContentLoaded` tournait
+  avant que le footer, chargé en fetch async, n'existe dans le DOM). Fusionné dans `footer.js`, `cookies.js`
+  supprimé.
+- **`index.html` ne chargeait pas `responsive.css` ni `utilities.css`**, contrairement aux 9 autres pages
+  du site → la home ratait les ajustements mobile (logo, footer, nav). Ajouté.
+- Bug FAQ : `<summary>` en double invalide sur la question 4 (accordéon), corrigé.
+- Accessibilité formulaire : erreurs désormais annoncées aux lecteurs d'écran (`role="alert"`,
+  `aria-invalid`/`aria-describedby`), styles d'erreur déplacés du JS inline vers `contact.css`.
+
+Suite de la session — nettoyage HTML/CSS/JS (sans changement visuel, vérifié par capture d'écran avant/
+après) :
+
+- **Lien mort trouvé et corrigé** : la carte blog en avant sur la home pointait vers
+  `blog/choisir-peinture-exterieure.html`, un fichier **orphelin** (ancien slug, plus dans le sitemap,
+  jamais régénéré par `npm run build:blog` depuis le renommage du slug en
+  `peinture-exterieure-facade-angouleme`). Lien corrigé, fichier orphelin supprimé.
+- **~35 attributs `style="..."` inline** de la section Galerie et Blog de `index.html` extraits vers de
+  vraies classes CSS (`.gallery-card`, `.blog-preview-*`, etc.) dans `styles.css` — même rendu visuel
+  (vérifié par capture d'écran), code réutilisable. Le template JS qui génère ces mêmes cartes
+  (`assets/js/blog-home.js`) utilise maintenant les mêmes classes au lieu de dupliquer les styles inline.
+- `copyToClipboard()` (dupliqué dans le template blog + 8 pages générées) déplacé vers
+  `assets/js/blog-article.js`, lié en `addEventListener` (plus d'`onclick` inline), avec un léger mieux
+  UX (icône ✓ au lieu d'un `alert()` bloquant).
+- `blog-home.js` mis dans une IIFE (il polluait le scope global, contrairement à tous les autres scripts
+  du site).
+
+Suite (2) — pages de service (`ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.html`,
+`nettoyage-toiture-angouleme.html`, `peinture-exterieure-charente.html`, `isolation-interieure-charente.html`) :
+
+- Chacune de ces 5 pages avait un bloc `<style>` de ~430-520 lignes **dupliqué presque à l'identique**
+  dans le `<head>` (composants `.service-hero`, `.before-after-slider`, `.feature-grid`,
+  `.problem-section`, `.process-steps`, `.zone-list`, `.cta-final-compact`). Extrait vers un seul fichier
+  partagé `assets/css/service-page.css`. Les rares vraies différences entre pages (ex. `.zone-tag` sur
+  `nettoyage-facade-angouleme.html`, `.hero-placeholder-text` sur `isolation-interieure-charente.html`)
+  ont été préservées via un petit `<style>` de quelques lignes propre à chaque page. **Vérifié pixel par
+  pixel** (capture d'écran avant/après, desktop + tablette + mobile) sur les 5 pages : rendu strictement
+  identique.
+- **Découverte en creusant les `!important`** : `.cta-final-compact` (le plus gros bloc du style dupliqué,
+  et la cible des ~30 `!important` de `responsive.css`) n'est en fait **utilisé nulle part** — aucune des
+  5 pages n'a d'élément avec cette classe dans son HTML. Code mort depuis une refonte antérieure des CTA
+  de ces pages. Supprimé entièrement (`service-page.css` + `responsive.css`), ce qui fait tomber
+  `responsive.css` de 34 à **0** `!important`. Total `!important` du site : 220 → 174.
+- Cause racine des `!important` restants (dans `responsive.css` à l'origine) : un `<style>` en fin de
+  `<head>` de chaque page avait la même spécificité que les media-queries de `responsive.css` mais
+  passait après dans l'ordre du document, donc gagnait par défaut — d'où le recours à `!important` pour
+  forcer les breakpoints mobile. En centralisant dans `service-page.css` chargé *avant* `responsive.css`,
+  la cascade normale suffit.
+
+Reste à faire (pas traité cette session — voir `architecture.md`) : les styles inline `style="..."`
+restants sur le contenu propre à chaque page de service (hors le bloc `<style>` du `<head>`, qui lui est
+traité), le dédoublonnage du header/nav sur les 10 pages HTML (nécessiterait un petit script d'inclusion
+à la `scripts/build-blog.js`, pas fait pour limiter le risque de régression sur une session déjà longue),
+et les ~86 `!important` de `styles.css` (pas audités un par un).
+
+---
+
 ## 2026-09-16 (suite 2) — Audit Google Business Profile & Solocal Manager
 
 Accès obtenu via l'extension Claude in Chrome (session déjà connectée dans le Chrome du client, pas de

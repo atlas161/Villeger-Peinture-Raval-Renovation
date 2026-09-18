@@ -340,7 +340,7 @@
                    aria-label="Partager par email">
                   <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                 </a>
-                <button class="share-btn copy" onclick="copyToClipboard()" aria-label="Copier le lien">
+                <button type="button" class="share-btn copy" aria-label="Copier le lien">
                   <i class="fa-solid fa-link" aria-hidden="true"></i>
                 </button>
               </div>
@@ -400,16 +400,6 @@
 
   <!-- Footer sera inclus dynamiquement -->
   <script src="../assets/js/footer.js"></script>
-
-  <!-- Script pour copier le lien -->
-  <script>
-    function copyToClipboard() {
-      navigator.clipboard.writeText(window.location.href).then(function() {
-        alert('Lien copié dans le presse-papier !');
-      }, function(err) {
-        console.error('Erreur lors de la copie :', err);
-      });
-    }
-  </script>
+  <script defer src="../assets/js/blog-article.js"></script>
 </body>
 </html>
