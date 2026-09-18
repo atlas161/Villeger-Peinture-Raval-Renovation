@@ -4,6 +4,55 @@ Log daté de toutes les sessions de travail sur le chantier SEO. Le plus récent
 
 ---
 
+## 2026-09-18 (suite 4) — Suite du nettoyage inline + découverte d'un hack CSS sitewide
+
+**⚠️ Découverte à connaître avant de toucher à n'importe quel `border-radius` sur le site** :
+`assets/css/styles.css` contient depuis longtemps (bien avant les sessions de nettoyage récentes,
+commit `da8bd98`) une règle globale :
+
+```css
+/* Forcer même sur les éléments avec styles inline */
+*[style*="border-radius"] {
+  border-radius: 12px !important;
+}
+```
+
+Cette règle force **tout** élément du site ayant un `style="..."` inline contenant le texte
+"border-radius" à afficher un rayon de 12px, **quelle que soit la valeur écrite dans le style inline**.
+Conséquence concrète trouvée en vérifiant rigoureusement (comparaison des styles calculés, pas
+seulement des captures d'écran) l'extraction des styles inline de cette session : plusieurs éléments
+avaient un `border-radius` inline différent de 12px (ex. `18px`, `20px`, et même `border-radius: 50%`
+sur l'icône ronde du bloc "Explorez tous nos articles" du blog) — **tous rendus à 12px en production
+depuis toujours**, y compris l'icône censée être un cercle qui s'affichait en réalité comme un carré
+arrondi. Ce n'est probablement pas voulu, mais fait partie de l'état actuel du site — non corrigé
+(gardé à l'identique par prudence, voir `CLAUDE.md`), juste documenté ici. Si vous voulez un jour de
+vrais cercles/rayons différents à ces endroits, il faudra soit retirer/cibler cette règle, soit changer
+la valeur en dur dans les classes CSS correspondantes (`gallery-card`, `blog-preview-card`,
+`blog-preview-badge`, `blog-cta-icon`, `.service-card`, `.faq-item`...).
+
+**Suite du nettoyage des pages de service** : après le dédoublonnage du header/nav, poursuite du
+nettoyage des styles inline restants sur les 5 pages de service. ~53 chaînes de style inline
+identiques étaient répétées sur 4 ou 5 pages (accordéon FAQ, cartes "Nos autres services", grille de
+services) — c'est en fait le même genre de duplication que le `<style>` du `<head>` déjà traité, juste
+dans le corps de page. Extrait les 7 patterns les plus sûrs (déjà porteurs d'une classe existante, donc
+aucun risque de collision de nommage) vers `assets/css/service-page.css` :
+`.faq-accordion`, `.faq-item`, `.faq-question`, `.faq-answer`, `.services-grid`, `.service-card`,
+`.service-icon` — environ 236 des ~600 attributs `style=""` restants supprimés sur les 5 pages
+(`ravalement-facade-angouleme.html` : 174→~40 restants, etc.).
+
+Vérifié par comparaison des styles calculés (`getComputedStyle`) entre la version d'avant cette session
+(commit `82a9c05`) et la version actuelle, sur toutes les classes concernées, sur les 6 pages
+(home + 5 services) : **0 différence**.
+
+Reste à faire (pas traité, moins prioritaire, ~360 attributs `style=""` restants) : le contenu propre à
+chaque page (fiche chantier, section "pourquoi nous choisir", bandeau CTA final) n'est pas identique
+mot pour mot d'une page à l'autre (textes, couleurs d'accent parfois différentes) — l'extraire proprement
+demande de vérifier au cas par cas plutôt qu'un simple copier-coller de classes, laissé pour une session
+dédiée. Idem pour les ~174 `!important` restants (86 dans `styles.css`, dont potentiellement d'autres
+hacks du même genre que celui documenté ci-dessus).
+
+---
+
 ## 2026-09-18 (suite 3) — Header/nav dédupliqués, audit responsive, bug formulaire majeur
 
 Suite de la session qualité de code. Client a demandé de continuer sur les tâches restantes +
