@@ -291,6 +291,8 @@
     
     <!-- JavaScript -->
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/apple-select.js"></script>
+    <script defer src="assets/js/form-security.js"></script>
     <script>
       // Slider Avant/Après interactif
       document.addEventListener('DOMContentLoaded', function() {
@@ -360,10 +362,10 @@
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
     
     <!-- Header -->
-    <header class="site-header" id="top">
+        <header class="site-header" id="top">
       <div class="container header-inner">
         <a href="index.html#top" class="logo" aria-label="VPRR - Accueil">
-          <img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villeger Peinture Raval Rénovation" width="150" height="40" />
+          <img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villéger Peinture Raval Rénovation" width="150" height="40" />
         </a>
 
         <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
@@ -698,23 +700,23 @@
             <p>VPRR vous accompagne dans tous vos projets de rénovation extérieure en Charente.</p>
           </header>
           
-          <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl); margin-top: var(--space-2xl);">
-            <article class="service-card" style="border: 2px solid var(--color-border); border-radius: 16px; padding: var(--space-xl); transition: all 0.3s ease;">
-              <div class="service-icon" style="width: 56px; height: 56px; background: var(--color-surface-alt); border-radius: 12px; display: grid; place-items: center; color: var(--color-primary); font-size: 1.5rem; margin-bottom: var(--space-md); box-shadow: 0 2px 8px rgba(45, 36, 30, 0.06);"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></div>
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></div>
               <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Nettoyage de Façade</h3>
               <p style="color: var(--color-text-light); margin-bottom: var(--space-md); line-height: 1.6;">Hydro-gommage doux et efficace pour redonner vie à vos murs extérieurs sans les abîmer.</p>
               <a href="nettoyage-facade-angouleme.html" class="btn btn-secondary btn--sm">En savoir plus</a>
             </article>
             
-            <article class="service-card" style="border: 2px solid var(--color-border); border-radius: 16px; padding: var(--space-xl); transition: all 0.3s ease;">
-              <div class="service-icon" style="width: 56px; height: 56px; background: var(--color-surface-alt); border-radius: 12px; display: grid; place-items: center; color: var(--color-primary); font-size: 1.5rem; margin-bottom: var(--space-md); box-shadow: 0 2px 8px rgba(45, 36, 30, 0.06);"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
               <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Nettoyage de Toiture</h3>
               <p style="color: var(--color-text-light); margin-bottom: var(--space-md); line-height: 1.6;">Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.</p>
               <a href="nettoyage-toiture-angouleme.html" class="btn btn-secondary btn--sm">En savoir plus</a>
             </article>
             
-            <article class="service-card" style="border: 2px solid var(--color-border); border-radius: 16px; padding: var(--space-xl); transition: all 0.3s ease;">
-              <div class="service-icon" style="width: 56px; height: 56px; background: var(--color-surface-alt); border-radius: 12px; display: grid; place-items: center; color: var(--color-primary); font-size: 1.5rem; margin-bottom: var(--space-md); box-shadow: 0 2px 8px rgba(45, 36, 30, 0.06);"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
               <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Ravalement de Façade</h3>
               <p style="color: var(--color-text-light); margin-bottom: var(--space-md); line-height: 1.6;">Rénovation complète de vos façades : réparation, enduit, peinture et protection longue durée.</p>
               <a href="ravalement-facade-angouleme.html" class="btn btn-secondary btn--sm">En savoir plus</a>
@@ -920,138 +922,138 @@
             <p>Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de peinture extérieure.</p>
           </header>
 
-          <div class="faq-accordion" style="max-width: 800px; margin: var(--space-2xl) auto 0;">
+          <div class="faq-accordion">
             <!-- Question 1 -->
-            <details class="faq-item" style="background: var(--color-white); border-radius: 16px; margin-bottom: var(--space-md); border: 2px solid var(--color-border-light); box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04); overflow: hidden;">
-              <summary class="faq-question" style="padding: var(--space-xl); cursor: pointer; font-weight: var(--font-weight-semibold); font-size: 1.125rem; color: var(--color-text); display: flex; align-items: center; gap: var(--space-md); list-style: none;">
-                <span style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 10px; display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0;">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon-badge">
                   <i class="fa-solid fa-tag" aria-hidden="true"></i>
                 </span>
                 <span>Quel est le prix moyen d'une peinture extérieure au m² en Charente ?</span>
-                <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left: auto; color: var(--color-text-light); transition: transform 0.3s ease;"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </summary>
-              <div class="faq-answer" style="padding: 0 var(--space-xl) var(--space-xl); color: var(--color-text-light); line-height: 1.7; border-top: 1px solid var(--color-border-light);">
-                <p style="margin-top: var(--space-lg);">
+              <div class="faq-answer">
+                <p>
                   Le prix d'une peinture extérieure en Charente varie généralement entre <strong>25€ et 45€ par m²</strong>, selon la surface à peindre, l'état du support et le type de finition souhaitée. Une façade simple coûte moins cher qu'une façade avec ornements ou nécessitant des réparations préalables. 
                 </p>
-                <p style="margin-top: var(--space-md);">
+                <p>
                   <strong>Exemple concret :</strong> Pour une façade de 80m² en bon état nécessitant une peinture standard, comptez environ 2 000€ à 3 000€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place.
                 </p>
               </div>
             </details>
 
             <!-- Question 2 -->
-            <details class="faq-item" style="background: var(--color-white); border-radius: 16px; margin-bottom: var(--space-md); border: 2px solid var(--color-border-light); box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04); overflow: hidden;">
-              <summary class="faq-question" style="padding: var(--space-xl); cursor: pointer; font-weight: var(--font-weight-semibold); font-size: 1.125rem; color: var(--color-text); display: flex; align-items: center; gap: var(--space-md); list-style: none;">
-                <span style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 10px; display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0;">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon-badge">
                   <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
                 </span>
                 <span>Faites-vous des devis gratuits sur Angoulême et alentours ?</span>
-                <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left: auto; color: var(--color-text-light); transition: transform 0.3s ease;"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </summary>
-              <div class="faq-answer" style="padding: 0 var(--space-xl) var(--space-xl); color: var(--color-text-light); line-height: 1.7; border-top: 1px solid var(--color-border-light);">
-                <p style="margin-top: var(--space-lg);">
+              <div class="faq-answer">
+                <p>
                   <strong>Oui, absolument.</strong> Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). 
                 </p>
-                <p style="margin-top: var(--space-md);">
+                <p>
                   Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre façade, évaluer l'état du support et identifier les travaux nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché.
                 </p>
               </div>
             </details>
 
-            <details class="faq-item" style="background: var(--color-white); border-radius: 16px; margin-bottom: var(--space-md); border: 2px solid var(--color-border-light); box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04); overflow: hidden;">
-              <summary class="faq-question" style="padding: var(--space-xl); cursor: pointer; font-weight: var(--font-weight-semibold); font-size: 1.125rem; color: var(--color-text); display: flex; align-items: center; gap: var(--space-md); list-style: none;">
-                <span style="width: 40px; height: 40px; background: #A88B5E; border-radius: 10px; display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0;">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon-badge faq-icon-badge--accent">
                   <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
                 </span>
                 <span>Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?</span>
-                <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left: auto; color: var(--color-text-light); transition: transform 0.3s ease;"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </summary>
-              <div class="faq-answer" style="padding: 0 var(--space-xl) var(--space-xl); color: var(--color-text-light); line-height: 1.7; border-top: 1px solid var(--color-border-light);">
-                <p style="margin-top: var(--space-lg);">
+              <div class="faq-answer">
+                <p>
                   <strong>Oui.</strong> Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment <strong>Cognac</strong>, <strong>Jarnac</strong>, <strong>Ruffec</strong>, <strong>Barbezieux-Saint-Hilaire</strong> et <strong>La Rochefoucauld-en-Angoumois</strong>.
                 </p>
-                <p style="margin-top: var(--space-md);">
+                <p>
                   Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit.
                 </p>
               </div>
             </details>
 
             <!-- Question 3 -->
-            <details class="faq-item" style="background: var(--color-white); border-radius: 16px; margin-bottom: var(--space-md); border: 2px solid var(--color-border-light); box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04); overflow: hidden;">
-              <summary class="faq-question" style="padding: var(--space-xl); cursor: pointer; font-weight: var(--font-weight-semibold); font-size: 1.125rem; color: var(--color-text); display: flex; align-items: center; gap: var(--space-md); list-style: none;">
-                <span style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 10px; display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0;">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon-badge">
                   <i class="fa-solid fa-clock" aria-hidden="true"></i>
                 </span>
                 <span>Combien de temps dure une prestation de peinture extérieure ?</span>
-                <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left: auto; color: var(--color-text-light); transition: transform 0.3s ease;"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </summary>
-              <div class="faq-answer" style="padding: 0 var(--space-xl) var(--space-xl); color: var(--color-text-light); line-height: 1.7; border-top: 1px solid var(--color-border-light);">
-                <p style="margin-top: var(--space-lg);">
+              <div class="faq-answer">
+                <p>
                   La durée d'intervention dépend de la surface et de la complexité des travaux :
                 </p>
-                <ul style="margin-top: var(--space-sm); padding-left: var(--space-lg);">
+                <ul>
                   <li><strong>Petite façade ou boiseries simples :</strong> 2-3 jours</li>
                   <li><strong>Façade moyenne (80-120m²) :</strong> 4-5 jours</li>
                   <li><strong>Grande façade ou travaux avec réparations :</strong> 1 à 2 semaines</li>
                 </ul>
-                <p style="margin-top: var(--space-md);">
+                <p>
                   Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir une application optimale de la peinture.
                 </p>
               </div>
             </details>
 
             <!-- Question 4 -->
-            <details class="faq-item" style="background: var(--color-white); border-radius: 16px; margin-bottom: var(--space-md); border: 2px solid var(--color-border-light); box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04); overflow: hidden;">
-              <summary class="faq-question" style="padding: var(--space-xl); cursor: pointer; font-weight: var(--font-weight-semibold); font-size: 1.125rem; color: var(--color-text); display: flex; align-items: center; gap: var(--space-md); list-style: none;">
-                <span style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 10px; display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0;">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon-badge">
                   <i class="fa-solid fa-receipt" aria-hidden="true"></i>
                 </span>
                 <span>Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?</span>
-                <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left: auto; color: var(--color-text-light); transition: transform 0.3s ease;"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </summary>
-              <div class="faq-answer" style="padding: 0 var(--space-xl) var(--space-xl); color: var(--color-text-light); line-height: 1.7; border-top: 1px solid var(--color-border-light);">
-                <p style="margin-top: var(--space-lg);">
+              <div class="faq-answer">
+                <p>
                   <strong>Transparence totale garantie.</strong> Notre devis détaillé comprend :
                 </p>
-                <ul style="margin-top: var(--space-sm); padding-left: var(--space-lg);">
+                <ul>
                   <li>La préparation du support (nettoyage, réparations si nécessaire)</li>
                   <li>La protection des zones sensibles</li>
                   <li>L'application des peintures haute qualité résistantes aux UV</li>
                   <li>La finition et le nettoyage du chantier</li>
                   <li>La TVA et les assurances</li>
                 </ul>
-                <p style="margin-top: var(--space-md);">
+                <p>
                   <strong style="color: var(--color-primary);">Promesse VPRR :</strong> Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise. Si nous découvrons un problème imprévu lors de l'intervention, nous vous en informons avant tout travail supplémentaire.
                 </p>
               </div>
             </details>
 
-            <details class="faq-item" style="background: var(--color-white); border-radius: 16px; margin-bottom: var(--space-md); border: 2px solid var(--color-border-light); box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04); overflow: hidden;">
-              <summary class="faq-question" style="padding: var(--space-xl); cursor: pointer; font-weight: var(--font-weight-semibold); font-size: 1.125rem; color: var(--color-text); display: flex; align-items: center; gap: var(--space-md); list-style: none;">
-                <span style="width: 40px; height: 40px; background: #A88B5E; border-radius: 10px; display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0;">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon-badge faq-icon-badge--accent">
                   <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
                 </span>
                 <span>La peinture extérieure est-elle garantie ?</span>
-                <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left: auto; color: var(--color-text-light); transition: transform 0.3s ease;"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </summary>
-              <div class="faq-answer" style="padding: 0 var(--space-xl) var(--space-xl); color: var(--color-text-light); line-height: 1.7; border-top: 1px solid var(--color-border-light);">
-                <p style="margin-top: var(--space-lg);">
+              <div class="faq-answer">
+                <p>
                   Nous intervenons avec une assurance Responsabilité Civile Professionnelle, et une assurance décennale lorsque la nature des travaux relève de la garantie décennale (ouvrages). La tenue dans le temps dépend surtout de la préparation du support et de l'exposition : c'est pourquoi nous détaillons la préparation, les produits et les couches dans le devis.
                 </p>
               </div>
             </details>
 
-            <details class="faq-item" style="background: var(--color-white); border-radius: 16px; margin-bottom: var(--space-md); border: 2px solid var(--color-border-light); box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04); overflow: hidden;">
-              <summary class="faq-question" style="padding: var(--space-xl); cursor: pointer; font-weight: var(--font-weight-semibold); font-size: 1.125rem; color: var(--color-text); display: flex; align-items: center; gap: var(--space-md); list-style: none;">
-                <span style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 10px; display: grid; place-items: center; color: white; font-size: 1rem; flex-shrink: 0;">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon-badge">
                   <i class="fa-solid fa-paint-roller" aria-hidden="true"></i>
                 </span>
                 <span>Quelle peinture utilisez-vous (microporeuse, finition, résistance UV) ?</span>
-                <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left: auto; color: var(--color-text-light); transition: transform 0.3s ease;"></i>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
               </summary>
-              <div class="faq-answer" style="padding: 0 var(--space-xl) var(--space-xl); color: var(--color-text-light); line-height: 1.7; border-top: 1px solid var(--color-border-light);">
-                <p style="margin-top: var(--space-lg);">
+              <div class="faq-answer">
+                <p>
                   Nous choisissons la peinture selon le support (enduit, façade déjà peinte, boiseries) et l'exposition. L'objectif est d'obtenir une finition propre et durable : préparation adaptée, sous-couche si nécessaire, et peinture extérieure résistante aux UV et aux intempéries (souvent microporeuse pour laisser respirer le support).
                 </p>
               </div>

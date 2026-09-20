@@ -28,7 +28,7 @@
   --color-primary-light: rgba(103, 58, 18, 0.08);
   --color-text: #2D241E;
   --color-text-light: #6B5D52;
-  --color-text-muted: #8B7D72;
+  --color-text-muted: #77695E; /* contraste WCAG AA (4.5:1+) sur fond blanc et --color-bg, était #8B7D72 (~3.7:1) */
   --brand-accent: #A88B5E;
   --brand-accent-light: rgba(168, 139, 94, 0.15);
   --color-bg: #F9F7F5;
@@ -2766,7 +2766,9 @@ html.vprr-ready #main-content {
 
 .gallery-card {
   background: var(--color-white);
-  border-radius: 18px;
+  /* 12px et non 18px : une règle plus bas (`*[style*="border-radius"]`) forçait déjà
+     12px !important sur cet élément quand ce border-radius était encore inline */
+  border-radius: 12px;
   border: 2px solid var(--color-border-light);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
@@ -2796,7 +2798,7 @@ html.vprr-ready #main-content {
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
   padding: 0.25rem 0.5rem;
-  border-radius: 8px;
+  border-radius: 12px; /* était 8px inline, forcé à 12px par la règle *[style*="border-radius"] */
   font-size: 0.75rem;
 }
 
@@ -2865,7 +2867,9 @@ html.vprr-ready #main-content {
 
 .blog-preview-card {
   background: var(--color-white);
-  border-radius: 20px;
+  /* 12px et non 20px : cf. .gallery-card ci-dessus, même règle globale qui forçait déjà
+     12px !important tant que ce border-radius était inline */
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2905,7 +2909,7 @@ html.vprr-ready #main-content {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 6px 14px;
-  border-radius: 20px;
+  border-radius: 12px; /* était 20px inline, forcé à 12px par la règle *[style*="border-radius"] */
   font-size: 0.75rem;
   font-weight: 600;
   color: #673A12;
@@ -2972,7 +2976,11 @@ html.vprr-ready #main-content {
   height: 80px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  border-radius: 50%;
+  /* Était border-radius: 50% (cercle) inline, mais *[style*="border-radius"] le forçait déjà
+     à 12px !important (donc un carré arrondi, pas un cercle) avant ce nettoyage — voir
+     docs/seo/journal.md, probablement pas voulu mais gardé à l'identique pour ne rien
+     changer visuellement sans validation. */
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;

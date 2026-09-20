@@ -5,6 +5,7 @@
   "scripts": {
     "build:blog": "node scripts/build-blog.js",
     "build": "npm run build:blog",
+    "sync:header": "node scripts/sync-header.js",
     "dev": "npx serve .",
     "test": "node --test"
   },

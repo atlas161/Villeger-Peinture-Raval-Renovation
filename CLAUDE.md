@@ -14,6 +14,14 @@ intérieure basé à L'Isle-d'Espagnac (16340), Angoulême, Charente. Gérant : 
   fichiers `blog/*.html` sont générés, ne jamais les éditer à la main (écrasés au prochain build).
 - Détails complets de l'architecture : [`docs/seo/architecture.md`](docs/seo/architecture.md).
 
+## Chantier qualité de code en cours
+
+En parallèle du SEO, un chantier de remise aux bonnes pratiques (HTML/CSS/JS, a11y, perf, sans changer
+le rendu visuel) est en cours depuis le 2026-09-18. **Avant de continuer ce chantier ou de toucher au
+CSS/JS des pages de service, lire [`docs/code-quality-refactor.md`](docs/code-quality-refactor.md)** :
+état d'avancement, PR en attente de merge, méthode de vérification "aucun changement visuel" (piège des
+captures d'écran + piège d'une règle CSS globale sur `border-radius`), et ce qu'il reste à faire.
+
 ## Chantier SEO en cours
 
 Un audit SEO complet a été fait le 2026-09-16 et un plan d'action long terme est en cours d'exécution,
