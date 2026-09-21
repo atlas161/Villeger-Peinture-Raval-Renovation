@@ -845,9 +845,6 @@
 .review-author {
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .review-source {
@@ -884,12 +881,6 @@
 
   .review-stars {
     margin-top: 0;
-  }
-
-  .review-author {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
   }
 }
 

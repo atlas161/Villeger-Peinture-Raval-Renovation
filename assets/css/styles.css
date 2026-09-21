@@ -1068,6 +1068,11 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   margin-top: var(--space-2xl);
 }
 
+/* Évite une carte orpheline seule dans la dernière ligne d'une grille à 2 colonnes */
+.svc-grid > .svc-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 /* Carte = lien cliquable */
 .svc-card {
   display: flex;
@@ -2679,9 +2684,23 @@ html.vprr-ready #main-content {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* 4 cartes : grille explicite (1 / 2 / 4 colonnes) pour ne jamais laisser
+     une carte orpheline seule sur sa ligne, contrairement à un auto-fit fluide. */
+  grid-template-columns: 1fr;
   gap: var(--space-xl);
   margin-top: var(--space-2xl);
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .gallery-card {

@@ -6,7 +6,10 @@
 /* Styles spécifiques page service - Apple-style */
 .service-hero {
   background: linear-gradient(135deg, #FBF9F6 0%, var(--color-surface) 100%);
-  padding: calc(var(--header-height) + var(--space-3xl)) var(--space-lg) var(--space-4xl);
+  /* `body` compense déjà la hauteur du header fixe (padding-top: var(--header-height)) :
+     ajouter var(--header-height) ici comptait le header deux fois et poussait le H1
+     inutilement bas (surtout gênant sur mobile, où ça mange ~1/4 de l'écran). */
+  padding: var(--space-3xl) var(--space-lg) var(--space-4xl);
   position: relative;
   overflow: hidden;
 }
@@ -671,7 +674,6 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--space-2xl);
   margin-top: var(--space-2xl);
-  align-items: start;
 }
 
 .before-after-card {
@@ -681,11 +683,17 @@
   border: 2px solid var(--color-border-light);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
+  /* Étire la carte photo à la même hauteur que la fiche chantier voisine
+     (grille "stretch" par défaut) au lieu de laisser un vide sous une photo
+     plus courte. */
+  height: 100%;
+  min-height: 260px;
 }
 
 .before-after-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100%;
 }
 
 .before-after-images figure {
@@ -866,6 +874,9 @@
 .reassurance-item--accent {
   background: linear-gradient(135deg, #f8f5f2 0%, #fff 100%);
   border: 2px solid #A88B5E;
+  /* Occupe toute la largeur : évite qu'elle se retrouve seule sur sa ligne
+     (7 cartes dans une grille à 3 colonnes) et referme la section en accent. */
+  grid-column: 1 / -1;
 }
 
 .reassurance-item--accent .reassurance-icon {

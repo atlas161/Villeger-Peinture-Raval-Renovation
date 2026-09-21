@@ -57,10 +57,7 @@
 }
 
 .breadcrumb-item.current span {
-  max-width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 480px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -1077,7 +1074,7 @@
 
 @media (max-width: 480px) {
   .breadcrumb-item.current span {
-    max-width: 120px;
+    max-width: 220px;
   }
   
   .article-content {
