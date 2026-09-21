@@ -161,16 +161,18 @@ Compteurs de styles inline restants sur les pages de service (après tout le tra
 `nettoyage-toiture-angouleme.html` 120→63, `peinture-exterieure-charente.html` 120→63,
 `isolation-interieure-charente.html` 92→42.
 
+## Décisions produit actées
+
+- **Hack `*[style*="border-radius"]` (2026-09-21)** : le client a tranché explicitement — le rendu
+  visuel actuel doit être conservé tel quel partout, y compris là où le hack transforme un cercle prévu
+  en carré à bord arrondi (ex. `.blog-cta-icon`). **Ne jamais "corriger" ce rendu** ; toute nouvelle
+  extraction de style inline contenant un `border-radius` doit continuer à fixer explicitement
+  `border-radius: 12px` (comme fait dans tout ce chantier), jamais la valeur inline d'origine.
+
 ## Ce qui reste à faire (pas traité, par ordre approximatif de valeur)
 
 1. **`.apple-select` sans `<fieldset>`/`<legend>`** groupant nom/téléphone dans le formulaire — a11y
    nice-to-have, pas un défaut bloquant.
-2. **Décision produit en attente** (pas un TODO technique, à poser au client) : le hack
-   `*[style*="border-radius"]` rend le cercle d'icône du bloc "Explorez tous nos articles" du blog
-   (`.blog-cta-icon`) comme un carré arrondi au lieu d'un cercle. Ce n'était probablement pas voulu à
-   l'origine mais fait partie du rendu actuel du site — demander au client s'il veut qu'on corrige
-   (nécessite de cibler la règle globale plus précisément, ou de retirer `.blog-cta-icon` de son
-   périmètre) avant de le changer, puisque ça change un rendu visuel actuel.
 
 ## Repères pratiques
 

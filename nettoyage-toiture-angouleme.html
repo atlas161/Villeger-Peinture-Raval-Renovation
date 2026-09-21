@@ -823,7 +823,8 @@
               <!-- Timestamp anti-bot (détecte les soumissions trop rapides) -->
               <input type="hidden" name="form-timestamp" id="form-timestamp" value="" />
               
-              <div class="contact-form-row">
+              <fieldset class="contact-form-row">
+                <legend class="visually-hidden">Nom et téléphone</legend>
                 <div class="form-field">
                   <label for="contact-nom">Nom</label>
                   <input type="text" id="contact-nom" name="nom" placeholder="Votre nom" autocomplete="name" required />
@@ -832,7 +833,7 @@
                   <label for="contact-telephone">Téléphone</label>
                   <input type="tel" id="contact-telephone" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel" required />
                 </div>
-              </div>
+              </fieldset>
               
               <div class="form-field">
                 <label for="contact-email">Email</label>
