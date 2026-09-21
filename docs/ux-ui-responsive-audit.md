@@ -204,24 +204,24 @@ n'existe pas réellement sur la page (confirmé à chaque fois via `document.doc
 capture après un `wait`, ou par `getComputedStyle`/`scrollWidth`, avant de conclure à un bug visuel — cf.
 piège similaire déjà documenté dans `code-quality-refactor.md` pour Playwright.
 
-## Ce qu'il reste à auditer (prochaine session)
+## État au 2026-09-21 (fin de session)
 
-- Les 4 dernières pages de service (`nettoyage-facade-angouleme.html`,
-  `nettoyage-toiture-angouleme.html`, `peinture-exterieure-charente.html`,
-  `isolation-interieure-charente.html`) ont été vérifiées en mobile (hero + sections "problème") : le
-  correctif du plancher de police s'applique bien partout (H1 sur 2-3 lignes, plus 5-6), aucune anomalie
-  trouvée. Vérification limitée au scroll visuel, pas un passage exhaustif section par section comme pour
-  `ravalement-facade-angouleme.html`.
-- Taille des cibles tactiles (zones cliquables) des petits boutons icône (`.share-btn`, `.filter-btn`,
-  `.blog-carousel-btn`) — non mesurée précisément cette session, à vérifier avec `getComputedStyle`
-  (cible WCAG : 44×44px mini).
-- Audit clavier complet (tab order, focus visible sur tous les composants interactifs — menu burger,
-  carrousel blog, filtres galerie).
-- Audit perf images (poids/format, dimensions servies vs affichées) mentionné comme piste dans
-  `code-quality-refactor.md` et jamais fait.
-- Hiérarchie visuelle et densité d'information sur les pages de service en desktop large (>1440px) — non
-  vérifié.
-- Revérifier visuellement `mentions-legales.html` (sommaire `.zone-note`) suite au correctif du point 3.
+Toute la liste initiale du chantier est traitée : hero/responsive, bug `.zone-note`, clavier/menu burger
+(+ son logo devenu quasi invisible, trouvé et corrigé au passage), cibles tactiles, perf images. Vérifié
+en plus la hiérarchie visuelle en desktop large (1600px, page ravalement) : le contenu reste dans le
+`--container-max`, pas d'étirement anormal, rien à corriger.
+
+## Pistes pour une prochaine session (non bloquantes, aucune n'est un bug confirmé)
+
+- **Incohérence des breakpoints CSS** (priorité 2 ci-dessus) : analysée, jugée délibérée composant par
+  composant, pas de bug réel — décision de ne pas réécrire en chantier dédié, seulement au fil de l'eau.
+- **Modale des réglages cookies** (`#cookie-settings-modal`) sans piège à focus ni fermeture au clavier
+  (Escape) — même famille de problème que le menu burger corrigé cette session, mais usage plus rare.
+- Audit clavier limité aux composants explicitement demandés (burger, carrousel blog, filtres) — un
+  passage exhaustif (tab order sur toutes les pages, y compris pages de service/FAQ/zone) n'a pas été
+  fait.
+- Pages de service (nettoyage façade/toiture, peinture extérieure, isolation) vérifiées en scroll visuel
+  mobile uniquement, pas un passage exhaustif section par section comme pour la page ravalement.
 
 ## Repères
 
