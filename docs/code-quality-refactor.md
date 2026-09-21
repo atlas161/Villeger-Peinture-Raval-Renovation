@@ -169,10 +169,11 @@ Compteurs de styles inline restants sur les pages de service (après tout le tra
   extraction de style inline contenant un `border-radius` doit continuer à fixer explicitement
   `border-radius: 12px` (comme fait dans tout ce chantier), jamais la valeur inline d'origine.
 
-## Ce qui reste à faire (pas traité, par ordre approximatif de valeur)
+## Ce qui reste à faire
 
-1. **`.apple-select` sans `<fieldset>`/`<legend>`** groupant nom/téléphone dans le formulaire — a11y
-   nice-to-have, pas un défaut bloquant.
+Backlog initial épuisé au 2026-09-21 (fieldset/legend fait dans le commit `c600f64`, décision
+border-radius actée). Voir le journal SEO/exploration ci-dessous pour la suite identifiée en continuant
+le chantier.
 
 ## Repères pratiques
 
