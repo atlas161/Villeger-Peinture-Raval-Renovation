@@ -14,6 +14,7 @@
       .then(html => {
         // Insérer le footer à la fin du body
         const footerContainer = document.createElement('div');
+        footerContainer.id = 'site-footer-wrapper';
         footerContainer.innerHTML = html;
         document.body.appendChild(footerContainer);
 

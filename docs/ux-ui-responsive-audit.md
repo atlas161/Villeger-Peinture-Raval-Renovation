@@ -53,6 +53,55 @@ page de service (`ravalement-facade-angouleme.html`) et lecture du CSS/JS pour l
    images above-the-fold (où `lazy` serait contre-productif) ; sinon, ajouter l'attribut pour réduire le
    poids initial sur mobile.
 
+## Priorité 1 bis — Audit clavier du menu burger (corrigé)
+
+4. **Focus qui pouvait "s'échapper" derrière le menu mobile ouvert** (`assets/js/main.js`,
+   `assets/js/footer.js`) — le menu mobile plein écran (`.primary-nav.open`) est un overlay
+   `position: fixed` par-dessus tout le reste de la page, mais rien n'empêchait un utilisateur clavier de
+   continuer à tabuler dans `#main-content` et le footer (`#site-footer-wrapper`, contenant aussi la
+   bannière cookies), invisibles derrière l'overlay. Un utilisateur au clavier pouvait donc perdre le
+   focus sur un lien qu'il ne voit plus à l'écran. **→ Corrigé avec l'attribut natif `inert`** : posé sur
+   `#main-content` et `#site-footer-wrapper` à l'ouverture du menu (et retiré à la fermeture, par le
+   bouton, Escape ou un clic sur un lien), ce qui rend tout leur contenu ignoré par Tab/lecteur d'écran
+   tant que le menu est ouvert. Le footer n'ayant pas d'`id` avant ce correctif (juste un `<div>`
+   générique ajouté par `footer.js`), un `id="site-footer-wrapper"` lui a été ajouté pour pouvoir le
+   cibler.
+5. **`aria-label` du bouton burger figé sur "Ouvrir le menu"** même une fois le menu ouvert — seul
+   `aria-expanded` changeait. **→ Le label bascule maintenant entre "Ouvrir le menu" et "Fermer le
+   menu"** selon l'état, en plus de `aria-expanded` (déjà correct).
+
+Vérifié en JS (`aria-expanded`, `aria-label`, présence de `inert`) à l'ouverture et à la fermeture
+(bouton + Escape), et visuellement (aucun changement d'apparence, l'icône burger s'anime toujours en
+croix comme avant).
+
+**Reste du site déjà solide côté clavier**, vérifié par lecture du code : tous les boutons/icônes
+interactifs trouvés (`blog-carousel-btn`, `share-btn`, filtres FAQ/blog, "Tout déplier/replier") sont de
+vrais `<button>`/`<a>` natifs avec `aria-label`, donc focusables et activables au clavier sans JS
+supplémentaire. Un `:focus-visible` global (`styles.css`) et un lien "aller au contenu" (`.skip-to-content`)
+existent déjà. Seul point non corrigé, mineur et hors scope de cette passe : la **modale des réglages
+cookies** (`#cookie-settings-modal` dans `includes/footer.html`) n'a pas de piège à focus ni de fermeture
+au clavier (Escape) — même famille de problème que le menu burger, mais un cas d'usage beaucoup plus rare
+(elle ne s'ouvre que si l'utilisateur clique explicitement sur "Paramètres" dans le bandeau cookies).
+
+## Priorité 2 — Incohérence des breakpoints CSS : analyse (pas de correctif ce round)
+
+Creusé plus en détail avant de me lancer dans une réécriture : **les seuils différents ne sont pas des
+bugs, mais des choix délibérés par composant**, et une "harmonisation" en dur serait un chantier lourd et
+risqué pour un bénéfice purement cosmétique/maintenance :
+- Les paires qui coexistent dans un même fichier sont complémentaires et correctes (ex.
+  `styles.css` : `.svc-grid` en `max-width: 767px` + `.svc-card` en
+  `min-width: 768px and max-width: 1023px` → aucun trou, aucun chevauchement).
+- Les seuils "atypiques" (`420px` dans `hero.css`, `380px` dans `zone.css`) sont des réglages fins
+  intentionnels pour les très petits mobiles, pas des copier-coller oubliés.
+- Réécrire tous les seuils vers un jeu "officiel" (480/768/992/1200) changerait le pixel exact où
+  chaque composant bascule sur **10 pages** sans aucun outil de comparaison visuelle automatisé sur ce
+  projet (site statique, pas de suite de tests visuels) — le risque de régression invisible dépasse le
+  bénéfice pour un site qui fonctionne déjà correctement à tous les breakpoints testés.
+
+**Recommandation : ne pas faire de réécriture globale.** Garder la convention 480/768/992/1200 pour tout
+**nouveau** CSS (déjà notée plus haut), et n'unifier un seuil existant que ponctuellement, quand on touche
+de toute façon le composant concerné pour une autre raison — jamais comme chantier dédié isolé.
+
 ## Pages vérifiées cette session (mobile 375px, plus tablette/desktop pour les points corrigés)
 
 Home, `ravalement-facade-angouleme.html`, `zone-desservie-charente.html` (carte Leaflet incluse),

@@ -13,6 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link'));
   const navButtons = Array.from(document.querySelectorAll('.primary-nav .menu a.btn'));
 
+  // Empêche le clavier/lecteur d'écran d'atteindre le contenu caché derrière le menu mobile
+  // plein écran (sans ça, Tab pouvait faire sortir le focus sur des liens invisibles de la
+  // page, masqués par l'overlay du menu — voir docs/ux-ui-responsive-audit.md).
+  const setBackgroundInert = (isInert) => {
+    document.querySelectorAll('#main-content, #site-footer-wrapper').forEach((el) => {
+      if (isInert) el.setAttribute('inert', '');
+      else el.removeAttribute('inert');
+    });
+  };
+
   const heroBg = document.querySelector('.hero-bg');
   const heroVimeo = heroBg ? heroBg.querySelector('iframe.hero-video') : null;
   const pageLoader = document.getElementById('page-loader');
@@ -248,8 +258,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Fermer le menu
         nav.classList.remove("open");
         burger.setAttribute("aria-expanded", "false");
+        burger.setAttribute("aria-label", "Ouvrir le menu");
         document.body.classList.remove('nav-open');
-        
+        setBackgroundInert(false);
+
         // Restaurer la position du scroll
         document.body.style.position = '';
         document.body.style.top = '';
@@ -259,11 +271,13 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         // Sauvegarder la position du scroll avant d'ouvrir le menu
         scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         // Ouvrir le menu
         nav.classList.add("open");
         burger.setAttribute("aria-expanded", "true");
+        burger.setAttribute("aria-label", "Fermer le menu");
         document.body.classList.add('nav-open');
+        setBackgroundInert(true);
         
         // Fixer le body pour empêcher le scroll arrière
         document.body.style.position = 'fixed';
@@ -321,8 +335,10 @@ document.addEventListener("DOMContentLoaded", () => {
         closeAllMobileSubmenus();
         nav.classList.remove("open");
         burger.setAttribute("aria-expanded", "false");
+        burger.setAttribute("aria-label", "Ouvrir le menu");
         document.body.classList.remove('nav-open');
-        
+        setBackgroundInert(false);
+
         // Restaurer la position du scroll sur le body
         document.body.style.position = '';
         document.body.style.top = '';
