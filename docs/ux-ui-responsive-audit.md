@@ -70,10 +70,12 @@ piège similaire déjà documenté dans `code-quality-refactor.md` pour Playwrig
 
 ## Ce qu'il reste à auditer (prochaine session)
 
-- 4 pages non encore auditées : `nettoyage-facade-angouleme.html`, `nettoyage-toiture-angouleme.html`,
-  `peinture-exterieure-charente.html`, `isolation-interieure-charente.html` (probablement les mêmes
-  patterns que `ravalement-facade-angouleme.html` vu qu'elles partagent `service-page.css`, mais à
-  confirmer page par page).
+- Les 4 dernières pages de service (`nettoyage-facade-angouleme.html`,
+  `nettoyage-toiture-angouleme.html`, `peinture-exterieure-charente.html`,
+  `isolation-interieure-charente.html`) ont été vérifiées en mobile (hero + sections "problème") : le
+  correctif du plancher de police s'applique bien partout (H1 sur 2-3 lignes, plus 5-6), aucune anomalie
+  trouvée. Vérification limitée au scroll visuel, pas un passage exhaustif section par section comme pour
+  `ravalement-facade-angouleme.html`.
 - Taille des cibles tactiles (zones cliquables) des petits boutons icône (`.share-btn`, `.filter-btn`,
   `.blog-carousel-btn`) — non mesurée précisément cette session, à vérifier avec `getComputedStyle`
   (cible WCAG : 44×44px mini).
