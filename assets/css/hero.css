@@ -117,7 +117,11 @@
 
 /* ── Titre ── */
 .hero-title {
-  font-size: clamp(2.8rem, 5.8vw, 4.75rem);
+  /* Plancher abaissé (2.8rem -> 1.9rem) pour les petits mobiles (<400px) : avec l'ancien
+     plancher, le titre passait sur 5-6 lignes et repoussait le CTA très bas (voir
+     docs/ux-ui-responsive-audit.md). Pente (5.8vw) et plafond (4.75rem) inchangés : le rendu
+     tablette/desktop reste identique. */
+  font-size: clamp(1.9rem, 5.8vw, 4.75rem);
   font-weight: var(--font-weight-bold);
   color: #fff;
   line-height: 1.05;

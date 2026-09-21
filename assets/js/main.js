@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (pageLoader) {
     rootEl.classList.add('vprr-loading');
-    window.setTimeout(finishLoading, 9000);
+    // Filet de sécurité si la vidéo Vimeo tarde (réseau lent, erreur) : on ne bloque
+    // jamais le contenu (header, texte, CTA) plus de 2.5s derrière l'écran de chargement.
+    window.setTimeout(finishLoading, 2500);
   }
 
   if (heroBg && heroVimeo && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
