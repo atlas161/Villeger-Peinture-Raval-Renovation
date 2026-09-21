@@ -172,8 +172,16 @@ Compteurs de styles inline restants sur les pages de service (après tout le tra
 ## Ce qui reste à faire
 
 Backlog initial épuisé au 2026-09-21 (fieldset/legend fait dans le commit `c600f64`, décision
-border-radius actée). Voir le journal SEO/exploration ci-dessous pour la suite identifiée en continuant
-le chantier.
+border-radius actée). Petit scan rapide fait en fin de session (images sans `alt`, `id` dupliqués,
+`console.log` qui traînent en prod) : rien trouvé — le site est propre sur ces points. Pistes proposées
+au client pour une prochaine session si besoin : audit perf (poids/format des images, lazy-loading), ou
+reprendre `docs/seo/README.md` pour le chantier SEO séparé.
+
+**Note 2026-09-21** : le client a signalé un "mauvais rendu" sur la section Galerie de `index.html` en
+prod (`#galerie` / "Nos réalisations") — vérifié en direct sur https://vprr.fr (desktop + mobile),
+aucun problème constaté (cartes avant/après, badges, `border-radius` 12px cohérent partout). Le client a
+confirmé que c'était un souci de cache navigateur de son côté (page pas rafraîchie), pas un vrai bug. À
+revérifier si le signalement revient.
 
 ## Repères pratiques
 
