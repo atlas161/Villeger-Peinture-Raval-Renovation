@@ -5,16 +5,63 @@ pratiques (HTML/CSS/JS, accessibilité, performance) **sans changer le rendu vis
 audit responsive. Ce fichier sert de point de reprise pour une nouvelle session — lisez-le avant de
 continuer ce chantier.
 
-## État au 2026-09-20
+## État au 2026-09-21
 
-- **Branche** : `claude/gallant-lovelace-nv4z75`
-- **PR #1** (atlas161/Villeger-Peinture-Raval-Renovation) : **mergée** dans `main`, déployée en prod sur
-  vprr.fr.
-- **PR #2** : https://github.com/atlas161/Villeger-Peinture-Raval-Renovation/pull/2 — **ouverte, verte
-  (CI + deploy preview Netlify OK, `mergeable_state: clean`), en attente de review/merge par le client**.
-  Contient 3 commits (`fe01729`, `89acddc`, `fd0d545`). Le client a dit qu'il reviendrait dessus
-  "le lendemain" (pas de date précise donnée) — ne pas la merger sans son feu vert explicite.
+- **Branche** : `main` (travail fait directement sur `main` depuis cette session, commits + push
+  validés explicitement par le client à chaque étape).
+- **PR #1 et #2** : mergées, déployées en prod. Le fichier mentionnait auparavant PR #2 comme "en
+  attente de review" mais elle était en réalité déjà mergée (commit `cf6f279`) — vérifier toujours
+  `git log`/`gh pr list` plutôt que de se fier à ce doc pour l'état exact des PR.
+- **Commit `93d1c85`/`cfd0f5f`** : audit complet des `!important` CSS (`docs` ci-dessous, section
+  "!important").
+- **Commit `59c9859`** : extraction des styles inline restants des 5 pages de service (`docs` ci-dessous,
+  section "styles inline pages de service").
 - Aucun changement en attente non commité au moment de la rédaction de ce fichier.
+
+## Audit `!important` (fait le 2026-09-21)
+
+- **Bug racine trouvé** : `.btn` utilisait `border-radius: var(--radius-md)`, variable jamais définie
+  (typo pour `--radius`) → avait fait accumuler ~15 règles `!important` en cascade pour forcer 12px sur
+  les boutons. Corrigé (`var(--radius)`), permettant de supprimer tout ce bloc mort.
+- **Piège rencontré** : une règle générique `button { border-radius: 12px !important }` supprimée à tort
+  affectait en fait 7 autres boutons du site avec leur propre design (pilule/cercle) :
+  `.burger`, `.reviews-btn`, `.faq-filter-btn`, `.blog-carousel-btn`, `.filter-btn`, `.share-btn.copy`,
+  `.article-nav-btn`, `.submenu-back-btn`. Tous corrigés avec `border-radius: 12px` explicite + commentaire.
+- `blog.css` : bloc entier de règles ciblant des classes de footer **mortes** (`.footer-col`,
+  `.footer-links`, `.social-badge`...) supprimé — le footer réel (`includes/footer.html` via
+  `footer.js`) utilise `.footer-title`, `.footer-link`, `.social-link` etc. depuis longtemps.
+- `nav.css` : bloc entier supprimé, dupliquait exactement une règle de `styles.css` (le commentaire
+  l'admettait déjà).
+- `contact.css` : deux définitions concurrentes de `.form-actions` fusionnées en une seule (l'une avait
+  `!important` pour forcer le centrage face à l'autre, plus récente, qui aurait sinon mis les CTA en
+  `space-between`).
+- **Laissé intact** (usages légitimes, ne pas retoucher sans raison) : tous les `!important` de
+  `zone.css` (overrides Leaflet, bibliothèque tierce), de `utilities.css` (`.visually-hidden`, pattern
+  a11y standard), et le hack documenté `*[style*="border-radius"]` dans `styles.css` (décision produit
+  toujours en attente côté client, voir plus bas).
+- Total restant : ~72 `!important` réels (hors mentions dans des commentaires), tous audités et jugés
+  nécessaires.
+
+## Styles inline pages de service (fait le 2026-09-21)
+
+Réduit de ~330 à 2 attributs `style=""` sur les 5 pages de service (les 2 restants sont des variables
+CSS `--pricing-card-accent` légitimes sur `ravalement-facade-angouleme.html`, pour les couleurs
+d'accent des 3 paliers de prix — cas d'usage correct d'un style inline minimal plutôt qu'une classe par
+palier).
+
+Nouvelles classes ajoutées dans `assets/css/service-page.css` : bloc avant/après + fiche chantier
+(`.before-after-*`, `.jobsheet-*`), CTA final en verre dépoli (`.cta-glass-*`), encart "nos autres
+services" (`.related-services-*`), encart isolation (`.info-box`), tarifs + "pourquoi agir maintenant"
+spécifiques à la page ravalement (`.pricing-*`, `.why-now-*`), variantes de mise en avant
+(`.feature-card--highlight`, `.reassurance-item--accent`), petits blocs communs (`.section-note`,
+`.service-card h3/p`, `.section-cta`). Nouvelle classe `.text-primary` dans `utilities.css` pour
+l'emphase de texte inline.
+
+**Piège rencontré (même famille que le hack border-radius documenté plus haut)** : plusieurs éléments
+avaient un `border-radius` inline différent de 12px (16px, 18px, 10px, 14px, 24px) mais s'affichaient
+déjà à 12px à cause de la règle `*[style*="border-radius"]`. En retirant l'attribut `style`, ce hack ne
+s'applique plus à ces éléments : chaque nouvelle classe fixe donc explicitement `border-radius: 12px`
+avec un commentaire expliquant pourquoi, pour préserver le rendu actuel identique.
 
 ## Méthode de travail à connaître avant de continuer
 
@@ -116,18 +163,9 @@ Compteurs de styles inline restants sur les pages de service (après tout le tra
 
 ## Ce qui reste à faire (pas traité, par ordre approximatif de valeur)
 
-1. **Styles inline du contenu propre à chaque page de service** (~350 restants au total) : fiche
-   chantier (image avant/après + liste "Zone/Support/Problèmes/Solution/Durée"), section "pourquoi nous
-   choisir" (icônes badge couleur primary/accent, déjà vues côté FAQ — mêmes classes réutilisables),
-   bandeau CTA final, backgrounds de section alternés (blanc/surface-alt/dégradé). Contrairement aux
-   lots déjà traités, ce contenu **n'est pas identique mot pour mot** d'une page à l'autre (textes,
-   parfois couleurs d'accent différentes) — vérifier au cas par cas plutôt qu'un simple copier-coller de
-   classes.
-2. **~174 `!important` restants** (dont 86 dans `styles.css`, jamais audités un par un dans ce
-   chantier — pourraient contenir d'autres hacks du même genre que celui documenté plus haut).
-3. **`.apple-select` sans `<fieldset>`/`<legend>`** groupant nom/téléphone dans le formulaire — a11y
+1. **`.apple-select` sans `<fieldset>`/`<legend>`** groupant nom/téléphone dans le formulaire — a11y
    nice-to-have, pas un défaut bloquant.
-4. **Décision produit en attente** (pas un TODO technique, à poser au client) : le hack
+2. **Décision produit en attente** (pas un TODO technique, à poser au client) : le hack
    `*[style*="border-radius"]` rend le cercle d'icône du bloc "Explorez tous nos articles" du blog
    (`.blog-cta-icon`) comme un carré arrondi au lieu d'un cercle. Ce n'était probablement pas voulu à
    l'origine mais fait partie du rendu actuel du site — demander au client s'il veut qu'on corrige
