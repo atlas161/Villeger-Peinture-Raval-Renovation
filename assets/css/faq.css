@@ -41,6 +41,11 @@
   /* Rendu actuel = 12px, pas une pilule : voir note sur .burger dans styles.css. */
   border-radius: 12px;
   padding: 10px 14px;
+  /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5) ; le padding seul ne
+     donnait que 37px de haut. inline-flex pour garder le texte centré verticalement. */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
   font-weight: var(--font-weight-medium);
   font-size: 0.9375rem;
   line-height: 1;

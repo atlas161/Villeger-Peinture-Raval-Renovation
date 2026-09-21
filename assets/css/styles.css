@@ -612,8 +612,10 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5), c'est le contrôle
+     de navigation mobile le plus utilisé du site. Header de 72px : marge inchangée. */
+  width: 44px;
+  height: 44px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

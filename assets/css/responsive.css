@@ -68,10 +68,13 @@
   }
   
   .blog-page .share-btn {
-    width: 40px;
-    height: 40px;
+    /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5). Note : blog/article.css
+       (chargé après ce fichier sur les pages d'article) définit .share-btn en 44px sans media
+       query et l'emporte déjà ; cette règle reste pour les autres pages ".blog-page". */
+    width: 44px;
+    height: 44px;
   }
-  
+
   .blog-page .article-cta .cta-card {
     flex-direction: column;
     text-align: center;

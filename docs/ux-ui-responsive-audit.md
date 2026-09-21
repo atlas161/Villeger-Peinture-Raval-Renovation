@@ -83,6 +83,39 @@ cookies** (`#cookie-settings-modal` dans `includes/footer.html`) n'a pas de piè
 au clavier (Escape) — même famille de problème que le menu burger, mais un cas d'usage beaucoup plus rare
 (elle ne s'ouvre que si l'utilisateur clique explicitement sur "Paramètres" dans le bandeau cookies).
 
+## Priorité 1 ter — Cibles tactiles trop petites (corrigé)
+
+Mesure en direct (`getBoundingClientRect`) des petits boutons icône sur mobile (375px), la même liste
+que celle des boutons concernés par le hack `border-radius` documenté dans
+`code-quality-refactor.md` :
+
+| Bouton | Avant | Après | Page |
+|---|---|---|---|
+| `.burger` (menu principal) | 40×40 | 44×44 | toutes |
+| `.reviews-btn` (avis Google, home) | 40×40 | 44×44 | home |
+| `.share-btn` (partage article) | 40×40 | 44×44 | blog/article |
+| `.article-nav-btn` (nav article précédent/suivant) | 40×40 | 44×44 | blog/article |
+| `.faq-filter-btn` (filtres catégorie FAQ) | largeur variable × **37** | idem × **44** | FAQ |
+
+44×44 = recommandation Apple HIG / WCAG 2.5.5 (AAA). Tout était déjà **conforme WCAG 2.5.8 (AA)**, qui
+exige seulement 24×24 minimum — donc pas un bug d'accessibilité au sens strict, mais un vrai risque de
+mauvaise manipulation sur mobile pour des contrôles très utilisés (le burger en particulier).
+
+Non touchés (déjà bons) : `.filter-btn` du blog (déjà `min-height: 44px`, voire 48px sur mobile — un
+commentaire dans le CSS d'origine montre que c'était déjà pensé), `.blog-carousel-btn` (44×44, masqué sur
+mobile ≤768px donc non concerné), boutons "Tout déplier/replier" (43px, jugé suffisamment proche de 44
+pour ne pas justifier une retouche).
+
+**Piège trouvé en creusant `.share-btn`** : `assets/css/blog.css` définit `.share-btn` à 44×44, mais sur
+les pages d'article c'est en réalité `blog/article.css` (fichier différent, chargé en dernier) qui
+s'applique et qui définissait 40×40 sans condition — la règle mobile de `responsive.css` qui semblait
+être la cause était en fait déjà sans effet (écrasée par `blog/article.css` chargé après elle). Les deux
+fichiers ont été corrigés pour rester cohérents.
+
+Vérifié visuellement (aucun chevauchement, les 5 boutons de partage tiennent toujours sur une ligne, le
+burger ne déborde pas du header) et par nouvelle mesure JS après correctif (tous à 44×44/44 de haut).
+`npm test` toujours vert.
+
 ## Priorité 2 — Incohérence des breakpoints CSS : analyse (pas de correctif ce round)
 
 Creusé plus en détail avant de me lancer dans une réécriture : **les seuils différents ne sont pas des
