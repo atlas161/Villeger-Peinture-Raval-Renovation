@@ -149,13 +149,18 @@ problèmes trouvés et corrigés :
    en place sur le disque, juste dé-référencé - plus aucun navigateur ne le téléchargera). Vérifié que
    `site.webmanifest` ne le référence pas non plus.
 
-**Piège annexe trouvé en vérifiant le rendu du logo optimisé sur le menu mobile** : le logo décoratif en
-fond du menu (`.primary-nav::before`, `background-image` avec `height: 40px` en CSS) s'affiche en
-réalité sur une hauteur quasi nulle (`0.8125px` mesuré en `getComputedStyle`) - quasiment invisible. Bug
-**préexistant, sans rapport avec l'optimisation du logo** (déjà présent avant toute modification de cette
-session, vérifié sur la toute première capture d'écran du menu mobile en tout début de session). Non
-corrigé ici (hors scope de l'audit perf/images, cause encore à investiguer) - **à reprendre dans une
-prochaine session**.
+**Piège annexe trouvé en vérifiant le rendu du logo optimisé sur le menu mobile, corrigé dans la foulée** :
+le logo décoratif en fond du menu (`.primary-nav::before`, `height: 40px` en CSS) s'affichait en réalité
+sur une hauteur quasi nulle (`0.8125px` mesuré en `getComputedStyle`) - quasiment invisible. Cause :
+`.primary-nav` est un flex column avec `overflow-y: auto` ; quand la liste de liens + le CTA dépassent la
+hauteur du viewport (menus avec beaucoup d'items, ou petits écrans), la spec CSS force `min-height: auto`
+à `0` pour les enfants flex d'un conteneur dont l'`overflow` n'est pas `visible` - ce pseudo-élément
+décoratif (`content: ''`, donc sans contenu réel) n'avait rien pour résister au rétrécissement et se
+faisait quasiment écraser au lieu de passer sous scroll comme prévu. Même souci potentiel sur
+`.primary-nav::after` (le texte "Angoulême • Charente" en bas du menu). **→ `flex-shrink: 0` ajouté aux
+deux**, pour qu'ils gardent toujours leur taille et que ce soit le `overflow-y: auto` qui prenne le relais
+si le contenu dépasse. Vérifié à 375×812 (logo net et net) et à 375×500 pour simuler un petit écran/mode
+paysage (logo toujours net, le reste du menu défile normalement, rien de cassé).
 
 `scripts/optimize-hero.js` (génère les variantes responsives via `sharp`) référençait un dossier
 `media/blog/` qui n'existe plus (les images sont dans `assets/img/blog/` depuis une réorganisation) - le

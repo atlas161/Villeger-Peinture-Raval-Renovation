@@ -748,6 +748,13 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     display: block;
     width: 120px;
     height: 40px;
+    /* flex-shrink: 0 : .primary-nav est un flex column avec overflow-y:auto. Sans ça, ce
+       pseudo-élément décoratif (contenu vide, donc min-height "auto" = 0 dans un conteneur
+       overflow != visible) était écrasé à ~1px de haut dès que la liste de liens + le CTA
+       dépassaient la hauteur du viewport, au lieu de passer sous scroll comme prévu par
+       overflow-y:auto. Logo quasi invisible en résultait sur les menus mobiles à beaucoup
+       d'items. Voir docs/ux-ui-responsive-audit.md. */
+    flex-shrink: 0;
     background: url('../../media/VPRR-LOGO.svg') no-repeat center;
     background-size: contain;
     margin-bottom: var(--space-xl);
@@ -763,6 +770,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0.5;
+    flex-shrink: 0;
   }
 
   .primary-nav.open {
