@@ -265,7 +265,7 @@ a:hover {
   background: var(--color-primary);
   color: var(--color-white);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   font-weight: var(--font-weight-semibold);
   font-size: 1rem;
   text-decoration: none;
@@ -363,73 +363,27 @@ a:hover {
   transform: translateX(4px);
 }
 
-/* Forcer les bordures arrondies sur tous les boutons */
-.btn,
-.btn-primary,
-.btn-secondary,
-.btn-tertiary,
-.btn-outline,
-.btn-ghost,
-.btn--sm,
-.btn--lg,
-input[type="submit"],
-input[type="button"],
-button[type="submit"] {
-  border-radius: 12px !important;
-}
-
 /* Style Apple-like premium */
 .btn {
-  border-radius: 12px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.01em !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .btn-primary {
-  border-radius: 12px !important;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #8B5A2B 100%) !important;
-  box-shadow: 0 4px 16px rgba(103, 58, 18, 0.25) !important;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #8B5A2B 100%);
+  box-shadow: 0 4px 16px rgba(103, 58, 18, 0.25);
 }
 
 .btn-secondary {
-  border-radius: 12px !important;
-  border: 2px solid var(--color-primary) !important;
-  background: transparent !important;
-  color: var(--color-primary) !important;
-  font-weight: 600 !important;
+  border: 2px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .btn-secondary:hover {
-  background: var(--color-primary) !important;
-  color: white !important;
-}
-
-/* Styles universels pour tous les boutons */
-* button,
-* input[type="button"],
-* input[type="submit"],
-* .btn,
-* .btn-primary,
-* .btn-secondary {
-  border-radius: 12px !important;
-}
-
-/* Forcer avec une spécificité maximale */
-body .btn,
-body .btn-primary,
-body .btn-secondary,
-body .btn-tertiary,
-body input[type="submit"],
-body input[type="button"],
-body button[type="submit"] {
-  border-radius: 12px !important;
-}
-
-/* S'assurer que même les styles inline sont écrasés */
-.btn[style],
-.btn-primary[style],
-.btn-secondary[style] {
-  border-radius: 12px !important;
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
 /* Exceptions pour les éléments qui doivent rester ronds */
@@ -439,78 +393,25 @@ body button[type="submit"] {
   border-radius: inherit !important;
 }
 
-/* Style Apple-like pour les badges sociaux */
-.social-badge {
-  border-radius: 12px !important;
-  width: 40px !important;
-  height: 40px !important;
-  font-size: 1.125rem !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 2px 8px rgba(103, 58, 18, 0.15) !important;
-}
-
-.social-badge:hover {
-  transform: scale(1.05) translateY(-2px) !important;
-  box-shadow: 0 4px 16px rgba(103, 58, 18, 0.25) !important;
-}
-
-/* S'assurer que les boutons dans les formulaires ont des bordures arrondies */
-.contact-form button,
-.form-panel button,
-.lead-form button {
-  border-radius: 12px !important;
-}
-
-/* Style global pour écraser tous les autres styles */
-button {
-  border-radius: 12px !important;
-}
-
-input[type="button"],
-input[type="submit"] {
-  border-radius: 12px !important;
-}
-
-/* Style pour les classes spécifiques */
-.btn,
-.btn-primary,
-.btn-secondary,
-.btn-tertiary,
-.btn-outline,
-.btn-ghost {
-  border-radius: 12px !important;
-}
-
-/* Style Apple-like pour les boutons principaux */
-.btn,
-.btn-primary {
-  border-radius: 12px !important;
-}
-
-/* Style légèrement plus arrondi pour les petits boutons */
-.btn--sm {
-  border-radius: 10px !important;
-}
-
-/* Style plus arrondi pour les grands boutons */
-.btn--lg {
-  border-radius: 14px !important;
-}
-
-/* Forcer même sur les éléments avec styles inline */
-*[style*="border-radius"] {
-  border-radius: 12px !important;
-}
-
 /* Tailles de boutons */
 .btn--sm {
+  border-radius: 10px;
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
 }
 
 .btn--lg {
+  border-radius: 14px;
   padding: 1rem 2.25rem;
   font-size: 1.125rem;
+}
+
+/* Piège connu (voir docs/code-quality-refactor.md) : force border-radius: 12px sur tout
+   élément ayant un style inline contenant "border-radius", quelle que soit sa valeur inline
+   (ex. un cercle prévu à 50% s'affiche en carré arrondi). Décision produit en attente côté
+   client avant de retirer/cibler cette règle — ne pas y toucher hors validation explicite. */
+*[style*="border-radius"] {
+  border-radius: 12px !important;
 }
 
 /* ===================================================================
@@ -720,7 +621,11 @@ input[type="submit"] {
   cursor: pointer;
   gap: 4px;
   z-index: 1100;
-  border-radius: 10px;
+  /* Rendu actuel = 12px, pas 10px : cette valeur venait d'une ancienne règle générique
+     `button { border-radius: 12px !important }` qui écrasait tous les <button> du site
+     (voir docs/code-quality-refactor.md). Fixé ici explicitement pour ne rien changer
+     visuellement une fois cette règle générique supprimée. */
+  border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -1113,6 +1018,8 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     justify-content: flex-start;
     background: transparent;
     border: 1px solid rgba(103, 58, 18, 0.16);
+    /* Rendu actuel = 12px : voir note sur .burger plus haut. */
+    border-radius: 12px;
   }
 
   .primary-nav .has-submenu.submenu-open .submenu .submenu-back-item {
@@ -2636,7 +2543,8 @@ html {
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  /* Rendu actuel = 12px (carré arrondi), pas un cercle : voir note sur .burger plus haut. */
+  border-radius: 12px;
   border: 1px solid rgba(103, 58, 18, 0.18);
   background: rgba(255, 255, 255, 0.85);
   color: var(--color-primary);

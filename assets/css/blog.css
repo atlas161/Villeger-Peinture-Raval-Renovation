@@ -51,99 +51,32 @@
   pointer-events: all;
 }
 
-/* Footer sur pages blog - correction du contraste */
+/* Footer sur pages blog - dégradé et opacités de texte propres aux pages blog
+   (différents du footer des autres pages : voir "FOOTER MODERNE" dans styles.css).
+   La règle sur le sélecteur universel force tout le contenu du footer à hériter
+   de cette couleur plutôt que d'utiliser ses propres couleurs (blanc, accent...)
+   définies pour les autres pages ; les liens (<a>) sont ensuite éclaircis un peu
+   plus pour rester lisibles. */
 .blog-page .site-footer,
 article .site-footer {
   background: linear-gradient(135deg, var(--color-primary) 0%, #5A2F0F 100%);
-  color: var(--color-white) !important;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.blog-page .footer-col h3,
-article .footer-col h3 {
-  color: var(--color-white) !important;
-}
-
-.blog-page .footer-links a,
-.blog-page .footer-contacts a,
-article .footer-links a,
-article .footer-contacts a {
-  color: rgba(255, 255, 255, 0.9) !important;
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
-.blog-page .footer-links a:hover,
-.blog-page .footer-contacts a:hover,
-article .footer-links a:hover,
-article .footer-contacts a:hover {
-  color: var(--color-white) !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.blog-page .footer-col .logo,
-article .footer-col .logo {
-  color: var(--color-white) !important;
-}
-
-.blog-page .copyright,
-article .copyright {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-/* Forcer les couleurs sur tous les éléments du footer */
 .blog-page .site-footer *,
 article .site-footer * {
-  color: inherit !important;
+  color: inherit;
 }
 
 .blog-page .site-footer a,
 article .site-footer a {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .blog-page .site-footer a:hover,
 article .site-footer a:hover {
-  color: var(--color-white) !important;
-}
-
-/* Styles ultra-spécifiques pour forcer les couleurs - identiques à la page d'accueil */
-body.blog-page .site-footer {
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-
-body.blog-page .site-footer .footer-links a,
-body.blog-page .site-footer .footer-contacts a {
-  color: rgba(255, 255, 255, 0.75) !important;
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
-  font-size: 0.9375rem;
-}
-
-body.blog-page .site-footer .footer-links a:hover,
-body.blog-page .site-footer .footer-contacts a:hover {
-  color: var(--color-white) !important;
+  color: var(--color-white);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-body.blog-page .site-footer .footer-col h3,
-body.blog-page .site-footer .footer-col .logo {
-  color: var(--color-white) !important;
-}
-
-body.blog-page .site-footer .copyright {
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-
-.blog-page .social-badge,
-article .social-badge {
-  background: rgba(255, 255, 255, 0.15) !important;
-  color: var(--color-white) !important;
-}
-
-.blog-page .social-badge:hover,
-article .social-badge:hover {
-  background: var(--brand-accent) !important;
-  color: var(--color-white) !important;
 }
 
 /* Icônes de partage dans les articles */
@@ -165,6 +98,9 @@ article .social-badge:hover {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  /* !important nécessaire : blog/article.css définit aussi .share-btn et
+     .share-btn.facebook/.twitter/.linkedin/.email/.copy avec un fond différent
+     (couleur accent par réseau) ; ce fond neutre doit gagner sur les 5 variantes. */
   background: rgba(103, 58, 18, 0.1) !important;
   color: var(--color-primary) !important;
   text-decoration: none;
@@ -181,7 +117,7 @@ article .social-badge:hover {
 
 .share-btn i {
   font-size: 1.125rem;
-  color: inherit !important;
+  color: inherit;
 }
 
 /* Correction spécifique pour les réseaux sociaux */
@@ -222,24 +158,24 @@ article .social-badge:hover {
 .sidebar-cta .btn {
   width: 100%;
   justify-content: center;
-  border-radius: 12px !important;
+  border-radius: 12px;
 }
 
 .sidebar-cta .btn-primary {
-  background: var(--color-white) !important;
-  color: var(--color-primary) !important;
-  border: 2px solid var(--color-white) !important;
-  font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25) !important;
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 2px solid var(--color-white);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
 }
 
 .sidebar-cta .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.9) !important;
-  color: var(--color-primary) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35) !important;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
 }
 
 .sidebar-cta .btn-primary i {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }

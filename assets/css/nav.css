@@ -3,17 +3,7 @@
    Ne surcharge PAS les styles desktop de styles.css
    ============================= */
 
-/* ===========================================
-   MENU MOBILE - FOND SOLIDE (correction transparence)
-   =========================================== */
-@media (max-width: 991px) {
-  /* Suppression des styles conflictuels car styles.css gère maintenant le plein écran */
-  #primary-nav.primary-nav {
-    background-color: #FBF7F1 !important;
-    background: #FBF7F1 !important;
-    backdrop-filter: saturate(180%) blur(20px) !important;
-    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
-  }
-
-  /* Les liens sont gérés par styles.css */
-}
+/* Le fond plein écran du menu mobile (#FBF7F1 + blur) est géré par .primary-nav
+   dans styles.css (media max-width: 991px) ; ce fichier n'a plus rien à ajouter
+   (l'ancienne règle ici dupliquait exactement les mêmes valeurs en !important).
+   Conservé pour ne pas retoucher le <link> présent sur les 10 pages du site. */

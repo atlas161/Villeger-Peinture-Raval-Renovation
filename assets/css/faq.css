@@ -38,7 +38,8 @@
   border: 1px solid rgba(103, 58, 18, 0.14);
   background: rgba(255, 255, 255, 0.85);
   color: var(--color-text);
-  border-radius: 999px;
+  /* Rendu actuel = 12px, pas une pilule : voir note sur .burger dans styles.css. */
+  border-radius: 12px;
   padding: 10px 14px;
   font-weight: var(--font-weight-medium);
   font-size: 0.9375rem;
