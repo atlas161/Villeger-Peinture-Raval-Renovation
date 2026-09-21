@@ -102,16 +102,8 @@
 }
 
 /* Champs de formulaire - Style Apple */
-.form-actions {
-  margin-top: var(--space-lg);
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center;
-  width: 100%;
-}
-
 .form-actions .btn {
-  margin: 0 auto !important;
+  margin: 0 auto;
 }
 
 .form-field {
@@ -344,15 +336,17 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-content: center;
   gap: var(--space-md);
-  margin-top: var(--space-sm);
+  margin-top: var(--space-lg);
+  width: 100%;
 }
 
 @media (min-width: 480px) {
   .form-actions {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 
@@ -719,7 +713,8 @@
 .reviews-btn {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
+  /* Rendu actuel = 12px, pas une pilule : voir note sur .burger dans styles.css. */
+  border-radius: 12px;
   border: 1px solid rgba(103, 58, 18, 0.14);
   background: rgba(255, 255, 255, 0.85);
   color: var(--color-primary);
@@ -992,7 +987,7 @@
 .contact-form button[type="submit"]:disabled {
   opacity: 0.7;
   cursor: not-allowed;
-  transform: none !important;
+  transform: none;
 }
 
 /* Messages d'erreur du formulaire (form-security.js) */

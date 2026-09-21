@@ -437,7 +437,7 @@
 
 .service-card {
   border: 2px solid var(--color-border);
-  /* 12px et non 16px : styles.css:501 force border-radius: 12px !important sur tout
+  /* 12px et non 16px : styles.css (règle *[style*="border-radius"]) force border-radius: 12px !important sur tout
      élément qui avait un style="...border-radius..." inline (voir commit history) */
   border-radius: 12px;
   padding: var(--space-xl);
@@ -466,7 +466,7 @@
 
 .faq-item {
   background: var(--color-white);
-  /* 12px et non 16px : styles.css:501 force border-radius: 12px !important sur tout
+  /* 12px et non 16px : styles.css (règle *[style*="border-radius"]) force border-radius: 12px !important sur tout
      élément qui avait un style="...border-radius..." inline (voir commit history) */
   border-radius: 12px;
   margin-bottom: var(--space-md);
