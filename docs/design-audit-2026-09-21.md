@@ -1,8 +1,11 @@
 # Audit design & UX — 2026-09-21
 
+**Statut : corrections validées par le client et déployées en prod** (commit `96c08c8`, poussé sur
+`main` le 2026-09-21 → redéploiement Netlify automatique).
+
 Demande du client : capturer le site en desktop et mobile, repérer les erreurs visuelles et les points
 de design perfectibles, corriger ce qui peut l'être sans changer le style/l'identité du site, et
-documenter le tout avant validation (aucun commit/push effectué — voir `CLAUDE.md`).
+documenter le tout avant validation.
 
 Méthode : audit visuel complet (desktop 1440px + mobile 375px) via un sous-agent dédié sur 7 pages
 (accueil, page de service ravalement, zone d'intervention, FAQ, blog liste, article de blog, mentions
@@ -132,5 +135,12 @@ vous avant d'y toucher, car elles changent davantage le rendu visuel que les cor
 - `assets/css/zone.css` — hauteur de la carte Leaflet
 - `blog/article.css` — troncature du fil d'Ariane
 
-`npm test` (6 tests) reste vert après ces changements. Aucun commit/push effectué — en attente de votre
-validation avant de committer (règle du projet, voir `CLAUDE.md`).
+`npm test` (6 tests) reste vert après ces changements.
+
+## Pistes de redesign restantes (non traitées)
+
+Les 6 pistes listées plus haut (page liste du blog trop longue, icônes emoji des filtres blog, contenu
+du fil Instagram, écart de traitement visuel hero accueil/pages de service, style des champs du
+formulaire de contact, chevauchement mineur guillemets/étoiles des avis) n'ont **pas** été implémentées —
+ce sont des décisions produit à valider avec le client avant d'y toucher, pas des bugs. Point de reprise
+pour une prochaine session si le client souhaite avancer dessus.

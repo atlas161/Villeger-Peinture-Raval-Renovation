@@ -22,6 +22,14 @@ CSS/JS des pages de service, lire [`docs/code-quality-refactor.md`](docs/code-qu
 état d'avancement, PR en attente de merge, méthode de vérification "aucun changement visuel" (piège des
 captures d'écran + piège d'une règle CSS globale sur `border-radius`), et ce qu'il reste à faire.
 
+## Audit design & UX (2026-09-21)
+
+Un audit visuel desktop/mobile a été fait le 2026-09-21 et 8 bugs de mise en page ont été corrigés et
+déployés en prod (commit `96c08c8`) — détail complet, signalements écartés (faux positifs de capture
+d'écran) et pistes de redesign restantes (à valider avec le client) dans
+[`docs/design-audit-2026-09-21.md`](docs/design-audit-2026-09-21.md). À consulter avant un nouvel audit
+design pour ne pas re-signaler les mêmes points.
+
 ## Chantier SEO en cours
 
 Un audit SEO complet a été fait le 2026-09-16 et un plan d'action long terme est en cours d'exécution,
