@@ -5,8 +5,8 @@
     "description": "Façade en pierre noircie ? Découvrez comment notre nettoyage par",
     "date": "2026-03-25",
     "image": "/assets/img/blog/hydrogommage_.webp",
-    "imageSrc": "/assets/img/blog/hydrogommage_.webp",
-    "imageSrcset": "",
+    "imageSrc": "/assets/img/blog/hydrogommage_-800w.webp",
+    "imageSrcset": "/assets/img/blog/hydrogommage_-400w.webp 400w, /assets/img/blog/hydrogommage_-600w.webp 600w, /assets/img/blog/hydrogommage_-800w.webp 800w, /assets/img/blog/hydrogommage_-1200w.webp 1200w",
     "imageSizes": "(max-width: 768px) 100vw, 900px",
     "tags": [
       "nettoyage façade Angoulême",
@@ -31,8 +31,8 @@
     "description": "Découvrez les véritables bienfaits d'une peinture extérieure en Charente : protection, isolation et esthétique. Guide expert par vos artisans d'Angoulême",
     "date": "2026-03-23",
     "image": "/assets/img/blog/bienfait_peinture_ext (1).webp",
-    "imageSrc": "/assets/img/blog/bienfait_peinture_ext (1).webp",
-    "imageSrcset": "",
+    "imageSrc": "/assets/img/blog/bienfait_peinture_ext (1)-800w.webp",
+    "imageSrcset": "/assets/img/blog/bienfait_peinture_ext (1)-400w.webp 400w, /assets/img/blog/bienfait_peinture_ext (1)-600w.webp 600w, /assets/img/blog/bienfait_peinture_ext (1)-800w.webp 800w, /assets/img/blog/bienfait_peinture_ext (1)-1200w.webp 1200w",
     "imageSizes": "(max-width: 768px) 100vw, 900px",
     "tags": [
       "artisan peintre façade Angoulême",
@@ -103,8 +103,8 @@
     "description": "Spécialiste de la rénovation intérieure à Angoulême (Charente), VPRR vous guide : isolation, placo, peinture et sols. Demandez votre devis gratuit et sur-mesure !",
     "date": "2026-03-06",
     "image": "/assets/img/blog/image_renovation_interieur_angouleme.webp",
-    "imageSrc": "/assets/img/blog/image_renovation_interieur_angouleme.webp",
-    "imageSrcset": "",
+    "imageSrc": "/assets/img/blog/image_renovation_interieur_angouleme-800w.webp",
+    "imageSrcset": "/assets/img/blog/image_renovation_interieur_angouleme-400w.webp 400w, /assets/img/blog/image_renovation_interieur_angouleme-600w.webp 600w, /assets/img/blog/image_renovation_interieur_angouleme-800w.webp 800w, /assets/img/blog/image_renovation_interieur_angouleme-1200w.webp 1200w",
     "imageSizes": "(max-width: 768px) 100vw, 900px",
     "tags": [
       "angouleme",

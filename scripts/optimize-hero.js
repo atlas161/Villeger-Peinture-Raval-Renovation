@@ -166,15 +166,38 @@ async function optimizeSiteImages() {
       variants: serviceVariants,
       aspect: aspectServices
     },
+    // Note : les images blog vivent dans assets/img/blog/ (pas media/blog/, qui n'existe pas -
+    // ce chemin était périmé et faisait planter ce script s'il était relancé). Corrigé le
+    // 2026-09-21 en même temps que la génération des variantes manquantes de 3 articles
+    // (bienfait_peinture_ext (1), hydrogommage_, image_renovation_interieur_angouleme) - voir
+    // docs/ux-ui-responsive-audit.md.
     {
-      input: path.join(root, 'media', 'blog', 'facade_hydrogommage.webp'),
-      outputBase: path.join(root, 'media', 'blog', 'facade_hydrogommage'),
+      input: path.join(root, 'assets', 'img', 'blog', 'facade_hydrogommage.webp'),
+      outputBase: path.join(root, 'assets', 'img', 'blog', 'facade_hydrogommage'),
       variants: blogVariants,
       aspect: aspectBlog
     },
     {
-      input: path.join(root, 'media', 'blog', 'peinture_ext.webp'),
-      outputBase: path.join(root, 'media', 'blog', 'peinture_ext'),
+      input: path.join(root, 'assets', 'img', 'blog', 'peinture_ext.webp'),
+      outputBase: path.join(root, 'assets', 'img', 'blog', 'peinture_ext'),
+      variants: blogVariants,
+      aspect: aspectBlog
+    },
+    {
+      input: path.join(root, 'assets', 'img', 'blog', 'bienfait_peinture_ext (1).webp'),
+      outputBase: path.join(root, 'assets', 'img', 'blog', 'bienfait_peinture_ext (1)'),
+      variants: blogVariants,
+      aspect: aspectBlog
+    },
+    {
+      input: path.join(root, 'assets', 'img', 'blog', 'hydrogommage_.webp'),
+      outputBase: path.join(root, 'assets', 'img', 'blog', 'hydrogommage_'),
+      variants: blogVariants,
+      aspect: aspectBlog
+    },
+    {
+      input: path.join(root, 'assets', 'img', 'blog', 'image_renovation_interieur_angouleme.webp'),
+      outputBase: path.join(root, 'assets', 'img', 'blog', 'image_renovation_interieur_angouleme'),
       variants: blogVariants,
       aspect: aspectBlog
     }

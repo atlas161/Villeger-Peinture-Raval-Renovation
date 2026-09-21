@@ -116,6 +116,55 @@ Vérifié visuellement (aucun chevauchement, les 5 boutons de partage tiennent t
 burger ne déborde pas du header) et par nouvelle mesure JS après correctif (tous à 44×44/44 de haut).
 `npm test` toujours vert.
 
+## Priorité 1 quater — Audit perf images (corrigé)
+
+Bonne surprise de départ : l'essentiel du site est déjà bien optimisé (images de services et la
+majorité des articles de blog en WebP, `srcset`/`sizes` corrects, `loading="lazy"` partout sauf le
+above-the-fold, `fetchpriority="high"` sur l'image LCP, conteneurs avec `aspect-ratio`/hauteur fixe en
+CSS donc pas de CLS malgré l'absence d'attributs `width`/`height` HTML sur certaines images). Trois vrais
+problèmes trouvés et corrigés :
+
+1. **3 images d'articles de blog servies en pleine taille, sans `srcset`** — `bienfait_peinture_ext (1).webp`
+   (920 Ko), `hydrogommage_.webp` (933 Ko) et `image_renovation_interieur_angouleme.webp` (690 Ko) étaient
+   utilisées telles quelles comme image hero (`loading="eager" fetchpriority="high"` — donc traitées comme
+   LCP !) **et** comme vignette sur `/blog/`, sans aucune version redimensionnée. Cause racine :
+   `scripts/build-blog.js` génère automatiquement le `srcset` en vérifiant si des fichiers
+   `<image>-400w/600w/800w/1200w.webp` existent à côté de l'image source déclarée dans le frontmatter —
+   ces 3 articles (les plus récents, 2026-03-23 et 2026-03-25) n'avaient jamais eu leurs variantes
+   générées, contrairement aux autres. **→ Variantes générées avec `sharp`** (mêmes réglages que le
+   reste du site : 400/600/800/1200px, qualité 78, recadrage 16:9 avec `position: attention`), puis
+   `npm run build:blog` relancé pour régénérer les pages. Résultat : l'image réellement chargée passe de
+   690-933 Ko à **12-127 Ko** selon le contexte (jusqu'à 90%+ de réduction). Vérifié par lecture du HTML
+   généré + `performance.getEntriesByType('resource')` dans le navigateur (les 3 images chargent bien une
+   variante `-Xw`, plus jamais le fichier plein format) et visuellement (rendu identique).
+2. **Logo `media/VPRR-LOGO.svg` non optimisé (128 Ko)** — export vectoriel brut (91 `<path>`, précision
+   décimale excessive), chargé sur **chaque page** du site (header + écran de chargement + fond du menu
+   mobile). **→ Passé à `npx svgo --multipass`** : 128 Ko → 54 Ko (-57%), rendu vérifié pixel-identique
+   par comparaison ouvert côte à côte dans le navigateur avant remplacement.
+3. **Favicon SVG de 348 Ko** (`media/favicon/favicon.svg`) — en l'ouvrant, ce n'est pas un vrai vecteur
+   mais une image raster encodée en base64 et enrobée dans une balise `<svg><image>` : SVGO ne trouve
+   rien à optimiser (0% de gain), et ce fichier n'apporte aucun bénéfice vectoriel. Un jeu de favicons PNG
+   correctement dimensionnés (16/32/96px) était déjà déclaré juste avant dans le `<head>` de chaque page.
+   **→ Retiré la balise `<link rel="icon" type="image/svg+xml">` sur les 11 pages HTML** (fichier laissé
+   en place sur le disque, juste dé-référencé - plus aucun navigateur ne le téléchargera). Vérifié que
+   `site.webmanifest` ne le référence pas non plus.
+
+**Piège annexe trouvé en vérifiant le rendu du logo optimisé sur le menu mobile** : le logo décoratif en
+fond du menu (`.primary-nav::before`, `background-image` avec `height: 40px` en CSS) s'affiche en
+réalité sur une hauteur quasi nulle (`0.8125px` mesuré en `getComputedStyle`) - quasiment invisible. Bug
+**préexistant, sans rapport avec l'optimisation du logo** (déjà présent avant toute modification de cette
+session, vérifié sur la toute première capture d'écran du menu mobile en tout début de session). Non
+corrigé ici (hors scope de l'audit perf/images, cause encore à investiguer) - **à reprendre dans une
+prochaine session**.
+
+`scripts/optimize-hero.js` (génère les variantes responsives via `sharp`) référençait un dossier
+`media/blog/` qui n'existe plus (les images sont dans `assets/img/blog/` depuis une réorganisation) - le
+script aurait planté s'il avait été relancé. **Corrigé + les 3 images ci-dessus ajoutées à sa liste de
+tâches**, pour que la prochaine réorganisation d'images blog n'ait pas à redécouvrir ce problème.
+
+`npm run build:blog` régénère aussi `sitemap.xml` (dates `lastmod` + `<image:loc>` mis à jour vers les
+nouvelles variantes) et `blog/articles.json` - changements attendus, pas des effets de bord.
+
 ## Priorité 2 — Incohérence des breakpoints CSS : analyse (pas de correctif ce round)
 
 Creusé plus en détail avant de me lancer dans une réécriture : **les seuils différents ne sont pas des
