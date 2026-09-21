@@ -425,7 +425,7 @@
         </div>
       </section>
 
-      <section class="section" id="realisation" aria-labelledby="realisation-title" style="background: var(--color-white);">
+      <section class="section section--bg-white" id="realisation" aria-labelledby="realisation-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Réalisation</p>
@@ -433,40 +433,40 @@
             <p>Exemple inspiré de nos interventions locales. Chaque façade est différente : nous confirmons la méthode et le planning après une visite sur place.</p>
           </header>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-2xl); margin-top: var(--space-2xl); align-items: start;">
-            <div style="background: var(--color-surface); border-radius: 18px; border: 2px solid var(--color-border-light); overflow: hidden; box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);">
-              <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/ravalement_facade/ravalement_avant-900w.webp" srcset="media/services/ravalement_facade/ravalement_avant-600w.webp 600w, media/services/ravalement_facade/ravalement_avant-900w.webp 900w, media/services/ravalement_facade/ravalement_avant-1200w.webp 1200w" sizes="(max-width: 960px) 100vw, 50vw" alt="Façade avant ravalement" loading="lazy" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 12px; bottom: 12px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.35rem 0.6rem; border-radius: 10px; font-size: 0.875rem;">Avant</figcaption>
+          <div class="before-after-grid">
+            <div class="before-after-card">
+              <div class="before-after-images">
+                <figure>
+                  <img src="media/services/ravalement_facade/ravalement_avant-900w.webp" srcset="media/services/ravalement_facade/ravalement_avant-600w.webp 600w, media/services/ravalement_facade/ravalement_avant-900w.webp 900w, media/services/ravalement_facade/ravalement_avant-1200w.webp 1200w" sizes="(max-width: 960px) 100vw, 50vw" alt="Façade avant ravalement" loading="lazy" decoding="async" />
+                  <figcaption>Avant</figcaption>
                 </figure>
-                <figure style="margin: 0; position: relative;">
-                  <img src="media/services/ravalement_facade/ravalement_apres-900w.webp" srcset="media/services/ravalement_facade/ravalement_apres-600w.webp 600w, media/services/ravalement_facade/ravalement_apres-900w.webp 900w, media/services/ravalement_facade/ravalement_apres-1200w.webp 1200w" sizes="(max-width: 960px) 100vw, 50vw" alt="Façade après ravalement" loading="lazy" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover;" />
-                  <figcaption style="position: absolute; left: 12px; bottom: 12px; background: rgba(0,0,0,0.55); color: #fff; padding: 0.35rem 0.6rem; border-radius: 10px; font-size: 0.875rem;">Après</figcaption>
+                <figure>
+                  <img src="media/services/ravalement_facade/ravalement_apres-900w.webp" srcset="media/services/ravalement_facade/ravalement_apres-600w.webp 600w, media/services/ravalement_facade/ravalement_apres-900w.webp 900w, media/services/ravalement_facade/ravalement_apres-1200w.webp 1200w" sizes="(max-width: 960px) 100vw, 50vw" alt="Façade après ravalement" loading="lazy" decoding="async" />
+                  <figcaption>Après</figcaption>
                 </figure>
               </div>
             </div>
 
-            <div style="background: var(--color-white); border-radius: 18px; border: 2px solid var(--color-border-light); padding: var(--space-2xl); box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);">
-              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Fiche chantier (exemple)</h3>
-              <ul style="margin: 0; padding-left: var(--space-xl); color: var(--color-text-light); line-height: 1.8;">
-                <li><strong style="color: var(--color-text);">Zone :</strong> secteur Angoulême &amp; Charente (16)</li>
-                <li><strong style="color: var(--color-text);">Support :</strong> enduit / façade peinte</li>
-                <li><strong style="color: var(--color-text);">Problèmes :</strong> microfissures, encrassement, peinture farinante</li>
-                <li><strong style="color: var(--color-text);">Solution :</strong> préparation, réparations, enduit/finition, peinture de protection</li>
-                <li><strong style="color: var(--color-text);">Durée :</strong> planning confirmé après visite (surface, accès, météo)</li>
+            <div class="jobsheet-card">
+              <h3 class="jobsheet-title">Fiche chantier (exemple)</h3>
+              <ul class="jobsheet-list">
+                <li><strong>Zone :</strong> secteur Angoulême &amp; Charente (16)</li>
+                <li><strong>Support :</strong> enduit / façade peinte</li>
+                <li><strong>Problèmes :</strong> microfissures, encrassement, peinture farinante</li>
+                <li><strong>Solution :</strong> préparation, réparations, enduit/finition, peinture de protection</li>
+                <li><strong>Durée :</strong> planning confirmé après visite (surface, accès, météo)</li>
               </ul>
 
-              <div style="margin-top: var(--space-xl); padding: var(--space-lg); border-radius: 14px; background: #FBF9F6; border: 1px solid rgba(103, 58, 18, 0.12);">
-                <p style="margin: 0; color: var(--color-text); font-weight: 600;">Maillage utile pour votre cas</p>
-                <p style="margin: var(--space-sm) 0 0; color: var(--color-text-light); line-height: 1.7;">
+              <div class="jobsheet-tip">
+                <p class="jobsheet-tip-title">Maillage utile pour votre cas</p>
+                <p class="jobsheet-tip-text">
                   Si votre façade est surtout <strong>encrassée</strong>, un <a href="nettoyage-facade-angouleme.html">nettoyage de façade</a> peut suffire avant de passer à la finition. Pour une <strong>mise en peinture</strong> seule, voir <a href="peinture-exterieure-charente.html">peinture extérieure</a>. Consultez aussi la <a href="zone-desservie-charente.html">zone desservie</a>.
                 </p>
               </div>
 
-              <div style="display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-xl);">
-                <a class="btn btn-primary" href="#contact" style="padding: 0.9rem 1.6rem;">Demander un devis</a>
-                <a class="btn btn-secondary" href="tel:+33545912270" style="padding: 0.9rem 1.6rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+              <div class="jobsheet-actions">
+                <a class="btn btn-primary" href="#contact">Demander un devis</a>
+                <a class="btn btn-secondary" href="tel:+33545912270">
                   <i class="fa-solid fa-phone" aria-hidden="true"></i> 05 45 91 22 70
                 </a>
               </div>
@@ -559,8 +559,8 @@
               </div>
             </article>
             
-            <article class="feature-card" style="border-color: var(--color-primary);">
-              <div class="feature-icon" style="background: var(--color-primary); color: var(--color-white);"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+            <article class="feature-card feature-card--highlight">
+              <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
               <div class="feature-card-content">
                 <h3>Peinture façade isolation active</h3>
                 <p>Peintures spéciales à haut pouvoir isolant qui améliorent l'étanchéité thermique de vos murs. Solution complémentaire à un ravalement complet.</p>
@@ -595,7 +595,7 @@
       </section>
 
       <!-- Section Pourquoi nous choisir -->
-      <section class="section" style="background: var(--color-surface-alt);" aria-labelledby="why-title">
+      <section class="section section--bg-surface-alt" aria-labelledby="why-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Pourquoi nous choisir</p>
@@ -652,8 +652,8 @@
               </div>
             </div>
             
-            <div class="reassurance-item" style="background: linear-gradient(135deg, #f8f5f2 0%, #fff 100%); border: 2px solid #A88B5E;">
-              <div class="reassurance-icon" style="background: #A88B5E; color: white;"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+            <div class="reassurance-item reassurance-item--accent">
+              <div class="reassurance-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
               <div class="reassurance-text">
                 <h3>Marques partenaires certifiées</h3>
                 <p>Nous utilisons les produits <strong>Weber, PRB, PAREX</strong> - leaders de l'enduit et de la peinture façade en France.</p>
@@ -693,7 +693,7 @@
             <li class="zone-tag">Ruffec</li>
           </ul>
 
-          <p style="text-align: center; margin-top: var(--space-xl); color: var(--color-text-light);">
+          <p class="section-note">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i> 
             <strong>Votre commune n'est pas listée ?</strong> Contactez-nous, nous intervenons également dans les communes voisines.
           </p>
@@ -701,7 +701,7 @@
       </section>
 
       <!-- Section Nos autres services (Maillage interne) -->
-      <section class="section" style="background: var(--color-white);" aria-labelledby="autres-services-title">
+      <section class="section section--bg-white" aria-labelledby="autres-services-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Découvrez aussi</p>
@@ -712,22 +712,22 @@
           <div class="services-grid">
             <article class="service-card">
               <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></div>
-              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Nettoyage de Façade</h3>
-              <p style="color: var(--color-text-light); margin-bottom: var(--space-md); line-height: 1.6;">Hydro-gommage doux et efficace pour redonner vie à vos murs extérieurs sans les abîmer.</p>
+              <h3>Nettoyage de Façade</h3>
+              <p>Hydro-gommage doux et efficace pour redonner vie à vos murs extérieurs sans les abîmer.</p>
               <a href="nettoyage-facade-angouleme.html" class="btn btn-secondary btn--sm">En savoir plus</a>
             </article>
             
             <article class="service-card">
               <div class="service-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
-              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Nettoyage de Toiture</h3>
-              <p style="color: var(--color-text-light); margin-bottom: var(--space-md); line-height: 1.6;">Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.</p>
+              <h3>Nettoyage de Toiture</h3>
+              <p>Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.</p>
               <a href="nettoyage-toiture-angouleme.html" class="btn btn-secondary btn--sm">En savoir plus</a>
             </article>
             
             <article class="service-card">
               <div class="service-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
-              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Peinture Extérieure</h3>
-              <p style="color: var(--color-text-light); margin-bottom: var(--space-md); line-height: 1.6;">Embellissez vos façades et boiseries avec nos peintures haute qualité résistantes aux UV.</p>
+              <h3>Peinture Extérieure</h3>
+              <p>Embellissez vos façades et boiseries avec nos peintures haute qualité résistantes aux UV.</p>
               <a href="peinture-exterieure-charente.html" class="btn btn-secondary btn--sm">En savoir plus</a>
             </article>
           </div>
@@ -735,7 +735,7 @@
       </section>
 
       <!-- Section Tarifs & Devis Transparent -->
-      <section class="section" id="tarifs" aria-labelledby="tarifs-title" style="background: linear-gradient(135deg, #FBF9F6 0%, var(--color-surface) 100%);">
+      <section class="section section--bg-pricing" id="tarifs" aria-labelledby="tarifs-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Tarifs & Devis</p>
@@ -743,7 +743,7 @@
             <p>Le prix d'un ravalement de façade dépend de plusieurs facteurs. Découvrez comment est calculé votre devis personnalisé.</p>
           </header>
 
-          <div class="feature-grid" style="margin-top: var(--space-2xl);">
+          <div class="feature-grid feature-grid--pricing">
             <!-- Carte 1 : Surface -->
             <article class="feature-card">
               <div class="feature-icon"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i></div>
@@ -782,73 +782,73 @@
           </div>
 
           <!-- Sous-section : Prix au m² -->
-          <div style="background: var(--color-white); border-radius: 16px; padding: var(--space-2xl); margin-top: var(--space-2xl); border: 2px solid var(--color-border-light); box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);">
-            <h3 style="color: var(--color-primary); font-size: 1.5rem; margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-sm);">
+          <div class="pricing-box">
+            <h3 class="pricing-box-title">
               <i class="fa-solid fa-euro-sign"></i> Prix au m² selon le type d'intervention
             </h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg);">
-              <div style="background: #f8f5f2; padding: var(--space-lg); border-radius: 12px; border-left: 4px solid #A88B5E;">
-                <h4 style="font-size: 1rem; margin-bottom: var(--space-sm); color: var(--color-text);">Nettoyage + Peinture</h4>
-                <p style="font-size: 1.75rem; font-weight: 700; color: var(--color-primary);">40-55€/m²</p>
-                <p style="font-size: 0.9375rem; color: var(--color-text-light);">Façade en bon état, rafraîchissement</p>
+            <div class="pricing-cards">
+              <div class="pricing-card" style="--pricing-card-accent: #A88B5E;">
+                <h4>Nettoyage + Peinture</h4>
+                <p class="price">40-55€/m²</p>
+                <p class="price-desc">Façade en bon état, rafraîchissement</p>
               </div>
-              <div style="background: #f8f5f2; padding: var(--space-lg); border-radius: 12px; border-left: 4px solid #D9742B;">
-                <h4 style="font-size: 1rem; margin-bottom: var(--space-sm); color: var(--color-text);">Réfection enduit</h4>
-                <p style="font-size: 1.75rem; font-weight: 700; color: var(--color-primary);">60-80€/m²</p>
-                <p style="font-size: 0.9375rem; color: var(--color-text-light);">Réparations + nouvel enduit + peinture</p>
+              <div class="pricing-card" style="--pricing-card-accent: #D9742B;">
+                <h4>Réfection enduit</h4>
+                <p class="price">60-80€/m²</p>
+                <p class="price-desc">Réparations + nouvel enduit + peinture</p>
               </div>
-              <div style="background: #f8f5f2; padding: var(--space-lg); border-radius: 12px; border-left: 4px solid #673A12;">
-                <h4 style="font-size: 1rem; margin-bottom: var(--space-sm); color: var(--color-text);">Ravalement complet premium</h4>
-                <p style="font-size: 1.75rem; font-weight: 700; color: var(--color-primary);">80-120€/m²</p>
-                <p style="font-size: 0.9375rem; color: var(--color-text-light);">Rénovation totale avec peinture haute performance</p>
+              <div class="pricing-card">
+                <h4>Ravalement complet premium</h4>
+                <p class="price">80-120€/m²</p>
+                <p class="price-desc">Rénovation totale avec peinture haute performance</p>
               </div>
             </div>
-            <p style="margin-top: var(--space-lg); color: var(--color-text-light); font-size: 0.9375rem; text-align: center;">
+            <p class="pricing-note">
               <i class="fa-solid fa-info-circle"></i> Ces tarifs sont indicatifs. Chaque projet est unique - demandez votre devis personnalisé pour un prix précis.
             </p>
           </div>
 
           <!-- Sous-section : Valeur ajoutée et économies -->
-          <div style="background: linear-gradient(135deg, #f8f5f2 0%, #fbf9f6 100%); border-radius: 16px; padding: var(--space-2xl); margin-top: var(--space-xl); border: 2px solid #A88B5E;">
-            <h3 style="color: #673A12; font-size: 1.5rem; margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-sm);">
+          <div class="why-now-box">
+            <h3 class="why-now-title">
               <i class="fa-solid fa-chart-line"></i> Le ravalement : un investissement rentable
             </h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
-              <div style="background: white; padding: var(--space-lg); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);"><i class="fa-solid fa-house-chimney-crack" style="margin-right: 0.5rem;"></i>Préservez votre patrimoine</h4>
-                <p style="font-size: 0.9375rem; color: var(--color-text-light); line-height: 1.6;">Un ravalement préventif évite les dégradations coûteuses. Réparer une fissure à temps coûte 10x moins cher qu'une rénovation structurelle tardive.</p>
+            <div class="why-now-grid">
+              <div class="why-now-card">
+                <h4><i class="fa-solid fa-house-chimney-crack icon-inline"></i>Préservez votre patrimoine</h4>
+                <p>Un ravalement préventif évite les dégradations coûteuses. Réparer une fissure à temps coûte 10x moins cher qu'une rénovation structurelle tardive.</p>
               </div>
-              <div style="background: white; padding: var(--space-lg); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);"><i class="fa-solid fa-arrow-trend-up" style="margin-right: 0.5rem;"></i>Revalorisation immobilière</h4>
-                <p style="font-size: 0.9375rem; color: var(--color-text-light); line-height: 1.6;">Une façade neupe peut augmenter la valeur de votre bien de <strong>5 à 15%</strong>. Un atout majeur en cas de revente ou location.</p>
+              <div class="why-now-card">
+                <h4><i class="fa-solid fa-arrow-trend-up icon-inline"></i>Revalorisation immobilière</h4>
+                <p>Une façade neupe peut augmenter la valeur de votre bien de <strong>5 à 15%</strong>. Un atout majeur en cas de revente ou location.</p>
               </div>
-              <div style="background: white; padding: var(--space-lg); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);"><i class="fa-solid fa-temperature-arrow-down" style="margin-right: 0.5rem;"></i>Économies d'énergie</h4>
-                <p style="font-size: 0.9375rem; color: var(--color-text-light); line-height: 1.6;">Un enduit et une peinture de qualité améliorent l'étanchéité thermique. Jusqu'à <strong>10-15% d'économies</strong> sur votre facture de chauffage.</p>
+              <div class="why-now-card">
+                <h4><i class="fa-solid fa-temperature-arrow-down icon-inline"></i>Économies d'énergie</h4>
+                <p>Un enduit et une peinture de qualité améliorent l'étanchéité thermique. Jusqu'à <strong>10-15% d'économies</strong> sur votre facture de chauffage.</p>
               </div>
             </div>
-            <p style="margin-top: var(--space-lg); text-align: center; color: var(--color-text-light); font-size: 0.9375rem;">
-              <i class="fa-solid fa-info-circle" style="margin-right: 0.5rem;"></i>
+            <p class="why-now-note">
+              <i class="fa-solid fa-info-circle icon-inline"></i>
               <em>Note : Les travaux de peinture et ravalement classiques ne sont pas éligibles aux aides énergétiques type MaPrimeRénov'. Ces aides concernent exclusivement l'isolation thermique par l'extérieur (ITE) avec pose de panneaux isolants.</em>
             </p>
           </div>
 
           <!-- Encadré Devis Gratuit -->
-          <div style="position: relative; border-radius: 24px; padding: var(--space-2xl); margin-top: var(--space-3xl); color: var(--color-text); text-align: center; overflow: hidden; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(103, 58, 18, 0.12); box-shadow: 0 8px 32px rgba(103, 58, 18, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);">
-            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at top, rgba(168, 139, 94, 0.15) 0%, transparent 50%); pointer-events: none;"></div>
-            <div style="position: relative; z-index: 1;">
-              <h3 style="color: var(--color-text); font-size: 1.5rem; margin-bottom: var(--space-sm); font-weight: 600;">Devis 100% Gratuit et Personnalisé</h3>
-              <p style="color: var(--color-text-light); max-width: 600px; margin: 0 auto var(--space-xl); font-size: 1.0625rem; line-height: 1.6;">
+          <div class="cta-glass">
+            <div class="cta-glass-glow"></div>
+            <div class="cta-glass-content">
+              <h3 class="cta-glass-title">Devis 100% Gratuit et Personnalisé</h3>
+              <p class="cta-glass-text">
                 Après une visite sur place, nous établissons un devis détaillé et transparent. 
-                <strong style="color: var(--color-primary);">Aucun frais caché</strong>, 
-                <strong style="color: var(--color-primary);">aucun engagement</strong>. 
+                <strong class="text-primary">Aucun frais caché</strong>, 
+                <strong class="text-primary">aucun engagement</strong>. 
                 Réponse sous 48h sur Angoulême et environs.
               </p>
-              <a href="#contact" class="btn btn-primary" style="padding: 1rem 2.5rem;">
-                <i class="fa-solid fa-calculator" aria-hidden="true" style="margin-right: 0.5rem;"></i>
+              <a href="#contact" class="btn btn-primary">
+                <i class="fa-solid fa-calculator icon-inline" aria-hidden="true"></i>
                 Estimer le coût de mes travaux
               </a>
-              <a href="tel:+33545912270" class="btn btn-secondary" style="padding: 1rem 2.5rem; margin-top: var(--space-md); display: inline-flex; align-items: center; gap: var(--space-sm);">
+              <a href="tel:+33545912270" class="btn btn-secondary">
                 <span class="icon-wrapper">
                   <i class="fa-solid fa-phone" aria-hidden="true"></i>
                 </span>
@@ -858,7 +858,7 @@
           </div>
 
           <!-- Note transparence -->
-          <p style="text-align: center; margin-top: var(--space-xl); color: var(--color-text-light); font-size: 0.9375rem;">
+          <p class="section-note section-note--sm">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
             <em>Chaque projet est unique. Seul un diagnostic visuel permet d'établir un devis précis et juste.</em>
           </p>
@@ -922,7 +922,7 @@
               </div>
               
               <div class="form-actions">
-                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true" style="margin-right: 0.5rem;"></i>Obtenir mon devis gratuit</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane icon-inline" aria-hidden="true"></i>Obtenir mon devis gratuit</button>
               </div>
             </form>
             
@@ -975,7 +975,7 @@
       </section>
 
       <!-- Section FAQ - Questions fréquentes sur prix et devis -->
-      <section class="section" id="faq" aria-labelledby="faq-title" style="background: var(--color-surface-alt);">
+      <section class="section section--bg-surface-alt" id="faq" aria-labelledby="faq-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">F.A.Q</p>
@@ -1141,7 +1141,7 @@
                   <li>La TVA et les assurances décennales</li>
                 </ul>
                 <p>
-                  <strong style="color: var(--color-primary);">Promesse VPRR :</strong> Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise.
+                  <strong class="text-primary">Promesse VPRR :</strong> Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise.
                 </p>
               </div>
             </details>
@@ -1178,12 +1178,12 @@
           </div>
 
           <!-- CTA sous FAQ -->
-          <div style="text-align: center; margin-top: var(--space-3xl);">
-            <p style="font-size: 1.125rem; color: var(--color-text); margin-bottom: var(--space-lg);">
+          <div class="section-cta">
+            <p>
               Vous avez d'autres questions ?
             </p>
-            <a href="#contact" class="btn btn-primary" style="padding: 1rem 2.5rem;">
-              <i class="fa-solid fa-comments" aria-hidden="true" style="margin-right: 0.5rem;"></i>
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-solid fa-comments icon-inline" aria-hidden="true"></i>
               Poser ma question et obtenir un devis
             </a>
           </div>
@@ -1193,18 +1193,18 @@
     </main>
 
     <!-- Navigation interne vers autres services -->
-    <nav aria-label="Nos autres services" style="background: #F9F7F5; padding: 3rem 1.5rem; border-top: 1px solid #E8E4DE;">
-      <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 1.5rem; color: #2D241E; margin-bottom: 1.5rem;">Nos autres services en Charente</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-          <a href="nettoyage-facade-angouleme.html" style="background: white; padding: 1rem 1.5rem; border-radius: 12px; text-decoration: none; color: #673A12; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #E8E4DE;">
-            <i class="fa-solid fa-spray-can-sparkles" style="margin-right: 0.5rem;"></i>Nettoyage de façade
+    <nav aria-label="Nos autres services" class="related-services-nav">
+      <div class="related-services-inner">
+        <h2>Nos autres services en Charente</h2>
+        <div class="related-services-list">
+          <a href="nettoyage-facade-angouleme.html" class="related-services-link">
+            <i class="fa-solid fa-spray-can-sparkles icon-inline"></i>Nettoyage de façade
           </a>
-          <a href="nettoyage-toiture-angouleme.html" style="background: white; padding: 1rem 1.5rem; border-radius: 12px; text-decoration: none; color: #673A12; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #E8E4DE;">
-            <i class="fa-solid fa-house-chimney" style="margin-right: 0.5rem;"></i>Nettoyage de toiture
+          <a href="nettoyage-toiture-angouleme.html" class="related-services-link">
+            <i class="fa-solid fa-house-chimney icon-inline"></i>Nettoyage de toiture
           </a>
-          <a href="peinture-exterieure-charente.html" style="background: white; padding: 1rem 1.5rem; border-radius: 12px; text-decoration: none; color: #673A12; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #E8E4DE;">
-            <i class="fa-solid fa-palette" style="margin-right: 0.5rem;"></i>Peinture extérieure
+          <a href="peinture-exterieure-charente.html" class="related-services-link">
+            <i class="fa-solid fa-palette icon-inline"></i>Peinture extérieure
           </a>
         </div>
       </div>

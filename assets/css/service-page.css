@@ -531,3 +531,450 @@
   background: #A88B5E;
 }
 
+/* ===================================================================
+   FONDS DE SECTION (contenu propre à chaque page de service)
+   =================================================================== */
+
+.section--bg-white {
+  background: var(--color-white);
+}
+
+.section--bg-surface-alt {
+  background: var(--color-surface-alt);
+}
+
+.section--bg-pricing {
+  background: linear-gradient(135deg, #FBF9F6 0%, var(--color-surface) 100%);
+}
+
+/* Icône suivie de texte (dans un titre, un paragraphe...) */
+.icon-inline {
+  margin-right: 0.5rem;
+}
+
+/* ===================================================================
+   BLOC CTA FINAL "Devis 100% Gratuit" (verre dépoli)
+   =================================================================== */
+
+.cta-glass {
+  position: relative;
+  /* Rendu actuel = 12px, pas 24px : c'était un style inline, forcé à 12px par la règle
+     *[style*="border-radius"] dans styles.css (voir docs/code-quality-refactor.md). */
+  border-radius: 12px;
+  padding: var(--space-2xl);
+  margin-top: var(--space-3xl);
+  color: var(--color-text);
+  text-align: center;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(103, 58, 18, 0.12);
+  box-shadow: 0 8px 32px rgba(103, 58, 18, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.cta-glass-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at top, rgba(168, 139, 94, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-glass-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-glass-title {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+}
+
+.cta-glass-text {
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.cta-glass-text strong {
+  color: var(--color-primary);
+}
+
+.cta-glass-content .btn {
+  padding: 1rem 2.5rem;
+}
+
+.cta-glass-content .btn-secondary {
+  margin-top: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ===================================================================
+   ENCART "NOS AUTRES SERVICES EN CHARENTE" (bas de page)
+   =================================================================== */
+
+.related-services-nav {
+  background: #F9F7F5;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid #E8E4DE;
+}
+
+.related-services-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.related-services-inner h2 {
+  font-size: 1.5rem;
+  color: #2D241E;
+  margin-bottom: 1.5rem;
+}
+
+.related-services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.related-services-link {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #673A12;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #E8E4DE;
+}
+
+/* ===================================================================
+   RÉALISATION : bloc avant/après + fiche chantier (exemple)
+   =================================================================== */
+
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-2xl);
+  margin-top: var(--space-2xl);
+  align-items: start;
+}
+
+.before-after-card {
+  background: var(--color-surface);
+  /* Rendu actuel = 12px, pas 18px : voir note sur .cta-glass plus haut. */
+  border-radius: 12px;
+  border: 2px solid var(--color-border-light);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
+}
+
+.before-after-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.before-after-images figure {
+  margin: 0;
+  position: relative;
+}
+
+.before-after-images img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.before-after-images figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  /* Rendu actuel = 12px, pas 10px : voir note sur .cta-glass plus haut. */
+  border-radius: 12px;
+  font-size: 0.875rem;
+}
+
+.jobsheet-card {
+  background: var(--color-white);
+  /* Rendu actuel = 12px, pas 18px : voir note sur .cta-glass plus haut. */
+  border-radius: 12px;
+  border: 2px solid var(--color-border-light);
+  padding: var(--space-2xl);
+  box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
+}
+
+.jobsheet-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+}
+
+.jobsheet-list {
+  margin: 0;
+  padding-left: var(--space-xl);
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+.jobsheet-list strong {
+  color: var(--color-text);
+}
+
+.jobsheet-tip {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  /* Rendu actuel = 12px, pas 14px : voir note sur .cta-glass plus haut. */
+  border-radius: 12px;
+  background: #FBF9F6;
+  border: 1px solid rgba(103, 58, 18, 0.12);
+}
+
+.jobsheet-tip-title {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.jobsheet-tip-text {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.jobsheet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.jobsheet-actions .btn {
+  padding: 0.9rem 1.6rem;
+}
+
+.jobsheet-actions .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===================================================================
+   PETITS BLOCS PARTAGÉS (notes de section, cartes "autres services", CTA)
+   =================================================================== */
+
+.section-note {
+  text-align: center;
+  margin-top: var(--space-xl);
+  color: var(--color-text-light);
+}
+
+.section-note--sm {
+  font-size: 0.9375rem;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.service-card p {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+.feature-grid--pricing {
+  margin-top: var(--space-2xl);
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-3xl);
+}
+
+.section-cta p {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.section-cta .btn {
+  padding: 1rem 2.5rem;
+}
+
+/* ===================================================================
+   ENCART "ISOLATION INTÉRIEURE, PAS D'ISOLATION EXTÉRIEURE" (page isolation)
+   =================================================================== */
+
+.info-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--color-white);
+  /* Rendu actuel = 12px, pas 18px : voir note sur .cta-glass plus haut. */
+  border-radius: 12px;
+  border: 2px solid var(--color-border-light);
+  padding: var(--space-2xl);
+  box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
+}
+
+.info-box h2 {
+  font-size: 1.375rem;
+  margin-bottom: var(--space-md);
+}
+
+.info-box h2 i {
+  color: var(--color-primary);
+  margin-right: 0.5rem;
+}
+
+.info-box p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===================================================================
+   VARIANTES "MISE EN AVANT" (une carte parmi d'autres, accentuée)
+   =================================================================== */
+
+.feature-card--highlight {
+  border-color: var(--color-primary);
+}
+
+.feature-card--highlight .feature-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.reassurance-item--accent {
+  background: linear-gradient(135deg, #f8f5f2 0%, #fff 100%);
+  border: 2px solid #A88B5E;
+}
+
+.reassurance-item--accent .reassurance-icon {
+  background: #A88B5E;
+  color: white;
+}
+
+/* ===================================================================
+   TARIFS INDICATIFS + "POURQUOI AGIR MAINTENANT" (page ravalement)
+   =================================================================== */
+
+.pricing-box {
+  background: var(--color-white);
+  /* Rendu actuel = 12px, pas 16px : voir note sur .cta-glass plus haut. */
+  border-radius: 12px;
+  padding: var(--space-2xl);
+  margin-top: var(--space-2xl);
+  border: 2px solid var(--color-border-light);
+  box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
+}
+
+.pricing-box-title {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.pricing-card {
+  background: #f8f5f2;
+  padding: var(--space-lg);
+  border-radius: 12px;
+  border-left: 4px solid var(--pricing-card-accent, #673A12);
+}
+
+.pricing-card h4 {
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.pricing-card .price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.pricing-card .price-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+}
+
+.pricing-note {
+  margin-top: var(--space-lg);
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  text-align: center;
+}
+
+.why-now-box {
+  background: linear-gradient(135deg, #f8f5f2 0%, #fbf9f6 100%);
+  /* Rendu actuel = 12px, pas 16px : voir note sur .cta-glass plus haut. */
+  border-radius: 12px;
+  padding: var(--space-2xl);
+  margin-top: var(--space-xl);
+  border: 2px solid #A88B5E;
+}
+
+.why-now-title {
+  color: #673A12;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.why-now-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.why-now-card {
+  background: white;
+  padding: var(--space-lg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.why-now-card h4 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.why-now-card p {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.why-now-note {
+  margin-top: var(--space-lg);
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+}
+

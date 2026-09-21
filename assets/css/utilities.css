@@ -14,3 +14,8 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* Emphase inline (texte en gras coloré dans un paragraphe) */
+.text-primary {
+  color: var(--color-primary);
+}
