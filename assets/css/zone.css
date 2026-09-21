@@ -522,15 +522,17 @@
   color: var(--color-text);
   margin: 0;
   line-height: 1.5;
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
 }
 
+/* Icône alignée en haut à gauche du texte via float (plutôt que flex sur le <p>) :
+   avec flex, le texte qui suit l'icône (texte brut + <a>/<strong>) se retrouvait
+   éclaté en plusieurs colonnes indépendantes au lieu de former un paragraphe qui
+   passe à la ligne normalement (bug visible sur zone-desservie-charente.html avec
+   la note "Pour un ravalement de façade..."). */
 .zone-note i {
+  float: left;
   color: var(--brand-accent);
-  margin-top: 2px;
-  flex-shrink: 0;
+  margin: 2px var(--space-sm) 0 0;
 }
 
 .zone-actions {
