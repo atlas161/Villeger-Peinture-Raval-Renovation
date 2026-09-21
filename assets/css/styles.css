@@ -1038,7 +1038,9 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     z-index: 2;
     background: linear-gradient(180deg, rgba(251, 247, 241, 0.98) 0%, rgba(251, 247, 241, 0.86) 70%, rgba(251, 247, 241, 0) 100%);
     padding-bottom: var(--space-md);
-    margin-top: calc(-1 * var(--space-lg));
+    /* Doit rester <= au margin-bottom du ::before "Services" (--space-md) pour ne pas
+       chevaucher son texte (bug constaté : -space-lg dépassait de 8px). */
+    margin-top: calc(-1 * var(--space-md));
     padding-top: var(--space-sm);
   }
 
