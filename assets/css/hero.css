@@ -13,12 +13,14 @@
 }
 
 /* ── Fond vidéo ── */
+/* Image d'attente = vraie 1re image de la vidéo (media/first-frame.webp), déclinée en 3 tailles */
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: #0a0502;
+  /* Image d'attente : le hero s'affiche immédiatement, la vidéo apparaît en fondu dès qu'elle joue */
+  background: #0a0502 url('../../data/hero-poster-1280w.webp') center 25% / cover no-repeat;
 }
 
 .hero-video {
@@ -41,6 +43,12 @@
   transform: translate(-50%, -50%);
   border: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-bg iframe.hero-video.is-playing {
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -362,4 +370,11 @@
     from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+}
+
+@media (max-width: 800px) {
+  .hero-bg { background-image: url('../../data/hero-poster-768w.webp'); }
+}
+@media (min-width: 1400px) {
+  .hero-bg { background-image: url('../../data/hero-poster-1920w.webp'); }
 }

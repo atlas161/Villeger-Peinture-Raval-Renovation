@@ -11,13 +11,15 @@ VPRR (Villéger Peinture Raval Rénovation) est une entreprise spécialisée dan
 - **Dirigeant**: Stéphane Villéger
 - **Localisation**: 136 Avenue de la République, 16340 L'Isle-d'Espagnac, France
 - **Zone d'intervention**: Angoulême et toute la Charente (rayon de 50 km)
+- **Forme juridique**: SARL — SIREN 934 010 216 — SIRET 934 010 216 00018 — TVA intracommunautaire FR02 934 010 216
 - **Site web**: https://vprr.fr
 - **Email**: villegerstephane204@gmail.com
-- **Téléphone**: +33 6 59 26 86 23
+- **Téléphone**: +33 5 45 91 22 70
 
 ### Horaires d'ouverture
-- Lundi à Vendredi: 08h00 - 18h00
-- Samedi et Dimanche: Fermé
+- Lundi à Vendredi: 09h00 - 17h00
+- Samedi: 09h00 - 12h00
+- Dimanche: Fermé
 
 ## Services proposés
 
@@ -49,7 +51,7 @@ VPRR (Villéger Peinture Raval Rénovation) est une entreprise spécialisée dan
 
 ## Points forts de l'entreprise
 
-1. **Expertise locale**: Plus de 20 ans d'expérience dans la région d'Angoulême
+1. **Expertise locale**: Plus de 15 ans d'expérience dans la région d'Angoulême
 2. **Garanties**: Garantie décennale et responsabilité civile professionnelle
 3. **Devis gratuit**: Estimation sans engagement pour tous les projets
 4. **Accompagnement administratif**: Aide pour les déclarations préalables de travaux

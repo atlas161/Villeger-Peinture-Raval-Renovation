@@ -162,8 +162,18 @@ function parseFrontmatter(content) {
       continue;
     }
 
-    frontmatter[key] = coerceScalar(value);
+    // Scalaire YAML "plain" sur plusieurs lignes (Pages CMS replie les textes longs) :
+    // les lignes suivantes indentées font partie de la valeur.
     i += 1;
+    if (!/^["'\[]/.test(m[2] ?? '')) {
+      const cont = [];
+      while (i < lines.length && lines[i].trim() !== '' && isIndented(lines[i]) && !/^\s*-\s+/.test(lines[i])) {
+        cont.push(stripIndent(lines[i]));
+        i += 1;
+      }
+      if (cont.length) value = `${value} ${cont.join(' ')}`.replace(/\s+/g, ' ').trim();
+    }
+    frontmatter[key] = coerceScalar(value);
   }
 
   return { frontmatter, body: match[2].trim() };
@@ -790,8 +800,6 @@ function updateSitemap(articles) {
     return `  <url>
     <loc>${CONFIG.blogUrl}/${article.slug}.html</loc>
     <lastmod>${date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 ${imageBlock ? `${imageBlock}\n` : ''}  </url>`;
   });
   
@@ -799,8 +807,6 @@ ${imageBlock ? `${imageBlock}\n` : ''}  </url>`;
   const blogIndexUrl = `  <url>
     <loc>${CONFIG.blogUrl}/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>`;
   
   // Reconstruire le sitemap

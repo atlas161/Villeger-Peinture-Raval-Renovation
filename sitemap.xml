@@ -2,9 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
     <loc>https://vprr.fr/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-29</lastmod>
     <image:image>
       <image:loc>https://vprr.fr/data/hero.webp</image:loc>
       <image:title>Ravalement de façade et rénovation à Angoulême - VPRR</image:title>
@@ -39,9 +37,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/nettoyage-facade-angouleme.html</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-29</lastmod>
     <image:image>
       <image:loc>https://vprr.fr/media/services/nettoyage_facade/facade_avant-1200w.webp</image:loc>
       <image:title>Nettoyage de façade à Angoulême - Avant</image:title>
@@ -53,9 +49,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/nettoyage-toiture-angouleme.html</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-29</lastmod>
     <image:image>
       <image:loc>https://vprr.fr/media/services/nettoyag_toiture/toiture_avant-1200w.webp</image:loc>
       <image:title>Nettoyage de toiture à Angoulême - Avant</image:title>
@@ -67,9 +61,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/ravalement-facade-angouleme.html</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-29</lastmod>
     <image:image>
       <image:loc>https://vprr.fr/media/services/ravalement_facade/ravalement_avant-1200w.webp</image:loc>
       <image:title>Ravalement de façade à Angoulême - Avant</image:title>
@@ -81,9 +73,7 @@
   </url>
 <url>
     <loc>https://vprr.fr/peinture-exterieure-charente.html</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-29</lastmod>
     <image:image>
       <image:loc>https://vprr.fr/media/services/peinture_exterieur/peinture_avant-1200w.webp</image:loc>
       <image:title>Peinture extérieure en Charente - Avant</image:title>
@@ -96,50 +86,26 @@
 <url>
     <loc>https://vprr.fr/isolation-interieure-charente.html</loc>
     <lastmod>2026-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 <url>
     <loc>https://vprr.fr/faq-renovation-angouleme.html</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-29</lastmod>
   </url>
 <url>
     <loc>https://vprr.fr/zone-desservie-charente.html</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-09-29</lastmod>
   </url>
 <url>
     <loc>https://vprr.fr/mentions-legales.html</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-<url>
-    <loc>https://vprr.fr/llms.txt</loc>
-    <lastmod>2025-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-<url>
-    <loc>https://vprr.fr/humans.txt</loc>
-    <lastmod>2025-12-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://vprr.fr/blog/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://vprr.fr/blog/etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme.html</loc>
     <lastmod>2026-03-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 
     <image:image>
       <image:loc>https://vprr.fr/assets/img/blog/hydrogommage_-1200w.webp</image:loc>
@@ -149,8 +115,6 @@
   <url>
     <loc>https://vprr.fr/blog/bienfaits-peinture-exterieure-facade-angouleme.html</loc>
     <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 
     <image:image>
       <image:loc>https://vprr.fr/assets/img/blog/bienfait_peinture_ext (1)-1200w.webp</image:loc>
@@ -160,8 +124,6 @@
   <url>
     <loc>https://vprr.fr/blog/nettoyage-facade-hydrogommage.html</loc>
     <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 
     <image:image>
       <image:loc>https://vprr.fr/assets/img/blog/facade_hydrogommage-1200w.webp</image:loc>
@@ -171,8 +133,6 @@
   <url>
     <loc>https://vprr.fr/blog/demoussage-nettoyage-toiture-charente.html</loc>
     <lastmod>2026-03-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 
     <image:image>
       <image:loc>https://vprr.fr/assets/img/blog/toiture_avant-1200w.webp</image:loc>
@@ -182,8 +142,6 @@
   <url>
     <loc>https://vprr.fr/blog/renovation-interieur-angouleme-charente.html</loc>
     <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 
     <image:image>
       <image:loc>https://vprr.fr/assets/img/blog/image_renovation_interieur_angouleme-1200w.webp</image:loc>
@@ -193,8 +151,6 @@
   <url>
     <loc>https://vprr.fr/blog/ravalement-facade-angouleme-charente.html</loc>
     <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 
     <image:image>
       <image:loc>https://vprr.fr/assets/img/blog/ravalement_apres-900w.webp</image:loc>
@@ -204,8 +160,6 @@
   <url>
     <loc>https://vprr.fr/blog/peinture-exterieure-facade-angouleme.html</loc>
     <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 
     <image:image>
       <image:loc>https://vprr.fr/assets/img/blog/peinture_ext-1200w.webp</image:loc>

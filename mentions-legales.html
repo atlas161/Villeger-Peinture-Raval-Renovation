@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link rel="preload" href="assets/css/styles.css" as="style" />
     <link rel="preload" href="assets/css/nav.css" as="style" />
@@ -37,8 +35,9 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="assets/css/cookies.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/fonts/inter.css" />
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
 
     <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="https://vprr.fr/media/favicon/favicon.ico" />
@@ -111,15 +110,21 @@
             <p>Le site <strong>vprr.fr</strong> est édité par :</p>
             <p>
               <strong>Villéger Peinture Raval Rénovation</strong><br />
-              Entreprise Individuelle<br />
-              SIRET : 93401021600018<br />
+              Société à responsabilité limitée (SARL)<br />
+              SIREN : 934 010 216<br />
+              SIRET (siège) : 934 010 216 00018<br />
+              N° de TVA intracommunautaire : FR02 934 010 216<br />
               Adresse : 136 Avenue de la République, 16340 L'Isle-d'Espagnac
             </p>
             <p>
               Téléphone : <a href="tel:+33545912270">05 45 91 22 70</a><br />
               Email : <a href="mailto:villegerstephane204@gmail.com">villegerstephane204@gmail.com</a>
             </p>
-            <p>Directeur de la publication : Stéphane Villéger</p>
+            <p>Gérant et directeur de la publication : Stéphane Villéger</p>
+            <p>
+              <strong>Assurances</strong> : garantie décennale et responsabilité civile professionnelle. L'attestation
+              d'assurance (assureur, numéro de contrat et couverture géographique) est communiquée sur simple demande.
+            </p>
           </section>
 
           <section id="hebergement" aria-labelledby="hebergement-title" style="margin-top: var(--space-3xl);">
@@ -132,7 +137,7 @@
               États-Unis<br />
               <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a>
             </p>
-            <p><strong>Réalisation / maintenance</strong> : Eagle Production (contact@eagle-prod.fr, +33 6 99 36 17 15).</p>
+            <p><strong>Réalisation / maintenance</strong> : Angelo Pro (<a href="https://angelo-pro.fr/" target="_blank" rel="noopener">angelo-pro.fr</a>).</p>
           </section>
 
           <section id="propriete" aria-labelledby="propriete-title" style="margin-top: var(--space-3xl);">
@@ -167,7 +172,12 @@
             <ul>
               <li><strong>Netlify</strong> : hébergement, formulaires et services techniques associés.</li>
               <li><strong>Google Tag Manager</strong> : uniquement si vous acceptez les cookies d'analyse.</li>
-              <li><strong>Fournisseurs de contenus</strong> : selon les pages, des ressources peuvent être chargées depuis des CDN (polices, icônes, cartes). Ces services reçoivent l'adresse IP et les informations techniques nécessaires au chargement.</li>
+              <li><strong>Vimeo</strong> (Vimeo.com, Inc., États-Unis) : diffusion de la vidéo de présentation en haut de la page d'accueil. Vimeo reçoit votre adresse IP et peut déposer des cookies techniques.</li>
+              <li><strong>Elfsight</strong> et <strong>Instagram / Meta</strong> : affichage de la galerie de réalisations issue du compte Instagram @vprr.16 sur la page d'accueil. Ces services reçoivent votre adresse IP et peuvent déposer des cookies.</li>
+              <li>Les polices de caractères (Inter), les icônes (Font Awesome) et la bibliothèque cartographique (Leaflet) sont hébergées directement sur vprr.fr : aucun échange avec un tiers pour ces éléments.</li>
+              <li><strong>OpenStreetMap</strong> : affichage des fonds de carte de la page « Zone d'intervention ».</li>
+              <li><strong>Google Maps</strong> : lien d'itinéraire vers notre adresse (ouvert uniquement si vous cliquez dessus).</li>
+              <li>Ces services, dont certains sont situés hors de l'Union européenne (États-Unis), reçoivent l'adresse IP et les informations techniques nécessaires au chargement des contenus. Vous pouvez limiter ces échanges en utilisant les réglages de votre navigateur ou un bloqueur de contenus ; la navigation reste possible.</li>
             </ul>
 
             <h3>4.5 Durées de conservation</h3>

@@ -111,6 +111,121 @@
   status = 200
   force = true
 
+# Fichiers internes du dépôt : ne jamais les servir publiquement (publish = ".")
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/AGENTS.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/fetch_geojson.py"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.pages.yml"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.gitattributes"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/content/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/tests/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/node_modules/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/graphify-out/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.agents/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.codex/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.claude/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/data/config.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/blog/template-article.html"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # Page 404 personnalisée
 [[redirects]]
   from = "/*"
@@ -127,9 +242,9 @@
     # Sécurité
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(self)"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     
     # HSTS (force HTTPS)
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
@@ -142,31 +257,52 @@
 [[headers]]
   for = "/assets/img/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "/media/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=2592000"
 
-# CSS - Cache long (1 an) avec revalidation
+# CSS / JS - noms de fichiers NON versionnés : toujours revalider (ETag) pour que les correctifs
+# soient visibles immédiatement. Ne jamais remettre "immutable" ici sans hash dans le nom.
 [[headers]]
   for = "/assets/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
-# JavaScript - Cache long (1 an) avec revalidation
 [[headers]]
   for = "/assets/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
-# Fonts - Cache long (1 an)
 [[headers]]
-  for = "/assets/fonts/*"
+  for = "/blog/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/blog/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Bibliothèques hébergées (Font Awesome, Leaflet) : chemins versionnés, cache 1 an
+[[headers]]
+  for = "/assets/vendor/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-    Access-Control-Allow-Origin = "*"
+
+# Polices Inter : cache 1 an
+
+[[headers]]
+  for = "/assets/fonts/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/fonts/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Favicon - Cache long (1 an)
 [[headers]]
@@ -178,7 +314,7 @@
 [[headers]]
   for = "/data/*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=2592000"
 
 # ─────────────────────────────────────────────────────────────────────────────────
 # FICHIERS SEO ET ROBOTS

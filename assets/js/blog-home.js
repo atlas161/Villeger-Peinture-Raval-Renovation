@@ -13,7 +13,7 @@ const MAX_ARTICLES_DISPLAY = 12;
  */
 async function loadBlogArticles() {
   try {
-    const response = await fetch(`blog/articles.json?v=${Date.now()}`, { cache: 'no-store' });
+    const response = await fetch(`blog/articles.json`, { cache: 'no-cache' });
     if (!response.ok) {
       console.warn('Impossible de charger les articles du blog');
       return;

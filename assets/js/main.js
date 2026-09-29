@@ -23,32 +23,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  // Hero : la page s'affiche tout de suite (image d'attente en CSS). La vidéo Vimeo démarre
+  // (Vimeo adapte la qualité) et apparaît en fondu par-dessus l'image d'attente ; on force le mode auto après 3 s.
+  const shouldLoadHeroVideo = () => {
+    const conn = navigator.connection || {};
+    if (conn.saveData) return false;
+    if (/(^|slow-)2g|3g/.test(conn.effectiveType || '')) return false;
+    return window.matchMedia('(min-width: 768px)').matches;
+  };
   const heroBg = document.querySelector('.hero-bg');
   const heroVimeo = heroBg ? heroBg.querySelector('iframe.hero-video') : null;
-  const pageLoader = document.getElementById('page-loader');
-  const rootEl = document.documentElement;
-  const finishLoading = () => {
-    rootEl.classList.remove('vprr-loading');
-    rootEl.classList.add('vprr-ready');
-    if (!pageLoader) return;
-    if (pageLoader.classList.contains('is-hidden')) return;
-    pageLoader.classList.add('is-hidden');
-    window.setTimeout(() => {
-      try { pageLoader.remove(); } catch (_) {}
-    }, 450);
-  };
-
-  if (pageLoader) {
-    rootEl.classList.add('vprr-loading');
-    // Filet de sécurité si la vidéo Vimeo tarde (réseau lent, erreur) : on ne bloque
-    // jamais le contenu (header, texte, CTA) plus de 2.5s derrière l'écran de chargement.
-    window.setTimeout(finishLoading, 2500);
-  }
 
   if (heroBg && heroVimeo && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     heroVimeo.remove();
-    finishLoading();
+  } else if (heroBg && heroVimeo && !shouldLoadHeroVideo()) {
+    // Téléphone, économiseur de données ou connexion lente : on garde l'image d'attente (la vidéo
+    // pèse ~19 Mo). Pour l'activer aussi sur mobile, retirer la condition de largeur dans shouldLoadHeroVideo().
+    heroVimeo.remove();
   } else if (heroBg && heroVimeo) {
+    heroVimeo.src = heroVimeo.dataset.src;
+    const showVideo = () => heroVimeo.classList.add('is-playing');
+    // Filet de sécurité : si l'API Vimeo ne répond pas, on affiche quand même la vidéo au bout de 4 s.
+    const fallbackTimer = window.setTimeout(showVideo, 4000);
+
     const ensureVimeoApi = () => new Promise((resolve, reject) => {
       if (window.Vimeo && window.Vimeo.Player) return resolve();
       const existing = document.querySelector('script[data-vimeo-player-api]');
@@ -74,13 +71,18 @@ document.addEventListener("DOMContentLoaded", () => {
           const t = data && typeof data.seconds === 'number' ? data.seconds : 0;
           if (t > 0.05 && !isReady) {
             isReady = true;
-            finishLoading();
+            window.clearTimeout(fallbackTimer);
+            showVideo();
             try { player.off('timeupdate', onTimeUpdate); } catch (_) {}
+            // Montée en qualité progressive : on repasse en automatique après quelques secondes de lecture.
+            window.setTimeout(() => {
+              try { player.setQuality('auto').catch(() => {}); } catch (_) {}
+            }, 3000);
           }
         };
         player.on('timeupdate', onTimeUpdate);
       })
-      .catch(() => finishLoading());
+      .catch(() => { window.clearTimeout(fallbackTimer); showVideo(); });
   }
 
   const normalizePath = (p) => {

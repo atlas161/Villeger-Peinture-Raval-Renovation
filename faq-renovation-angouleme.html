@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/css/styles.css" as="style" />
     <link rel="preload" href="assets/css/nav.css" as="style" />
     <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
@@ -37,8 +35,9 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="assets/css/faq.css" />
     <link rel="stylesheet" href="assets/css/contact.css" media="print" onload="this.media='all'" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/fonts/inter.css" />
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
 
     <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="https://vprr.fr/media/favicon/favicon.ico" />
@@ -223,7 +222,8 @@
             </div>
           </div>
 
-          <section id="faq" aria-label="FAQ rénovation Angoulême">
+          <section id="faq" aria-labelledby="faq-list-title">
+            <h2 id="faq-list-title" class="visually-hidden">Toutes les réponses à vos questions</h2>
             <div class="faq-accordion" data-faq-exclusive="0">
               <details class="faq-item" data-faq-category="localisation">
                 <summary class="faq-question">Intervenez-vous uniquement à Angoulême&nbsp;?</summary>

@@ -52,16 +52,13 @@
   const OSM_TILE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   const OSM_TILE_SUBDOMAINS = 'abc';
 
-  const LEAFLET_CSS_URL = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-  const LEAFLET_CSS_INTEGRITY = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+  // Leaflet 1.9.4 est hébergé sur vprr.fr (plus de CDN tiers).
+  const LEAFLET_CSS_URL = '/assets/vendor/leaflet/leaflet.css';
+  const LEAFLET_CSS_INTEGRITY = '';
 
   const LEAFLET_JS_CDNS = [
     {
-      url: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
-      integrity: 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo='
-    },
-    {
-      url: 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js',
+      url: '/assets/vendor/leaflet/leaflet.js',
       integrity: ''
     }
   ];
@@ -168,8 +165,6 @@
     const link = root.document.createElement('link');
     link.rel = 'stylesheet';
     link.href = LEAFLET_CSS_URL;
-    link.integrity = LEAFLET_CSS_INTEGRITY;
-    link.crossOrigin = '';
     root.document.head.appendChild(link);
   }
 
@@ -187,7 +182,6 @@
       const cdn = LEAFLET_JS_CDNS[idx];
       s.src = cdn.url;
       if (cdn.integrity) s.integrity = cdn.integrity;
-      s.crossOrigin = '';
     };
 
     s.onerror = () => {

@@ -330,3 +330,12 @@ documentation à la demande du client, pour tracer le travail, les blocages et l
 
 **Rien commité ni poussé sur Netlify/GitHub à ce stade** — modifications locales uniquement, en attente
 de votre feu vert pour commit/push.
+
+## 2026-09-29 — Audit complet (design, responsive, sécurité, RGPD, perf, SEO)
+
+Audit lecture seule, aucune modification du site. Rapport et plan d'action détaillés dans
+[`../audit-complet-2026-09-29.md`](../audit-complet-2026-09-29.md). Points SEO clés : Lighthouse mobile
+SEO 100 mais perf 61 (LCP 9,4 s, vidéo Vimeo hero 19 Mo + loader qui masque la page) ; `template-article.html`
+et fichiers `.md` internes servis/indexables ; titles > 60 car. sur presque toutes les pages ; NAP incohérent
+dans `llms.txt`/`humans.txt` ; JSON-LD avec services non réalisés, `&nbsp;` et SearchAction sans moteur de
+recherche ; `llms.txt`/`humans.txt` présents dans le sitemap.

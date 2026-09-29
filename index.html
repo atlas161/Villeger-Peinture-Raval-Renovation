@@ -3,16 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>document.documentElement.classList.add('vprr-loading');</script>
     
     <!-- Preconnect pour les ressources externes (priorité haute) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     
     <!-- DNS Prefetch pour les ressources secondaires -->
     <link rel="dns-prefetch" href="https://elfsightcdn.com" />
-    <link rel="dns-prefetch" href="https://unpkg.com" />
     <link rel="dns-prefetch" href="https://tile.openstreetmap.org" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
@@ -21,7 +16,9 @@
     <link rel="preload" href="assets/css/hero.css" as="style" />
     <link rel="preload" href="assets/css/nav.css" as="style" />
     <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
-    <link rel="preload" href="data/hero.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="data/hero-poster-768w.webp" as="image" type="image/webp" media="(max-width: 800px)" fetchpriority="high" />
+    <link rel="preload" href="data/hero-poster-1280w.webp" as="image" type="image/webp" media="(min-width: 801px) and (max-width: 1399px)" fetchpriority="high" />
+    <link rel="preload" href="data/hero-poster-1920w.webp" as="image" type="image/webp" media="(min-width: 1400px)" fetchpriority="high" />
     
     <!-- Google Tag Manager - Chargé uniquement après consentement cookies (voir assets/js/footer.js) -->
     <script>
@@ -30,7 +27,7 @@
     </script>
     
     <!-- Métadonnées de base pour le SEO et l'affichage du site -->
-    <title>Rénovation à Angoulême | Villéger Peinture · Ravalement · Isolation</title>
+    <title>Rénovation à Angoulême : ravalement, peinture | VPRR</title>
     <meta name="description" content="Expert en rénovation à Angoulême : ravalement de façade, peinture extérieure et isolation intérieure. Devis gratuit sous 48h en Charente." />
     <meta name="keywords" content="ravalement façade Angoulême, peintre Angoulême, isolation thermique Charente, rénovation maison 16, façadier L'Isle-d'Espagnac, peinture intérieure extérieure, hydro-gommage, VPRR" />
     <meta name="author" content="Villéger Peinture Raval Rénovation" />
@@ -51,7 +48,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="VPRR - Villéger Peinture Raval Rénovation" />
-    <meta property="og:title" content="Rénovation à Angoulême | Villéger Peinture · Ravalement · Isolation" />
+    <meta property="og:title" content="Rénovation à Angoulême : ravalement, peinture | VPRR" />
     <meta property="og:description" content="Expert en rénovation extérieure et intérieure à Angoulême. Spécialistes du ravalement de façade, de la peinture et de l'isolation en Charente. Devis gratuit." />
     <meta property="og:url" content="https://vprr.fr/" />
     <meta property="og:image" content="https://vprr.fr/data/hero.webp" />
@@ -81,13 +78,14 @@
     <link rel="stylesheet" href="assets/css/zone.css" />
     
     <!-- Google Fonts avec display=swap pour éviter FOIT -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/fonts/inter.css" />
     
     <!-- Font Awesome CDN complet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
     
     <!-- Leaflet CSS - Chargé uniquement quand nécessaire -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css" media="print" onload="this.media='all'" />
     
     <!-- Fallback pour navigateurs sans JS -->
     <noscript>
@@ -97,8 +95,8 @@
       <link rel="stylesheet" href="assets/css/cookies.css" />
       <link rel="stylesheet" href="assets/css/faq.css" />
       <link rel="stylesheet" href="assets/css/zone.css" />
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+      <link rel="stylesheet" href="/assets/fonts/inter.css" />
+      <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
     </noscript>
     
     <!-- Favicon - URLs absolues pour Google -->
@@ -126,14 +124,6 @@
         "inLanguage": "fr-FR",
         "publisher": {
           "@id": "https://vprr.fr/#business"
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://vprr.fr/?s={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
         }
       }
     </script>
@@ -375,7 +365,7 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Faut-il une autorisation de la mairie pour refaire sa façade&nbsp;?",
+            "name": "Faut-il une autorisation de la mairie pour refaire sa façade ?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Oui, une déclaration préalable de travaux (DP) est souvent nécessaire, surtout si l'aspect extérieur change. Nous pouvons vous accompagner dans la constitution du dossier pour garantir que votre projet respecte les règles d'urbanisme locales."
@@ -383,7 +373,7 @@
           },
           {
             "@type": "Question",
-            "name": "L'hydro-gommage risque-t-il d'abîmer ma façade (pierre, brique)&nbsp;?",
+            "name": "L'hydro-gommage risque-t-il d'abîmer ma façade (pierre, brique) ?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Au contraire, c'est la méthode la plus douce qui existe. L'hydro-gommage utilise un mélange d'eau et de poudre minérale projeté à basse pression. Cela permet de retirer la pollution, les graffitis ou les anciennes peintures sans altérer la surface ni la protection naturelle de la pierre."
@@ -399,7 +389,7 @@
           },
           {
             "@type": "Question",
-            "name": "Êtes-vous assurés en cas de problème&nbsp;?",
+            "name": "Êtes-vous assurés en cas de problème ?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Absolument. Nous possédons une Garantie Décennale (qui couvre les gros ouvrages pendant 10 ans) ainsi qu'une Responsabilité Civile Professionnelle. Nos attestations d'assurance sont disponibles sur demande."
@@ -445,13 +435,6 @@
   <body>
     <!-- Skip to content pour accessibilité -->
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
-
-    <div class="page-loader" id="page-loader" aria-label="Chargement" role="status" aria-live="polite">
-      <img src="media/VPRR-LOGO.svg" alt="VPRR" width="180" height="48" />
-      <div class="page-loader-spinner" aria-hidden="true"></div>
-    </div>
-    
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKPGDBPG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <!-- En-tête du site (contient le logo et la navigation) -->
         <header class="site-header" id="top">
@@ -501,7 +484,7 @@
         <div class="hero-bg" aria-hidden="true">
           <iframe
             class="hero-video"
-            src="https://player.vimeo.com/video/1194659147?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
+            data-src="https://player.vimeo.com/video/1194659147?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -1129,7 +1112,7 @@
             <div class="reviews-cta">
               <div class="google-reviews-section google-reviews-section--wide">
                 <div class="google-reviews-content">
-                  <h4 class="google-reviews-title"><i class="fa-brands fa-google" aria-hidden="true"></i> Votre avis nous aide beaucoup&nbsp;!</h4>
+                  <h3 class="google-reviews-title"><i class="fa-brands fa-google" aria-hidden="true"></i> Votre avis nous aide beaucoup&nbsp;!</h3>
                   <p class="google-reviews-text">Vous êtes satisfait de nos services&nbsp;? Laissez-nous un avis sur Google.</p>
                 </div>
                 <a href="https://g.page/r/CZZJ5Bogt13fEBM/review" target="_blank" rel="noopener noreferrer" class="btn btn-google-review">
@@ -1233,7 +1216,7 @@
               </ul>
               <!-- Section avis Google -->
               <div class="google-reviews-section">
-                <h4 class="google-reviews-title"><i class="fa-brands fa-google" aria-hidden="true"></i> Votre avis nous aide beaucoup&nbsp;!</h4>
+                <h3 class="google-reviews-title"><i class="fa-brands fa-google" aria-hidden="true"></i> Votre avis nous aide beaucoup&nbsp;!</h3>
                 <p class="google-reviews-text">Vous êtes satisfait de nos services&nbsp;? Laissez-nous un avis sur Google.</p>
                 <a href="https://g.page/r/CZZJ5Bogt13fEBM/review" 
                    target="_blank" 

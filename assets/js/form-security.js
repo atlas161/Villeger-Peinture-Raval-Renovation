@@ -27,10 +27,7 @@
     // Patterns d'email suspects (spam)
     SUSPICIOUS_EMAIL_PATTERNS: [
       /test@test/i,
-      /admin@/i,
       /spam/i,
-      /\.ru$/i,
-      /\.cn$/i,
       /@mailinator/i,
       /@tempmail/i,
       /@throwaway/i,
@@ -41,7 +38,7 @@
     // Mots suspects dans le message (spam typique)
     SPAM_KEYWORDS: [
       'viagra', 'cialis', 'casino', 'lottery', 'winner', 'bitcoin',
-      'crypto', 'investment opportunity', 'make money fast', 'click here',
+      'investment opportunity', 'make money fast', 'click here',
       'free money', 'nigerian prince', 'inheritance', 'million dollars'
     ]
   };

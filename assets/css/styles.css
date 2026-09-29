@@ -1722,8 +1722,10 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   text-decoration: none;
   font-size: 0.875rem;
   transition: all 0.3s ease;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 8px;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-weight: 500;
 }
 
 .credit-link i {
@@ -1733,7 +1735,8 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 
 .credit-link:hover {
   color: var(--color-white);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--brand-accent);
 }
 
 .credit-link:hover i {
@@ -2614,70 +2617,6 @@ html {
   }
 }
 
-html.vprr-loading body {
-  overflow: hidden;
-}
-
-html.vprr-loading .site-header,
-html.vprr-loading #main-content {
-  opacity: 0;
-}
-
-html.vprr-ready .site-header,
-html.vprr-ready #main-content {
-  opacity: 1;
-  transition: opacity 0.35s ease;
-}
-
-.page-loader {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  background: radial-gradient(900px circle at 50% 25%, rgba(168, 139, 94, 0.10) 0%, rgba(168, 139, 94, 0) 60%),
-              linear-gradient(180deg, #ffffff 0%, #f9f7f5 100%);
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 0.35s ease;
-}
-
-.page-loader img {
-  width: min(220px, 70vw);
-  height: auto;
-  filter: drop-shadow(0 12px 30px rgba(45, 36, 30, 0.12));
-}
-
-.page-loader-spinner {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 3px solid rgba(103, 58, 18, 0.12);
-  border-top-color: rgba(168, 139, 94, 0.95);
-  border-right-color: rgba(168, 139, 94, 0.55);
-  box-shadow: 0 12px 30px rgba(45, 36, 30, 0.10);
-  animation: vprrSpin 0.9s linear infinite;
-}
-
-@keyframes vprrSpin {
-  to { transform: rotate(360deg); }
-}
-
-.page-loader.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.vprr-ready .site-header,
-  html.vprr-ready #main-content,
-  .page-loader {
-    transition: none;
-  }
-}
-
 /* ===================================================================
    GALERIE - Cartes avant/après (section #galerie)
    =================================================================== */
@@ -2883,7 +2822,7 @@ html.vprr-ready #main-content {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  color: #8B7355;
+  color: #7A6448;
   font-size: 0.875rem;
 }
 
