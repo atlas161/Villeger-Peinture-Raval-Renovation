@@ -276,3 +276,11 @@ encore chargée** ; accessibilité 95 → 100 ; SEO 100. Le gain principal viend
   comme avant (interface Netlify + e-mails). Sans `TURNSTILE_SECRET`, la vérification est ignorée (log
   d'avertissement) pour ne pas casser le formulaire.
 - Tests : `tests/contact-function.test.js` (7 cas). Cloudflare cité dans les mentions légales.
+
+### Session 5 (2026-09-29) — Microsoft Clarity
+- Clarity (projet `ypwg9bye24`) chargé par `assets/js/footer.js` (`loadAnalytics()` = GTM + Clarity), donc sur
+  toutes les pages qui incluent le footer (404.html mis à part, sans footer partagé), **uniquement après
+  consentement** aux cookies d'analyse. Signal de consentement envoyé à Clarity (`consentv2`, pub refusée).
+- Bannière : texte explicite (GTM + Clarity) ; case « analyse » **décochée par défaut** dans les paramètres
+  (opt-in, exigence CNIL). Bouton/lien **« Gérer mes cookies »** (pied de page + mentions légales) qui efface le
+  choix et réaffiche la bannière. Mentions légales : Clarity dans les sous-traitants + cookies `_clck`/`_clsk`.

@@ -52,12 +52,27 @@
 
     if (!cookieBanner) return;
 
+    // Liens/boutons « Gérer mes cookies » : on efface le choix mémorisé et on recharge pour réafficher la bannière
+    document.querySelectorAll('[data-open-cookie-settings]').forEach((el) => {
+      el.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        try {
+          if (typeof window.clarity === 'function') {
+            window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+          }
+          localStorage.removeItem('cookie-consent');
+          localStorage.removeItem('analytics-cookies');
+        } catch (_) {}
+        window.location.reload();
+      });
+    });
+
     // Vérifier si le consentement a déjà été donné
     const cookieConsent = localStorage.getItem('cookie-consent');
     if (cookieConsent) {
       cookieBanner.style.display = 'none';
       if (cookieConsent === 'accepted' && localStorage.getItem('analytics-cookies') !== 'false') {
-        loadGoogleTagManager();
+        loadAnalytics();
       }
       return;
     }
@@ -81,7 +96,7 @@
         localStorage.setItem('cookie-consent', 'accepted');
         localStorage.setItem('analytics-cookies', 'true');
         cookieBanner.style.display = 'none';
-        loadGoogleTagManager();
+        loadAnalytics();
       });
     }
 
@@ -108,7 +123,9 @@
         cookieBanner.style.display = 'none';
 
         if (analyticsCookies) {
-          loadGoogleTagManager();
+          loadAnalytics();
+        } else if (typeof window.clarity === 'function') {
+          window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
         }
       });
     }
@@ -121,6 +138,25 @@
         }
       });
     }
+  }
+
+  // Outils de mesure d'audience : chargés UNIQUEMENT après consentement aux cookies d'analyse
+  function loadAnalytics() {
+    loadGoogleTagManager();
+    loadMicrosoftClarity();
+  }
+
+  // Microsoft Clarity (analyse de navigation), chargé une seule fois
+  function loadMicrosoftClarity() {
+    if (window.clarityLoaded) return;
+    window.clarityLoaded = true;
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', 'ypwg9bye24');
+    // Consentement déjà obtenu via notre bannière : analyse autorisée, publicité refusée
+    window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
   }
 
   // Charge Google Tag Manager une seule fois, uniquement après consentement analytics
