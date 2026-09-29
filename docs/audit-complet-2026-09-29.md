@@ -284,3 +284,14 @@ encore chargée** ; accessibilité 95 → 100 ; SEO 100. Le gain principal viend
 - Bannière : texte explicite (GTM + Clarity) ; case « analyse » **décochée par défaut** dans les paramètres
   (opt-in, exigence CNIL). Bouton/lien **« Gérer mes cookies »** (pied de page + mentions légales) qui efface le
   choix et réaffiche la bannière. Mentions légales : Clarity dans les sous-traitants + cookies `_clck`/`_clsk`.
+
+### Session 6 (2026-09-29) — CSP
+- `Content-Security-Policy` **appliquée** (netlify.toml, section headers `/*`) après une phase Report-Only : 11 pages
+  parcourues avec Clarity/GTM/Elfsight/Turnstile/Vimeo/OSM → 0 violation (seul `static.elfsight.com` manquait, ajouté).
+  Politique : `default-src 'self'`, `object-src 'none'`, `base-uri`/`form-action` 'self', `frame-ancestors 'self'`,
+  scripts/frames/connexions limités aux domaines listés. **Limite connue** : `script-src` garde `'unsafe-inline'`
+  (8 scripts inline sur l'accueil + `onclick=`) — le durcir demande d'externaliser ces scripts (nonces impossibles
+  en statique) ; les scripts de domaines non listés restent néanmoins bloqués.
+- ⚠ Ajouter un nouvel outil tiers (pixel, widget, vidéo…) = ajouter son domaine dans la CSP, sinon il sera bloqué.
+- Bug corrigé au passage : image d'article `bienfait_peinture_ext (1)` (espace + parenthèses → `srcset` invalide)
+  renommée `bienfait_peinture_ext_2`.
