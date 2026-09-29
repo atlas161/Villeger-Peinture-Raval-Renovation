@@ -811,7 +811,7 @@
             <p>Remplissez le formulaire ci-dessous et recevez une réponse personnalisée sous 48h.</p>
           </header>
           <div class="contact-panel">
-            <form class="contact-form" name="contact-peinture-exterieure" method="POST" action="/merci.html" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
+            <form class="contact-form" name="contact-peinture-exterieure" method="POST" action="/api/contact" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
               <input type="hidden" name="form-name" value="contact-peinture-exterieure" />
               <input type="hidden" name="service" value="Peinture extérieure Charente" />
               <!-- Honeypot anti-bot (champ invisible pour les humains) -->
@@ -859,6 +859,7 @@
                 <textarea id="contact-message" name="message" placeholder="Décrivez brièvement votre projet..." rows="4" required></textarea>
               </div>
               
+              <div class="form-field form-captcha"><div class="cf-turnstile" data-sitekey="0x4AAAAAAFJCShb0ukqLZihS" data-language="fr" data-theme="light" data-action="contact"></div></div>
               <div class="form-actions">
                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane icon-inline" aria-hidden="true"></i>Obtenir mon devis gratuit</button>
               </div>

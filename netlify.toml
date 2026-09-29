@@ -10,6 +10,9 @@
 # OPTIMISATION DE LA PERFORMANCE
 # ─────────────────────────────────────────────────────────────────────────────────
 
+[functions]
+  directory = "netlify/functions"
+
 [build.processing]
   skip_processing = false
 
@@ -168,6 +171,12 @@
 
 [[redirects]]
   from = "/content/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify/*"
   to = "/404.html"
   status = 404
   force = true

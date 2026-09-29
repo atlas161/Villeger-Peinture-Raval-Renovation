@@ -1090,3 +1090,8 @@
     font-size: 0.9375rem;
   }
 }
+
+/* Widget anti-robot Cloudflare Turnstile : hauteur réservée pour éviter un décalage de mise en page */
+.form-captcha {
+  min-height: 65px;
+}

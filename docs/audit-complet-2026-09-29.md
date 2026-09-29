@@ -267,3 +267,12 @@ encore chargée** ; accessibilité 95 → 100 ; SEO 100. Le gain principal viend
   avec revalidation : ce `?v=` n'est plus à changer à chaque modif, seulement utile pour ce nettoyage unique.
 - **Mesure prod après déploiement (Lighthouse mobile)** : performance **99**, accessibilité **100**, bonnes
   pratiques **100**, SEO **100** ; LCP 2,1 s ; 551 Ko transférés (avant : 61 / 95 / 77 / 100, LCP 9,4 s, 20 Mo).
+
+### Session 4 (2026-09-29) — Captcha Cloudflare Turnstile
+- Widget Turnstile (clé de site publique dans le HTML des 6 formulaires, script chargé seulement quand le
+  formulaire approche de l'écran). Les formulaires postent sur `/api/contact` →
+  `netlify/functions/contact.js` : vérifie le jeton côté serveur (variable Netlify **`TURNSTILE_SECRET`**,
+  jamais dans le dépôt), honeypot silencieux, puis transmet à Netlify Forms (`POST /`) → les demandes arrivent
+  comme avant (interface Netlify + e-mails). Sans `TURNSTILE_SECRET`, la vérification est ignorée (log
+  d'avertissement) pour ne pas casser le formulaire.
+- Tests : `tests/contact-function.test.js` (7 cas). Cloudflare cité dans les mentions légales.

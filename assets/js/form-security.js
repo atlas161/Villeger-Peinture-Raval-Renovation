@@ -69,6 +69,8 @@
 
     // Ajouter la validation au submit
     form.addEventListener('submit', handleSubmit);
+
+    loadTurnstileWhenNear(form);
     
     // Validation en temps réel de l'email
     const emailField = document.getElementById('contact-email');
@@ -81,6 +83,32 @@
     const phoneField = document.getElementById('contact-telephone');
     if (phoneField) {
       phoneField.addEventListener('input', formatPhoneNumber);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // CAPTCHA (Cloudflare Turnstile) — script chargé seulement quand le formulaire approche de l'écran
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  function loadTurnstileWhenNear(form) {
+    if (!form.querySelector('.cf-turnstile')) return;
+    let loaded = false;
+    const load = () => {
+      if (loaded) return;
+      loaded = true;
+      const s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      s.async = true;
+      s.defer = true;
+      document.head.appendChild(s);
+    };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((en) => en.isIntersecting)) { io.disconnect(); load(); }
+      }, { rootMargin: '600px 0px' });
+      io.observe(form);
+    } else {
+      load();
     }
   }
 
@@ -120,6 +148,16 @@
       e.preventDefault();
       showError('Vous avez déjà envoyé un message récemment. Veuillez patienter avant de réessayer.');
       return false;
+    }
+
+    // Vérification 3b: captcha Turnstile résolu (le jeton est aussi revérifié côté serveur)
+    if (form.querySelector('.cf-turnstile')) {
+      const tokenField = form.querySelector('input[name="cf-turnstile-response"]');
+      if (!tokenField || !tokenField.value) {
+        e.preventDefault();
+        showError('Vérification anti-robot en cours… Patientez un instant puis réessayez.');
+        return false;
+      }
     }
 
     // Vérification 4: Email valide et non suspect
