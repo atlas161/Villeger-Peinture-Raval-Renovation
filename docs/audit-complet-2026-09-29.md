@@ -261,3 +261,9 @@ encore chargée** ; accessibilité 95 → 100 ; SEO 100. Le gain principal viend
   `data/hero-poster-{768,1280,1920}w.webp`, avec préchargement par media query.
 - **Footer** : « Site créé par Angelo Pro » devient un bouton vers https://angelo-pro.fr/ (nouvel onglet) ;
   mentions légales : réalisateur = Angelo Pro (Eagle Production retiré).
+- **Purge des anciens caches** : les CSS/JS étaient servis `immutable` 1 an ; les navigateurs des visiteurs déjà
+  venus gardaient l'ancien code (constaté en prod : la carte appelait encore unpkg). Toutes les références
+  CSS/JS portent maintenant `?v=20260929` (nouvelle URL = rechargement). Les fichiers sont désormais servis
+  avec revalidation : ce `?v=` n'est plus à changer à chaque modif, seulement utile pour ce nettoyage unique.
+- **Mesure prod après déploiement (Lighthouse mobile)** : performance **99**, accessibilité **100**, bonnes
+  pratiques **100**, SEO **100** ; LCP 2,1 s ; 551 Ko transférés (avant : 61 / 95 / 77 / 100, LCP 9,4 s, 20 Mo).
