@@ -31,6 +31,7 @@
   --color-text-muted: #77695E; /* contraste WCAG AA (4.5:1+) sur fond blanc et --color-bg, était #8B7D72 (~3.7:1) */
   --brand-accent: #A88B5E;
   --brand-accent-light: rgba(168, 139, 94, 0.15);
+  --brand-accent-on-dark: #D9C4A1; /* accent lisible sur le fond brun du footer (≈ 5.5:1) */
   --color-bg: #F9F7F5;
   --color-white: #ffffff;
   --color-surface: #FFFFFF;
@@ -1359,7 +1360,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   font-size: 0.875rem;
   font-weight: var(--font-weight-semibold);
   margin-bottom: var(--space-sm);
-  color: var(--brand-accent);
+  color: var(--brand-accent-on-dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1519,12 +1520,11 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 }
 
 .contact-label {
-  font-size: 10px;
-  color: var(--brand-accent);
+  font-size: 0.6875rem;
+  color: var(--brand-accent-on-dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
-  opacity: 0.8;
 }
 
 .contact-value {
