@@ -8,14 +8,16 @@ Ce dossier est la mémoire du projet : on y retrouve ce qui a été fait, pourqu
 1. [`../CLAUDE.md`](../CLAUDE.md) — règles de travail et pièges (chargé automatiquement par Claude Code).
 2. [`seo/architecture.md`](./seo/architecture.md) — **comment le site est construit** (build, pages générées, CSS/JS,
    cookies, formulaires, tests, recettes). À lire avant de toucher au code.
-3. [`changelog.md`](./changelog.md) — **tout ce qui a changé, par date et par commit** (avec l'état actuel en chiffres).
-4. [`seo/`](./seo/) — suivi du chantier SEO : `README.md` (état), `journal.md`, `blockers.md` (ce qui attend une action
+3. [`roadmap.md`](./roadmap.md) — **ce qui reste à faire**, priorisé.
+4. [`changelog.md`](./changelog.md) — **tout ce qui a changé, par date et par commit** (avec l'état actuel en chiffres).
+5. [`seo/`](./seo/) — suivi du chantier SEO : `README.md` (état), `journal.md`, `blockers.md` (ce qui attend une action
    du client), `decisions.md` (décisions produit actées).
 
 ## Tous les documents
 
 | Fichier | Contenu | Statut |
 |---|---|---|
+| [`roadmap.md`](./roadmap.md) | Reste à faire, priorisé | **à mettre à jour en fin de session** |
 | [`changelog.md`](./changelog.md) | Historique complet des changements | **à mettre à jour à chaque déploiement** |
 | [`seo/architecture.md`](./seo/architecture.md) | Architecture technique de référence | à jour au 2026-09-30 |
 | [`seo/README.md`](./seo/README.md), [`journal.md`](./seo/journal.md), [`blockers.md`](./seo/blockers.md), [`decisions.md`](./seo/decisions.md) | Suivi SEO | vivant |
@@ -25,21 +27,10 @@ Ce dossier est la mémoire du projet : on y retrouve ce qui a été fait, pourqu
 | [`ux-ui-responsive-audit.md`](./ux-ui-responsive-audit.md) | Audit UX/UI/responsive | historique |
 | [`code-quality-refactor.md`](./code-quality-refactor.md) | Chantier qualité de code + méthode « aucun changement visuel » | historique + méthode |
 
-## Ce qu'il reste à faire (au 2026-09-30)
+## Ce qu'il reste à faire
 
-**Côté client / comptes externes** (détail : [`seo/blockers.md`](./seo/blockers.md)) :
-- Créer dans Google Tag Manager les déclencheurs pour `phone_click`, `quote_cta_click`, `generate_lead`.
-- Nom de l'assureur décennale à ajouter aux mentions légales.
-- Fiche PagesJaunes doublon (61413918), process d'avis Google, Google Business Profile.
-
-**Côté site** (dette technique connue, dans l'ordre de valeur) :
-- Pages « ville » : le gabarit de pages est prêt, il manque un modèle de contenu (texte généré à partir du nom de
-  la commune) — voir `seo/architecture.md` §4.2.
-- Tokeniser le reste du design system (échelle typographique, ombres, breakpoints, z-index, composant bouton unique).
-- Durcir la CSP : externaliser les scripts inline de l'accueil (retirer `'unsafe-inline'`).
-- Convention d'URL : passer aux URLs sans `.html` (décision SEO, 301 à prévoir).
-- Charger Vimeo / Elfsight / carte OSM après clic ou consentement.
-- Autres pistes de condensation mobile non demandées : carrousel des avis de l'accueil, zone de l'accueil.
+👉 **[`roadmap.md`](./roadmap.md)** — feuille de route priorisée (actions du client, petits chantiers, chantiers moyens,
+contrôles après déploiement, décisions déjà prises). C'est le point de reprise d'une nouvelle session.
 
 ## Vérifier une modification (méthode utilisée pendant les chantiers)
 

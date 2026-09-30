@@ -5,7 +5,7 @@ Tout ce qu'on fait, les blocages, les décisions et les choix techniques sont do
 pour qu'on puisse reprendre le fil à tout moment sans perdre le contexte.
 
 > Vue d'ensemble de toute la documentation : [`../README.md`](../README.md) — historique complet par commit :
-> [`../changelog.md`](../changelog.md).
+> [`../changelog.md`](../changelog.md) · reste à faire : [`../roadmap.md`](../roadmap.md).
 
 ## Fichiers
 

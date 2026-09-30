@@ -7,6 +7,7 @@ intérieure basé à L'Isle-d'Espagnac (16340), Angoulême, Charente. Gérant : 
 
 **Point d'entrée : [`docs/README.md`](docs/README.md)** (index, ce qui reste à faire, méthode de vérification).
 - [`docs/seo/architecture.md`](docs/seo/architecture.md) — comment le site est construit (**à lire avant de toucher au code**).
+- [`docs/roadmap.md`](docs/roadmap.md) — **ce qui reste à faire**, priorisé (point de reprise d'une nouvelle session).
 - [`docs/changelog.md`](docs/changelog.md) — tout ce qui a changé, par date et par commit, avec l'état actuel en chiffres.
   **À mettre à jour à chaque déploiement.**
 - [`docs/seo/`](docs/seo/) — suivi SEO : `README.md` (état), `journal.md`, `blockers.md` (actions du client), `decisions.md`.
@@ -14,7 +15,7 @@ intérieure basé à L'Isle-d'Espagnac (16340), Angoulême, Charente. Gérant : 
   `docs/design-audit-2026-09-21.md` et `docs/ux-ui-responsive-audit.md` (historique — ne pas re-signaler les mêmes
   points), `docs/code-quality-refactor.md` (méthode « aucun changement visuel »).
 
-Après chaque session de travail : mettre à jour `docs/changelog.md`, et `docs/seo/journal.md` + `docs/seo/blockers.md`
+Après chaque session de travail : mettre à jour `docs/changelog.md` et `docs/roadmap.md`, et `docs/seo/journal.md` + `docs/seo/blockers.md`
 si le SEO ou une action client est concernée.
 
 ## Stack & hébergement
