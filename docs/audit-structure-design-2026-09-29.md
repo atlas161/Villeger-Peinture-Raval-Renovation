@@ -137,3 +137,21 @@ la classe `cookie-banner-visible` n'était jamais ajoutée par `footer.js`) — 
 accepter ni refuser, et Clarity/GTM ne se chargeaient jamais. De plus, un clic sur Accepter/Refuser remontait
 jusqu'à l'écouteur global qui réaffichait la bannière. À surveiller : les statistiques Clarity/GTM vont maintenant
 commencer à se remplir (uniquement pour les visiteurs qui acceptent).
+
+### Étape 8 — densité mobile/tablette (2026-09-30, commit `4b4bb0a`, en production)
+Bloc « DENSITÉ MOBILE / TABLETTE PORTRAIT (≤ 768px) » à la fin de `assets/css/responsive.css` : marges de sections
+64 → 48 px (96 → 48 pour « Le problème »), en-têtes de section 64 → 32 px, cartes (problème, atouts, réassurance,
+étapes) en grille « icône + titre sur une ligne, texte dessous » avec texte 15 px, FAQ/tarifs/zones/cartes de
+services compactés. Contenu HTML inchangé (rien de retiré pour le SEO) ; bureau (> 768 px) strictement inchangé
+(hauteurs identiques avant/après).
+
+| Page (téléphone 375 px) | Avant | Après |
+|---|---|---|
+| Ravalement (la plus longue) | 23 851 px | 18 737 px (-21 %) |
+| Isolation | — | 15 267 px |
+| Accueil | 13 486 px | 13 051 px (-3 %) |
+
+**Pistes non faites** (changent davantage le rendu, à valider avec le client) : repli « Voir plus » des 18 communes
+et des blocs « Tarifs » / « Pourquoi investir » (accordéons), carrousel horizontal des avis/galerie sur l'accueil,
+photo avant/après unique au lieu de deux (hero + réalisation), FAQ limitée aux 5 premières questions avec « Voir
+toutes ».
