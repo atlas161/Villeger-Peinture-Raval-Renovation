@@ -130,7 +130,7 @@ function zone(z) {
   <div class="container">
 ${indent(header({ ...z, id: 'zone-title' }), 4)}
 
-    <ul class="zone-list">
+    <ul class="zone-list" data-m-limit="8" data-m-more="Voir les autres communes">
 ${cities}
     </ul>
 
@@ -185,7 +185,7 @@ ${indent(i.answerHtml, 10)}
   <div class="container">
 ${indent(header({ ...f, id: 'faq-title' }), 4)}
 
-    <div class="faq-accordion">
+    <div class="faq-accordion" data-m-limit="5" data-m-more="Voir toutes les questions">
 ${items}
     </div>
 

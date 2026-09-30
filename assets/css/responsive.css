@@ -519,3 +519,81 @@
     font-size: 0.9375rem;
   }
 }
+
+/* ===================================================================
+   CONDENSATION MOBILE PILOTÉE PAR JS (assets/js/mobile-condense.js) + PHOTOS EN DOUBLE + GALERIE
+   Tout le contenu reste dans le HTML : on ne fait que le replier sur petit écran.
+   =================================================================== */
+.m-more-wrap {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Listes limitées (communes desservies, FAQ) : « Voir plus » */
+  [data-m-limit]:not(.is-expanded) > .m-hidden {
+    display: none;
+  }
+
+  .m-more-wrap {
+    display: block;
+    text-align: center;
+    margin-top: var(--space-md);
+  }
+
+  /* Encadrés repliables (Prix au m², Pourquoi investir) */
+  [data-m-collapse] > .m-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    cursor: pointer;
+  }
+
+  [data-m-collapse] > .m-trigger::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    transition: transform var(--duration-normal) var(--ease-out);
+    transform: rotate(180deg);
+  }
+
+  [data-m-collapse].m-collapsed > .m-trigger::after {
+    transform: rotate(0deg);
+  }
+
+  [data-m-collapse].m-collapsed > :not(.m-trigger) {
+    display: none;
+  }
+
+  [data-m-collapse].m-collapsed > .m-trigger {
+    margin-bottom: 0;
+  }
+
+  /* Les photos avant/après de « Réalisation » répètent celles du slider en haut de page */
+  .before-after-card {
+    display: none;
+  }
+}
+
+/* Galerie de l'accueil : défilement horizontal sur téléphone */
+@media (max-width: 639px) {
+  .gallery-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--space-md);
+    padding-bottom: var(--space-sm);
+    scrollbar-width: none;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+}

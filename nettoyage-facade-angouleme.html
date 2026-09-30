@@ -385,6 +385,7 @@
     <script defer src="assets/js/main.js?v=20260929"></script>
     <script defer src="assets/js/apple-select.js?v=20260929"></script>
     <script defer src="assets/js/form-security.js?v=20260929"></script>
+    <script defer src="assets/js/mobile-condense.js?v=20260929"></script>
     <script src="assets/js/before-after.js?v=20260929" defer></script>
     <!-- Petites variations propres à cette page par rapport au gabarit commun assets/css/service-page.css -->
     <style>
@@ -698,7 +699,7 @@
             <p>Service de nettoyage de façade disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16).</p>
           </header>
 
-          <ul class="zone-list">
+          <ul class="zone-list" data-m-limit="8" data-m-more="Voir les autres communes">
           <li class="zone-tag"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Angoulême</li>
           <li class="zone-tag">L'Isle-d'Espagnac</li>
           <li class="zone-tag">Gond-Pontouvre</li>
@@ -959,7 +960,7 @@
             <p>Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de nettoyage de façade.</p>
           </header>
 
-          <div class="faq-accordion">
+          <div class="faq-accordion" data-m-limit="5" data-m-more="Voir toutes les questions">
             <details class="faq-item">
               <summary class="faq-question">
                 <span class="faq-icon-badge">
