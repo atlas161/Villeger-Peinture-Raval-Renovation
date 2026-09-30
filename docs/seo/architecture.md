@@ -86,21 +86,30 @@ Les pages comme `ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.
 `index.html` sont du **HTML statique écrit à la main**, pas généré. Toute modification se fait
 directement dans ces fichiers.
 
-### Blocs générés dans les pages de service : `scripts/sync-partials.js`
+### Pages de service générées : `scripts/build-pages.js`
 
-Deux blocs qui étaient recopiés à la main sont maintenant générés depuis `includes/partials/` et réinjectés
-dans les pages (le HTML des pages reste complet) :
+Les 5 pages de service (`ravalement-facade-angouleme`, `nettoyage-facade-angouleme`, `nettoyage-toiture-angouleme`,
+`peinture-exterieure-charente`, `isolation-interieure-charente`) sont **générées** — leurs fichiers `.html` à la
+racine ne doivent plus être édités à la main.
 
-- `contact-service.html` → section `#contact` des **5 pages de service**. Ce qui varie d'une page (nom du
-  formulaire Netlify, service envoyé, options du menu déroulant) se règle dans la config `CONTACT_PAGES` de
-  `scripts/sync-partials.js`. L'accueil garde son propre formulaire (il diffère vraiment).
-- `why-artisan.html` → section « Pourquoi nous choisir » des pages nettoyage façade, nettoyage toiture et
-  peinture extérieure (celles de ravalement et d'isolation ont un contenu propre, laissé tel quel).
+| Élément | Où |
+|---|---|
+| Gabarit commun (head, en-tête, scripts, pied de page) | `scripts/templates/service-page.html` |
+| Composants des sections (hero, problème, solution, zone, autres services, FAQ, liens associés) | `scripts/lib/service-sections.js` |
+| Formulaire de contact et « Pourquoi nous choisir » communs | `includes/partials/*.html` (+ `scripts/lib/partials.js`) |
+| Données d'une page (méta, JSON-LD, contenu des sections, options du formulaire) | `content/pages/<slug>/page.json` |
+| Sections propres à une page, en HTML brut (réalisation, tarifs, encadré ITE…) | `content/pages/<slug>/*.html` (type `raw`) |
 
-**Ne pas éditer ces blocs dans les pages** : modifier le gabarit/la config puis `npm run sync:partials`
-(`node scripts/sync-partials.js --check` est exécuté par `npm test` et échoue si une page est en retard).
-Le slider avant/après n'est plus recopié en `<script>` dans chaque page : il vit dans
-`assets/js/before-after.js`.
+- **Modifier un texte** : éditer `page.json` (ou le fragment HTML), puis `npm run build:pages`. Le build de
+  déploiement (`npm run build`) le fait aussi, et `npm test` échoue si une page n'est pas à jour.
+- **Ajouter une page (service ou ville)** : copier un dossier `content/pages/<slug>/`, adapter `page.json`
+  (`file`, `head`, `ld`, `contact`, `sections`, `related`), lancer `npm run build:pages`, puis ajouter la page au
+  sitemap, au menu (`scripts/sync-header.js`) et aux liens internes utiles.
+- Ordre et présence des sections : c'est la liste `sections` du `page.json` (types : `hero`, `problem`,
+  `solution`, `zone`, `others`, `faq`, `why`, `contact`, `raw`).
+- L'en-tête est produit par la même fonction que `sync-header.js` (un seul gabarit de menu). Les autres pages
+  (accueil, zone, FAQ, mentions légales) restent du HTML écrit à la main, synchronisé par `npm run sync:header`.
+- Le slider avant/après vit dans `assets/js/before-after.js` (chargé si `beforeAfterScript` vaut `true`).
 
 ### CSS des 5 pages de service : `assets/css/service-page.css`
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Preload des ressources critiques -->
+    <link rel="preload" href="assets/css/styles.css?v=20260929" as="style" />
+    <link rel="preload" href="assets/css/nav.css?v=20260929" as="style" />
+    <link rel="preload" href="media/VPRR-LOGO.svg" as="image" type="image/svg+xml" />
+
+    <!-- Métadonnées SEO -->
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta name="keywords" content="{{KEYWORDS}}" />
+    <meta name="author" content="Villéger Peinture Raval Rénovation" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#673A12" />
+    <meta name="geo.region" content="FR-16" />
+    <meta name="geo.placename" content="{{GEO_PLACENAME}}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VPRR - Villéger Peinture Raval Rénovation" />
+    <meta property="og:title" content="{{OG_TITLE}}" />
+    <meta property="og:description" content="{{OG_DESCRIPTION}}" />
+    <meta property="og:url" content="{{CANONICAL}}" />
+    <meta property="og:image" content="{{OG_IMAGE}}" />
+{{OG_EXTRA}}    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+{{TWITTER_EXTRA}}    <meta name="twitter:title" content="{{TWITTER_TITLE}}" />
+    <meta name="twitter:description" content="{{TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{TWITTER_IMAGE}}" />
+    <meta name="twitter:image:alt" content="{{TWITTER_IMAGE_ALT}}" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260929" />
+    <link rel="stylesheet" href="assets/css/nav.css?v=20260929" />
+    <link rel="stylesheet" href="assets/css/utilities.css?v=20260929" />
+    <link rel="stylesheet" href="assets/css/service-page.css?v=20260929" />
+    <link rel="stylesheet" href="assets/css/responsive.css?v=20260929" />
+    <link rel="stylesheet" href="assets/css/contact.css?v=20260929" media="print" onload="this.media='all'" />
+    <!-- Polices et icônes (hébergées) -->
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/fonts/inter.css" />
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="https://vprr.fr/media/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://vprr.fr/media/favicon/apple-touch-icon.png" />
+
+    <!-- URL canonique -->
+    <link rel="canonical" href="{{CANONICAL}}" />
+
+    <!-- Données structurées (générées depuis content/pages/*/page.json) -->
+{{JSONLD}}
+
+    <!-- JavaScript -->
+    <script defer src="assets/js/main.js?v=20260929"></script>
+    <script defer src="assets/js/apple-select.js?v=20260929"></script>
+    <script defer src="assets/js/form-security.js?v=20260929"></script>
+{{SLIDER_SCRIPT}}{{EXTRA_STYLE}}  </head>
+  <body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+
+    <!-- Header -->
+{{HEADER}}
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+{{SECTIONS}}
+
+    </main>
+
+    <!-- Navigation interne vers autres services -->
+{{RELATED}}
+
+    <!-- Footer inclus par scripts/build-site.js (ou chargé par footer.js en local) -->
+    <script src="assets/js/footer.js?v=20260929"></script>
+
+  </body>
+</html>

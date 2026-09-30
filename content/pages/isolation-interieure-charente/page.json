@@ -1,0 +1,457 @@
+{
+  "file": "isolation-interieure-charente.html",
+  "head": {
+    "title": "Isolation intérieure à Angoulême (16) | Devis gratuit | VPRR",
+    "description": "Isolation intérieure à Angoulême et en Charente (16) : combles, murs, remplacement de menuiseries. Confort thermique, devis gratuit sous 48h.",
+    "keywords": "isolation intérieure Angoulême, isolation combles Charente, isolation murs intérieur 16, isolation thermique Angoulême, artisan isolation Charente",
+    "geoPlacename": "Charente, Angoulême",
+    "ogTitle": "Isolation intérieure à Angoulême (16) | Devis gratuit | VPRR",
+    "ogDescription": "Isolation intérieure à Angoulême et en Charente (16) : combles, murs, menuiseries. Devis gratuit sous 48h.",
+    "ogImage": "https://vprr.fr/data/hero.webp",
+    "twitterTitle": "Isolation intérieure à Angoulême (Charente 16) | VPRR",
+    "twitterDescription": "Isolation des combles et des murs par l'intérieur en Charente. Devis gratuit sous 48h.",
+    "twitterImage": "https://vprr.fr/data/hero.webp",
+    "twitterImageAlt": "Isolation intérieure en Charente (16) - VPRR",
+    "extraStyle": ".hero-placeholder {\n  color: var(--color-primary);\n}\n\n.hero-placeholder-text {\n  font-size: 0.9375rem;\n  color: var(--color-text-light);\n  text-align: center;\n  max-width: 260px;\n  line-height: 1.5;\n  opacity: 1;\n}"
+  },
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "businessCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services d'isolation intérieure",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Isolation intérieure professionnelle",
+            "description": "Isolation des combles et des murs par l'intérieur en Charente",
+            "areaServed": "Angoulême, Charente (16)"
+          }
+        }
+      ]
+    },
+    "serviceType": "Isolation intérieure",
+    "serviceAreaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Isolation intérieure en Charente",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Isolation des combles",
+            "description": "Isolation thermique des combles perdus ou aménagés"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Isolation des murs par l'intérieur",
+            "description": "Doublage isolant sur murs et cloisons pour améliorer le confort thermique"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Remplacement de menuiseries",
+            "description": "Remplacement de fenêtres pour renforcer l'étanchéité thermique du logement"
+          }
+        }
+      ]
+    },
+    "breadcrumbName": "Isolation Intérieure Charente",
+    "faq": [
+      {
+        "q": "Faites-vous de l'isolation extérieure (ITE) ?",
+        "a": "Non, nous ne réalisons pas d'isolation thermique par l'extérieur (ITE) sous forme de bardage ou d'enduit isolant. En revanche, nos peintures et traitements de façade apportent une protection hydrofuge qui limite les déperditions liées à l'humidité : voir notre page peinture extérieure. Pour l'isolation de votre logement, notre expertise porte sur l'isolation intérieure : combles, murs par l'intérieur et menuiseries."
+      },
+      {
+        "q": "Quel est le prix moyen d'une isolation de combles en Charente ?",
+        "a": "Le prix d'une isolation de combles perdus en Charente varie généralement entre 20€ et 45€ par m², selon la technique (soufflage ou déroulé), l'épaisseur d'isolant posée et l'accessibilité des combles. Exemple concret : pour des combles perdus de 80m² isolés par soufflage, comptez environ 1 800€ à 3 000€ TTC. Un devis gratuit après visite sur place permet d'avoir un tarif précis et d'étudier les aides disponibles."
+      },
+      {
+        "q": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
+        "a": "Oui, absolument. Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). Après votre demande, nous convenons d'un rendez-vous pour visiter votre logement, évaluer l'isolation existante et identifier les travaux nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif."
+      },
+      {
+        "q": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
+        "a": "Oui. Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Contactez-nous pour vérifier votre commune et organiser une visite."
+      },
+      {
+        "q": "Combien de temps dure une prestation d'isolation intérieure ?",
+        "a": "La durée dépend du type de travaux : isolation de combles perdus par soufflage, en général 1 journée. Isolation de combles aménagés ou de murs par doublage, 2 à 5 jours selon la surface. Remplacement de menuiseries, une demi-journée à 2 jours selon le nombre de fenêtres. Nous confirmons la durée exacte lors de la visite technique."
+      },
+      {
+        "q": "L'isolation intérieure est-elle éligible à des aides financières ?",
+        "a": "Selon votre situation et les matériaux posés, certains travaux d'isolation peuvent être éligibles à des aides comme MaPrimeRénov' ou les Certificats d'Économies d'Énergie (CEE). Nous vous orientons sur les dispositifs qui peuvent s'appliquer à votre projet ; le montant exact dépend de votre éligibilité et doit être confirmé auprès des organismes concernés."
+      }
+    ]
+  },
+  "beforeAfterScript": false,
+  "contact": {
+    "formName": "contact-isolation-interieure",
+    "service": "Isolation intérieure Charente",
+    "placeholder": "Isolation intérieure",
+    "prestation": "isolation-interieure",
+    "options": [
+      [
+        "isolation-combles",
+        "Isolation des combles"
+      ],
+      [
+        "isolation-murs",
+        "Isolation des murs"
+      ],
+      [
+        "menuiseries",
+        "Remplacement de menuiseries"
+      ],
+      [
+        "autre",
+        "Autre"
+      ]
+    ]
+  },
+  "related": [
+    {
+      "href": "ravalement-facade-angouleme.html",
+      "icon": "fa-solid fa-trowel",
+      "label": "Ravalement de façade"
+    },
+    {
+      "href": "nettoyage-facade-angouleme.html",
+      "icon": "fa-solid fa-spray-can-sparkles",
+      "label": "Nettoyage de façade"
+    },
+    {
+      "href": "peinture-exterieure-charente.html",
+      "icon": "fa-solid fa-paintbrush",
+      "label": "Peinture extérieure"
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero",
+      "title": "Isolation Intérieure à Angoulême et en Charente",
+      "subtitleHtml": "Combles, murs par l'intérieur, menuiseries : améliorez le confort thermique de votre logement et réduisez vos factures d'énergie. Devis gratuit en 48h.",
+      "ctaLabel": "Obtenir mon devis gratuit en 48h",
+      "placeholder": {
+        "icon": "fa-solid fa-temperature-half",
+        "text": "Isolation des combles, des murs par l'intérieur et remplacement de menuiseries"
+      }
+    },
+    {
+      "type": "problem",
+      "eyebrow": "Le problème",
+      "title": "Un logement mal isolé coûte cher, été comme hiver",
+      "introHtml": "Un logement mal isolé n'est pas qu'une question de confort : c'est aussi une facture d'énergie qui grimpe chaque année.",
+      "items": [
+        {
+          "icon": "fa-solid fa-fire-flame-simple",
+          "title": "Jusqu'à 30% de chaleur perdue par la toiture",
+          "text": "Des combles mal isolés laissent s'échapper une grande partie de la chaleur produite par votre chauffage en hiver."
+        },
+        {
+          "icon": "fa-solid fa-temperature-high",
+          "title": "Inconfort en été comme en hiver",
+          "text": "Murs et combles mal isolés laissent entrer la chaleur l'été et le froid l'hiver, rendant certaines pièces inhabitables une partie de l'année."
+        },
+        {
+          "icon": "fa-solid fa-droplet",
+          "title": "Humidité et parois froides",
+          "text": "Une isolation insuffisante favorise la condensation sur les murs froids, propice aux moisissures et à l'inconfort."
+        },
+        {
+          "icon": "fa-solid fa-euro-sign",
+          "title": "Factures de chauffage élevées",
+          "text": "Chaque déperdition thermique se traduit directement par une surconsommation d'énergie et une facture plus lourde."
+        }
+      ]
+    },
+    {
+      "type": "solution",
+      "eyebrow": "Notre solution",
+      "title": "Isolation intérieure professionnelle et durable",
+      "introHtml": "Nous intervenons sur l'isolation par l'intérieur de votre logement : combles, murs et menuiseries, pour un confort thermique optimal toute l'année.",
+      "features": [
+        {
+          "icon": "fa-solid fa-house-chimney",
+          "title": "Isolation des combles",
+          "text": "Isolation des combles perdus (soufflage) ou aménagés (déroulé, panneaux), pour limiter les déperditions de chaleur par la toiture."
+        },
+        {
+          "icon": "fa-solid fa-layer-group",
+          "title": "Isolation des murs par l'intérieur",
+          "text": "Doublage isolant sur murs et cloisons pour améliorer le confort thermique et acoustique de vos pièces de vie."
+        },
+        {
+          "icon": "fa-solid fa-window-restore",
+          "title": "Remplacement de menuiseries",
+          "text": "Remplacement de fenêtres pour renforcer l'étanchéité thermique et limiter les ponts froids autour des ouvertures."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Traitement de l'humidité",
+          "text": "Diagnostic et traitement des points d'humidité avant isolation, pour garantir la durabilité des travaux réalisés."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Diagnostic sur place",
+          "text": "Visite technique pour évaluer l'isolation existante et identifier les priorités (combles, murs, menuiseries)."
+        },
+        {
+          "title": "Devis détaillé",
+          "text": "Devis transparent avec matériaux, méthode et délai, et orientation sur les aides financières possibles."
+        },
+        {
+          "title": "Pose de l'isolant",
+          "text": "Mise en œuvre par nos équipes, dans le respect des normes en vigueur et de la ventilation du logement."
+        },
+        {
+          "title": "Contrôle qualité",
+          "text": "Vérification de la pose et nettoyage complet du chantier avant restitution des lieux."
+        }
+      ]
+    },
+    {
+      "type": "raw",
+      "file": "ite-iti.html"
+    },
+    {
+      "type": "raw",
+      "file": "why.html"
+    },
+    {
+      "type": "zone",
+      "eyebrow": "Zone d'intervention",
+      "title": "Nous intervenons dans toute la Charente",
+      "introHtml": "Service d'isolation intérieure disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16).",
+      "cities": [
+        "Angoulême",
+        "L'Isle-d'Espagnac",
+        "Gond-Pontouvre",
+        "Saint-Yrieix-sur-Charente",
+        "Soyaux",
+        "La Couronne",
+        "Puymoyen",
+        "Fléac",
+        "Ruelle-sur-Touvre",
+        "Magnac-sur-Touvre",
+        "Saint-Michel",
+        "Champniers",
+        "Cognac",
+        "Jarnac",
+        "Châteauneuf-sur-Charente",
+        "La Rochefoucauld-en-Angoumois",
+        "Barbezieux-Saint-Hilaire",
+        "Ruffec"
+      ],
+      "noteHtml": "<strong>Votre commune n'est pas listée ?</strong> Contactez-nous, nous intervenons également dans les communes voisines."
+    },
+    {
+      "type": "others",
+      "eyebrow": "Découvrez aussi",
+      "title": "Nos autres services de rénovation",
+      "introHtml": "VPRR vous accompagne dans tous vos projets de rénovation en Charente.",
+      "cards": [
+        {
+          "icon": "fa-solid fa-paintbrush",
+          "title": "Peinture Extérieure",
+          "text": "Protégez et embellissez votre façade avec une peinture extérieure adaptée au climat charentais.",
+          "href": "peinture-exterieure-charente.html"
+        },
+        {
+          "icon": "fa-solid fa-screwdriver-wrench",
+          "title": "Ravalement de Façade",
+          "text": "Rénovation complète de vos façades : réparation, enduit, peinture et protection longue durée.",
+          "href": "ravalement-facade-angouleme.html"
+        },
+        {
+          "icon": "fa-solid fa-house-chimney",
+          "title": "Nettoyage de Toiture",
+          "text": "Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.",
+          "href": "nettoyage-toiture-angouleme.html"
+        }
+      ]
+    },
+    {
+      "type": "raw",
+      "file": "tarifs.html"
+    },
+    {
+      "type": "contact"
+    },
+    {
+      "type": "faq",
+      "eyebrow": "F.A.Q",
+      "title": "Questions fréquentes : Isolation Intérieure",
+      "introHtml": "Trouvez rapidement les réponses à vos questions sur l'isolation intérieure, les tarifs et les devis.",
+      "items": [
+        {
+          "icon": "fa-solid fa-circle-question",
+          "question": "Faites-vous de l'isolation extérieure (ITE) ?",
+          "answerHtml": "<p>\n  <strong>Non</strong>, nous ne réalisons pas d'isolation thermique par l'extérieur (ITE) sous forme de bardage ou d'enduit isolant. Nos peintures et traitements de façade apportent en revanche une protection hydrofuge utile contre l'humidité : voir notre page <a href=\"peinture-exterieure-charente.html\">peinture extérieure</a>.\n</p>\n<p>\n  Pour l'isolation de votre logement, notre expertise porte sur l'<strong>isolation intérieure</strong> : combles, murs par l'intérieur et menuiseries.\n</p>"
+        },
+        {
+          "icon": "fa-solid fa-tag",
+          "accent": true,
+          "question": "Quel est le prix moyen d'une isolation de combles en Charente ?",
+          "answerHtml": "<p>\n  Le prix d'une isolation de combles perdus en Charente varie généralement entre <strong>20€ et 45€ par m²</strong>, selon la technique (soufflage ou déroulé), l'épaisseur d'isolant posée et l'accessibilité des combles.\n</p>\n<p>\n  <strong>Exemple concret :</strong> pour des combles perdus de 80m² isolés par soufflage, comptez environ 1 800€ à 3 000€ TTC. Un devis gratuit après visite sur place permet d'avoir un tarif précis et d'étudier les aides disponibles.\n</p>"
+        },
+        {
+          "icon": "fa-solid fa-file-signature",
+          "question": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
+          "answerHtml": "<p>\n  <strong>Oui, absolument.</strong> Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16).\n</p>\n<p>\n  Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre logement, évaluer l'isolation existante et identifier les travaux nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif.\n</p>"
+        },
+        {
+          "icon": "fa-solid fa-map-location-dot",
+          "accent": true,
+          "question": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
+          "answerHtml": "<p>\n  <strong>Oui.</strong> Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment <strong>Cognac</strong>, <strong>Jarnac</strong>, <strong>Ruffec</strong>, <strong>Barbezieux-Saint-Hilaire</strong> et <strong>La Rochefoucauld-en-Angoumois</strong>.\n</p>\n<p>\n  Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d'intervention et vous transmettons un devis gratuit.\n</p>"
+        },
+        {
+          "icon": "fa-solid fa-clock",
+          "question": "Combien de temps dure une prestation d'isolation intérieure ?",
+          "answerHtml": "<p>\n  La durée dépend du type de travaux :\n</p>\n<ul>\n  <li><strong>Combles perdus par soufflage :</strong> en général 1 journée</li>\n  <li><strong>Combles aménagés ou murs par doublage :</strong> 2 à 5 jours selon la surface</li>\n  <li><strong>Remplacement de menuiseries :</strong> une demi-journée à 2 jours selon le nombre de fenêtres</li>\n</ul>\n<p>\n  Nous confirmons la durée exacte lors de la visite technique.\n</p>"
+        },
+        {
+          "icon": "fa-solid fa-hand-holding-dollar",
+          "question": "L'isolation intérieure est-elle éligible à des aides financières ?",
+          "answerHtml": "<p>\n  Selon votre situation et les matériaux posés, certains travaux d'isolation peuvent être éligibles à des aides comme <strong>MaPrimeRénov'</strong> ou les <strong>Certificats d'Économies d'Énergie (CEE)</strong>. Nous vous orientons sur les dispositifs qui peuvent s'appliquer à votre projet ; le montant exact dépend de votre éligibilité et doit être confirmé auprès des organismes concernés.\n</p>"
+        }
+      ],
+      "cta": {
+        "text": "Vous avez d'autres questions ?",
+        "icon": "fa-solid fa-comments",
+        "label": "Poser ma question et obtenir un devis"
+      }
+    }
+  ]
+}

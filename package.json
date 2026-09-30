@@ -4,9 +4,9 @@
   "description": "VPRR - Site vitrine avec blog optimisé SEO",
   "scripts": {
     "build:blog": "node scripts/build-blog.js",
-    "build": "npm run build:blog && node scripts/build-site.js",
+    "build": "npm run build:pages && npm run build:blog && node scripts/build-site.js",
+    "build:pages": "node scripts/build-pages.js",
     "sync:header": "node scripts/sync-header.js",
-    "sync:partials": "node scripts/sync-partials.js",
     "dev": "npx serve .",
     "test": "node --test"
   },

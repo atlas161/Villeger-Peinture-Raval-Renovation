@@ -23,11 +23,7 @@ const ROOT = path.join(__dirname, '..');
 // "Obtenir un devis".
 const PAGES = [
   { file: 'index.html', isHome: true, hasLocalContact: true },
-  { file: 'ravalement-facade-angouleme.html', hasLocalContact: true },
-  { file: 'nettoyage-facade-angouleme.html', hasLocalContact: true },
-  { file: 'nettoyage-toiture-angouleme.html', hasLocalContact: true },
-  { file: 'peinture-exterieure-charente.html', hasLocalContact: true },
-  { file: 'isolation-interieure-charente.html', hasLocalContact: true },
+  // Les 5 pages de service sont générées par scripts/build-pages.js (qui appelle generateHeader).
   { file: 'zone-desservie-charente.html', hasLocalContact: false, currentSection: 'zone' },
   { file: 'faq-renovation-angouleme.html', hasLocalContact: false, currentSection: 'faq' },
   { file: 'mentions-legales.html', hasLocalContact: false },
@@ -146,4 +142,6 @@ function main() {
   console.log(`\n✅ Terminé : ${changed} page(s) mise(s) à jour sur ${PAGES.length}.`);
 }
 
-main();
+if (require.main === module) main();
+
+module.exports = { generateHeader };

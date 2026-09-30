@@ -24,9 +24,9 @@ intérieure basé à L'Isle-d'Espagnac (16340), Angoulême, Charente. Gérant : 
   `node scripts/tokenize-css.js` remplace les valeurs identiques à un token (sans changement visuel).
 - `npm test` couvre aussi les invariants du site (`tests/site-invariants.test.js` : liens/ancres, H1 unique,
   canonical, `<title>` ≤ 60 car., sitemap, contenu de `dist/`).
-- Le formulaire de contact des 5 pages de service et la section « Pourquoi nous choisir » (3 pages) sont
-  **générés** depuis `includes/partials/` : ne pas les éditer dans les pages, modifier le gabarit / la config de
-  `scripts/sync-partials.js` puis `npm run sync:partials` (comme `sync:header` pour le menu).
+- Les **5 pages de service sont générées** (`npm run build:pages`) depuis un gabarit + `content/pages/<slug>/page.json` :
+  ne jamais éditer leurs `.html` à la main (voir `docs/seo/architecture.md`, section « Pages de service générées »).
+  Ajouter une page de service ou de ville = copier un dossier de `content/pages/`.
 - Détails complets de l'architecture : [`docs/seo/architecture.md`](docs/seo/architecture.md).
 
 ## Chantier qualité de code en cours
