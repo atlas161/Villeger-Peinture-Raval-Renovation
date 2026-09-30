@@ -12,6 +12,18 @@ intérieure basé à L'Isle-d'Espagnac (16340), Angoulême, Charente. Gérant : 
   statique par `scripts/build-blog.js`.
 - **Toujours lancer `npm run build:blog` après avoir modifié un fichier dans `content/blog/`** — les
   fichiers `blog/*.html` sont générés, ne jamais les éditer à la main (écrasés au prochain build).
+- **Publication = dossier `dist/`** (`publish = "dist"`), généré par `npm run build` (`build:blog` puis
+  `scripts/build-site.js`) : liste blanche des fichiers publics (les fichiers internes — docs, scripts, tests,
+  `content/`, `data/config.json`, gabarit d'article — n'y sont jamais), footer inclus statiquement dans le HTML,
+  `_redirects` `/blog/<slug>` → `.html`. `dist/` n'est pas versionné. En local, `npm run dev` sert la racine
+  (le footer est alors chargé par `footer.js`). Un nouveau dossier/fichier public doit être ajouté à
+  `PUBLIC_DIRS`/`PUBLIC_ROOT_FILES` de `scripts/build-site.js`.
+- Gabarit des articles : `scripts/template-article.html`. CSS/JS du blog : `assets/css/blog*.css`,
+  `assets/js/blog-*.js` (plus rien dans `blog/` hormis le HTML généré et `articles.json`).
+- CSS : utiliser les variables de `:root` (`--color-*`, `--radius*`, `--space-*`) plutôt que des valeurs en dur ;
+  `node scripts/tokenize-css.js` remplace les valeurs identiques à un token (sans changement visuel).
+- `npm test` couvre aussi les invariants du site (`tests/site-invariants.test.js` : liens/ancres, H1 unique,
+  canonical, `<title>` ≤ 60 car., sitemap, contenu de `dist/`).
 - Détails complets de l'architecture : [`docs/seo/architecture.md`](docs/seo/architecture.md).
 
 ## Chantier qualité de code en cours
@@ -67,3 +79,13 @@ de la fiche Solocal/PagesJaunes.
   pour raccourcir les balises SEO sans toucher au H1/chapeau affichés — voir
   `docs/seo/architecture.md`.
 - Ne jamais commit/push sans validation explicite de l'utilisateur.
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+Rules:
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).

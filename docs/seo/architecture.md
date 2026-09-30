@@ -18,7 +18,7 @@ Le blog **n'est pas édité directement en HTML**. Le flux est :
 
 1. Les articles vivent en Markdown avec frontmatter dans `content/blog/*.md`.
 2. Le script `scripts/build-blog.js` lit ces fichiers, les injecte dans le template
-   `blog/template-article.html`, et génère :
+   `scripts/template-article.html`, et génère :
    - une page HTML statique par article dans `blog/`,
    - `blog/articles.json` (liste structurée utilisée par la page d'accueil et l'index blog),
    - `blog/index.html` pré-rendu,
