@@ -362,63 +362,23 @@ a:hover {
   width: 100%;
 }
 
-/* Logo : porte en SVG en ligne + texte en vraie police (net à toutes les tailles) */
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--color-primary);
-  text-decoration: none;
+.logo-img {
+  height: 48px !important;
+  width: auto !important;
+  max-height: 48px !important;
+  display: block;
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 
-.logo:hover {
-  opacity: 0.85;
-}
-
-.logo-mark {
-  display: block;
-  flex: none;
-  height: 44px;
-  width: auto;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  line-height: 1;
-}
-
-.logo-name {
-  font-size: 1.375rem;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -0.015em;
-  color: var(--color-primary);
-}
-
-.logo-sub {
-  font-size: 0.6875rem;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.02em;
-  color: var(--color-text-light);
-  white-space: nowrap;
-}
-
-.logo-sub b {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-}
-
 @media (max-width: 991px) {
-  .logo-mark { height: 38px; }
-  .logo-name { font-size: 1.25rem; }
+  .logo-img {
+    height: 40px !important;
+    max-height: 40px !important;
+  }
 }
 
-@media (max-width: 359px) {
-  .logo { gap: 8px; }
-  .logo-name { font-size: 1.125rem; }
-  .logo-sub { font-size: 0.625rem; letter-spacing: 0; }
+.logo:hover .logo-img {
+  opacity: 0.8;
 }
 
 .menu-tel {

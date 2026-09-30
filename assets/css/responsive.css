@@ -184,6 +184,10 @@
     padding: 0 var(--space-md);
   }
   
+  .logo-img {
+    width: 120px;
+    height: 32px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -195,6 +199,10 @@
     padding: 0 var(--space-sm);
   }
   
+  .logo-img {
+    width: 100px;
+    height: 27px;
+  }
 }
 
 /* CTA Sections Responsive */
