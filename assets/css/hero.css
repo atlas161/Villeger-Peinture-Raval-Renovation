@@ -140,7 +140,7 @@
 .hero-accent {
   font-style: normal;
   /* Dégradé doré sur le mot-clé */
-  background: linear-gradient(90deg, #D4A86A 0%, #A88B5E 60%, #C9A070 100%);
+  background: linear-gradient(90deg, #D4A86A 0%, var(--brand-accent) 60%, #C9A070 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

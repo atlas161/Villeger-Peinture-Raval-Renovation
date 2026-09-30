@@ -101,7 +101,7 @@
   background: var(--color-white);
   border: 1px solid var(--color-border);
   /* Rendu actuel = 12px, pas une pilule : voir note sur .burger dans assets/css/styles.css. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: var(--blog-transition);
   white-space: nowrap;
@@ -461,7 +461,7 @@
     padding: 0.75rem 0.5rem;
     font-size: 0.8125rem;
     min-height: 48px; /* Slightly larger for mobile fingers */
-    border-radius: 12px; /* Less rounded for better grid appearance */
+    border-radius: var(--radius); /* Less rounded for better grid appearance */
   }
   
   .filter-btn.active {

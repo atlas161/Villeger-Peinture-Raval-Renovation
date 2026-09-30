@@ -411,7 +411,7 @@ a:hover {
    (ex. un cercle prévu à 50% s'affiche en carré arrondi). Décision produit en attente côté
    client avant de retirer/cibler cette règle — ne pas y toucher hors validation explicite. */
 *[style*="border-radius"] {
-  border-radius: 12px !important;
+  border-radius: var(--radius) !important;
 }
 
 /* ===================================================================
@@ -577,7 +577,7 @@ a:hover {
     align-items: center;
     gap: 10px;
     padding: 10px 12px;
-    border-radius: 12px;
+    border-radius: var(--radius);
     text-decoration: none;
     color: var(--color-text);
     font-weight: var(--font-weight-medium);
@@ -627,7 +627,7 @@ a:hover {
      `button { border-radius: 12px !important }` qui écrasait tous les <button> du site
      (voir docs/code-quality-refactor.md). Fixé ici explicitement pour ne rien changer
      visuellement une fois cette règle générique supprimée. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -829,7 +829,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     text-decoration: none;
     font-weight: 500;
     font-size: 1.25rem; /* Réduit pour plus de discrétion */
-    border-radius: 12px;
+    border-radius: var(--radius);
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     border: 1px solid transparent;
     background: transparent;
@@ -853,7 +853,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     padding: 1rem !important; /* Plus discret */
     font-size: 1rem !important;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: var(--radius);
     box-shadow: 0 4px 12px rgba(103, 58, 18, 0.15);
   }
 
@@ -1001,7 +1001,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     justify-content: space-between;
     width: 100%;
     padding: var(--space-md) var(--space-lg);
-    border-radius: 12px;
+    border-radius: var(--radius);
     text-decoration: none;
     font-weight: 500;
     font-size: 1.125rem;
@@ -1029,7 +1029,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     background: transparent;
     border: 1px solid rgba(103, 58, 18, 0.16);
     /* Rendu actuel = 12px : voir note sur .burger plus haut. */
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
   .primary-nav .has-submenu.submenu-open .submenu .submenu-back-item {
@@ -1341,7 +1341,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 .social-badge {
   width: 40px;
   height: 40px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.1);
   display: grid;
   place-items: center;
@@ -1460,7 +1460,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   height: 44px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  border-radius: var(--radius);
   color: var(--color-white);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -1516,7 +1516,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   transition: all 0.3s ease;
   font-size: 0.95rem;
   padding: var(--space-sm);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   position: relative;
   min-height: 40px;
 }
@@ -1553,7 +1553,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   align-items: center;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: 8px 8px;
   margin-bottom: 8px;
   transition: all 0.3s ease;
@@ -1820,7 +1820,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   right: var(--space-lg);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   padding: var(--space-lg);
   max-width: 500px;
@@ -1859,7 +1859,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   font-size: 0.875rem;
   flex: 1;
   min-width: 100px;
-  border-radius: 12px !important;
+  border-radius: var(--radius) !important;
 }
 
 #cookie-banner .btn-secondary {
@@ -1893,7 +1893,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 
 .cookie-modal-content {
   background: var(--color-surface);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: var(--space-2xl);
   max-width: 500px;
   width: 90%;
@@ -1970,8 +1970,8 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   margin: var(--space-2xl) auto;
   width: calc(100% - (2 * var(--space-lg)));
   padding: var(--space-3xl);
-  background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
-  border-radius: 24px;
+  background: linear-gradient(135deg, var(--color-white) 0%, #faf8f5 100%);
+  border-radius: var(--radius-xl);
   box-shadow: 
     0 20px 60px rgba(103, 58, 18, 0.15),
     0 8px 24px rgba(103, 58, 18, 0.08);
@@ -2033,7 +2033,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   padding: var(--space-lg) var(--space-2xl);
   font-size: 1.0625rem;
   font-weight: 700;
-  border-radius: 12px;
+  border-radius: var(--radius);
   white-space: nowrap;
   min-width: 220px;
   box-shadow: 0 8px 24px rgba(103, 58, 18, 0.25);
@@ -2071,7 +2071,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   border: 2px solid rgba(103, 58, 18, 0.2);
   background: rgba(103, 58, 18, 0.04);
   padding: var(--space-md) var(--space-lg);
-  border-radius: 12px;
+  border-radius: var(--radius);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9375rem;
@@ -2203,7 +2203,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   gap: var(--space-lg);
   padding: var(--space-xl);
   background: var(--color-surface-alt);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   transition: all 0.3s ease;
   border: 1px solid rgba(103, 58, 18, 0.08);
 }
@@ -2218,7 +2218,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   height: 72px;
   min-width: 72px;
   background: rgba(103, 58, 18, 0.08);
-  border-radius: 12px;
+  border-radius: var(--radius);
   display: grid;
   place-items: center;
   color: var(--color-primary);
@@ -2564,7 +2564,7 @@ html {
   width: 44px;
   height: 44px;
   /* Rendu actuel = 12px (carré arrondi), pas un cercle : voir note sur .burger plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 1px solid rgba(103, 58, 18, 0.18);
   background: rgba(255, 255, 255, 0.85);
   color: var(--color-primary);
@@ -2646,7 +2646,7 @@ html {
   background: var(--color-white);
   /* 12px et non 18px : une règle plus bas (`*[style*="border-radius"]`) forçait déjà
      12px !important sur cet élément quand ce border-radius était encore inline */
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 2px solid var(--color-border-light);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
@@ -2676,7 +2676,7 @@ html {
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
   padding: 0.25rem 0.5rem;
-  border-radius: 12px; /* était 8px inline, forcé à 12px par la règle *[style*="border-radius"] */
+  border-radius: var(--radius); /* était 8px inline, forcé à 12px par la règle *[style*="border-radius"] */
   font-size: 0.75rem;
 }
 
@@ -2719,7 +2719,7 @@ html {
    =================================================================== */
 
 .blog-section {
-  background: linear-gradient(180deg, #FAFAF9 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #FAFAF9 0%, var(--color-white) 100%);
   padding: var(--space-3xl) 0;
 }
 
@@ -2729,7 +2729,7 @@ html {
 }
 
 .blog-section .section-eyebrow {
-  color: #673A12;
+  color: var(--color-primary);
 }
 
 .blog-section .section-header h2 {
@@ -2747,7 +2747,7 @@ html {
   background: var(--color-white);
   /* 12px et non 20px : cf. .gallery-card ci-dessus, même règle globale qui forçait déjà
      12px !important tant que ce border-radius était inline */
-  border-radius: 12px;
+  border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2767,7 +2767,7 @@ html {
   width: 100%;
   padding-top: 56.25%;
   overflow: hidden;
-  background: #F5F2EE;
+  background: var(--color-surface-alt);
 }
 
 .blog-preview-image img {
@@ -2787,10 +2787,10 @@ html {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 6px 14px;
-  border-radius: 12px; /* était 20px inline, forcé à 12px par la règle *[style*="border-radius"] */
+  border-radius: var(--radius); /* était 20px inline, forcé à 12px par la règle *[style*="border-radius"] */
   font-size: 0.75rem;
   font-weight: 600;
-  color: #673A12;
+  color: var(--color-primary);
   letter-spacing: 0.02em;
 }
 
@@ -2804,7 +2804,7 @@ html {
 .blog-preview-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2D241E;
+  color: var(--color-text);
   margin-bottom: var(--space-sm);
   line-height: 1.4;
   transition: color 0.2s ease;
@@ -2812,7 +2812,7 @@ html {
 
 .blog-preview-excerpt {
   font-size: 0.9375rem;
-  color: #6B5D52;
+  color: var(--color-text-light);
   line-height: 1.6;
   margin-bottom: var(--space-md);
   flex: 1;
@@ -2834,7 +2834,7 @@ html {
 
 /* Carte CTA "Explorez tous nos articles" (dernière carte du carrousel) */
 .blog-preview-card[data-blog-cta] {
-  background: linear-gradient(135deg, #673A12 0%, #8B5A2B 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #8B5A2B 100%);
   box-shadow: 0 4px 20px rgba(103, 58, 18, 0.25);
   border: none;
   position: relative;
@@ -2858,7 +2858,7 @@ html {
      à 12px !important (donc un carré arrondi, pas un cercle) avant ce nettoyage — voir
      docs/seo/journal.md, probablement pas voulu mais gardé à l'identique pour ne rien
      changer visuellement sans validation. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2890,7 +2890,7 @@ html {
   padding: 12px 24px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  border-radius: 12px;
+  border-radius: var(--radius);
   font-weight: 600;
   font-size: 0.9375rem;
   transition: all 0.2s ease;
@@ -2919,7 +2919,7 @@ html {
   padding: 14px 28px;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 /* ===================================================================

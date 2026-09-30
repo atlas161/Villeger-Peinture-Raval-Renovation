@@ -75,7 +75,7 @@
 
 .service-hero-image {
   position: relative;
-  border-radius: 24px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(45, 36, 30, 0.15);
   aspect-ratio: 4 / 3;
@@ -204,7 +204,7 @@
 .feature-card {
   background: var(--color-white);
   padding: var(--space-xl);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   border: 2px solid var(--color-border-light);
   box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04);
   transition: all var(--duration-normal) var(--ease-spring);
@@ -243,7 +243,7 @@
   height: 72px;
   min-width: 72px;
   background: var(--color-surface-alt);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   display: grid;
   place-items: center;
   font-size: 1.875rem;
@@ -300,7 +300,7 @@
 .problem-item {
   background: var(--color-white);
   padding: var(--space-xl);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   border: 2px solid transparent;
   box-shadow: 0 4px 20px rgba(217, 116, 43, 0.08);
   position: relative;
@@ -446,7 +446,7 @@
   border: 2px solid var(--color-border);
   /* 12px et non 16px : styles.css (règle *[style*="border-radius"]) force border-radius: 12px !important sur tout
      élément qui avait un style="...border-radius..." inline (voir commit history) */
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: var(--space-xl);
   transition: all 0.3s ease;
 }
@@ -455,7 +455,7 @@
   width: 56px;
   height: 56px;
   background: var(--color-surface-alt);
-  border-radius: 12px;
+  border-radius: var(--radius);
   display: grid;
   place-items: center;
   color: var(--color-primary);
@@ -475,7 +475,7 @@
   background: var(--color-white);
   /* 12px et non 16px : styles.css (règle *[style*="border-radius"]) force border-radius: 12px !important sur tout
      élément qui avait un style="...border-radius..." inline (voir commit history) */
-  border-radius: 12px;
+  border-radius: var(--radius);
   margin-bottom: var(--space-md);
   border: 2px solid var(--color-border-light);
   box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04);
@@ -526,7 +526,7 @@
   width: 40px;
   height: 40px;
   background: var(--color-primary);
-  border-radius: 12px; /* était 10px inline, forcé à 12px par *[style*="border-radius"] dans styles.css */
+  border-radius: var(--radius); /* était 10px inline, forcé à 12px par *[style*="border-radius"] dans styles.css */
   display: grid;
   place-items: center;
   color: white;
@@ -535,7 +535,7 @@
 }
 
 .faq-icon-badge--accent {
-  background: #A88B5E;
+  background: var(--brand-accent);
 }
 
 /* ===================================================================
@@ -567,7 +567,7 @@
   position: relative;
   /* Rendu actuel = 12px, pas 24px : c'était un style inline, forcé à 12px par la règle
      *[style*="border-radius"] dans styles.css (voir docs/code-quality-refactor.md). */
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: var(--space-2xl);
   margin-top: var(--space-3xl);
   color: var(--color-text);
@@ -630,9 +630,9 @@
    =================================================================== */
 
 .related-services-nav {
-  background: #F9F7F5;
+  background: var(--color-bg);
   padding: 3rem 1.5rem;
-  border-top: 1px solid #E8E4DE;
+  border-top: 1px solid var(--color-border);
 }
 
 .related-services-inner {
@@ -643,7 +643,7 @@
 
 .related-services-inner h2 {
   font-size: 1.5rem;
-  color: #2D241E;
+  color: var(--color-text);
   margin-bottom: 1.5rem;
 }
 
@@ -657,12 +657,12 @@
 .related-services-link {
   background: white;
   padding: 1rem 1.5rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
   text-decoration: none;
-  color: #673A12;
+  color: var(--color-primary);
   font-weight: 500;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  border: 1px solid #E8E4DE;
+  border: 1px solid var(--color-border);
 }
 
 /* ===================================================================
@@ -679,7 +679,7 @@
 .before-after-card {
   background: var(--color-surface);
   /* Rendu actuel = 12px, pas 18px : voir note sur .cta-glass plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 2px solid var(--color-border-light);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
@@ -716,14 +716,14 @@
   color: #fff;
   padding: 0.35rem 0.6rem;
   /* Rendu actuel = 12px, pas 10px : voir note sur .cta-glass plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   font-size: 0.875rem;
 }
 
 .jobsheet-card {
   background: var(--color-white);
   /* Rendu actuel = 12px, pas 18px : voir note sur .cta-glass plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 2px solid var(--color-border-light);
   padding: var(--space-2xl);
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
@@ -749,7 +749,7 @@
   margin-top: var(--space-xl);
   padding: var(--space-lg);
   /* Rendu actuel = 12px, pas 14px : voir note sur .cta-glass plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   background: #FBF9F6;
   border: 1px solid rgba(103, 58, 18, 0.12);
 }
@@ -836,7 +836,7 @@
   margin: 0 auto;
   background: var(--color-white);
   /* Rendu actuel = 12px, pas 18px : voir note sur .cta-glass plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 2px solid var(--color-border-light);
   padding: var(--space-2xl);
   box-shadow: 0 4px 20px rgba(45, 36, 30, 0.06);
@@ -873,14 +873,14 @@
 
 .reassurance-item--accent {
   background: linear-gradient(135deg, #f8f5f2 0%, #fff 100%);
-  border: 2px solid #A88B5E;
+  border: 2px solid var(--brand-accent);
   /* Occupe toute la largeur : évite qu'elle se retrouve seule sur sa ligne
      (7 cartes dans une grille à 3 colonnes) et referme la section en accent. */
   grid-column: 1 / -1;
 }
 
 .reassurance-item--accent .reassurance-icon {
-  background: #A88B5E;
+  background: var(--brand-accent);
   color: white;
 }
 
@@ -891,7 +891,7 @@
 .pricing-box {
   background: var(--color-white);
   /* Rendu actuel = 12px, pas 16px : voir note sur .cta-glass plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: var(--space-2xl);
   margin-top: var(--space-2xl);
   border: 2px solid var(--color-border-light);
@@ -916,8 +916,8 @@
 .pricing-card {
   background: #f8f5f2;
   padding: var(--space-lg);
-  border-radius: 12px;
-  border-left: 4px solid var(--pricing-card-accent, #673A12);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--pricing-card-accent, var(--color-primary));
 }
 
 .pricing-card h4 {
@@ -947,14 +947,14 @@
 .why-now-box {
   background: linear-gradient(135deg, #f8f5f2 0%, #fbf9f6 100%);
   /* Rendu actuel = 12px, pas 16px : voir note sur .cta-glass plus haut. */
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: var(--space-2xl);
   margin-top: var(--space-xl);
-  border: 2px solid #A88B5E;
+  border: 2px solid var(--brand-accent);
 }
 
 .why-now-title {
-  color: #673A12;
+  color: var(--color-primary);
   font-size: 1.5rem;
   margin-bottom: var(--space-lg);
   display: flex;
@@ -971,7 +971,7 @@
 .why-now-card {
   background: white;
   padding: var(--space-lg);
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 

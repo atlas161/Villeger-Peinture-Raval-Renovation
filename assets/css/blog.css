@@ -143,8 +143,8 @@ article .site-footer a:hover {
 
 /* Sidebar CTA - Correction contraste */
 .sidebar-cta {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #522e0e 100%);
-  border-radius: 16px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg);
   text-align: center;
 }
@@ -158,7 +158,7 @@ article .site-footer a:hover {
 .sidebar-cta .btn {
   width: 100%;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .sidebar-cta .btn-primary {
