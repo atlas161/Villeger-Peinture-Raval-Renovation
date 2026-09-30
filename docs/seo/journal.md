@@ -364,3 +364,13 @@ Session technique (peu de changement de contenu SEO, beaucoup d'impact indirect)
 
 **Pas fait / prochaines étapes :** pages « ville » (gabarit prêt), déclencheurs GTM (`blockers.md` §4), nom de
 l'assureur décennale (`blockers.md` §5), URLs sans `.html` (décision à part).
+
+---
+
+## 2026-09-30 (soir) — Google Analytics 4 branché (GTM)
+
+- Conteneur GTM `GTM-NKPGDBPG` : version 3 publiée — balise Google `G-173V5FGW2S` (All Pages), 3 déclencheurs
+  d'événements personnalisés + 3 balises GA4 (`phone_click`, `quote_cta_click` + `placement`, `generate_lead`).
+- Contrôle en navigateur propre après consentement : `page_view` et `phone_click` arrivent à GA4.
+- Mesure : les visites du Chrome de l'administrateur ne comptent pas (extension anti-pub qui bloque `gtm.js`).
+- Reste : marquer `generate_lead` comme événement clé dans GA4 (possible après sa première réception).

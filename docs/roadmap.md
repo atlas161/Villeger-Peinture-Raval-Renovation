@@ -11,7 +11,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 | # | Action | Détail |
 |---|---|---|
-| A1 | **Déclencheurs Google Tag Manager** | Créer dans le conteneur `GTM-NKPGDBPG` un déclencheur « Événement personnalisé » pour `phone_click`, `quote_cta_click`, `generate_lead` + balises GA4 associées ; marquer `generate_lead` comme conversion. Clarity reçoit déjà les événements tout seul. Détail : `seo/blockers.md` §4. **En pause (2026-09-30)** : compte GA4 créé (`accounts/410190854`, propriété `556837484`, flux « VPRR Accueil », ID de mesure `G-173V5FGW2S`) ; reste tout GTM. À faire avec Claude dans Chrome (extension) depuis une session sur l'ordinateur. **Ne pas coller le `gtag.js` dans le site** (traceur avant consentement + CSP) : mettre l'ID dans une balise Google de GTM. |
+| A1 | **Marquer `generate_lead` comme événement clé dans GA4** | GTM/GA4 sont configurés et publiés (2026-09-30, version GTM 3, propriété `G-173V5FGW2S`). Reste : après le premier vrai envoi de formulaire, GA4 > Admin > Événements → étoile sur `generate_lead`. Détail : `seo/blockers.md` §4. |
 | A2 | **Nom de l'assureur décennale / RC Pro** | Obligatoire à afficher : section « Assurances » de `mentions-legales.html` (+ éventuellement `llms.txt`). Demander aussi n° de contrat et zone couverte. |
 | A3 | **Fiche PagesJaunes doublon** `61413918` | Réclamation / demande de fusion via Solocal. `seo/blockers.md` §2. |
 | A4 | **Process d'avis Google après chantier** | Choisir le canal (SMS, QR code, carte, mail) puis préparer le support. `seo/blockers.md` §3. |
@@ -20,8 +20,8 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
-- [ ] **Vérifier que les événements arrivent** : accepter les cookies sur vprr.fr, cliquer sur un `tel:`, un bouton devis, envoyer
-  un formulaire test → contrôler dans Clarity (événements personnalisés) puis dans GTM en mode aperçu.
+- [ ] **Vérifier `quote_cta_click` et `generate_lead`** dans GA4 > Temps réel (fenêtre privée sans anti-pub : le Chrome de
+  l'utilisateur bloque `gtm.js`). `page_view` et `phone_click` sont déjà vérifiés (2026-09-30, requêtes `g/collect` en 204).
 - [ ] **Relancer Lighthouse mobile sur la prod** (dernier relevé : 2026-09-29, avant les changements mobile/cookies/ménage) et
   consigner les scores dans `changelog.md`. Objectif : garder Perf ≥ 95, A11y 100, Bonnes pratiques 100, SEO 100.
 - [x] *(fait, à déployer)* **Fichiers non suivis par git** : décider pour `.agents/`, `.codex/`, `graphify-out/`, `AGENTS.md` (ancienne copie de

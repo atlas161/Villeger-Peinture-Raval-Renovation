@@ -26,6 +26,17 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | **Images** : `width`/`height` ajoutés (accueil ×9, pages de service ×4 chacune) ; lus depuis le fichier WebP par `scripts/lib/image-size.js`. Tailles affichées identiques avant/après. |
 | **Accessibilité mobile (≤ 768 px)** : cibles tactiles ≥ 40 px (liens du pied de page, contact direct, « Lire la suite », « Voir ce service », bouton Envoyer 44 px) ; textes de 10–12 px passés à 13 px. Desktop inchangé ; pages mobiles ≈ +1 % de hauteur (accueil +394 px). |
 
+## 2026-09-30 (soir) — Google Analytics 4 branché via GTM
+
+Aucun changement de code du site : configuration du conteneur GTM `GTM-NKPGDBPG` (version 3 publiée, import
+« Fusionner » — la balise Clarity est conservée).
+
+- Balise Google `GA4 - Configuration` (`G-173V5FGW2S`, propriété GA4 « VPRR ») sur toutes les pages.
+- Déclencheurs « Événement personnalisé » `CE - phone_click`, `CE - quote_cta_click`, `CE - generate_lead` + balises
+  GA4 événement associées ; `quote_cta_click` transmet le paramètre `placement` (variable `DLV - placement`).
+- Vérifié sur vprr.fr après « Tout accepter » : `page_view` et `phone_click` reçus (`region1.google-analytics.com/g/collect`, 204).
+- Reste : étoile « événement clé » sur `generate_lead` dans GA4 après le premier envoi réel de formulaire.
+
 ## 2026-09-30 — Structure, cookies, mobile, ménage, suivi
 
 Audit structure/routes/design system : [`audit-structure-design-2026-09-29.md`](./audit-structure-design-2026-09-29.md).

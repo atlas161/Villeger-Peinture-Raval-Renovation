@@ -39,5 +39,6 @@ Voir [`journal.md`](./journal.md) pour le détail. Résumé rapide de ce qui est
 - [x] Structure du site : publication par `dist/`, pages de service générées, blog réorganisé, ménage — voir
       [`../changelog.md`](../changelog.md).
 - [x] Mesure : cookies « tout accepter / tout refuser », Clarity + GTM après consentement, événements de conversion.
-- [ ] Déclencheurs GTM pour les événements de conversion (voir `blockers.md` §4).
+- [x] Google Analytics 4 + déclencheurs GTM des événements de conversion (2026-09-30, `blockers.md` §4).
+- [ ] Marquer `generate_lead` comme événement clé dans GA4 (après la première réception de l'événement).
 - [ ] Pages « ville » (gabarit prêt, contenu à écrire).
