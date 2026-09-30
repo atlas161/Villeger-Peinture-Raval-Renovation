@@ -751,34 +751,10 @@ function updateSitemap(articles) {
     })
   );
 
-  const today = new Date().toISOString().split('T')[0];
-  const lastmodByLoc = new Map([
-    [`${CONFIG.siteUrl}/`, today],
-    [`${CONFIG.siteUrl}/ravalement-facade-angouleme.html`, today],
-    [`${CONFIG.siteUrl}/nettoyage-facade-angouleme.html`, today],
-    [`${CONFIG.siteUrl}/nettoyage-toiture-angouleme.html`, today],
-    [`${CONFIG.siteUrl}/peinture-exterieure-charente.html`, today],
-    [`${CONFIG.siteUrl}/zone-desservie-charente.html`, today],
-    [`${CONFIG.siteUrl}/faq-renovation-angouleme.html`, today],
-    [`${CONFIG.siteUrl}/mentions-legales.html`, today]
-  ]);
+  // Les <lastmod> des pages hors blog sont conservés tels quels (ils reflètent la dernière
+  // modification réelle, à mettre à jour à la main) : sinon chaque build produit un diff parasite.
+  const nonBlogUrlsWithFreshLastmod = nonBlogUrls;
 
-  const upsertLastmod = (urlBlock, newDate) => {
-    if (/<lastmod>\s*[^<]+\s*<\/lastmod>/.test(urlBlock)) {
-      return urlBlock.replace(/<lastmod>\s*[^<]+\s*<\/lastmod>/, `<lastmod>${escapeXml(newDate)}</lastmod>`);
-    }
-
-    const locMatch = urlBlock.match(/(<loc>\s*[^<]+\s*<\/loc>\s*\n?)/);
-    if (!locMatch) return urlBlock;
-    return urlBlock.replace(locMatch[1], `${locMatch[1]}    <lastmod>${escapeXml(newDate)}</lastmod>\n`);
-  };
-
-  const nonBlogUrlsWithFreshLastmod = nonBlogUrls.map((b) => {
-    const loc = extractLoc(b);
-    const newDate = lastmodByLoc.get(loc);
-    return newDate ? upsertLastmod(b, newDate) : b;
-  });
-  
   // Générer les URLs des articles
   const blogUrls = articles.map(article => {
     const date = new Date(article.date).toISOString().split('T')[0];
@@ -803,10 +779,18 @@ function updateSitemap(articles) {
 ${imageBlock ? `${imageBlock}\n` : ''}  </url>`;
   });
   
-  // URL de la page blog index
+  // URL de la page blog index : date du dernier article (stable d'un build à l'autre)
+  const previousIndexLastmod = (existingUrls.find(b => extractLoc(b) === `${CONFIG.blogUrl}/`) || '')
+    .match(/<lastmod>\s*([^<]+?)\s*<\/lastmod>/);
+  const latestArticleDate = articles
+    .map(a => new Date(a.date).toISOString().split('T')[0])
+    .sort()
+    .pop() || '';
+  const blogIndexDate = [previousIndexLastmod && previousIndexLastmod[1], latestArticleDate]
+    .filter(Boolean).sort().pop() || new Date().toISOString().split('T')[0];
   const blogIndexUrl = `  <url>
     <loc>${CONFIG.blogUrl}/</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${blogIndexDate}</lastmod>
   </url>`;
   
   // Reconstruire le sitemap
@@ -1011,7 +995,7 @@ function upsertBlogItemListSchema(html, articles) {
 
   const scriptId = 'vprr-blog-itemlist';
   const existingRe = new RegExp(
-    `<script\\s+type="application/ld\\+json"\\s+id="${scriptId}"[^>]*>[\\s\\S]*?<\\/script>\\s*`,
+    `\\s*<script\\s+type="application/ld\\+json"\\s+id="${scriptId}"[^>]*>[\\s\\S]*?<\\/script>\\s*`,
     'i'
   );
   const withoutExisting = html.replace(existingRe, '');
