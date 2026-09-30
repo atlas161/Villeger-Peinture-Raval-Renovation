@@ -28,7 +28,7 @@ l'absence d'ITE et redirige vers les pages peinture extérieure / ravalement de 
 
 - **Services toiture/isolation** : les prestations affichées (réfection de tuiles, gouttières/zinguerie, Velux,
   isolation combles/murs/fenêtres) sont validées par le client — ne pas les retirer du JSON-LD.
-- **Vidéo hero** : doit se lancer au démarrage (desktop/tablette) ; image d'attente pour les téléphones.
+- **Vidéo hero** : se lance au démarrage sur tous les écrans (téléphone compris, décision du client le 2026-09-30) ; image d'attente seulement en économiseur de données, connexion lente ou « mouvement réduit ».
 - **Galerie Instagram (Elfsight)** : conservée, citée dans les mentions légales.
 - **Robots IA** : autorisés (objectif : apparaître dans ChatGPT & co.) — `llms.txt` maintenu.
 - **Coordonnées officielles** : 05 45 91 22 70 ; lun–ven 9 h–17 h, sam 9 h–12 h. SARL, SIREN 934 010 216,

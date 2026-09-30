@@ -145,7 +145,7 @@ Fichiers (`assets/css/`) : `styles.css` (base, composants, accueil), `nav.css`, 
 ## 7. JavaScript (`assets/js/`)
 | Fichier | Rôle |
 |---|---|
-| `main.js` | menu burger/sous-menus, scroll-spy, animations d'apparition, vidéo du hero (desktop/tablette seulement, hors économiseur de données) |
+| `main.js` | menu burger/sous-menus, scroll-spy, animations d'apparition, vidéo du hero (tous écrans depuis le 2026-09-30, hors économiseur de données) |
 | `footer.js` | inclusion du footer (fallback local), **bannière cookies**, chargement GTM/Clarity après consentement, **suivi des conversions** |
 | `form-security.js` | honeypot, délai minimal, limites de soumission, chargement paresseux de Turnstile |
 | `apple-select.js` | menu déroulant « Type de projet » (ARIA listbox) |

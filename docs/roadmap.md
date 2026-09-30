@@ -15,7 +15,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 | A2 | **Nom de l'assureur décennale / RC Pro** | Obligatoire à afficher : section « Assurances » de `mentions-legales.html` (+ éventuellement `llms.txt`). Demander aussi n° de contrat et zone couverte. |
 | A3 | **Fiche PagesJaunes doublon** `61413918` | Réclamation / demande de fusion via Solocal. `seo/blockers.md` §2. |
 | A4 | **Process d'avis Google après chantier** | Choisir le canal (SMS, QR code, carte, mail) puis préparer le support. `seo/blockers.md` §3. |
-| A5 | **Vidéo du hero sur téléphone** | Actuellement image seule (la vidéo pèse ~19 Mo). Pour l'activer : retirer la condition de largeur dans `shouldLoadHeroVideo()` de `assets/js/main.js` (impact perf fort — à décider). |
+| A5 | ~~Vidéo du hero sur téléphone~~ | **Fait le 2026-09-30** : la vidéo se lance sur tous les écrans (décision du client). À surveiller : Lighthouse mobile (perf) après déploiement. |
 | A6 | **Contenus/photos** | Nouvelles photos de chantiers (avant/après), Instagram : le fil Elfsight montre des photos hors sujet (à trier côté compte Instagram). |
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
@@ -74,6 +74,6 @@ aucun débordement horizontal.
 - Téléphone officiel 05 45 91 22 70 ; horaires lun–ven 9 h–17 h, sam 9 h–12 h.
 - Robots d'IA autorisés (`robots.txt`, `llms.txt`).
 - Cookies : choix binaire tout accepter / tout refuser, sans paramètres.
-- Pas de vidéo hero sur téléphone.
+- Vidéo hero sur tous les écrans (sauf économiseur de données / connexion lente / mouvement réduit).
 - Condensation mobile validée par le client : communes 8/18, FAQ 5/9, tarifs repliés (page ravalement), photos en double
   masquées, galerie de l'accueil horizontale.

@@ -10,12 +10,28 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Mesure | Valeur |
 |---|---|
 | Lighthouse mobile (prod, 2026-09-29) | Perf **99** · Accessibilité **100** · Bonnes pratiques **100** · SEO **100** (avant : 61 / 95 / 77 / 100) |
-| Poids de la page d'accueil (mobile) | ≈ 550 Ko (avant : 20 Mo) — pas de vidéo sur téléphone |
+| Poids de la page d'accueil (mobile) | ≈ 550 Ko avant le 2026-09-30 (la vidéo du hero se lance désormais aussi sur téléphone) |
 | Hauteur page ravalement, téléphone 375 px | **16 133 px** (avant : 23 851) · tablette 768 px : 12 957 (avant 17 659) · desktop : 13 934 (inchangé) |
 | Hauteur accueil, téléphone | **12 176 px** (avant : 13 486) · desktop : 9 864 (inchangé) |
 | Tests automatiques | 20 / 20 (`npm test`) |
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
+
+## 2026-09-30 (nuit) — Audit design : incohérences desktop / tablette / mobile
+
+Méthode : captures Chromium à 375 / 768 / 1440 px + calcul automatique des contrastes (WCAG) et des cibles tactiles.
+
+| Changement |
+|---|
+| **Eyebrows « Zone d'intervention » et « Contact »** (accueil) : une règle `.zone-header p` / `.contact-header p` écrasait leur style (gris, plus gros) → alignés sur les autres sections. |
+| **Label « Type de projet »** : `<span>` non stylé → même style que les autres labels du formulaire. |
+| **Footer** : labels « SUIVEZ-NOUS », « TÉLÉPHONE/EMAIL/ADRESSE » ≈ 3:1 en 10 px → nouvelle variable `--brand-accent-on-dark` (≈ 5,5:1), 11 px. |
+| **Blog / FAQ** : pill « Guides & Conseils » en brun (était doré clair, ≈ 3:1) ; filtre actif de la FAQ en brun plein comme celui du blog ; contrôles de la FAQ alignés sur la colonne des questions (720 px). |
+| **Hero de l'accueil** : nouveau H1 court « Ravalement, toiture et peinture **à Angoulême** » (2-3 lignes, mots-clés + ville) ; sous-titre réécrit ; taille max 76 → 68 px ; **vidéo lancée sur téléphone et tablette** (garde-fous conservés : économiseur de données, connexion lente, mouvement réduit) ; voile plus dense sur mobile/tablette (texte lisible sur toile claire) ; eyebrow en accent clair ; `text-wrap: balance`. |
+| **Titres H1** des pages intérieures : plafond 60 → 48 px (FAQ et zone passaient sur 4 lignes). Pages de service : 60 → 48 px. |
+| **Boutons** : tailles normalisées (suppression des paddings locaux `faq-actions-btn`, `zone-actions-btn`, `jobsheet-actions`, `cta-glass`, `.btn-lg` du blog) ; rayon unique 12 px (bouton « avis Google » et page 404 passés de pilule à 12 px ; `btn--sm`/`btn--lg` alignés) ; poids 600 partout ; boutons du hero de service pleine largeur sur mobile. |
+| **Avis Google (accueil)** : fin de l'effet « carte dans une carte » (conteneur blanc retiré), cartes blanches avec ombre légère, nom puis étoiles en colonne (le nom ne se coupe plus), « 4,1 • 14 avis » sur une ligne. |
+| **Cibles tactiles** : liens légaux et crédit du pied de page 44 px ; liens « contact direct » 32 px + texte 14 px. |
 
 ## 2026-09-30 — Petits chantiers (roadmap B) — *non déployé, en attente de validation*
 
