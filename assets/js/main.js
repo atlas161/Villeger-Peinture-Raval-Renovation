@@ -1137,6 +1137,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // --- BARRE MOBILE « Appeler / Devis » : masquée quand le formulaire ou le pied de page est à l'écran ---
+  const ctaBar = document.querySelector('.mobile-cta-bar');
+  if (ctaBar && 'IntersectionObserver' in window) {
+    const visible = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+      ctaBar.classList.toggle('is-hidden', visible.size > 0);
+    });
+    document.querySelectorAll('#contact, .site-footer').forEach((el) => io.observe(el));
+  }
+
   // --- INITIALISATION AU CHARGEMENT ---
   window.addEventListener('load', () => {
     

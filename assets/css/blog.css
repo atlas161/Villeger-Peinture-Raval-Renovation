@@ -59,7 +59,7 @@
    plus pour rester lisibles. */
 .blog-page .site-footer,
 article .site-footer {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #5A2F0F 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -111,7 +111,6 @@ article .site-footer a:hover {
 .share-btn:hover {
   background: var(--color-primary) !important;
   color: var(--color-white) !important;
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(103, 58, 18, 0.3);
 }
 
@@ -172,7 +171,6 @@ article .site-footer a:hover {
 .sidebar-cta .btn-primary:hover {
   background: rgba(255, 255, 255, 0.9);
   color: var(--color-primary);
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
 }
 

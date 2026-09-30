@@ -19,7 +19,7 @@
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #5a3210; /* Contraste WCAG AA: 7.2:1 sur fond blanc */
+  color: var(--color-primary);
   margin-bottom: var(--space-sm);
 }
 
@@ -214,22 +214,21 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: gap 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  color: #8B4513;
+  color: var(--color-primary);
   max-width: calc(100% - 32px);
   white-space: nowrap;
 }
 
 .zone-map .zone-map-route:visited {
-  color: #8B4513;
+  color: var(--color-primary);
 }
 
 .zone-map .zone-map-route i {
-  color: #8B4513;
+  color: var(--color-primary);
 }
 
 .zone-map .zone-map-route:hover {
   gap: 10px;
-  transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 14px 30px rgba(103, 58, 18, 0.16);
 }
@@ -268,7 +267,7 @@
   justify-content: center;
   padding: 10px 14px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-primary), #8b5a2b);
+  background: var(--color-primary);
   color: var(--color-white);
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(103, 58, 18, 0.18);
@@ -338,7 +337,6 @@
 .zone-address-link:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
 }
 
 .zone-address-link:hover .zone-info-icon {

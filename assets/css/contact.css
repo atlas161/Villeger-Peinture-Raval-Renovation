@@ -19,7 +19,7 @@
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #5a3210; /* Contraste WCAG AA: 7.2:1 sur fond blanc */
+  color: var(--color-primary);
   margin-bottom: var(--space-sm);
 }
 
@@ -600,7 +600,6 @@
 
 .btn-google-review:hover {
   background-color: var(--color-primary-hover);
-  transform: translateY(-1px);
   box-shadow: 
     0 4px 8px rgba(103, 58, 18, 0.2),
     0 2px 4px rgba(0, 0, 0, 0.15);
@@ -703,7 +702,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: #F5B301;
+  color: var(--color-star);
 }
 
 .reviews-summary-text {
@@ -724,7 +723,7 @@
   width: 44px;
   height: 44px;
   /* Rendu actuel = 12px, pas une pilule : voir note sur .burger dans styles.css. */
-  border-radius: var(--radius);
+  border-radius: 50%;
   border: 1px solid rgba(103, 58, 18, 0.14);
   background: rgba(255, 255, 255, 0.85);
   color: var(--color-primary);
@@ -737,7 +736,6 @@
 
 .reviews-btn:hover {
   background: rgba(103, 58, 18, 0.06);
-  transform: translateY(-1px);
 }
 
 .reviews-btn:active {
@@ -861,7 +859,7 @@
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  color: #F5B301;
+  color: var(--color-star);
   flex-shrink: 0;
 }
 

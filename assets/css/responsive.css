@@ -174,27 +174,6 @@
   }
 }
 
-/* Navigation Responsive */
-@media (max-width: 768px) {
-  .primary-nav .menu {
-    padding: var(--space-lg);
-  }
-  
-  .primary-nav .menu li {
-    margin-bottom: var(--space-sm);
-  }
-  
-  .primary-nav .menu-cta {
-    margin-top: var(--space-md);
-    text-align: center;
-  }
-  
-  .primary-nav .menu-cta .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
 /* Header Responsive */
 @media (max-width: 768px) {
   .site-header {
@@ -205,10 +184,6 @@
     padding: 0 var(--space-md);
   }
   
-  .logo-img {
-    width: 120px;
-    height: 32px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -220,10 +195,6 @@
     padding: 0 var(--space-sm);
   }
   
-  .logo-img {
-    width: 100px;
-    height: 27px;
-  }
 }
 
 /* CTA Sections Responsive */

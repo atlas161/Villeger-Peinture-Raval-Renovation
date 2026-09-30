@@ -5,7 +5,7 @@
 
 /* Styles spécifiques page service - Apple-style */
 .service-hero {
-  background: linear-gradient(135deg, #FBF9F6 0%, var(--color-surface) 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
   /* `body` compense déjà la hauteur du header fixe (padding-top: var(--header-height)) :
      ajouter var(--header-height) ici comptait le header deux fois et poussait le H1
      inutilement bas (surtout gênant sur mobile, où ça mange ~1/4 de l'écran). */
@@ -277,7 +277,7 @@
 
 /* Section problème avec fond contrasté */
 .problem-section {
-  background: linear-gradient(135deg, #FBF7F1 0%, var(--color-surface-alt) 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface-alt) 100%);
   padding: var(--space-4xl) var(--space-lg);
 }
 
@@ -316,13 +316,13 @@
   left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #D9742B 0%, #B35D1E 100%);
+  background: var(--color-primary);
 }
 
 .problem-item:hover {
   transform: translateX(8px);
-  box-shadow: 0 8px 32px rgba(217, 116, 43, 0.15);
-  border-color: rgba(217, 116, 43, 0.1);
+  box-shadow: 0 8px 32px rgba(103, 58, 18, 0.15);
+  border-color: rgba(103, 58, 18, 0.1);
 }
 
 .problem-item-icon {
@@ -335,13 +335,13 @@
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
-  color: #D9742B;
+  color: var(--color-primary);
   transition: all var(--duration-normal) var(--ease-spring);
   flex-shrink: 0;
 }
 
 .problem-item:hover .problem-item-icon {
-  background: #D9742B;
+  background: var(--color-primary);
   color: white;
   transform: scale(1.05);
 }
@@ -549,7 +549,7 @@
 }
 
 .section--bg-pricing {
-  background: linear-gradient(135deg, #FBF9F6 0%, var(--color-surface) 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
 }
 
 /* Icône suivie de texte (dans un titre, un paragraphe...) */
@@ -744,7 +744,7 @@
   padding: var(--space-lg);
   /* Rendu actuel = 12px, pas 14px : voir note sur .cta-glass plus haut. */
   border-radius: var(--radius);
-  background: #FBF9F6;
+  background: var(--color-bg);
   border: 1px solid rgba(103, 58, 18, 0.12);
 }
 
