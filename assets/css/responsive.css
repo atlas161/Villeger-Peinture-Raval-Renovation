@@ -319,3 +319,203 @@
     font-size: 0.875rem;
   }
 }
+
+/* ===================================================================
+   DENSITÉ MOBILE / TABLETTE PORTRAIT (≤ 768px)
+   Rythme vertical resserré et cartes plus compactes : les pages tenaient jusqu'à 24 000 px de haut sur
+   téléphone (cartes de 250 à 350 px, marges de 64 à 96 px entre sections). Le contenu est inchangé ;
+   le bureau (> 768px) n'est pas concerné.
+   =================================================================== */
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--space-2xl);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .problem-section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .problem-list {
+    margin-top: var(--space-lg);
+  }
+
+  .problem-item,
+  .feature-card,
+  .reassurance-item {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .reassurance-grid {
+    margin: var(--space-2xl) 0;
+  }
+
+  /* Carte compacte : icône + titre sur une ligne, texte dessous sur toute la largeur */
+  .problem-item,
+  .feature-card,
+  .reassurance-item {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: var(--space-md);
+    row-gap: var(--space-xs);
+    align-items: center;
+  }
+
+  .problem-item-content,
+  .feature-card-content,
+  .reassurance-text {
+    display: contents;
+  }
+
+  .problem-item h3,
+  .feature-card h3,
+  .reassurance-item h3 {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .problem-item p,
+  .feature-card p,
+  .reassurance-item p {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .problem-item-icon,
+  .feature-icon,
+  .reassurance-icon {
+    grid-column: 1;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 1.25rem;
+  }
+
+  .service-card {
+    padding: var(--space-lg);
+  }
+
+  .step-number {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .faq-question {
+    padding: var(--space-md);
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-md) var(--space-md);
+  }
+
+  .jobsheet-card,
+  .pricing-box,
+  .why-now-box,
+  .cta-glass {
+    padding: var(--space-lg);
+  }
+
+  .cta-glass {
+    margin-top: var(--space-2xl);
+  }
+
+  /* Étapes : numéro + titre sur une ligne, texte dessous */
+  .process-step {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: var(--space-md);
+    row-gap: var(--space-xs);
+    align-items: center;
+    text-align: left;
+  }
+
+  .process-step .step-number {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .process-step h3 {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .process-step p {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  /* Petites cartes de tarifs et d'arguments */
+  .pricing-card,
+  .why-now-card {
+    padding: var(--space-md);
+  }
+
+  .service-card p,
+  .pricing-card .price-desc,
+  .why-now-card p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Zones desservies : étiquettes plus fines */
+  .zone-list {
+    gap: var(--space-sm);
+  }
+
+  .zone-tag {
+    padding: 0.375rem var(--space-md);
+    font-size: 0.875rem;
+  }
+
+  /* Accueil : cartes de services */
+  .svc-card {
+    padding: var(--space-lg);
+  }
+
+  .svc-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.125rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .svc-body > p {
+    line-height: 1.55;
+    margin-bottom: var(--space-md);
+  }
+
+  .svc-footer {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+  }
+
+  /* FAQ : questions plus compactes */
+  .faq-question {
+    font-size: 0.9375rem;
+    gap: var(--space-sm);
+  }
+
+  .faq-icon-badge {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 0.9375rem;
+  }
+}
