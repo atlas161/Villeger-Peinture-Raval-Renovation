@@ -19,7 +19,7 @@ const { execSync } = require('child_process');
 // Configuration
 const CONFIG = {
   contentDir: path.join(__dirname, '..', 'content', 'blog'),
-  templatePath: path.join(__dirname, '..', 'blog', 'template-article.html'),
+  templatePath: path.join(__dirname, 'template-article.html'),
   outputDir: path.join(__dirname, '..', 'blog'),
   sitemapPath: path.join(__dirname, '..', 'sitemap.xml'),
   siteUrl: 'https://vprr.fr',
