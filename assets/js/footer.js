@@ -137,6 +137,45 @@
   function loadAnalytics() {
     loadGoogleTagManager();
     loadMicrosoftClarity();
+    trackConversions();
+  }
+
+  // Suivi des conversions (clic téléphone, clic « devis », formulaire envoyé) : événements envoyés à GTM
+  // (dataLayer) et à Clarity, uniquement tant que le visiteur a accepté les cookies de mesure.
+  function trackConversions() {
+    if (window.conversionTrackingOn) return;
+    window.conversionTrackingOn = true;
+
+    const consented = () => {
+      try { return localStorage.getItem('cookie-consent') === 'accepted'; } catch (_) { return false; }
+    };
+    const send = (name, params) => {
+      if (!consented()) return;
+      const data = Object.assign({ page: location.pathname }, params);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: name }, data));
+      if (typeof window.clarity === 'function') window.clarity('event', name);
+    };
+    // Emplacement du bouton cliqué, pour comparer barre mobile / en-tête / hero / pied de page
+    const placement = (el) => {
+      if (el.closest('.mobile-cta-bar')) return 'barre_mobile';
+      if (el.closest('.site-header')) return 'menu';
+      if (el.closest('.service-hero, #home, .hero')) return 'hero';
+      if (el.closest('.site-footer')) return 'pied_de_page';
+      if (el.closest('#contact')) return 'contact';
+      return 'page';
+    };
+
+    document.addEventListener('click', (ev) => {
+      const a = ev.target.closest && ev.target.closest('a[href]');
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      if (href.indexOf('tel:') === 0) send('phone_click', { placement: placement(a) });
+      else if (/(^|\/|\.html)#contact$/.test(href) || href === '#contact') send('quote_cta_click', { placement: placement(a) });
+    }, { passive: true });
+
+    // Page de remerciement = formulaire envoyé avec succès (le visiteur y est redirigé par /api/contact)
+    if (/\/merci(\.html)?$/.test(location.pathname)) send('generate_lead', { method: 'formulaire' });
   }
 
   // Microsoft Clarity (analyse de navigation), chargé une seule fois
