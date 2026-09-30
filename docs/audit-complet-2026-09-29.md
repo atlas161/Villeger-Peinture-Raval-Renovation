@@ -1,5 +1,9 @@
 # Audit complet du site vprr.fr — 2026-09-29
 
+> **STATUT (2026-09-30) : audit clos — tous les points ont été traités et déployés** (sessions 2 à 6 ci-dessous, puis
+> le chantier structure/mobile/ménage). Historique par commit : [`changelog.md`](./changelog.md). Restent uniquement
+> des actions côté client ([`seo/blockers.md`](./seo/blockers.md)) et les pistes listées dans [`README.md`](./README.md).
+
 Périmètre : design, responsive (mobile 375 / tablette 768 / desktop 1440), back-end/infra, sécurité,
 RGPD, performance, SEO. Méthode : lecture du code, requêtes HTTP réelles sur la prod, Lighthouse mobile
 (prod), tests DOM dans le navigateur intégré. **Aucune modification du site n'a été faite** — ce document
@@ -219,7 +223,7 @@ puis 8–11. Après chaque lot : relancer Lighthouse mobile (objectif perf ≥ 9
 
 ---
 
-## Suivi d'exécution (2026-09-29, session 2) — corrections appliquées en local, NON déployées
+## Suivi d'exécution (2026-09-29, session 2) — corrections déployées le jour même (commit `8c4d681`)
 
 Décisions du client : vidéo hero lancée dès le démarrage (qualité qui monte progressivement), galerie
 Instagram conservée et citée dans les pages légales, téléphone officiel **05 45 91 22 70**, horaires =

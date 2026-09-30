@@ -4,6 +4,9 @@ Suivi du chantier SEO long terme du site VPRR (Villéger Peinture Raval Rénovat
 Tout ce qu'on fait, les blocages, les décisions et les choix techniques sont documentés ici
 pour qu'on puisse reprendre le fil à tout moment sans perdre le contexte.
 
+> Vue d'ensemble de toute la documentation : [`../README.md`](../README.md) — historique complet par commit :
+> [`../changelog.md`](../changelog.md).
+
 ## Fichiers
 
 - [`journal.md`](./journal.md) — historique daté de tout ce qui a été fait, session par session.
@@ -31,3 +34,10 @@ Voir [`journal.md`](./journal.md) pour le détail. Résumé rapide de ce qui est
 - [ ] Nettoyage des fiches PagesJaunes/Solocal incohérentes (nécessite accès, voir `blockers.md`).
 - [ ] Process de demande d'avis Google après chantier.
 - [ ] Audit Google Business Profile détaillé (nécessite accès, voir `blockers.md`).
+- [x] Audit complet 2026-09-29 (perf 61 → 99, RGPD, sécurité/CSP, titres ≤ 60 car., NAP aligné) — voir
+      [`../audit-complet-2026-09-29.md`](../audit-complet-2026-09-29.md).
+- [x] Structure du site : publication par `dist/`, pages de service générées, blog réorganisé, ménage — voir
+      [`../changelog.md`](../changelog.md).
+- [x] Mesure : cookies « tout accepter / tout refuser », Clarity + GTM après consentement, événements de conversion.
+- [ ] Déclencheurs GTM pour les événements de conversion (voir `blockers.md` §4).
+- [ ] Pages « ville » (gabarit prêt, contenu à écrire).

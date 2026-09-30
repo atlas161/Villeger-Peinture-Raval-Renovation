@@ -1,6 +1,9 @@
 # Journal SEO — VPRR
 
-Log daté de toutes les sessions de travail sur le chantier SEO. Le plus récent en haut.
+> Note (2026-09-30) : les entrées anciennes ci-dessous mentionnent `data/config.json` et `blog/template-article.html` ; ces fichiers
+> n'existent plus (supprimé / déplacé dans `scripts/`). État actuel : [`architecture.md`](./architecture.md) et [`../changelog.md`](../changelog.md).
+
+Log daté de toutes les sessions de travail sur le chantier SEO. Ordre chronologique : le plus récent en bas.
 
 ---
 
@@ -339,3 +342,25 @@ SEO 100 mais perf 61 (LCP 9,4 s, vidéo Vimeo hero 19 Mo + loader qui masque la 
 et fichiers `.md` internes servis/indexables ; titles > 60 car. sur presque toutes les pages ; NAP incohérent
 dans `llms.txt`/`humans.txt` ; JSON-LD avec services non réalisés, `&nbsp;` et SearchAction sans moteur de
 recherche ; `llms.txt`/`humans.txt` présents dans le sitemap.
+
+## 2026-09-30 — Structure, cookies, mobile, ménage, suivi des conversions
+
+Session technique (peu de changement de contenu SEO, beaucoup d'impact indirect). Détail commit par commit :
+[`../changelog.md`](../changelog.md) ; architecture résultante : [`architecture.md`](./architecture.md).
+
+**Ce qui touche le SEO :**
+- Les 5 pages de service sont maintenant **générées** depuis `content/pages/<slug>/page.json` : le JSON-LD
+  (entreprise, service, fil d'Ariane, FAQ) est produit automatiquement et ne peut plus diverger entre pages.
+  Le rendu HTML est strictement identique à l'ancien (vérifié).
+- `/blog/<slug>` (sans `.html`) renvoie désormais un **301** vers l'URL canonique en `.html` (plus de doublon d'URL) ;
+  `/favicon.ico` répond (plus de 404).
+- Publication par liste blanche (`dist/`) : plus aucun fichier interne (docs, sources, gabarits) accessible ni
+  indexable.
+- Footer inclus directement dans le HTML (les liens du pied de page sont visibles des robots sans JavaScript).
+- Pages mobiles plus courtes (−21 % sur la page ravalement, −32 % avec le repli des blocs) **sans retirer de
+  contenu du HTML** : communes, FAQ, encadrés de tarifs sont seulement repliés sur mobile (toujours dans le code).
+- Correctif de la bannière cookies (elle n'était jamais visible) + événements de conversion pour mesurer l'effet
+  des changements (`phone_click`, `quote_cta_click`, `generate_lead`).
+
+**Pas fait / prochaines étapes :** pages « ville » (gabarit prêt), déclencheurs GTM (`blockers.md` §4), nom de
+l'assureur décennale (`blockers.md` §5), URLs sans `.html` (décision à part).

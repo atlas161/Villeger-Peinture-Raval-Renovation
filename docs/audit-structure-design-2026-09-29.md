@@ -1,5 +1,8 @@
 # Audit structure, routes & design system — 2026-09-29
 
+> **STATUT (2026-09-30) : plan exécuté et déployé** (étapes 1 à 9, plus les pistes de densité mobile validées par le
+> client, le ménage et le suivi des conversions) — voir le bilan en fin de fichier et [`changelog.md`](./changelog.md).
+
 Complément de [`audit-complet-2026-09-29.md`](./audit-complet-2026-09-29.md) (perf/RGPD/SEO/sécurité, en
 grande partie corrigé). Celui-ci couvre ce qu'il ne traitait pas : **intégrité des routes**, **architecture du
 code**, **cohérence du design system** et **densité/parcours des pages**. Méthode : script de vérification de
@@ -155,3 +158,18 @@ services compactés. Contenu HTML inchangé (rien de retiré pour le SEO) ; bure
 et des blocs « Tarifs » / « Pourquoi investir » (accordéons), carrousel horizontal des avis/galerie sur l'accueil,
 photo avant/après unique au lieu de deux (hero + réalisation), FAQ limitée aux 5 premières questions avec « Voir
 toutes ».
+
+### Bilan final du plan (2026-09-30)
+
+| # | Étape | Statut |
+|---|---|---|
+| 1 | Barre d'appel mobile + doublon d'avis | ✅ `bdf7fb3` |
+| 2 | Hygiène du dépôt | ✅ `7caf6d6` |
+| 3 | Convention de routes (301 blog, favicon) | ✅ `7160215` — URLs sans `.html` : décision SEO ultérieure |
+| 4 | CSS/JS du blog dans `assets/` | ✅ `e66084d` |
+| 5 | Publication via `dist/` (liste blanche) | ✅ `7160215` |
+| 6 | Tokens CSS | ✅ couleurs et rayons (`5aea9bb`) — reste : typo, ombres, breakpoints, z-index, bouton unique |
+| 7 | Partials + gabarit de pages de service | ✅ `3a28f95`, `71cd337` — reste : modèle de contenu « ville » |
+| 8 | Condensation des pages (mobile) | ✅ `4b4bb0a`, `20ceaf2` — pistes restantes : carrousel des avis, zone de l'accueil |
+| 9 | Tests d'invariants | ✅ `4d53d62` (19 tests à l’époque, 20 aujourd’hui) |
+| + | Cookies refaits, correctif bannière, ménage, suivi des conversions | ✅ `c18600e`, `3146d6d`, `e7e1ac6`, `ef2c608` |

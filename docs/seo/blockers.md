@@ -28,7 +28,26 @@ doublon — je ne peux pas le faire à votre place.
 
 Décision à prendre côté vous : comment souhaitez-vous relancer les clients pour un avis après chantier
 (SMS automatique, QR code sur site, carte de visite avec lien, mail de fin de chantier) ? Le lien direct
-existe déjà (`g.page/r/CZZJ5Bogt13fEBM/review`, dans `data/config.json`), il manque juste le process
+existe déjà (`g.page/r/CZZJ5Bogt13fEBM/review`, dans le pied de page et la section avis), il manque juste le process
 régulier. Dites-moi quel canal vous préférez et je peux préparer le texte/support (SMS, QR code, etc.).
 
 **Statut** : en attente de votre préférence.
+
+## 4. Google Tag Manager : déclencheurs des nouveaux événements (à faire par vous — 2026-09-30)
+
+Le site envoie maintenant, **uniquement après « Tout accepter »**, trois événements dans le `dataLayer` :
+`phone_click`, `quote_cta_click` (paramètre `placement` : `barre_mobile`, `menu`, `hero`, `pied_de_page`,
+`contact`, `page`) et `generate_lead` (page de remerciement). Ils apparaissent tout seuls dans Microsoft Clarity
+(événements personnalisés), mais **pour les avoir dans Google Analytics il faut créer, dans le conteneur GTM
+`GTM-NKPGDBPG`, un déclencheur « Événement personnalisé » par nom d'événement + une balise GA4 « Événement »
+associée** (et marquer `generate_lead` comme conversion dans GA4). Je n'ai pas accès au conteneur GTM.
+
+**Statut** : en attente de votre action (ou d'un accès au conteneur GTM si vous voulez que je le fasse).
+
+## 5. Nom de l'assureur décennale / RC Pro
+
+Non communiqué : les mentions légales disent « attestation communiquée sur simple demande ». L'affichage du nom
+de l'assureur est obligatoire pour un artisan du bâtiment. À ajouter dans la section « Assurances » de
+`mentions-legales.html` (et éventuellement `llms.txt`).
+
+**Statut** : en attente du nom de l'assureur (et éventuellement du n° de contrat / de la zone couverte).

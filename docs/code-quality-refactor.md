@@ -5,6 +5,11 @@ pratiques (HTML/CSS/JS, accessibilité, performance) **sans changer le rendu vis
 audit responsive. Ce fichier sert de point de reprise pour une nouvelle session — lisez-le avant de
 continuer ce chantier.
 
+> **Mise à jour 2026-09-30** : ce chantier a été prolongé (tokens CSS, pages de service générées, ménage du CSS
+> mort, tests d'invariants…). Ce fichier reste valable pour l'historique et la méthode « aucun changement visuel » ;
+> l'état actuel est dans [`changelog.md`](./changelog.md) et [`seo/architecture.md`](./seo/architecture.md). Attention :
+> les pages de service ne sont plus éditables à la main (générées depuis `content/pages/`).
+
 ## État au 2026-09-21
 
 - **Branche** : `main` (travail fait directement sur `main` depuis cette session, commits + push
