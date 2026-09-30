@@ -3,7 +3,7 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 
 [build]
-  publish = "."
+  publish = "dist"  # généré par scripts/build-site.js (liste blanche des fichiers publics)
   command = "npm run build"
 
 # ─────────────────────────────────────────────────────────────────────────────────
@@ -102,6 +102,13 @@
   status = 301
   force = true
 
+# Favicon à la racine (demandé systématiquement par navigateurs et robots)
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/media/favicon/favicon.ico"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/blog"
   to = "/blog/index.html"
@@ -112,127 +119,6 @@
   from = "/blog/"
   to = "/blog/index.html"
   status = 200
-  force = true
-
-# Fichiers internes du dépôt : ne jamais les servir publiquement (publish = ".")
-[[redirects]]
-  from = "/CLAUDE.md"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/AGENTS.md"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/README.md"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/package.json"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/package-lock.json"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/fetch_geojson.py"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/.pages.yml"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/.gitattributes"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/docs/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/content/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/netlify/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/scripts/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/tests/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/node_modules/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/graphify-out/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/.agents/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/.codex/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/.claude/*"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/data/config.json"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/blog/template-article.html"
-  to = "/404.html"
-  status = 404
   force = true
 
 # Page 404 personnalisée
@@ -284,16 +170,6 @@
 
 [[headers]]
   for = "/assets/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/blog/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/blog/*.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
@@ -358,16 +234,6 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
     Content-Type = "text/plain; charset=utf-8"
-
-# ─────────────────────────────────────────────────────────────────────────────────
-# CONFIG JSON (pour le système de configuration)
-# ─────────────────────────────────────────────────────────────────────────────────
-
-[[headers]]
-  for = "/data/config.json"
-  [headers.values]
-    Cache-Control = "no-cache, must-revalidate"
-    Content-Type = "application/json; charset=utf-8"
 
 # ─────────────────────────────────────────────────────────────────────────────────
 # HTML - Pas de cache (toujours frais)

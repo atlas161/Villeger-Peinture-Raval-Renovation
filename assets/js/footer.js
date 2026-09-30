@@ -4,6 +4,15 @@
 
   // Fonction pour charger et inclure le footer universel
   function includeFooter() {
+    // En production le footer est déjà inclus dans le HTML par scripts/build-site.js :
+    // on ne fait que l'initialiser. Le fetch ci-dessous ne sert qu'en local (npx serve .).
+    if (document.getElementById('site-footer-wrapper')) {
+      const year = document.getElementById('current-year');
+      if (year) year.textContent = new Date().getFullYear();
+      initializeFooterScripts();
+      return;
+    }
+
     // Détecter si on est dans une page blog pour ajuster le chemin
     const isBlogPage = window.location.pathname.includes('/blog/');
     const footerFile = isBlogPage ? '../includes/footer.html' : 'includes/footer.html';
