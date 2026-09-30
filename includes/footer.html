@@ -160,31 +160,11 @@
   </div>
 </footer>
 
-<!-- Bannière de consentement aux cookies -->
-<div id="cookie-banner">
-    <div class="cookie-banner-content">
-        <p>Nous utilisons des cookies de mesure d'audience (Google Tag Manager, Microsoft Clarity) pour améliorer le site. Vous pouvez les accepter, les refuser ou les paramétrer. <a href="/mentions-legales.html#cookies">En savoir plus</a></p>
-        <div class="cookie-banner-actions">
-            <button id="accept-cookies" class="btn btn-primary">Accepter</button>
-            <button id="reject-cookies" class="btn btn-secondary">Refuser</button>
-            <button id="cookie-settings" class="btn btn-secondary">Paramètres</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modale de paramètres des cookies -->
-<div id="cookie-settings-modal">
-    <div class="cookie-modal-content">
-        <h3>Paramètres des cookies</h3>
-        <p>Choisissez les types de cookies que vous acceptez.</p>
-        <div class="cookie-option">
-            <input type="checkbox" id="necessary-cookies" checked disabled>
-            <label for="necessary-cookies">Cookies strictement nécessaires</label>
-        </div>
-        <div class="cookie-option">
-            <input type="checkbox" id="analytics-cookies">
-            <label for="analytics-cookies">Cookies d'analyse et de mesure d'audience (Google Tag Manager, Microsoft Clarity)</label>
-        </div>
-        <button id="save-cookie-settings" class="btn btn-primary">Enregistrer</button>
+<!-- Bannière de consentement aux cookies : tout accepter / tout refuser -->
+<div id="cookie-banner" role="dialog" aria-label="Cookies">
+    <p>Nous utilisons des cookies de mesure d'audience (Google Tag Manager, Microsoft Clarity) pour améliorer le site. <a href="/mentions-legales.html#cookies">En savoir plus</a></p>
+    <div class="cookie-banner-actions">
+        <button id="reject-cookies" class="btn btn-secondary" type="button">Tout refuser</button>
+        <button id="accept-cookies" class="btn btn-primary" type="button">Tout accepter</button>
     </div>
 </div>

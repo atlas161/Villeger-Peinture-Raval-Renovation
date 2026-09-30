@@ -49,109 +49,88 @@
     // Autres scripts du footer si nécessaire
   }
 
-  // Gestion de la bannière de cookies (RGPD) + chargement conditionnel de Google Tag Manager
+  // Bannière de cookies (RGPD) : choix binaire « tout accepter » / « tout refuser », mémorisé dans localStorage
+  // ('cookie-consent' = 'accepted' | 'rejected'). Google Tag Manager et Microsoft Clarity ne sont chargés
+  // qu'après un « tout accepter ».
   function initCookieBanner() {
-    const cookieBanner = document.getElementById('cookie-banner');
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+
+    const read = () => { try { return localStorage.getItem('cookie-consent'); } catch (_) { return null; } };
+    const write = (value) => { try { localStorage.setItem('cookie-consent', value); } catch (_) {} };
+    const clear = () => { try { localStorage.removeItem('cookie-consent'); } catch (_) {} };
+
+    // Ancienne clé (bannière avec paramètres) : plus utilisée
+    try { localStorage.removeItem('analytics-cookies'); } catch (_) {}
+
+    const hide = () => {
+      banner.classList.remove('cookie-banner-visible');
+      banner.style.display = 'none';
+    };
+    const show = () => {
+      banner.style.display = 'block';
+      void banner.offsetWidth; // reflow : déclenche la transition d'apparition
+      banner.classList.add('cookie-banner-visible');
+    };
+
+    // Retire le consentement déjà donné aux outils de mesure (si chargés dans cette page)
+    const revokeAnalytics = () => {
+      try {
+        if (typeof window.clarity === 'function') {
+          window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+          window.clarity('consent', false);
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'cookie_consent_revoked', analytics_storage: 'denied', ad_storage: 'denied' });
+      } catch (_) {}
+    };
+
+    const accept = () => {
+      write('accepted');
+      hide();
+      loadAnalytics();
+    };
+    const reject = () => {
+      const hadAccepted = read() === 'accepted';
+      write('rejected');
+      hide();
+      if (hadAccepted) revokeAnalytics();
+    };
+
     const acceptBtn = document.getElementById('accept-cookies');
     const rejectBtn = document.getElementById('reject-cookies');
-    const settingsBtn = document.getElementById('cookie-settings');
-    const modal = document.getElementById('cookie-settings-modal');
-    const saveBtn = document.getElementById('save-cookie-settings');
-    const analyticsCheckbox = document.getElementById('analytics-cookies');
+    if (acceptBtn) acceptBtn.addEventListener('click', accept);
+    if (rejectBtn) rejectBtn.addEventListener('click', reject);
 
-    if (!cookieBanner) return;
-
-    // Liens/boutons « Gérer mes cookies » : on efface le choix mémorisé et on recharge pour réafficher la bannière
+    // « Gérer mes cookies » (pied de page, mentions légales) : réaffiche la bannière sur place, sans recharger
+    // ni déplacer la page. Le choix précédent reste en vigueur tant que le visiteur n'en fait pas un nouveau.
     document.querySelectorAll('[data-open-cookie-settings]').forEach((el) => {
       el.addEventListener('click', (ev) => {
         ev.preventDefault();
-        try {
-          if (typeof window.clarity === 'function') {
-            window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
-          }
-          localStorage.removeItem('cookie-consent');
-          localStorage.removeItem('analytics-cookies');
-        } catch (_) {}
-        window.location.reload();
+        show();
+        if (acceptBtn) acceptBtn.focus({ preventScroll: true });
       });
     });
 
-    // Vérifier si le consentement a déjà été donné
-    const cookieConsent = localStorage.getItem('cookie-consent');
-    if (cookieConsent) {
-      cookieBanner.style.display = 'none';
-      if (cookieConsent === 'accepted' && localStorage.getItem('analytics-cookies') !== 'false') {
-        loadAnalytics();
-      }
+    // Choix déjà fait : on applique et on n'affiche rien
+    const consent = read();
+    if (consent) {
+      hide();
+      if (consent === 'accepted') loadAnalytics();
       return;
     }
 
-    // Afficher la bannière (différé pour ne pas impacter le LCP)
-    const showBanner = () => {
-      // Un clic sur « Accepter/Refuser » remonte jusqu'à l'écouteur window ci-dessous : ne pas réafficher.
-      if (localStorage.getItem('cookie-consent')) return;
-      cookieBanner.style.display = 'block';
-      // La feuille de style garde la bannière à opacity:0 tant que cette classe n'est pas posée.
-      void cookieBanner.offsetWidth; // reflow : déclenche la transition d'apparition
-      cookieBanner.classList.add('cookie-banner-visible');
+    // Première visite : bannière affichée après 1 s (ou dès la première interaction), pour ne pas peser sur le LCP
+    let shown = false;
+    const showFirst = () => {
+      if (shown || read()) return;
+      shown = true;
+      show();
     };
-    const bannerTimeout = setTimeout(showBanner, 1000);
-    ['scroll', 'click', 'touchstart'].forEach(evt => {
-      window.addEventListener(evt, function handler() {
-        clearTimeout(bannerTimeout);
-        showBanner();
-        window.removeEventListener(evt, handler);
-      }, { once: true, passive: true });
+    const timer = setTimeout(showFirst, 1000);
+    ['scroll', 'touchstart', 'keydown'].forEach((evt) => {
+      window.addEventListener(evt, () => { clearTimeout(timer); showFirst(); }, { once: true, passive: true });
     });
-
-    // Gérer les clics
-    if (acceptBtn) {
-      acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookie-consent', 'accepted');
-        localStorage.setItem('analytics-cookies', 'true');
-        cookieBanner.style.display = 'none';
-        loadAnalytics();
-      });
-    }
-
-    if (rejectBtn) {
-      rejectBtn.addEventListener('click', () => {
-        localStorage.setItem('cookie-consent', 'rejected');
-        localStorage.setItem('analytics-cookies', 'false');
-        cookieBanner.style.display = 'none';
-      });
-    }
-
-    if (settingsBtn && modal) {
-      settingsBtn.addEventListener('click', () => {
-        modal.style.display = 'block';
-      });
-    }
-
-    if (saveBtn && modal) {
-      saveBtn.addEventListener('click', () => {
-        const analyticsCookies = analyticsCheckbox ? analyticsCheckbox.checked : false;
-        localStorage.setItem('cookie-consent', analyticsCookies ? 'accepted' : 'rejected');
-        localStorage.setItem('analytics-cookies', analyticsCookies ? 'true' : 'false');
-        modal.style.display = 'none';
-        cookieBanner.style.display = 'none';
-
-        if (analyticsCookies) {
-          loadAnalytics();
-        } else if (typeof window.clarity === 'function') {
-          window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
-        }
-      });
-    }
-
-    // Fermer la modale en cliquant à l'extérieur
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    }
   }
 
   // Outils de mesure d'audience : chargés UNIQUEMENT après consentement aux cookies d'analyse
