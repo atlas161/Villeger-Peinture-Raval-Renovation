@@ -28,7 +28,7 @@
   margin-bottom: var(--space-md);
 }
 
-.zone-header p {
+.zone-header p:not(.zone-eyebrow) {
   color: var(--color-text-light);
   font-size: 1.0625rem;
   margin-bottom: 0;
