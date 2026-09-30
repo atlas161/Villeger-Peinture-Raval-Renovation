@@ -11,7 +11,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 | # | Action | Détail |
 |---|---|---|
-| A1 | **Déclencheurs Google Tag Manager** | Créer dans le conteneur `GTM-NKPGDBPG` un déclencheur « Événement personnalisé » pour `phone_click`, `quote_cta_click`, `generate_lead` + balises GA4 associées ; marquer `generate_lead` comme conversion. Clarity reçoit déjà les événements tout seul. Détail : `seo/blockers.md` §4. |
+| A1 | **Déclencheurs Google Tag Manager** | Créer dans le conteneur `GTM-NKPGDBPG` un déclencheur « Événement personnalisé » pour `phone_click`, `quote_cta_click`, `generate_lead` + balises GA4 associées ; marquer `generate_lead` comme conversion. Clarity reçoit déjà les événements tout seul. Détail : `seo/blockers.md` §4. **En pause (2026-09-30)** : compte GA4 créé (`accounts/410190854`, propriété `556837484`, flux « VPRR Accueil », ID de mesure `G-173V5FGW2S`) ; reste tout GTM. À faire avec Claude dans Chrome (extension) depuis une session sur l'ordinateur. **Ne pas coller le `gtag.js` dans le site** (traceur avant consentement + CSP) : mettre l'ID dans une balise Google de GTM. |
 | A2 | **Nom de l'assureur décennale / RC Pro** | Obligatoire à afficher : section « Assurances » de `mentions-legales.html` (+ éventuellement `llms.txt`). Demander aussi n° de contrat et zone couverte. |
 | A3 | **Fiche PagesJaunes doublon** `61413918` | Réclamation / demande de fusion via Solocal. `seo/blockers.md` §2. |
 | A4 | **Process d'avis Google après chantier** | Choisir le canal (SMS, QR code, carte, mail) puis préparer le support. `seo/blockers.md` §3. |

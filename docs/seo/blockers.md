@@ -42,7 +42,7 @@ Le site envoie maintenant, **uniquement après « Tout accepter »**, trois év�
 `GTM-NKPGDBPG`, un déclencheur « Événement personnalisé » par nom d'événement + une balise GA4 « Événement »
 associée** (et marquer `generate_lead` comme conversion dans GA4). Je n'ai pas accès au conteneur GTM.
 
-**Statut** : en attente de votre action (ou d'un accès au conteneur GTM si vous voulez que je le fasse).
+**Statut** : en pause (2026-09-30). GA4 créé : propriété `556837484`, flux « VPRR Accueil », ID de mesure `G-173V5FGW2S`. Reste à faire dans GTM : balise Google (ID ci-dessus, déclencheur Initialization – All Pages), 3 déclencheurs « Événement personnalisé », 3 balises événement GA4, test en Aperçu + DebugView, publication, puis `generate_lead` en conversion. Prévu via Claude dans Chrome. Ne jamais coller le `gtag.js` dans le site (traceur avant consentement).
 
 ## 5. Nom de l'assureur décennale / RC Pro
 
