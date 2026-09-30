@@ -60,9 +60,9 @@
 }
 
 .faq-filter-btn.active {
-  background: rgba(103, 58, 18, 0.12);
-  border-color: rgba(103, 58, 18, 0.25);
-  color: var(--color-primary);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .faq-bulk {
