@@ -6,6 +6,7 @@
     "build:blog": "node scripts/build-blog.js",
     "build": "npm run build:blog && node scripts/build-site.js",
     "sync:header": "node scripts/sync-header.js",
+    "sync:partials": "node scripts/sync-partials.js",
     "dev": "npx serve .",
     "test": "node --test"
   },

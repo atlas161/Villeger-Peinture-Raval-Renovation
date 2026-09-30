@@ -86,6 +86,22 @@ Les pages comme `ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.
 `index.html` sont du **HTML statique écrit à la main**, pas généré. Toute modification se fait
 directement dans ces fichiers.
 
+### Blocs générés dans les pages de service : `scripts/sync-partials.js`
+
+Deux blocs qui étaient recopiés à la main sont maintenant générés depuis `includes/partials/` et réinjectés
+dans les pages (le HTML des pages reste complet) :
+
+- `contact-service.html` → section `#contact` des **5 pages de service**. Ce qui varie d'une page (nom du
+  formulaire Netlify, service envoyé, options du menu déroulant) se règle dans la config `CONTACT_PAGES` de
+  `scripts/sync-partials.js`. L'accueil garde son propre formulaire (il diffère vraiment).
+- `why-artisan.html` → section « Pourquoi nous choisir » des pages nettoyage façade, nettoyage toiture et
+  peinture extérieure (celles de ravalement et d'isolation ont un contenu propre, laissé tel quel).
+
+**Ne pas éditer ces blocs dans les pages** : modifier le gabarit/la config puis `npm run sync:partials`
+(`node scripts/sync-partials.js --check` est exécuté par `npm test` et échoue si une page est en retard).
+Le slider avant/après n'est plus recopié en `<script>` dans chaque page : il vit dans
+`assets/js/before-after.js`.
+
 ### CSS des 5 pages de service : `assets/css/service-page.css`
 
 `ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.html`, `nettoyage-toiture-angouleme.html`,

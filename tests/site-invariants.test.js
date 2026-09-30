@@ -61,7 +61,7 @@ test('le build publie uniquement les fichiers publics, avec footer statique', ()
   for (const f of ['index.html', 'blog/index.html', 'sitemap.xml', 'assets/css/styles.css', '_redirects']) {
     assert.ok(fs.existsSync(dist(f)), `dist/${f} manquant`);
   }
-  for (const f of ['CLAUDE.md', 'package.json', 'docs', 'content', 'scripts', 'tests', 'data/config.json', 'blog/template-article.html', 'node_modules']) {
+  for (const f of ['CLAUDE.md', 'package.json', 'docs', 'content', 'scripts', 'tests', 'data/config.json', 'blog/template-article.html', 'includes/partials', 'node_modules']) {
     assert.ok(!fs.existsSync(dist(f)), `dist/${f} ne doit pas être publié`);
   }
   assert.match(fs.readFileSync(dist('index.html'), 'utf8'), /id="site-footer-wrapper"/);

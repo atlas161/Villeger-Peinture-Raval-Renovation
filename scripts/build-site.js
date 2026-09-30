@@ -25,7 +25,7 @@ const DIST = path.join(ROOT, 'dist');
 const PUBLIC_DIRS = ['assets', 'media', 'includes', 'blog', '.well-known', 'data'];
 const PUBLIC_ROOT_FILES = ['robots.txt', 'sitemap.xml', 'llms.txt', 'humans.txt'];
 // Chemins (relatifs à la racine) à ne jamais publier même s'ils sont dans un dossier public.
-const EXCLUDED = new Set(['data/config.json']);
+const EXCLUDED = new Set(['data/config.json', 'includes/partials']);
 
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
