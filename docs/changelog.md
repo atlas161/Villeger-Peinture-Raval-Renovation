@@ -17,6 +17,15 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-09-30 — Petits chantiers (roadmap B) — *non déployé, en attente de validation*
+
+| Changement |
+|---|
+| **Sitemap sans bruit** : `build-blog.js` ne réécrit plus les `<lastmod>` des pages hors blog (à mettre à jour à la main) ; `lastmod` de `/blog/` = max(valeur actuelle, dernier article). `blog/index.html` n'accumule plus de lignes vides à chaque build. |
+| **Git** : `.gitignore` (`.agents/`, `.codex/`, `graphify-out/`, `AGENTS.md`, `.claude/settings*.json`) + `.gitattributes` (`* text=auto eol=lf`). |
+| **Images** : `width`/`height` ajoutés (accueil ×9, pages de service ×4 chacune) ; lus depuis le fichier WebP par `scripts/lib/image-size.js`. Tailles affichées identiques avant/après. |
+| **Accessibilité mobile (≤ 768 px)** : cibles tactiles ≥ 40 px (liens du pied de page, contact direct, « Lire la suite », « Voir ce service », bouton Envoyer 44 px) ; textes de 10–12 px passés à 13 px. Desktop inchangé ; pages mobiles ≈ +1 % de hauteur (accueil +394 px). |
+
 ## 2026-09-30 — Structure, cookies, mobile, ménage, suivi
 
 Audit structure/routes/design system : [`audit-structure-design-2026-09-29.md`](./audit-structure-design-2026-09-29.md).

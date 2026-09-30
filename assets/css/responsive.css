@@ -565,3 +565,33 @@
     scroll-snap-align: center;
   }
 }
+
+/* Accessibilité mobile : cibles tactiles ≥ 40 px et textes ≥ 13 px (audit du 2026-09-29) */
+@media (max-width: 768px) {
+  .footer-bottom a,
+  .footer-contact a,
+  .contact-info-text a,
+  .gallery-card-link,
+  .review-more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  .contact-label { font-size: 0.8125rem; }
+  p.hero-eyebrow,
+  .contact-info-text .contact-info-label,
+  .svc-tags li,
+  .gallery-figure figcaption,
+  .before-after-images figcaption { font-size: 0.8125rem; }
+
+  .form-actions .btn { min-height: 44px; }
+  .hero-eyebrow,
+  .hero-chip-stars,
+  .contact-info-label,
+  .contact-value.email,
+  .slider-label,
+  .blog-preview-badge,
+  .article-tag,
+  .blog-eyebrow { font-size: 0.8125rem; }
+}

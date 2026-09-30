@@ -4,6 +4,9 @@
  * et renvoie le HTML de la section. Les champs `*Html` contiennent du HTML brut (liens, <strong>…).
  */
 
+const path = require('path');
+const { webpSize } = require('./image-size');
+
 const SLIDER_SIZES = '(max-width: 960px) 100vw, 50vw';
 
 const indent = (str, n) => str.split('\n').map((l) => (l ? ' '.repeat(n) + l : l)).join('\n');
@@ -18,11 +21,13 @@ function header({ eyebrow, title, id, introHtml }) {
 function responsiveImg({ dir, name, alt, className, id, eager }) {
   const base = `${dir}/${name}`;
   const srcset = [600, 900, 1200].map((w) => `${base}-${w}w.webp ${w}w`).join(', ');
+  const size = webpSize(path.join(__dirname, '..', '..', `${base}-900w.webp`));
   const attrs = [
     `src="${base}-900w.webp"`,
     `srcset="${srcset}"`,
     `sizes="${SLIDER_SIZES}"`,
     `alt="${alt}"`,
+    size ? `width="${size.width}" height="${size.height}"` : null,
     `class="${className}"`,
     id ? `id="${id}"` : null,
     eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"',

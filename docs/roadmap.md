@@ -24,15 +24,15 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
   un formulaire test → contrôler dans Clarity (événements personnalisés) puis dans GTM en mode aperçu.
 - [ ] **Relancer Lighthouse mobile sur la prod** (dernier relevé : 2026-09-29, avant les changements mobile/cookies/ménage) et
   consigner les scores dans `changelog.md`. Objectif : garder Perf ≥ 95, A11y 100, Bonnes pratiques 100, SEO 100.
-- [ ] **Fichiers non suivis par git** : décider pour `.agents/`, `.codex/`, `graphify-out/`, `AGENTS.md` (ancienne copie de
+- [x] *(fait, à déployer)* **Fichiers non suivis par git** : décider pour `.agents/`, `.codex/`, `graphify-out/`, `AGENTS.md` (ancienne copie de
   `CLAUDE.md`), `.gitattributes`, `.claude/settings.json` → les ajouter au `.gitignore` ou les versionner. Un
   `.gitattributes` avec `* text=auto eol=lf` supprimerait les avertissements « LF will be replaced by CRLF ».
-- [ ] **Bruit dans le sitemap** : `scripts/build-blog.js` réécrit les `<lastmod>` de `sitemap.xml` (et un espace dans
+- [x] *(fait, à déployer)* **Bruit dans le sitemap** : `scripts/build-blog.js` réécrit les `<lastmod>` de `sitemap.xml` (et un espace dans
   `blog/index.html`) à chaque build, d'où des diffs à annuler à la main (`git checkout -- sitemap.xml blog/index.html`).
   Corriger pour ne mettre à jour `lastmod` que si le contenu de l'article a changé.
 - [ ] **Google Search Console** : renvoyer le sitemap, inspecter quelques URLs (`/blog/<slug>` doit montrer la redirection
   301 vers `.html`), surveiller « Pages » et « Expérience » (Core Web Vitals) sur 28 jours.
-- [ ] **Accessibilité résiduelle** (audit du 29/09) : ~9 cibles tactiles < 40 px et ~8 textes < 13 px sur mobile ; images sans
+- [x] *(fait, à déployer ; reste : liens en ligne dans les paragraphes, carte Leaflet)* **Accessibilité résiduelle** (audit du 29/09) : ~9 cibles tactiles < 40 px et ~8 textes < 13 px sur mobile ; images sans
   `width`/`height` (≈ 4 par page de service, 9 sur l'accueil) ; vérifier le contraste des cartes d'avis.
 
 ## C. Chantiers moyens (une session chacun)
