@@ -88,7 +88,12 @@
 
     // Afficher la bannière (différé pour ne pas impacter le LCP)
     const showBanner = () => {
+      // Un clic sur « Accepter/Refuser » remonte jusqu'à l'écouteur window ci-dessous : ne pas réafficher.
+      if (localStorage.getItem('cookie-consent')) return;
       cookieBanner.style.display = 'block';
+      // La feuille de style garde la bannière à opacity:0 tant que cette classe n'est pas posée.
+      void cookieBanner.offsetWidth; // reflow : déclenche la transition d'apparition
+      cookieBanner.classList.add('cookie-banner-visible');
     };
     const bannerTimeout = setTimeout(showBanner, 1000);
     ['scroll', 'click', 'touchstart'].forEach(evt => {
