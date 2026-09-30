@@ -17,6 +17,20 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 — Refonte design : palette, boutons, logo, menu mobile, footer
+
+Validée par le client après maquettes (page de propositions). Thème **clair** conservé.
+
+| Changement |
+|---|
+| **Palette unique** : variables `--brand-accent-text` (#7A5A2B, or pour du texte, 6:1), `--brand-accent-on-dark` (#D9C4A1), `--footer-text`, `--color-star`, `--color-primary-active` ; textes plus contrastés (`--color-text-light` #5C4D41, `--color-text-muted` #6A5C50) ; fonds crème unifiés (`--color-bg` #FAF8F5). L'or `--brand-accent` (#A88B5E, 3:1) ne sert plus qu'au décor. Suppression de #8B5A2B, #5A3210, #5A2F0F, #8B4513, #D9742B, #F59E0B, des 6 crèmes en double et de tous les dégradés de boutons. |
+| **Boutons** : pilule, aplat, hover = assombrissement seul (plus de soulèvement, d'ombre qui grandit, de reflet ni de dégradé) ; 2 tailles (48 px, `btn--sm` 40 px) ; filtres en pilule, boutons ronds (burger, flèches) en cercle. |
+| **Logo** : porte redessinée en SVG en ligne + texte en vraie police : « Villéger » puis « **P**einture **R**avalement **R**énovation » (initiales en brun). Généré par `scripts/sync-header.js` (toutes les pages), `scripts/template-article.html` (blog) et `404.html`. `media/VPRR-LOGO.svg` reste pour le JSON-LD et l'impression. |
+| **Menu burger** : panneau plein écran en liste alignée à gauche (séparateurs, page courante marquée, sous-menu Services qui glisse), bloc du bas avec téléphone, horaires et bouton devis (`<li class="menu-tel">`). |
+| **Barre du bas mobile** : pilule flottante (bouton téléphone rond + « Devis gratuit »), masquée par `main.js` quand `#contact` ou le footer est à l'écran. |
+| **Footer** : SIRET / TVA en liste étiquette / valeur en texte clair (`--footer-text`), « Garantie décennale & RC Pro » en pastille. |
+| **Correctif avis Google (mobile)** : le carrousel débordait de l'écran (régression de la veille : `min-width: 0` manquant sur la grille). |
+
 ## 2026-09-30 (nuit) — Audit design : incohérences desktop / tablette / mobile
 
 Méthode : captures Chromium à 375 / 768 / 1440 px + calcul automatique des contrastes (WCAG) et des cibles tactiles.

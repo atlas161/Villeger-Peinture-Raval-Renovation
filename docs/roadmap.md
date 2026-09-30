@@ -42,7 +42,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
    Champniers…), écrire un texte réellement différent par commune (éviter le contenu dupliqué), photos locales.
    Pour chaque page : `page.json` + sitemap + menu (`sync-header.js`) + liens depuis `zone-desservie-charente.html`.
 2. **Tokeniser le reste du design system** — échelle typographique (≈ 50 tailles), ombres (≈ 60), breakpoints (≈ 12 dont
-   991/992 et 768/769), échelle de z-index, un seul composant bouton (≥ 5 familles aujourd'hui). Changement visible :
+   991/992 et 768/769), échelle de z-index. *(Fait le 2026-10-01 : palette, bouton unique, logo.)* Changement visible :
    valider avec des mesures avant/après.
 3. **Durcir la CSP** — retirer `'unsafe-inline'` de `script-src` : externaliser les 2 scripts inline de `index.html` et les
    attributs `onclick` restants (puis évaluer `style-src`). Tester toutes les pages avec la CSP en `Report-Only` d'abord.

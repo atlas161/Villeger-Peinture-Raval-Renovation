@@ -33,3 +33,10 @@ l'absence d'ITE et redirige vers les pages peinture extérieure / ravalement de 
 - **Robots IA** : autorisés (objectif : apparaître dans ChatGPT & co.) — `llms.txt` maintenu.
 - **Coordonnées officielles** : 05 45 91 22 70 ; lun–ven 9 h–17 h, sam 9 h–12 h. SARL, SIREN 934 010 216,
   TVA FR02 934 010 216.
+
+## Design (2026-10-01)
+
+- **Thème clair** conservé (pas de mode sombre).
+- **Boutons** : pilule, animation sobre (assombrissement seul, jamais de soulèvement ni d'ombre qui grandit).
+- **Logo du site** : porte redessinée + « Villéger / Peinture Ravalement Rénovation » (texte vivant), pas « VPRR ».
+- **Or** : `--brand-accent` = décor seulement ; texte doré sur clair = `--brand-accent-text`, sur sombre = `--brand-accent-on-dark`.

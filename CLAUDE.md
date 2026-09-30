@@ -52,6 +52,9 @@ si le SEO ou une action client est concernée.
 - **Publication = liste blanche** (`scripts/build-site.js`) : un nouveau dossier/fichier public doit être ajouté à
   `PUBLIC_DIRS` / `PUBLIC_ROOT_FILES`. Les docs, scripts, tests et `content/` ne sont jamais publiés.
 - **CSS** : utiliser les variables de `:root` (`--color-*`, `--radius*`, `--space-*`…) plutôt que des valeurs en dur.
+  Or : `--brand-accent` = décor uniquement ; texte doré = `--brand-accent-text` (clair) / `--brand-accent-on-dark` (sombre).
+  Boutons : pilule, hover = assombrissement seul, 2 tailles (`.btn`, `.btn--sm`) — pas de soulèvement ni de dégradé.
+  Logo : SVG en ligne généré par `scripts/sync-header.js` (+ `template-article.html`, `404.html`).
   Le mobile compact (≤ 768 px) est dans `assets/css/responsive.css` ; le repli de blocs pilotés par JS
   (`data-m-limit`, `data-m-collapse`) dans `assets/js/mobile-condense.js`. Rien n'est replié sur ordinateur.
 - **Tiers / CSP** : ajouter un outil tiers (pixel, widget, vidéo…) = ajouter son domaine dans la
