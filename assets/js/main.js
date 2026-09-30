@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const conn = navigator.connection || {};
     if (conn.saveData) return false;
     if (/(^|slow-)2g|3g/.test(conn.effectiveType || '')) return false;
-    return window.matchMedia('(min-width: 768px)').matches;
+    return true;
   };
   const heroBg = document.querySelector('.hero-bg');
   const heroVimeo = heroBg ? heroBg.querySelector('iframe.hero-video') : null;
@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (heroBg && heroVimeo && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     heroVimeo.remove();
   } else if (heroBg && heroVimeo && !shouldLoadHeroVideo()) {
-    // Téléphone, économiseur de données ou connexion lente : on garde l'image d'attente (la vidéo
-    // pèse ~19 Mo). Pour l'activer aussi sur mobile, retirer la condition de largeur dans shouldLoadHeroVideo().
+    // Économiseur de données ou connexion lente : on garde l'image d'attente (la vidéo pèse ~19 Mo).
+    // La vidéo se lance sur tous les écrans (téléphone et tablette compris) dans les autres cas.
     heroVimeo.remove();
   } else if (heroBg && heroVimeo) {
     heroVimeo.src = heroVimeo.dataset.src;
