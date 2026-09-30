@@ -513,7 +513,6 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: 0.875rem 1.25rem;
 }
 
 .zone-subsection {

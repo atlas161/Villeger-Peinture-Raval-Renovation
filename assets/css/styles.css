@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Titre principal - Grand et impactant */
 h1 {
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(2rem, 4.2vw, 3rem); /* 48 px max : les titres longs (FAQ, zone) tenaient sur 4 lignes à 60 px */
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.03em;
   margin-bottom: var(--space-lg);
@@ -366,13 +366,13 @@ a:hover {
 
 /* Tailles de boutons */
 .btn--sm {
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
 }
 
 .btn--lg {
-  border-radius: 14px;
+  border-radius: var(--radius);
   padding: 1rem 2.25rem;
   font-size: 1.125rem;
 }
@@ -1613,6 +1613,9 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 }
 
 .legal-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* cible tactile confortable */
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -1634,6 +1637,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 .credit-link {
   display: flex;
   align-items: center;
+  min-height: 44px;
   gap: var(--space-xs);
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;

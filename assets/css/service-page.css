@@ -47,11 +47,9 @@
 }
 
 .service-hero h1 {
-  /* Plancher abaissé (2.5rem -> 1.9rem) pour les petits mobiles (<400px) : avec l'ancien
-     plancher, le titre passait sur 5-6 lignes et repoussait le CTA très bas (voir
-     docs/ux-ui-responsive-audit.md). Pente (5vw) et plafond (3.75rem) inchangés : le rendu
-     tablette/desktop reste identique. */
-  font-size: clamp(1.9rem, 5vw, 3.75rem);
+  /* Plancher 1.9rem pour les petits mobiles (<400px) ; plafond 3rem : les H1 de service sont
+     longs (mot-clé + ville + promesse) et passaient sur 4 lignes à 60 px. */
+  font-size: clamp(1.9rem, 4vw, 3rem);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   margin-bottom: var(--space-lg);
@@ -614,10 +612,6 @@
   color: var(--color-primary);
 }
 
-.cta-glass-content .btn {
-  padding: 1rem 2.5rem;
-}
-
 .cta-glass-content .btn-secondary {
   margin-top: var(--space-md);
   display: inline-flex;
@@ -771,10 +765,6 @@
   flex-wrap: wrap;
   gap: var(--space-md);
   margin-top: var(--space-xl);
-}
-
-.jobsheet-actions .btn {
-  padding: 0.9rem 1.6rem;
 }
 
 .jobsheet-actions .btn-secondary {
@@ -993,3 +983,11 @@
   font-size: 0.9375rem;
 }
 
+
+/* Mobile : les deux boutons du hero (devis, téléphone) ont la même largeur. */
+@media (max-width: 639px) {
+  .service-hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

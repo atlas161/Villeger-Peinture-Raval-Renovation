@@ -11,7 +11,7 @@
 }
 
 .faq-page-controls {
-  max-width: 920px;
+  max-width: 720px; /* même colonne que la liste des questions (.faq-accordion) */
   margin: var(--space-xl) auto 0 auto;
   display: flex;
   align-items: center;
@@ -72,7 +72,8 @@
 }
 
 .faq-bulk-btn {
-  padding: 0.7rem 1rem;
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
   font-size: 0.9375rem;
 }
 
@@ -190,7 +191,6 @@
 }
 
 .faq-actions-btn {
-  padding: 0.9rem 2rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;

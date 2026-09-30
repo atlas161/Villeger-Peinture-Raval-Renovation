@@ -361,11 +361,6 @@
   gap: var(--space-md);
 }
 
-.btn-lg {
-  padding: var(--space-md) var(--space-xl);
-  font-size: 1rem;
-}
-
 /* ===================================================================
    8. FOOTER BLOG (Supprimé car géré par assets/js/footer.js)
    =================================================================== */
