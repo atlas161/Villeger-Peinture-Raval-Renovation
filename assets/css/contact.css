@@ -466,10 +466,15 @@
   color: var(--color-text-muted);
 }
 
+.contact-info-text a {
+  display: inline-block;
+  padding-block: 0.375rem; /* cible tactile ≥ 32 px */
+}
+
 .contact-info-text a,
 .contact-info-text p {
   margin: 0;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--color-text);
   line-height: 1.4;
   white-space: normal;
@@ -578,8 +583,8 @@
   border: none;
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-pill);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius);
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -663,12 +668,10 @@
 }
 
 .reviews-carousel {
-  background: var(--color-white);
-  border-radius: var(--radius-xl);
-  box-shadow: none;
-  border: 1px solid var(--color-border-light);
-  overflow: hidden;
-  padding: var(--space-xl);
+  /* Pas de grande carte autour des cartes d'avis (effet « carte dans une carte ») :
+     les avis reposent directement sur le fond de la section. */
+  background: transparent;
+  padding: 0;
 }
 
 .reviews-cta {
@@ -701,6 +704,7 @@
 }
 
 .reviews-summary-text {
+  white-space: nowrap;
   font-size: 0.9375rem;
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
@@ -750,7 +754,9 @@
 
 .reviews-viewport {
   overflow: hidden;
-  padding-inline: 14px;
+  /* Marge interne : laisse respirer l'ombre des cartes (sinon coupée par overflow). */
+  padding: 6px 6px 18px;
+  margin: -6px -6px -18px;
 }
 
 .reviews-track {
@@ -763,11 +769,11 @@
 
 .review-card {
   flex: 0 0 100%;
-  background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-bg) 100%);
-  border: 1px solid rgba(103, 58, 18, 0.10);
-  border-radius: 18px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: var(--space-xl);
-  box-shadow: 0 10px 22px rgba(45, 36, 30, 0.08);
+  box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
 }
@@ -802,11 +808,12 @@
 }
 
 .review-card-top {
+  /* Nom puis étoiles en colonne : le nom ne se coupe plus en deux lignes à côté des étoiles. */
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .review-author-block {
@@ -819,7 +826,7 @@
 .review-avatar {
   width: 44px;
   height: 44px;
-  border-radius: 14px;
+  border-radius: var(--radius);
   background: rgba(103, 58, 18, 0.10);
   border: 1px solid rgba(103, 58, 18, 0.14);
   color: var(--color-primary);
@@ -853,7 +860,6 @@
   gap: 3px;
   color: #F5B301;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .review-text {
@@ -868,15 +874,6 @@
     padding: var(--space-lg);
   }
 
-  .review-card-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-sm);
-  }
-
-  .review-stars {
-    margin-top: 0;
-  }
 }
 
 .review-card:not(.is-expanded) .review-text {
