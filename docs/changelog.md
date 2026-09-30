@@ -17,6 +17,17 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (soir) — Logo : retour à l'ancien logo, B2 retenue et documentée
+
+Le client a comparé 4 variantes (A à D) puis la variante B avec deux portes (B1 agrandie, B2 allongée) : **B2 est choisie**,
+mais **l'ancien logo d'origine reste en production** en attendant. Tout B2 est documenté pour être appliqué plus tard.
+
+| Changement |
+|---|
+| **Production** : `media/VPRR-LOGO.svg` de nouveau affiché par `<img class="logo-img">` (`scripts/sync-header.js`, `scripts/template-article.html`, `404.html`, règles `.logo-img` de `styles.css` et `responsive.css`, `preload` du logo remis dans `index.html` et `scripts/templates/service-page.html`). Les pages ont été régénérées. |
+| **Conservé** (inchangé) : palette, boutons pilule, menu burger en liste, barre mobile flottante, footer lisible, correctif des avis. Le panneau du menu mobile garde `.logo { position: relative; z-index: 1100 }` : le logo reste visible au-dessus du menu ouvert. |
+| **Documentation** : [`design/logo-b2.md`](./design/logo-b2.md) (décision, spécification, balisage et CSS prêts à coller, mesures d'alignement, historique des variantes), [`design/logo-b2-door.svg`](./design/logo-b2-door.svg) (la porte B2), [`design/logo-b2-preview.html`](./design/logo-b2-preview.html) (maquette locale). |
+
 ## 2026-10-01 — Refonte design : palette, boutons, logo, menu mobile, footer
 
 Validée par le client après maquettes (page de propositions). Thème **clair** conservé.
@@ -25,7 +36,7 @@ Validée par le client après maquettes (page de propositions). Thème **clair**
 |---|
 | **Palette unique** : variables `--brand-accent-text` (#7A5A2B, or pour du texte, 6:1), `--brand-accent-on-dark` (#D9C4A1), `--footer-text`, `--color-star`, `--color-primary-active` ; textes plus contrastés (`--color-text-light` #5C4D41, `--color-text-muted` #6A5C50) ; fonds crème unifiés (`--color-bg` #FAF8F5). L'or `--brand-accent` (#A88B5E, 3:1) ne sert plus qu'au décor. Suppression de #8B5A2B, #5A3210, #5A2F0F, #8B4513, #D9742B, #F59E0B, des 6 crèmes en double et de tous les dégradés de boutons. |
 | **Boutons** : pilule, aplat, hover = assombrissement seul (plus de soulèvement, d'ombre qui grandit, de reflet ni de dégradé) ; 2 tailles (48 px, `btn--sm` 40 px) ; filtres en pilule, boutons ronds (burger, flèches) en cercle. |
-| **Logo** : porte redessinée en SVG en ligne + texte en vraie police : « Villéger » puis « **P**einture **R**avalement **R**énovation » (initiales en brun). Généré par `scripts/sync-header.js` (toutes les pages), `scripts/template-article.html` (blog) et `404.html`. `media/VPRR-LOGO.svg` reste pour le JSON-LD et l'impression. |
+| **Logo** : une version « A » (porte redessinée + texte en vraie police) a été en ligne quelques heures (commit `a261fe1`), puis **retirée** le même jour (voir l'entrée « Logo » ci-dessous). |
 | **Menu burger** : panneau plein écran en liste alignée à gauche (séparateurs, page courante marquée, sous-menu Services qui glisse), bloc du bas avec téléphone, horaires et bouton devis (`<li class="menu-tel">`). |
 | **Barre du bas mobile** : pilule flottante (bouton téléphone rond + « Devis gratuit »), masquée par `main.js` quand `#contact` ou le footer est à l'écran. |
 | **Footer** : SIRET / TVA en liste étiquette / valeur en texte clair (`--footer-text`), « Garantie décennale & RC Pro » en pastille. |

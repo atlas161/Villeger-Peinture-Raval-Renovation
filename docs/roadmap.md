@@ -17,8 +17,11 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 | A4 | **Process d'avis Google après chantier** | Choisir le canal (SMS, QR code, carte, mail) puis préparer le support. `seo/blockers.md` §3. |
 | A5 | ~~Vidéo du hero sur téléphone~~ | **Fait le 2026-09-30** : la vidéo se lance sur tous les écrans (décision du client). À surveiller : Lighthouse mobile (perf) après déploiement. |
 | A6 | **Contenus/photos** | Nouvelles photos de chantiers (avant/après), Instagram : le fil Elfsight montre des photos hors sujet (à trier côté compte Instagram). |
+| A7 | **Avis Google : fournir les 14 avis** | Le client enverra le texte d'origine (prénom, note, date, texte) ; à intégrer dans `index.html` (carrousel `.reviews-track`). Ma lecture de Google Maps n'en a ramené que 3, traduits et tronqués : ne rien inventer. |
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
+
+- [ ] **Appliquer le logo B2** quand le client le demande : tout est prêt dans [`design/logo-b2.md`](./design/logo-b2.md) (balisage + CSS + vérifications). En attendant, le logo d'origine est en ligne.
 
 - [ ] **Vérifier `quote_cta_click` et `generate_lead`** dans GA4 > Temps réel (fenêtre privée sans anti-pub : le Chrome de
   l'utilisateur bloque `gtm.js`). `page_view` et `phone_click` sont déjà vérifiés (2026-09-30, requêtes `g/collect` en 204).

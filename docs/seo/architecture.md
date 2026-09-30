@@ -50,7 +50,7 @@ dossier) : arrêter le serveur avant de reconstruire.
 assets/css/               styles (voir §6)            assets/js/   scripts (voir §7)
 assets/fonts, vendor/     Inter, Font Awesome 6.5.1, Leaflet 1.9.4 — auto-hébergés, chemins versionnés
 assets/img/blog/          images des articles (+ déclinaisons -400w/-600w/-800w/-1200w)
-media/                    logo d'origine (VPRR-LOGO.svg : JSON-LD/impression ; le logo du site est en SVG en ligne, voir `sync-header.js`), favicons, photos avant/après des services (déclinaisons -600w/-900w/-1200w)
+media/                    logo d'origine (VPRR-LOGO.svg : en-tête, JSON-LD, impression ; le nouveau logo B2 est prêt mais non déployé, voir `docs/design/logo-b2.md`), favicons, photos avant/après des services (déclinaisons -600w/-900w/-1200w)
 data/                     hero.webp, hero-poster-*.webp, charente.geojson (carte)
 blog/                     HTML GÉNÉRÉ des articles + index.html + articles.json (ne pas éditer à la main)
 content/blog/*.md         source des articles          content/pages/<slug>/   source des pages de service

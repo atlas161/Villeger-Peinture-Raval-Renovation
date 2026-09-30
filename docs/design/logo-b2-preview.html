@@ -1,0 +1,171 @@
+<title>VPRR Logo Porte Allongée</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Mise en page : une carte par variante, même banc d'essai (desktop, téléphone, très petit, grand). */
+:root{
+  --bg:#FAF8F5;--surface:#FFFFFF;--fg:#2A211B;--muted:#6A5C50;--line:#E6E0D8;--brand:#673A12;--ok:#2F6B3B;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  /* Banc d'essai = le site (clair) : couleurs fixes dans les deux thèmes. */
+  --s-bg:#FAF8F5;--s-line:#E6E0D8;--s-brand:#673A12;--s-text:#2A211B;--s-light:#5C4D41;--s-gold:#7A5A2B;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1B1612;--surface:#26201A;--fg:#F1E9DF;--muted:#BDAE9E;--line:#3A3129;--brand:#D9C4A1;--ok:#7FC08E;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1B1612;--surface:#26201A;--fg:#F1E9DF;--muted:#BDAE9E;--line:#3A3129;--brand:#D9C4A1;--ok:#7FC08E;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.55;padding-inline:16px;padding-block:32px 72px}
+main{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1{font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 10px;text-wrap:balance}
+h2{font-size:1.25rem;margin:0;letter-spacing:-.01em}
+p{margin:0 0 10px;max-width:68ch}
+.lead{color:var(--muted);font-size:1.0625rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+.badge{font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok)}
+.badge.live{background:color-mix(in srgb,var(--muted) 18%,transparent);color:var(--muted)}
+.desc{color:var(--muted);font-size:.9375rem;margin:0}
+.bench{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;align-items:stretch}
+.bench>*{min-width:0}
+.bench>div:first-child,.bench>div:last-child:nth-child(3){grid-column:1/-1}
+.bench>div:nth-child(3) .tiny{flex-direction:row;flex-wrap:wrap;align-items:center;gap:32px}
+.nav .links{flex:1;justify-content:center;gap:22px}
+.lab{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.frame{background:var(--s-bg);border:1px solid var(--s-line);border-radius:12px;overflow:hidden}
+.nav{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;border-bottom:1px solid var(--s-line)}
+.nav .links{display:flex;gap:14px;font-size:12.5px;color:var(--s-light);font-weight:500;white-space:nowrap;overflow:hidden}
+.nav .cta{background:var(--s-brand);color:#fff;border-radius:99px;font-size:12px;font-weight:600;padding:8px 14px;white-space:nowrap}
+.nav .burg{width:38px;height:38px;border:1px solid var(--s-line);border-radius:50%;display:grid;place-items:center;color:var(--s-brand);font-size:16px;flex:none}
+.body{padding:14px 16px;display:grid;gap:8px}
+.body i{display:block;height:8px;border-radius:4px;background:#E3DCD2}
+.body i:first-child{height:14px;width:60%;background:#D4CABC}
+.phone{max-width:340px}
+.big{background:#fff;border:1px solid var(--s-line);border-radius:12px;padding:22px;display:flex;align-items:center;justify-content:center;min-height:120px}
+.tiny{overflow:hidden;background:#fff;border:1px solid var(--s-line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:center}
+
+/* ----- Logo : composant de base ----- */
+.lg{display:inline-flex;align-items:center;gap:10px;color:var(--s-brand);text-decoration:none;font-family:var(--font)}
+.lg svg{flex:none;display:block;height:var(--h,44px);width:auto}
+.lg .t{display:flex;flex-direction:column;line-height:1}
+.lg .n{font-weight:700;color:var(--s-brand);letter-spacing:-.015em}
+.lg .s{color:var(--s-light);white-space:nowrap}
+.lg b{font-weight:700;color:var(--s-brand)}
+
+/* A : en ligne aujourd'hui (Villéger / Peinture Ravalement Rénovation) */
+.A .t{gap:4px}.A .n{font-size:calc(var(--h,44px)*.5)}.A .s{font-size:calc(var(--h,44px)*.25);font-weight:500;letter-spacing:.02em}
+
+/* B : 4 lignes empilées, fidèle à l'original (porte plus haute) */
+.B{--k:1}.B .t{gap:calc(var(--h,44px)*.035)}
+.B .n{font-size:calc(var(--h,44px)*.27)}
+.B .s{font-size:calc(var(--h,44px)*.27);font-weight:600;letter-spacing:-.005em;color:var(--s-light)}
+.B .s b{color:var(--s-brand)}
+
+/* C : 2 lignes, nom complet en gras puis services */
+.C .t{gap:calc(var(--h,44px)*.1)}
+.C .n{font-size:calc(var(--h,44px)*.4);letter-spacing:-.02em}
+.C .s{font-size:calc(var(--h,44px)*.27);font-weight:600;color:var(--s-gold);letter-spacing:.01em}
+
+/* D : capitales espacées, filet fin */
+.D .t{gap:calc(var(--h,44px)*.12)}
+.D .n{font-size:calc(var(--h,44px)*.4);letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding-bottom:calc(var(--h,44px)*.1);border-bottom:1.5px solid var(--s-gold)}
+.D .s{font-size:calc(var(--h,44px)*.205);letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--s-light)}
+
+.pick{display:grid;gap:10px}
+.pick label{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.pick input{margin-top:5px;accent-color:var(--brand);width:18px;height:18px;flex:none}
+.pick b{font-weight:600}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+.lg.B .d{height:calc(var(--h)*1.111);width:auto} /* = hauteur des lettres, du haut du V au bas de Rénovation */
+.lg.B.short .d{height:var(--h)}
+.lg.B{align-items:center}
+.big .lg.B{}
+.al{position:relative;display:inline-block}
+.al::before,.al::after{content:"";position:absolute;left:-14px;right:-14px;border-top:1px dashed #C4573A;pointer-events:none}
+.al::before{top:calc(var(--h)*.037)}.al::after{bottom:calc(var(--h)*.037)}
+.nav .links{gap:14px;font-size:12px}
+</style>
+
+<main>
+  <header>
+    <p class="lead" style="margin-bottom:6px">vprr.fr · logo de l'en-tête, variante B</p>
+    <h1>Variante B : la porte à la hauteur du texte</h1>
+    <p class="lead">Les lignes pointillées rouges marquent le haut des capitales du premier mot et le bas du dernier. Dans B1 et B2, la porte touche ces deux lignes. Rien n'est modifié sur le site tant que vous n'avez pas validé.</p>
+  </header>
+
+  <section class="card">
+    <div class="head"><h2>B · Porte actuelle (petite)</h2><span class="badge live">Ce que vous avez vu</span></div>
+    <p class="desc">La porte garde sa taille : elle est plus courte que les quatre lignes de texte, comme vous l'avez remarqué.</p>
+    <div class="bench">
+      <div><div class="lab">En-tête ordinateur</div><div class="frame"><div class="nav"><a class="lg B short" style="--h:54px;gap:10px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="links"><span>Accueil</span><span>Services</span><span>Galerie</span><span>Blog</span><span>Zone d'intervention</span><span>FAQ</span><span>Contact</span></span><span class="cta">Obtenez un devis</span></div><div class="body"><i></i><i></i><i style="width:80%"></i></div></div></div>
+      <div><div class="lab">Téléphone 375 px</div><div class="frame phone"><div class="nav"><a class="lg B short" style="--h:48px;gap:10px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="burg">☰</span></div><div class="body"><i></i><i></i></div></div></div>
+      <div><div class="lab">Très petit écran 320 px</div><div class="frame phone" style="width:320px;max-width:100%"><div class="nav" style="padding:8px 10px"><a class="lg B short" style="--h:44px;gap:8px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="burg" style="width:34px;height:34px">☰</span></div><div class="body"><i></i></div></div></div>
+      <div><div class="lab">En grand, avec repères de hauteur (haut du V et bas de Rénovation)</div><div class="big"><span class="al" style="--h:110px"><a class="lg B short" style="--h:110px;gap:14px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a></span></div></div>
+    </div>
+  </section>
+  <section class="card">
+    <div class="head"><h2>B1 · Même porte, à la hauteur du texte</h2><span class="badge ">Proposition</span></div>
+    <p class="desc">La porte est simplement agrandie pour faire exactement la hauteur des quatre lignes. Elle devient plus large (proportions inchangées).</p>
+    <div class="bench">
+      <div><div class="lab">En-tête ordinateur</div><div class="frame"><div class="nav"><a class="lg B" style="--h:54px;gap:10px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="links"><span>Accueil</span><span>Services</span><span>Galerie</span><span>Blog</span><span>Zone d'intervention</span><span>FAQ</span><span>Contact</span></span><span class="cta">Obtenez un devis</span></div><div class="body"><i></i><i></i><i style="width:80%"></i></div></div></div>
+      <div><div class="lab">Téléphone 375 px</div><div class="frame phone"><div class="nav"><a class="lg B" style="--h:48px;gap:10px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="burg">☰</span></div><div class="body"><i></i><i></i></div></div></div>
+      <div><div class="lab">Très petit écran 320 px</div><div class="frame phone" style="width:320px;max-width:100%"><div class="nav" style="padding:8px 10px"><a class="lg B" style="--h:44px;gap:8px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="burg" style="width:34px;height:34px">☰</span></div><div class="body"><i></i></div></div></div>
+      <div><div class="lab">En grand, avec repères de hauteur (haut du V et bas de Rénovation)</div><div class="big"><span class="al" style="--h:110px"><a class="lg B" style="--h:110px;gap:14px"><svg class="d" viewBox="0 7 64 89"><use href="#door"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a></span></div></div>
+    </div>
+  </section>
+  <section class="card">
+    <div class="head"><h2>B2 · Porte allongée, à la hauteur du texte</h2><span class="badge ">Proposition</span></div>
+    <p class="desc">La porte est redessinée plus haute et plus fine (proportions 4:7 au lieu de 2:3), avec une rangée de pierres en plus sur les côtés. Même hauteur que le texte, largeur proche de la porte actuelle.</p>
+    <div class="bench">
+      <div><div class="lab">En-tête ordinateur</div><div class="frame"><div class="nav"><a class="lg B long" style="--h:54px;gap:10px"><svg class="d" viewBox="0 7 64 105"><use href="#doorL"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="links"><span>Accueil</span><span>Services</span><span>Galerie</span><span>Blog</span><span>Zone d'intervention</span><span>FAQ</span><span>Contact</span></span><span class="cta">Obtenez un devis</span></div><div class="body"><i></i><i></i><i style="width:80%"></i></div></div></div>
+      <div><div class="lab">Téléphone 375 px</div><div class="frame phone"><div class="nav"><a class="lg B long" style="--h:48px;gap:10px"><svg class="d" viewBox="0 7 64 105"><use href="#doorL"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="burg">☰</span></div><div class="body"><i></i><i></i></div></div></div>
+      <div><div class="lab">Très petit écran 320 px</div><div class="frame phone" style="width:320px;max-width:100%"><div class="nav" style="padding:8px 10px"><a class="lg B long" style="--h:44px;gap:8px"><svg class="d" viewBox="0 7 64 105"><use href="#doorL"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a><span class="burg" style="width:34px;height:34px">☰</span></div><div class="body"><i></i></div></div></div>
+      <div><div class="lab">En grand, avec repères de hauteur (haut du V et bas de Rénovation)</div><div class="big"><span class="al" style="--h:110px"><a class="lg B long" style="--h:110px;gap:14px"><svg class="d" viewBox="0 7 64 105"><use href="#doorL"/></svg><span class="t"><span class="s"><b>V</b>illéger</span><span class="s"><b>P</b>einture</span><span class="s"><b>R</b>avalement</span><span class="s"><b>R</b>énovation</span></span></a></span></div></div>
+    </div>
+  </section>
+  <section>
+    <h2 style="margin-bottom:12px">Votre choix</h2>
+    <div class="pick">
+      <label><input type="radio" name="v"><div><b>B1</b> : même porte, agrandie à la hauteur du texte</div></label>
+      <label><input type="radio" name="v"><div><b>B2</b> : porte allongée (plus haute et plus fine)</div></label>
+    </div>
+    <p class="desc" style="margin-top:12px">Dites-moi B1 ou B2 dans la conversation : j'applique, je vérifie, je commite et je pousse.</p>
+  </section>
+</main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="door" viewBox="0 0 64 96">
+      <!-- encadrement en pierre : jambages + arche -->
+      <path d="M3 94V36a29 29 0 0 1 58 0v58z" fill="#CDBB9B"/>
+      <!-- joints de pierre des jambages (décalés) -->
+      <path d="M3 52h10M3 67h10M3 82h10M51 52h10M51 67h10M51 82h10" stroke="#A8946F" stroke-width="1.3"/>
+      <path d="M8 52v15M8 82v12M56 52v15M56 82v12M8 37v15M56 37v15" stroke="#A8946F" stroke-width="1.3" opacity=".0"/>
+      <!-- joints de l'arche (voussoirs) -->
+      <path d="M8.2 28.5l7.6 3.3M13.4 19.2l6.6 5.6M21.4 11.2l4.6 7.4M38 18.6l4.6-7.4M44 24.8l6.6-5.6M48.2 31.8l7.6-3.3" stroke="#A8946F" stroke-width="1.3"/>
+      <!-- clé de voûte -->
+      <path d="M28 8.2h8l1.3 10.6h-10.6z" fill="#BFA97F"/>
+      <!-- ouverture de la porte -->
+      <path d="M13 94V38a19 19 0 0 1 38 0v56z" fill="#673A12"/>
+      <!-- imposte vitrée -->
+      <path d="M16 41a16 16 0 0 1 32 0z" fill="#FAF8F5"/>
+      <path d="M32 41V25M32 41l-11-11M32 41l11-11" stroke="#673A12" stroke-width="1.8" fill="none"/>
+      <rect x="13" y="41" width="38" height="3" fill="#522E0E"/>
+      <!-- planches -->
+      <path d="M22.5 46v48M32 46v48M41.5 46v48" stroke="#4A260B" stroke-width="1.3"/>
+      <!-- poignée -->
+      <circle cx="45.5" cy="72" r="1.9" fill="#D9C4A1"/>
+      <!-- seuil -->
+      <rect x="1" y="93" width="62" height="3" rx="1" fill="#A8946F"/>
+    </symbol>
+    <symbol id="doorL" viewBox="0 0 64 112">
+      <path d="M3 110V36a29 29 0 0 1 58 0v74z" fill="#CDBB9B"/>
+      <path d="M3 52h10M3 67h10M3 82h10M3 97h10M51 52h10M51 67h10M51 82h10M51 97h10" stroke="#A8946F" stroke-width="1.3"/>
+      <path d="M8.2 28.5l7.6 3.3M13.4 19.2l6.6 5.6M21.4 11.2l4.6 7.4M38 18.6l4.6-7.4M44 24.8l6.6-5.6M48.2 31.8l7.6-3.3" stroke="#A8946F" stroke-width="1.3"/>
+      <path d="M28 8.2h8l1.3 10.6h-10.6z" fill="#BFA97F"/>
+      <path d="M13 110V38a19 19 0 0 1 38 0v72z" fill="#673A12"/>
+      <path d="M16 41a16 16 0 0 1 32 0z" fill="#FAF8F5"/>
+      <path d="M32 41V25M32 41l-11-11M32 41l11-11" stroke="#673A12" stroke-width="1.8" fill="none"/>
+      <rect x="13" y="41" width="38" height="3" fill="#522E0E"/>
+      <path d="M22.5 46v64M32 46v64M41.5 46v64" stroke="#4A260B" stroke-width="1.3"/>
+      <circle cx="45.5" cy="80" r="1.9" fill="#D9C4A1"/>
+      <rect x="1" y="109" width="62" height="3" rx="1" fill="#A8946F"/>
+    </symbol>
+  </defs>
+</svg>
