@@ -9,8 +9,5 @@
     "sync:header": "node scripts/sync-header.js",
     "dev": "npx serve .",
     "test": "node --test"
-  },
-  "devDependencies": {
-    "sharp": "^0.34.5"
   }
 }

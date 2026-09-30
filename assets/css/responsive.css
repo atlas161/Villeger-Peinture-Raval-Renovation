@@ -31,11 +31,6 @@
     justify-content: center;
   }
   
-  .blog-page .blog-preview-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-  
   .blog-page .blog-preview-card {
     margin: 0;
   }
@@ -124,11 +119,6 @@
     font-size: 1rem;
     padding-right: var(--space-lg);
   }
-  
-  .service-page .faq-icon {
-    width: 24px;
-    height: 24px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -171,15 +161,6 @@
   .footer-col h3 {
     margin-bottom: var(--space-md);
   }
-  
-  .footer-links,
-  .footer-contacts {
-    text-align: center;
-  }
-  
-  .socials {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 480px) {
@@ -190,16 +171,6 @@
   
   .footer-col h3 {
     font-size: 0.75rem;
-  }
-  
-  .footer-links a,
-  .footer-contacts a {
-    font-size: 0.875rem;
-  }
-  
-  .social-badge {
-    width: 32px;
-    height: 32px;
   }
 }
 
@@ -257,21 +228,18 @@
 
 /* CTA Sections Responsive */
 @media (max-width: 768px) {
-  .article-cta .cta-card,
-  .service-cta .cta-card {
+  .article-cta .cta-card {
     flex-direction: column;
     text-align: center;
     gap: var(--space-md);
     padding: var(--space-lg);
   }
   
-  .article-cta .cta-actions,
-  .service-cta .cta-actions {
+  .article-cta .cta-actions {
     width: 100%;
   }
   
-  .article-cta .btn,
-  .service-cta .btn {
+  .article-cta .btn {
     width: 100%;
     justify-content: center;
   }

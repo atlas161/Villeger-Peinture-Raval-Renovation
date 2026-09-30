@@ -7,7 +7,6 @@
    =================================================================== */
 
 :root {
-  --blog-radius-sm: 16px;
   --blog-radius: 24px;
   --blog-radius-lg: 32px;
   --blog-shadow-card: 0 4px 24px rgba(45, 36, 30, 0.08);
@@ -266,34 +265,6 @@
    5. ÉTATS DE CHARGEMENT ET VIDE
    =================================================================== */
 
-.loading-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-4xl) 0;
-  grid-column: 1 / -1;
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid var(--color-border);
-  border-top-color: var(--brand-accent);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: var(--space-md);
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.loading-state p {
-  color: var(--color-text-muted);
-  font-size: 0.9375rem;
-}
-
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -395,36 +366,9 @@
   font-size: 1rem;
 }
 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-lg);
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text);
-  background: transparent;
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  transition: var(--blog-transition);
-}
-
-.btn-outline:hover {
-  background: var(--color-surface-alt);
-  border-color: var(--brand-accent);
-  color: var(--color-text);
-}
-
 /* ===================================================================
    8. FOOTER BLOG (Supprimé car géré par assets/js/footer.js)
    =================================================================== */
-
-.blog-footer {
-  display: none;
-}
 
 /* ===================================================================
    9. RESPONSIVE

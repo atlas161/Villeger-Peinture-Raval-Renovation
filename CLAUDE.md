@@ -14,7 +14,7 @@ intérieure basé à L'Isle-d'Espagnac (16340), Angoulême, Charente. Gérant : 
   fichiers `blog/*.html` sont générés, ne jamais les éditer à la main (écrasés au prochain build).
 - **Publication = dossier `dist/`** (`publish = "dist"`), généré par `npm run build` (`build:blog` puis
   `scripts/build-site.js`) : liste blanche des fichiers publics (les fichiers internes — docs, scripts, tests,
-  `content/`, `data/config.json`, gabarit d'article — n'y sont jamais), footer inclus statiquement dans le HTML,
+  `content/`, gabarit d'article — n'y sont jamais), footer inclus statiquement dans le HTML,
   `_redirects` `/blog/<slug>` → `.html`. `dist/` n'est pas versionné. En local, `npm run dev` sert la racine
   (le footer est alors chargé par `footer.js`). Un nouveau dossier/fichier public doit être ajouté à
   `PUBLIC_DIRS`/`PUBLIC_ROOT_FILES` de `scripts/build-site.js`.
@@ -63,10 +63,9 @@ de la fiche Solocal/PagesJaunes.
   démoussage de toiture, peinture extérieure, rénovation intérieure, **isolation intérieure** (pas
   d'isolation extérieure/ITE — voir [`docs/seo/decisions.md`](docs/seo/decisions.md)).
 - Zone d'intervention : Angoulême et Charente (16), rayon ~50 km autour de L'Isle-d'Espagnac.
-- `data/config.json` existe encore mais **n'est plus injecté dans le DOM** (voir piège ci-dessous) : il
-  ne sert plus que de note/brouillon, pas de source de vérité. Pour changer une info affichée (FAQ,
-  villes desservies, options du formulaire, textes de section), éditer directement le HTML de la page
-  concernée.
+- Le contenu affiché (FAQ, villes desservies, options du formulaire, textes de section) est dans le HTML des
+  pages, ou dans `content/pages/<slug>/` pour les pages de service générées. Il n'existe plus de fichier de
+  configuration JSON séparé (`data/config.json` supprimé le 2026-09-30).
 
 ## Pièges connus
 
@@ -74,7 +73,7 @@ de la fiche Solocal/PagesJaunes.
   mort comme documenté auparavant : il tournait sur `index.html` et écrasait silencieusement au
   chargement le FAQ, les villes de zone, les liens de contact, les titres de section et les options du
   formulaire (avec un flash de contenu et une divergence HTML/JSON — ex. le formulaire n'avait que 4
-  options en HTML statique contre 6 dans `config.json`). Le HTML statique de `index.html` est
+  options en HTML statique contre 6 dans l'ancien `config.json`, supprimé depuis). Le HTML statique de `index.html` est
   maintenant la seule source de vérité pour ce contenu ; les 2 options manquantes (Toiture & Couverture,
   Rénovation intérieure) ont été ajoutées en dur dans le formulaire.
 - Le champ `title` du frontmatter blog sert à la fois de H1 affiché et (historiquement) de balise

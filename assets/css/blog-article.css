@@ -765,29 +765,6 @@
   font-size: 0.875rem;
 }
 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-lg);
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text);
-  background: transparent;
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.btn-outline:hover {
-  background: var(--color-surface-alt);
-  border-color: var(--brand-accent);
-  color: var(--color-text);
-}
-
 .btn-lg {
   padding: var(--space-md) var(--space-xl);
   font-size: 1rem;
@@ -796,12 +773,6 @@
 /* ===================================================================
    8. FOOTER
    =================================================================== */
-
-.blog-footer {
-  padding: var(--space-3xl) 0 var(--space-xl);
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-}
 
 .footer-content {
   display: flex;
@@ -824,23 +795,6 @@
 .footer-brand p {
   font-size: 0.9375rem;
   color: var(--color-text-light);
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-lg);
-}
-
-.footer-links a {
-  font-size: 0.9375rem;
-  color: var(--color-text-light);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--color-primary);
 }
 
 .footer-bottom {

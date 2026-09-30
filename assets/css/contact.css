@@ -357,12 +357,6 @@
   }
 }
 
-.form-helper {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
 .contact-form .btn-primary {
   width: 100%;
 }
@@ -948,40 +942,6 @@
    MESSAGES DU FORMULAIRE
    =================================================================== */
 
-.form-messages {
-  padding: var(--space-md);
-  border-radius: var(--radius);
-  margin-bottom: var(--space-md);
-  font-size: 0.875rem;
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
-  border: 1px solid;
-  animation: slideInMessage 0.3s ease-out;
-}
-
-.form-messages.success {
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-  color: #155724;
-}
-
-.form-messages.error {
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-  color: #721c24;
-}
-
-@keyframes slideInMessage {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* État de chargement du bouton */
 .contact-form button[type="submit"]:disabled {
   opacity: 0.7;
@@ -1035,21 +995,6 @@
     gap: var(--space-lg);
   }
   
-  .form-group {
-    gap: var(--space-sm);
-  }
-  
-  .form-group label {
-    font-size: 0.875rem;
-  }
-  
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    padding: var(--space-md);
-    font-size: 1rem;
-  }
-  
   .contact-form button[type="submit"] {
     padding: var(--space-md) var(--space-xl);
     font-size: 1rem;
@@ -1076,13 +1021,6 @@
 @media (max-width: 480px) {
   .contact-panel {
     padding: var(--space-sm);
-  }
-  
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    padding: var(--space-sm);
-    font-size: 0.9375rem;
   }
   
   .contact-form button[type="submit"] {
