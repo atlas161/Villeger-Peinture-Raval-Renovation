@@ -2921,3 +2921,39 @@ html {
   font-weight: 600;
   border-radius: 12px;
 }
+
+/* ===================================================================
+   BARRE D'ACTION COLLANTE MOBILE (Appeler / Devis) — injectée par includes/footer.html
+   =================================================================== */
+.mobile-cta-bar { display: none; }
+
+@media (max-width: 768px) {
+  .mobile-cta-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    display: flex;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md) calc(var(--space-sm) + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -4px 16px rgba(45, 36, 30, 0.08);
+  }
+  .mobile-cta-bar a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    min-height: 48px;
+    border-radius: var(--radius);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  .mobile-cta-call { background: var(--color-white); color: var(--color-primary); border: 2px solid var(--color-primary); }
+  .mobile-cta-quote { background: var(--color-primary); color: var(--color-white); }
+  body { padding-bottom: 64px; }
+}
