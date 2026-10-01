@@ -774,6 +774,10 @@
   font-weight: 600;
 }
 
+.jobsheet-tip-text a {
+  text-decoration: underline;
+}
+
 .jobsheet-tip-text {
   margin: var(--space-sm) 0 0;
   color: var(--color-text-light);

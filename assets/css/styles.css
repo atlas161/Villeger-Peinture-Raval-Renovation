@@ -253,6 +253,10 @@ a:hover {
   margin-bottom: 0;
 }
 
+.section-header p a {
+  text-decoration: underline;
+}
+
 /* ===================================================================
    5. BOUTONS (Apple-style)
    =================================================================== */
@@ -1244,7 +1248,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   max-width: 300px;
 }
 
-.footer-social h4 {
+.footer-social h3 {
   font-size: 0.875rem;
   font-weight: var(--font-weight-semibold);
   margin-bottom: var(--space-sm);

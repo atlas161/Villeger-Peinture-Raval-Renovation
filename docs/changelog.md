@@ -22,6 +22,7 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - **`contact.html`** : le formulaire de devis vit sur une page à part (accueil et 5 pages de service : simple bande d'appel). Service pré-sélectionné via `?service=…`, champs cachés `service` et `source`. Nom Netlify conservé (`contact`). Tous les liens `#contact` (menu, hero, tarifs, barre mobile, footer, blog, JSON-LD, llms.txt, security.txt) migrés. Ajoutée au sitemap. Nouveau test `contact-page` (6).
 - **Accueil, zone** : schéma SVG de la Charente (rayon ≈ 50 km, communes) + communes principales à la place de la carte Leaflet → plus aucune tuile OpenStreetMap ni Leaflet sur l'accueil.
 - **Page zone** : « Ma commune est-elle desservie ? » (recherche instantanée), communes par secteur en puces, carte interactive chargée **au clic** seulement.
+- **Accessibilité** (Lighthouse local, 5 pages) : Netlify avait relevé 99 ; corrigé → 100 partout (hiérarchie des titres : « Suivez-nous » du footer en `h3`, secteurs de la page zone en `h2` ; libellé du lien d'itinéraire ; liens soulignés dans les textes).
 - Mesures (375 / 1440 px) : accueil 12 551 → 11 320 / 9 722 → 8 178 px ; ravalement 16 257 → 15 029 / 13 769 → 12 294 px ; aucun débordement horizontal ; `npm test` 26/26.
 
 ## 2026-10-01 (nuit 4) — Retour client sur l'aperçu : zone et services de l'accueil

@@ -358,7 +358,9 @@
   flex-shrink: 0;
 }
 
+.zone-info-content h2,
 .zone-info-content h3 {
+  text-align: left;
   font-size: 1rem;
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
@@ -1095,7 +1097,8 @@
   opacity: 0.45;
 }
 
-.zone-sector h3 {
+.zone-sector h2 {
+  text-align: left;
   display: flex;
   align-items: baseline;
   gap: var(--space-sm);
@@ -1104,7 +1107,7 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.zone-sector h3 i {
+.zone-sector h2 i {
   color: var(--color-primary);
   flex: none;
 }
