@@ -21,7 +21,7 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
 - Le carrousel d'avis maison (7 avis écrits dans `index.html`, module `95-carrousel-avis.js`) est remplacé par le **widget Featurable** (avis Google réels et à jour, `data-featurable-async`). Le script `featurable.com/assets/bundle.js` est chargé à l'approche de la section (`src/js/main/95-widget-avis.js`). Résumé 4,1 • 14 avis et bouton « Laisser un avis » conservés.
 - **CSP** (`netlify.toml`) : `featurable.com` en script/connect/img, `*.googleusercontent.com` en img (photos de profil), `featurable.com` en police. Cité dans les **mentions légales**. Chargé sans consentement (comme Vimeo : pas de traceur publicitaire) — à revoir si le client préfère le conditionner au bouton « Tout accepter ».
-- Reste : le CSS `.reviews-*` / `.review-card*` de `contact.css` n'est plus utilisé (sauf `.reviews-grid`, `.reviews-carousel*`, `.reviews-summary*`, `.reviews-cta`) : à supprimer au prochain ménage ; CSS personnalisé du widget à régler dans l'éditeur Featurable si besoin.
+- Ménage fait dans la foulée : ~210 lignes de CSS d'avis inutilisées supprimées de `contact.css` (contrôles, piste, cartes `.review-card*`) et la règle `.review-more` de `responsive.css`. Le CSS perso du widget se règle dans l'éditeur Featurable si besoin.
 
 ## 2026-10-01 — Gros fichiers découpés par fonction (`styles.css`, `zone.css`, `main.js`)
 

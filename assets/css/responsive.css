@@ -449,8 +449,7 @@
   .footer-bottom a,
   .footer-contact a,
   .contact-info-text a,
-  .gallery-card-link,
-  .review-more {
+  .gallery-card-link {
     display: inline-flex;
     align-items: center;
     min-height: 40px;
