@@ -21,6 +21,8 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
+- [x] *(fait le 2026-10-01)* Propositions de redesign 1 à 6 des pages service et zone ([`design/direction-artistique.md`](./design/direction-artistique.md)). Reste la n° 7 (logo B2, en attente du client). Le guide visuel [`design/guide-direction-artistique.html`](./design/guide-direction-artistique.html) est à tenir à jour à chaque évolution de composant.
+
 - [ ] **Appliquer le logo B2** quand le client le demande : tout est prêt dans [`design/logo-b2.md`](./design/logo-b2.md) (balisage + CSS + vérifications). En attendant, le logo d'origine est en ligne.
 
 - [ ] **Vérifier `quote_cta_click` et `generate_lead`** dans GA4 > Temps réel (fenêtre privée sans anti-pub : le Chrome de

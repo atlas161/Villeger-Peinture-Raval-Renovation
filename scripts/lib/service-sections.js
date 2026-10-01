@@ -68,6 +68,26 @@ ${indent(image, 6)}
 </section>`;
 }
 
+function proofBar() {
+  const items = [
+    { icon: 'fa-solid fa-star', title: '4,1/5 sur Google', text: '14 avis clients' },
+    { icon: 'fa-solid fa-shield-halved', title: 'Décennale &amp; RC Pro', text: 'Travaux assurés' },
+    { icon: 'fa-solid fa-file-signature', title: 'Devis sous 48 h', text: 'Gratuit, sans engagement' },
+  ]
+    .map(
+      (i) => `    <li class="proof-bar-item">
+      <span class="proof-bar-icon"><i class="${i.icon}" aria-hidden="true"></i></span>
+      <span class="proof-bar-text"><strong>${i.title}</strong><span>${i.text}</span></span>
+    </li>`
+    )
+    .join('\n');
+  return `<section class="proof-bar" aria-label="Nos garanties">
+  <ul class="proof-bar-list">
+${items}
+  </ul>
+</section>`;
+}
+
 function problem(s) {
   const items = s.items
     .map(
@@ -223,4 +243,4 @@ ${links}
 </nav>`;
 }
 
-module.exports = { indent, hero, problem, solution, zone, others, faq, related };
+module.exports = { indent, proofBar, hero, problem, solution, zone, others, faq, related };

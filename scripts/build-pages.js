@@ -84,7 +84,7 @@ function renderSections(page, dir) {
   return page.sections
     .map((s) => {
       switch (s.type) {
-        case 'hero': return S.hero(s);
+        case 'hero': return `${S.hero(s)}\n\n${S.proofBar()}`;
         case 'problem': return S.problem(s);
         case 'solution': return S.solution(s);
         case 'zone': return S.zone(s);

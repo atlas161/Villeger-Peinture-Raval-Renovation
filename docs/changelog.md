@@ -17,6 +17,25 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (nuit 4) — Retour client sur l'aperçu : zone et services de l'accueil
+
+- **Régression corrigée** : ma mise en page de la zone (passe 2) s'appliquait aussi à la section « Nous intervenons en Charente » de l'accueil (2 cartes dans une grille à 3 colonnes, adresse étirée). Accueil : carte pleine largeur (conservée), puis adresse (1/3) + villes desservies (2/3, liste sur 3 colonnes). Page zone : modificateur `.zone-content--lists` (3 listes côte à côte), cartes à la hauteur de leur contenu.
+- **« Ce que nous faisons » plus compact** (`styles.css`) : grille 3 + 2 (≥ 1024 px), padding réduit, plus de grand vide entre texte et tags, pied de carte aligné en bas, hover sans soulèvement ni rotation.
+- « Un truc qui suit en bas » sur l'accueil : seuls éléments fixes dans le code = en-tête, bannière cookies (tant que le choix n'est pas fait) et barre « Devis gratuit » (mobile). Le bandeau de la preview Netlify s'y ajoute et n'existe pas en production.
+
+## 2026-10-01 (nuit 3) — Redesign pages de service et zone (propositions 1 à 6) + défauts restants
+
+- **Pages de service** (5, régénérées) : « Le problème » en grille 2 × 2 à largeur de conteneur, « Notre solution » en grille 2 colonnes, tarifs avec montant en grand et trait or, **bande de preuves** (note Google, décennale, délai de devis) sous le hero. Hover sans déplacement sur les cartes. Ravalement : −4,5 % de hauteur desktop.
+- **Page zone** : carte pleine largeur, puis adresse + note, 3 listes de communes côte à côte (≥ 992 px).
+- **Défauts corrigés** : textes de réassurance alignés, listes de communes en colonnes, bannière cookies ne touche plus la barre « Devis gratuit » (mobile), couleurs en dur remplacées par des tokens.
+- Logo B2 : **non déployé** (attente du client). Mesures avant/après : [`design/direction-artistique.md`](./design/direction-artistique.md).
+
+## 2026-10-01 (nuit 2) — Menu burger, cohérence des cartes, guide de direction artistique
+
+- **Menu burger** (`assets/js/main.js`) : « Services » ne s'ouvre plus au survol en mode mobile/tablette (la largeur est testée à chaque événement, plus seulement au chargement).
+- **Pages de service** (`service-page.css`, `content/pages/ravalement-facade-angouleme/tarifs.html`) : carte « mise en avant » unifiée en or, orange hors palette supprimé, cartes « problème » sans déplacement au survol. Pages régénérées par `npm run build:pages`.
+- **Nouveau** : [`design/guide-direction-artistique.html`](./design/guide-direction-artistique.html) (référence visuelle avec les vraies classes) et [`design/direction-artistique.md`](./design/direction-artistique.md) (audit pages service/zone, corrigé / restant / propositions à valider).
+
 ## 2026-10-01 (nuit) — Avis Google : carrousel remplacé par les vrais avis
 
 - `index.html` : 7 avis réels lus sur Google Maps (4-5★ avec texte), notes fidèles (Florence Pluvieux 4★). Retrait de 3 avis absents de la fiche (Gregory Themot, Sylvie B., Marc Deschamps). Note 4,1 · 14 avis inchangée. Vérifié à 375 / 768 / 1280 px : pas de débordement, flèches et « Lire la suite » OK.

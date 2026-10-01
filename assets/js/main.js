@@ -181,8 +181,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Le survol n'ouvre le sous-menu qu'en affichage ordinateur : testé au moment de l'événement
+  // (et non au chargement), sinon un élargissement/rétrécissement de fenêtre laisse le survol
+  // actif dans le menu burger et « Services » s'ouvre au moindre passage de souris.
+  const isDesktopNav = () => !!window.matchMedia && window.matchMedia('(min-width: 992px)').matches;
+
   const initDesktopSubmenus = () => {
-    if (!window.matchMedia || !window.matchMedia('(min-width: 992px)').matches) return;
+    if (!window.matchMedia) return;
     const items = Array.from(document.querySelectorAll('.primary-nav .has-submenu'));
     if (items.length === 0) return;
 
@@ -198,15 +203,18 @@ document.addEventListener("DOMContentLoaded", () => {
       let closeTimer = null;
 
       const open = () => {
+        if (!isDesktopNav()) return;
         clearTimeout(closeTimer);
         clearTimeout(openTimer);
         openTimer = setTimeout(() => {
+          if (!isDesktopNav()) return;
           closeAll();
           li.classList.add('submenu-open');
         }, 160);
       };
 
       const close = () => {
+        if (!isDesktopNav()) return;
         clearTimeout(openTimer);
         clearTimeout(closeTimer);
         closeTimer = setTimeout(() => {
@@ -232,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
 
     document.addEventListener('click', (e) => {
+      if (!isDesktopNav()) return;
       const within = e.target && e.target.closest ? e.target.closest('.primary-nav .has-submenu') : null;
       if (!within) closeAll();
     }, true);

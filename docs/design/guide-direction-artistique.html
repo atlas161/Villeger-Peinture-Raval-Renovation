@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Guide de direction artistique — VPRR</title>
+<!-- Chemins relatifs : ce fichier vit dans docs/design/ (jamais publié sur vprr.fr). Ouvrir via `npm run dev` puis /docs/design/guide-direction-artistique.html -->
+<link rel="stylesheet" href="../../assets/fonts/inter.css" />
+<link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="../../assets/css/styles.css" />
+<link rel="stylesheet" href="../../assets/css/nav.css" />
+<link rel="stylesheet" href="../../assets/css/utilities.css" />
+<link rel="stylesheet" href="../../assets/css/service-page.css" />
+<link rel="stylesheet" href="../../assets/css/faq.css" />
+<link rel="stylesheet" href="../../assets/css/contact.css" />
+<link rel="stylesheet" href="../../assets/css/responsive.css" />
+<style>
+  /* Habillage du guide uniquement (non réutilisable sur le site) */
+  .sg-wrap{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-lg)}
+  .sg-toc{position:sticky;top:var(--header-height);z-index:5;background:var(--color-bg);border-bottom:1px solid var(--color-border);padding:var(--space-sm) 0}
+  .sg-toc .sg-wrap{display:flex;flex-wrap:wrap;gap:var(--space-xs) var(--space-md);font-size:.875rem}
+  .sg-toc a{color:var(--color-text-light);text-decoration:none}.sg-toc a:hover{color:var(--color-primary)}
+  .sg-sec{padding:var(--space-3xl) 0;border-bottom:1px solid var(--color-border)}
+  .sg-sec>.sg-wrap>h2{text-align:left;font-size:1.75rem;margin-bottom:var(--space-xs)}
+  .sg-lead{color:var(--color-text-light);margin-bottom:var(--space-xl);max-width:70ch}
+  .sg-demo{background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-xl);margin:var(--space-md) 0 var(--space-xl)}
+  .sg-demo--bleed{padding:0;overflow:hidden}
+  .sg-demo--dark{background:var(--color-primary);color:#fff}
+  .sg-label{font:600 .75rem/1 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--brand-accent-text);margin:var(--space-lg) 0 var(--space-sm)}
+  .sg-code{font:.8125rem/1.5 ui-monospace,Menlo,monospace;color:var(--color-text-light);background:var(--color-surface-alt);border-radius:var(--radius-sm);padding:var(--space-sm) var(--space-md);display:block;margin-top:var(--space-sm);white-space:pre-wrap}
+  .sg-row{display:flex;flex-wrap:wrap;gap:var(--space-md);align-items:center}
+  .sg-grid{display:grid;gap:var(--space-md);grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+  .sg-sw{border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;background:#fff;font-size:.8125rem}
+  .sg-sw i{display:block;height:56px}.sg-sw div{padding:var(--space-sm) var(--space-md);line-height:1.4}.sg-sw b{display:block;font-size:.8125rem}
+  .sg-box{background:var(--color-surface-alt);border-radius:var(--radius);display:inline-block}
+  .sg-rules{display:grid;gap:var(--space-md);grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .sg-rules ul{margin:0;padding-left:1.1rem;color:var(--color-text-light);line-height:1.7}
+  .sg-do{border-left:4px solid #3c7a4a;background:#fff;padding:var(--space-md) var(--space-lg);border-radius:var(--radius-sm)}
+  .sg-dont{border-left:4px solid #a83232;background:#fff;padding:var(--space-md) var(--space-lg);border-radius:var(--radius-sm)}
+  .sg-hero{padding:calc(var(--header-height) + var(--space-3xl)) 0 var(--space-2xl);background:var(--color-surface-alt)}
+  .sg-hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:var(--space-sm)}
+  .sg-footer-demo .site-footer{margin:0}
+  table.sg-t{width:100%;border-collapse:collapse;font-size:.875rem}.sg-t th,.sg-t td{text-align:left;padding:.5rem .75rem;border-bottom:1px solid var(--color-border);vertical-align:top}
+</style>
+</head>
+<body>
+<header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="#top" class="logo" aria-label="VPRR - Accueil">
+          <img src="../../media/VPRR-LOGO.svg" class="logo-img" alt="Villéger Peinture Raval Rénovation" width="150" height="40" />
+        </a>
+
+        <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
+          <ul class="menu">
+            <li><a class="nav-link" href="#home">Accueil</a></li>
+            <li class="has-submenu">
+              <a class="nav-link" href="#services">Services</a>
+              <ul class="submenu" aria-label="Pages services">
+                <li><a href="../../nettoyage-facade-angouleme.html">Nettoyage de façade <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="../../ravalement-facade-angouleme.html">Ravalement de façade <span class="submenu-meta">Charente</span></a></li>
+                <li><a href="../../nettoyage-toiture-angouleme.html">Nettoyage de toiture <span class="submenu-meta">Angoulême</span></a></li>
+                <li><a href="../../peinture-exterieure-charente.html">Peinture extérieure <span class="submenu-meta">Charente</span></a></li>
+                <li><a href="../../isolation-interieure-charente.html">Isolation intérieure <span class="submenu-meta">Charente</span></a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link" href="#galerie">Galerie</a></li>
+            <li><a class="nav-link" href="#blog">Blog</a></li>
+            <li><a class="nav-link" href="#zone">Zone d'intervention</a></li>
+            <li><a class="nav-link" href="#faq">FAQ</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="menu-tel">
+              <a href="tel:+33545912270" aria-label="Appeler le 05 45 91 22 70">05 45 91 22 70</a>
+              <span>Lun–ven 9 h–17 h · sam 9 h–12 h</span>
+            </li>
+            <li class="menu-cta">
+              <a class="btn btn-primary" href="#contact">Obtenez un devis</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+<div class="sg-hero"><div class="sg-wrap">
+<p class="section-eyebrow">Direction artistique · VPRR</p>
+<h1>Guide de style du site</h1>
+<p class="sg-lead" style="margin:0">Référence unique pour toute nouvelle page ou refonte. Tous les exemples ci-dessous utilisent les <strong>vraies classes et feuilles de style du site</strong> : si le site change, ce guide change avec lui. Dernière mise à jour : 2026-10-01. Règles d'usage détaillées : <code>CLAUDE.md</code> §CSS et <code>docs/design/direction-artistique.md</code>.</p>
+</div></div>
+<nav class="sg-toc" aria-label="Sommaire du guide"><div class="sg-wrap">
+<a href="#principes">Principes</a><a href="#couleurs">Couleurs</a><a href="#typo">Typographie</a><a href="#espaces">Espaces &amp; formes</a><a href="#boutons">Boutons</a><a href="#nav">Navigation</a><a href="#sections">Sections</a><a href="#cartes">Cartes</a><a href="#listes">Listes &amp; accordéons</a><a href="#formulaire">Formulaire</a><a href="#footer">Footer</a><a href="#recette">Recette d'une page</a>
+</div></nav>
+<main>
+<section class="sg-sec" id="principes"><div class="sg-wrap"><h2>1. Principes</h2><p class="sg-lead">L'esprit : artisan haut de gamme, chaleureux, sobre. Beaucoup d'air, un seul brun, de l'or en touche.</p>
+<div class="sg-rules">
+<div class="sg-do"><b>À faire</b><ul><li>Un brun (<code>--color-primary</code>) pour l'action, un or (<code>--brand-accent</code>) pour le décor.</li><li>Boutons pilule, hover = assombrissement seul.</li><li>Variables <code>:root</code> pour couleurs, espaces, rayons, ombres.</li><li>Cartes : fond blanc, bordure fine, rayon 12 px, pas de carte dans une carte.</li><li>Une carte « mise en avant » par bloc, toujours en <strong>or</strong>.</li><li>Les grilles de cartes n'ont jamais de carte orpheline (dernière carte impaire en pleine largeur) : problème et solution en 2 colonnes, réassurance en 3.</li></ul></div>
+<div class="sg-dont"><b>À ne pas faire</b><ul><li>Valeur de couleur en dur (hex) ou orange hors palette.</li><li>Texte doré sur fond clair avec <code>--brand-accent</code> (3:1) : utiliser <code>--brand-accent-text</code>.</li><li>Soulèvement ou zoom (<code>translate</code>, <code>scale</code>) ou dégradé sur bouton ou carte au survol.</li><li>Troncature « … » sur un titre ou un nom.</li><li>Ajouter un 3ᵉ format de bouton.</li><li>Éditer à la main les pages générées (voir CLAUDE.md).</li></ul></div>
+</div></div></section>
+<section class="sg-sec" id="couleurs"><div class="sg-wrap"><h2>2. Couleurs</h2><p class="sg-lead">Source : variables de <code>:root</code> dans <code>assets/css/styles.css</code>.</p><div class="sg-grid"><div class="sg-sw"><i style="background:var(--color-primary)"></i><div><b>--color-primary</b>#673A12<br>Boutons, titres de carte, liens</div></div><div class="sg-sw"><i style="background:var(--color-primary-hover)"></i><div><b>--color-primary-hover</b>#522E0E<br>Hover bouton</div></div><div class="sg-sw"><i style="background:var(--color-primary-active)"></i><div><b>--color-primary-active</b>#3F2209<br>Appui</div></div><div class="sg-sw"><i style="background:var(--brand-accent)"></i><div><b>--brand-accent</b>#A88B5E<br>Décor seulement (bordures, icônes, puces)</div></div><div class="sg-sw"><i style="background:var(--brand-accent-text)"></i><div><b>--brand-accent-text</b>#7A5A2B<br>Texte doré sur fond clair</div></div><div class="sg-sw"><i style="background:var(--brand-accent-on-dark)"></i><div><b>--brand-accent-on-dark</b>#D9C4A1<br>Texte doré sur brun (footer, hero)</div></div><div class="sg-sw"><i style="background:var(--color-text)"></i><div><b>--color-text</b>#2A211B<br>Texte courant</div></div><div class="sg-sw"><i style="background:var(--color-text-light)"></i><div><b>--color-text-light</b>#5C4D41<br>Texte secondaire</div></div><div class="sg-sw"><i style="background:var(--color-text-muted)"></i><div><b>--color-text-muted</b>#6A5C50<br>Légendes</div></div><div class="sg-sw"><i style="background:var(--color-bg)"></i><div><b>--color-bg</b>#FAF8F5<br>Fond de page</div></div><div class="sg-sw"><i style="background:var(--color-surface-alt)"></i><div><b>--color-surface-alt</b>#F3EEE8<br>Fond de section alternée</div></div><div class="sg-sw"><i style="background:var(--color-white)"></i><div><b>--color-white</b>#FFFFFF<br>Cartes</div></div><div class="sg-sw"><i style="background:var(--color-border)"></i><div><b>--color-border</b>#E6E0D8<br>Bordures</div></div><div class="sg-sw"><i style="background:var(--color-star)"></i><div><b>--color-star</b>#F5B301<br>Étoiles d'avis uniquement</div></div></div></div></section>
+<section class="sg-sec" id="typo"><div class="sg-wrap"><h2>3. Typographie</h2><p class="sg-lead">Police : Inter (auto-hébergée). Les tailles sont encore écrites en rem dans chaque composant (échelle à tokeniser — voir roadmap).</p>
+<div class="sg-demo">
+<p class="section-eyebrow">Eyebrow — .section-eyebrow</p>
+<h1 style="margin:0 0 .5rem">Titre H1 — Ravalement de façade</h1>
+<h2 style="margin:0 0 .5rem">Titre H2 — Une façade comme neuve</h2>
+<h3 style="margin:0 0 .5rem">Titre H3 — Réparation des fissures</h3>
+<p>Paragraphe courant : Traitement professionnel des fissures avec rebouchage, pontage et application d'enduit de réparation adapté.</p>
+<p style="color:var(--color-text-light)">Texte secondaire (<code>--color-text-light</code>) pour descriptions de cartes et chapôs.</p>
+<p><a href="#typo">Lien de texte</a> · <strong>Gras</strong> · <small>Petit texte ≥ 0,8125 rem (13 px) — jamais en dessous sur mobile</small></p>
+</div></div></section>
+<section class="sg-sec" id="espaces"><div class="sg-wrap"><h2>4. Espaces, rayons, ombres</h2><p class="sg-lead">Padding de section : <code>--space-4xl</code> (96 px) desktop, resserré sur mobile par <code>responsive.css</code>. Conteneur : <code>--container-max</code> 1200 px, texte courant : <code>--container-narrow</code> 800 px.</p><div class="sg-demo"><table class="sg-t"><tr><th>Token</th><th>Valeur</th><th>Aperçu</th></tr><tr><td><code>--space-xs</code></td><td>4 px</td><td><span class="sg-box" style="width:var(--space-xs);height:16px"></span></td></tr><tr><td><code>--space-sm</code></td><td>8 px</td><td><span class="sg-box" style="width:var(--space-sm);height:16px"></span></td></tr><tr><td><code>--space-md</code></td><td>16 px</td><td><span class="sg-box" style="width:var(--space-md);height:16px"></span></td></tr><tr><td><code>--space-lg</code></td><td>24 px</td><td><span class="sg-box" style="width:var(--space-lg);height:16px"></span></td></tr><tr><td><code>--space-xl</code></td><td>32 px</td><td><span class="sg-box" style="width:var(--space-xl);height:16px"></span></td></tr><tr><td><code>--space-2xl</code></td><td>48 px</td><td><span class="sg-box" style="width:var(--space-2xl);height:16px"></span></td></tr><tr><td><code>--space-3xl</code></td><td>64 px</td><td><span class="sg-box" style="width:var(--space-3xl);height:16px"></span></td></tr><tr><td><code>--space-4xl</code></td><td>96 px</td><td><span class="sg-box" style="width:var(--space-4xl);height:16px"></span></td></tr><tr><td><code>--radius-sm</code></td><td>8 px — petits champs, badges carrés</td><td><span class="sg-box" style="width:64px;height:40px;border-radius:var(--radius-sm);background:var(--brand-accent-light)"></span></td></tr><tr><td><code>--radius</code></td><td>12 px — cartes (défaut)</td><td><span class="sg-box" style="width:64px;height:40px;border-radius:var(--radius);background:var(--brand-accent-light)"></span></td></tr><tr><td><code>--radius-lg</code></td><td>16 px — grandes cartes, panneaux</td><td><span class="sg-box" style="width:64px;height:40px;border-radius:var(--radius-lg);background:var(--brand-accent-light)"></span></td></tr><tr><td><code>--radius-xl</code></td><td>24 px — hero, visuels</td><td><span class="sg-box" style="width:64px;height:40px;border-radius:var(--radius-xl);background:var(--brand-accent-light)"></span></td></tr><tr><td><code>--radius-pill</code></td><td>100 px — boutons, puces</td><td><span class="sg-box" style="width:64px;height:40px;border-radius:var(--radius-pill);background:var(--brand-accent-light)"></span></td></tr><tr><td><code>--shadow-sm</code></td><td>repos des cartes</td><td><span class="sg-box" style="width:64px;height:40px;background:#fff;box-shadow:var(--shadow-sm)"></span></td></tr><tr><td><code>--shadow-md</code></td><td>survol léger</td><td><span class="sg-box" style="width:64px;height:40px;background:#fff;box-shadow:var(--shadow-md)"></span></td></tr><tr><td><code>--shadow-lg</code></td><td>panneaux, menus</td><td><span class="sg-box" style="width:64px;height:40px;background:#fff;box-shadow:var(--shadow-lg)"></span></td></tr><tr><td><code>--shadow-xl</code></td><td>hero, modales</td><td><span class="sg-box" style="width:64px;height:40px;background:#fff;box-shadow:var(--shadow-xl)"></span></td></tr></table></div></div></section>
+<section class="sg-sec" id="boutons"><div class="sg-wrap"><h2>5. Boutons</h2><p class="sg-lead">Famille unique : pilule, 2 tailles (<code>.btn</code>, <code>.btn--sm</code>) + <code>.btn--lg</code> pour les hero. Hover = assombrissement uniquement.</p>
+<div class="sg-demo"><div class="sg-row">
+<a class="btn btn-primary" href="#boutons">Obtenir un devis</a>
+<a class="btn btn-secondary" href="#boutons"><i class="fa-solid fa-phone icon-inline" aria-hidden="true"></i>05 45 91 22 70</a>
+<a class="btn btn-primary btn--sm" href="#boutons">Petit (.btn--sm)</a>
+<a class="btn btn-secondary btn--sm" href="#boutons">En savoir plus</a>
+<a class="btn btn-primary btn--lg" href="#boutons">Grand (.btn--lg)</a>
+</div>
+<span class="sg-code">&lt;a class="btn btn-primary"&gt;…&lt;/a&gt;   primaire (1 seule par écran)
+&lt;a class="btn btn-secondary"&gt;…&lt;/a&gt; secondaire (contour brun)</span></div></div></section>
+<section class="sg-sec" id="nav"><div class="sg-wrap"><h2>6. Navigation : barre, burger, sous-menu</h2><p class="sg-lead">La vraie barre est fixée en haut de cette page. Desktop ≥ 992 px : sous-menu au survol (ouverture après 160 ms, uniquement en affichage ordinateur). Mobile ≤ 991 px : burger plein écran ; « Services » ouvre un panneau qui glisse avec un bouton « Retour » — <strong>ouverture au toucher seulement, jamais au survol</strong>. Redimensionnez la fenêtre pour tester.</p><div class="sg-demo"><ul><li>Lien : <code>.nav-link</code> (soulignement animé au survol et page active)</li><li>CTA du menu : <code>.menu-cta .btn</code></li><li>Téléphone du menu mobile : <code>.menu-tel</code></li><li>Code : <code>scripts/sync-header.js</code> (balisage), <code>styles.css</code> (bloc « Navigation Desktop » et media ≤ 991 px), <code>main.js</code> (comportement)</li></ul></div></div></section>
+<section class="sg-sec" id="sections"><div class="sg-wrap"><h2>7. Sections et en-têtes</h2><p class="sg-lead">Rythme : sections alternées fond <code>--color-bg</code> / <code>--color-surface-alt</code> (<code>.section--bg-surface-alt</code>).</p>
+<div class="sg-demo sg-demo--bleed"><section class="section" style="padding:var(--space-3xl) var(--space-lg)"><div class="container">
+<header class="section-header"><p class="section-eyebrow">Notre solution</p><h2>Ravalement complet pour une façade comme neuve</h2><p>Nous prenons en charge l'intégralité des travaux, de la réparation à la finition.</p></header>
+</div></section></div>
+<span class="sg-code">&lt;header class="section-header"&gt;
+  &lt;p class="section-eyebrow"&gt;…&lt;/p&gt; &lt;h2&gt;…&lt;/h2&gt; &lt;p&gt;chapô&lt;/p&gt;
+&lt;/header&gt;</span></div></section>
+<section class="sg-sec" id="cartes"><div class="sg-wrap"><h2>8. Cartes et encarts</h2><p class="sg-lead">Même grammaire partout : icône dans une pastille <code>--brand-accent-light</code>, titre H3, texte secondaire. Une carte accentuée = bordure et pastille or.</p>
+<div class="sg-label">Carte de fonctionnalité — .feature-card</div>
+<div class="sg-demo" style="background:var(--color-bg)"><div class="feature-grid" style="display:grid;gap:var(--space-md)">
+<article class="feature-card"><div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div><div class="feature-card-content"><h3>Réparation des fissures</h3><p>Traitement professionnel des fissures avec rebouchage et enduit adapté.</p></div></article>
+<article class="feature-card feature-card--highlight"><div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div><div class="feature-card-content"><h3>Carte mise en avant (--highlight)</h3><p>Bordure et pastille or : une seule par bloc.</p></div></article>
+</div></div>
+<div class="sg-label">Réassurance — .reassurance-item</div>
+<div class="sg-demo" style="background:var(--color-surface-alt)"><div class="reassurance-grid">
+<div class="reassurance-item"><div class="reassurance-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div><div class="reassurance-text"><h3>Artisan local certifié</h3><p>Basés à L'Isle-d'Espagnac, nous connaissons les bâtiments charentais.</p></div></div>
+<div class="reassurance-item"><div class="reassurance-icon"><i class="fa-solid fa-file-contract" aria-hidden="true"></i></div><div class="reassurance-text"><h3>Devis gratuit &amp; sans engagement</h3><p>Devis détaillé sous 48 h.</p></div></div>
+<div class="reassurance-item reassurance-item--accent"><div class="reassurance-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div><div class="reassurance-text"><h3>Mise en avant (--accent, pleine largeur)</h3><p>Referme la grille.</p></div></div>
+</div></div>
+<div class="sg-label">Problème — .problem-item · Tarif — .pricing-card · Encart — .info-box</div>
+<div class="sg-demo" style="background:var(--color-bg)">
+<ul class="problem-list" style="margin-top:0"><li class="problem-item"><div class="problem-item-icon"><i class="fa-solid fa-house-crack" aria-hidden="true"></i></div><div class="problem-item-content"><h3>Fissures et infiltrations</h3><p>Les fissures laissent pénétrer l'eau dans les murs.</p></div></li></ul>
+<div class="pricing-cards" style="margin:var(--space-lg) 0">
+<div class="pricing-card"><h4>Nettoyage + peinture</h4><div class="price">40-55€/m²</div><p class="price-desc">Façade en bon état</p></div>
+<div class="pricing-card"><h4>Réfection enduit</h4><div class="price">60-80€/m²</div><p class="price-desc">Réparations + enduit</p></div>
+<div class="pricing-card"><h4>Ravalement complet</h4><div class="price">80-120€/m²</div><p class="price-desc">Rénovation totale</p></div></div>
+<div class="info-box"><h2><i class="fa-solid fa-circle-info" aria-hidden="true"></i>Encart d'information</h2><p>Fond blanc, bordure fine, un titre court et un paragraphe.</p></div>
+<span class="sg-code">.pricing-card : montant en grand (2,25 rem) + un seul trait or en haut, identique pour toutes les cartes. Jamais d'orange.</span></div>
+<div class="sg-label">Bande de preuves — .proof-bar (générée sous le hero de chaque page de service)</div>
+<div class="sg-demo sg-demo--bleed"><section class="proof-bar"><ul class="proof-bar-list">
+<li class="proof-bar-item"><span class="proof-bar-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span><span class="proof-bar-text"><strong>4,1/5 sur Google</strong><span>14 avis clients</span></span></li>
+<li class="proof-bar-item"><span class="proof-bar-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span><span class="proof-bar-text"><strong>Décennale &amp; RC Pro</strong><span>Travaux assurés</span></span></li>
+<li class="proof-bar-item"><span class="proof-bar-icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span><span class="proof-bar-text"><strong>Devis sous 48 h</strong><span>Gratuit, sans engagement</span></span></li></ul></section></div>
+<div class="sg-label">Étapes — .process-steps</div>
+<div class="sg-demo"><div class="process-steps">
+<div class="process-step"><div class="step-number">1</div><h3>Diagnostic complet</h3><p>Nous inspectons votre façade.</p></div>
+<div class="process-step"><div class="step-number">2</div><h3>Préparation</h3><p>Nettoyage et réparations.</p></div>
+<div class="process-step"><div class="step-number">3</div><h3>Application</h3><p>Enduit et peinture.</p></div></div></div></div></section>
+<section class="sg-sec" id="listes"><div class="sg-wrap"><h2>9. Listes, puces et accordéons</h2><p class="sg-lead">Le déroulé « bouton → liste dessous » est un <code>&lt;details class="faq-item"&gt;</code> natif (aucun JS, accessible clavier). <code>data-m-limit</code> sur le conteneur replie les blocs trop longs sur mobile (<code>mobile-condense.js</code>).</p>
+<div class="sg-demo" style="background:var(--color-surface-alt)"><div class="faq-accordion">
+<details class="faq-item" open><summary class="faq-question"><span class="faq-icon-badge"><i class="fa-solid fa-tag" aria-hidden="true"></i></span><span>Quel est le prix moyen d'un ravalement au m² ?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><div class="faq-answer"><p>Entre <strong>40 € et 80 € par m²</strong> selon l'état de la façade.</p></div></details>
+<details class="faq-item"><summary class="faq-question"><span class="faq-icon-badge"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span><span>Faites-vous des devis gratuits ?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><div class="faq-answer"><p><strong>Oui</strong>, sur Angoulême et toute la Charente.</p></div></details>
+</div></div>
+<div class="sg-label">Puces de communes</div>
+<div class="sg-demo"><div class="sg-row" style="gap:var(--space-sm)"><span style="display:inline-block;padding:.4rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:.875rem">Angoulême</span><span style="display:inline-block;padding:.4rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:.875rem">L'Isle-d'Espagnac</span><span style="display:inline-block;padding:.4rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:.875rem">Soyaux</span><span style="display:inline-block;padding:.4rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:.875rem">Cognac</span><span style="display:inline-block;padding:.4rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:.875rem">Jarnac</span></div></div></div></section>
+<section class="sg-sec" id="formulaire"><div class="sg-wrap"><h2>10. Formulaire de contact</h2><p class="sg-lead">Champs <code>.form-field</code>, liste déroulante personnalisée <code>.apple-select</code> (JS : <code>apple-select.js</code>), bouton primaire, panneau d'infos à côté. Anti-spam : Turnstile + honeypot (non montrés ici).</p>
+<div class="sg-demo sg-demo--bleed"><section class="contact" style="padding:var(--space-2xl) var(--space-lg)"><div class="container contact-inner"><div class="contact-panel">
+<form class="contact-form" onsubmit="return false">
+<fieldset class="contact-form-row"><legend class="visually-hidden">Nom et téléphone</legend>
+<div class="form-field"><label for="sg-nom">Nom</label><input type="text" id="sg-nom" placeholder="Votre nom" /></div>
+<div class="form-field"><label for="sg-tel">Téléphone</label><input type="tel" id="sg-tel" placeholder="06 00 00 00 00" /></div></fieldset>
+<div class="form-field"><label for="sg-mail">Email</label><input type="email" id="sg-mail" placeholder="votre@email.com" /></div>
+<div class="form-field"><label>Type de projet</label><div class="apple-select" id="apple-select"><div class="apple-select-trigger"><span class="apple-select-value placeholder">Ravalement de façade</span><i class="fa-solid fa-chevron-down apple-select-arrow"></i></div><div class="apple-select-dropdown"><div class="apple-select-option" data-value="ravalement">Ravalement de façade</div><div class="apple-select-option" data-value="nettoyage-facade">Nettoyage de façade</div><div class="apple-select-option" data-value="autre">Autre</div></div><input type="hidden" id="sg-prestation" value="ravalement" /></div></div>
+<div class="form-field"><label for="sg-msg">Votre message</label><textarea id="sg-msg" rows="3" placeholder="Décrivez brièvement votre projet..."></textarea></div>
+<div class="form-actions"><button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane icon-inline" aria-hidden="true"></i>Obtenir mon devis gratuit</button></div>
+</form>
+<div class="contact-info"><h3 class="contact-info-title">Contact direct</h3><ul class="contact-info-list">
+<li class="contact-info-item"><span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span><div class="contact-info-text"><span class="contact-info-label">Téléphone</span><a href="tel:+33545912270">05 45 91 22 70</a></div></li>
+<li class="contact-info-item"><span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span><div class="contact-info-text"><span class="contact-info-label">Adresse</span><p>136 Av. de la République, 16340 L'Isle d'Espagnac</p></div></li></ul></div>
+</div></div></section></div></div></section>
+<section class="sg-sec sg-footer-demo" id="footer"><div class="sg-wrap"><h2>11. Pied de page</h2><p class="sg-lead">Source : <code>includes/footer.html</code> (injecté dans <code>dist/</code> au build, et par <code>footer.js</code> en dev). Fond brun dégradé, texte <code>--footer-text</code>, titres blancs, accents <code>--brand-accent-on-dark</code>. Copie ci-dessous à titre d'aperçu : en cas d'écart, le fichier <code>includes/footer.html</code> fait foi.</p></div><!-- Pied de page du site - Design moderne -->
+<footer class="site-footer" aria-label="Pied de page">
+  <!-- Section principale du footer -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Brand & Description -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>VPRR</span>
+          </div>
+          <p class="footer-description">
+            Artisans peintres experts à L'Isle-d'Espagnac. 
+            Plus de 15 ans d'expérience au service de votre patrimoine en Charente.
+          </p>
+          <div class="footer-social">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+              <a href="https://www.instagram.com/vprr.16/" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 aria-label="Instagram" 
+                 class="social-link">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section">
+          <h3 class="footer-title">Nos Services</h3>
+          <nav class="footer-nav">
+            <a href="/ravalement-facade-angouleme.html" class="footer-link">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              Ravalement de façade
+            </a>
+            <a href="/nettoyage-facade-angouleme.html" class="footer-link">
+              <i class="fa-solid fa-spray-can"></i>
+              Nettoyage façade
+            </a>
+            <a href="/nettoyage-toiture-angouleme.html" class="footer-link">
+              <i class="fa-solid fa-broom"></i>
+              Nettoyage toiture
+            </a>
+            <a href="/peinture-exterieure-charente.html" class="footer-link">
+              <i class="fa-solid fa-fill-drip"></i>
+              Peinture extérieure
+            </a>
+            <a href="/isolation-interieure-charente.html" class="footer-link">
+              <i class="fa-solid fa-temperature-half"></i>
+              Isolation intérieure
+            </a>
+          </nav>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer-section">
+          <h3 class="footer-title">Navigation</h3>
+          <nav class="footer-nav">
+            <a href="/#home" class="footer-link">
+              <i class="fa-solid fa-house"></i>
+              Accueil
+            </a>
+            <a href="/#galerie" class="footer-link">
+              <i class="fa-solid fa-images"></i>
+              Galerie
+            </a>
+            <a href="/blog/" class="footer-link">
+              <i class="fa-solid fa-book-open"></i>
+              Blog
+            </a>
+            <a href="/#zone" class="footer-link">
+              <i class="fa-solid fa-map-marked-alt"></i>
+              Zone d'intervention
+            </a>
+            <a href="/zone-desservie-charente.html" class="footer-link">
+              <i class="fa-solid fa-map-location-dot"></i>
+              Villes desservies
+            </a>
+            <a href="/#faq" class="footer-link">
+              <i class="fa-solid fa-question-circle"></i>
+              FAQ
+            </a>
+            <a href="/faq-renovation-angouleme.html" class="footer-link">
+              <i class="fa-solid fa-circle-question"></i>
+              FAQ complète
+            </a>
+            <a href="/#contact" class="footer-link">
+              <i class="fa-solid fa-envelope"></i>
+              Contact
+            </a>
+          </nav>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+          <h3 class="footer-title">Contact</h3>
+          <div class="footer-contact">
+            <a href="tel:+33545912270" class="contact-card">
+              <i class="fa-solid fa-phone"></i>
+              <div class="contact-separator"></div>
+              <div class="contact-content">
+                <span class="contact-label">Téléphone</span>
+                <span class="contact-value phone">05 45 91 22 70</span>
+              </div>
+            </a>
+            <a href="mailto:villegerstephane204@gmail.com" class="contact-card">
+              <i class="fa-solid fa-envelope"></i>
+              <div class="contact-separator"></div>
+              <div class="contact-content">
+                <span class="contact-label">Email</span>
+                <span class="contact-value email">villegerstephane204@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="contact-separator"></div>
+              <div class="contact-content">
+                <span class="contact-label">Adresse</span>
+                <span class="contact-value address">136 Av. de la République, 16340 L'Isle-d'Espagnac</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barre inférieure -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <div class="footer-legal">
+          <p class="footer-copy">&copy; <span id="current-year">2025</span> VPRR - Tous droits réservés.</p>
+          <dl class="footer-company-info">
+            <div><dt>Société</dt><dd>VPRR SARL</dd></div>
+            <div><dt>SIRET</dt><dd>934 010 216 00018</dd></div>
+            <div><dt>TVA</dt><dd>FR02 934 010 216</dd></div>
+          </dl>
+          <p class="footer-insurance">Garantie décennale &amp; RC Pro</p>
+          <div class="legal-links">
+            <a href="/mentions-legales.html">Mentions légales</a>
+            <span class="separator">•</span>
+            <a href="#" data-open-cookie-settings>Gérer mes cookies</a>
+            <span class="separator">•</span>
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Retour en haut</a>
+          </div>
+        </div>
+        <div class="footer-credit">
+          <a href="https://angelo-pro.fr/" class="credit-link" target="_blank" rel="noopener" title="Découvrir Angelo Pro, création de sites web">
+            <i class="fa-solid fa-code"></i>
+            Site créé par Angelo Pro
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bannière de consentement aux cookies : tout accepter / tout refuser -->
+<div id="cookie-banner" role="dialog" aria-label="Cookies">
+    <p>Nous utilisons des cookies de mesure d'audience (Google Tag Manager, Microsoft Clarity) pour améliorer le site. <a href="/mentions-legales.html#cookies">En savoir plus</a></p>
+    <div class="cookie-banner-actions">
+        <button id="reject-cookies" class="btn btn-secondary" type="button">Tout refuser</button>
+        <button id="accept-cookies" class="btn btn-primary" type="button">Tout accepter</button>
+    </div>
+</div>
+</section>
+<section class="sg-sec" id="recette"><div class="sg-wrap"><h2>12. Recette : créer ou refondre une page</h2><p class="sg-lead">Checklist à suivre pour que toute page reste dans la même direction artistique.</p>
+<div class="sg-demo"><ol style="line-height:1.9;margin:0;padding-left:1.2rem">
+<li>Page de service ou de ville : copier un dossier de <code>content/pages/</code> (jamais éditer le <code>.html</code> généré), puis <code>npm run build:pages</code>.</li>
+<li>Ordre type d'une page de service : hero → réalisation avant/après → problème → solution + étapes → pourquoi nous choisir → zone → autres services → tarifs → contact → FAQ.</li>
+<li>Sections en alternance de fond, chacune avec un <code>.section-header</code> (eyebrow + H2 + chapô).</li>
+<li>Un seul bouton primaire visible par écran ; le téléphone en secondaire.</li>
+<li>Aucune valeur de couleur en dur ; une seule carte accentuée par bloc (or).</li>
+<li>Vérifier à 375 / 768 / 1440 px : aucune carte orpheline, aucun débordement horizontal, aucune cible tactile &lt; 40 px.</li>
+<li><code>npm test</code>, puis mettre à jour <code>docs/changelog.md</code>.</li></ol></div></div></section>
+</main>
+<script src="../../assets/js/apple-select.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+</body></html>
