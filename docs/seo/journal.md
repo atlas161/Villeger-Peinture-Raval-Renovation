@@ -374,3 +374,11 @@ l'assureur décennale (`blockers.md` §5), URLs sans `.html` (décision à part)
 - Contrôle en navigateur propre après consentement : `page_view` et `phone_click` arrivent à GA4.
 - Mesure : les visites du Chrome de l'administrateur ne comptent pas (extension anti-pub qui bloque `gtm.js`).
 - Reste : marquer `generate_lead` comme événement clé dans GA4 (possible après sa première réception).
+
+---
+
+## 2026-10-01 — Avis Google, blog de l'accueil, découpage du code
+
+- **Avis Google** : widget Featurable en production (CSP script/connect/img/font, mentions légales) ; avis réels et à jour, sans balisage `Review` ajouté.
+- **Accueil / blog** : les 3 derniers articles sont désormais dans le **HTML statique** (liens internes crawlables, plus de carte périmée) via `scripts/build-blog.js` ; carte commune avec `/blog/`.
+- **Code** : `styles.css`, `zone.css`, `main.js` générés depuis `src/` (`npm run build:bundles`) — aucun effet SEO, aucun changement visuel. Détail : [`../changelog.md`](../changelog.md).

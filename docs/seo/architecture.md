@@ -189,8 +189,8 @@ visible sans JS et sur ordinateur).
   `generate_lead` (page `/merci`), avec `placement` (`barre_mobile`, `menu`, `hero`, `pied_de_page`, `contact`,
   `page`). Envoyés dans `dataLayer` (GTM) et via `clarity('event', …)`. Pour les exploiter dans Google Analytics
   il faut créer les déclencheurs correspondants dans le conteneur GTM (voir `blockers.md`).
-- Tiers encore chargés **avant** consentement : Vimeo (hero, desktop), Elfsight/Instagram (au scroll), tuiles
-  OpenStreetMap (carte). Ils sont cités dans les mentions légales.
+- Tiers encore chargés **avant** consentement : Vimeo (hero, desktop), Elfsight/Instagram (au scroll), **Featurable
+  (avis Google, à l'approche de la section — `src/js/main/95-widget-avis.js`)**, tuiles OpenStreetMap (carte). Ils sont cités dans les mentions légales.
 
 ## 10. Formulaire de contact — une seule page : `contact.html`
 Depuis le 2026-10-01 le formulaire vit **uniquement** sur `contact.html` (nom Netlify `contact`, celui de l'ancien formulaire

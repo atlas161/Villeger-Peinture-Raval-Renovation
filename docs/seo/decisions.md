@@ -29,7 +29,9 @@ l'absence d'ITE et redirige vers les pages peinture extérieure / ravalement de 
 - **Services toiture/isolation** : les prestations affichées (réfection de tuiles, gouttières/zinguerie, Velux,
   isolation combles/murs/fenêtres) sont validées par le client — ne pas les retirer du JSON-LD.
 - **Vidéo hero** : se lance au démarrage sur tous les écrans (téléphone compris, décision du client le 2026-09-30) ; image d'attente seulement en économiseur de données, connexion lente ou « mouvement réduit ».
-- **Galerie Instagram (Elfsight)** : conservée, citée dans les mentions légales.
+- **Galerie Instagram (Elfsight)** : conservée, citée dans les mentions légales. Plan gratuit = bandeau « Free Instagram Feed Widget » + bouton bleu hors charte (réglable dans l'éditeur Elfsight ; bandeau retirable seulement en payant). Alternative étudiée : galerie maison + simple lien Instagram (en attente du choix du client).
+- **Avis Google (2026-10-01)** : widget **Featurable** (carrousel d'avis réels) à la place du carrousel écrit à la main ; chargé sans consentement comme Vimeo, cité dans les mentions légales, domaines dans la CSP. Pas de balisage `Review` dans le JSON-LD (avis auto-publiés non éligibles aux extraits).
+- **Blog sur l'accueil (2026-10-01)** : 3 derniers articles en HTML statique (carte commune avec /blog/), plus de carrousel ni de promesse « plus de guides chaque semaine ».
 - **Robots IA** : autorisés (objectif : apparaître dans ChatGPT & co.) — `llms.txt` maintenu.
 - **Coordonnées officielles** : 05 45 91 22 70 ; lun–ven 9 h–17 h, sam 9 h–12 h. SARL, SIREN 934 010 216,
   TVA FR02 934 010 216.
@@ -59,5 +61,5 @@ TVA : 10 % (logement de plus de 2 ans), 5,5 % possible pour certains travaux d'i
 ## Voix éditoriale et tiers (2026-10-03)
 
 - **Voix** : « nous / notre équipe ». L'entreprise est un artisan (Stéphane Villéger, gérant) **et son équipe** (environ 4 à 6 personnes : ne jamais afficher un nombre précis). Pas de clients inventés, de témoignages non vérifiés ni de superlatifs absolus (« 100 % », « jamais », « garantit ») : le client ne veut pas prêter le flanc à des contestations.
-- **Tiers avant consentement** : Vimeo (hero) et Elfsight/Instagram restent chargés d'emblée (décision du client) ; seule la carte OpenStreetMap est à la demande.
+- **Tiers avant consentement** : Vimeo (hero), Elfsight/Instagram et Featurable (avis) restent chargés d'emblée (décision du client) ; seule la carte OpenStreetMap est à la demande.
 
