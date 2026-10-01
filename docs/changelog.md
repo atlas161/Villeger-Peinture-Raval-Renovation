@@ -17,6 +17,12 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (nuit 2) — Menu burger, cohérence des cartes, guide de direction artistique
+
+- **Menu burger** (`assets/js/main.js`) : « Services » ne s'ouvre plus au survol en mode mobile/tablette (la largeur est testée à chaque événement, plus seulement au chargement).
+- **Pages de service** (`service-page.css`, `content/pages/ravalement-facade-angouleme/tarifs.html`) : carte « mise en avant » unifiée en or, orange hors palette supprimé, cartes « problème » sans déplacement au survol. Pages régénérées par `npm run build:pages`.
+- **Nouveau** : [`design/guide-direction-artistique.html`](./design/guide-direction-artistique.html) (référence visuelle avec les vraies classes) et [`design/direction-artistique.md`](./design/direction-artistique.md) (audit pages service/zone, corrigé / restant / propositions à valider).
+
 ## 2026-10-01 (nuit) — Avis Google : carrousel remplacé par les vrais avis
 
 - `index.html` : 7 avis réels lus sur Google Maps (4-5★ avec texte), notes fidèles (Florence Pluvieux 4★). Retrait de 3 avis absents de la fiche (Gregory Themot, Sylvie B., Marc Deschamps). Note 4,1 · 14 avis inchangée. Vérifié à 375 / 768 / 1280 px : pas de débordement, flèches et « Lire la suite » OK.

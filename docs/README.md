@@ -18,6 +18,7 @@ Ce dossier est la mémoire du projet : on y retrouve ce qui a été fait, pourqu
 | Fichier | Contenu | Statut |
 |---|---|---|
 | [`roadmap.md`](./roadmap.md) | Reste à faire, priorisé | **à mettre à jour en fin de session** |
+| [`design/guide-direction-artistique.html`](./design/guide-direction-artistique.html) · [`design/direction-artistique.md`](./design/direction-artistique.md) | Guide de style vivant (couleurs, typo, boutons, nav, cartes, formulaire, footer) + audit pages service/zone et propositions | **à mettre à jour avec chaque composant** |
 | [`design/logo-b2.md`](./design/logo-b2.md) | Logo B2 retenu (non déployé) : spec, code prêt à coller, historique des variantes, maquette | prêt à appliquer |
 | [`changelog.md`](./changelog.md) | Historique complet des changements | **à mettre à jour à chaque déploiement** |
 | [`seo/architecture.md`](./seo/architecture.md) | Architecture technique de référence | à jour au 2026-09-30 |
