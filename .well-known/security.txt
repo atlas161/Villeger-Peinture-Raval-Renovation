@@ -6,7 +6,7 @@
 
 # Contact pour signaler une vulnérabilité de sécurité
 Contact: mailto:villegerstephane204@gmail.com
-Contact: https://vprr.fr/#contact
+Contact: https://vprr.fr/contact.html
 
 Expires: 2027-09-29T00:00:00.000Z
 Canonical: https://vprr.fr/.well-known/security.txt

@@ -218,28 +218,8 @@
   },
   "beforeAfterScript": true,
   "contact": {
-    "formName": "contact-peinture-exterieure",
-    "service": "Peinture extérieure Charente",
-    "placeholder": "Peinture extérieure",
-    "prestation": "peinture-exterieure",
-    "options": [
-      [
-        "peinture-exterieure",
-        "Peinture extérieure"
-      ],
-      [
-        "peinture-facade",
-        "Peinture de façade"
-      ],
-      [
-        "peinture-boiseries",
-        "Peinture de boiseries"
-      ],
-      [
-        "autre",
-        "Autre"
-      ]
-    ]
+    "prestation": "peinture",
+    "serviceLabel": "peinture extérieure"
   },
   "related": [
     {

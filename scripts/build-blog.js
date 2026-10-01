@@ -631,7 +631,7 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
   <p><strong>Besoin d’un artisan en Charente (16) ?</strong></p>
   <ul>
     <li><a href="${matchedService.url}">${matchedService.label}</a></li>
-    <li><a href="${CONFIG.siteUrl}/#contact">Demander un devis gratuit</a></li>
+    <li><a href="${CONFIG.siteUrl}/contact.html">Demander un devis gratuit</a></li>
   </ul>
 </div>
 `.trim()

@@ -53,3 +53,9 @@ S'appuie sur [`../design-audit-2026-09-21.md`](../design-audit-2026-09-21.md) (8
 | `npm test` | 20/20 | 20/20 |
 
 L'accueil n'a aucun composant modifié (sa hauteur varie de ±3 % d'un chargement à l'autre : carrousel et vidéo). L'erreur console `_leaflet_pos` de la page zone est antérieure à ces changements (identique avant) ; les tuiles de carte ne se chargent pas dans l'environnement de test.
+
+## D. Passe 3 (2026-10-02) — contact dédié et zone
+
+- **Bande d'appel** `.contact-cta` (accueil + pages de service) : carte blanche, trait or, 3 points de réassurance, bouton primaire « Demander mon devis » + téléphone en secondaire.
+- **Page contact** : formulaire + coordonnées (téléphone, e-mail, horaires, adresse + itinéraire, Instagram) + note de zone.
+- **Zone, accueil** : schéma SVG (`.zone-schema`) + puces (`.zone-chips`) + adresse. **Page zone** : `.zone-finder` (recherche), `.zone-sector` (3 secteurs), `.zone-map-block` (carte à la demande).

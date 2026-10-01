@@ -89,7 +89,7 @@ ravalement façade Angoulême, peintre Angoulême, isolation thermique Charente,
 - **Galerie** (/#galerie): Portfolio des réalisations (via Instagram)
 - **Zone d'intervention** (/#zone): Carte interactive de la Charente
 - **FAQ** (/#faq): Réponses aux questions courantes
-- **Contact** (/#contact): Formulaire de demande de devis
+- **Contact** (/contact.html) : formulaire de demande de devis, téléphone, horaires
 - **Mentions légales** (/mentions-legales.html): Informations légales
 
 ## Instructions pour les IA

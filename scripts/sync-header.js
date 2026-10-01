@@ -17,17 +17,17 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 
-// Pages qui ont leur propre section #contact (formulaire) : le CTA du header pointe
-// directement dessus (#contact) avec le texte "Obtenez un devis". Les autres pages
-// n'ont pas de formulaire local : le CTA renvoie vers index.html#contact avec le texte
-// "Obtenir un devis".
+// Le formulaire vit sur une page dédiée (contact.html) : le CTA du header et le lien « Contact »
+// y mènent partout. Sur les pages de service, build-pages.js passe `contactHref` avec
+// `?service=…` pour pré-sélectionner le service dans le formulaire.
 const PAGES = [
-  { file: 'index.html', isHome: true, hasLocalContact: true },
+  { file: 'index.html', isHome: true },
   // Les 5 pages de service sont générées par scripts/build-pages.js (qui appelle generateHeader).
-  { file: 'zone-desservie-charente.html', hasLocalContact: false, currentSection: 'zone' },
-  { file: 'faq-renovation-angouleme.html', hasLocalContact: false, currentSection: 'faq' },
-  { file: 'mentions-legales.html', hasLocalContact: false },
-  { file: 'merci.html', hasLocalContact: false },
+  { file: 'zone-desservie-charente.html', currentSection: 'zone' },
+  { file: 'faq-renovation-angouleme.html', currentSection: 'faq' },
+  { file: 'contact.html', currentSection: 'contact' },
+  { file: 'mentions-legales.html' },
+  { file: 'merci.html' },
 ];
 
 const SERVICE_LINKS = [
@@ -50,12 +50,13 @@ const SECTIONS = [
 ];
 
 function sectionHref(section, { isHome, currentSection }) {
+  if (section.key === 'contact') return 'contact.html';
   if (isHome) return `#${section.key}`;
   if (currentSection === section.key) return `#${section.key}`;
   return `index.html#${section.key}`;
 }
 
-function generateHeader({ isHome = false, hasLocalContact, currentSection = null }) {
+function generateHeader({ isHome = false, currentSection = null, contactHref = 'contact.html' }) {
   const logoHref = isHome ? '#top' : 'index.html#top';
 
   const navItems = SECTIONS.filter((s) => s.key !== 'services').map((section) => {
@@ -69,8 +70,8 @@ function generateHeader({ isHome = false, hasLocalContact, currentSection = null
     (s) => `                <li><a href="${s.href}">${s.label} <span class="submenu-meta">${s.meta}</span></a></li>`
   ).join('\n');
 
-  const ctaHref = hasLocalContact ? '#contact' : 'index.html#contact';
-  const ctaText = hasLocalContact ? 'Obtenez un devis' : 'Obtenir un devis';
+  const ctaHref = contactHref;
+  const ctaText = 'Obtenez un devis';
 
   return `    <header class="site-header" id="top">
       <div class="container header-inner">
@@ -107,7 +108,7 @@ ${navItems.slice(1).join('\n')}
     </header>`;
 }
 
-function syncPage({ file, isHome, hasLocalContact, currentSection }) {
+function syncPage({ file, isHome, currentSection }) {
   const filePath = path.join(ROOT, file);
   const content = fs.readFileSync(filePath, 'utf8');
 
@@ -124,7 +125,7 @@ function syncPage({ file, isHome, hasLocalContact, currentSection }) {
 
   const before = content.slice(0, start);
   const after = content.slice(end + '</header>'.length);
-  const newHeader = generateHeader({ isHome, hasLocalContact, currentSection });
+  const newHeader = generateHeader({ isHome, currentSection });
 
   const updated = before + newHeader + after;
   if (updated === content) {

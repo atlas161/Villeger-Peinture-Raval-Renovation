@@ -215,28 +215,8 @@
   },
   "beforeAfterScript": false,
   "contact": {
-    "formName": "contact-isolation-interieure",
-    "service": "Isolation intérieure Charente",
-    "placeholder": "Isolation intérieure",
-    "prestation": "isolation-interieure",
-    "options": [
-      [
-        "isolation-combles",
-        "Isolation des combles"
-      ],
-      [
-        "isolation-murs",
-        "Isolation des murs"
-      ],
-      [
-        "menuiseries",
-        "Remplacement de menuiseries"
-      ],
-      [
-        "autre",
-        "Autre"
-      ]
-    ]
+    "prestation": "isolation",
+    "serviceLabel": "isolation intérieure"
   },
   "related": [
     {

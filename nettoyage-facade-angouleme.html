@@ -437,13 +437,13 @@
             <li><a class="nav-link" href="index.html#blog">Blog</a></li>
             <li><a class="nav-link" href="index.html#zone">Zone d'intervention</a></li>
             <li><a class="nav-link" href="index.html#faq">FAQ</a></li>
-            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
             <li class="menu-tel">
               <a href="tel:+33545912270" aria-label="Appeler le 05 45 91 22 70">05 45 91 22 70</a>
               <span>Lun–ven 9 h–17 h · sam 9 h–12 h</span>
             </li>
             <li class="menu-cta">
-              <a class="btn btn-primary" href="#contact">Obtenez un devis</a>
+              <a class="btn btn-primary" href="contact.html?service=nettoyage-facade">Obtenez un devis</a>
             </li>
           </ul>
         </nav>
@@ -459,7 +459,7 @@
             <h1 id="hero-title">Nettoyage de Façade à Angoulême et en Charente</h1>
             <p class="service-hero-subtitle">Redonnez vie à vos murs avec notre technique d'hydro-gommage douce et efficace. Intervention rapide, devis gratuit en 48h.</p>
             <div class="service-hero-cta">
-              <a class="btn btn-primary btn--lg" href="#contact">Obtenir mon devis gratuit en 48h</a>
+              <a class="btn btn-primary btn--lg" href="contact.html?service=nettoyage-facade">Obtenir mon devis gratuit en 48h</a>
               <a class="btn btn-secondary btn--lg" href="tel:+33545912270">
                 <i class="fa-solid fa-phone" aria-hidden="true"></i> 05 45 91 22 70
               </a>
@@ -534,7 +534,7 @@
                     </div>
 
                     <div class="jobsheet-actions">
-                      <a class="btn btn-primary" href="#contact">Demander un devis</a>
+                      <a class="btn btn-primary" href="contact.html?service=nettoyage-facade">Demander un devis</a>
                       <a class="btn btn-secondary" href="tel:+33545912270">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i> 05 45 91 22 70
                       </a>
@@ -842,7 +842,7 @@
                       Réponse sous 48h sur Angoulême et environs.
                     </p>
                     
-                    <a href="#contact" class="btn btn-primary">
+                    <a href="contact.html?service=nettoyage-facade" class="btn btn-primary">
                       <i class="fa-solid fa-calculator icon-inline" aria-hidden="true"></i>
                       Estimer le coût de mes travaux
                     </a>
@@ -863,111 +863,22 @@
               </div>
             </section>
 
-      <section id="contact" class="section" aria-labelledby="contact-title">
-        <div class="container contact-inner">
-          <header class="contact-header">
-            <p class="contact-eyebrow">Contact</p>
-            <h2 id="contact-title">Recevez votre devis personnalisé sous 48h</h2>
-            <p>Remplissez le formulaire ci-dessous et recevez une réponse personnalisée sous 48h.</p>
-          </header>
-          <div class="contact-panel">
-            <form class="contact-form" name="contact-nettoyage-facade" method="POST" action="/api/contact" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
-              <input type="hidden" name="form-name" value="contact-nettoyage-facade" />
-              <input type="hidden" name="service" value="Nettoyage de façade Angoulême" />
-              <!-- Honeypot anti-bot (champ invisible pour les humains) -->
-              <p class="visually-hidden" aria-hidden="true">
-                <label>Ne pas remplir si vous êtes humain: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-              </p>
-              <!-- Timestamp anti-bot (détecte les soumissions trop rapides) -->
-              <input type="hidden" name="form-timestamp" id="form-timestamp" value="" />
-              
-              <fieldset class="contact-form-row">
-                <legend class="visually-hidden">Nom et téléphone</legend>
-                <div class="form-field">
-                  <label for="contact-nom">Nom</label>
-                  <input type="text" id="contact-nom" name="nom" placeholder="Votre nom" autocomplete="name" required />
-                </div>
-                <div class="form-field">
-                  <label for="contact-telephone">Téléphone</label>
-                  <input type="tel" id="contact-telephone" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel" required />
-                </div>
-              </fieldset>
-              
-              <div class="form-field">
-                <label for="contact-email">Email</label>
-                <input type="email" id="contact-email" name="email" placeholder="votre@email.com" autocomplete="email" required />
-              </div>
-              
-              <div class="form-field">
-                <label for="contact-prestation">Type de projet</label>
-                <div class="apple-select" id="apple-select">
-                  <div class="apple-select-trigger">
-                    <span class="apple-select-value placeholder">Nettoyage de façade</span>
-                    <i class="fa-solid fa-chevron-down apple-select-arrow"></i>
-                  </div>
-                  <div class="apple-select-dropdown">
-                    <div class="apple-select-option" data-value="nettoyage-facade">Nettoyage de façade</div>
-                    <div class="apple-select-option" data-value="nettoyage-toiture">Nettoyage de toiture</div>
-                    <div class="apple-select-option" data-value="ravalement">Ravalement de façade</div>
-                    <div class="apple-select-option" data-value="autre">Autre</div>
-                  </div>
-                  <input type="hidden" id="contact-prestation" name="prestation" value="nettoyage-facade" required />
-                </div>
-              </div>
-              <div class="form-field">
-                <label for="contact-message">Votre message</label>
-                <textarea id="contact-message" name="message" placeholder="Décrivez brièvement votre projet..." rows="4" required></textarea>
-              </div>
-              
-              <div class="form-field form-captcha"><div class="cf-turnstile" data-sitekey="0x4AAAAAAFJCShb0ukqLZihS" data-language="fr" data-theme="light" data-action="contact"></div></div>
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane icon-inline" aria-hidden="true"></i>Obtenir mon devis gratuit</button>
-              </div>
-            </form>
-            
-            <div class="contact-info">
-              <h3 class="contact-info-title">Contact direct</h3>
-              <ul class="contact-info-list">
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Téléphone</span>
-                    <a href="tel:+33545912270">05 45 91 22 70</a>
-                  </div>
-                </li>
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Email</span>
-                    <a href="mailto:villegerstephane204@gmail.com">villegerstephane204@gmail.com</a>
-                  </div>
-                </li>
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Instagram</span>
-                    <a href="https://www.instagram.com/vprr.16/" target="_blank" rel="noopener noreferrer">@vprr.16</a>
-                  </div>
-                </li>
-                <li class="contact-info-item">
-                  <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
-                  <div class="contact-info-text">
-                    <span class="contact-info-label">Adresse</span>
-                    <p>136 Av. de la République, 16340 L'Isle d'Espagnac</p>
-                  </div>
-                </li>
+      <section id="contact" class="section contact-cta-section" aria-labelledby="contact-cta-title">
+        <div class="container">
+          <div class="contact-cta">
+            <div class="contact-cta-text">
+              <p class="contact-eyebrow">Devis gratuit</p>
+              <h2 id="contact-cta-title">Un projet de nettoyage de façade ?</h2>
+              <p>Décrivez-nous votre projet : réponse personnalisée sous 48&nbsp;h, sans engagement.</p>
+              <ul class="contact-cta-points">
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Visite et devis gratuits</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Réponse sous 48&nbsp;h</li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Lun–ven 9&nbsp;h–17&nbsp;h · sam 9&nbsp;h–12&nbsp;h</li>
               </ul>
-              <!-- Section avis Google -->
-              <div class="google-reviews-section">
-                <h4 class="google-reviews-title"><i class="fa-brands fa-google" aria-hidden="true"></i> Votre avis nous aide beaucoup&nbsp;!</h4>
-                <p class="google-reviews-text">Vous êtes satisfait de nos services&nbsp;? Laissez-nous un avis sur Google.</p>
-                <a href="https://g.page/r/CZZJ5Bogt13fEBM/review" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="btn btn-google-review">
-                  Laisser un avis Google
-                </a>
-              </div>
+            </div>
+            <div class="contact-cta-actions">
+              <a class="btn btn-primary btn--lg" href="contact.html?service=nettoyage-facade">Demander mon devis</a>
+              <a class="btn btn-secondary btn--lg" href="tel:+33545912270"><i class="fa-solid fa-phone icon-inline" aria-hidden="true"></i>05 45 91 22 70</a>
             </div>
           </div>
         </div>
@@ -1119,7 +1030,7 @@
             <p>
               Vous avez d'autres questions ?
             </p>
-            <a href="#contact" class="btn btn-primary">
+            <a href="contact.html?service=nettoyage-facade" class="btn btn-primary">
               <i class="fa-solid fa-comments icon-inline" aria-hidden="true"></i>
               Poser ma question et obtenir un devis
             </a>

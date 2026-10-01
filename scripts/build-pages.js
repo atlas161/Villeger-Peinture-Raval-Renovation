@@ -91,13 +91,15 @@ function renderSections(page, dir) {
         case 'others': return S.others(s);
         case 'faq': return S.faq(s);
         case 'why': return readPartial('why-artisan.html');
-        case 'contact': return renderContact(readPartial('contact-service.html'), page.contact);
+        case 'contact': return renderContact(readPartial('contact-cta.html'), page.contact);
         case 'raw': return fs.readFileSync(path.join(dir, s.file), 'utf8').replace(/\r\n/g, '\n').trimEnd();
         default: throw new Error(`${page.file} : type de section inconnu « ${s.type} »`);
       }
     })
     .map((html) => (html.startsWith(' ') ? html : S.indent(html, 6)))
-    .join('\n\n');
+    .join('\n\n')
+    // Tous les boutons « devis » mènent à la page de contact, avec le service pré-sélectionné.
+    .replace(/href="#contact"/g, `href="contact.html?service=${page.contact.prestation}"`);
 }
 
 function render(page, dir) {
@@ -116,7 +118,7 @@ function render(page, dir) {
     EXTRA_STYLE: extraStyle,
     JSONLD: jsonLd(page),
     SLIDER_SCRIPT: page.beforeAfterScript ? '    <script src="assets/js/before-after.js?v=20260929" defer></script>\n' : '',
-    HEADER: generateHeader({ isHome: false, hasLocalContact: true }),
+    HEADER: generateHeader({ isHome: false, contactHref: `contact.html?service=${page.contact.prestation}` }),
     SECTIONS: renderSections(page, dir),
     RELATED: S.indent(S.related(page.related), 4),
   };
