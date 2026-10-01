@@ -38,5 +38,5 @@ l'absence d'ITE et redirige vers les pages peinture extérieure / ravalement de 
 
 - **Thème clair** conservé (pas de mode sombre).
 - **Boutons** : pilule, animation sobre (assombrissement seul, jamais de soulèvement ni d'ombre qui grandit).
-- **Logo du site** : variante **B2** choisie (4 lignes « Villéger / Peinture / Ravalement / Rénovation », porte allongée à la hauteur du texte, jamais « VPRR ») mais **pas déployée** : le logo d'origine reste en ligne jusqu'à nouvel ordre. Détail : [`../design/logo-b2.md`](../design/logo-b2.md).
+- **Logo du site** : variante **B1** (4 lignes « Villéger / Peinture / Ravalement / Rénovation », porte courte agrandie et alignée du haut du V au bas du R, finitions de la porte corrigées sans aucun ajout, jamais « VPRR »). **En attente de validation du client, pas déployée** : le logo d'origine reste en ligne jusqu'à nouvel ordre. B2, C, D et les portes « pierres appareillées » / « panneaux » sont écartées. Détail : [`../design/logo-b1.md`](../design/logo-b1.md).
 - **Or** : `--brand-accent` = décor seulement ; texte doré sur clair = `--brand-accent-text`, sur sombre = `--brand-accent-on-dark`.

@@ -56,3 +56,13 @@ de l'assureur est obligatoire pour un artisan du bâtiment. À ajouter dans la s
 `mentions-legales.html` (et éventuellement `llms.txt`).
 
 **Statut** : en attente du nom de l'assureur (et éventuellement du n° de contrat / de la zone couverte).
+
+## 6. Avis Google : fournir les 14 avis (à faire par vous — 2026-10-01)
+
+Envoyer, pour chaque avis, le **texte d'origine en français** : prénom (ou initiale), note, date et texte complet. Une lecture automatique de Google Maps n'en a ramené que 3,
+traduits en anglais et tronqués : on ne les utilise pas. Les 6 avis actuellement affichés sur le site sont de vrais avis (à conserver). Intégration : `index.html`, carrousel `.reviews-track`.
+
+## 7. Validation du logo B1 par le client (à faire par vous — 2026-10-01)
+
+Transmettre au client le PDF [`../design/VPRR-proposition-logo.pdf`](../design/VPRR-proposition-logo.pdf) (case « Logo validé » / « À modifier »). Après son accord, dire « OK » : le logo sera appliqué sur toutes les pages (détail : [`../design/logo-b1.md`](../design/logo-b1.md)).
+

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 7 64 89" width="64" height="89" role="img" aria-label="Porte cintrée en pierre (logo VPRR, variante B1)">
+<path d="M3 94V36a29 29 0 0 1 58 0v58z" fill="#CDBB9B"/>
+<path d="M3 52h10M3 67h10M3 82h10M51 52h10M51 67h10M51 82h10" stroke="#A8946F" stroke-width="1.3"/>
+<path d="M29.77 22.16L27.96 7.28A29 29 0 0 1 36.04 7.28L34.23 22.16z" fill="#BFA97F"/>
+<path d="M41.50 21.55L46.50 10.89M46.97 26.30L54.85 18.15M50.26 32.76L59.88 28.01M22.50 21.55L17.50 10.89M17.03 26.30L9.15 18.15M13.74 32.76L4.12 28.01M29.36 19.18L27.96 7.28M34.64 19.18L36.04 7.28" stroke="#A8946F" stroke-width="1.3" fill="none"/>
+<path d="M13 94V38a19 19 0 0 1 38 0v56z" fill="#673A12"/>
+<path d="M17.5 41V38a14.5 14.5 0 0 1 29.0 0V41z" fill="#FAF8F5"/>
+<path d="M32 41V22.50M32 41L19.36 28.36M32 41L44.64 28.36" stroke="#673A12" stroke-width="1.8" fill="none"/>
+<path fill-rule="evenodd" d="M13 41V38a19 19 0 0 1 38 0V41zM17.5 41V38a14.5 14.5 0 0 1 29.0 0V41z" fill="#673A12"/>
+<rect x="13" y="41" width="38" height="3" fill="#522E0E"/>
+<path d="M22.5 44v50M32 44v50M41.5 44v50" stroke="#4A260B" stroke-width="1.3"/>
+<circle cx="45.5" cy="72" r="1.9" fill="#D9C4A1"/>
+<rect x="1" y="93" width="62" height="3" rx="1" fill="#A8946F"/>
+</svg>

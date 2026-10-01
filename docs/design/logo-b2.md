@@ -1,7 +1,9 @@
-# Logo — variante B2 (retenue, non déployée)
+# Logo — variante B2 (**abandonnée** au profit de B1)
 
-**Statut (2026-10-01)** : choisie par le client mais **pas en ligne**. En production : le **logo d'origine**
-(`media/VPRR-LOGO.svg`, affiché par `<img class="logo-img">`). B2 est prête à être appliquée sur demande du client.
+> **Remplacé par [`logo-b1.md`](./logo-b1.md)** (2026-10-01) : le client a finalement préféré B1 (porte agrandie, pas allongée), avec les finitions
+> de la porte corrigées. Ce fichier est conservé comme historique.
+
+**Statut** : jamais déployée. En production : le **logo d'origine** (`media/VPRR-LOGO.svg`, `<img class="logo-img">`).
 
 ## Décision
 

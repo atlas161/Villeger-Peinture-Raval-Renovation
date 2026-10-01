@@ -374,3 +374,15 @@ l'assureur décennale (`blockers.md` §5), URLs sans `.html` (décision à part)
 - Contrôle en navigateur propre après consentement : `page_view` et `phone_click` arrivent à GA4.
 - Mesure : les visites du Chrome de l'administrateur ne comptent pas (extension anti-pub qui bloque `gtm.js`).
 - Reste : marquer `generate_lead` comme événement clé dans GA4 (possible après sa première réception).
+
+---
+
+## 2026-10-01 — Refonte design et hero : points qui touchent le SEO
+
+- **Hero de l'accueil** : H1 passé de « Votre façade, votre toiture, votre intérieur rénovés par un artisan local à Angoulême. » à « **Ravalement, toiture et peinture à Angoulême** » (mots-clés services + ville, plus court). Sous-titre : « Façade abîmée, toiture encrassée, intérieur à rénover ? VPRR, artisan local à L'Isle-d'Espagnac, intervient dans toute la Charente - devis gratuit sous 48h, garantie décennale. » Le `<title>` et la meta description de l'accueil n'ont pas changé. À surveiller dans Search Console (requêtes « ravalement Angoulême », « toiture Angoulême », « peinture Angoulême »).
+- **H1 des pages intérieures** : taille plafonnée à 48 px (texte inchangé) — impact SEO nul, lisibilité meilleure.
+- **Vidéo du hero sur téléphone** : activée (décision du client). Risque : perf mobile (19 Mo) donc Core Web Vitals / LCP — à contrôler (Lighthouse, Search Console « Expérience »).
+- **Contrastes** : texte doré et texte discret rendus conformes (≥ 4,5:1) — bénéfice accessibilité.
+- **Avis Google** : les 14 avis seront ajoutés en texte sur la page d'accueil quand le client enverra leur texte d'origine. Rappel : Google n'affiche pas d'étoiles dans ses résultats pour des avis qu'une entreprise publie sur son propre site (balisage « auto-évaluation ») ; le gain attendu est le **contenu local** (texte visible), pas les étoiles. Ne jamais inventer ni retraduire un avis.
+- **Logo** : inchangé en production (le `alt` « Villéger Peinture Raval Rénovation » et le JSON-LD `logo` pointent toujours vers `media/VPRR-LOGO.svg`). Le futur logo B1 est en SVG en ligne avec `aria-label` « Villéger Peinture Ravalement Rénovation - Accueil » : le JSON-LD et l'image de partage resteront sur le fichier d'origine.
+

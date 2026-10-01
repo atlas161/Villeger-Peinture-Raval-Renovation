@@ -18,7 +18,8 @@ Ce dossier est la mémoire du projet : on y retrouve ce qui a été fait, pourqu
 | Fichier | Contenu | Statut |
 |---|---|---|
 | [`roadmap.md`](./roadmap.md) | Reste à faire, priorisé | **à mettre à jour en fin de session** |
-| [`design/logo-b2.md`](./design/logo-b2.md) | Logo B2 retenu (non déployé) : spec, code prêt à coller, historique des variantes, maquette | prêt à appliquer |
+| [`design/logo-b1.md`](./design/logo-b1.md) | **Logo B1 retenu (non déployé, en attente du client)** : spec, SVG, code prêt à coller, mesures, pièges, PDF client | **à appliquer après validation** |
+| [`design/logo-b2.md`](./design/logo-b2.md) | Logo B2 (abandonné), historique | historique |
 | [`changelog.md`](./changelog.md) | Historique complet des changements | **à mettre à jour à chaque déploiement** |
 | [`seo/architecture.md`](./seo/architecture.md) | Architecture technique de référence | à jour au 2026-09-30 |
 | [`seo/README.md`](./seo/README.md), [`journal.md`](./seo/journal.md), [`blockers.md`](./seo/blockers.md), [`decisions.md`](./seo/decisions.md) | Suivi SEO | vivant |

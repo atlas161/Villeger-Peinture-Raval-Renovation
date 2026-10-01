@@ -21,7 +21,8 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
-- [ ] **Appliquer le logo B2** quand le client le demande : tout est prêt dans [`design/logo-b2.md`](./design/logo-b2.md) (balisage + CSS + vérifications). En attendant, le logo d'origine est en ligne.
+- [ ] **Appliquer le logo B1 (porte aux finitions corrigées)** **uniquement après validation du client** (PDF à lui transmettre : [`design/VPRR-proposition-logo.pdf`](./design/VPRR-proposition-logo.pdf)). Tout est prêt dans [`design/logo-b1.md`](./design/logo-b1.md) (balisage + CSS + mesures + vérifications). En attendant, le logo d'origine est en ligne. B2 est abandonnée.
+- [ ] **Après le déploiement de la refonte (hors bac à sable)** : relancer Lighthouse mobile (vidéo désormais lancée sur téléphone, 19 Mo), tester Safari sur iPhone (carrousel d'avis, menu burger, barre flottante, vidéo du hero), vérifier à 375 / 768 / 1440 px.
 
 - [ ] **Vérifier `quote_cta_click` et `generate_lead`** dans GA4 > Temps réel (fenêtre privée sans anti-pub : le Chrome de
   l'utilisateur bloque `gtm.js`). `page_view` et `phone_click` sont déjà vérifiés (2026-09-30, requêtes `g/collect` en 204).

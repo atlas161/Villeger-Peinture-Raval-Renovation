@@ -55,7 +55,7 @@ si le SEO ou une action client est concernée.
   Or : `--brand-accent` = décor uniquement ; texte doré = `--brand-accent-text` (clair) / `--brand-accent-on-dark` (sombre).
   Boutons : pilule, hover = assombrissement seul, 2 tailles (`.btn`, `.btn--sm`) — pas de soulèvement ni de dégradé.
   Logo : `media/VPRR-LOGO.svg` (`<img class="logo-img">`, généré par `scripts/sync-header.js`, `template-article.html`, `404.html`).
-  Le logo **B2** est retenu mais non déployé : tout est dans `docs/design/logo-b2.md` (ne pas l'appliquer sans demande du client).
+  Le logo **B1** (porte aux finitions corrigées) est préparé mais **non déployé, en attente de validation du client** : tout est dans `docs/design/logo-b1.md` (ne pas l'appliquer sans « OK » explicite).
   Le mobile compact (≤ 768 px) est dans `assets/css/responsive.css` ; le repli de blocs pilotés par JS
   (`data-m-limit`, `data-m-collapse`) dans `assets/js/mobile-condense.js`. Rien n'est replié sur ordinateur.
 - **Tiers / CSP** : ajouter un outil tiers (pixel, widget, vidéo…) = ajouter son domaine dans la

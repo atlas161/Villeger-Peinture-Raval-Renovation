@@ -17,10 +17,35 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (nuit) — Logo B1 + porte aux finitions corrigées : **en attente de validation client, rien en production**
+
+Fin de session de travail. **État de la production (`main` = `1391af0`)** : refonte design en ligne (palette, boutons, menu, barre mobile, footer, hero,
+avis mobile corrigé) avec le **logo d'origine**. Ce qui suit est préparé, **pas déployé**.
+
+| Élément | Détail |
+|---|---|
+| **Logo B1 retenu** | Variante B (4 lignes empilées) avec la porte courte agrandie (B1), alignée du haut du « V » au bas du « R » de Rénovation (alignement validé par le client). Abandon de B2 (porte allongée). Spec, SVG et code prêt à coller : [`design/logo-b1.md`](./design/logo-b1.md). |
+| **Porte : finitions corrigées, sans ajout** | Joints de l'arche de bord à bord, clé de voûte = coin de pierre, vitrage concentrique à cadre régulier avec barreaux finissant dans le cadre, planches collées à la traverse. Fichier : [`design/door-b1.svg`](./design/door-b1.svg). |
+| **Bug trouvé et corrigé en maquette** | La porte semblait trop courte en bas : `<use>` d'un `<symbol>` dans un `<svg>` au `viewBox` différent (réduite de 8 % et décalée). Dans le site, mettre les chemins directement dans le `<svg>`. |
+| **Mesures** | Alignement porte / lettres mesuré avec la vraie police Inter : écart ≤ 1 px à toutes les tailles (tableau dans `design/logo-b1.md`). |
+| **PDF client** | [`design/VPRR-proposition-logo.pdf`](./design/VPRR-proposition-logo.pdf) (1 page A4, sans texte explicatif, métadonnées vidées). Source : [`design/logo-client-proposal.html`](./design/logo-client-proposal.html). |
+
+**Journal complet de la session (2026-09-30 → 2026-10-01)**
+
+1. Audit design desktop / tablette / mobile (captures 320 → 1440 px, contrastes et cibles tactiles mesurés) → 5 corrections de cohérence (eyebrows Zone/Contact, label « Type de projet », contraste du footer, pill du blog, filtres FAQ) — déployées.
+2. Hero : H1 « Ravalement, toiture et peinture à Angoulême », sous-titre réécrit, taille max 76 → 68 px, **vidéo lancée sur téléphone et tablette**, voile plus dense — déployé.
+3. Boutons unifiés (pilule, hover sobre, 2 tailles), H1 des pages intérieures plafonnés à 48 px, cartes d'avis sans « carte dans une carte » — déployés.
+4. **Régression** (mon fait) : le carrousel d'avis débordait de l'écran sur mobile → corrigé (`min-width: 0`) et déployé.
+5. Refonte design validée par le client sur maquettes : palette unique, menu burger en liste, barre mobile flottante, footer lisible — déployée.
+6. Logo : une version « A » en ligne quelques heures, puis **retour au logo d'origine** ; variantes A à D comparées ; B retenue ; B1 + porte corrigée en attente de validation.
+7. Documentation : voir [`design/`](./design/), ce changelog, [`roadmap.md`](./roadmap.md), [`seo/decisions.md`](./seo/decisions.md), [`seo/journal.md`](./seo/journal.md).
+
+**Non vérifié (limites de l'environnement de travail)** : le site en ligne (vprr.fr bloqué par le proxy du bac à sable), Safari / iPhone (Chromium seulement), Lighthouse mobile après activation de la vidéo sur téléphone (19 Mo).
+
 ## 2026-10-01 (soir) — Logo : retour à l'ancien logo, B2 retenue et documentée
 
-Le client a comparé 4 variantes (A à D) puis la variante B avec deux portes (B1 agrandie, B2 allongée) : **B2 est choisie**,
-mais **l'ancien logo d'origine reste en production** en attendant. Tout B2 est documenté pour être appliqué plus tard.
+Le client a comparé 4 variantes (A à D) puis la variante B avec deux portes (B1 agrandie, B2 allongée) : **B2 avait été choisie** (changé ensuite en **B1**, voir l'entrée au-dessus),
+et **l'ancien logo d'origine reste en production**.
 
 | Changement |
 |---|
