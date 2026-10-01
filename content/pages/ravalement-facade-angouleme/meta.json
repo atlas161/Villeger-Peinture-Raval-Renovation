@@ -1,0 +1,157 @@
+{
+  "file": "ravalement-facade-angouleme.html",
+  "prestation": "ravalement",
+  "breadcrumbName": "Ravalement de Façade Angoulême",
+  "geoPlacename": "Angoulême, Charente",
+  "twitterImageAlt": "Ravalement de façade à Angoulême et en Charente (16) - VPRR",
+  "ogImage": "https://vprr.fr/data/hero.webp",
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "businessCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de ravalement de façade",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ravalement de façade complet",
+            "description": "Rénovation complète de façades à Angoulême",
+            "areaServed": "Angoulême, Charente (16)"
+          }
+        }
+      ]
+    },
+    "serviceType": "Ravalement de façade",
+    "serviceAreaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ravalement de façade à Angoulême",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Réparation de fissures",
+            "description": "Traitement et réparation des fissures de façade"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Réfection d'enduit",
+            "description": "Application d'enduit neuf sur façade ancienne"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Peinture de façade",
+            "description": "Peinture extérieure haute qualité pour protection et esthétique"
+          }
+        }
+      ]
+    }
+  },
+  "whyAlt": true
+}

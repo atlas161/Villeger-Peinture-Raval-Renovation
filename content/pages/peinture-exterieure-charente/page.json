@@ -1,412 +1,218 @@
 {
-  "file": "peinture-exterieure-charente.html",
-  "head": {
+  "seo": {
     "title": "Peinture extérieure en Charente (16) | Devis gratuit | VPRR",
     "description": "Peinture extérieure en Charente (16) : façades, boiseries, volets. Peintures résistantes aux UV, finitions durables. Devis gratuit sous 48h.",
-    "keywords": "peinture extérieure Charente, peinture façade Angoulême, peinture volets 16, peinture boiseries extérieures, peintre façade Charente",
-    "geoPlacename": "Charente, Angoulême",
-    "ogTitle": "Peinture extérieure en Charente (16) | Devis gratuit | VPRR",
-    "ogDescription": "Peinture extérieure en Charente (16) : façades, boiseries, volets. Devis gratuit sous 48h.",
-    "ogImage": "https://vprr.fr/data/hero.webp",
-    "twitterTitle": "Peinture extérieure en Charente (16) | VPRR",
-    "twitterDescription": "Peinture extérieure en Charente (16) : façades et boiseries. Devis gratuit sous 48h.",
-    "twitterImage": "https://vprr.fr/data/hero.webp",
-    "twitterImageAlt": "Peinture extérieure en Charente (16) - VPRR"
+    "keywords": "peinture extérieure Charente, peinture façade Angoulême, peinture volets 16, peinture boiseries extérieures, peintre façade Charente"
   },
-  "ld": {
-    "areaServed": [
+  "hero": {
+    "title": "Peinture Extérieure en Charente",
+    "ctaLabel": "Obtenir mon devis gratuit en 48h",
+    "before": "/media/services/peinture_exterieur/peinture_avant-900w.webp",
+    "after": "/media/services/peinture_exterieur/peinture_apres-900w.webp",
+    "altBefore": "Façade avant peinture",
+    "altAfter": "Façade après peinture",
+    "subtitle": "Embellissez et protégez vos façades, boiseries et volets avec nos peintures haute qualité. Résistance garantie aux UV et aux intempéries. Devis gratuit en 48h."
+  },
+  "realisation": {
+    "title": "Avant / Après : peinture extérieure type en Charente (16)",
+    "sheetTitle": "Fiche chantier (exemple)",
+    "facts": [
       {
-        "@type": "AdministrativeArea",
-        "name": "Charente"
+        "label": "Zone",
+        "text": "Charente (16)"
       },
       {
-        "@type": "City",
-        "name": "Angoulême"
+        "label": "Support",
+        "text": "façade/enduit + boiseries (selon cas)"
       },
       {
-        "@type": "City",
-        "name": "L'Isle-d'Espagnac"
+        "label": "Problèmes",
+        "text": "peinture farinante, microfissures, décoloration UV"
       },
       {
-        "@type": "City",
-        "name": "Soyaux"
+        "label": "Solution",
+        "text": "préparation, réparations, sous-couche, finition extérieure"
       },
       {
-        "@type": "City",
-        "name": "La Couronne"
-      },
-      {
-        "@type": "City",
-        "name": "Champniers"
-      },
-      {
-        "@type": "City",
-        "name": "Ruelle-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Gond-Pontouvre"
-      },
-      {
-        "@type": "City",
-        "name": "Saint-Yrieix-sur-Charente"
-      },
-      {
-        "@type": "City",
-        "name": "Magnac-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Cognac"
-      },
-      {
-        "@type": "City",
-        "name": "Jarnac"
-      },
-      {
-        "@type": "City",
-        "name": "Ruffec"
-      },
-      {
-        "@type": "City",
-        "name": "Barbezieux-Saint-Hilaire"
-      },
-      {
-        "@type": "City",
-        "name": "La Rochefoucauld-en-Angoumois"
+        "label": "Durée",
+        "text": "confirmée après visite (surface, accès, météo)"
       }
     ],
-    "businessCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services de peinture extérieure",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Peinture extérieure professionnelle",
-            "description": "Peinture de façades et boiseries en Charente",
-            "areaServed": "Angoulême, Charente (16)"
-          }
-        }
-      ]
-    },
-    "serviceType": "Peinture extérieure",
-    "serviceAreaServed": [
+    "tipTitle": "Maillage utile pour votre cas",
+    "tipHtml": "Si la façade doit d’abord être <strong>nettoyée</strong>, voir <a href=\"nettoyage-facade-angouleme.html\">nettoyage de façade</a>. S’il y a des <strong>fissures/enduit</strong> à reprendre, voir <a href=\"ravalement-facade-angouleme.html\">ravalement de façade</a>. Consultez la <a href=\"zone-desservie-charente.html\">zone desservie</a>.",
+    "intro": "Exemple inspiré de nos interventions locales. La durabilité dépend surtout de la préparation du support et du type de peinture choisi."
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Une peinture extérieure dégradée nuit à votre maison",
+    "items": [
       {
-        "@type": "AdministrativeArea",
-        "name": "Charente"
+        "icon": "fa-solid fa-sun",
+        "title": "Décoloration par les UV",
+        "text": "Le soleil dégrade les pigments de peinture, créant un aspect terne et vieilli qui dévalorise votre bien."
       },
       {
-        "@type": "City",
-        "name": "Angoulême"
+        "icon": "fa-solid fa-droplet",
+        "title": "Infiltrations d'eau",
+        "text": "La peinture qui s'écaille laisse l'eau pénétrer dans les murs et les boiseries, provoquant pourriture et moisissures."
       },
       {
-        "@type": "City",
-        "name": "L'Isle-d'Espagnac"
+        "icon": "fa-solid fa-house-chimney-window",
+        "title": "Mauvaise première impression",
+        "text": "Une façade ou des volets mal entretenus donnent une image négative de votre maison et découragent les visiteurs."
       },
       {
-        "@type": "City",
-        "name": "Soyaux"
-      },
-      {
-        "@type": "City",
-        "name": "La Couronne"
-      },
-      {
-        "@type": "City",
-        "name": "Champniers"
-      },
-      {
-        "@type": "City",
-        "name": "Ruelle-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Gond-Pontouvre"
-      },
-      {
-        "@type": "City",
-        "name": "Saint-Yrieix-sur-Charente"
-      },
-      {
-        "@type": "City",
-        "name": "Magnac-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Cognac"
-      },
-      {
-        "@type": "City",
-        "name": "Jarnac"
-      },
-      {
-        "@type": "City",
-        "name": "Ruffec"
-      },
-      {
-        "@type": "City",
-        "name": "Barbezieux-Saint-Hilaire"
-      },
-      {
-        "@type": "City",
-        "name": "La Rochefoucauld-en-Angoumois"
+        "icon": "fa-solid fa-screwdriver-wrench",
+        "title": "Réparations coûteuses",
+        "text": "Sans protection, le bois se dégrade rapidement et nécessite des remplacements onéreux de menuiseries."
       }
     ],
-    "serviceCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Peinture extérieure en Charente",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Peinture de façade",
-            "description": "Application de peinture extérieure haute qualité sur façades"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Peinture de boiseries",
-            "description": "Peinture et lasure de volets, portes et menuiseries extérieures"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Peinture de portails",
-            "description": "Traitement et peinture de portails bois, fer ou aluminium"
-          }
-        }
-      ]
-    },
-    "breadcrumbName": "Peinture Extérieure Charente"
+    "intro": "La peinture qui s'écaille ou se décolore n'est pas qu'un problème esthétique : elle expose vos murs aux intempéries."
   },
-  "beforeAfterScript": true,
-  "contact": {
-    "prestation": "peinture",
-    "serviceLabel": "de peinture extérieure"
+  "solution": {
+    "eyebrow": "Notre solution",
+    "title": "Peinture extérieure professionnelle et durable",
+    "features": [
+      {
+        "icon": "fa-solid fa-home",
+        "title": "Peinture de façade",
+        "text": "Application de peinture acrylique ou siloxane haute performance, respirante et résistante aux UV et à la pluie."
+      },
+      {
+        "icon": "fa-solid fa-door-open",
+        "title": "Peinture de boiseries",
+        "text": "Traitement et peinture de volets, portes, fenêtres avec des produits micropor eux qui protègent le bois durablement."
+      },
+      {
+        "icon": "fa-solid fa-palette",
+        "title": "Large choix de couleurs",
+        "text": "Nuancier complet pour personnaliser votre extérieur. Conseils déco gratuits pour harmoniser les couleurs."
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "title": "Protection longue durée",
+        "text": "Une peinture bien appliquée tient en général 10 à 15 ans. Produits résistants aux UV, anti-mousse et hydrofuges selon le support."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Préparation des supports",
+        "text": "Nettoyage, décapage, ponçage et traitement des surfaces pour une adhérence parfaite."
+      },
+      {
+        "title": "Application de la sous-couche",
+        "text": "Primaire d'accrochage adapté au support pour garantir la durabilité de la peinture."
+      },
+      {
+        "title": "Peinture de finition",
+        "text": "Application de 2 couches de peinture de finition pour un résultat impeccable et durable."
+      },
+      {
+        "title": "Contrôle qualité",
+        "text": "Vérification minutieuse du résultat et nettoyage complet du chantier."
+      }
+    ],
+    "intro": "Nous utilisons des peintures haut de gamme spécialement conçues pour résister aux conditions extérieures."
   },
-  "related": [
+  "whyExtra": [
     {
-      "href": "ravalement-facade-angouleme.html",
-      "icon": "fa-solid fa-trowel",
-      "label": "Ravalement de façade"
+      "icon": "fa-solid fa-handshake",
+      "title": "Accompagnement administratif",
+      "text": "Nous vous aidons dans vos démarches de déclaration préalable de travaux si nécessaire."
     },
     {
-      "href": "nettoyage-facade-angouleme.html",
-      "icon": "fa-solid fa-spray-can-sparkles",
-      "label": "Nettoyage de façade"
-    },
-    {
-      "href": "nettoyage-toiture-angouleme.html",
-      "icon": "fa-solid fa-house-chimney",
-      "label": "Nettoyage de toiture"
+      "icon": "fa-solid fa-screwdriver-wrench",
+      "title": "Produits adaptés au support",
+      "text": "Nous choisissons les matériaux selon le support, l'exposition et l'usage : pas de solution standard appliquée partout."
     }
   ],
-  "sections": [
-    {
-      "type": "hero",
-      "title": "Peinture Extérieure en Charente",
-      "subtitleHtml": "Embellissez et protégez vos façades, boiseries et volets avec nos peintures haute qualité. Résistance garantie aux UV et aux intempéries. Devis gratuit en 48h.",
-      "ctaLabel": "Obtenir mon devis gratuit en 48h",
-      "slider": {
-        "dir": "media/services/peinture_exterieur",
-        "before": "peinture_avant",
-        "after": "peinture_apres",
-        "altBefore": "Façade avant peinture",
-        "altAfter": "Façade après peinture"
+  "zone": {
+    "eyebrow": "Zone d'intervention",
+    "title": "Nous intervenons dans toute la Charente",
+    "intro": "Service de peinture extérieure disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16)."
+  },
+  "others": {
+    "eyebrow": "Découvrez aussi",
+    "title": "Nos autres services de rénovation",
+    "services": [
+      "nettoyage-facade-angouleme",
+      "nettoyage-toiture-angouleme",
+      "ravalement-facade-angouleme"
+    ],
+    "intro": "VPRR vous accompagne dans tous vos projets de rénovation extérieure en Charente."
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte une peinture extérieure en Charente ?",
+    "factors": [
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "title": "Surface à peindre",
+        "text": "Le prix varie selon la surface totale (au m²). Une façade plus grande nécessite plus de peinture et de temps d'intervention."
+      },
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "État du support",
+        "text": "Façade en bon état ou nécessitant des réparations préalables ? L'état influence la préparation nécessaire."
+      },
+      {
+        "icon": "fa-solid fa-palette",
+        "title": "Type de finition",
+        "text": "Peinture standard ou haute qualité avec résistance UV renforcée ? Le choix des produits influence le prix."
+      },
+      {
+        "icon": "fa-solid fa-layer-group",
+        "title": "Complexité de la façade",
+        "text": "Façade simple ou avec ornements, encadrements, multiples ouvertures ? La complexité influence le temps de travail."
       }
-    },
-    {
-      "type": "raw",
-      "file": "realisation.html"
-    },
-    {
-      "type": "problem",
-      "eyebrow": "Le problème",
-      "title": "Une peinture extérieure dégradée nuit à votre maison",
-      "introHtml": "La peinture qui s'écaille ou se décolore n'est pas qu'un problème esthétique : elle expose vos murs aux intempéries.",
-      "items": [
-        {
-          "icon": "fa-solid fa-sun",
-          "title": "Décoloration par les UV",
-          "text": "Le soleil dégrade les pigments de peinture, créant un aspect terne et vieilli qui dévalorise votre bien."
-        },
-        {
-          "icon": "fa-solid fa-droplet",
-          "title": "Infiltrations d'eau",
-          "text": "La peinture qui s'écaille laisse l'eau pénétrer dans les murs et les boiseries, provoquant pourriture et moisissures."
-        },
-        {
-          "icon": "fa-solid fa-house-chimney-window",
-          "title": "Mauvaise première impression",
-          "text": "Une façade ou des volets mal entretenus donnent une image négative de votre maison et découragent les visiteurs."
-        },
-        {
-          "icon": "fa-solid fa-screwdriver-wrench",
-          "title": "Réparations coûteuses",
-          "text": "Sans protection, le bois se dégrade rapidement et nécessite des remplacements onéreux de menuiseries."
-        }
-      ]
-    },
-    {
-      "type": "solution",
-      "eyebrow": "Notre solution",
-      "title": "Peinture extérieure professionnelle et durable",
-      "introHtml": "Nous utilisons des peintures haut de gamme spécialement conçues pour résister aux conditions extérieures.",
-      "features": [
-        {
-          "icon": "fa-solid fa-home",
-          "title": "Peinture de façade",
-          "text": "Application de peinture acrylique ou siloxane haute performance, respirante et résistante aux UV et à la pluie."
-        },
-        {
-          "icon": "fa-solid fa-door-open",
-          "title": "Peinture de boiseries",
-          "text": "Traitement et peinture de volets, portes, fenêtres avec des produits micropor eux qui protègent le bois durablement."
-        },
-        {
-          "icon": "fa-solid fa-palette",
-          "title": "Large choix de couleurs",
-          "text": "Nuancier complet pour personnaliser votre extérieur. Conseils déco gratuits pour harmoniser les couleurs."
-        },
-        {
-          "icon": "fa-solid fa-shield-halved",
-          "title": "Protection longue durée",
-          "text": "Une peinture bien appliquée tient en général 10 à 15 ans. Produits résistants aux UV, anti-mousse et hydrofuges selon le support."
-        }
-      ],
-      "steps": [
-        {
-          "title": "Préparation des supports",
-          "text": "Nettoyage, décapage, ponçage et traitement des surfaces pour une adhérence parfaite."
-        },
-        {
-          "title": "Application de la sous-couche",
-          "text": "Primaire d'accrochage adapté au support pour garantir la durabilité de la peinture."
-        },
-        {
-          "title": "Peinture de finition",
-          "text": "Application de 2 couches de peinture de finition pour un résultat impeccable et durable."
-        },
-        {
-          "title": "Contrôle qualité",
-          "text": "Vérification minutieuse du résultat et nettoyage complet du chantier."
-        }
-      ]
-    },
-    {
-      "type": "why"
-    },
-    {
-      "type": "zone",
-      "eyebrow": "Zone d'intervention",
-      "title": "Nous intervenons dans toute la Charente",
-      "introHtml": "Service de peinture extérieure disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16).",
-      "cities": [
-        "Angoulême",
-        "L'Isle-d'Espagnac",
-        "Gond-Pontouvre",
-        "Saint-Yrieix-sur-Charente",
-        "Soyaux",
-        "La Couronne",
-        "Puymoyen",
-        "Fléac",
-        "Ruelle-sur-Touvre",
-        "Magnac-sur-Touvre",
-        "Saint-Michel",
-        "Champniers",
-        "Cognac",
-        "Jarnac",
-        "Châteauneuf-sur-Charente",
-        "La Rochefoucauld-en-Angoumois",
-        "Barbezieux-Saint-Hilaire",
-        "Ruffec"
-      ],
-      "noteHtml": "<strong>Votre commune n'est pas listée ?</strong> Contactez-nous, nous intervenons également dans les communes voisines."
-    },
-    {
-      "type": "others",
-      "eyebrow": "Découvrez aussi",
-      "title": "Nos autres services de rénovation",
-      "introHtml": "VPRR vous accompagne dans tous vos projets de rénovation extérieure en Charente.",
-      "cards": [
-        {
-          "icon": "fa-solid fa-spray-can-sparkles",
-          "title": "Nettoyage de Façade",
-          "text": "Hydro-gommage doux et efficace pour redonner vie à vos murs extérieurs sans les abîmer.",
-          "href": "nettoyage-facade-angouleme.html"
-        },
-        {
-          "icon": "fa-solid fa-house-chimney",
-          "title": "Nettoyage de Toiture",
-          "text": "Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.",
-          "href": "nettoyage-toiture-angouleme.html"
-        },
-        {
-          "icon": "fa-solid fa-screwdriver-wrench",
-          "title": "Ravalement de Façade",
-          "text": "Rénovation complète de vos façades : réparation, enduit, peinture et protection longue durée.",
-          "href": "ravalement-facade-angouleme.html"
-        }
-      ]
-    },
-    {
-      "type": "raw",
-      "file": "tarifs.html"
-    },
-    {
-      "type": "faq",
-      "eyebrow": "F.A.Q",
-      "title": "Questions fréquentes : Prix &amp; Devis Peinture",
-      "introHtml": "Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de peinture extérieure.",
-      "items": [
-        {
-          "icon": "fa-solid fa-tag",
-          "question": "Quel est le prix d'une peinture extérieure au m² en Charente ?",
-          "answerHtml": "<p>Une peinture extérieure coûte en général entre <strong>20&nbsp;€ et 65&nbsp;€ par m²</strong> selon la préparation et la gamme de peinture :</p>\n<ul>\n  <li><strong>Rafraîchissement</strong> sur façade saine : 20 à 30&nbsp;€/m²</li>\n  <li><strong>Rénovation avec préparation</strong> (réparations légères, fixateur) : 30 à 45&nbsp;€/m²</li>\n  <li><strong>Haute performance</strong> (siloxane, traitement des fissures) : 45 à 65&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 100&nbsp;m² de murs avec nettoyage et petites réparations, comptez environ 3&nbsp;000 à 4&nbsp;500&nbsp;€ TTC. Les boiseries, volets et l'échafaudage éventuel sont chiffrés à part dans le devis gratuit.</p>"
-        },
-        {
-          "icon": "fa-solid fa-clock",
-          "question": "Combien de temps dure une prestation de peinture extérieure ?",
-          "answerHtml": "<p>La durée dépend de la surface et de la préparation :</p>\n<ul>\n  <li>Petite façade ou boiseries : 2 à 3 jours</li>\n  <li>Façade moyenne (80 à 120&nbsp;m²) : 4 à 5 jours</li>\n  <li>Grande façade ou travaux avec réparations : 1 à 2 semaines</li>\n</ul>\n<p>Il faut respecter le séchage entre les couches : nous planifions selon la météo.</p>"
-        },
-        {
-          "icon": "fa-solid fa-calendar-check",
-          "question": "Quand repeindre ses façades, et à quelle période ?",
-          "answerHtml": "<p>Une peinture de façade se refait en général tous les 10 à 15 ans, ou dès qu'elle farine, s'écaille ou se décolore. La meilleure période : <strong>d'avril à octobre</strong>, par temps sec, avec un support sec et une température entre 5 et 30&nbsp;°C. Nous évitons la pluie, le gel et le plein soleil qui compromettent l'adhérence.</p>"
-        },
-        {
-          "icon": "fa-solid fa-palette",
-          "question": "Quelle peinture utilisez-vous (microporeuse, finition, résistance UV) ?",
-          "answerHtml": "<p>Nous choisissons la peinture selon le support (enduit, façade déjà peinte, boiseries) et l'exposition : préparation adaptée, sous-couche si nécessaire, puis peinture extérieure résistante aux UV et aux intempéries, souvent <strong>microporeuse</strong> pour laisser respirer le mur. Les produits et le nombre de couches sont précisés dans le devis.</p>"
-        },
-        {
-          "icon": "fa-solid fa-landmark",
-          "question": "Puis-je choisir la couleur de ma façade ?",
-          "answerHtml": "<p>Oui, dans le respect des règles de votre commune : le PLU ou un secteur protégé peut imposer des teintes. Un changement de couleur nécessite souvent une déclaration préalable en mairie. Nous vous aidons à choisir une teinte adaptée à l'environnement et nous pouvons vous accompagner pour le dossier.</p>",
-          "accent": true
-        },
-        {
-          "icon": "fa-solid fa-receipt",
-          "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-          "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La préparation du support (nettoyage, réparations si nécessaire)</li>\n  <li>La protection des zones sensibles</li>\n  <li>La sous-couche et deux couches de peinture extérieure</li>\n  <li>La finition et le nettoyage du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
-        },
-        {
-          "icon": "fa-solid fa-shield-halved",
-          "question": "La peinture extérieure est-elle garantie ?",
-          "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle et une garantie décennale pour les travaux qui en relèvent. Nos attestations d'assurance sont à jour et disponibles sur simple demande, avant le début du chantier. La tenue dépend surtout de la préparation du support et de l'exposition : c'est pourquoi la préparation, les produits et les couches sont détaillés dans le devis.</p>",
-          "accent": true
-        }
-      ]
-    },
-    {
-      "type": "contact"
-    }
-  ]
+    ],
+    "intro": "Le prix d'une peinture extérieure dépend de plusieurs facteurs. Découvrez comment est calculé votre devis personnalisé."
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : Prix & Devis Peinture",
+    "items": [
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix d'une peinture extérieure au m² en Charente ?",
+        "answerHtml": "<p>Une peinture extérieure coûte en général entre <strong>20&nbsp;€ et 65&nbsp;€ par m²</strong> selon la préparation et la gamme de peinture :</p>\n<ul>\n  <li><strong>Rafraîchissement</strong> sur façade saine : 20 à 30&nbsp;€/m²</li>\n  <li><strong>Rénovation avec préparation</strong> (réparations légères, fixateur) : 30 à 45&nbsp;€/m²</li>\n  <li><strong>Haute performance</strong> (siloxane, traitement des fissures) : 45 à 65&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 100&nbsp;m² de murs avec nettoyage et petites réparations, comptez environ 3&nbsp;000 à 4&nbsp;500&nbsp;€ TTC. Les boiseries, volets et l'échafaudage éventuel sont chiffrés à part dans le devis gratuit.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Combien de temps dure une prestation de peinture extérieure ?",
+        "answerHtml": "<p>La durée dépend de la surface et de la préparation :</p>\n<ul>\n  <li>Petite façade ou boiseries : 2 à 3 jours</li>\n  <li>Façade moyenne (80 à 120&nbsp;m²) : 4 à 5 jours</li>\n  <li>Grande façade ou travaux avec réparations : 1 à 2 semaines</li>\n</ul>\n<p>Il faut respecter le séchage entre les couches : nous planifions selon la météo.</p>"
+      },
+      {
+        "icon": "fa-solid fa-calendar-check",
+        "question": "Quand repeindre ses façades, et à quelle période ?",
+        "answerHtml": "<p>Une peinture de façade se refait en général tous les 10 à 15 ans, ou dès qu'elle farine, s'écaille ou se décolore. La meilleure période : <strong>d'avril à octobre</strong>, par temps sec, avec un support sec et une température entre 5 et 30&nbsp;°C. Nous évitons la pluie, le gel et le plein soleil qui compromettent l'adhérence.</p>"
+      },
+      {
+        "icon": "fa-solid fa-palette",
+        "question": "Quelle peinture utilisez-vous (microporeuse, finition, résistance UV) ?",
+        "answerHtml": "<p>Nous choisissons la peinture selon le support (enduit, façade déjà peinte, boiseries) et l'exposition : préparation adaptée, sous-couche si nécessaire, puis peinture extérieure résistante aux UV et aux intempéries, souvent <strong>microporeuse</strong> pour laisser respirer le mur. Les produits et le nombre de couches sont précisés dans le devis.</p>"
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "question": "Puis-je choisir la couleur de ma façade ?",
+        "answerHtml": "<p>Oui, dans le respect des règles de votre commune : le PLU ou un secteur protégé peut imposer des teintes. Un changement de couleur nécessite souvent une déclaration préalable en mairie. Nous vous aidons à choisir une teinte adaptée à l'environnement et nous pouvons vous accompagner pour le dossier.</p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-receipt",
+        "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
+        "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La préparation du support (nettoyage, réparations si nécessaire)</li>\n  <li>La protection des zones sensibles</li>\n  <li>La sous-couche et deux couches de peinture extérieure</li>\n  <li>La finition et le nettoyage du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "question": "La peinture extérieure est-elle garantie ?",
+        "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle et une garantie décennale pour les travaux qui en relèvent. Nos attestations d'assurance sont à jour et disponibles sur simple demande, avant le début du chantier. La tenue dépend surtout de la préparation du support et de l'exposition : c'est pourquoi la préparation, les produits et les couches sont détaillés dans le devis.</p>",
+        "accent": true
+      }
+    ],
+    "intro": "Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de peinture extérieure."
+  },
+  "contact": {
+    "serviceLabel": "de peinture extérieure"
+  }
 }

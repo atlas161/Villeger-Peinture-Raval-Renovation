@@ -1,406 +1,257 @@
 {
-  "file": "ravalement-facade-angouleme.html",
-  "head": {
+  "seo": {
     "title": "Ravalement de façade à Angoulême (16) | Devis gratuit | VPRR",
     "description": "Ravalement de façade à Angoulême et en Charente (16) : réparation de fissures, enduit, peinture et finitions durables. Devis gratuit sous 48h. ☎️ 05 45 91 22 70",
-    "keywords": "ravalement façade Angoulême, rénovation façade Charente, réparation mur 16, enduit façade Angoulême, peinture façade extérieure",
-    "geoPlacename": "Angoulême, Charente",
-    "ogTitle": "Ravalement de façade à Angoulême (16) | Devis gratuit | VPRR",
-    "ogDescription": "Ravalement de façade à Angoulême et en Charente (16) : fissures, enduits, peinture et finitions. Devis gratuit sous 48h.",
-    "ogImage": "https://vprr.fr/data/hero.webp",
-    "twitterTitle": "Ravalement de façade à Angoulême (Charente 16) | VPRR",
-    "twitterDescription": "Ravalement de façade à Angoulême et en Charente (16). Devis gratuit sous 48h.",
-    "twitterImage": "https://vprr.fr/data/hero.webp",
-    "twitterImageAlt": "Ravalement de façade à Angoulême et en Charente (16) - VPRR"
+    "keywords": "ravalement façade Angoulême, rénovation façade Charente, réparation mur 16, enduit façade Angoulême, peinture façade extérieure"
   },
-  "ld": {
-    "areaServed": [
+  "hero": {
+    "title": "Ravalement de façade à Angoulême - artisan local, devis gratuit sous 48h",
+    "ctaLabel": "Obtenir mon devis gratuit en 48h",
+    "before": "/media/services/ravalement_facade/ravalement_avant-900w.webp",
+    "after": "/media/services/ravalement_facade/ravalement_apres-900w.webp",
+    "altBefore": "Façade avant ravalement",
+    "altAfter": "Façade après ravalement",
+    "subtitle": "Rénovation complète de vos façades : réparation, enduit, peinture. Redonnez une seconde jeunesse à votre patrimoine. Devis gratuit en 48h."
+  },
+  "realisation": {
+    "title": "Avant / Après : un ravalement de façade type en Charente (16)",
+    "sheetTitle": "Fiche chantier (exemple)",
+    "facts": [
       {
-        "@type": "AdministrativeArea",
-        "name": "Charente"
+        "label": "Zone",
+        "text": "secteur Angoulême & Charente (16)"
       },
       {
-        "@type": "City",
-        "name": "Angoulême"
+        "label": "Support",
+        "text": "enduit / façade peinte"
       },
       {
-        "@type": "City",
-        "name": "L'Isle-d'Espagnac"
+        "label": "Problèmes",
+        "text": "microfissures, encrassement, peinture farinante"
       },
       {
-        "@type": "City",
-        "name": "Soyaux"
+        "label": "Solution",
+        "text": "préparation, réparations, enduit/finition, peinture de protection"
       },
       {
-        "@type": "City",
-        "name": "La Couronne"
-      },
-      {
-        "@type": "City",
-        "name": "Champniers"
-      },
-      {
-        "@type": "City",
-        "name": "Ruelle-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Cognac"
-      },
-      {
-        "@type": "City",
-        "name": "Jarnac"
-      },
-      {
-        "@type": "City",
-        "name": "Ruffec"
-      },
-      {
-        "@type": "City",
-        "name": "Barbezieux-Saint-Hilaire"
-      },
-      {
-        "@type": "City",
-        "name": "La Rochefoucauld-en-Angoumois"
+        "label": "Durée",
+        "text": "planning confirmé après visite (surface, accès, météo)"
       }
     ],
-    "businessCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services de ravalement de façade",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Ravalement de façade complet",
-            "description": "Rénovation complète de façades à Angoulême",
-            "areaServed": "Angoulême, Charente (16)"
-          }
-        }
-      ]
-    },
-    "serviceType": "Ravalement de façade",
-    "serviceAreaServed": [
+    "tipTitle": "Maillage utile pour votre cas",
+    "tipHtml": "Si votre façade est surtout <strong>encrassée</strong>, un <a href=\"nettoyage-facade-angouleme.html\">nettoyage de façade</a> peut suffire avant de passer à la finition. Pour une <strong>mise en peinture</strong> seule, voir <a href=\"peinture-exterieure-charente.html\">peinture extérieure</a>. Consultez aussi la <a href=\"zone-desservie-charente.html\">zone desservie</a>.",
+    "intro": "Exemple inspiré de nos interventions locales. Chaque façade est différente : nous confirmons la méthode et le planning après une visite sur place."
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Une façade abîmée dégrade votre bien et votre confort",
+    "items": [
       {
-        "@type": "AdministrativeArea",
-        "name": "Charente"
+        "icon": "fa-solid fa-house-crack",
+        "title": "Fissures et infiltrations",
+        "text": "Les fissures laissent pénétrer l'eau dans les murs, provoquant humidité, moisissures et dégradation de l'isolation."
       },
       {
-        "@type": "City",
-        "name": "Angoulême"
+        "icon": "fa-solid fa-paint-roller",
+        "title": "Enduit qui se dégrade",
+        "text": "L'enduit qui s'écaille ou se fissure perd son rôle protecteur et expose les murs aux intempéries."
       },
       {
-        "@type": "City",
-        "name": "L'Isle-d'Espagnac"
+        "icon": "fa-solid fa-arrow-trend-down",
+        "title": "Perte de valeur immobilière",
+        "text": "Une façade en mauvais état fait chuter la valeur de votre bien et complique toute revente ou location."
       },
       {
-        "@type": "City",
-        "name": "Soyaux"
-      },
-      {
-        "@type": "City",
-        "name": "La Couronne"
-      },
-      {
-        "@type": "City",
-        "name": "Champniers"
-      },
-      {
-        "@type": "City",
-        "name": "Ruelle-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Cognac"
-      },
-      {
-        "@type": "City",
-        "name": "Jarnac"
-      },
-      {
-        "@type": "City",
-        "name": "Ruffec"
-      },
-      {
-        "@type": "City",
-        "name": "Barbezieux-Saint-Hilaire"
-      },
-      {
-        "@type": "City",
-        "name": "La Rochefoucauld-en-Angoumois"
+        "icon": "fa-solid fa-euro-sign",
+        "title": "Coûts de chauffage élevés",
+        "text": "Une façade dégradée réduit l'efficacité de l'isolation thermique et augmente vos factures d'énergie."
       }
     ],
-    "serviceCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Ravalement de façade à Angoulême",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Réparation de fissures",
-            "description": "Traitement et réparation des fissures de façade"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Réfection d'enduit",
-            "description": "Application d'enduit neuf sur façade ancienne"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Peinture de façade",
-            "description": "Peinture extérieure haute qualité pour protection et esthétique"
-          }
-        }
-      ]
-    },
-    "breadcrumbName": "Ravalement de Façade Angoulême"
+    "intro": "Les fissures, l'enduit qui s'écaille et la peinture qui se décolle ne sont pas que des problèmes esthétiques."
   },
-  "beforeAfterScript": true,
-  "contact": {
-    "prestation": "ravalement",
-    "serviceLabel": "de ravalement de façade"
+  "solution": {
+    "eyebrow": "Notre solution",
+    "title": "Ravalement complet pour une façade comme neuve",
+    "features": [
+      {
+        "icon": "fa-solid fa-screwdriver-wrench",
+        "title": "Réparation des fissures",
+        "text": "Traitement professionnel des fissures avec rebouchage, pontage et application d'enduit de réparation adapté."
+      },
+      {
+        "icon": "fa-solid fa-layer-group",
+        "title": "Réfection d'enduit",
+        "text": "Application d'un nouvel enduit de façade (traditionnel, monocouche ou à la chaux) selon le type de support."
+      },
+      {
+        "icon": "fa-solid fa-palette",
+        "title": "Peinture de façade",
+        "text": "Peinture extérieure haute qualité, résistante aux UV et aux intempéries. Large choix de couleurs et finitions."
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "title": "Protection longue durée",
+        "text": "Traitement hydrofuge et anti-mousse pour protéger votre façade pendant de nombreuses années."
+      },
+      {
+        "icon": "fa-solid fa-wand-magic-sparkles",
+        "title": "Peinture façade isolation active",
+        "text": "Peintures spéciales à haut pouvoir isolant qui améliorent l'étanchéité thermique de vos murs. Solution complémentaire à un ravalement complet.",
+        "highlight": true
+      }
+    ],
+    "steps": [
+      {
+        "title": "Diagnostic complet",
+        "text": "Nous inspectons votre façade et établissons un diagnostic précis des travaux nécessaires."
+      },
+      {
+        "title": "Préparation des supports",
+        "text": "Nettoyage, décapage, réparation des fissures et traitement des zones dégradées."
+      },
+      {
+        "title": "Application enduit/peinture",
+        "text": "Pose de l'enduit ou application de la peinture selon les règles de l'art."
+      },
+      {
+        "title": "Finitions et protection",
+        "text": "Traitement protecteur final et nettoyage complet du chantier."
+      }
+    ],
+    "intro": "Nous prenons en charge l'intégralité des travaux de rénovation de votre façade, de la réparation à la finition."
   },
-  "related": [
+  "whyExtra": [
     {
-      "href": "nettoyage-facade-angouleme.html",
-      "icon": "fa-solid fa-spray-can-sparkles",
-      "label": "Nettoyage de façade"
+      "icon": "fa-solid fa-handshake",
+      "title": "Accompagnement administratif",
+      "text": "Nous vous aidons dans vos démarches de déclaration préalable de travaux si nécessaire."
     },
     {
-      "href": "nettoyage-toiture-angouleme.html",
-      "icon": "fa-solid fa-house-chimney",
-      "label": "Nettoyage de toiture"
-    },
-    {
-      "href": "peinture-exterieure-charente.html",
-      "icon": "fa-solid fa-palette",
-      "label": "Peinture extérieure"
+      "icon": "fa-solid fa-certificate",
+      "title": "Produits professionnels",
+      "text": "Nous utilisons les produits Weber, PRB, PAREX - leaders de l’enduit et de la peinture façade en France.",
+      "accent": true
     }
   ],
-  "sections": [
-    {
-      "type": "hero",
-      "title": "Ravalement de façade à Angoulême - artisan local, devis gratuit sous 48h",
-      "subtitleHtml": "Rénovation complète de vos façades : réparation, enduit, peinture. Redonnez une seconde jeunesse à votre patrimoine. Devis gratuit en 48h.",
-      "ctaLabel": "Obtenir mon devis gratuit en 48h",
-      "slider": {
-        "dir": "media/services/ravalement_facade",
-        "before": "ravalement_avant",
-        "after": "ravalement_apres",
-        "altBefore": "Façade avant ravalement",
-        "altAfter": "Façade après ravalement"
+  "zone": {
+    "eyebrow": "Zone d'intervention",
+    "title": "Nous intervenons à Angoulême et dans toute la Charente",
+    "intro": "Service de ravalement de façade disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16)."
+  },
+  "others": {
+    "eyebrow": "Découvrez aussi",
+    "title": "Nos autres services de rénovation",
+    "services": [
+      "nettoyage-facade-angouleme",
+      "nettoyage-toiture-angouleme",
+      "peinture-exterieure-charente"
+    ],
+    "intro": "VPRR vous accompagne dans tous vos projets de rénovation extérieure en Charente."
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte un ravalement de façade à Angoulême ?",
+    "factors": [
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "title": "Surface de la façade",
+        "text": "Le prix varie selon la surface totale à traiter (au m²). Une façade plus grande nécessite plus de matériel et de temps."
+      },
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "État de la façade",
+        "text": "Façade nécessitant des réparations importantes ou simple rafraîchissement ? L'état influence les travaux nécessaires."
+      },
+      {
+        "icon": "fa-solid fa-trowel",
+        "title": "Type d'intervention",
+        "text": "Nettoyage + peinture, réfection d'enduit ou rénovation complète ? Le type de travaux influence le coût."
+      },
+      {
+        "icon": "fa-solid fa-stairs",
+        "title": "Accessibilité",
+        "text": "Hauteur du bâtiment, besoin d'échafaudage ou nacelle ? L'accès à la façade influence les coûts."
       }
-    },
-    {
-      "type": "raw",
-      "file": "realisation.html"
-    },
-    {
-      "type": "problem",
-      "eyebrow": "Le problème",
-      "title": "Une façade abîmée dégrade votre bien et votre confort",
-      "introHtml": "Les fissures, l'enduit qui s'écaille et la peinture qui se décolle ne sont pas que des problèmes esthétiques.",
-      "items": [
-        {
-          "icon": "fa-solid fa-house-crack",
-          "title": "Fissures et infiltrations",
-          "text": "Les fissures laissent pénétrer l'eau dans les murs, provoquant humidité, moisissures et dégradation de l'isolation."
-        },
-        {
-          "icon": "fa-solid fa-paint-roller",
-          "title": "Enduit qui se dégrade",
-          "text": "L'enduit qui s'écaille ou se fissure perd son rôle protecteur et expose les murs aux intempéries."
-        },
-        {
-          "icon": "fa-solid fa-arrow-trend-down",
-          "title": "Perte de valeur immobilière",
-          "text": "Une façade en mauvais état fait chuter la valeur de votre bien et complique toute revente ou location."
-        },
-        {
-          "icon": "fa-solid fa-euro-sign",
-          "title": "Coûts de chauffage élevés",
-          "text": "Une façade dégradée réduit l'efficacité de l'isolation thermique et augmente vos factures d'énergie."
-        }
-      ]
-    },
-    {
-      "type": "solution",
-      "eyebrow": "Notre solution",
-      "title": "Ravalement complet pour une façade comme neuve",
-      "introHtml": "Nous prenons en charge l'intégralité des travaux de rénovation de votre façade, de la réparation à la finition.",
-      "features": [
-        {
-          "icon": "fa-solid fa-screwdriver-wrench",
-          "title": "Réparation des fissures",
-          "text": "Traitement professionnel des fissures avec rebouchage, pontage et application d'enduit de réparation adapté."
-        },
-        {
-          "icon": "fa-solid fa-layer-group",
-          "title": "Réfection d'enduit",
-          "text": "Application d'un nouvel enduit de façade (traditionnel, monocouche ou à la chaux) selon le type de support."
-        },
-        {
-          "icon": "fa-solid fa-palette",
-          "title": "Peinture de façade",
-          "text": "Peinture extérieure haute qualité, résistante aux UV et aux intempéries. Large choix de couleurs et finitions."
-        },
-        {
-          "icon": "fa-solid fa-shield-halved",
-          "title": "Protection longue durée",
-          "text": "Traitement hydrofuge et anti-mousse pour protéger votre façade pendant de nombreuses années."
-        },
-        {
-          "icon": "fa-solid fa-wand-magic-sparkles",
-          "title": "Peinture façade isolation active",
-          "text": "Peintures spéciales à haut pouvoir isolant qui améliorent l'étanchéité thermique de vos murs. Solution complémentaire à un ravalement complet.",
-          "highlight": true
-        }
-      ],
-      "steps": [
-        {
-          "title": "Diagnostic complet",
-          "text": "Nous inspectons votre façade et établissons un diagnostic précis des travaux nécessaires."
-        },
-        {
-          "title": "Préparation des supports",
-          "text": "Nettoyage, décapage, réparation des fissures et traitement des zones dégradées."
-        },
-        {
-          "title": "Application enduit/peinture",
-          "text": "Pose de l'enduit ou application de la peinture selon les règles de l'art."
-        },
-        {
-          "title": "Finitions et protection",
-          "text": "Traitement protecteur final et nettoyage complet du chantier."
-        }
-      ]
-    },
-    {
-      "type": "raw",
-      "file": "why.html"
-    },
-    {
-      "type": "zone",
-      "eyebrow": "Zone d'intervention",
-      "title": "Nous intervenons à Angoulême et dans toute la Charente",
-      "introHtml": "Service de ravalement de façade disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16). <a href=\"zone-desservie-charente.html\">Voir toutes les villes desservies</a>.",
-      "cities": [
-        "Angoulême",
-        "L'Isle-d'Espagnac",
-        "Gond-Pontouvre",
-        "Saint-Yrieix-sur-Charente",
-        "Soyaux",
-        "La Couronne",
-        "Puymoyen",
-        "Fléac",
-        "Ruelle-sur-Touvre",
-        "Magnac-sur-Touvre",
-        "Saint-Michel",
-        "Champniers",
-        "Cognac",
-        "Jarnac",
-        "Châteauneuf-sur-Charente",
-        "La Rochefoucauld-en-Angoumois",
-        "Barbezieux-Saint-Hilaire",
-        "Ruffec"
-      ],
-      "noteHtml": "<strong>Votre commune n'est pas listée ?</strong> Contactez-nous, nous intervenons également dans les communes voisines."
-    },
-    {
-      "type": "others",
-      "eyebrow": "Découvrez aussi",
-      "title": "Nos autres services de rénovation",
-      "introHtml": "VPRR vous accompagne dans tous vos projets de rénovation extérieure en Charente.",
+    ],
+    "whyNow": {
+      "title": "Le ravalement : un investissement rentable",
       "cards": [
         {
-          "icon": "fa-solid fa-spray-can-sparkles",
-          "title": "Nettoyage de Façade",
-          "text": "Hydro-gommage doux et efficace pour redonner vie à vos murs extérieurs sans les abîmer.",
-          "href": "nettoyage-facade-angouleme.html"
+          "icon": "fa-solid fa-house-chimney-crack",
+          "title": "Préservez votre patrimoine",
+          "text": "Un ravalement préventif évite les dégradations coûteuses. Réparer une fissure à temps coûte bien moins cher qu'une rénovation tardive après infiltrations."
         },
         {
-          "icon": "fa-solid fa-house-chimney",
-          "title": "Nettoyage de Toiture",
-          "text": "Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.",
-          "href": "nettoyage-toiture-angouleme.html"
+          "icon": "fa-solid fa-arrow-trend-up",
+          "title": "Revalorisation immobilière",
+          "text": "Une façade propre et bien entretenue valorise votre bien : un atout en cas de revente ou de location."
         },
         {
-          "icon": "fa-solid fa-palette",
-          "title": "Peinture Extérieure",
-          "text": "Embellissez vos façades et boiseries avec nos peintures haute qualité résistantes aux UV.",
-          "href": "peinture-exterieure-charente.html"
+          "icon": "fa-solid fa-temperature-arrow-down",
+          "title": "Protection du bâti",
+          "text": "Un enduit sain et une peinture adaptée protègent le mur de la pluie et de l'humidité, ce qui préserve aussi son confort."
         }
-      ]
+      ],
+      "note": "Note : Les travaux de peinture et ravalement classiques ne sont pas éligibles aux aides énergétiques type MaPrimeRénov'. Elles concernent la rénovation énergétique (isolation, chauffage…), pas l'entretien d'une façade."
     },
-    {
-      "type": "raw",
-      "file": "tarifs.html"
-    },
-    {
-      "type": "faq",
-      "eyebrow": "F.A.Q",
-      "title": "Questions fréquentes : Prix &amp; Devis Ravalement",
-      "introHtml": "Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de ravalement de façade.",
-      "items": [
-        {
-          "icon": "fa-solid fa-tag",
-          "question": "Quel est le prix d'un ravalement de façade au m² en Charente ?",
-          "answerHtml": "<p>En Charente, un ravalement de façade coûte en général entre <strong>25&nbsp;€ et 90&nbsp;€ par m²</strong> selon ce qu'il faut faire :</p>\n<ul>\n  <li><strong>Nettoyage + peinture</strong> (façade saine) : 25 à 40&nbsp;€/m²</li>\n  <li><strong>Réfection d'enduit</strong> (réparations + enduit + finition) : 40 à 65&nbsp;€/m²</li>\n  <li><strong>Ravalement complet</strong> (enduit, peinture haute performance, zinguerie) : 60 à 90&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 100&nbsp;m² de façade avec réparations, enduit et peinture, comptez environ 4&nbsp;500 à 7&nbsp;000&nbsp;€ TTC, échafaudage compris. Seule une visite permet de chiffrer précisément : le devis est gratuit.</p>"
-        },
-        {
-          "icon": "fa-solid fa-clock",
-          "question": "Combien de temps dure un ravalement de façade ?",
-          "answerHtml": "<p>La durée dépend de la surface et de l'état de la façade :</p>\n<ul>\n  <li>Nettoyage + peinture : 3 à 5 jours</li>\n  <li>Réparations + enduit + peinture : 1 à 2 semaines</li>\n  <li>Rénovation complète : 2 à 3 semaines</li>\n</ul>\n<p>Nous planifions selon la météo (pas d'enduit ni de peinture sous la pluie ou au gel) et nettoyons le chantier chaque soir.</p>"
-        },
-        {
-          "icon": "fa-solid fa-calendar-check",
-          "question": "Quand faut-il faire un ravalement de façade ?",
-          "answerHtml": "<p>Plusieurs signes montrent qu'il est temps d'agir :</p>\n<ul>\n  <li><strong>Fissures</strong> visibles : elles laissent entrer l'eau dans le mur</li>\n  <li><strong>Enduit</strong> qui s'écaille ou sonne creux</li>\n  <li><strong>Peinture</strong> qui farine, s'écaille ou se décolore</li>\n  <li><strong>Humidité</strong>, moisissures ou mousses installées</li>\n</ul>\n<p>Une façade se rénove en général tous les 10 à 15 ans. Intervenir tôt coûte moins cher que réparer des dégâts d'infiltration : nous faisons un diagnostic gratuit.</p>"
-        },
-        {
-          "icon": "fa-solid fa-landmark",
-          "question": "Faut-il une autorisation de la mairie pour refaire sa façade ?",
-          "answerHtml": "<p>Oui, une déclaration préalable de travaux (DP) est souvent nécessaire, surtout si l'aspect extérieur change (couleur, enduit, ouvertures). Les règles dépendent de votre commune (PLU, secteur protégé, périmètre d'un monument historique) : le plus sûr est de se renseigner en mairie avant de choisir la teinte. <strong>Nous pouvons vous accompagner dans la constitution du dossier.</strong></p>",
-          "accent": true
-        },
-        {
-          "icon": "fa-solid fa-stairs",
-          "question": "Faut-il un échafaudage, et est-il compris dans le prix ?",
-          "answerHtml": "<p>Dès que la façade dépasse la hauteur d'une échelle (rez-de-chaussée haut, étage, pignon), un échafaudage est nécessaire pour travailler en sécurité. Il est <strong>chiffré dans le devis</strong> (montage, location, démontage) : comptez en général 8 à 15&nbsp;€ par m² de façade. Pour un petit chantier de plain-pied, il peut ne pas être nécessaire.</p>"
-        },
-        {
-          "icon": "fa-solid fa-hand-holding-dollar",
-          "question": "Existe-t-il des aides pour financer un ravalement ?",
-          "answerHtml": "<p>Un ravalement classique (enduit, peinture) n'est en général <strong>pas éligible</strong> aux aides à la rénovation énergétique comme MaPrimeRénov'. Certaines communes ou intercommunalités proposent des aides ou des obligations de ravalement dans des secteurs précis (centres anciens) : renseignez-vous auprès de votre mairie.</p>\n<p>Côté fiscalité, la TVA réduite à 10&nbsp;% s'applique pour un logement de plus de 2 ans.</p>",
-          "accent": true
-        },
-        {
-          "icon": "fa-solid fa-receipt",
-          "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-          "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La visite technique et le diagnostic de la façade</li>\n  <li>La protection des fenêtres, sols et abords</li>\n  <li>Les réparations (fissures, éclats, enduit)</li>\n  <li>L'enduit et les couches de finition ou la peinture de façade</li>\n  <li>Le nettoyage complet du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
-        },
-        {
-          "icon": "fa-solid fa-shield-halved",
-          "question": "Vos travaux de ravalement sont-ils garantis ?",
-          "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle et une garantie décennale pour les travaux qui en relèvent. Nos attestations d'assurance sont à jour et disponibles sur simple demande, avant le début du chantier. Les finitions et corrections éventuelles sont couvertes par la garantie de parfait achèvement (1 an).</p>",
-          "accent": true
-        },
-        {
-          "icon": "fa-solid fa-trowel",
-          "question": "Quels matériaux et finitions utilisez-vous (enduit, peinture) ?",
-          "answerHtml": "<p>Nous adaptons les produits au support (enduit, brique, pierre, façade déjà peinte) et à l'exposition (pluie, soleil). Après diagnostic : préparation compatible, réparations à l'enduit, puis finition durable (peinture microporeuse ou siloxane, enduit gratté ou taloché). L'objectif : protéger la façade et obtenir une finition propre qui tient dans le temps.</p>"
-        }
-      ]
-    },
-    {
-      "type": "contact"
-    }
-  ]
+    "intro": "Le prix d'un ravalement de façade dépend de plusieurs facteurs. Découvrez comment est calculé votre devis personnalisé."
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : Prix & Devis Ravalement",
+    "items": [
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix d'un ravalement de façade au m² en Charente ?",
+        "answerHtml": "<p>En Charente, un ravalement de façade coûte en général entre <strong>25&nbsp;€ et 90&nbsp;€ par m²</strong> selon ce qu'il faut faire :</p>\n<ul>\n  <li><strong>Nettoyage + peinture</strong> (façade saine) : 25 à 40&nbsp;€/m²</li>\n  <li><strong>Réfection d'enduit</strong> (réparations + enduit + finition) : 40 à 65&nbsp;€/m²</li>\n  <li><strong>Ravalement complet</strong> (enduit, peinture haute performance, zinguerie) : 60 à 90&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 100&nbsp;m² de façade avec réparations, enduit et peinture, comptez environ 4&nbsp;500 à 7&nbsp;000&nbsp;€ TTC, échafaudage compris. Seule une visite permet de chiffrer précisément : le devis est gratuit.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Combien de temps dure un ravalement de façade ?",
+        "answerHtml": "<p>La durée dépend de la surface et de l'état de la façade :</p>\n<ul>\n  <li>Nettoyage + peinture : 3 à 5 jours</li>\n  <li>Réparations + enduit + peinture : 1 à 2 semaines</li>\n  <li>Rénovation complète : 2 à 3 semaines</li>\n</ul>\n<p>Nous planifions selon la météo (pas d'enduit ni de peinture sous la pluie ou au gel) et nettoyons le chantier chaque soir.</p>"
+      },
+      {
+        "icon": "fa-solid fa-calendar-check",
+        "question": "Quand faut-il faire un ravalement de façade ?",
+        "answerHtml": "<p>Plusieurs signes montrent qu'il est temps d'agir :</p>\n<ul>\n  <li><strong>Fissures</strong> visibles : elles laissent entrer l'eau dans le mur</li>\n  <li><strong>Enduit</strong> qui s'écaille ou sonne creux</li>\n  <li><strong>Peinture</strong> qui farine, s'écaille ou se décolore</li>\n  <li><strong>Humidité</strong>, moisissures ou mousses installées</li>\n</ul>\n<p>Une façade se rénove en général tous les 10 à 15 ans. Intervenir tôt coûte moins cher que réparer des dégâts d'infiltration : nous faisons un diagnostic gratuit.</p>"
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "question": "Faut-il une autorisation de la mairie pour refaire sa façade ?",
+        "answerHtml": "<p>Oui, une déclaration préalable de travaux (DP) est souvent nécessaire, surtout si l'aspect extérieur change (couleur, enduit, ouvertures). Les règles dépendent de votre commune (PLU, secteur protégé, périmètre d'un monument historique) : le plus sûr est de se renseigner en mairie avant de choisir la teinte. <strong>Nous pouvons vous accompagner dans la constitution du dossier.</strong></p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-stairs",
+        "question": "Faut-il un échafaudage, et est-il compris dans le prix ?",
+        "answerHtml": "<p>Dès que la façade dépasse la hauteur d'une échelle (rez-de-chaussée haut, étage, pignon), un échafaudage est nécessaire pour travailler en sécurité. Il est <strong>chiffré dans le devis</strong> (montage, location, démontage) : comptez en général 8 à 15&nbsp;€ par m² de façade. Pour un petit chantier de plain-pied, il peut ne pas être nécessaire.</p>"
+      },
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "question": "Existe-t-il des aides pour financer un ravalement ?",
+        "answerHtml": "<p>Un ravalement classique (enduit, peinture) n'est en général <strong>pas éligible</strong> aux aides à la rénovation énergétique comme MaPrimeRénov'. Certaines communes ou intercommunalités proposent des aides ou des obligations de ravalement dans des secteurs précis (centres anciens) : renseignez-vous auprès de votre mairie.</p>\n<p>Côté fiscalité, la TVA réduite à 10&nbsp;% s'applique pour un logement de plus de 2 ans.</p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-receipt",
+        "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
+        "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La visite technique et le diagnostic de la façade</li>\n  <li>La protection des fenêtres, sols et abords</li>\n  <li>Les réparations (fissures, éclats, enduit)</li>\n  <li>L'enduit et les couches de finition ou la peinture de façade</li>\n  <li>Le nettoyage complet du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "question": "Vos travaux de ravalement sont-ils garantis ?",
+        "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle et une garantie décennale pour les travaux qui en relèvent. Nos attestations d'assurance sont à jour et disponibles sur simple demande, avant le début du chantier. Les finitions et corrections éventuelles sont couvertes par la garantie de parfait achèvement (1 an).</p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-trowel",
+        "question": "Quels matériaux et finitions utilisez-vous (enduit, peinture) ?",
+        "answerHtml": "<p>Nous adaptons les produits au support (enduit, brique, pierre, façade déjà peinte) et à l'exposition (pluie, soleil). Après diagnostic : préparation compatible, réparations à l'enduit, puis finition durable (peinture microporeuse ou siloxane, enduit gratté ou taloché). L'objectif : protéger la façade et obtenir une finition propre qui tient dans le temps.</p>"
+      }
+    ],
+    "intro": "Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de ravalement de façade."
+  },
+  "contact": {
+    "serviceLabel": "de ravalement de façade"
+  }
 }

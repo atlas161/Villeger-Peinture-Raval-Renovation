@@ -2,7 +2,6 @@
 /**
  * Blocs HTML communs aux pages de service, stockés dans includes/partials/ :
  *  - contact-cta.html : bande #contact qui renvoie vers contact.html?service=… (clé "contact" du page.json)
- *  - why-artisan.html : section « Pourquoi nous choisir »
  */
 const fs = require('fs');
 const path = require('path');

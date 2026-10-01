@@ -12,7 +12,7 @@ Dernière mise à jour complète : 2026-09-30. L'historique de ce qui a changé 
 - Netlify exécute `npm run build` puis publie le dossier **`dist/`** (`netlify.toml` : `publish = "dist"`).
 - Formulaires : Cloudflare Turnstile (captcha) → fonction Netlify `/api/contact` → Netlify Forms.
 - Mesure d'audience : Google Tag Manager + Microsoft Clarity, **uniquement après « Tout accepter »**.
-- Blog : Markdown dans `content/blog/` édité via **Pages CMS** (`.pages.yml`).
+- Contenu éditable via **Pages CMS** (`.pages.yml`, généré depuis `scripts/cms-config.js`) : blog, pages de service, tarifs, À propos, Réalisations, blocs communs — guide client : [`../cms.md`](../cms.md).
 
 ## 2. Chaîne de build
 
@@ -84,19 +84,28 @@ Pages : `ravalement-facade-angouleme`, `nettoyage-facade-angouleme`, `nettoyage-
 | Élément | Où |
 |---|---|
 | Gabarit commun (head, en-tête, scripts, pied de page) | `scripts/templates/service-page.html` |
-| Composants (hero, problème, solution, zone, autres services, FAQ, liens associés) | `scripts/lib/service-sections.js` |
-| Formulaire de contact + « Pourquoi nous choisir » communs | `includes/partials/*.html` (`scripts/lib/partials.js`) |
-| Données : méta, JSON-LD, sections, options du formulaire | `content/pages/<slug>/page.json` |
-| Sections propres à la page en HTML brut (réalisation, tarifs, encadré ITE…) | `content/pages/<slug>/*.html` (type `raw`) |
+| Composants (hero, réalisation, problème, solution, pourquoi nous, zone, autres services, tarifs, FAQ, liens associés) | `scripts/lib/service-sections.js` |
+| Assemblage du modèle de page depuis les fichiers de contenu | `scripts/lib/content-loader.js` |
+| Photos (variantes WebP existantes **ou** Netlify Image CDN pour les photos importées) | `scripts/lib/media.js` |
+| Textes et photos de la page — **édités dans Pages CMS** | `content/pages/<slug>/page.json` |
+| Données techniques (URL, JSON-LD, style propre à la page) — hors CMS | `content/pages/<slug>/meta.json` |
+| Blocs communs : services, communes desservies, « pourquoi nous choisir » | `content/shared/*.json` |
+| Prix au m² de chaque prestation (une seule saisie) | `content/tarifs.json` |
+| Bande « devis » commune | `includes/partials/contact-cta.html` |
 
-- **Modifier un texte** : éditer `page.json` (ou le fragment HTML) puis `npm run build:pages`. `npm test` échoue si
-  une page n'est pas à jour.
-- **Ajouter une page (service ou ville)** : copier un dossier de `content/pages/`, adapter `page.json` (`file`,
-  `head`, `ld`, `contact`, `sections`, `related`), `npm run build:pages`, puis l'ajouter au **sitemap**, au **menu**
-  (`sync-header.js`) et aux liens internes utiles.
-- Sections disponibles (liste `sections` du `page.json`) : `hero`, `problem`, `solution`, `zone`, `others`, `faq`,
-  `why`, `contact`, `raw`. Leur ordre et leur présence sont libres.
-- Le JSON-LD (entreprise, service, fil d'Ariane, FAQ) est **généré** depuis `page.json` (`ld`). La partie
+- **Modifier un texte / une photo / un prix** : dans Pages CMS (voir [`../cms.md`](../cms.md)) ou en éditant le JSON, puis
+  `npm run build:pages`. `npm test` échoue si une page n'est pas à jour. Convention : un champ `*Html` contient du HTML
+  (éditeur riche), tous les autres sont du texte brut échappé à l'affichage.
+- **Photos** : le client importe n'importe quelle photo dans `media/uploads/` (Pages CMS). Les photos `xxx-900w.webp`
+  historiques gardent leur `srcset` ; les autres passent par `/.netlify/images?url=…&w=…&fm=webp` (pas de redimensionnement
+  à la main, pas de dépendance). En local (`npm run dev`) ces photos ne s'affichent pas : seul Netlify les sert.
+- **Ajouter une page (service ou ville)** : copier un dossier de `content/pages/`, adapter `page.json` et `meta.json`
+  (`file`, `prestation`, `ld`…), ajouter le service dans `content/shared/services.json` et `content/tarifs.json`, déclarer
+  la page dans `scripts/cms-config.js` (automatique pour les services de `services.json`), `npm run build:cms`,
+  `npm run build:pages`, puis l'ajouter au **sitemap**, au **menu** (`sync-header.js`) et aux liens internes utiles.
+- Ordre des sections (fixe, dans `content-loader.js`) : hero, réalisation (si présente), problème, solution, encadré ITE
+  (isolation), pourquoi nous choisir, zone, autres services, tarifs, FAQ, bande de contact.
+- Le JSON-LD (entreprise, service, fil d'Ariane, FAQ) est **généré** : `meta.json` (`ld`) + la FAQ affichée. La partie
   « entreprise » commune est dans `build-pages.js` (adresse, horaires, `sameAs`…).
 - Attributs `data-m-limit` / `data-m-collapse` : voir §8 (condensation mobile).
 
@@ -216,7 +225,10 @@ internes, URLs du sitemap, contenu de `dist/`), `pages` (2 : pages de service à
 ## 12. Recettes rapides
 | Je veux… | Je fais… |
 |---|---|
-| Changer le texte/FAQ d'une page de service | éditer `content/pages/<slug>/page.json` → `npm run build:pages` |
+| Changer le texte/FAQ/photos d'une page de service | Pages CMS (ou `content/pages/<slug>/page.json`) → `npm run build:pages` |
+| Changer un prix au m² | Pages CMS « Tarifs » (ou `content/tarifs.json`) + la question « prix » de la FAQ (un test signale l'écart) |
+| Ajouter un chantier avant/après | Pages CMS « Réalisations » (ou `content/realisations.json`) → `npm run build:content` |
+| Modifier la configuration de Pages CMS | `scripts/cms-config.js` → `npm run build:cms` (ne jamais éditer `.pages.yml`) |
 | Ajouter un article | créer/éditer `content/blog/*.md` (ou via Pages CMS) → `npm run build:blog` |
 | Changer un lien du menu | éditer `scripts/sync-header.js` → `npm run sync:header` + `npm run build:pages` |
 | Changer le téléphone/adresse | pied de page : `includes/footer.html` ; JSON-LD : `scripts/build-pages.js` (`BUSINESS`) et JSON-LD de `index.html` ; `llms.txt`, `humans.txt` |

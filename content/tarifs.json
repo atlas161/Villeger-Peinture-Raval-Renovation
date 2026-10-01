@@ -1,0 +1,119 @@
+{
+  "tarifs": [
+    {
+      "key": "ravalement",
+      "label": "Ravalement de façade",
+      "boxTitle": "Prix au m² selon le type d'intervention",
+      "cards": [
+        {
+          "title": "Nettoyage + Peinture",
+          "price": "25-40 €/m²",
+          "desc": "Façade en bon état, rafraîchissement"
+        },
+        {
+          "title": "Réfection enduit",
+          "price": "40-65 €/m²",
+          "desc": "Réparations + nouvel enduit + peinture"
+        },
+        {
+          "title": "Ravalement complet",
+          "price": "60-90 €/m²",
+          "desc": "Enduit, peinture haute performance, zinguerie"
+        }
+      ],
+      "note": "Prix TTC indicatifs pour un particulier en Charente, échafaudage en plus selon la hauteur (compter 8 à 15 €/m² de façade). Chaque projet est unique : demandez votre devis gratuit."
+    },
+    {
+      "key": "nettoyage-facade",
+      "label": "Nettoyage de façade",
+      "boxTitle": "Prix au m² selon le traitement",
+      "cards": [
+        {
+          "title": "Démoussage + traitement",
+          "price": "8-15 €/m²",
+          "desc": "Façade encrassée, mousses et algues"
+        },
+        {
+          "title": "Hydro-gommage",
+          "price": "15-30 €/m²",
+          "desc": "Pierre, brique ou enduit : nettoyage en profondeur"
+        },
+        {
+          "title": "Protection hydrofuge",
+          "price": "+5-8 €/m²",
+          "desc": "En complément, pour retarder le retour des mousses"
+        }
+      ],
+      "note": "Prix TTC indicatifs pour un particulier en Charente, hors échafaudage. Chaque projet est unique : demandez votre devis gratuit pour un prix précis."
+    },
+    {
+      "key": "toiture",
+      "label": "Nettoyage de toiture",
+      "boxTitle": "Prix au m² selon le traitement",
+      "cards": [
+        {
+          "title": "Démoussage",
+          "price": "8-12 €/m²",
+          "desc": "Toiture en bon état, mousses et lichens"
+        },
+        {
+          "title": "Démoussage + anti-mousse",
+          "price": "12-18 €/m²",
+          "desc": "Traitement qui limite la repousse"
+        },
+        {
+          "title": "Avec hydrofuge",
+          "price": "18-25 €/m²",
+          "desc": "Protection des tuiles contre l'humidité"
+        }
+      ],
+      "note": "Prix TTC indicatifs pour un particulier en Charente, hors échafaudage. Chaque projet est unique : demandez votre devis gratuit pour un prix précis."
+    },
+    {
+      "key": "peinture",
+      "label": "Peinture extérieure",
+      "boxTitle": "Prix au m² selon la préparation",
+      "cards": [
+        {
+          "title": "Rafraîchissement",
+          "price": "20-30 €/m²",
+          "desc": "Façade saine : nettoyage, sous-couche, 2 couches"
+        },
+        {
+          "title": "Rénovation avec préparation",
+          "price": "30-45 €/m²",
+          "desc": "Réparations légères, fixateur, 2 couches"
+        },
+        {
+          "title": "Haute performance",
+          "price": "45-65 €/m²",
+          "desc": "Traitement des fissures, peinture siloxane"
+        }
+      ],
+      "note": "Prix TTC indicatifs pour un particulier en Charente, hors échafaudage. Chaque projet est unique : demandez votre devis gratuit pour un prix précis."
+    },
+    {
+      "key": "isolation",
+      "label": "Isolation intérieure",
+      "boxTitle": "Prix au m² selon la zone isolée",
+      "cards": [
+        {
+          "title": "Combles perdus",
+          "price": "18-30 €/m²",
+          "desc": "Isolant soufflé, la solution la plus rentable"
+        },
+        {
+          "title": "Combles aménagés",
+          "price": "40-65 €/m²",
+          "desc": "Sous rampants, laine + parement"
+        },
+        {
+          "title": "Murs par l'intérieur",
+          "price": "45-70 €/m²",
+          "desc": "Doublage isolant des murs froids"
+        }
+      ],
+      "note": "Prix TTC indicatifs pour un particulier en Charente (TVA à 5,5 % possible sous conditions pour l'isolation). Devis gratuit après visite."
+    }
+  ]
+}

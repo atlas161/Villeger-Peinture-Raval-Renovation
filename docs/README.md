@@ -18,6 +18,7 @@ Ce dossier est la mémoire du projet : on y retrouve ce qui a été fait, pourqu
 | Fichier | Contenu | Statut |
 |---|---|---|
 | [`roadmap.md`](./roadmap.md) | Reste à faire, priorisé | **à mettre à jour en fin de session** |
+| [`cms.md`](./cms.md) | Guide Pages CMS : ce qu'on modifie, recettes (chantier avant/après, portrait, prix, FAQ), notes développeur | à jour |
 | [`design/guide-direction-artistique.html`](./design/guide-direction-artistique.html) · [`design/direction-artistique.md`](./design/direction-artistique.md) | Guide de style vivant (couleurs, typo, boutons, nav, cartes, formulaire, footer) + audit pages service/zone et propositions | **à mettre à jour avec chaque composant** |
 | [`design/tokens.md`](./design/tokens.md) | Échelles du design system : 13 tailles de texte, 4 ombres, couches `z-index`, points de rupture ; règle d'usage vérifiée par `npm test` | **source de vérité des valeurs** |
 | [`design/logo-b2.md`](./design/logo-b2.md) | Logo B2 retenu (non déployé) : spec, code prêt à coller, historique des variantes, maquette | prêt à appliquer |

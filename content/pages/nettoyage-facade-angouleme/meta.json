@@ -1,0 +1,191 @@
+{
+  "file": "nettoyage-facade-angouleme.html",
+  "prestation": "nettoyage-facade",
+  "breadcrumbName": "Nettoyage de Façade Angoulême",
+  "geoPlacename": "Angoulême, Charente",
+  "twitterImageAlt": "Nettoyage de façade professionnelle à Angoulême par VPRR",
+  "ogImage": "https://vprr.fr/media/og-nettoyage-facade.webp",
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "businessCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de nettoyage de façade",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Nettoyage de façade par hydro-gommage",
+            "description": "Nettoyage en douceur des façades en pierre, brique ou enduit à Angoulême",
+            "areaServed": "Angoulême, Charente (16)"
+          }
+        }
+      ]
+    },
+    "serviceType": "Nettoyage de façade",
+    "serviceAreaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Nettoyage de façade à Angoulême",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Hydro-gommage de façade",
+            "description": "Technique douce pour nettoyer pierre, brique et enduit sans abîmer"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Démoussage de façade",
+            "description": "Élimination des mousses, lichens et pollution atmosphérique"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Traitement anti-pollution",
+            "description": "Protection longue durée contre les salissures et l'humidité"
+          }
+        }
+      ]
+    }
+  },
+  "extraStyle": ".process-step {\n  position: relative;\n}\n\n.process-step h3 {\n  margin-bottom: var(--space-sm);\n}\n\n.zone-tag {\n  padding: var(--space-sm) var(--space-lg);\n  border: 1px solid var(--color-border);\n}",
+  "ogExtra": [
+    "<meta property=\"og:image:width\" content=\"1200\">",
+    "<meta property=\"og:image:height\" content=\"630\">",
+    "<meta property=\"og:image:alt\" content=\"Nettoyage de façade professionnelle à Angoulême par VPRR\">"
+  ],
+  "twitterExtra": [
+    "<meta name=\"twitter:site\" content=\"@VPRR_Angouleme\">",
+    "<meta name=\"twitter:creator\" content=\"@VPRR_Angouleme\">"
+  ],
+  "whyAlt": true
+}

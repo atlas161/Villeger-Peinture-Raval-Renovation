@@ -1,0 +1,77 @@
+{
+  "seo": {
+    "title": "À propos de VPRR | Artisan rénovation Angoulême",
+    "description": "VPRR, artisan de rénovation à L’Isle-d’Espagnac (Angoulême) : ravalement, peinture, nettoyage de façade et de toiture, isolation intérieure. Plus de 15 ans d’expérience en Charente."
+  },
+  "intro": {
+    "eyebrow": "À propos",
+    "title": "VPRR, artisan de la rénovation à Angoulême",
+    "text": "Villéger Peinture Raval Rénovation est une entreprise locale basée à L’Isle-d’Espagnac, dirigée par Stéphane Villéger. Plus de 15 ans d’expérience au service des maisons et des bâtiments charentais, du nettoyage à la rénovation complète."
+  },
+  "facts": [
+    {
+      "label": "Dirigeant",
+      "value": "Stéphane Villéger"
+    },
+    {
+      "label": "Siège",
+      "value": "136 Avenue de la République\n16340 L’Isle-d’Espagnac"
+    },
+    {
+      "label": "Zone d’intervention",
+      "value": "Angoulême et toute la Charente (16), rayon d’environ 50 km"
+    },
+    {
+      "label": "Horaires",
+      "value": "Lun–ven 9 h–17 h\nSam 9 h–12 h"
+    }
+  ],
+  "owner": {
+    "photo": "",
+    "photoAlt": "",
+    "name": "Stéphane Villéger",
+    "role": "Gérant",
+    "textHtml": ""
+  },
+  "metier": {
+    "eyebrow": "Notre métier",
+    "title": "Un seul artisan pour tous vos travaux",
+    "intro": "Façade, toiture, peinture, isolation : une équipe, un interlocuteur, un devis."
+  },
+  "engagements": {
+    "eyebrow": "Nos engagements",
+    "title": "Ce que vous pouvez attendre de nous",
+    "items": [
+      {
+        "icon": "fa-solid fa-award",
+        "title": "Artisan local",
+        "text": "Basés à L’Isle-d’Espagnac, nous connaissons les bâtiments charentais : pierre, enduits anciens, toitures de tuiles."
+      },
+      {
+        "icon": "fa-solid fa-file-contract",
+        "title": "Devis gratuit et transparent",
+        "text": "Une visite, puis un devis détaillé sous 48 h. Aucune obligation, aucun frais caché."
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "title": "Garantie décennale & RC Pro",
+        "text": "Nos travaux sont couverts par une assurance décennale et une responsabilité civile professionnelle."
+      },
+      {
+        "icon": "fa-solid fa-broom",
+        "title": "Chantier propre",
+        "text": "Nous nettoyons et rangeons le chantier chaque soir : votre confort est notre priorité."
+      },
+      {
+        "icon": "fa-solid fa-layer-group",
+        "title": "Produits professionnels",
+        "text": "Nous travaillons avec Weber, PRB et PAREX, références de l’enduit et de la peinture de façade."
+      },
+      {
+        "icon": "fa-solid fa-handshake",
+        "title": "Accompagnement",
+        "text": "Nous vous aidons dans vos démarches de déclaration préalable de travaux si nécessaire."
+      }
+    ]
+  }
+}

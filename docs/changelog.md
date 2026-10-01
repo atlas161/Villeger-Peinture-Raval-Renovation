@@ -17,6 +17,15 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-03 (suite) — Pages CMS branché sur tout le contenu
+
+- **Tout est éditable dans Pages CMS** ([`cms.md`](./cms.md)) : pages de service (texte, FAQ, photos avant/après), **tarifs** (`content/tarifs.json`, une seule saisie pour les 5 pages), **À propos** (dont portrait de Stéphane Villéger : la section s'affiche dès que photo + texte sont remplis), **Réalisations** (une carte avant/après par chantier : photos, catégorie, commune, durée, brouillon), textes communs (communes, services, « pourquoi nous choisir »), blog.
+- **Données restructurées** : `content/pages/<slug>/page.json` (texte/photos, CMS) + `meta.json` (URL, JSON-LD, hors CMS) ; fragments HTML `realisation/tarifs/why/ite-iti` remplacés par des générateurs (`scripts/lib/service-sections.js`) ; « autres services » et liens associés dérivés de `content/shared/services.json` ; communes et cartes « pourquoi nous choisir » partagées (plus de copie ×5). `a-propos.html` / `realisations.html` : zone `cms:begin…cms:end` générée par `scripts/build-content-pages.js` (`npm run build:content`, intégré à `npm run build`).
+- **Photos sans retouche** : toute photo importée (JPG/PNG/WebP, téléphone) est servie redimensionnée en WebP par **Netlify Image CDN** ; largeur/hauteur lues dans le fichier (orientation EXIF comprise) pour éviter les décalages. Les photos WebP historiques gardent leur `srcset`. Dossier d'import : `media/uploads/`.
+- **UX de l'éditeur** : menu regroupé (Réalisations · Pages de service · Tarifs · À propos · Textes communs · Blog), blocs numérotés dans l'ordre de la page, la photo « avant » en premier champ, listes d'icônes en français, listes repliables avec titre, descriptions d'aide, limites de longueur Google.
+- **Garde-fous** : `.pages.yml` est généré depuis `scripts/cms-config.js` (`npm run build:cms`) ; nouveau `tests/cms.test.js` (16 tests) — `.pages.yml` à jour, **chaque clé de chaque JSON déclarée** (sinon perdue à la sauvegarde), photos citées existantes, prix du bloc tarifs retrouvés dans la FAQ. Tests : 52/52.
+- Effets de bord assumés : balises Open Graph / Twitter des pages de service dérivées du titre et de la description Google ; « autres services » en casse uniforme ; carte « Isolation » ajoutée ; aperçu des photos importées indisponible en local (`npm run dev`), seul Netlify les sert.
+
 ## 2026-10-03 — Cohérence : une seule bande d'appel par page, plus de doublons de CTA
 
 Règle (voir [`design/direction-artistique.md`](./design/direction-artistique.md) §G) : **un appel en haut (hero ou en-tête) + une bande `.contact-cta` en bas de page, jamais d'autre bouton « devis »/téléphone entre les deux.**

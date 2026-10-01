@@ -1,0 +1,57 @@
+{
+  "seo": {
+    "title": "Réalisations avant / après en Charente | VPRR",
+    "description": "Avant / après de nos chantiers en Charente : ravalement de façade, nettoyage de façade, démoussage de toiture et peinture extérieure par VPRR, artisan à Angoulême."
+  },
+  "intro": {
+    "eyebrow": "Réalisations",
+    "title": "Nos chantiers en Charente : avant / après",
+    "text": "Ravalement, nettoyage, démoussage, peinture : des résultats concrets, chantier après chantier."
+  },
+  "chantiers": [
+    {
+      "before": "/media/services/ravalement_facade/ravalement_avant-900w.webp",
+      "after": "/media/services/ravalement_facade/ravalement_apres-900w.webp",
+      "title": "Ravalement de façade",
+      "category": "facade",
+      "service": "ravalement-facade-angouleme",
+      "commune": "",
+      "duration": "",
+      "altBefore": "Façade abîmée avant ravalement",
+      "altAfter": "Façade rénovée après ravalement"
+    },
+    {
+      "before": "/media/services/nettoyage_facade/facade_avant-900w.webp",
+      "after": "/media/services/nettoyage_facade/facade_apres-900w.webp",
+      "title": "Nettoyage de façade",
+      "category": "facade",
+      "service": "nettoyage-facade-angouleme",
+      "commune": "",
+      "duration": "",
+      "altBefore": "Façade avant nettoyage par hydrogommage",
+      "altAfter": "Façade propre après nettoyage"
+    },
+    {
+      "before": "/media/services/nettoyag_toiture/toiture_avant-900w.webp",
+      "after": "/media/services/nettoyag_toiture/toiture_apres-900w.webp",
+      "title": "Nettoyage de toiture",
+      "category": "toiture",
+      "service": "nettoyage-toiture-angouleme",
+      "commune": "",
+      "duration": "",
+      "altBefore": "Toiture mousseuse avant démoussage",
+      "altAfter": "Toiture propre après démoussage"
+    },
+    {
+      "before": "/media/services/peinture_exterieur/peinture_avant-900w.webp",
+      "after": "/media/services/peinture_exterieur/peinture_apres-900w.webp",
+      "title": "Peinture extérieure",
+      "category": "peinture",
+      "service": "peinture-exterieure-charente",
+      "commune": "",
+      "duration": "",
+      "altBefore": "Façade avant peinture extérieure",
+      "altAfter": "Façade repeinte après peinture extérieure"
+    }
+  ]
+}
