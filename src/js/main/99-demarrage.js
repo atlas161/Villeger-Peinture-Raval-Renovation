@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordions();
   initFaqPageControls();
   initReviewsWidget();
-  initZoneMap();
   initMobileCtaBar();
   initFooterYear();
 });

@@ -46,7 +46,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
   Corriger pour ne mettre à jour `lastmod` que si le contenu de l'article a changé.
 - [ ] **Google Search Console** : renvoyer le sitemap, inspecter quelques URLs (`/blog/<slug>` doit montrer la redirection
   301 vers `.html`), surveiller « Pages » et « Expérience » (Core Web Vitals) sur 28 jours.
-- [x] *(fait, à déployer ; reste : liens en ligne dans les paragraphes, carte Leaflet)* **Accessibilité résiduelle** (audit du 29/09) : ~9 cibles tactiles < 40 px et ~8 textes < 13 px sur mobile ; images sans
+- [x] *(fait, à déployer ; reste : liens en ligne dans les paragraphes ; la carte Leaflet a été supprimée le 2026-10-02)* **Accessibilité résiduelle** (audit du 29/09) : ~9 cibles tactiles < 40 px et ~8 textes < 13 px sur mobile ; images sans
   `width`/`height` (≈ 4 par page de service, 9 sur l'accueil) ; vérifier le contraste des cartes d'avis.
 
 - [ ] **A9 — Faire valider les tarifs par le client** : fourchettes au m² du tableau de [`seo/decisions.md`](./seo/decisions.md) (estimations de marché charentais, pas des prix du client). Ajuster d'un seul endroit puis propager.
@@ -85,7 +85,7 @@ Règle Google à connaître : des avis d'une entreprise affichés **sur son prop
 2. ~~**Tokeniser le reste du design system**~~ — **fait le 2026-10-02** : 13 tailles de texte, 4 ombres, couches `z-index` nommées, points de rupture alignés par paires ; vérifié par `npm test` (`design-tokens`). Voir [`design/tokens.md`](./design/tokens.md) et le bilan avant/après dans [`design/direction-artistique.md`](./design/direction-artistique.md) §F. Reste : rayons (`border-radius`) et espacements en dur résiduels.
 3. **Durcir la CSP** — retirer `'unsafe-inline'` de `script-src` : externaliser les 2 scripts inline de `index.html` et les
    attributs `onclick` restants (puis évaluer `style-src`). Tester toutes les pages avec la CSP en `Report-Only` d'abord.
-4. ~~Consentement des tiers~~ — carte OpenStreetMap à la demande (fait le 2026-10-01) ; **Vimeo et Elfsight/Instagram : le client a décidé de ne pas les mettre derrière un clic (2026-10-03)**.
+4. ~~Consentement des tiers~~ — carte de zone passée en SVG maison, plus aucun tiers (2026-10-02) ; **Vimeo et Elfsight/Instagram : le client a décidé de ne pas les mettre derrière un clic (2026-10-03)**.
 5. **URLs sans `.html`** — décision SEO : impacte canonicals, sitemap, JSON-LD, liens internes et redirections 301 (~50
    URL à migrer d'un coup) ; à faire seulement si le gain est jugé utile.
 6. **Condensation mobile, suite** (non demandée mais possible) : carrousel des avis de l'accueil, bloc « zone » de

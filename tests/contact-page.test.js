@@ -53,9 +53,3 @@ test('contact.html est dans le sitemap et son titre ≤ 60 caractères', () => {
   assert.ok(title.length <= 60, `titre trop long (${title.length})`);
 });
 
-test("la page zone ne charge aucune tuile OpenStreetMap avant le clic (carte à la demande)", () => {
-  const html = read('zone-desservie-charente.html');
-  assert.match(html, /id="zone-map"[^>]*data-zone-lazy="1"/);
-  assert.match(html, /id="zone-map-wrap"[^>]*hidden/);
-  assert.ok(!/leaflet/i.test(read('index.html')), "l'accueil ne doit plus charger Leaflet");
-});

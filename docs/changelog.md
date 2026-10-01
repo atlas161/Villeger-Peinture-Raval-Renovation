@@ -17,6 +17,11 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-02 (suite) — Carte de zone : Google Maps
+
+- **Carte Google Maps classique** sur l'accueil et la page zone (centrée sur la Charente), chargée d'emblée (sans clic), mêmes paramètres sur les deux pages. CSP `frame-src` et mentions légales mises à jour.
+- **Supprimés** : Leaflet, OpenStreetMap, `data/charente.geojson`, générateurs de cartes SVG, CSS associé.
+
 ## 2026-10-02 — Bandeau avis Google et bande d'appel « devis » refaits
 
 - **Bandeau « Laisser un avis Google »** (accueil, `contact.css`) : carte claire et discrète (badge Google, 5 étoiles, bouton en contour) pour ne pas concurrencer le CTA devis juste en dessous. Commit `cffd62e`.

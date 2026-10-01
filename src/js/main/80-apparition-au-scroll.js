@@ -5,7 +5,7 @@
 
 const initScrollReveal = () => {
   const revealElements = document.querySelectorAll(
-    '.service-card, .faq-item, .contact-panel, .zone-map-container, .zone-address, .zone-cities, .zone-note'
+    '.service-card, .faq-item, .contact-panel, .zone-map-card, .zone-address, .zone-cities, .zone-note'
   );
 
   if (!('IntersectionObserver' in window) || prefersReducedMotion()) return;

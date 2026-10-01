@@ -72,6 +72,12 @@
   display: none;
 }
 
+.zone-explorer {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
 .zone-sectors {
   display: grid;
   gap: var(--space-lg);
@@ -114,40 +120,6 @@
   color: var(--color-text-muted);
 }
 
-.zone-map-block {
-  display: grid;
-  justify-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-xl);
-  background: var(--color-surface-alt);
-  border-radius: var(--radius-lg);
-  text-align: center;
-}
-
-.zone-map-hint {
-  margin: 0;
-  font-size: var(--text-sm);
-  color: var(--color-text-light);
-}
-
-.zone-map-wrap {
-  width: 100%;
-  margin-top: var(--space-md);
-}
-
-.zone-map-wrap[hidden] {
-  display: none;
-}
-
-.zone-page .zone-map-container {
-  height: clamp(320px, 45vw, 460px);
-  aspect-ratio: auto;
-  min-height: 0;
-  animation: none;
-  opacity: 1;
-  transform: none;
-}
-
 .zone-page .zone-actions {
   display: flex;
   justify-content: center;
@@ -160,15 +132,18 @@
     align-items: stretch;
   }
 
-  .zone-sectors {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
+}
+
+
+@media (min-width: 992px) {
+  .zone-explorer {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .zone-explorer .zone-map-card {
+    position: sticky;
+    top: calc(var(--space-4xl) + var(--space-md));
   }
 }
 
-@media (max-width: 639px) {
-  .zs-label,
-  .zs-radius-label {
-    font-size: 4px;
-  }
-}

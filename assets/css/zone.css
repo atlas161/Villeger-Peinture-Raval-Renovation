@@ -37,258 +37,40 @@
   line-height: 1.6;
 }
 
-/* Container de la carte */
-
 /* ▸ 02-carte.css */
-.zone-map-container {
-  background: var(--color-white);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-border-light);
+/* ===================================================================
+   CARTE DE LA ZONE (accueil + page zone) : Google Maps intégré (iframe)
+   =================================================================== */
+.zone-map-card {
+  width: 100%;
   overflow: hidden;
-  position: relative;
-  aspect-ratio: 16 / 9;
-  min-height: clamp(220px, 56vw, 320px);
-  align-self: stretch;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
 }
 
-.zone-map {
+.zone-map-embed {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.zone-map-embed iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: inherit;
-  z-index: 1;
-  position: relative;
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
+  border: 0;
+  /* Fond de carte désaturé et réchauffé pour rester dans la palette du site */
+  filter: grayscale(1) sepia(0.28) contrast(0.95) brightness(1.03);
 }
 
-@media (min-width: 768px) {
-  /* Carte pleine largeur, hauteur fixe raisonnable (plus d'étirement sur la colonne d'infos). */
-  .zone-map-container {
-    aspect-ratio: auto;
-    min-height: unset;
-    height: clamp(340px, 38vw, 460px);
-  }
-
-  .zone-map {
-    min-height: 100%;
+@media (min-width: 992px) {
+  .zone-explorer .zone-map-card {
+    position: sticky;
+    top: calc(var(--space-4xl) + var(--space-md));
   }
 }
-
-/* États de chargement de la carte */
-.zone-map.map-loading {
-  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-border-light) 100%);
-}
-
-.zone-map.map-loading::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  margin: -20px 0 0 -20px;
-  border: 3px solid rgba(103, 58, 18, 0.1);
-  border-radius: 50%;
-  border-top-color: var(--color-primary);
-  animation: mapSpin 1s ease-in-out infinite;
-  z-index: 10;
-}
-
-.zone-map.map-loading::after {
-  content: 'Chargement de la carte...';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 30px);
-  color: var(--color-text-light);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  z-index: 10;
-}
-
-.zone-map.map-loaded {
-  background: transparent;
-}
-
-.zone-map.map-loaded .zone-map-fallback,
-.zone-map.leaflet-container .zone-map-fallback {
-  display: none !important;
-}
-
-@keyframes mapSpin {
-  to { transform: rotate(360deg); }
-}
-
-/* Optimisation des tuiles de carte */
-.zone-map .osm-tiles {
-  transition: opacity 0.3s ease;
-}
-
-.zone-map.map-loading .osm-tiles {
-  opacity: 0;
-}
-
-.zone-map.map-loaded .osm-tiles {
-  opacity: 1;
-}
-
-/* Tuiles OSM recolorisées en nuances de marron */
-.zone-map .leaflet-tile-pane {
-  filter: sepia(0.75) saturate(1.25) hue-rotate(-12deg) brightness(0.94) contrast(1.05);
-}
-
-.zone-map.leaflet-container {
-  font-family: var(--font-sans);
-}
-
-.zone-map .leaflet-tooltip.zone-city-label {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(103, 58, 18, 0.18);
-  border-radius: 999px;
-  box-shadow: var(--shadow-lg);
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: var(--text-2xs);
-  line-height: 1.2;
-  padding: 4px 10px;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.zone-map .leaflet-tooltip.zone-city-label::before {
-  display: none;
-}
-
-@media (max-width: 480px) {
-  .zone-map .leaflet-tooltip.zone-city-label {
-    font-size: var(--text-2xs);
-    padding: 3px 8px;
-  }
-}
-
-/* Masquer tous les contrôles de navigation */
-.zone-map .leaflet-control-zoom,
-.zone-map .leaflet-control-container .leaflet-control:not(.leaflet-control-attribution) {
-  display: none !important;
-}
-
-/* Bouton unique "Lancer l'itinéraire" (même style que .zone-address-cta) */
-.zone-map .zone-map-route {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  z-index: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(103, 58, 18, 0.12);
-  text-decoration: none;
-  box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: gap 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  color: var(--color-primary);
-  max-width: calc(100% - 32px);
-  white-space: nowrap;
-}
-
-.zone-map .zone-map-route:visited {
-  color: var(--color-primary);
-}
-
-.zone-map .zone-map-route i {
-  color: var(--color-primary);
-}
-
-.zone-map .zone-map-route:hover {
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: var(--shadow-lg);
-}
-
-/* Fallback OSM */
-.zone-map.osm-fallback {
-  display: grid;
-  place-items: center;
-  padding: var(--space-xl);
-  background: radial-gradient(circle at 20% 20%, rgba(168, 139, 94, 0.18), transparent 55%),
-    linear-gradient(135deg, #fbfaf9, #f2eeea);
-}
-
-.zone-map-fallback {
-  max-width: 420px;
-  text-align: center;
-}
-
-.zone-map-fallback-title {
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text);
-  margin-bottom: var(--space-xs);
-}
-
-.zone-map-fallback-text {
-  font-size: var(--text-md);
-  color: var(--color-text-light);
-  line-height: 1.5;
-  margin-bottom: var(--space-md);
-}
-
-.zone-map-fallback-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  text-decoration: none;
-  box-shadow: var(--shadow-lg);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.01em;
-}
-
-.zone-map-fallback-link:hover {
-  filter: brightness(1.02);
-}
-
-/* Style Leaflet personnalisé */
-.zone-map .leaflet-control-zoom {
-  border: none !important;
-  box-shadow: var(--shadow-md) !important;
-  border-radius: var(--radius) !important;
-  overflow: hidden;
-}
-
-.zone-map .leaflet-control-zoom a {
-  background: var(--color-white) !important;
-  color: var(--color-text) !important;
-  border: none !important;
-  width: 36px !important;
-  height: 36px !important;
-  line-height: 36px !important;
-  font-size: 18px !important;
-  transition: background var(--duration-fast) var(--ease-out) !important;
-}
-
-.zone-map .leaflet-control-zoom a:hover {
-  background: var(--color-surface-alt) !important;
-}
-
-.zone-map .leaflet-control-attribution {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  font-size: 10px !important;
-  padding: 4px 8px !important;
-  border-radius: var(--radius-sm) !important;
-}
-
-/* Adresse */
 
 /* ▸ 03-adresse-villes.css */
 .zone-address {
@@ -680,142 +462,9 @@
   }
 }
 
-/* ▸ 07-marqueurs-carte.css */
-/* ===================================================================
-   MARQUEURS DE CARTE - STYLE APPLE
-   =================================================================== */
-
-/* Marqueur siège avec animation pulse corrigée */
-.hq-marker-centered {
-  position: relative;
-  width: 30px;
-  height: 30px;
-}
-
-.hq-pulse-ring {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  background: rgba(103, 58, 18, 0.25);
-  border-radius: 50%;
-  animation: pulseRing 2.5s cubic-bezier(0.25, 0, 0, 1) infinite;
-}
-
-.hq-marker-dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  background: var(--color-primary);
-  border: 3px solid var(--color-white);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 
-    0 2px 8px rgba(103, 58, 18, 0.3),
-    0 1px 3px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-}
-
-@keyframes pulseRing {
-  0% {
-    transform: scale(0.7);
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
-}
-
-/* Animation d'apparition du marqueur */
-.hq-marker-centered {
-  animation: markerAppear 1s ease-out;
-}
-
-@keyframes markerAppear {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Marqueurs des villes simplifiés */
-
-/* Marqueur ville principale (Angoulême) */
-
-/* ▸ 08-popups-carte.css */
-/* ===================================================================
-   POPUPS PERSONNALISÉS - STYLE APPLE
-   =================================================================== */
-
-/* Popup du siège */
-
-/* Popups simplifiés */
-
-/* Nouveau popup pour le siège */
-
-/* Animation reveal */
-@media (prefers-reduced-motion: no-preference) {
-  .zone-map-container,
-  .zone-address,
-  .zone-cities,
-  .zone-note {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: zoneReveal 0.6s var(--ease-out) forwards;
-  }
-
-  .zone-map-container { animation-delay: 0.1s; }
-  .zone-address { animation-delay: 0.2s; }
-  .zone-cities { animation-delay: 0.3s; }
-  .zone-note { animation-delay: 0.4s; }
-
-  @keyframes zoneReveal {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-/* Responsive mobile */
-@media (max-width: 639px) {
-  .zone-section {
-    padding-block: var(--space-3xl);
-  }
-
-  .zone-header {
-    margin-bottom: var(--space-2xl);
-  }
-
-  .zone-address,
-  .zone-cities {
-    padding: var(--space-md);
-  }
-
-  .zone-info-icon {
-    width: 40px;
-    height: 40px;
-    font-size: var(--text-base);
-  }
-}
-
 /* ▸ 09-accueil-schema.css */
 /* ===================================================================
-   ACCUEIL : schéma de zone + communes ; PAGE ZONE : recherche, secteurs, carte à la demande
+   ACCUEIL : carte de zone + communes ; PAGE ZONE : recherche, secteurs, carte à la demande
    =================================================================== */
 
 /* Puces de communes (accueil et page zone) */
@@ -856,71 +505,6 @@
   align-items: center;
   max-width: var(--container-max);
   margin: 0 auto;
-}
-
-.zone-schema {
-  margin: 0;
-  max-width: 460px;
-  width: 100%;
-  justify-self: center;
-  padding: var(--space-md);
-  background: var(--color-white);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-}
-
-.zone-schema-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.zs-dept {
-  fill: var(--brand-accent-light);
-  stroke: var(--brand-accent);
-  stroke-width: 0.6;
-  stroke-linejoin: round;
-}
-
-.zs-radius {
-  fill: none;
-  stroke: var(--color-primary);
-  stroke-width: 0.5;
-  stroke-dasharray: 2 2;
-  opacity: 0.55;
-}
-
-.zs-pin {
-  fill: var(--brand-accent-text);
-}
-
-.zs-hq {
-  fill: var(--color-primary);
-}
-
-.zs-hq-halo {
-  fill: rgba(103, 58, 18, 0.18);
-}
-
-.zs-label,
-.zs-radius-label {
-  font: 600 3.1px var(--font-sans);
-  fill: var(--color-text);
-  paint-order: stroke;
-  stroke: var(--color-white);
-  stroke-width: 1.1px;
-  stroke-linejoin: round;
-}
-
-.zs-label--hq {
-  fill: var(--color-primary);
-  font-weight: var(--font-weight-bold);
-}
-
-.zs-radius-label {
-  font-weight: 500;
-  fill: var(--color-text-light);
 }
 
 .zone-home-info {
@@ -1027,6 +611,12 @@
   display: none;
 }
 
+.zone-explorer {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
 .zone-sectors {
   display: grid;
   gap: var(--space-lg);
@@ -1069,40 +659,6 @@
   color: var(--color-text-muted);
 }
 
-.zone-map-block {
-  display: grid;
-  justify-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-xl);
-  background: var(--color-surface-alt);
-  border-radius: var(--radius-lg);
-  text-align: center;
-}
-
-.zone-map-hint {
-  margin: 0;
-  font-size: var(--text-sm);
-  color: var(--color-text-light);
-}
-
-.zone-map-wrap {
-  width: 100%;
-  margin-top: var(--space-md);
-}
-
-.zone-map-wrap[hidden] {
-  display: none;
-}
-
-.zone-page .zone-map-container {
-  height: clamp(320px, 45vw, 460px);
-  aspect-ratio: auto;
-  min-height: 0;
-  animation: none;
-  opacity: 1;
-  transform: none;
-}
-
 .zone-page .zone-actions {
   display: flex;
   justify-content: center;
@@ -1115,15 +671,17 @@
     align-items: stretch;
   }
 
-  .zone-sectors {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
-  }
 }
 
-@media (max-width: 639px) {
-  .zs-label,
-  .zs-radius-label {
-    font-size: 4px;
+
+@media (min-width: 992px) {
+  .zone-explorer {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .zone-explorer .zone-map-card {
+    position: sticky;
+    top: calc(var(--space-4xl) + var(--space-md));
   }
 }

@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
-
     <link rel="preload" href="assets/css/styles.css?v=20260929" as="style" />
     <link rel="preload" href="assets/css/nav.css?v=20260929" as="style" />
     <link rel="preload" href="assets/css/zone.css?v=20260929" as="style" />
@@ -45,11 +43,6 @@
     <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/fonts/inter.css" />
     <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
-
-    <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css" />
-    </noscript>
 
     <link rel="icon" type="image/png" href="https://vprr.fr/media/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="https://vprr.fr/media/favicon/favicon.ico" />
@@ -181,8 +174,6 @@
         ]
       }
     </script>
-
-    <script defer src="assets/js/zone-map-leaflet.js?v=20260929"></script>
     <script defer src="assets/js/zone-page.js?v=20260929"></script>
     <script defer src="assets/js/main.js?v=20260929"></script>
   </head>
@@ -258,7 +249,14 @@
               </a>
             </div>
 
-            <div class="zone-sectors" id="zone-sectors">
+            <div class="zone-explorer">
+              <div class="zone-map-card">
+                <div class="zone-map-embed">
+                <iframe src="https://www.google.com/maps?ll=45.655,0.17&q=45.65819,0.19226&z=11&hl=fr&output=embed" title="Carte de la zone d'intervention : Angoulême et Charente" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+              </div>
+
+              <div class="zone-sectors" id="zone-sectors">
               <section class="zone-sector" data-zone-sector aria-label="Grand Angoulême">
                 <h2><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Grand Angoulême <span class="zone-sector-count">12 communes</span></h2>
                 <ul class="zone-chips">
@@ -301,30 +299,14 @@
                 </ul>
               </section>
             </div>
+            </div>
 
             <p class="zone-finder-empty" id="zone-search-empty" hidden><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Cette commune n’est pas dans la liste, mais nous intervenons aussi dans les communes voisines&nbsp;: <a href="contact.html">contactez-nous</a> ou appelez le <a href="tel:+33545912270">05 45 91 22 70</a>.</p>
 
             <div class="zone-note">
               <p><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Pour un <a href="ravalement-facade-angouleme.html">ravalement de façade en Charente (16)</a>, nous intervenons sur Angoulême et les communes environnantes, mais aussi sur des secteurs comme Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Demandez un devis gratuit pour vérifier votre commune.</p>
             </div>
-
-            <div class="zone-map-block">
-              <button type="button" class="btn btn-secondary" id="zone-map-toggle" aria-expanded="false" aria-controls="zone-map-wrap">
-                <i class="fa-solid fa-map" aria-hidden="true"></i> Afficher la carte interactive
-              </button>
-              <p class="zone-map-hint">La carte utilise OpenStreetMap et ne se charge que si vous l’affichez.</p>
-              <div class="zone-map-wrap" id="zone-map-wrap" hidden>
-                <div class="zone-map-container">
-                  <div id="zone-map" class="zone-map" data-zone-lazy="1" role="application" aria-label="Carte de la zone d'intervention">
-                    <div class="zone-map-fallback" role="note" aria-label="Chargement de la carte">
-                      <div class="zone-map-fallback-title">Chargement de la carte…</div>
-                      <div class="zone-map-fallback-text">Si rien ne s’affiche, vérifiez votre connexion.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+</div>
 
           <div class="section-divider" role="separator" aria-hidden="true"></div>
 

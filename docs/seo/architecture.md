@@ -48,10 +48,10 @@ dossier) : arrêter le serveur avant de reconstruire.
 ```
 /                         pages à la racine : index, 5 pages de service (générées), zone, faq, mentions, merci, 404
 assets/css/               styles (voir §6)            assets/js/   scripts (voir §7)
-assets/fonts, vendor/     Inter, Font Awesome 6.5.1, Leaflet 1.9.4 — auto-hébergés, chemins versionnés
+assets/fonts, vendor/     Inter, Font Awesome 6.5.1 — auto-hébergés, chemins versionnés
 assets/img/blog/          images des articles (+ déclinaisons -400w/-600w/-800w/-1200w)
 media/                    logo d'origine (VPRR-LOGO.svg : en-tête, JSON-LD, impression ; le nouveau logo B2 est prêt mais non déployé, voir `docs/design/logo-b2.md`), favicons, photos avant/après des services (déclinaisons -600w/-900w/-1200w)
-data/                     hero.webp, hero-poster-*.webp, charente.geojson (carte)
+data/                     hero.webp, hero-poster-*.webp
 blog/                     HTML GÉNÉRÉ des articles + index.html + articles.json (ne pas éditer à la main)
 content/blog/*.md         source des articles          content/pages/<slug>/   source des pages de service
 includes/footer.html      pied de page + bannière cookies    includes/partials/  blocs communs (formulaire, « pourquoi nous »)
@@ -160,7 +160,6 @@ Fichiers (`assets/css/`) : `styles.css` (base, composants, accueil — **génér
 | `apple-select.js` | menu déroulant « Type de projet » (ARIA listbox) |
 | `before-after.js` | slider avant/après des pages de service (partagé) |
 | `mobile-condense.js` | repli mobile (listes limitées, encadrés repliables) — §8 |
-| `zone-map-leaflet.js` | carte statique de la zone (Leaflet auto-hébergé, tuiles OpenStreetMap) |
 | `blog-home.js`, `blog-list.js`, `blog-article.js` | carrousel/accueil du blog, liste paginée, actions d'article |
 | *(supprimé le 2026-10-03)* `performance.js` | ne faisait plus rien d'utile (observateurs vides, `lazy` déjà natif) ; la coupure des transitions en « mouvement réduit » est désormais en CSS (`styles.css`) |
 
@@ -190,7 +189,7 @@ visible sans JS et sur ordinateur).
   `page`). Envoyés dans `dataLayer` (GTM) et via `clarity('event', …)`. Pour les exploiter dans Google Analytics
   il faut créer les déclencheurs correspondants dans le conteneur GTM (voir `blockers.md`).
 - Tiers encore chargés **avant** consentement : Vimeo (hero, desktop), Elfsight/Instagram (au scroll), **Featurable
-  (avis Google, à l'approche de la section — `src/js/main/95-widget-avis.js`)**, tuiles OpenStreetMap (carte). Ils sont cités dans les mentions légales.
+  (avis Google, à l'approche de la section — `src/js/main/95-widget-avis.js`)** (la carte de zone n'est plus un tiers). Ils sont cités dans les mentions légales.
 
 ## 10. Formulaire de contact — une seule page : `contact.html`
 Depuis le 2026-10-01 le formulaire vit **uniquement** sur `contact.html` (nom Netlify `contact`, celui de l'ancien formulaire
@@ -212,14 +211,12 @@ Tests : `tests/contact-function.test.js`, `tests/contact-page.test.js`.
 - FAQ : recherche + filtres dans `main.js` (`initFaqPageControls`). Mentions légales : classe `.legal-doc` (`styles.css`).
 
 ## 10 bis. Zone d'intervention
-- **Accueil** : schéma SVG en ligne (contour de `data/charente.geojson`, rayon ≈ 50 km, communes) généré par
-  `node scripts/build-zone-schema.js --inject` (entre `<!-- zone-schema:start/end -->`) — aucun service tiers, plus de Leaflet.
-- **Page zone** : recherche de commune (`assets/js/zone-page.js`, insensible aux accents), communes par secteur
-  (`.zone-sector` / `.zone-chips`), carte interactive Leaflet/OpenStreetMap **chargée seulement au clic** (`data-zone-lazy="1"`
-  dans `zone-map-leaflet.js`) → aucune tuile OSM avant l'action du visiteur.
+- **Carte** (accueil + page zone) : iframe Google Maps (`output=embed`, sans clé API, mêmes paramètres sur les deux pages, repère simple sur L'Isle-d'Espagnac via `q=lat,lng`, sans fiche), chargée d'emblée (`loading="lazy"`), teintée par un filtre CSS (`src/css/zone/02-carte.css`). `https://www.google.com` est dans `frame-src` de la CSP et cité dans les mentions légales.
+- **Page zone** : recherche de commune (`assets/js/zone-page.js`, insensible aux accents), communes par secteur (`.zone-sector` / `.zone-chips`)
+  à côté de la carte (sticky ≥ 992 px) ; toucher une commune de la carte ou une puce la met en avant des deux côtés. Styles : `src/css/zone/02-carte.css`.
 
 ## 11. Tests (`npm test`)
-`contact-function` (7), `contact-page` (6), `zone-map` (6), `site-invariants` (4 : H1 unique/canonical/`<title>` ≤ 60, liens et ancres
+`contact-function` (7), `contact-page` (6), `zone-map` (2), `site-invariants` (4 : H1 unique/canonical/`<title>` ≤ 60, liens et ancres
 internes, URLs du sitemap, contenu de `dist/`), `pages` (2 : pages de service à jour et données valides), `docs` (1 : aucun lien cassé dans `CLAUDE.md` et `docs/`).
 
 ## 12. Recettes rapides

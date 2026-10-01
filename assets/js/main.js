@@ -612,7 +612,7 @@ const initScrollSpy = (navLinks) => {
 
 const initScrollReveal = () => {
   const revealElements = document.querySelectorAll(
-    '.service-card, .faq-item, .contact-panel, .zone-map-container, .zone-address, .zone-cities, .zone-note'
+    '.service-card, .faq-item, .contact-panel, .zone-map-card, .zone-address, .zone-cities, .zone-note'
   );
 
   if (!('IntersectionObserver' in window) || prefersReducedMotion()) return;
@@ -777,23 +777,6 @@ const initReviewsWidget = () => {
   io.observe(widget);
 };
 
-/* ▸ 96-carte-zone.js */
-/**
- * Carte de la zone d'intervention (Leaflet, chargée à la demande par zone-map-leaflet.js).
- * L'initialisation attend la fin du chargement de la page pour ne pas concurrencer le rendu.
- */
-
-const initZoneMap = () => {
-  const start = () => {
-    if (window.ZoneMapLeaflet && typeof window.ZoneMapLeaflet.initZoneMap === 'function') {
-      window.ZoneMapLeaflet.initZoneMap({ containerId: 'zone-map', rootMargin: '100px' });
-    }
-  };
-
-  if (document.readyState === 'complete') start();
-  else window.addEventListener('load', start, { once: true });
-};
-
 /* ▸ 97-barre-appel-mobile.js */
 /**
  * Barre mobile « Appeler / Devis » : masquée quand le formulaire (#contact) ou le pied de page
@@ -851,7 +834,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordions();
   initFaqPageControls();
   initReviewsWidget();
-  initZoneMap();
   initMobileCtaBar();
   initFooterYear();
 });

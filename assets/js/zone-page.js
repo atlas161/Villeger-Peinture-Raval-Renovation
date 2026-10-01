@@ -1,7 +1,6 @@
 /**
  * @file Page « Zone d'intervention » :
- *  - recherche instantanée d'une commune (filtre des puces, message de réponse) ;
- *  - carte interactive chargée seulement au clic (aucune tuile OpenStreetMap avant l'action du visiteur).
+ *  - recherche instantanée d'une commune (filtre des puces, message de réponse).
  */
 (function () {
   'use strict';
@@ -16,18 +15,22 @@
       .trim();
   };
 
-  function initFinder() {
+  var toArray = function (list) {
+    return Array.prototype.slice.call(list);
+  };
+
+  function init() {
     var input = document.getElementById('zone-search');
     var result = document.getElementById('zone-search-result');
     var empty = document.getElementById('zone-search-empty');
     if (!input || !result) return;
 
-    var cities = Array.prototype.slice.call(document.querySelectorAll('[data-zone-city]')).map(function (li) {
-      return { el: li, name: li.textContent.trim(), key: normalize(li.textContent) };
+    var cities = toArray(document.querySelectorAll('li[data-zone-city]')).map(function (li) {
+      var name = li.textContent.trim();
+      return { el: li, name: name, key: normalize(name) };
     });
-    var sectors = Array.prototype.slice.call(document.querySelectorAll('[data-zone-sector]'));
+    var sectors = toArray(document.querySelectorAll('[data-zone-sector]'));
     var defaultText = result.textContent;
-
     function update() {
       var q = normalize(input.value);
       var matches = 0;
@@ -52,37 +55,7 @@
     }
 
     input.addEventListener('input', update);
-  }
 
-  function initMapToggle() {
-    var btn = document.getElementById('zone-map-toggle');
-    var wrap = document.getElementById('zone-map-wrap');
-    if (!btn || !wrap) return;
-    var started = false;
-
-    btn.addEventListener('click', function () {
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      if (open) {
-        wrap.hidden = true;
-        btn.setAttribute('aria-expanded', 'false');
-        btn.lastChild.textContent = ' Afficher la carte interactive';
-        return;
-      }
-      wrap.hidden = false;
-      btn.setAttribute('aria-expanded', 'true');
-      btn.lastChild.textContent = ' Masquer la carte';
-      if (!started && window.ZoneMapLeaflet && typeof window.ZoneMapLeaflet.initZoneMap === 'function') {
-        started = true;
-        window.ZoneMapLeaflet.initZoneMap({ containerId: 'zone-map', rootMargin: '0px' });
-      }
-      var map = window.ZoneMapLeaflet && window.ZoneMapLeaflet.getInstance && window.ZoneMapLeaflet.getInstance('zone-map');
-      if (map && map.map && typeof map.map.invalidateSize === 'function') map.map.invalidateSize();
-    });
-  }
-
-  function init() {
-    initFinder();
-    initMapToggle();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
