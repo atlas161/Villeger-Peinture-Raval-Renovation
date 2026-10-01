@@ -195,7 +195,7 @@
   "beforeAfterScript": true,
   "contact": {
     "prestation": "ravalement",
-    "serviceLabel": "ravalement de façade"
+    "serviceLabel": "de ravalement de façade"
   },
   "related": [
     {
@@ -374,9 +374,6 @@
       "file": "tarifs.html"
     },
     {
-      "type": "contact"
-    },
-    {
       "type": "faq",
       "eyebrow": "F.A.Q",
       "title": "Questions fréquentes : Prix &amp; Devis Ravalement",
@@ -430,12 +427,10 @@
           "question": "Quels matériaux et finitions utilisez-vous (enduit, peinture) ?",
           "answerHtml": "<p>\n  Nous adaptons les produits au support (enduit, brique, pierre, façade déjà peinte) et à l'exposition (pluie, UV). Après diagnostic, nous choisissons la préparation compatible, les réparations nécessaires (enduit), puis une finition durable (peinture microporeuse, revêtement adapté, etc.). L'objectif : protéger la façade et obtenir une finition propre qui tient dans le temps.\n</p>"
         }
-      ],
-      "cta": {
-        "text": "Vous avez d'autres questions ?",
-        "icon": "fa-solid fa-comments",
-        "label": "Poser ma question et obtenir un devis"
-      }
+      ]
+    },
+    {
+      "type": "contact"
     }
   ]
 }

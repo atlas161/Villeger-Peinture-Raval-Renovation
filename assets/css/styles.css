@@ -1116,21 +1116,6 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   color: #fff;
 }
 
-/* CTA bas de section */
-.svc-bottom-cta {
-  margin-top: var(--space-3xl);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  text-align: center;
-}
-
-.svc-bottom-cta > p {
-  font-size: var(--text-base);
-  color: var(--color-text-light);
-}
-
 /* ── Responsive ── */
 @media (max-width: 767px) {
   .svc-grid {

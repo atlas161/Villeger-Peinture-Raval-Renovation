@@ -249,5 +249,3 @@ Artisans passionnés à Angoulême, nous maîtrisons les codes architecturaux de
 Le ravalement de façade est l'investissement le plus rentable pour protéger votre maison charentaise, garantir sa longévité et sublimer son architecture. Ne laissez pas les fissures et l'humidité s'installer.
 
 **Votre maison mérite l'expertise de vrais artisans.** Confiez-nous vos murs pour un résultat esthétique, durable et réalisé dans les règles de l'art.
-
-*Besoin d'un devis pour le ravalement de votre façade à Angoulême ou en Charente ?* *[Contactez-nous sur vprr.fr*](https://vprr.fr/contact.html) *pour une étude gratuite et personnalisée de votre projet.*

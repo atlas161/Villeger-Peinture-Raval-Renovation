@@ -216,7 +216,7 @@
   "beforeAfterScript": false,
   "contact": {
     "prestation": "isolation",
-    "serviceLabel": "isolation intérieure"
+    "serviceLabel": "d'isolation intérieure"
   },
   "related": [
     {
@@ -386,9 +386,6 @@
       "file": "tarifs.html"
     },
     {
-      "type": "contact"
-    },
-    {
       "type": "faq",
       "eyebrow": "F.A.Q",
       "title": "Questions fréquentes : Isolation Intérieure",
@@ -426,12 +423,10 @@
           "question": "L'isolation intérieure est-elle éligible à des aides financières ?",
           "answerHtml": "<p>\n  Selon votre situation et les matériaux posés, certains travaux d'isolation peuvent être éligibles à des aides comme <strong>MaPrimeRénov'</strong> ou les <strong>Certificats d'Économies d'Énergie (CEE)</strong>. Nous vous orientons sur les dispositifs qui peuvent s'appliquer à votre projet ; le montant exact dépend de votre éligibilité et doit être confirmé auprès des organismes concernés.\n</p>"
         }
-      ],
-      "cta": {
-        "text": "Vous avez d'autres questions ?",
-        "icon": "fa-solid fa-comments",
-        "label": "Poser ma question et obtenir un devis"
-      }
+      ]
+    },
+    {
+      "type": "contact"
     }
   ]
 }

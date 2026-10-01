@@ -190,9 +190,3 @@ Dans ces cas, le bon réflexe est une **inspection toiture** et une remise en é
 ## Conclusion : une toiture propre, c’est surtout une toiture protégée
 
 Un démoussage bien fait en Charente, ce n’est pas “laver pour que ça brille”. C’est un ensemble cohérent : **diagnostic**, **nettoyage adapté au support**, **traitement durable**, et éventuellement **hydrofuge** si la toiture s’y prête. Le bon résultat, c’est celui qui tient dans le temps et qui évite les infiltrations.
-
-Si vous cherchez une intervention locale, adaptée aux toitures du 16, vous pouvez aussi consulter notre page service : [Nettoyage de toiture à Angoulême](/nettoyage-toiture-angouleme.html).
-
----
-
-*Besoin d’un devis de démoussage / nettoyage de toiture en Charente ? [Contactez-nous](https://vprr.fr/contact.html) pour une étude gratuite et personnalisée (Angoulême, Cognac, Jarnac, Barbezieux, Ruffec, Confolens et alentours).*

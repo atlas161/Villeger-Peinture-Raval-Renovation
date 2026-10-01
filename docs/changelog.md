@@ -17,6 +17,14 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-03 — Cohérence : une seule bande d'appel par page, plus de doublons de CTA
+
+Règle (voir [`design/direction-artistique.md`](./design/direction-artistique.md) §G) : **un appel en haut (hero ou en-tête) + une bande `.contact-cta` en bas de page, jamais d'autre bouton « devis »/téléphone entre les deux.**
+- **Pages de service** : retrait des boutons « Demander un devis » + téléphone de la fiche réalisation, de l'encadré « Devis 100 % gratuit » (`.cta-glass`) des tarifs et du bouton de fin de FAQ ; la bande de contact passe en dernière section (après la FAQ) ; titre « Un projet **de/d'** … » corrigé (« d'isolation intérieure »).
+- **Blog** : suppression du CTA italique en fin de chacun des 6 articles, du bloc « Contactez-nous » de la barre latérale, des liens « Demander un devis » du bloc `article-seo-links` (il ne garde que le lien vers le service associé) ; la carte de fin « Prêt à démarrer… notre équipe d'experts » est remplacée par la bande standard (`?service=` selon la catégorie) ; idem sur l'index du blog.
+- **FAQ et Zone** : boutons de fin remplacés par la bande standard. **Accueil** : bouton « Un projet hors du commun ? » retiré. **merci.html** : « sous 24 h » → « sous 48 h ouvrées » (cohérent avec le reste du site).
+- CSS mort retiré (`.cta-glass*`, `.faq-actions*`, `.svc-bottom-cta`, `.sidebar-cta`, `.article-cta` de l'article). Vérifié à 375 / 820 / 1440 px : 22 pages, exactement 2 appels (hero/en-tête + bande) sur chaque page de contenu, aucun débordement. Tests 35/35.
+
 ## 2026-10-02 (nuit) — Design system : échelles typographique, d'ombres, de couches et de points de rupture
 
 - **Tokens** (`:root` de `styles.css`, détail dans [`design/tokens.md`](./design/tokens.md)) : 13 tailles de texte `--text-2xs…7xl` (avant : 38), ombres neutres ramenées à `--shadow-sm/md/lg/xl` (avant : 45 variantes), 10 couches `--z-*` (avant : 12 valeurs jusqu'à 9999), points de rupture alignés par paires (767/768, 639/640, 991/992, 1023/1024 ; avant : 14 valeurs dont 767/768/769 et 859/860/900/800/420/380). 309 `font-size`, 35 `box-shadow`, 14 `z-index` et 26 `@media` remplacés par `scripts/tokenize-scale.js` (idempotent).

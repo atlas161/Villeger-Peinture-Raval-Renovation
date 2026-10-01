@@ -219,7 +219,7 @@
   "beforeAfterScript": true,
   "contact": {
     "prestation": "peinture",
-    "serviceLabel": "peinture extérieure"
+    "serviceLabel": "de peinture extérieure"
   },
   "related": [
     {
@@ -391,9 +391,6 @@
       "file": "tarifs.html"
     },
     {
-      "type": "contact"
-    },
-    {
       "type": "faq",
       "eyebrow": "F.A.Q",
       "title": "Questions fréquentes : Prix &amp; Devis Peinture",
@@ -436,12 +433,10 @@
           "question": "Quelle peinture utilisez-vous (microporeuse, finition, résistance UV) ?",
           "answerHtml": "<p>\n  Nous choisissons la peinture selon le support (enduit, façade déjà peinte, boiseries) et l'exposition. L'objectif est d'obtenir une finition propre et durable : préparation adaptée, sous-couche si nécessaire, et peinture extérieure résistante aux UV et aux intempéries (souvent microporeuse pour laisser respirer le support).\n</p>"
         }
-      ],
-      "cta": {
-        "text": "Vous avez d'autres questions ?",
-        "icon": "fa-solid fa-comments",
-        "label": "Poser ma question et obtenir un devis"
-      }
+      ]
+    },
+    {
+      "type": "contact"
     }
   ]
 }

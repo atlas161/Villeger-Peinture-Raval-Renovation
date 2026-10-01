@@ -158,5 +158,3 @@ Artisans peintres et façadiers reconnus pour notre sérieux sur le bassin d'Ang
 Le choix de votre peinture extérieure, la préparation minutieuse des murs et l'application dans les règles de l'art ne s'improvisent pas. C'est un investissement important qui protégera et embellira votre patrimoine pour les 15 prochaines années.
 
 **Ne laissez pas votre maison perdre de sa superbe et se dégrader face aux intempéries.** Confiez sa rénovation à des experts passionnés qui sauront la traiter et la mettre en valeur.
-
-*Besoin d'un diagnostic et d'un devis pour vos travaux de peinture extérieure à Angoulême, Champniers, La Couronne, Ruelle-sur-Touvre ou partout ailleurs en Charente ?* [Contactez l'équipe VPRR dès aujourd'hui sur vprr.fr](https://vprr.fr/contact.html) *pour une étude gratuite et totalement personnalisée de votre projet.*

@@ -248,35 +248,6 @@
   font-size: var(--text-sm);
 }
 
-.sidebar-cta {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  color: var(--color-white);
-  text-align: center;
-}
-
-.sidebar-cta p {
-  font-size: var(--text-md);
-  margin-bottom: var(--space-md);
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.sidebar-cta .btn {
-  width: 100%;
-  justify-content: center;
-}
-
-.sidebar-cta .btn-primary {
-  background: var(--color-white);
-  color: var(--color-primary);
-  border-color: var(--color-white);
-}
-
-.sidebar-cta .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-
 /* Content principal */
 .article-content {
   background: var(--color-surface);
@@ -712,23 +683,6 @@
    7. CTA SECTION
    =================================================================== */
 
-.article-cta {
-  padding: var(--space-3xl) 0;
-  background: var(--color-bg);
-}
-
-.article-cta .cta-card {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xl);
-  padding: var(--space-3xl);
-  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
-  border-radius: 32px;
-  box-shadow: var(--shadow-lg);
-}
-
 .cta-icon {
   flex-shrink: 0;
   width: 80px;
@@ -743,23 +697,6 @@
 .cta-icon i {
   font-size: var(--text-6xl);
   color: var(--brand-accent);
-}
-
-.article-cta .cta-content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.article-cta .cta-content h2 {
-  text-align: left;
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-sm);
-}
-
-.article-cta .cta-content p {
-  font-size: var(--text-lg);
-  color: var(--color-text-light);
-  margin-bottom: 0;
 }
 
 .cta-actions {
@@ -1010,19 +947,6 @@
     order: -1;
   }
   
-  .article-cta .cta-card {
-    padding: var(--space-xl);
-    text-align: center;
-  }
-  
-  .article-cta .cta-icon {
-    margin: 0 auto;
-  }
-  
-  .article-cta .cta-content h2 {
-    text-align: center;
-  }
-  
   .cta-actions {
     width: 100%;
     justify-content: center;
@@ -1141,10 +1065,4 @@
   font-size: var(--text-md);
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
-}
-
-.article-cta .cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
 }

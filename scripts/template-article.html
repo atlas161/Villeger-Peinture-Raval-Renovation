@@ -251,14 +251,6 @@
               <nav class="toc" aria-label="Table des matières">
                 {{TOC}}
               </nav>
-              
-              <div class="sidebar-cta">
-                <p>Besoin d'aide pour votre projet ?</p>
-                <a href="../contact.html" class="btn btn-primary btn-sm">
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                  Contactez-nous
-                </a>
-              </div>
             </div>
           </aside>
           
@@ -341,23 +333,23 @@
     <!-- À lire aussi -->
     {{RELATED_ARTICLES}}
 
-    <!-- CTA Section -->
-    <section class="article-cta" aria-label="Contactez-nous">
+    <!-- Bande de contact (même composant que les autres pages) -->
+    <section id="contact" class="section contact-cta-section" aria-labelledby="contact-cta-title">
       <div class="container">
-        <div class="cta-card">
-          <div class="cta-icon">
-            <i class="fa-solid fa-helmet-safety" aria-hidden="true"></i>
+        <div class="contact-cta">
+          <div class="contact-cta-text">
+            <p class="contact-eyebrow">Devis gratuit</p>
+            <h2 id="contact-cta-title">Un projet de rénovation&nbsp;?</h2>
+            <p>Décrivez-nous votre projet : réponse personnalisée sous 48&nbsp;h, sans engagement.</p>
+            <ul class="contact-cta-points">
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Visite et devis gratuits</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Réponse sous 48&nbsp;h</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Lun–ven 9&nbsp;h–17&nbsp;h · sam 9&nbsp;h–12&nbsp;h</li>
+            </ul>
           </div>
-          <div class="cta-content">
-            <h2>Prêt à démarrer votre projet ?</h2>
-            <p>Notre équipe d'experts est à votre disposition pour transformer vos idées en réalité. Devis gratuit et sans engagement.</p>
-          </div>
-          <div class="cta-actions">
-            <a href="../contact.html" class="btn btn-primary btn-lg">Demander mon devis</a>
-            <a href="tel:+33545912270" class="btn btn-secondary btn-lg">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              05 45 91 22 70
-            </a>
+          <div class="contact-cta-actions">
+            <a class="btn btn-primary btn--lg" href="../contact.html{{CTA_QUERY}}">Demander mon devis</a>
+            <a class="btn btn-secondary btn--lg" href="tel:+33545912270"><i class="fa-solid fa-phone icon-inline" aria-hidden="true"></i>05 45 91 22 70</a>
           </div>
         </div>
       </div>

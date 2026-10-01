@@ -219,7 +219,7 @@
   "beforeAfterScript": true,
   "contact": {
     "prestation": "toiture",
-    "serviceLabel": "nettoyage de toiture"
+    "serviceLabel": "de nettoyage de toiture"
   },
   "related": [
     {
@@ -391,9 +391,6 @@
       "file": "tarifs.html"
     },
     {
-      "type": "contact"
-    },
-    {
       "type": "faq",
       "eyebrow": "F.A.Q",
       "title": "Questions fréquentes : Prix &amp; Devis Toiture",
@@ -436,12 +433,10 @@
           "question": "Sur quels types de toitures intervenez-vous ?",
           "answerHtml": "<p>\n  Nous intervenons sur les toitures les plus courantes (tuiles, selon l'état et la configuration). Lors de la visite, nous vérifions la fragilité des éléments, l'accès, l'état des gouttières et des points sensibles afin d'adapter la méthode et de travailler en sécurité.\n</p>"
         }
-      ],
-      "cta": {
-        "text": "Vous avez d'autres questions ?",
-        "icon": "fa-solid fa-comments",
-        "label": "Poser ma question et obtenir un devis"
-      }
+      ]
+    },
+    {
+      "type": "contact"
     }
   ]
 }

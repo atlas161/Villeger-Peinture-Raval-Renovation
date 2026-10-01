@@ -229,7 +229,7 @@
   "beforeAfterScript": true,
   "contact": {
     "prestation": "nettoyage-facade",
-    "serviceLabel": "nettoyage de façade"
+    "serviceLabel": "de nettoyage de façade"
   },
   "related": [
     {
@@ -401,9 +401,6 @@
       "file": "tarifs.html"
     },
     {
-      "type": "contact"
-    },
-    {
       "type": "faq",
       "eyebrow": "F.A.Q",
       "title": "Questions fréquentes : Prix &amp; Devis",
@@ -446,12 +443,10 @@
           "question": "Quels supports pouvez-vous nettoyer (pierre, brique, enduit) ?",
           "answerHtml": "<p>\n  Nous intervenons sur la majorité des supports courants : enduit, façade peinte, brique et pierre, avec une méthode adaptée. L'hydro-gommage est particulièrement intéressant pour les façades sensibles car il est plus doux qu'un nettoyage haute pression. Lors de la visite, nous validons la compatibilité et le réglage pour préserver le support.\n</p>"
         }
-      ],
-      "cta": {
-        "text": "Vous avez d'autres questions ?",
-        "icon": "fa-solid fa-comments",
-        "label": "Poser ma question et obtenir un devis"
-      }
+      ]
+    },
+    {
+      "type": "contact"
     }
   ]
 }

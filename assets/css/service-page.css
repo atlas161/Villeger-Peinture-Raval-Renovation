@@ -596,64 +596,6 @@
    BLOC CTA FINAL "Devis 100% Gratuit" (verre dépoli)
    =================================================================== */
 
-.cta-glass {
-  position: relative;
-  /* Rendu actuel = 12px, pas 24px : c'était un style inline, forcé à 12px par la règle
-     *[style*="border-radius"] dans styles.css (voir docs/code-quality-refactor.md). */
-  border-radius: var(--radius);
-  padding: var(--space-2xl);
-  margin-top: var(--space-3xl);
-  color: var(--color-text);
-  text-align: center;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(103, 58, 18, 0.12);
-  box-shadow: 0 8px 32px rgba(103, 58, 18, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-.cta-glass-glow {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at top, rgba(168, 139, 94, 0.15) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.cta-glass-content {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-glass-title {
-  color: var(--color-text);
-  font-size: var(--text-4xl);
-  margin-bottom: var(--space-sm);
-  font-weight: 600;
-}
-
-.cta-glass-text {
-  color: var(--color-text-light);
-  max-width: 600px;
-  margin: 0 auto var(--space-xl);
-  font-size: var(--text-lg);
-  line-height: 1.6;
-}
-
-.cta-glass-text strong {
-  color: var(--color-primary);
-}
-
-.cta-glass-content .btn-secondary {
-  margin-top: var(--space-md);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
 /* ===================================================================
    ENCART "NOS AUTRES SERVICES EN CHARENTE" (bas de page)
    =================================================================== */

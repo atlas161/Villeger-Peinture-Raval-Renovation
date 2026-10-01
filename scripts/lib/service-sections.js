@@ -214,15 +214,6 @@ ${indent(header({ ...f, id: 'faq-title' }), 4)}
 ${items}
     </div>
 
-    <div class="section-cta">
-      <p>
-        ${f.cta.text}
-      </p>
-      <a href="#contact" class="btn btn-primary">
-        <i class="${f.cta.icon} icon-inline" aria-hidden="true"></i>
-        ${f.cta.label}
-      </a>
-    </div>
   </div>
 </section>`;
 }
