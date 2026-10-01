@@ -1,0 +1,26 @@
+.zone-subsection {
+  padding-top: var(--space-4xl);
+}
+
+.zone-subsection:last-of-type {
+  padding-bottom: var(--space-4xl);
+}
+
+.zone-subsection .section-header {
+  margin-bottom: var(--space-4xl);
+}
+
+@media (max-width: 767px) {
+  .zone-subsection {
+    padding-top: var(--space-3xl);
+  }
+
+  .zone-subsection:last-of-type {
+    padding-bottom: var(--space-3xl);
+  }
+
+  .zone-subsection .section-header {
+    margin-bottom: var(--space-3xl);
+  }
+}
+

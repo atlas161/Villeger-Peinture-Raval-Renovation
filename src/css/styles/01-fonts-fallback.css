@@ -1,0 +1,19 @@
+/* ===================================================================
+   VILLEGER PEINTURE - DESIGN SYSTEM (Apple-inspired)
+   =================================================================== */
+
+/* ===================================================================
+   0. FONT-FACE AVEC FALLBACK METRICS (évite CLS)
+   =================================================================== */
+
+/* Fallback font avec métriques ajustées pour Inter */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  font-display: swap;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 107%;
+}
+

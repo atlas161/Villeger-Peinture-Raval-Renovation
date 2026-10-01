@@ -1,0 +1,73 @@
+/* ===================================================================
+   5. BOUTONS (Apple-style)
+   =================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  min-height: 48px;
+  padding: 0.75rem var(--space-xl);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-pill);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-base);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  /* Animation sobre : la couleur change, rien ne bouge (ni soulèvement, ni ombre, ni reflet). */
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.btn:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-white);
+}
+
+.btn:active {
+  background: var(--color-primary-active);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Bouton principal (= défaut) */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-white);
+}
+
+/* Bouton secondaire : contour */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Deux tailles seulement : 48 px (défaut) et 40 px (.btn--sm). .btn--lg = défaut. */
+.btn--sm {
+  min-height: 40px;
+  padding: 0.5rem var(--space-lg);
+  font-size: var(--text-sm);
+}
+

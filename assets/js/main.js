@@ -1,96 +1,120 @@
+/* GÉNÉRÉ par scripts/build-bundles.js depuis src/js/main/ — ne pas éditer ce fichier. */
+(() => {
+/* ▸ 00-utilitaires.js */
 /**
- * @file Script principal pour l'interactivité du site VPRR.
- * Gère la navigation mobile, le scroll-spy, les animations et la carte.
+ * Utilitaires partagés par les modules de main.js.
+ * Les fichiers de src/js/main/ sont concaténés (dans l'ordre de leur numéro) par
+ * scripts/build-bundles.js : ils partagent donc la même portée, sans import/export.
  */
 
-// Attend que le DOM soit entièrement chargé avant d'exécuter le script.
-document.addEventListener("DOMContentLoaded", () => {
-  // --- GESTION DE LA NAVIGATION ---
+// Chemin normalisé (sans index.html, avec « / » final) pour comparer deux URL de la même page.
+const normalizePath = (p) => {
+  const raw = typeof p === 'string' ? p : '';
+  const noIndex = raw.replace(/\/index\.html$/i, '/');
+  return noIndex.endsWith('/') ? noIndex : `${noIndex}/`;
+};
 
-  // Sélection des éléments du DOM nécessaires pour la navigation
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".primary-nav");
-  const navLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link'));
-  const navButtons = Array.from(document.querySelectorAll('.primary-nav .menu a.btn'));
+// Le menu est « bureau » à partir de 992 px, « burger » en dessous (aligné sur le CSS).
+// Testé au moment de l'événement (et non au chargement) : la fenêtre peut être redimensionnée.
+const isDesktopNav = () => !!window.matchMedia && window.matchMedia('(min-width: 992px)').matches;
+const isMobileNav = () => !!window.matchMedia && window.matchMedia('(max-width: 991px)').matches;
 
-  // Empêche le clavier/lecteur d'écran d'atteindre le contenu caché derrière le menu mobile
-  // plein écran (sans ça, Tab pouvait faire sortir le focus sur des liens invisibles de la
-  // page, masqués par l'overlay du menu — voir docs/ux-ui-responsive-audit.md).
-  const setBackgroundInert = (isInert) => {
-    document.querySelectorAll('#main-content, #site-footer-wrapper').forEach((el) => {
-      if (isInert) el.setAttribute('inert', '');
-      else el.removeAttribute('inert');
-    });
-  };
+// Empêche le clavier/lecteur d'écran d'atteindre le contenu caché derrière le menu mobile
+// plein écran (sans ça, Tab pouvait faire sortir le focus sur des liens invisibles de la
+// page, masqués par l'overlay du menu — voir docs/ux-ui-responsive-audit.md).
+const setBackgroundInert = (isInert) => {
+  document.querySelectorAll('#main-content, #site-footer-wrapper').forEach((el) => {
+    if (isInert) el.setAttribute('inert', '');
+    else el.removeAttribute('inert');
+  });
+};
 
-  // Hero : la page s'affiche tout de suite (image d'attente en CSS). La vidéo Vimeo démarre
-  // (Vimeo adapte la qualité) et apparaît en fondu par-dessus l'image d'attente ; on force le mode auto après 3 s.
-  const shouldLoadHeroVideo = () => {
-    const conn = navigator.connection || {};
-    if (conn.saveData) return false;
-    if (/(^|slow-)2g|3g/.test(conn.effectiveType || '')) return false;
-    return true;
-  };
+// Mouvement réduit demandé par l'utilisateur ?
+const prefersReducedMotion = () =>
+  !!window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ▸ 10-video-hero.js */
+/**
+ * Hero : la page s'affiche tout de suite (image d'attente en CSS). La vidéo Vimeo démarre
+ * (Vimeo adapte la qualité) et apparaît en fondu par-dessus l'image d'attente ; on force le mode auto après 3 s.
+ */
+
+const shouldLoadHeroVideo = () => {
+  const conn = navigator.connection || {};
+  if (conn.saveData) return false;
+  if (/(^|slow-)2g|3g/.test(conn.effectiveType || '')) return false;
+  return true;
+};
+
+// Charge l'API Vimeo une seule fois (script injecté à la demande).
+const ensureVimeoApi = () => new Promise((resolve, reject) => {
+  if (window.Vimeo && window.Vimeo.Player) return resolve();
+  const existing = document.querySelector('script[data-vimeo-player-api]');
+  if (existing) {
+    existing.addEventListener('load', () => resolve(), { once: true });
+    existing.addEventListener('error', () => reject(new Error('Vimeo Player API load error')), { once: true });
+    return;
+  }
+  const s = document.createElement('script');
+  s.src = 'https://player.vimeo.com/api/player.js';
+  s.async = true;
+  s.setAttribute('data-vimeo-player-api', '1');
+  s.addEventListener('load', () => resolve(), { once: true });
+  s.addEventListener('error', () => reject(new Error('Vimeo Player API load error')), { once: true });
+  document.head.appendChild(s);
+});
+
+const startHeroVideo = (heroVimeo) => {
+  heroVimeo.src = heroVimeo.dataset.src;
+  const showVideo = () => heroVimeo.classList.add('is-playing');
+  // Filet de sécurité : si l'API Vimeo ne répond pas, on affiche quand même la vidéo au bout de 4 s.
+  const fallbackTimer = window.setTimeout(showVideo, 4000);
+
+  ensureVimeoApi()
+    .then(() => {
+      const player = new window.Vimeo.Player(heroVimeo);
+      let isReady = false;
+      const onTimeUpdate = (data) => {
+        const t = data && typeof data.seconds === 'number' ? data.seconds : 0;
+        if (t > 0.05 && !isReady) {
+          isReady = true;
+          window.clearTimeout(fallbackTimer);
+          showVideo();
+          try { player.off('timeupdate', onTimeUpdate); } catch (_) {}
+          // Montée en qualité progressive : on repasse en automatique après quelques secondes de lecture.
+          window.setTimeout(() => {
+            try { player.setQuality('auto').catch(() => {}); } catch (_) {}
+          }, 3000);
+        }
+      };
+      player.on('timeupdate', onTimeUpdate);
+    })
+    .catch(() => { window.clearTimeout(fallbackTimer); showVideo(); });
+};
+
+const initHeroVideo = () => {
   const heroBg = document.querySelector('.hero-bg');
   const heroVimeo = heroBg ? heroBg.querySelector('iframe.hero-video') : null;
+  if (!heroBg || !heroVimeo) return;
 
-  if (heroBg && heroVimeo && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (prefersReducedMotion()) {
     heroVimeo.remove();
-  } else if (heroBg && heroVimeo && !shouldLoadHeroVideo()) {
+  } else if (!shouldLoadHeroVideo()) {
     // Économiseur de données ou connexion lente : on garde l'image d'attente (la vidéo pèse ~19 Mo).
     // La vidéo se lance sur tous les écrans (téléphone et tablette compris) dans les autres cas.
     heroVimeo.remove();
-  } else if (heroBg && heroVimeo) {
-    heroVimeo.src = heroVimeo.dataset.src;
-    const showVideo = () => heroVimeo.classList.add('is-playing');
-    // Filet de sécurité : si l'API Vimeo ne répond pas, on affiche quand même la vidéo au bout de 4 s.
-    const fallbackTimer = window.setTimeout(showVideo, 4000);
-
-    const ensureVimeoApi = () => new Promise((resolve, reject) => {
-      if (window.Vimeo && window.Vimeo.Player) return resolve();
-      const existing = document.querySelector('script[data-vimeo-player-api]');
-      if (existing) {
-        existing.addEventListener('load', () => resolve(), { once: true });
-        existing.addEventListener('error', () => reject(new Error('Vimeo Player API load error')), { once: true });
-        return;
-      }
-      const s = document.createElement('script');
-      s.src = 'https://player.vimeo.com/api/player.js';
-      s.async = true;
-      s.setAttribute('data-vimeo-player-api', '1');
-      s.addEventListener('load', () => resolve(), { once: true });
-      s.addEventListener('error', () => reject(new Error('Vimeo Player API load error')), { once: true });
-      document.head.appendChild(s);
-    });
-
-    ensureVimeoApi()
-      .then(() => {
-        const player = new window.Vimeo.Player(heroVimeo);
-        let isReady = false;
-        const onTimeUpdate = (data) => {
-          const t = data && typeof data.seconds === 'number' ? data.seconds : 0;
-          if (t > 0.05 && !isReady) {
-            isReady = true;
-            window.clearTimeout(fallbackTimer);
-            showVideo();
-            try { player.off('timeupdate', onTimeUpdate); } catch (_) {}
-            // Montée en qualité progressive : on repasse en automatique après quelques secondes de lecture.
-            window.setTimeout(() => {
-              try { player.setQuality('auto').catch(() => {}); } catch (_) {}
-            }, 3000);
-          }
-        };
-        player.on('timeupdate', onTimeUpdate);
-      })
-      .catch(() => { window.clearTimeout(fallbackTimer); showVideo(); });
+  } else {
+    startHeroVideo(heroVimeo);
   }
+};
 
-  const normalizePath = (p) => {
-    const raw = typeof p === 'string' ? p : '';
-    const noIndex = raw.replace(/\/index\.html$/i, '/');
-    return noIndex.endsWith('/') ? noIndex : `${noIndex}/`;
-  };
+/* ▸ 20-cartes-services.js */
+/**
+ * Cartes de service (a.service-cta-card) : le clic ouvre toujours la page, même si un autre
+ * script a intercepté l'événement (écouteur en phase de capture).
+ */
 
+const initServiceCardLinks = () => {
   document.addEventListener('click', (e) => {
     const serviceCard = e.target && e.target.closest ? e.target.closest('a.service-cta-card') : null;
     if (!serviceCard) return;
@@ -101,233 +125,232 @@ document.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
     window.location.assign(serviceCard.href);
   }, true);
-  
-  // S'assure que les boutons CTA ne sont pas considérés comme des liens de navigation actifs.
-  navButtons.forEach((b) => { 
-    b.classList.remove('active'); 
-    b.removeAttribute('aria-current'); 
+};
+
+/* ▸ 30-nav-etat-actif.js */
+/**
+ * Lien de navigation « actif » (classe .active + aria-current).
+ */
+
+// S'assure que les boutons CTA du menu ne sont pas considérés comme des liens de navigation actifs.
+const clearActiveOnNavButtons = (navButtons) => {
+  navButtons.forEach((b) => {
+    b.classList.remove('active');
+    b.removeAttribute('aria-current');
   });
-  
-  /**
-   * Met à jour l'état visuel du lien de navigation actif.
-   * @param {HTMLElement} link - Le lien à marquer comme actif.
-   */
-  const setActive = (link) => {
-    navLinks.forEach(a => {
-      a.classList.remove('active');
-      a.removeAttribute('aria-current');
-    });
-    if (link) {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-    }
+};
+
+/**
+ * Met à jour l'état visuel du lien de navigation actif.
+ * @param {HTMLElement[]} navLinks - Tous les liens du menu.
+ * @param {HTMLElement} link - Le lien à marquer comme actif.
+ */
+const setActiveNavLink = (navLinks, link) => {
+  navLinks.forEach((a) => {
+    a.classList.remove('active');
+    a.removeAttribute('aria-current');
+  });
+  if (link) {
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+  }
+};
+
+/* ▸ 40-nav-sous-menus-bureau.js */
+/**
+ * Sous-menus du menu « bureau » (≥ 992 px) : ouverture au survol / au focus, avec de courts délais.
+ * Le survol n'ouvre le sous-menu qu'en affichage ordinateur : la largeur est testée au moment de
+ * l'événement (isDesktopNav), sinon un redimensionnement de fenêtre laisse le survol actif dans le
+ * menu burger et « Services » s'ouvre au moindre passage de souris.
+ */
+
+const initDesktopSubmenus = () => {
+  if (!window.matchMedia) return;
+  const items = Array.from(document.querySelectorAll('.primary-nav .has-submenu'));
+  if (items.length === 0) return;
+
+  const closeAll = () => {
+    items.forEach((li) => li.classList.remove('submenu-open'));
   };
 
-  // Le survol n'ouvre le sous-menu qu'en affichage ordinateur : testé au moment de l'événement
-  // (et non au chargement), sinon un élargissement/rétrécissement de fenêtre laisse le survol
-  // actif dans le menu burger et « Services » s'ouvre au moindre passage de souris.
-  const isDesktopNav = () => !!window.matchMedia && window.matchMedia('(min-width: 992px)').matches;
+  items.forEach((li) => {
+    if (li.__vprrSubmenuBound) return;
+    li.__vprrSubmenuBound = true;
 
-  const initDesktopSubmenus = () => {
-    if (!window.matchMedia) return;
-    const items = Array.from(document.querySelectorAll('.primary-nav .has-submenu'));
-    if (items.length === 0) return;
+    let openTimer = null;
+    let closeTimer = null;
 
-    const closeAll = () => {
-      items.forEach((li) => li.classList.remove('submenu-open'));
-    };
-
-    items.forEach((li) => {
-      if (li.__vprrSubmenuBound) return;
-      li.__vprrSubmenuBound = true;
-
-      let openTimer = null;
-      let closeTimer = null;
-
-      const open = () => {
-        if (!isDesktopNav()) return;
-        clearTimeout(closeTimer);
-        clearTimeout(openTimer);
-        openTimer = setTimeout(() => {
-          if (!isDesktopNav()) return;
-          closeAll();
-          li.classList.add('submenu-open');
-        }, 160);
-      };
-
-      const close = () => {
-        if (!isDesktopNav()) return;
-        clearTimeout(openTimer);
-        clearTimeout(closeTimer);
-        closeTimer = setTimeout(() => {
-          li.classList.remove('submenu-open');
-        }, 220);
-      };
-
-      li.addEventListener('mouseenter', open);
-      li.addEventListener('mouseleave', close);
-      li.addEventListener('focusin', open);
-      li.addEventListener('focusout', close);
-
-      const submenu = li.querySelector('.submenu');
-      if (submenu) {
-        submenu.addEventListener('click', () => {
-          li.classList.remove('submenu-open');
-        });
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeAll();
-    }, { passive: true });
-
-    document.addEventListener('click', (e) => {
+    const open = () => {
       if (!isDesktopNav()) return;
-      const within = e.target && e.target.closest ? e.target.closest('.primary-nav .has-submenu') : null;
-      if (!within) closeAll();
-    }, true);
+      clearTimeout(closeTimer);
+      clearTimeout(openTimer);
+      openTimer = setTimeout(() => {
+        if (!isDesktopNav()) return;
+        closeAll();
+        li.classList.add('submenu-open');
+      }, 160);
+    };
+
+    const close = () => {
+      if (!isDesktopNav()) return;
+      clearTimeout(openTimer);
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        li.classList.remove('submenu-open');
+      }, 220);
+    };
+
+    li.addEventListener('mouseenter', open);
+    li.addEventListener('mouseleave', close);
+    li.addEventListener('focusin', open);
+    li.addEventListener('focusout', close);
+
+    const submenu = li.querySelector('.submenu');
+    if (submenu) {
+      submenu.addEventListener('click', () => {
+        li.classList.remove('submenu-open');
+      });
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  }, { passive: true });
+
+  document.addEventListener('click', (e) => {
+    if (!isDesktopNav()) return;
+    const within = e.target && e.target.closest ? e.target.closest('.primary-nav .has-submenu') : null;
+    if (!within) closeAll();
+  }, true);
+};
+
+/* ▸ 50-nav-menu-mobile.js */
+/**
+ * Menu mobile (burger) : ouverture/fermeture du panneau plein écran, sous-menus avec bouton
+ * « Retour », fermeture à Échap / au clic sur un lien d'ancre, flèches ← → entre les liens.
+ */
+
+const stopEvent = (e) => {
+  if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+};
+
+const initMobileMenu = ({ burger, nav, navLinks }) => {
+  if (!burger || !nav) return;
+
+  let isProcessing = false;   // évite les doubles clics
+  let scrollPosition = 0;     // position de la page avant l'ouverture (le body est figé pendant)
+
+  // --- Ouverture / fermeture du panneau ---
+
+  const lockBodyScroll = () => {
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
   };
 
-  initDesktopSubmenus();
+  const unlockBodyScroll = () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.height = '';
+    window.scrollTo(0, scrollPosition);
+  };
 
-  // --- GESTION DU MENU MOBILE ---
-  if (burger && nav) {
-    // Variable pour éviter les doubles clics
-    let isProcessing = false;
-    
-    // Variables pour gérer la position du scroll
-    let scrollPosition = 0;
-    
-    function burgerActivateHandler(e) {
-      if (e && typeof e.preventDefault === 'function') e.preventDefault();
-      if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+  const burgerActivateHandler = (e) => {
+    stopEvent(e);
+    if (isProcessing) return;
+    isProcessing = true;
 
-      if (isProcessing) return;
-      isProcessing = true;
-      
-      const isOpen = nav.classList.contains("open");
-      
-      if (isOpen) {
-        // Fermer le menu
-        nav.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-        burger.setAttribute("aria-label", "Ouvrir le menu");
-        document.body.classList.remove('nav-open');
-        setBackgroundInert(false);
-
-        // Restaurer la position du scroll
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.height = '';
-        window.scrollTo(0, scrollPosition);
-      } else {
-        // Sauvegarder la position du scroll avant d'ouvrir le menu
-        scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Ouvrir le menu
-        nav.classList.add("open");
-        burger.setAttribute("aria-expanded", "true");
-        burger.setAttribute("aria-label", "Fermer le menu");
-        document.body.classList.add('nav-open');
-        setBackgroundInert(true);
-        
-        // Fixer le body pour empêcher le scroll arrière
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollPosition}px`;
-        document.body.style.width = '100%';
-      }
-      
-      // Réinitialiser rapidement pour la réactivité
-      setTimeout(() => {
-        isProcessing = false;
-      }, 300);
+    if (nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Ouvrir le menu');
+      document.body.classList.remove('nav-open');
+      setBackgroundInert(false);
+      unlockBodyScroll();
+    } else {
+      // La position est sauvegardée avant tout changement d'état, puis le body est figé.
+      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      nav.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+      burger.setAttribute('aria-label', 'Fermer le menu');
+      document.body.classList.add('nav-open');
+      setBackgroundInert(true);
+      lockBodyScroll();
     }
 
-    if (!burger.__vprrBurgerBound) {
-      burger.__vprrBurgerBound = true;
+    // Réinitialiser rapidement pour la réactivité
+    setTimeout(() => { isProcessing = false; }, 300);
+  };
 
-      let lastPointerActivationAt = 0;
+  const bindBurger = () => {
+    if (burger.__vprrBurgerBound) return;
+    burger.__vprrBurgerBound = true;
 
-      if ('PointerEvent' in window) {
-        burger.addEventListener('pointerup', (e) => {
-          lastPointerActivationAt = Date.now();
-          burgerActivateHandler(e);
-        }, { passive: false });
-      } else {
-        burger.addEventListener('touchend', (e) => {
-          lastPointerActivationAt = Date.now();
-          burgerActivateHandler(e);
-        }, { passive: false });
+    let lastPointerActivationAt = 0;
+    const onPointerActivate = (e) => {
+      lastPointerActivationAt = Date.now();
+      burgerActivateHandler(e);
+    };
+
+    if ('PointerEvent' in window) burger.addEventListener('pointerup', onPointerActivate, { passive: false });
+    else burger.addEventListener('touchend', onPointerActivate, { passive: false });
+
+    // Le « click » synthétisé juste après un appui tactile est ignoré (sinon le menu se rouvrirait).
+    burger.addEventListener('click', (e) => {
+      if (Date.now() - lastPointerActivationAt < 700) {
+        stopEvent(e);
+        return;
       }
+      burgerActivateHandler(e);
+    }, { passive: false });
+  };
 
-      burger.addEventListener('click', (e) => {
-        if (Date.now() - lastPointerActivationAt < 700) {
-          if (e && typeof e.preventDefault === 'function') e.preventDefault();
-          if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
-          return;
-        }
-        burgerActivateHandler(e);
-      }, { passive: false });
-    }
+  // --- Sous-menus ---
 
-    // Fonction pour fermer le menu mobile proprement
-    const closeAllMobileSubmenus = () => {
-      const openItems = nav.querySelectorAll('.has-submenu.submenu-open');
-      openItems.forEach((li) => {
-        li.classList.remove('submenu-open');
-        const trigger = li.querySelector('a.nav-link');
-        if (trigger) trigger.setAttribute('aria-expanded', 'false');
-      });
-      nav.classList.remove('submenu-active');
-      return openItems.length > 0;
-    };
+  const closeAllMobileSubmenus = () => {
+    const openItems = nav.querySelectorAll('.has-submenu.submenu-open');
+    openItems.forEach((li) => {
+      li.classList.remove('submenu-open');
+      const trigger = li.querySelector('a.nav-link');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+    nav.classList.remove('submenu-active');
+    return openItems.length > 0;
+  };
 
-    const closeMenu = () => {
-      if (nav.classList.contains("open")) {
-        closeAllMobileSubmenus();
-        nav.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-        burger.setAttribute("aria-label", "Ouvrir le menu");
-        document.body.classList.remove('nav-open');
-        setBackgroundInert(false);
+  // Ferme le menu mobile proprement ; renvoie true s'il était ouvert.
+  const closeMenu = () => {
+    if (!nav.classList.contains('open')) return false;
+    closeAllMobileSubmenus();
+    nav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Ouvrir le menu');
+    document.body.classList.remove('nav-open');
+    setBackgroundInert(false);
+    unlockBodyScroll();
+    return true;
+  };
 
-        // Restaurer la position du scroll sur le body
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.height = '';
-        window.scrollTo(0, scrollPosition);
-        
-        return true;
-      }
-      return false;
-    };
+  const ensureSubmenuBack = (submenu) => {
+    if (!submenu || submenu.querySelector('.submenu-back-item')) return;
+    const backLi = document.createElement('li');
+    backLi.className = 'submenu-back-item';
+    const backBtn = document.createElement('button');
+    backBtn.type = 'button';
+    backBtn.className = 'submenu-back-btn';
+    backBtn.innerHTML = '<span>Retour</span>';
+    backBtn.addEventListener('click', (e) => {
+      stopEvent(e);
+      closeAllMobileSubmenus();
+    });
+    backLi.appendChild(backBtn);
+    submenu.insertBefore(backLi, submenu.firstChild);
+  };
 
-    const isMobileNav = () => {
-      if (!window.matchMedia) return false;
-      return window.matchMedia('(max-width: 991px)').matches;
-    };
-
-    const ensureSubmenuBack = (submenu, li) => {
-      if (!submenu || submenu.querySelector('.submenu-back-item')) return;
-      const backLi = document.createElement('li');
-      backLi.className = 'submenu-back-item';
-      const backBtn = document.createElement('button');
-      backBtn.type = 'button';
-      backBtn.className = 'submenu-back-btn';
-      backBtn.innerHTML = '<span>Retour</span>';
-      backBtn.addEventListener('click', (e) => {
-        if (e && typeof e.preventDefault === 'function') e.preventDefault();
-        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
-        closeAllMobileSubmenus();
-      });
-      backLi.appendChild(backBtn);
-      submenu.insertBefore(backLi, submenu.firstChild);
-    };
-
-    const submenuItems = Array.from(nav.querySelectorAll('.has-submenu'));
-    submenuItems.forEach((li) => {
+  const bindSubmenus = () => {
+    Array.from(nav.querySelectorAll('.has-submenu')).forEach((li) => {
       const trigger = li.querySelector('a.nav-link');
       const submenu = li.querySelector('.submenu');
       if (!trigger || !submenu) return;
@@ -335,13 +358,12 @@ document.addEventListener("DOMContentLoaded", () => {
       li.__vprrMobileSubmenuBound = true;
 
       trigger.setAttribute('aria-expanded', 'false');
-      ensureSubmenuBack(submenu, li);
+      ensureSubmenuBack(submenu);
 
       trigger.addEventListener('click', (e) => {
         if (!isMobileNav()) return;
         if (!nav.classList.contains('open')) return;
-        if (e && typeof e.preventDefault === 'function') e.preventDefault();
-        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+        stopEvent(e);
         if (e && typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
 
         const isOpen = li.classList.contains('submenu-open');
@@ -350,12 +372,11 @@ document.addEventListener("DOMContentLoaded", () => {
           li.classList.add('submenu-open');
           nav.classList.add('submenu-active');
           trigger.setAttribute('aria-expanded', 'true');
-          ensureSubmenuBack(submenu, li);
+          ensureSubmenuBack(submenu);
         }
       }, { passive: false });
 
-      const submenuLinks = Array.from(submenu.querySelectorAll('a[href]'));
-      submenuLinks.forEach((a) => {
+      Array.from(submenu.querySelectorAll('a[href]')).forEach((a) => {
         a.addEventListener('click', () => {
           if (!isMobileNav()) return;
           closeAllMobileSubmenus();
@@ -363,58 +384,69 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     });
+  };
 
-    // Ferme automatiquement le menu mobile après avoir cliqué sur un lien.
-    const allMenuLinks = nav.querySelectorAll("a.nav-link, a.btn");
-    
-    allMenuLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
+  // --- Liens du menu et clavier ---
+
+  // Ferme automatiquement le menu mobile après un clic sur un lien d'ancre.
+  const bindMenuLinks = () => {
+    nav.querySelectorAll('a.nav-link, a.btn').forEach((link) => {
+      link.addEventListener('click', () => {
         if (isMobileNav() && nav.classList.contains('open') && link.closest && link.closest('.has-submenu')) return;
         const href = link.getAttribute('href');
-        
-        // Si c'est une ancre interne (hash sur la même page)
+        // Ancre interne (hash sur la même page) : on ferme le menu
         if (href && (href.startsWith('#') || href.includes('#'))) {
-          // On ferme le menu
           closeMenu();
-          setActive(link);
+          setActiveNavLink(navLinks, link);
         }
       });
     });
+  };
 
-    // Amélioration de l'accessibilité : ferme le menu avec la touche 'Échap'.
+  const bindKeyboard = () => {
+    // Accessibilité : Échap ferme d'abord les sous-menus, puis le menu.
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         if (!closeAllMobileSubmenus()) closeMenu();
       }
     }, { passive: true });
 
-    // Amélioration de l'accessibilité : permet la navigation au clavier dans le menu.
+    // Accessibilité : flèches gauche/droite entre les liens du menu.
     navLinks.forEach((a, idx) => {
       a.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight') {
           e.preventDefault();
-          const next = navLinks[(idx + 1) % navLinks.length];
-          next.focus();
+          navLinks[(idx + 1) % navLinks.length].focus();
         } else if (e.key === 'ArrowLeft') {
           e.preventDefault();
-          const prev = navLinks[(idx - 1 + navLinks.length) % navLinks.length];
-          prev.focus();
+          navLinks[(idx - 1 + navLinks.length) % navLinks.length].focus();
         }
       });
     });
-  }
+  };
 
-  // --- SMOOTH SCROLL AMÉLIORÉ ---
-  // Gère le défilement fluide pour les liens d'ancrage internes uniquement
+  bindBurger();
+  bindSubmenus();
+  bindMenuLinks();
+  bindKeyboard();
+};
+
+/* ▸ 60-defilement-ancres.js */
+/**
+ * Défilement fluide vers les ancres internes (#section ou page.html#section sur la même page),
+ * en tenant compte de la hauteur de l'en-tête fixe.
+ */
+
+const initSmoothScroll = () => {
   document.querySelectorAll('a[href^="#"], a[href*=".html#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
       if (!href) return;
-      
+
       // On extrait l'ID de la cible (ex: #services ou index.html#services)
       const targetId = href.includes('#') ? href.substring(href.indexOf('#')) : null;
       if (!targetId || targetId === '#') return;
-      
+
       let url = null;
       try {
         url = new URL(href, window.location.href);
@@ -430,620 +462,658 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
-      
+
       const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        
-        // Petite pause pour laisser le temps au menu de se fermer et au layout de se stabiliser
-        setTimeout(() => {
-          const headerHeight = document.querySelector('.site-header')?.offsetHeight || 60;
-          const rect = target.getBoundingClientRect();
-          const targetPosition = Math.max(0, rect.top + window.pageYOffset - headerHeight + 4);
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          
-          // Mettre à jour l'URL sans saut de page
-          if (history.pushState) {
-            history.pushState(null, null, targetId);
-          } else {
-            location.hash = targetId;
-          }
-        }, 40);
-      }
+      if (!target) return;
+      e.preventDefault();
+
+      // Petite pause pour laisser le temps au menu de se fermer et au layout de se stabiliser
+      setTimeout(() => {
+        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 60;
+        const rect = target.getBoundingClientRect();
+        const targetPosition = Math.max(0, rect.top + window.pageYOffset - headerHeight + 4);
+
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+        // Mettre à jour l'URL sans saut de page
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        } else {
+          location.hash = targetId;
+        }
+      }, 40);
     });
   });
+};
 
+/* ▸ 70-scroll-spy.js */
+/**
+ * Scroll-spy : met en surbrillance le lien du menu correspondant à la section visible à l'écran.
+ * Positions des sections mises en cache (pas de lecture du DOM au scroll), scroll limité à une
+ * mise à jour par image, recalcul au redimensionnement.
+ */
 
-  // --- SCROLL SPY AMÉLIORÉ ---
-  // Met en surbrillance le lien de navigation correspondant à la section visible à l'écran.
-  const isSamePageHashLink = (href) => {
-    if (typeof href !== 'string') return false;
-    if (!href.includes('#')) return false;
-    if (href.startsWith('#')) return true;
+const isSamePageHashLink = (href) => {
+  if (typeof href !== 'string') return false;
+  if (!href.includes('#')) return false;
+  if (href.startsWith('#')) return true;
+  try {
+    const u = new URL(href, window.location.href);
+    return u.origin === window.location.origin && normalizePath(u.pathname) === normalizePath(window.location.pathname);
+  } catch (_) {
+    return false;
+  }
+};
+
+const idFromHref = (href) => {
+  if (typeof href !== 'string') return '';
+  const hashIndex = href.indexOf('#');
+  return hashIndex !== -1 ? href.substring(hashIndex + 1) : '';
+};
+
+const observeSections = (targets, navLinks) => {
+  let sectionPositions = [];
+  let lastActiveHash = null;
+  let cachedViewportHeight = window.innerHeight;
+
+  // Calculer les positions une seule fois, puis recalculer au resize (lecture groupée).
+  const updatePositions = () => {
+    const positions = [];
+    const scrollY = window.scrollY;
+    cachedViewportHeight = window.innerHeight;
+
+    for (const { a, el } of targets.filter((x) => !!x.el)) {
+      const rect = el.getBoundingClientRect();
+      positions.push({ a, top: rect.top + scrollY, bottom: rect.top + scrollY + rect.height });
+    }
+    sectionPositions = positions;
+  };
+
+  // Différer le calcul initial après le premier rendu
+  requestAnimationFrame(() => {
+    requestAnimationFrame(updatePositions);
+  });
+
+  const onScroll = () => {
+    const scrollPosition = window.scrollY + cachedViewportHeight / 3;
+    let currentSection = null;
+
+    for (const section of sectionPositions) {
+      if (scrollPosition >= section.top && scrollPosition < section.bottom) {
+        currentSection = section.a;
+        break;
+      }
+    }
+
+    // Si aucune section trouvée, prendre la plus proche
+    if (!currentSection && sectionPositions.length > 0) {
+      let bestDistance = Infinity;
+      for (const section of sectionPositions) {
+        const distance = Math.abs(scrollPosition - section.top);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          currentSection = section.a;
+        }
+      }
+    }
+
+    if (currentSection) {
+      const href = currentSection.getAttribute('href');
+      const hashPart = typeof href === 'string' && href.includes('#') ? href.substring(href.indexOf('#')) : null;
+      // Éviter les mises à jour inutiles
+      if (hashPart && hashPart !== '#' && hashPart !== lastActiveHash) {
+        lastActiveHash = hashPart;
+        setActiveNavLink(navLinks, currentSection);
+      }
+    }
+  };
+
+  let ticking = false;
+  const throttledScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        onScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  let resizeTimeout;
+  const onResize = () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updatePositions, 150);
+  };
+
+  window.addEventListener('scroll', throttledScroll, { passive: true });
+  window.addEventListener('resize', onResize, { passive: true });
+
+  // Différer l'appel initial pour ne pas bloquer le rendu
+  requestAnimationFrame(() => {
+    requestAnimationFrame(onScroll);
+  });
+};
+
+const initScrollSpy = (navLinks) => {
+  const sectionLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link[href*="#"]'))
+    .filter((a) => isSamePageHashLink(a.getAttribute('href')));
+  const targets = sectionLinks
+    .map((a) => ({ a, el: document.getElementById(idFromHref(a.getAttribute('href'))) }));
+
+  // Différer l'initialisation du scroll spy
+  requestAnimationFrame(() => observeSections(targets, navLinks));
+};
+
+/* ▸ 80-apparition-au-scroll.js */
+/**
+ * Apparition progressive des blocs au défilement (classes reveal-hidden / reveal-visible).
+ * Désactivée en « mouvement réduit » ; sans IntersectionObserver, rien n'est masqué.
+ */
+
+const initScrollReveal = () => {
+  const revealElements = document.querySelectorAll(
+    '.service-card, .faq-item, .contact-panel, .zone-map-container, .zone-address, .zone-cities, .zone-note'
+  );
+
+  if (!('IntersectionObserver' in window) || prefersReducedMotion()) return;
+
+  revealElements.forEach((el) => {
+    el.classList.add('reveal-hidden');
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Délai progressif pour effet cascade
+        setTimeout(() => {
+          entry.target.classList.add('reveal-visible');
+          entry.target.classList.remove('reveal-hidden');
+        }, index * 100);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+};
+
+/* ▸ 90-faq.js */
+/**
+ * FAQ : accordéons « un seul ouvert à la fois » (sauf data-faq-exclusive="0") et, sur la page FAQ,
+ * recherche + filtres par catégorie + « tout ouvrir / tout fermer ».
+ */
+
+const initFaqAccordions = () => {
+  const allDetails = Array.from(document.querySelectorAll('.faq-accordion details'));
+  if (allDetails.length === 0) return;
+
+  allDetails.forEach((detail) => {
+    if (detail.__vprrFaqBound) return;
+    detail.__vprrFaqBound = true;
+
+    detail.addEventListener('toggle', () => {
+      if (!detail.open) return;
+
+      const container = detail.closest('.faq-accordion');
+      if (container && container.dataset && container.dataset.faqExclusive === '0') return;
+
+      const siblings = container ? Array.from(container.querySelectorAll('details')) : [];
+      siblings.forEach((otherDetail) => {
+        if (otherDetail !== detail && otherDetail.open) {
+          otherDetail.removeAttribute('open');
+        }
+      });
+    });
+  });
+};
+
+const initFaqPageControls = () => {
+  const controls = document.querySelector('[data-faq-controls]');
+  if (!controls) return;
+
+  const accordion = document.querySelector('.faq-accordion');
+  if (!accordion) return;
+
+  const details = Array.from(accordion.querySelectorAll('details'));
+  const filterButtons = Array.from(controls.querySelectorAll('[data-faq-filter]'));
+  const expandBtn = controls.querySelector('[data-faq-expand]');
+  const collapseBtn = controls.querySelector('[data-faq-collapse]');
+  const searchInput = controls.querySelector('[data-faq-search]');
+  const countEl = controls.querySelector('[data-faq-count]');
+  const emptyEl = document.querySelector('[data-faq-empty]');
+
+  const normalize = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, ' ').toLowerCase().trim();
+  const texts = new Map(details.map((d) => [d, normalize(d.textContent)]));
+  let currentFilter = 'all';
+
+  // Filtre de catégorie + recherche texte, combinés.
+  const apply = () => {
+    const q = normalize(searchInput ? searchInput.value : '');
+    let shown = 0;
+    details.forEach((d) => {
+      const cat = d.getAttribute('data-faq-category') || '';
+      const visible = (currentFilter === 'all' || cat === currentFilter) && (q === '' || texts.get(d).indexOf(q) !== -1);
+      d.hidden = !visible;
+      if (!visible) d.removeAttribute('open');
+      else shown += 1;
+    });
+    if (countEl) countEl.textContent = shown + (shown > 1 ? ' questions' : ' question');
+    if (emptyEl) emptyEl.hidden = shown !== 0;
+  };
+
+  const setFilter = (filterValue) => {
+    currentFilter = filterValue;
+    filterButtons.forEach((btn) => {
+      const isActive = btn.getAttribute('data-faq-filter') === filterValue;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    apply();
+  };
+
+  if (searchInput && !searchInput.__vprrBound) {
+    searchInput.__vprrBound = true;
+    searchInput.addEventListener('input', apply);
+  }
+
+  if (filterButtons.length > 0) {
+    filterButtons.forEach((btn) => {
+      if (btn.__vprrFaqFilterBound) return;
+      btn.__vprrFaqFilterBound = true;
+      btn.addEventListener('click', () => setFilter(btn.getAttribute('data-faq-filter') || 'all'));
+    });
+    setFilter(filterButtons[0].getAttribute('data-faq-filter') || 'all');
+  }
+
+  const visibleDetails = () => details.filter((d) => !d.hidden);
+
+  if (expandBtn && !expandBtn.__vprrBound) {
+    expandBtn.__vprrBound = true;
+    expandBtn.addEventListener('click', () => {
+      visibleDetails().forEach((d) => d.setAttribute('open', ''));
+    });
+  }
+
+  if (collapseBtn && !collapseBtn.__vprrBound) {
+    collapseBtn.__vprrBound = true;
+    collapseBtn.addEventListener('click', () => {
+      visibleDetails().forEach((d) => d.removeAttribute('open'));
+    });
+  }
+};
+
+/* ▸ 95-carrousel-avis.js */
+/**
+ * Carrousel d'avis (accueil et pages de service) : défilement en boucle par clonage de cartes,
+ * nombre de cartes visibles selon la largeur, « Lire la suite » sur les avis longs.
+ * Marquage : [data-reviews-carousel] > [data-reviews-track] > .review-card, boutons
+ * [data-reviews-prev] / [data-reviews-next].
+ */
+
+const initReviewsCarousel = (carousel) => {
+  if (carousel.dataset && carousel.dataset.reviewsInit === '1') return;
+
+  const track = carousel.querySelector('[data-reviews-track]');
+  const prev = carousel.querySelector('[data-reviews-prev]');
+  const next = carousel.querySelector('[data-reviews-next]');
+  if (!track) return;
+
+  const baseCards = Array.from(track.querySelectorAll('.review-card:not([data-reviews-clone])'));
+  if (baseCards.length === 0) return;
+
+  const realCount = baseCards.length;
+  const MAX_CLONES = 4;
+
+  let index = 0;
+  let looping = false;
+  let cloneCount = 0;
+  let ready = false;
+
+  const getGap = () => {
     try {
-      const u = new URL(href, window.location.href);
-      return u.origin === window.location.origin && normalizePath(u.pathname) === normalizePath(window.location.pathname);
+      const gap = window.getComputedStyle(track).gap || '0px';
+      const px = parseFloat(gap);
+      return Number.isFinite(px) ? px : 0;
+    } catch (_) {
+      return 0;
+    }
+  };
+
+  const getPerView = () => {
+    const w = window.innerWidth || 0;
+    if (w >= 1200) return 3;
+    if (w >= 640) return 2;
+    return 1;
+  };
+
+  const getCardWidth = () => {
+    const card = track.querySelector('.review-card:not([data-reviews-clone])');
+    if (!card) return 0;
+    const rect = card.getBoundingClientRect();
+    return rect && rect.width ? rect.width : card.offsetWidth || 0;
+  };
+
+  const isLayoutReady = () => {
+    try {
+      const trackStyle = window.getComputedStyle(track);
+      if (trackStyle.display !== 'flex') return false;
+      const card = track.querySelector('.review-card:not([data-reviews-clone])');
+      if (!card) return false;
+      const cardStyle = window.getComputedStyle(card);
+      if (!cardStyle.flexBasis || cardStyle.flexBasis === 'auto') return false;
+      const w = getCardWidth();
+      return w > 40;
     } catch (_) {
       return false;
     }
   };
 
-  const sectionLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link[href*="#"]'))
-    .filter(a => isSamePageHashLink(a.getAttribute('href')));
-  const idFromHref = (href) => {
-  if (typeof href !== 'string') return '';
-  const hashIndex = href.indexOf('#');
-  return hashIndex !== -1 ? href.substring(hashIndex + 1) : '';
-};
-  const targets = sectionLinks
-    .map(a => ({ a, el: document.getElementById(idFromHref(a.getAttribute('href'))) }));
-  
-  // Garder une référence de tous les liens pour la navigation
-  const allLinks = sectionLinks;
+  const setTransitionEnabled = (enabled) => {
+    track.style.transition = enabled ? '' : 'none';
+  };
 
-  const observeSections = () => {
-    // Cache des positions des sections (évite le layout thrashing)
-    let sectionPositions = [];
-    let lastActiveHash = null;
-    let cachedViewportHeight = window.innerHeight; // Cache la hauteur viewport
-    
-    // Calculer les positions une seule fois, puis recalculer au resize
-    const updatePositions = () => {
-      // Lire toutes les dimensions en une seule passe (batch read)
-      const positions = [];
-      const scrollY = window.scrollY;
-      cachedViewportHeight = window.innerHeight; // Mettre à jour au resize
-      
-      for (const { a, el } of targets.filter(x => !!x.el)) {
-        const rect = el.getBoundingClientRect();
-        positions.push({
-          a,
-          top: rect.top + scrollY,
-          bottom: rect.top + scrollY + rect.height
-        });
-      }
-      
-      sectionPositions = positions;
-    };
-    
-    // Différer le calcul initial après le premier rendu
-    requestAnimationFrame(() => {
-      requestAnimationFrame(updatePositions);
-    });
-    
-    const onScroll = () => {
-      // Utiliser la hauteur viewport cachée (pas de lecture DOM)
-      const scrollPosition = window.scrollY + cachedViewportHeight / 3;
-      let currentSection = null;
-      
-      // Utiliser les positions cachées (pas de getBoundingClientRect)
-      for (const section of sectionPositions) {
-        if (scrollPosition >= section.top && scrollPosition < section.bottom) {
-          currentSection = section.a;
-          break;
+  const applyTransform = () => {
+    const delta = (getCardWidth() + getGap()) * index;
+    track.style.transform = `translate3d(${-delta}px, 0, 0)`;
+  };
+
+  const setButtonsState = () => {
+    if (!prev && !next) return;
+
+    const perView = getPerView();
+    const canLoop = realCount > perView;
+
+    if (canLoop) {
+      if (prev) prev.disabled = false;
+      if (next) next.disabled = false;
+      return;
+    }
+
+    const maxIndex = Math.max(0, realCount - perView);
+    index = Math.max(0, Math.min(index, maxIndex));
+    if (prev) prev.disabled = index <= 0;
+    if (next) next.disabled = index >= maxIndex;
+  };
+
+  const removeClones = () => {
+    const clones = Array.from(track.querySelectorAll('[data-reviews-clone]'));
+    clones.forEach((el) => el.remove());
+  };
+
+  const refreshReadMore = () => {
+    const cards = Array.from(track.querySelectorAll('.review-card'));
+    if (cards.length === 0) return;
+
+    const updateOverflow = (card) => {
+      const text = card.querySelector('.review-text');
+      const btn = card.querySelector('[data-review-more]');
+      if (!text || !btn) return;
+
+      const wasExpanded = card.classList.contains('is-expanded');
+      card.classList.remove('is-expanded');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = 'Lire la suite';
+
+      requestAnimationFrame(() => {
+        const overflows = text.scrollHeight - text.clientHeight > 1;
+        card.classList.toggle('has-overflow', overflows);
+        if (wasExpanded && overflows) {
+          card.classList.add('is-expanded');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.textContent = 'Réduire';
         }
-      }
-      
-      // Si aucune section trouvée, prendre la plus proche
-      if (!currentSection && sectionPositions.length > 0) {
-        let bestDistance = Infinity;
-        for (const section of sectionPositions) {
-          const distance = Math.abs(scrollPosition - section.top);
-          if (distance < bestDistance) {
-            bestDistance = distance;
-            currentSection = section.a;
-          }
-        }
-      }
-      
-      if (currentSection) {
-        const href = currentSection.getAttribute('href');
-        const hashPart = typeof href === 'string' && href.includes('#') ? href.substring(href.indexOf('#')) : null;
-        // Éviter les mises à jour inutiles
-        if (hashPart && hashPart !== '#' && hashPart !== lastActiveHash) {
-          lastActiveHash = hashPart;
-          setActive(currentSection);
-        }
-      }
+      });
     };
-    
-    // Throttle pour les performances
-    let ticking = false;
-    const throttledScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          onScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    
-    // Recalculer les positions au resize (debounced)
-    let resizeTimeout;
-    const onResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(updatePositions, 150);
-    };
-    
-    window.addEventListener('scroll', throttledScroll, { passive: true });
-    window.addEventListener('resize', onResize, { passive: true });
-    
-    // Différer l'appel initial pour ne pas bloquer le rendu
-    requestAnimationFrame(() => {
-      requestAnimationFrame(onScroll);
+
+    cards.forEach((card) => {
+      const btn = card.querySelector('[data-review-more]');
+      if (!btn) return;
+      if (btn.__vprrBound) return;
+      btn.__vprrBound = true;
+
+      btn.addEventListener('click', () => {
+        const expanded = !card.classList.contains('is-expanded');
+        card.classList.toggle('is-expanded', expanded);
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        btn.textContent = expanded ? 'Réduire' : 'Lire la suite';
+      });
+
+      updateOverflow(card);
     });
   };
 
-  // Différer l'initialisation du scroll spy
-  requestAnimationFrame(observeSections);
+  const ensureLooping = () => {
+    const perView = getPerView();
+    const canLoop = realCount > perView;
 
-  // --- SCROLL REVEAL ANIMATIONS ---
-  const initScrollReveal = () => {
-    const revealElements = document.querySelectorAll(
-      '.service-card, .faq-item, .contact-panel, .zone-map-container, .zone-address, .zone-cities, .zone-note'
-    );
-    
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      // Ajouter la classe initiale
-      revealElements.forEach(el => {
-        el.classList.add('reveal-hidden');
-      });
-      
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            // Délai progressif pour effet cascade
-            setTimeout(() => {
-              entry.target.classList.add('reveal-visible');
-              entry.target.classList.remove('reveal-hidden');
-            }, index * 100);
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      
-      revealElements.forEach(el => revealObserver.observe(el));
-    }
-  };
-  
-  initScrollReveal();
-
-  const initFaqAccordions = () => {
-    const allDetails = Array.from(document.querySelectorAll('.faq-accordion details'));
-    if (allDetails.length === 0) return;
-
-    allDetails.forEach((detail) => {
-      if (detail.__vprrFaqBound) return;
-      detail.__vprrFaqBound = true;
-
-      detail.addEventListener("toggle", () => {
-        if (!detail.open) return;
-
-        const container = detail.closest('.faq-accordion');
-        if (container && container.dataset && container.dataset.faqExclusive === '0') return;
-
-        const siblings = container ? Array.from(container.querySelectorAll('details')) : [];
-        siblings.forEach((otherDetail) => {
-          if (otherDetail !== detail && otherDetail.open) {
-            otherDetail.removeAttribute("open");
-          }
-        });
-      });
-    });
-  };
-
-  const initFaqPageControls = () => {
-    const controls = document.querySelector('[data-faq-controls]');
-    if (!controls) return;
-
-    const accordion = document.querySelector('.faq-accordion');
-    if (!accordion) return;
-
-    const details = Array.from(accordion.querySelectorAll('details'));
-    const filterButtons = Array.from(controls.querySelectorAll('[data-faq-filter]'));
-    const expandBtn = controls.querySelector('[data-faq-expand]');
-    const collapseBtn = controls.querySelector('[data-faq-collapse]');
-    const searchInput = controls.querySelector('[data-faq-search]');
-    const countEl = controls.querySelector('[data-faq-count]');
-    const emptyEl = document.querySelector('[data-faq-empty]');
-
-    const normalize = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’']/g, ' ').toLowerCase().trim();
-    const texts = new Map(details.map((d) => [d, normalize(d.textContent)]));
-    let currentFilter = 'all';
-
-    // Filtre de catégorie + recherche texte, combinés.
-    const apply = () => {
-      const q = normalize(searchInput ? searchInput.value : '');
-      let shown = 0;
-      details.forEach((d) => {
-        const cat = d.getAttribute('data-faq-category') || '';
-        const visible = (currentFilter === 'all' || cat === currentFilter) && (q === '' || texts.get(d).indexOf(q) !== -1);
-        d.hidden = !visible;
-        if (!visible) d.removeAttribute('open');
-        else shown += 1;
-      });
-      if (countEl) countEl.textContent = shown + (shown > 1 ? ' questions' : ' question');
-      if (emptyEl) emptyEl.hidden = shown !== 0;
-    };
-
-    const setFilter = (filterValue) => {
-      currentFilter = filterValue;
-      filterButtons.forEach((btn) => {
-        const isActive = btn.getAttribute('data-faq-filter') === filterValue;
-        btn.classList.toggle('active', isActive);
-        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-      });
-      apply();
-    };
-
-    if (searchInput && !searchInput.__vprrBound) {
-      searchInput.__vprrBound = true;
-      searchInput.addEventListener('input', apply);
-    }
-
-    if (filterButtons.length > 0) {
-      filterButtons.forEach((btn) => {
-        if (btn.__vprrFaqFilterBound) return;
-        btn.__vprrFaqFilterBound = true;
-        btn.addEventListener('click', () => setFilter(btn.getAttribute('data-faq-filter') || 'all'));
-      });
-      setFilter(filterButtons[0].getAttribute('data-faq-filter') || 'all');
-    }
-
-    const visibleDetails = () => details.filter((d) => !d.hidden);
-
-    if (expandBtn && !expandBtn.__vprrBound) {
-      expandBtn.__vprrBound = true;
-      expandBtn.addEventListener('click', () => {
-        visibleDetails().forEach((d) => d.setAttribute('open', ''));
-      });
-    }
-
-    if (collapseBtn && !collapseBtn.__vprrBound) {
-      collapseBtn.__vprrBound = true;
-      collapseBtn.addEventListener('click', () => {
-        visibleDetails().forEach((d) => d.removeAttribute('open'));
-      });
-    }
-  };
-
-  initFaqAccordions();
-  initFaqPageControls();
-
-  // --- CARROUSEL AVIS ---
-  const initReviewsCarousels = () => {
-    const carousels = Array.from(document.querySelectorAll('[data-reviews-carousel]'));
-    if (carousels.length === 0) return;
-
-    carousels.forEach((carousel) => {
-      if (carousel.dataset && carousel.dataset.reviewsInit === '1') return;
-
-      const track = carousel.querySelector('[data-reviews-track]');
-      const prev = carousel.querySelector('[data-reviews-prev]');
-      const next = carousel.querySelector('[data-reviews-next]');
-      if (!track) return;
-
-      const baseCards = Array.from(track.querySelectorAll('.review-card:not([data-reviews-clone])'));
-      if (baseCards.length === 0) return;
-
-      const realCount = baseCards.length;
-      const MAX_CLONES = 4;
-
-      let index = 0;
-      let looping = false;
-      let cloneCount = 0;
-      let ready = false;
-
-      const getGap = () => {
-        try {
-          const gap = window.getComputedStyle(track).gap || '0px';
-          const px = parseFloat(gap);
-          return Number.isFinite(px) ? px : 0;
-        } catch (_) {
-          return 0;
-        }
-      };
-
-      const getPerView = () => {
-        const w = window.innerWidth || 0;
-        if (w >= 1200) return 3;
-        if (w >= 640) return 2;
-        return 1;
-      };
-
-      const getCardWidth = () => {
-        const card = track.querySelector('.review-card:not([data-reviews-clone])');
-        if (!card) return 0;
-        const rect = card.getBoundingClientRect();
-        return rect && rect.width ? rect.width : card.offsetWidth || 0;
-      };
-
-      const isLayoutReady = () => {
-        try {
-          const trackStyle = window.getComputedStyle(track);
-          if (trackStyle.display !== 'flex') return false;
-          const card = track.querySelector('.review-card:not([data-reviews-clone])');
-          if (!card) return false;
-          const cardStyle = window.getComputedStyle(card);
-          if (!cardStyle.flexBasis || cardStyle.flexBasis === 'auto') return false;
-          const w = getCardWidth();
-          return w > 40;
-        } catch (_) {
-          return false;
-        }
-      };
-
-      const setTransitionEnabled = (enabled) => {
-        track.style.transition = enabled ? '' : 'none';
-      };
-
-      const applyTransform = () => {
-        const delta = (getCardWidth() + getGap()) * index;
-        track.style.transform = `translate3d(${-delta}px, 0, 0)`;
-      };
-
-      const setButtonsState = () => {
-        if (!prev && !next) return;
-
-        const perView = getPerView();
-        const canLoop = realCount > perView;
-
-        if (canLoop) {
-          if (prev) prev.disabled = false;
-          if (next) next.disabled = false;
-          return;
-        }
-
-        const maxIndex = Math.max(0, realCount - perView);
-        index = Math.max(0, Math.min(index, maxIndex));
-        if (prev) prev.disabled = index <= 0;
-        if (next) next.disabled = index >= maxIndex;
-      };
-
-      const removeClones = () => {
-        const clones = Array.from(track.querySelectorAll('[data-reviews-clone]'));
-        clones.forEach((el) => el.remove());
-      };
-
-      const refreshReadMore = () => {
-        const cards = Array.from(track.querySelectorAll('.review-card'));
-        if (cards.length === 0) return;
-
-        const updateOverflow = (card) => {
-          const text = card.querySelector('.review-text');
-          const btn = card.querySelector('[data-review-more]');
-          if (!text || !btn) return;
-
-          const wasExpanded = card.classList.contains('is-expanded');
-          card.classList.remove('is-expanded');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.textContent = 'Lire la suite';
-
-          requestAnimationFrame(() => {
-            const overflows = text.scrollHeight - text.clientHeight > 1;
-            card.classList.toggle('has-overflow', overflows);
-            if (wasExpanded && overflows) {
-              card.classList.add('is-expanded');
-              btn.setAttribute('aria-expanded', 'true');
-              btn.textContent = 'Réduire';
-            }
-          });
-        };
-
-        cards.forEach((card) => {
-          const btn = card.querySelector('[data-review-more]');
-          if (!btn) return;
-          if (btn.__vprrBound) return;
-          btn.__vprrBound = true;
-
-          btn.addEventListener('click', () => {
-            const expanded = !card.classList.contains('is-expanded');
-            card.classList.toggle('is-expanded', expanded);
-            btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-            btn.textContent = expanded ? 'Réduire' : 'Lire la suite';
-          });
-
-          updateOverflow(card);
-        });
-      };
-
-      const ensureLooping = () => {
-        const perView = getPerView();
-        const canLoop = realCount > perView;
-
-        if (!canLoop) {
-          if (looping) {
-            removeClones();
-            looping = false;
-            cloneCount = 0;
-            index = 0;
-            setTransitionEnabled(false);
-            applyTransform();
-            track.getBoundingClientRect();
-            setTransitionEnabled(true);
-          }
-          setButtonsState();
-          refreshReadMore();
-          return;
-        }
-
-        if (looping) {
-          setButtonsState();
-          refreshReadMore();
-          return;
-        }
-
+    if (!canLoop) {
+      if (looping) {
         removeClones();
-        cloneCount = Math.min(MAX_CLONES, realCount);
-        const cards = Array.from(track.querySelectorAll('.review-card:not([data-reviews-clone])'));
-        const prefix = cards.slice(-cloneCount).map((c) => {
-          const clone = c.cloneNode(true);
-          clone.setAttribute('data-reviews-clone', '');
-          return clone;
-        });
-        const suffix = cards.slice(0, cloneCount).map((c) => {
-          const clone = c.cloneNode(true);
-          clone.setAttribute('data-reviews-clone', '');
-          return clone;
-        });
+        looping = false;
+        cloneCount = 0;
+        index = 0;
+        setTransitionEnabled(false);
+        applyTransform();
+        track.getBoundingClientRect();
+        setTransitionEnabled(true);
+      }
+      setButtonsState();
+      refreshReadMore();
+      return;
+    }
 
-        prefix.reverse().forEach((c) => track.insertBefore(c, track.firstChild));
-        suffix.forEach((c) => track.appendChild(c));
+    if (looping) {
+      setButtonsState();
+      refreshReadMore();
+      return;
+    }
 
-        looping = true;
-        index = cloneCount;
+    removeClones();
+    cloneCount = Math.min(MAX_CLONES, realCount);
+    const cards = Array.from(track.querySelectorAll('.review-card:not([data-reviews-clone])'));
+    const prefix = cards.slice(-cloneCount).map((c) => {
+      const clone = c.cloneNode(true);
+      clone.setAttribute('data-reviews-clone', '');
+      return clone;
+    });
+    const suffix = cards.slice(0, cloneCount).map((c) => {
+      const clone = c.cloneNode(true);
+      clone.setAttribute('data-reviews-clone', '');
+      return clone;
+    });
 
+    prefix.reverse().forEach((c) => track.insertBefore(c, track.firstChild));
+    suffix.forEach((c) => track.appendChild(c));
+
+    looping = true;
+    index = cloneCount;
+
+    setTransitionEnabled(false);
+    applyTransform();
+    track.getBoundingClientRect();
+    setTransitionEnabled(true);
+    setButtonsState();
+    refreshReadMore();
+  };
+
+  const move = (dir) => {
+    index += dir;
+    applyTransform();
+    setButtonsState();
+  };
+
+  const normalizeLoopPosition = () => {
+    if (!looping) return;
+
+    if (index < cloneCount) {
+      index = index + realCount;
+      setTransitionEnabled(false);
+      applyTransform();
+      track.getBoundingClientRect();
+      setTransitionEnabled(true);
+      return;
+    }
+
+    if (index >= cloneCount + realCount) {
+      index = index - realCount;
+      setTransitionEnabled(false);
+      applyTransform();
+      track.getBoundingClientRect();
+      setTransitionEnabled(true);
+    }
+  };
+
+  if (!track.__vprrReviewsBound) {
+    track.__vprrReviewsBound = true;
+    track.addEventListener('transitionend', (e) => {
+      if (e && e.propertyName && e.propertyName !== 'transform') return;
+      normalizeLoopPosition();
+    });
+  }
+
+  if (prev && !prev.__vprrBound) {
+    prev.__vprrBound = true;
+    prev.addEventListener('click', () => move(-1));
+  }
+  if (next && !next.__vprrBound) {
+    next.__vprrBound = true;
+    next.addEventListener('click', () => move(1));
+  }
+
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (!ready) return;
+      if (looping) {
+        const realIndex = ((index - cloneCount) % realCount + realCount) % realCount;
+        index = cloneCount + realIndex;
         setTransitionEnabled(false);
         applyTransform();
         track.getBoundingClientRect();
         setTransitionEnabled(true);
         setButtonsState();
         refreshReadMore();
-      };
-
-      const move = (dir) => {
-        index += dir;
-        applyTransform();
-        setButtonsState();
-      };
-
-      const normalizeLoopPosition = () => {
-        if (!looping) return;
-
-        if (index < cloneCount) {
-          index = index + realCount;
-          setTransitionEnabled(false);
-          applyTransform();
-          track.getBoundingClientRect();
-          setTransitionEnabled(true);
-          return;
-        }
-
-        if (index >= cloneCount + realCount) {
-          index = index - realCount;
-          setTransitionEnabled(false);
-          applyTransform();
-          track.getBoundingClientRect();
-          setTransitionEnabled(true);
-        }
-      };
-
-      if (!track.__vprrReviewsBound) {
-        track.__vprrReviewsBound = true;
-        track.addEventListener('transitionend', (e) => {
-          if (e && e.propertyName && e.propertyName !== 'transform') return;
-          normalizeLoopPosition();
-        });
+        return;
       }
 
-      if (prev && !prev.__vprrBound) {
-        prev.__vprrBound = true;
-        prev.addEventListener('click', () => move(-1));
-      }
-      if (next && !next.__vprrBound) {
-        next.__vprrBound = true;
-        next.addEventListener('click', () => move(1));
-      }
+      setTransitionEnabled(false);
+      setButtonsState();
+      applyTransform();
+      track.getBoundingClientRect();
+      setTransitionEnabled(true);
+      refreshReadMore();
+    }, 120);
+  }, { passive: true });
 
-      let resizeTimer = null;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          if (!ready) return;
-          if (looping) {
-            const realIndex = ((index - cloneCount) % realCount + realCount) % realCount;
-            index = cloneCount + realIndex;
-            setTransitionEnabled(false);
-            applyTransform();
-            track.getBoundingClientRect();
-            setTransitionEnabled(true);
-            setButtonsState();
-            refreshReadMore();
-            return;
-          }
+  const initWhenReady = (attempt = 0) => {
+    if (ready) return;
+    if (isLayoutReady()) {
+      ready = true;
+      if (carousel.dataset) carousel.dataset.reviewsInit = '1';
+      ensureLooping();
+      setTransitionEnabled(false);
+      applyTransform();
+      track.getBoundingClientRect();
+      setTransitionEnabled(true);
+      refreshReadMore();
+      return;
+    }
 
-          setTransitionEnabled(false);
-          setButtonsState();
-          applyTransform();
-          track.getBoundingClientRect();
-          setTransitionEnabled(true);
-          refreshReadMore();
-        }, 120);
-      }, { passive: true });
+    if (attempt > 90) {
+      ready = true;
+      if (carousel.dataset) carousel.dataset.reviewsInit = '1';
+      setButtonsState();
+      refreshReadMore();
+      return;
+    }
 
-      const initWhenReady = (attempt = 0) => {
-        if (ready) return;
-        if (isLayoutReady()) {
-          ready = true;
-          if (carousel.dataset) carousel.dataset.reviewsInit = '1';
-          ensureLooping();
-          setTransitionEnabled(false);
-          applyTransform();
-          track.getBoundingClientRect();
-          setTransitionEnabled(true);
-          refreshReadMore();
-          return;
-        }
-
-        if (attempt > 90) {
-          ready = true;
-          if (carousel.dataset) carousel.dataset.reviewsInit = '1';
-          setButtonsState();
-          refreshReadMore();
-          return;
-        }
-
-        requestAnimationFrame(() => initWhenReady(attempt + 1));
-      };
-
-      initWhenReady();
-    });
+    requestAnimationFrame(() => initWhenReady(attempt + 1));
   };
 
-  initReviewsCarousels();
+  initWhenReady();
+};
 
-  // --- CARTE ZONE D'INTERVENTION CHARENTE ---
-  const initZoneMap = () => {
+const initReviewsCarousels = () => {
+  Array.from(document.querySelectorAll('[data-reviews-carousel]')).forEach(initReviewsCarousel);
+};
+
+/* ▸ 96-carte-zone.js */
+/**
+ * Carte de la zone d'intervention (Leaflet, chargée à la demande par zone-map-leaflet.js).
+ * L'initialisation attend la fin du chargement de la page pour ne pas concurrencer le rendu.
+ */
+
+const initZoneMap = () => {
+  const start = () => {
     if (window.ZoneMapLeaflet && typeof window.ZoneMapLeaflet.initZoneMap === 'function') {
       window.ZoneMapLeaflet.initZoneMap({ containerId: 'zone-map', rootMargin: '100px' });
     }
   };
-  
-  if (document.readyState === 'complete') {
-    initZoneMap();
-  } else {
-    window.addEventListener('load', initZoneMap, { once: true });
-  }
-  
 
-  // --- ANNÉE DYNAMIQUE DANS LE FOOTER ---
-  const updateCurrentYear = () => {
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  };
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start, { once: true });
+};
 
-  // --- BARRE MOBILE « Appeler / Devis » : masquée quand le formulaire ou le pied de page est à l'écran ---
+/* ▸ 97-barre-appel-mobile.js */
+/**
+ * Barre mobile « Appeler / Devis » : masquée quand le formulaire (#contact) ou le pied de page
+ * est à l'écran, pour ne pas recouvrir leur contenu.
+ */
+
+const initMobileCtaBar = () => {
   const ctaBar = document.querySelector('.mobile-cta-bar');
-  if (ctaBar && 'IntersectionObserver' in window) {
-    const visible = new Set();
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
-      ctaBar.classList.toggle('is-hidden', visible.size > 0);
-    });
-    document.querySelectorAll('#contact, .site-footer').forEach((el) => io.observe(el));
-  }
+  if (!ctaBar || !('IntersectionObserver' in window)) return;
 
-  // --- INITIALISATION AU CHARGEMENT ---
-  window.addEventListener('load', () => {
-    
-    // Mettre à jour l'année
-    updateCurrentYear();
-  }, { once: true });
+  const visible = new Set();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+    ctaBar.classList.toggle('is-hidden', visible.size > 0);
+  });
+  document.querySelectorAll('#contact, .site-footer').forEach((el) => io.observe(el));
+};
+
+/* ▸ 98-annee-footer.js */
+/**
+ * Année courante dans le pied de page (#current-year), mise à jour au chargement de la page.
+ */
+
+const updateCurrentYear = () => {
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+};
+
+const initFooterYear = () => {
+  window.addEventListener('load', updateCurrentYear, { once: true });
+};
+
+/* ▸ 99-demarrage.js */
+/**
+ * Point d'entrée : au chargement du DOM, on récupère les éléments du menu et on lance chaque
+ * module. L'ordre d'initialisation est celui de l'ancien main.js monolithique.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.primary-nav');
+  const navLinks = Array.from(document.querySelectorAll('.primary-nav .menu a.nav-link'));
+  const navButtons = Array.from(document.querySelectorAll('.primary-nav .menu a.btn'));
+
+  initHeroVideo();
+  initServiceCardLinks();
+  clearActiveOnNavButtons(navButtons);
+  initDesktopSubmenus();
+  initMobileMenu({ burger, nav, navLinks });
+  initSmoothScroll();
+  initScrollSpy(navLinks);
+  initScrollReveal();
+  initFaqAccordions();
+  initFaqPageControls();
+  initReviewsCarousels();
+  initZoneMap();
+  initMobileCtaBar();
+  initFooterYear();
 });
+})();

@@ -1,0 +1,91 @@
+/* ===================================================================
+   ACCUEIL : « Comment ça se passe » (4 étapes) + lien vers les réalisations
+   =================================================================== */
+.section--steps {
+  background: var(--color-surface-alt);
+}
+
+.home-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.home-step {
+  position: relative;
+  padding: var(--space-xl);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-step-num {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--space-md);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  background: var(--brand-accent-light);
+  border: 1px solid var(--brand-accent);
+  border-radius: 50%;
+}
+
+.home-step h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--text-xl);
+}
+
+.home-step p {
+  margin: 0;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.home-steps-more {
+  margin: var(--space-xl) 0 0;
+  text-align: center;
+}
+
+.home-steps-more a {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.gallery-more {
+  margin: var(--space-xl) 0 0;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .home-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* Filet de liaison entre les étapes */
+  .home-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: calc(var(--space-xl) + 22px);
+    right: calc(var(--space-lg) / -1);
+    width: var(--space-lg);
+    border-top: 2px dashed var(--brand-accent);
+  }
+}

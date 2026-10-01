@@ -1,0 +1,195 @@
+/* ===================================================================
+   7. SERVICES - Cartes cliquables unifiées
+   =================================================================== */
+
+/* Grille 2 colonnes (3 + 2 en 3 colonnes ≥ 1024 px : jamais de carte orpheline) */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+@media (min-width: 1024px) {
+  .svc-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .svc-grid > .svc-card {
+    grid-column: span 2;
+  }
+
+  .svc-grid > .svc-card:nth-child(n+4) {
+    grid-column: span 3;
+  }
+}
+
+/* Évite une carte orpheline seule dans la dernière ligne d'une grille à 2 colonnes */
+@media (max-width: 1023px) {
+  .svc-grid > .svc-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Carte = lien cliquable */
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-border-light);
+  padding: var(--space-xl);
+  text-decoration: none;
+  color: var(--color-text);
+  transition:
+    box-shadow 280ms var(--ease-out),
+    border-color 180ms var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Halo warm au hover */
+.svc-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(103,58,18,0.04) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 280ms var(--ease-out);
+  pointer-events: none;
+}
+
+.svc-card:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--brand-accent);
+}
+
+.svc-card:hover::after {
+  opacity: 1;
+}
+
+/* Icône */
+.svc-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(168,139,94,0.10) 100%);
+  display: grid;
+  place-items: center;
+  font-size: var(--text-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  flex-shrink: 0;
+  transition:
+    background 280ms var(--ease-out),
+    color 280ms var(--ease-out);
+}
+
+.svc-card:hover .svc-icon {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Contenu */
+.svc-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-lg);
+}
+
+.svc-card h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+.svc-body > p {
+  font-size: var(--text-md);
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+}
+
+/* Tags pills */
+.svc-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.svc-tags li {
+  font-size: var(--text-2xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  line-height: 1.7;
+  transition: background 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.svc-card:hover .svc-tags li {
+  background: rgba(103,58,18,0.12);
+}
+
+/* Footer "Découvrir →" */
+.svc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-light);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  transition: color 150ms var(--ease-out);
+}
+
+.svc-arrow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xs);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition:
+    background 180ms var(--ease-out),
+    color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+.svc-card:hover .svc-arrow {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .svc-card {
+    padding: var(--space-xl);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .svc-card {
+    padding: var(--space-xl);
+  }
+}
+

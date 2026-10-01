@@ -1,0 +1,72 @@
+/* ===================================================================
+   PAGES JURIDIQUES (mentions-legales.html) : mise en page de document
+   =================================================================== */
+.legal-toc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin: 0 auto var(--space-2xl);
+}
+
+.legal-toc a {
+  padding: 0.4rem 0.9rem;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  text-decoration: none;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.legal-toc a:hover {
+  border-color: var(--brand-accent);
+  background: var(--brand-accent-light);
+}
+
+.legal-doc section[id] {
+  scroll-margin-top: calc(var(--header-height) + var(--space-lg));
+}
+
+.legal-doc h2 {
+  margin: var(--space-3xl) 0 var(--space-md);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  text-align: left;
+}
+
+.legal-doc section:first-of-type h2 {
+  margin-top: 0;
+}
+
+.legal-doc h3 {
+  margin: var(--space-xl) 0 var(--space-sm);
+  font-size: var(--text-xl);
+}
+
+.legal-doc p,
+.legal-doc li {
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+.legal-doc p {
+  margin-bottom: var(--space-md);
+}
+
+.legal-doc ul {
+  margin: 0 0 var(--space-md);
+  padding-left: 1.25rem;
+}
+
+.legal-doc li + li {
+  margin-top: var(--space-xs);
+}
+
+.legal-doc p a,
+.legal-doc li a {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,51 @@
+/* ===================================================================
+   3. TYPOGRAPHIE (Apple-style)
+   =================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.15;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+/* Titre principal - Grand et impactant */
+h1 {
+  font-size: clamp(2rem, 4.2vw, 3rem); /* 48 px max : les titres longs (FAQ, zone) tenaient sur 4 lignes à 60 px */
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-lg);
+}
+
+/* Titre de section - Élégant et centré */
+h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+/* Titre de carte/composant */
+h3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-light);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+

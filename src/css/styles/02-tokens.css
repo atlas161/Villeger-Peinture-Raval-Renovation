@@ -1,0 +1,110 @@
+/* ===================================================================
+   1. VARIABLES & TOKENS
+   =================================================================== */
+
+:root {
+  /* Palette de couleurs (conservée) */
+  --color-primary: #673A12;
+  --color-primary-hover: #522E0E;
+  --color-primary-active: #3F2209;
+  --color-primary-light: rgba(103, 58, 18, 0.08);
+  --color-text: #2A211B;
+  --color-text-light: #5C4D41;  /* 7,6:1 sur --color-bg */
+  --color-text-muted: #6A5C50;  /* 6,1:1 sur --color-bg (était #77695E, 4,9:1) */
+  --brand-accent: #A88B5E;      /* or DÉCORATIF uniquement (bordures, icônes, puces) : 3:1 */
+  --brand-accent-text: #7A5A2B; /* or pour du TEXTE sur fond clair : 6:1 */
+  --color-star: #F5B301;
+  --brand-accent-light: rgba(168, 139, 94, 0.15);
+  --brand-accent-on-dark: #D9C4A1; /* accent lisible sur le fond brun du footer et du hero (≈ 6:1) */
+  --footer-text: #F3E9D8;          /* texte courant du footer (≥ 10:1 sur le brun) */
+  --color-bg: #FAF8F5;
+  --color-white: #ffffff;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F3EEE8;
+  --color-border: #E6E0D8;
+  --color-border-light: #F0EDE8;
+  --color-panel: #FAF8F5;
+
+  /* Espacements (système 8px) */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  --space-4xl: 6rem;     /* 96px */
+
+  /* Rayons de bordure */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 100px;
+
+  /* Ombres (style Apple) */
+  /* Typographie : une seule échelle (rem). Les titres fluides utilisent clamp() directement. */
+  --text-2xs: 0.75rem;    /* 12 px : étiquettes, mentions */
+  --text-xs: 0.8125rem;   /* 13 px : méta, légendes */
+  --text-sm: 0.875rem;    /* 14 px : texte secondaire */
+  --text-md: 0.9375rem;   /* 15 px : texte de carte */
+  --text-base: 1rem;      /* 16 px : texte courant */
+  --text-lg: 1.0625rem;   /* 17 px : chapôs */
+  --text-xl: 1.125rem;    /* 18 px : petits titres */
+  --text-2xl: 1.25rem;    /* 20 px : titres de carte */
+  --text-3xl: 1.375rem;   /* 22 px */
+  --text-4xl: 1.5rem;     /* 24 px : sous-titres de section */
+  --text-5xl: 1.75rem;    /* 28 px */
+  --text-6xl: 2rem;       /* 32 px */
+  --text-7xl: 2.5rem;     /* 40 px : grands chiffres */
+
+  /* Couches (z-index global). Les valeurs de 0 à 10 restent locales à un composant (calques du hero, curseur avant/après…). */
+  --z-sticky: 100;        /* barres collantes de page (filtres du blog) */
+  --z-dropdown: 200;      /* listes déroulantes de formulaire */
+  --z-bar: 900;           /* barre d'appel mobile */
+  --z-overlay: 998;       /* voile derrière le menu mobile */
+  --z-header: 1000;       /* en-tête, bannière cookies */
+  --z-banner: 1000;
+  --z-menu: 1050;         /* panneau du menu mobile */
+  --z-menu-controls: 1100;/* logo et burger, au-dessus du panneau */
+  --z-submenu: 1120;      /* sous-menus */
+  --z-skip: 9999;         /* lien d'évitement */
+
+  /* Points de rupture (les variables CSS ne marchent pas dans @media : valeurs à écrire telles quelles).
+     Mobile ≤ 767 / à partir de 768 · petit mobile ≤ 480 · ≥ 640 · menu burger ≤ 991 / menu complet ≥ 992 · ≥ 1024 · larges ≥ 1200 et ≥ 1400.
+     Règle : « jusqu'à » = max-width (…, 639, 768, 991, 1023), « à partir de » = min-width (640, 769, 992, 1024). */
+
+  --shadow-sm: 0 2px 8px rgba(45, 36, 30, 0.06);
+  --shadow-md: 0 4px 16px rgba(45, 36, 30, 0.08);
+  --shadow-lg: 0 8px 32px rgba(45, 36, 30, 0.1);
+  --shadow-xl: 0 16px 48px rgba(45, 36, 30, 0.12);
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-narrow: 800px;
+  --header-height: 72px;
+
+  /* Typographie avec fallback optimisé */
+  --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Transitions (Apple-style easing) */
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+}
+
+/* Mouvement réduit : toutes les transitions pilotées par les variables de durée sont coupées */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+  }
+}
+

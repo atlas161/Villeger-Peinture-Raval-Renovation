@@ -1,0 +1,56 @@
+/* ===================================================================
+   POPUPS PERSONNALISÉS - STYLE APPLE
+   =================================================================== */
+
+/* Popup du siège */
+
+/* Popups simplifiés */
+
+/* Nouveau popup pour le siège */
+
+/* Animation reveal */
+@media (prefers-reduced-motion: no-preference) {
+  .zone-map-container,
+  .zone-address,
+  .zone-cities,
+  .zone-note {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: zoneReveal 0.6s var(--ease-out) forwards;
+  }
+
+  .zone-map-container { animation-delay: 0.1s; }
+  .zone-address { animation-delay: 0.2s; }
+  .zone-cities { animation-delay: 0.3s; }
+  .zone-note { animation-delay: 0.4s; }
+
+  @keyframes zoneReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 639px) {
+  .zone-section {
+    padding-block: var(--space-3xl);
+  }
+
+  .zone-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .zone-address,
+  .zone-cities {
+    padding: var(--space-md);
+  }
+
+  .zone-info-icon {
+    width: 40px;
+    height: 40px;
+    font-size: var(--text-base);
+  }
+}
+

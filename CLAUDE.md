@@ -33,18 +33,25 @@ si le SEO ou une action client est concernée.
 
 | Commande | Rôle |
 |---|---|
-| `npm run build` | build complet (pages → À propos/Réalisations → blog → `dist/`) — celui de Netlify |
+| `npm run build:bundles` | assemble `styles.css`, `zone.css` et `main.js` depuis `src/` (voir règle ci-dessous) |
+| `npm run build` | build complet (bundles → pages → À propos/Réalisations → blog → `dist/`) — celui de Netlify |
 | `npm run build:content` | régénère `a-propos.html` et `realisations.html` depuis `content/a-propos.json` / `content/realisations.json` |
 | `npm run build:cms` | régénère `.pages.yml` depuis `scripts/cms-config.js` |
 | `npm run build:pages` | régénère les 5 pages de service depuis `content/pages/` |
 | `npm run build:blog` | régénère le blog depuis `content/blog/*.md` |
 | `npm run sync:header` | réinjecte le menu dans les pages écrites à la main |
-| `npm test` | 52 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu, Pages CMS) |
+| `npm test` | 55 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu, Pages CMS) |
 | `node scripts/build-zone-schema.js --inject` | régénère le schéma SVG de la zone dans `index.html` |
 | `node scripts/tokenize-css.js` | remplace les valeurs CSS en dur par les variables `:root` identiques |
 | `npm run dev` | `npx serve .` (le footer est alors chargé en JS) |
 
 ## Règles de travail (à respecter)
+
+- **Gros fichiers découpés par fonction** : `assets/css/styles.css`, `assets/css/zone.css` et `assets/js/main.js` sont
+  **générés** — ne jamais les éditer. Les sources sont dans `src/css/styles/`, `src/css/zone/` et `src/js/main/`
+  (petits fichiers numérotés `NN-sujet`, assemblés dans l'ordre par `scripts/build-bundles.js`), puis
+  `npm run build:bundles` (inclus dans `npm run build` ; `npm test` vérifie qu'ils sont à jour). `src/` n'est pas publié.
+  Un nouveau sujet = un nouveau fichier avec le bon numéro (l'ordre = la cascade CSS / l'ordre d'initialisation JS).
 
 - **Ne jamais commit/push sans validation explicite de l'utilisateur.** Quand il demande de « pousser étape par
   étape » : un commit = une idée, attendre le déploiement, revérifier la prod avant l'étape suivante.

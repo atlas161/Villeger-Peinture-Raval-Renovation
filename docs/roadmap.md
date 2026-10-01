@@ -1,4 +1,6 @@
-# Reste à faire — feuille de route (mise à jour : 2026-09-30)
+# Reste à faire — feuille de route (mise à jour : 2026-10-01)
+
+> Fait le 2026-10-01 : `styles.css`, `zone.css` et `main.js` découpés par fonction (sources dans `src/`, voir changelog).
 
 Point de reprise pour une nouvelle session. Rien ici n'est cassé : le site est stable et tout le travail précédent
 est déployé (voir [`changelog.md`](./changelog.md)). Ce sont des améliorations, classées par priorité.

@@ -1,3 +1,5 @@
+/* GÉNÉRÉ par scripts/build-bundles.js depuis src/css/styles/ — ne pas éditer ce fichier. */
+/* ▸ 01-fonts-fallback.css */
 /* ===================================================================
    VILLEGER PEINTURE - DESIGN SYSTEM (Apple-inspired)
    =================================================================== */
@@ -17,6 +19,7 @@
   size-adjust: 107%;
 }
 
+/* ▸ 02-tokens.css */
 /* ===================================================================
    1. VARIABLES & TOKENS
    =================================================================== */
@@ -127,6 +130,7 @@
   }
 }
 
+/* ▸ 03-reset.css */
 /* ===================================================================
    2. RESET & BASE
    =================================================================== */
@@ -168,6 +172,7 @@ body {
   padding-top: var(--header-height);
 }
 
+/* ▸ 04-typographie.css */
 /* ===================================================================
    3. TYPOGRAPHIE (Apple-style)
    =================================================================== */
@@ -219,6 +224,7 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
+/* ▸ 05-layout.css */
 /* ===================================================================
    4. LAYOUT
    =================================================================== */
@@ -277,6 +283,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ▸ 06-boutons.css */
 /* ===================================================================
    5. BOUTONS (Apple-style)
    =================================================================== */
@@ -350,6 +357,7 @@ a:hover {
   font-size: var(--text-sm);
 }
 
+/* ▸ 07-header.css */
 /* ===================================================================
    6. EN-TÊTE & NAVIGATION (Apple-style)
    =================================================================== */
@@ -401,6 +409,7 @@ a:hover {
   display: none; /* visible seulement dans le menu mobile */
 }
 
+/* ▸ 08-nav-bureau.css */
 /* Navigation Desktop */
 .primary-nav {
   display: none;
@@ -547,6 +556,7 @@ a:hover {
   }
 }
 
+/* ▸ 09-burger.css */
 /* Burger Menu (Style Apple Raffiné) */
 .burger {
   display: none;
@@ -613,6 +623,7 @@ body.nav-open .burger-bar:nth-child(1) { transform: translateY(5.5px) rotate(45d
 body.nav-open .burger-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
 body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 
+/* ▸ 10-nav-mobile.css */
 /* Navigation mobile : panneau plein écran, liste alignée à gauche, séparateurs fins.
    Le logo et le bouton (burger → croix) du header restent visibles au-dessus du panneau. */
 @media (max-width: 991px) {
@@ -920,6 +931,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   }
 }
 
+/* ▸ 11-cartes-services.css */
 /* ===================================================================
    7. SERVICES - Cartes cliquables unifiées
    =================================================================== */
@@ -1115,6 +1127,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   }
 }
 
+/* ▸ 12-footer-base.css */
 /* ===================================================================
    8. FOOTER (Apple-style)
    =================================================================== */
@@ -1157,6 +1170,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   line-height: 1.6;
 }
 
+/* ▸ 13-footer.css */
 /* ===================================================================
    FOOTER MODERNE
    =================================================================== */
@@ -1625,6 +1639,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   }
 }
 
+/* ▸ 14-bandeau-cookies.css */
 /* ===================================================================
    COOKIE BANNER — compact, centré en bas de page, choix « tout accepter / tout refuser »
    =================================================================== */
@@ -1685,6 +1700,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   }
 }
 
+/* ▸ 15-reassurance.css */
 /* ===================================================================
    8.5. CTA FINAL MODERNE
    =================================================================== */
@@ -1896,6 +1912,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   }
 }
 
+/* ▸ 16-utilitaires-accessibilite.css */
 /* ===================================================================
    9. UTILITAIRES
    =================================================================== */
@@ -1946,6 +1963,7 @@ html {
   outline: none;
 }
 
+/* ▸ 17-animations-apparition.css */
 /* ===================================================================
    11. SCROLL REVEAL ANIMATIONS
    =================================================================== */
@@ -1979,6 +1997,7 @@ html {
   }
 }
 
+/* ▸ 18-blog-carrousel.css */
 .blog-preview-carousel {
   position: relative;
   margin-bottom: var(--space-2xl);
@@ -2086,6 +2105,7 @@ html {
   }
 }
 
+/* ▸ 19-galerie-avant-apres.css */
 /* ===================================================================
    GALERIE - Cartes avant/après (section #galerie)
    =================================================================== */
@@ -2182,6 +2202,7 @@ html {
   color: var(--color-text);
 }
 
+/* ▸ 20-blog-accueil.css */
 /* ===================================================================
    BLOG - Section aperçu sur la home (#blog) + cartes (générées aussi
    par assets/js/blog-home.js::createArticleCard, garder les 2 en sync)
@@ -2391,6 +2412,7 @@ html {
   border-radius: var(--radius);
 }
 
+/* ▸ 21-barre-appel-mobile.css */
 /* ===================================================================
    BARRE D'ACTION COLLANTE MOBILE (Appeler / Devis) — injectée par includes/footer.html
    =================================================================== */
@@ -2448,6 +2470,7 @@ html {
   body { padding-bottom: 88px; }
 }
 
+/* ▸ 22-bande-devis.css */
 /* ===================================================================
    BANDE D'APPEL « DEVIS » (accueil + pages de service) : le formulaire vit sur contact.html
    =================================================================== */
@@ -2531,6 +2554,7 @@ html {
   }
 }
 
+/* ▸ 23-pages-juridiques.css */
 /* ===================================================================
    PAGES JURIDIQUES (mentions-legales.html) : mise en page de document
    =================================================================== */
@@ -2603,6 +2627,7 @@ html {
   text-decoration: underline;
 }
 
+/* ▸ 24-etapes-accueil.css */
 /* ===================================================================
    ACCUEIL : « Comment ça se passe » (4 étapes) + lien vers les réalisations
    =================================================================== */

@@ -1,0 +1,57 @@
+.zone-section .reassurance-grid {
+  max-width: 1100px;
+  margin-inline: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.zone-section .reassurance-item {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border-light);
+  box-shadow: var(--shadow-md);
+  align-items: flex-start;
+}
+
+.zone-section .reassurance-item:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.zone-section .reassurance-text {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .zone-section .reassurance-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin: var(--space-2xl) auto 0 auto;
+  }
+
+  .zone-section .reassurance-item {
+    padding: var(--space-lg);
+  }
+
+  .zone-section .reassurance-icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .zone-section .reassurance-grid {
+    margin-top: var(--space-xl);
+  }
+
+  .zone-section .reassurance-item {
+    padding: var(--space-md);
+    border-radius: 14px;
+  }
+
+  .zone-section .reassurance-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    font-size: var(--text-2xl);
+  }
+}
+

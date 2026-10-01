@@ -1,0 +1,66 @@
+/* Burger Menu (Style Apple Raffiné) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5), c'est le contrôle
+     de navigation mobile le plus utilisé du site. Header de 72px : marge inchangée. */
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  gap: 4px;
+  z-index: var(--z-menu-controls);
+  /* Rendu actuel = 12px, pas 10px : cette valeur venait d'une ancienne règle générique
+     `button { border-radius: 12px !important }` qui écrasait tous les <button> du site
+     (voir docs/code-quality-refactor.md). Fixé ici explicitement pour ne rien changer
+     visuellement une fois cette règle générique supprimée. */
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 991px) {
+  .burger {
+    display: flex !important;
+  }
+
+  .burger-bar {
+    background-color: var(--color-primary);
+    height: 1.5px;
+    width: 18px;
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  body.nav-open .burger {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    transform: none !important; /* Neutralize hover transform */
+  }
+
+  body.nav-open .burger-bar {
+    background-color: var(--color-primary) !important;
+    width: 22px;
+  }
+}
+
+.burger-bar {
+  width: 18px;
+  height: 1.5px;
+  background-color: var(--color-primary);
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  position: relative;
+}
+
+body.nav-open .burger-bar:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+body.nav-open .burger-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+

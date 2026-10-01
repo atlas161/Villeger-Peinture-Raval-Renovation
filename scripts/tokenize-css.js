@@ -6,7 +6,14 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { build, cssSourceFiles, BUNDLES } = require('./build-bundles');
 const CSS_DIR = path.join(__dirname, '..', 'assets', 'css');
+// Les bundles (styles.css, zone.css) sont générés : on retouche leurs sources dans src/css/.
+const BUNDLED = new Set(BUNDLES.map((b) => path.basename(b.out)));
+const CSS_FILES = [
+  ...fs.readdirSync(CSS_DIR).filter((f) => f.endsWith('.css') && !BUNDLED.has(f)).map((f) => path.join(CSS_DIR, f)),
+  ...cssSourceFiles(),
+];
 
 const COLORS = {
   '#673a12': '--color-primary',
@@ -25,8 +32,8 @@ const COLORS = {
 const RADII = { 8: '--radius-sm', 12: '--radius', 16: '--radius-lg', 24: '--radius-xl' };
 
 let total = 0;
-for (const file of fs.readdirSync(CSS_DIR).filter((f) => f.endsWith('.css'))) {
-  const p = path.join(CSS_DIR, file);
+for (const p of CSS_FILES) {
+  const file = path.basename(p);
   let css = fs.readFileSync(p, 'utf8');
   // On protège le bloc :root (définition des tokens) : il ne doit pas se référencer lui-même.
   const rootMatch = css.match(/:root\s*\{[^}]*\}/);
@@ -53,4 +60,5 @@ for (const file of fs.readdirSync(CSS_DIR).filter((f) => f.endsWith('.css'))) {
     total += n;
   }
 }
+build(); // régénère les bundles depuis src/
 console.log(`✅ ${total} remplacement(s)`);

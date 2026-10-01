@@ -1,0 +1,42 @@
+/* ===================================================================
+   8. FOOTER (Apple-style)
+   =================================================================== */
+
+.site-footer {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: rgba(255, 255, 255, 0.85);
+  padding-block: var(--space-4xl) var(--space-2xl);
+  font-size: var(--text-md);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+.footer-col .logo {
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-md);
+  display: block;
+  letter-spacing: -0.01em;
+}
+
+.copyright {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+

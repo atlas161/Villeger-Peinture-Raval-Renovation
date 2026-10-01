@@ -136,7 +136,7 @@ Articles en Markdown + frontmatter dans `content/blog/*.md` → `blog/<slug>.htm
   pages du site en iframe sur la prod ne fonctionnent pas (normal).
 
 ## 6. CSS
-Fichiers (`assets/css/`) : `styles.css` (base, composants, accueil), `nav.css`, `utilities.css`, `responsive.css`
+Fichiers (`assets/css/`) : `styles.css` (base, composants, accueil — **généré** depuis `src/css/styles/`, 24 fichiers par sujet ; idem `zone.css` depuis `src/css/zone/`, 10 fichiers : voir `scripts/build-bundles.js`), `nav.css`, `utilities.css`, `responsive.css`
 (points de rupture + **bloc de densité mobile**), `service-page.css` (pages de service), `contact.css`, `faq.css`,
 `hero.css`, `zone.css`, `blog.css`, `blog-list.css`, `blog-article.css`, `status-pages.css` (404 et page de remerciement, sans style inline). Ordre de chargement important :
 `responsive.css` après `service-page.css` pour gagner la cascade sans `!important`.
@@ -154,7 +154,7 @@ Fichiers (`assets/css/`) : `styles.css` (base, composants, accueil), `nav.css`, 
 ## 7. JavaScript (`assets/js/`)
 | Fichier | Rôle |
 |---|---|
-| `main.js` | menu burger/sous-menus, scroll-spy, animations d'apparition, vidéo du hero (tous écrans depuis le 2026-09-30, hors économiseur de données) |
+| `main.js` (**généré** depuis `src/js/main/`, un module par fonction : utilitaires, vidéo hero, menu bureau, menu mobile, scroll-spy, FAQ, carrousel d'avis, carte, barre mobile… ; point d'entrée `99-demarrage.js`) | menu burger/sous-menus, scroll-spy, animations d'apparition, vidéo du hero (tous écrans depuis le 2026-09-30, hors économiseur de données) |
 | `footer.js` | inclusion du footer (fallback local), **bannière cookies**, chargement GTM/Clarity après consentement, **suivi des conversions** |
 | `form-security.js` | honeypot, délai minimal, limites de soumission, chargement paresseux de Turnstile |
 | `apple-select.js` | menu déroulant « Type de projet » (ARIA listbox) |

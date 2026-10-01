@@ -1,0 +1,137 @@
+/* ===================================================================
+   ACCUEIL : schéma de zone + communes ; PAGE ZONE : recherche, secteurs, carte à la demande
+   =================================================================== */
+
+/* Puces de communes (accueil et page zone) */
+.zone-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.zone-chips li {
+  padding: 0.3rem 0.8rem;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  transition: background-color var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.zone-chips li.is-dim {
+  opacity: 0.3;
+}
+
+.zone-chips li.is-match {
+  background: var(--brand-accent-light);
+  border-color: var(--brand-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ----- Accueil ----- */
+.zone-home {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.zone-schema {
+  margin: 0;
+  max-width: 460px;
+  width: 100%;
+  justify-self: center;
+  padding: var(--space-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.zone-schema-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.zs-dept {
+  fill: var(--brand-accent-light);
+  stroke: var(--brand-accent);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+
+.zs-radius {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 0.5;
+  stroke-dasharray: 2 2;
+  opacity: 0.55;
+}
+
+.zs-pin {
+  fill: var(--brand-accent-text);
+}
+
+.zs-hq {
+  fill: var(--color-primary);
+}
+
+.zs-hq-halo {
+  fill: rgba(103, 58, 18, 0.18);
+}
+
+.zs-label,
+.zs-radius-label {
+  font: 600 3.1px var(--font-sans);
+  fill: var(--color-text);
+  paint-order: stroke;
+  stroke: var(--color-white);
+  stroke-width: 1.1px;
+  stroke-linejoin: round;
+}
+
+.zs-label--hq {
+  fill: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.zs-radius-label {
+  font-weight: 500;
+  fill: var(--color-text-light);
+}
+
+.zone-home-info {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.zone-home-note {
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: var(--text-md);
+}
+
+.zone-home-note i {
+  color: var(--brand-accent);
+  margin-right: var(--space-xs);
+}
+
+.zone-home-info .zone-actions {
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .zone-home {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--space-3xl);
+  }
+}
+
+/* ----- Page zone ----- */

@@ -1,0 +1,33 @@
+/* ===================================================================
+   11. SCROLL REVEAL ANIMATIONS
+   =================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 
+      opacity var(--duration-slow) var(--ease-out),
+      transform var(--duration-slow) var(--ease-out);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================================================
+   12. MARQUEURS CARTE LEAFLET
+   =================================================================== */
+
+/* ===================================================================
+   13. PARALLAX HERO (subtil)
+   =================================================================== */
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 992px) {
+  .hero-video {
+    will-change: transform;
+  }
+}
+

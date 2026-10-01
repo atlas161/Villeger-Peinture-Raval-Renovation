@@ -17,6 +17,12 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 — Gros fichiers découpés par fonction (`styles.css`, `zone.css`, `main.js`)
+
+- **Sources dans `src/`** : `styles.css` (2 696 lignes) → 24 fichiers (`src/css/styles/01-fonts-fallback.css` … `24-etapes-accueil.css`), `zone.css` (1 115 lignes) → 10 fichiers (`src/css/zone/`), `main.js` (1 049 lignes, une seule fermeture) → 15 modules (`src/js/main/` : utilitaires, vidéo hero, cartes de service, état actif du menu, sous-menus bureau, menu mobile, défilement vers les ancres, scroll-spy, apparition au scroll, FAQ, carrousel d'avis, carte, barre mobile, année, démarrage).
+- **Assemblage** par `scripts/build-bundles.js` (`npm run build:bundles`, lancé par `npm run build`) vers les mêmes URL : une requête par fichier, ordre de cascade inchangé, aucune modification des pages HTML. Test `tests/bundles.test.js` (bundles à jour, fichiers numérotés ≤ 480 lignes, `src/` non publié). `tokenize-css.js` et `tokenize-scale.js` travaillent sur `src/` puis régénèrent.
+- **Aucun changement visuel** : CSS strictement identique à l'ancien (hors lignes vides et marqueurs) ; JS réorganisé en fonctions à paramètres explicites, comportement vérifié (menu burger + sous-menus + Échap, carrousel, FAQ recherche/filtres, survol bureau, scroll-spy) sans erreur console.
+
 ## 2026-10-03 (soir) — Gros ménage et nettoyage éditorial
 
 - **Blog** : l'article « étude de cas » (clients nommés, citation) est réécrit en **chantier type** (même URL), sans témoignage ; affirmations absolues retirées ou nuancées (« 100 % naturel », « 0 pollution », « unanimes », « 90 % des façades », « garantit »…), durées de tenue harmonisées avec les pages de service (peinture 10-15 ans, nettoyage 5-10 ans avec hydrofuge), assurances décrites comme sur le reste du site (RC Pro + décennale pour les travaux qui en relèvent). Titre À propos : « Un artisan et son équipe… ».

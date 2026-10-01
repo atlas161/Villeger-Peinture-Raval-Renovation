@@ -1,3 +1,5 @@
+/* GÉNÉRÉ par scripts/build-bundles.js depuis src/css/zone/ — ne pas éditer ce fichier. */
+/* ▸ 01-section-entete.css */
 /* ===================================================================
    ZONE D'INTERVENTION SECTION (Apple-style)
    =================================================================== */
@@ -36,6 +38,8 @@
 }
 
 /* Container de la carte */
+
+/* ▸ 02-carte.css */
 .zone-map-container {
   background: var(--color-white);
   border-radius: var(--radius-xl);
@@ -285,6 +289,8 @@
 }
 
 /* Adresse */
+
+/* ▸ 03-adresse-villes.css */
 .zone-address {
   display: flex;
   align-items: flex-start;
@@ -423,6 +429,7 @@
   gap: var(--space-sm);
 }
 
+/* ▸ 04-sous-sections.css */
 .zone-subsection {
   padding-top: var(--space-4xl);
 }
@@ -449,6 +456,7 @@
   }
 }
 
+/* ▸ 05-reassurance.css */
 .zone-section .reassurance-grid {
   max-width: 1100px;
   margin-inline: auto;
@@ -506,6 +514,7 @@
   }
 }
 
+/* ▸ 06-cta-services.css */
 .services-cta-showcase {
   max-width: 1100px;
   margin-inline: auto;
@@ -671,6 +680,7 @@
   }
 }
 
+/* ▸ 07-marqueurs-carte.css */
 /* ===================================================================
    MARQUEURS DE CARTE - STYLE APPLE
    =================================================================== */
@@ -746,6 +756,7 @@
 
 /* Marqueur ville principale (Angoulême) */
 
+/* ▸ 08-popups-carte.css */
 /* ===================================================================
    POPUPS PERSONNALISÉS - STYLE APPLE
    =================================================================== */
@@ -802,6 +813,7 @@
   }
 }
 
+/* ▸ 09-accueil-schema.css */
 /* ===================================================================
    ACCUEIL : schéma de zone + communes ; PAGE ZONE : recherche, secteurs, carte à la demande
    =================================================================== */
@@ -939,6 +951,8 @@
 }
 
 /* ----- Page zone ----- */
+
+/* ▸ 10-page-zone.css */
 .zone-page {
   display: grid;
   gap: var(--space-xl);

@@ -1,0 +1,41 @@
+/* ===================================================================
+   2. RESET & BASE
+   =================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.65;
+  font-weight: var(--font-weight-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  padding-top: var(--header-height);
+}
+

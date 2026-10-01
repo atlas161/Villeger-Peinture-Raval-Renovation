@@ -1,0 +1,96 @@
+/* ===================================================================
+   GALERIE - Cartes avant/après (section #galerie)
+   =================================================================== */
+
+.gallery-grid {
+  display: grid;
+  /* 4 cartes : grille explicite (1 / 2 / 4 colonnes) pour ne jamais laisser
+     une carte orpheline seule sur sa ligne, contrairement à un auto-fit fluide. */
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gallery-card {
+  background: var(--color-white);
+  /* 12px et non 18px : une règle plus bas (`*[style*="border-radius"]`) forçait déjà
+     12px !important sur cet élément quand ce border-radius était encore inline */
+  border-radius: var(--radius);
+  border: 2px solid var(--color-border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-card-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery-figure {
+  margin: 0;
+  position: relative;
+}
+
+.gallery-figure img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.gallery-figure figcaption {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius); /* était 8px inline, forcé à 12px par la règle *[style*="border-radius"] */
+  font-size: var(--text-2xs);
+}
+
+.gallery-card-body {
+  padding: var(--space-lg);
+}
+
+.gallery-card-body h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.gallery-card-link {
+  font-size: var(--text-md);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.gallery-card-link i {
+  font-size: 0.8em;
+}
+
+.gallery-instagram {
+  margin-top: var(--space-3xl);
+}
+
+.gallery-instagram .section-header {
+  margin-bottom: var(--space-lg);
+}
+
+.gallery-instagram-title {
+  font-size: var(--text-3xl);
+  color: var(--color-text);
+}
+

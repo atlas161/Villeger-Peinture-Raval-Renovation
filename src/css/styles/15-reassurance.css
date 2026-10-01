@@ -1,0 +1,211 @@
+/* ===================================================================
+   8.5. CTA FINAL MODERNE
+   =================================================================== */
+
+/* Responsive pour le CTA moderne */
+
+/* ===================================================================
+   8.5. REASSURANCE SECTION
+   =================================================================== */
+
+.reassurance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-3xl) 0;
+}
+
+.reassurance-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(103, 58, 18, 0.08);
+}
+
+.reassurance-item:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.reassurance-icon {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  background: rgba(103, 58, 18, 0.08);
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+  font-size: var(--text-4xl);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Assurer l'affichage des icônes FontAwesome */
+.reassurance-icon i {
+  display: block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.reassurance-icon i:before {
+  display: block !important;
+}
+
+/* Forcer FontAwesome - override tout le reste */
+.reassurance-icon i.fa-solid,
+.reassurance-icon i.fas {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+/* Empêcher les fallbacks */
+.reassurance-icon i:before {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+/* S'assurer que les icônes FontAwesome sont bien chargées */
+@supports (font-family: "Font Awesome 6 Free") {
+  .reassurance-icon i.fa-award:before { content: "\f559" !important; }
+  .reassurance-icon i.fa-file-contract:before { content: "\f56c" !important; }
+  .reassurance-icon i.fa-certificate:before { content: "\f0a3" !important; }
+  .reassurance-icon i.fa-handshake:before { content: "\f2b5" !important; }
+  .reassurance-icon i.fa-broom:before { content: "\f51a" !important; }
+}
+
+/* Force l'affichage des icônes reassurance spécifiques */
+.reassurance-item .reassurance-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.reassurance-item .reassurance-icon i {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.reassurance-item:hover .reassurance-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.reassurance-text h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+/* Grille à 3 colonnes : le titre réserve 2 lignes pour que les textes démarrent à la même hauteur. */
+@media (min-width: 1024px) {
+  .reassurance-text h3 {
+    min-height: 2.6em;
+  }
+}
+
+.reassurance-text p {
+  color: var(--color-text-light);
+  line-height: 1.6;
+  font-size: var(--text-md);
+}
+
+/* Responsive amélioré pour Reassurance Section */
+@media (max-width: 1023px) {
+  .reassurance-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+  
+  .reassurance-item {
+    padding: var(--space-lg);
+  }
+  
+  .reassurance-icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    font-size: var(--text-2xl);
+  }
+  
+  .reassurance-text h3 {
+    font-size: var(--text-base);
+  }
+  
+  .reassurance-text p {
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 767px) {
+  .reassurance-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin: var(--space-2xl) 0;
+  }
+  
+  .reassurance-item {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-xl);
+    gap: var(--space-md);
+  }
+  
+  .reassurance-icon {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    font-size: var(--text-5xl);
+    margin: 0 auto;
+  }
+  
+  .reassurance-text h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .reassurance-text p {
+    font-size: var(--text-md);
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .reassurance-grid {
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0;
+  }
+  
+  .reassurance-item {
+    padding: var(--space-lg);
+  }
+  
+  .reassurance-icon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    font-size: var(--text-4xl);
+  }
+  
+  .reassurance-text h3 {
+    font-size: var(--text-base);
+  }
+  
+  .reassurance-text p {
+    font-size: var(--text-sm);
+  }
+}
+

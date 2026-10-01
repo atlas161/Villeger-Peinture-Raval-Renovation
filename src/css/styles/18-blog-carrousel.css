@@ -1,0 +1,107 @@
+.blog-preview-carousel {
+  position: relative;
+  margin-bottom: var(--space-2xl);
+}
+
+.blog-preview-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+  padding: var(--space-sm) 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.blog-preview-viewport::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.blog-preview-track {
+  display: flex;
+  gap: var(--space-xl);
+  padding: 0 var(--space-sm);
+}
+
+.blog-preview-card {
+  flex: 0 0 360px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.blog-preview-title {
+  /* titre affiché en entier (jamais de « … ») */
+  overflow-wrap: anywhere;
+}
+
+.blog-preview-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  /* Rendu actuel = 12px (carré arrondi), pas un cercle : voir note sur .burger plus haut. */
+  border-radius: 50%;
+  border: 1px solid rgba(103, 58, 18, 0.18);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+  z-index: 2;
+}
+
+.blog-carousel-btn:hover {
+  transform: translateY(-50%) scale(1.04);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.blog-carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.blog-carousel-btn-prev {
+  left: calc(-1 * var(--space-lg));
+}
+
+.blog-carousel-btn-next {
+  right: calc(-1 * var(--space-lg));
+}
+
+@media (max-width: 1023px) {
+  .blog-carousel-btn-prev {
+    left: 0;
+  }
+  .blog-carousel-btn-next {
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-preview-track {
+    gap: var(--space-lg);
+    padding: 0;
+  }
+  .blog-preview-card {
+    flex: 0 0 clamp(280px, 82vw, 360px);
+  }
+  .blog-carousel-btn {
+    display: none;
+  }
+}
+

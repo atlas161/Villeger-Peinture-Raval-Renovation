@@ -4,13 +4,16 @@
  * Idempotent : on peut le relancer, il ne touche que les valeurs hors échelle.
  * Les valeurs de référence sont définies dans :root (assets/css/styles.css) et décrites dans docs/design/tokens.md.
  *
- * Usage : node scripts/tokenize-scale.js            → réécrit assets/css/*.css
+ * Usage : node scripts/tokenize-scale.js            → réécrit assets/css/*.css et src/css/**
  *         node scripts/tokenize-scale.js --dry-run  → affiche seulement le bilan
  */
 const fs = require('fs');
 const path = require('path');
 
+const { build, cssSourceFiles, BUNDLES } = require('./build-bundles');
 const CSS_DIR = path.join(__dirname, '..', 'assets', 'css');
+// Les bundles (styles.css, zone.css) sont générés : on retouche leurs sources dans src/css/.
+const BUNDLED = new Set(BUNDLES.map((b) => path.basename(b.out)));
 const DRY = process.argv.includes('--dry-run');
 
 // ---------- Typographie : valeur en rem → variable (voir :root) ----------
@@ -40,7 +43,8 @@ const BP_MAP = {
 const stats = { font: 0, shadow: 0, z: 0, bp: 0 };
 
 function processFile(file) {
-  const name = path.basename(file);
+  // Les fichiers de src/css/zone/ gardent la règle de zone.css (px des icônes Leaflet).
+  const name = file.includes(`${path.sep}zone${path.sep}`) ? 'zone.css' : path.basename(file);
   const lines = fs.readFileSync(file, 'utf8').split('\n');
   let selector = '';
   const out = lines.map((line) => {
@@ -87,5 +91,7 @@ function processFile(file) {
   if (!DRY) fs.writeFileSync(file, out.join('\n'));
 }
 
-for (const f of fs.readdirSync(CSS_DIR).filter((x) => x.endsWith('.css'))) processFile(path.join(CSS_DIR, f));
+for (const f of fs.readdirSync(CSS_DIR).filter((x) => x.endsWith('.css') && !BUNDLED.has(x))) processFile(path.join(CSS_DIR, f));
+for (const f of cssSourceFiles()) processFile(f);
+if (!DRY) build(); // régénère les bundles depuis src/
 console.log(`${DRY ? '[simulation] ' : ''}font-size : ${stats.font} · box-shadow : ${stats.shadow} · z-index : ${stats.z} · @media : ${stats.bp}`);
