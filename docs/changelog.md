@@ -17,6 +17,11 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-02 — Bandeau avis Google et bande d'appel « devis » refaits
+
+- **Bandeau « Laisser un avis Google »** (accueil, `contact.css`) : carte claire et discrète (badge Google, 5 étoiles, bouton en contour) pour ne pas concurrencer le CTA devis juste en dessous. Commit `cffd62e`.
+- **Bande d'appel « devis »** (`src/css/styles/22-bande-devis.css`, même HTML sur toutes les pages) : carte brun profond avec halo doré, rouleau de peinture en filigrane, liseré doré, points forts en pastilles, bouton principal doré à flèche animée, bouton téléphone en contour blanc. Un seul changement CSS = rendu identique sur accueil, pages de service, À propos, Réalisations, FAQ, zone desservie et blog.
+
 ## 2026-10-01 (suite 2) — Section blog de l'accueil refaite
 
 - **Constat** (prod, 3 formats) : 7 articles + une carte « Explorez » dans un carrousel maison (`blog-home.js`, 275 lignes + 107 lignes de CSS) qui construisait les cartes en JS depuis `blog/articles.json` (HTML statique : 1 seule carte périmée) ; flèches posées sur le texte en tablette/ordinateur, aucune flèche en mobile (7 cartes cachées) ; titres de 3 à 5 lignes, extraits coupés ; trois appels à l'action (carte, « Plus de guides à venir chaque semaine », bouton) ; cartes dupliquées en HTML, JS et CSS.
