@@ -17,6 +17,13 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (suite 2) — Section blog de l'accueil refaite
+
+- **Constat** (prod, 3 formats) : 7 articles + une carte « Explorez » dans un carrousel maison (`blog-home.js`, 275 lignes + 107 lignes de CSS) qui construisait les cartes en JS depuis `blog/articles.json` (HTML statique : 1 seule carte périmée) ; flèches posées sur le texte en tablette/ordinateur, aucune flèche en mobile (7 cartes cachées) ; titres de 3 à 5 lignes, extraits coupés ; trois appels à l'action (carte, « Plus de guides à venir chaque semaine », bouton) ; cartes dupliquées en HTML, JS et CSS.
+- **Refonte** : les **3 derniers articles**, en HTML statique pré-rendu par `scripts/build-blog.js` (`updateHomePage`, entre `<!-- home-articles:start/end -->`), avec le composant `.article-card` **commun avec /blog/** (déplacé de `blog-list.css` vers `src/css/styles/18-carte-article.css`, tokens `--radius-xl`/`--shadow-*`). Ordinateur : 3 colonnes ; tablette : une carte par ligne, image à gauche ; mobile : liste compacte (vignette + titre + durée). Un seul bouton « Voir tous les articles ».
+- **Supprimé** : `assets/js/blog-home.js`, le carrousel (`18-blog-carrousel.css`), les cartes `.blog-preview-*` et les règles mortes de `responsive.css`. Test `content-pages` : l'accueil liste bien les 3 derniers articles.
+- **Repéré, non traité** : le widget Instagram « Free Instagram Feed Widget » (Elfsight) de la galerie affiche un bandeau de marque et un grand bouton bleu hors charte.
+
 ## 2026-10-01 (suite) — Avis Google : widget Featurable
 
 - Le carrousel d'avis maison (7 avis écrits dans `index.html`, module `95-carrousel-avis.js`) est remplacé par le **widget Featurable** (avis Google réels et à jour, `data-featurable-async`). Le script `featurable.com/assets/bundle.js` est chargé à l'approche de la section (`src/js/main/95-widget-avis.js`). Résumé 4,1 • 14 avis et bouton « Laisser un avis » conservés.

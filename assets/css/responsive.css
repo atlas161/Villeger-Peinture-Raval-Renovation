@@ -32,17 +32,6 @@
     justify-content: center;
   }
   
-  .blog-page .blog-preview-card {
-    margin: 0;
-  }
-  
-  .blog-page .blog-preview-content h3 {
-    font-size: var(--text-xl);
-  }
-  
-  .blog-page .blog-preview-content p {
-    font-size: var(--text-sm);
-  }
 }
 
 @media (max-width: 480px) {
@@ -468,7 +457,6 @@
   .contact-info-label,
   .contact-value.email,
   .slider-label,
-  .blog-preview-badge,
   .article-tag,
   .blog-eyebrow { font-size: 0.8125rem; }
 }

@@ -32,3 +32,13 @@ test("la liste du blog n'a pas d'orphelin : article « à la une » seulement si
   const featured = /id="articles-grid" class="articles-grid has-featured"/.test(html);
   assert.equal(featured, n >= 4 && n % 3 === 1, `n=${n}, featured=${featured}`);
 });
+
+test("l'accueil affiche en HTML statique les 3 derniers articles du blog (plus de carrousel chargé en JS)", () => {
+  const home = read('index.html');
+  const articles = JSON.parse(read('blog/articles.json')).filter((a) => !a.draft).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+  const block = home.match(/<!-- home-articles:start -->([sS]*?)<!-- home-articles:end -->/);
+  assert.ok(block, 'marqueurs home-articles absents');
+  const links = [...block[1].matchAll(/href="blog/([^"]+).html"/g)].map((m) => m[1]);
+  assert.deepStrictEqual(links, articles.map((a) => a.slug));
+  assert.ok(!/blog-home.js|data-blog-carousel/.test(home));
+});

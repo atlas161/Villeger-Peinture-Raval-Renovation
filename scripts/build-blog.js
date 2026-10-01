@@ -934,34 +934,35 @@ function formatDateLongFR(dateStr) {
   return date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
-function renderBlogIndexCards(articles) {
-  const categoryLabels = {
-    peinture: 'Peinture',
-    facade: 'Façade',
-    toiture: 'Toiture',
-    isolation: 'Isolation',
-    conseils: 'Conseils'
-  };
+const BLOG_CATEGORY_LABELS = {
+  peinture: 'Peinture',
+  facade: 'Façade',
+  toiture: 'Toiture',
+  isolation: 'Isolation',
+  conseils: 'Conseils'
+};
 
-  const publicArticles = articles.filter(a => !a.draft);
+/**
+ * Carte d'article (composant .article-card, src/css/styles/18-carte-article.css).
+ * Utilisée par /blog/ (liens relatifs « ./ », titre h2) et par l'accueil (liens « blog/ », titre h3).
+ */
+function renderArticleCard(article, { hrefPrefix = './', headingTag = 'h2', sizes = '' } = {}) {
+  const categorySlug = getBlogCategorySlug(article);
+  const dateLabel = formatDateLongFR(article.date);
+  const readTime = article.readtime || 5;
+  const img = deriveCardImageVariants(article.image || '/data/hero.webp');
 
-  return publicArticles.map((article) => {
-    const categorySlug = getBlogCategorySlug(article);
-    const dateLabel = formatDateLongFR(article.date);
-    const readTime = article.readtime || 5;
-    const { src, srcset, sizes } = deriveCardImageVariants(article.image || '/data/hero.webp');
+  const title = escapeHtml(article.title);
+  const description = escapeHtml(article.description);
 
-    const title = escapeHtml(article.title);
-    const description = escapeHtml(article.description);
+  const srcsetAttr = img.srcset ? ` srcset="${escapeHtml(img.srcset)}" sizes="${escapeHtml(sizes || img.sizes)}"` : '';
 
-    const srcsetAttr = srcset ? ` srcset="${escapeHtml(srcset)}" sizes="${escapeHtml(sizes)}"` : '';
-
-    return `
+  return `
           <article class="article-card" data-category="${categorySlug}" data-date="${escapeHtml(article.date)}">
-            <a href="./${escapeHtml(article.slug)}.html" class="article-link">
+            <a href="${hrefPrefix}${escapeHtml(article.slug)}.html" class="article-link">
               <div class="article-image">
-                <img src="${escapeHtml(src)}"${srcsetAttr} alt="${title}" loading="lazy" width="600" height="338">
-                <span class="article-tag">${categoryLabels[categorySlug] || 'Conseils'}</span>
+                <img src="${escapeHtml(img.src)}"${srcsetAttr} alt="${title}" loading="lazy" width="600" height="338">
+                <span class="article-tag">${BLOG_CATEGORY_LABELS[categorySlug] || 'Conseils'}</span>
               </div>
               <div class="article-content">
                 <div class="article-meta">
@@ -969,7 +970,7 @@ function renderBlogIndexCards(articles) {
                   <span class="meta-separator">·</span>
                   <span><i class="fa-regular fa-clock" aria-hidden="true"></i> ${escapeHtml(readTime)} min</span>
                 </div>
-                <h2 class="article-title">${title}</h2>
+                <${headingTag} class="article-title">${title}</${headingTag}>
                 <p class="article-excerpt">${description}</p>
                 <span class="article-cta">
                   Lire l'article
@@ -979,7 +980,28 @@ function renderBlogIndexCards(articles) {
             </a>
           </article>
     `.trimEnd();
-  }).join('\n');
+}
+
+function renderBlogIndexCards(articles) {
+  return articles.filter(a => !a.draft).map((article) => renderArticleCard(article)).join('\n');
+}
+
+// Accueil : les 3 derniers articles, entre <!-- home-articles:start --> et <!-- home-articles:end -->.
+const HOME_ARTICLES_COUNT = 3;
+
+function updateHomePage(articles) {
+  const homePath = path.join(CONFIG.outputDir, '..', 'index.html');
+  if (!fs.existsSync(homePath)) return;
+  const html = fs.readFileSync(homePath, 'utf-8');
+  const re = /<!-- home-articles:start -->[\s\S]*?<!-- home-articles:end -->/;
+  if (!re.test(html)) return;
+  const cards = articles.filter(a => !a.draft).slice(0, HOME_ARTICLES_COUNT).map((article) => renderArticleCard(article, {
+    hrefPrefix: 'blog/',
+    headingTag: 'h3',
+    sizes: '(min-width: 1024px) 380px, (min-width: 768px) 40vw, 34vw'
+  })).join('\n');
+  fs.writeFileSync(homePath, html.replace(re, () => `<!-- home-articles:start -->${cards}\n          <!-- home-articles:end -->`), 'utf-8');
+  console.log('   ✅ index.html : 3 derniers articles pré-rendus');
 }
 
 function replaceElementInnerHtmlById(html, elementId, newInnerHtml) {
@@ -1175,6 +1197,8 @@ async function build() {
 
   // Pré-rendre la liste des articles sur /blog/ (SEO + fallback sans JS)
   updateBlogIndexPage(parsedArticles);
+  // Pré-rendre les derniers articles sur l'accueil
+  updateHomePage(parsedArticles);
   
   console.log('\n✅ Build terminé !');
   console.log(`   📁 Articles générés dans : ${CONFIG.outputDir}`);

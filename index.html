@@ -409,7 +409,6 @@
     <script defer src="assets/js/main.js?v=20260929"></script>
     
     <!-- Scripts -->
-  <script defer src="assets/js/blog-home.js?v=20260929"></script>
     
     <!-- Scripts tiers - Chargés en lazy-load quand les sections deviennent visibles -->
     <script>
@@ -841,56 +840,78 @@
             <p>Conseils d'experts et guides pratiques pour réussir vos projets de rénovation, peinture et ravalement.</p>
           </header>
           
-          <div class="blog-preview-carousel" data-blog-carousel>
-            <button type="button" class="blog-carousel-btn blog-carousel-btn-prev" aria-label="Articles précédents" data-carousel-prev>
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-            </button>
-            <div class="blog-preview-viewport" data-carousel-viewport>
-              <div class="blog-preview-track" data-carousel-track>
-                <article class="blog-preview-card">
-                  <a href="blog/peinture-exterieure-facade-angouleme.html" class="blog-preview-link">
-                    <div class="blog-preview-image">
-                      <img src="assets/img/blog/peinture_ext-600w.webp" srcset="assets/img/blog/peinture_ext-400w.webp 400w, assets/img/blog/peinture_ext-600w.webp 600w, assets/img/blog/peinture_ext-800w.webp 800w, assets/img/blog/peinture_ext-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, 520px" alt="Comment choisir sa peinture extérieure ?" width="600" height="338" loading="lazy">
-                      <div class="blog-preview-badge">Peinture</div>
-                    </div>
-                    <div class="blog-preview-content">
-                      <h3 class="blog-preview-title">Comment choisir sa peinture extérieure ?</h3>
-                      <p class="blog-preview-excerpt">Guide complet pour sélectionner la peinture adaptée à votre façade : types, finitions et budget.</p>
-                      <div class="blog-preview-meta">
-                        <i class="fa-regular fa-clock" aria-hidden="true"></i>
-                        <span>5 min de lecture</span>
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                      </div>
-                    </div>
-                  </a>
-                </article>
-
-                <article class="blog-preview-card" data-blog-cta>
-                  <a href="blog/" class="blog-preview-link">
-                    <div class="blog-cta-icon">
-                      <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-                    </div>
-                    <h3>Explorez tous nos articles</h3>
-                    <p>Découvrez notre bibliothèque complète de guides et conseils pour vos projets de rénovation.</p>
-                    <div class="blog-cta-pill">
-                      <span>Voir le blog</span>
-                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                    </div>
-                  </a>
-                </article>
+          <div class="home-articles">
+          <!-- home-articles:start -->
+          <article class="article-card" data-category="facade" data-date="2026-03-25">
+            <a href="blog/etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme.html" class="article-link">
+              <div class="article-image">
+                <img src="/assets/img/blog/hydrogommage_-600w.webp" srcset="/assets/img/blog/hydrogommage_-400w.webp 400w, /assets/img/blog/hydrogommage_-600w.webp 600w, /assets/img/blog/hydrogommage_-800w.webp 800w, /assets/img/blog/hydrogommage_-1200w.webp 1200w" sizes="(min-width: 1024px) 380px, (min-width: 768px) 40vw, 34vw" alt="Nettoyage de façade en pierre à Angoulême : un chantier type d&#39;hydrogommage" loading="lazy" width="600" height="338">
+                <span class="article-tag">Façade</span>
               </div>
-            </div>
-            <button type="button" class="blog-carousel-btn blog-carousel-btn-next" aria-label="Articles suivants" data-carousel-next>
-              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> 25 mars 2026</span>
+                  <span class="meta-separator">·</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 min</span>
+                </div>
+                <h3 class="article-title">Nettoyage de façade en pierre à Angoulême : un chantier type d&#39;hydrogommage</h3>
+                <p class="article-excerpt">Façade en pierre noircie ? Voici le déroulé type d&#39;un nettoyage par hydrogommage en Charente : diagnostic, protection, projection douce et traitement hydrofuge.</p>
+                <span class="article-cta">
+                  Lire l'article
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card" data-category="peinture" data-date="2026-03-23">
+            <a href="blog/bienfaits-peinture-exterieure-facade-angouleme.html" class="article-link">
+              <div class="article-image">
+                <img src="/assets/img/blog/bienfait_peinture_ext_2-600w.webp" srcset="/assets/img/blog/bienfait_peinture_ext_2-400w.webp 400w, /assets/img/blog/bienfait_peinture_ext_2-600w.webp 600w, /assets/img/blog/bienfait_peinture_ext_2-800w.webp 800w, /assets/img/blog/bienfait_peinture_ext_2-1200w.webp 1200w" sizes="(min-width: 1024px) 380px, (min-width: 768px) 40vw, 34vw" alt="Les bienfaits insoupçonnés d&#39;une peinture extérieure : Pourquoi repeindre sa façade à Angoulême en Charente est un investissement vital" loading="lazy" width="600" height="338">
+                <span class="article-tag">Peinture</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> 23 mars 2026</span>
+                  <span class="meta-separator">·</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 min</span>
+                </div>
+                <h3 class="article-title">Les bienfaits insoupçonnés d&#39;une peinture extérieure : Pourquoi repeindre sa façade à Angoulême en Charente est un investissement vital</h3>
+                <p class="article-excerpt">Découvrez les véritables bienfaits d&#39;une peinture extérieure en Charente : protection, isolation et esthétique. Guide expert par vos artisans d&#39;Angoulême</p>
+                <span class="article-cta">
+                  Lire l'article
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card" data-category="facade" data-date="2026-03-20">
+            <a href="blog/nettoyage-facade-hydrogommage.html" class="article-link">
+              <div class="article-image">
+                <img src="/assets/img/blog/facade_hydrogommage-600w.webp" srcset="/assets/img/blog/facade_hydrogommage-400w.webp 400w, /assets/img/blog/facade_hydrogommage-600w.webp 600w, /assets/img/blog/facade_hydrogommage-800w.webp 800w, /assets/img/blog/facade_hydrogommage-1200w.webp 1200w" sizes="(min-width: 1024px) 380px, (min-width: 768px) 40vw, 34vw" alt="Nettoyage de façade par hydro-gommage à Angoulême (Charente): le guide complet 2026" loading="lazy" width="600" height="338">
+                <span class="article-tag">Façade</span>
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> 20 mars 2026</span>
+                  <span class="meta-separator">·</span>
+                  <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 9 min</span>
+                </div>
+                <h3 class="article-title">Nettoyage de façade par hydro-gommage à Angoulême (Charente): le guide complet 2026</h3>
+                <p class="article-excerpt">Technique douce et précise pour nettoyer une façade sans l’abîmer : principe, avantages, étapes et prix à Angoulême (Charente).</p>
+                <span class="article-cta">
+                  Lire l'article
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </span>
+              </div>
+            </a>
+          </article>
+          <!-- home-articles:end -->
           </div>
 
           <div class="blog-section-footer">
-            <p>Plus de guides à venir chaque semaine</p>
-            <a href="blog/" class="btn btn-secondary">
-              <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-              Tous les articles
-            </a>
+            <a href="blog/" class="btn btn-secondary">Voir tous les articles <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </section>
