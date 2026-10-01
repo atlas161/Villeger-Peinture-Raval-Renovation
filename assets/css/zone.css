@@ -416,12 +416,6 @@
   }
 }
 
-@media (min-width: 992px) {
-  .zone-cities-list {
-    column-count: 1;
-  }
-}
-
 .zone-cities-list li {
   font-size: 0.875rem;
   color: var(--color-text-light);
@@ -872,13 +866,15 @@
   }
 }
 
-/* Ordinateur : carte pleine largeur en tête, puis adresse + notes, puis les 3 listes de communes côte à côte. */
+/* Ordinateur : carte pleine largeur en tête, puis les blocs d'infos en dessous.
+   Accueil : adresse (1/3) + villes desservies (2/3, liste sur 3 colonnes), puis note et bouton.
+   Page zone (.zone-content--lists) : adresse + note, puis les 3 listes de communes côte à côte. */
 @media (min-width: 992px) {
   .zone-content {
     max-width: var(--container-max);
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-xl);
-    align-items: stretch;
+    gap: var(--space-lg);
+    align-items: start;
   }
 
   /* Les blocs d'infos deviennent des cases de la grille parente. */
@@ -892,14 +888,33 @@
     grid-column: 1 / -1;
   }
 
-  .zone-info > .zone-address + .zone-note {
-    grid-column: span 2;
-    display: flex;
-    align-items: center;
-  }
-
   .zone-actions {
     display: flex;
     justify-content: center;
+  }
+
+  /* Accueil : la liste de villes occupe 2 colonnes et se range sur 3 colonnes. */
+  .zone-info > .zone-cities {
+    grid-column: span 2;
+  }
+
+  .zone-info > .zone-cities .zone-cities-list {
+    column-count: 3;
+  }
+
+  /* Page zone : 3 cartes de communes d'égale largeur, une colonne chacune. */
+  .zone-content--lists .zone-info > .zone-cities {
+    grid-column: span 1;
+  }
+
+  .zone-content--lists .zone-info > .zone-cities .zone-cities-list {
+    column-count: 1;
+  }
+
+  .zone-content--lists .zone-info > .zone-address + .zone-note {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
   }
 }
