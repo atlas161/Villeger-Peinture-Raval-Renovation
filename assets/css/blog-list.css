@@ -257,6 +257,9 @@
 
 .article-meta {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
   align-items: center;
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
@@ -275,6 +278,7 @@
 }
 
 .article-title {
+  text-align: left;
   font-size: 1.25rem;
   font-weight: var(--font-weight-semibold);
   line-height: 1.3;

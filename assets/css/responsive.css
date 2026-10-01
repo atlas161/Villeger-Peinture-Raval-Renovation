@@ -15,9 +15,10 @@
   }
   
   .blog-page .article-meta {
-    flex-direction: column;
-    gap: var(--space-xs);
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-sm);
+    text-align: left;
   }
   
   .blog-page .article-share {
