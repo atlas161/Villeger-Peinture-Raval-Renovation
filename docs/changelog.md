@@ -17,6 +17,12 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (suite) — Avis Google : widget Featurable
+
+- Le carrousel d'avis maison (7 avis écrits dans `index.html`, module `95-carrousel-avis.js`) est remplacé par le **widget Featurable** (avis Google réels et à jour, `data-featurable-async`). Le script `featurable.com/assets/bundle.js` est chargé à l'approche de la section (`src/js/main/95-widget-avis.js`). Résumé 4,1 • 14 avis et bouton « Laisser un avis » conservés.
+- **CSP** (`netlify.toml`) : `featurable.com` en script/connect/img, `*.googleusercontent.com` en img (photos de profil). Cité dans les **mentions légales**. Chargé sans consentement (comme Vimeo : pas de traceur publicitaire) — à revoir si le client préfère le conditionner au bouton « Tout accepter ».
+- Reste : le CSS `.reviews-*` / `.review-card*` de `contact.css` n'est plus utilisé (sauf `.reviews-grid`, `.reviews-carousel*`, `.reviews-summary*`, `.reviews-cta`) : à supprimer au prochain ménage ; CSS personnalisé du widget à régler dans l'éditeur Featurable si besoin.
+
 ## 2026-10-01 — Gros fichiers découpés par fonction (`styles.css`, `zone.css`, `main.js`)
 
 - **Sources dans `src/`** : `styles.css` (2 696 lignes) → 24 fichiers (`src/css/styles/01-fonts-fallback.css` … `24-etapes-accueil.css`), `zone.css` (1 115 lignes) → 10 fichiers (`src/css/zone/`), `main.js` (1 049 lignes, une seule fermeture) → 15 modules (`src/js/main/` : utilitaires, vidéo hero, cartes de service, état actif du menu, sous-menus bureau, menu mobile, défilement vers les ancres, scroll-spy, apparition au scroll, FAQ, carrousel d'avis, carte, barre mobile, année, démarrage).

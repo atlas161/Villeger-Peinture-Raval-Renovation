@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initFaqAccordions();
   initFaqPageControls();
-  initReviewsCarousels();
+  initReviewsWidget();
   initZoneMap();
   initMobileCtaBar();
   initFooterYear();

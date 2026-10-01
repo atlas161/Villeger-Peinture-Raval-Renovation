@@ -668,6 +668,10 @@
   overflow: hidden;
 }
 
+.reviews-widget {
+  min-height: 420px; /* réserve la place : pas de saut de page quand le widget Featurable arrive */
+}
+
 .reviews-cta {
   width: 100%;
 }
