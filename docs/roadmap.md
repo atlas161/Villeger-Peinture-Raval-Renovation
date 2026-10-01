@@ -19,6 +19,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 | A6 | **Contenus/photos** | Nouvelles photos de chantiers (avant/après), Instagram : le fil Elfsight montre des photos hors sujet (à trier côté compte Instagram). |
 | A7 | ~~Avis Google : fournir les 14 avis~~ | **Fait le 2026-10-01** : carrousel de `index.html` remplacé par 7 vrais avis lus sur Google Maps (4-5★ avec texte ; les 1-2★ et les avis sans texte ne sont pas affichés). Les anciens Gregory Themot, Sylvie B. et Marc Deschamps n'existent pas sur la fiche Google. Note et nombre (4,1 · 14) inchangés. |
 | A8 | **Photos à fournir (plus tard, par le client)** | (1) **Portrait de Stéphane Villéger** (+ quelques lignes sur son parcours) → section « Qui est derrière VPRR » sur `a-propos.html`. (2) **Photos de chantiers** pour les **pages de service** (hero avant/après) et pour **`realisations.html`** (une carte par chantier : commune, prestation, avant/après). **Depuis le 2026-10-03 le client peut les ajouter lui-même dans Pages CMS** ([`cms.md`](./cms.md)) : plus de conversion WebP manuelle (Netlify Image CDN). Aujourd'hui seules 4 paires avant/après existent (`media/services/`), et celles du ravalement et du nettoyage de façade se ressemblent. Si elles arrivent par un autre canal : les déposer dans `media/uploads/` et renseigner `content/realisations.json` / `page.json`. |
+| A11 | **À remplacer plus tard (demande du client, 2026-10-03)** | (1) **Photos des 5 pages de service** (en-tête avant/après) ; (2) **photos des articles de blog** (couvertures actuelles = images génériques, plusieurs se ressemblent) ; (3) **une image pour la page À propos** et le **portrait de Stéphane Villéger** (voir A8). Tout se fait dans Pages CMS ([`cms.md`](./cms.md)) : rien à coder. |
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
@@ -51,6 +52,16 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 - [ ] **CSS orphelin du blog** : `.cta-icon`, `.cta-actions`, `.cta-card`, `.blog-cta` (`blog-article.css`, `blog-list.css`) ne servent plus.
 
 - [ ] **Vérifier Pages CMS en conditions réelles** (première connexion du client sur app.pagescms.org) : ouverture de chaque fichier, import d'une photo, enregistrement, build Netlify, rendu des photos via Netlify Image CDN sur l'aperçu. Si un champ se comporte mal, ajuster `scripts/cms-config.js` puis `npm run build:cms`.
+
+## B2. Points relevés à l'issue de l'audit du 2026-10-03 (à décider / à faire)
+
+- [ ] **Article « étude de cas » (hydrogommage, Marc et Sophie)** : contient des clients nommés et une citation entre guillemets. À confirmer avec le client que c'est un vrai chantier ; sinon reformuler en cas **type** (sans noms ni citation) — un faux témoignage est un risque légal et de confiance.
+- [ ] **Voix « équipe / experts »** : 7 articles et l'accueil parlent d'« équipe » alors que l'entreprise est un artisan (Stéphane Villéger). Harmoniser avec la voix des pages de service (« nous », un interlocuteur).
+- [ ] **Affirmations de blog non sourcées** (ex. « les agents immobiliers locaux sont unanimes », ROI, durées de 5 à 10 ans) : relire article par article et retirer ou nuancer.
+- [ ] **CSS orphelin** : `.cta-icon`, `.cta-actions`, `.cta-card`, `.blog-cta` (blog) ; ménage de `styles.css` / `zone.css` / `main.js` (voir C.2).
+- [ ] **Bonnes pratiques Lighthouse 75 sur les aperçus Netlify** (100 en prod au dernier relevé) : refaire une mesure sur la prod pour confirmer que c'est propre à l'aperçu.
+- [ ] **Tiers avant consentement** : Vimeo (hero) et Elfsight/Instagram se chargent avant le choix des cookies (voir C.4).
+- [ ] **Avis Google statiques** (4,1 / 14 avis, 7 avis copiés à la main) : se périment ; prévoir une mise à jour manuelle trimestrielle ou un widget avec consentement.
 
 ## C. Chantiers moyens (une session chacun)
 
