@@ -21,6 +21,8 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
+- [ ] **Netlify Forms : vérifier la réception** du premier envoi depuis `contact.html` (le formulaire garde le nom `contact`). Après déploiement : envoyer un message test, vérifier l'e-mail de notification et l'événement `generate_lead`.
+
 - [x] *(fait le 2026-10-01)* Propositions de redesign 1 à 6 des pages service et zone ([`design/direction-artistique.md`](./design/direction-artistique.md)). Reste la n° 7 (logo B2, en attente du client). Le guide visuel [`design/guide-direction-artistique.html`](./design/guide-direction-artistique.html) est à tenir à jour à chaque évolution de composant.
 
 - [ ] **Appliquer le logo B2** quand le client le demande : tout est prêt dans [`design/logo-b2.md`](./design/logo-b2.md) (balisage + CSS + vérifications). En attendant, le logo d'origine est en ligne.
@@ -51,7 +53,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
    valider avec des mesures avant/après.
 3. **Durcir la CSP** — retirer `'unsafe-inline'` de `script-src` : externaliser les 2 scripts inline de `index.html` et les
    attributs `onclick` restants (puis évaluer `style-src`). Tester toutes les pages avec la CSP en `Report-Only` d'abord.
-4. **Consentement des tiers** — Vimeo (hero desktop), Elfsight/Instagram et tuiles OpenStreetMap se chargent avant tout
+4. **Consentement des tiers** — *(tuiles OpenStreetMap : fait le 2026-10-01 — carte à la demande sur la page zone, plus de Leaflet sur l'accueil)* Vimeo (hero desktop) et Elfsight/Instagram se chargent avant tout
    consentement (cités dans les mentions légales) : les mettre derrière un clic (« Charger la carte / la galerie »).
 5. **URLs sans `.html`** — décision SEO : impacte canonicals, sitemap, JSON-LD, liens internes et redirections 301 (~50
    URL à migrer d'un coup) ; à faire seulement si le gain est jugé utile.

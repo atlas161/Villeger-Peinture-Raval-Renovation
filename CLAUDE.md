@@ -23,8 +23,9 @@ si le SEO ou une action client est concernée.
 - Site statique HTML/CSS/JS vanilla, **aucune dépendance npm**, pas de framework ni de bundler.
 - **Netlify**, déployé depuis GitHub (`atlas161/Villeger-Peinture-Raval-Renovation`, branche `main`). Push sur `main`
   = redéploiement automatique (≈ 1 min). Netlify lance `npm run build` et publie **`dist/`**.
-- Formulaires : Cloudflare Turnstile → fonction Netlify `/api/contact` (secret `TURNSTILE_SECRET` côté Netlify, jamais
-  dans le dépôt) → Netlify Forms.
+- Formulaire : **une seule page, `contact.html`** (Cloudflare Turnstile → fonction Netlify `/api/contact` → Netlify Forms ;
+  secret `TURNSTILE_SECRET` côté Netlify, jamais dans le dépôt). Accueil et pages de service : bande d'appel vers
+  `contact.html?service=…`. Ne jamais remettre un `<form>` ailleurs (test `contact-page`).
 - Blog : Markdown dans `content/blog/` (édité via **Pages CMS**, `.pages.yml`).
 
 ## Commandes
@@ -36,6 +37,7 @@ si le SEO ou une action client est concernée.
 | `npm run build:blog` | régénère le blog depuis `content/blog/*.md` |
 | `npm run sync:header` | réinjecte le menu dans les pages écrites à la main |
 | `npm test` | 20 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc) |
+| `node scripts/build-zone-schema.js --inject` | régénère le schéma SVG de la zone dans `index.html` |
 | `node scripts/tokenize-css.js` | remplace les valeurs CSS en dur par les variables `:root` identiques |
 | `npm run dev` | `npx serve .` (le footer est alors chargé en JS) |
 

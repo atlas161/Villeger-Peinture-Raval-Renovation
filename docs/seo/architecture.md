@@ -176,23 +176,36 @@ visible sans JS et sur ordinateur).
   bannière **sur place** (sans recharger). Refuser après avoir accepté retire le consentement à Clarity/GTM.
 - GTM (`GTM-NKPGDBPG`) et Clarity (`ypwg9bye24`) ne se chargent qu'après « Tout accepter ».
 - **Suivi des conversions** (`trackConversions()` dans `footer.js`), actif seulement si le consentement est
-  `accepted` au moment du clic : `phone_click` (lien `tel:`), `quote_cta_click` (lien `#contact`),
+  `accepted` au moment du clic : `phone_click` (lien `tel:`), `quote_cta_click` (lien vers `contact.html`),
   `generate_lead` (page `/merci`), avec `placement` (`barre_mobile`, `menu`, `hero`, `pied_de_page`, `contact`,
   `page`). Envoyés dans `dataLayer` (GTM) et via `clarity('event', …)`. Pour les exploiter dans Google Analytics
   il faut créer les déclencheurs correspondants dans le conteneur GTM (voir `blockers.md`).
 - Tiers encore chargés **avant** consentement : Vimeo (hero, desktop), Elfsight/Instagram (au scroll), tuiles
   OpenStreetMap (carte). Ils sont cités dans les mentions légales.
 
-## 10. Formulaires
-Un formulaire par page à formulaire (accueil + 5 pages de service), noms Netlify distincts (`contact`,
-`contact-ravalement-facade`…). Champs : nom, téléphone, e-mail, type de projet (`apple-select`), message +
+## 10. Formulaire de contact — une seule page : `contact.html`
+Depuis le 2026-10-01 le formulaire vit **uniquement** sur `contact.html` (nom Netlify `contact`, celui de l'ancien formulaire
+de l'accueil : les notifications configurées dans Netlify restent valables). L'accueil et les 5 pages de service n'ont plus qu'une
+**bande d'appel** (`#contact.contact-cta-section`, partial `includes/partials/contact-cta.html`) ; tous les boutons « devis »
+(header, hero, tarifs, barre mobile, footer, blog) pointent vers `contact.html`, et ceux des pages de service vers
+`contact.html?service=<ravalement|nettoyage-facade|toiture|peinture|isolation>` (remplacement de `#contact` fait par
+`build-pages.js`). `assets/js/contact-page.js` pré-sélectionne le service (liste blanche, sans clic), renseigne le champ caché
+`service` et `source` (page d'origine). Champs : nom, téléphone, e-mail, type de projet (`apple-select`, 7 options), message +
 honeypot `bot-field` + horodatage + widget Turnstile. Envoi : `POST /api/contact` → `netlify/functions/contact.js`
 vérifie le jeton (variable Netlify `TURNSTILE_SECRET`, jamais dans le dépôt ; sans elle la vérification est
 ignorée avec un avertissement) puis transmet à Netlify Forms (`POST /`) → redirection vers `/merci.html`.
-Tests : `tests/contact-function.test.js`.
+Les anciens formulaires par page (`contact-ravalement-facade`…) n'existent plus ; leurs anciennes demandes restent consultables dans Netlify.
+Tests : `tests/contact-function.test.js`, `tests/contact-page.test.js`.
+
+## 10 bis. Zone d'intervention
+- **Accueil** : schéma SVG en ligne (contour de `data/charente.geojson`, rayon ≈ 50 km, communes) généré par
+  `node scripts/build-zone-schema.js --inject` (entre `<!-- zone-schema:start/end -->`) — aucun service tiers, plus de Leaflet.
+- **Page zone** : recherche de commune (`assets/js/zone-page.js`, insensible aux accents), communes par secteur
+  (`.zone-sector` / `.zone-chips`), carte interactive Leaflet/OpenStreetMap **chargée seulement au clic** (`data-zone-lazy="1"`
+  dans `zone-map-leaflet.js`) → aucune tuile OSM avant l'action du visiteur.
 
 ## 11. Tests (`npm test`)
-`contact-function` (7), `zone-map` (6), `site-invariants` (4 : H1 unique/canonical/`<title>` ≤ 60, liens et ancres
+`contact-function` (7), `contact-page` (6), `zone-map` (6), `site-invariants` (4 : H1 unique/canonical/`<title>` ≤ 60, liens et ancres
 internes, URLs du sitemap, contenu de `dist/`), `pages` (2 : pages de service à jour et données valides), `docs` (1 : aucun lien cassé dans `CLAUDE.md` et `docs/`).
 
 ## 12. Recettes rapides
