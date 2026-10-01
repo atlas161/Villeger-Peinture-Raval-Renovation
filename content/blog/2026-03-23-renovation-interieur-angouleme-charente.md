@@ -66,7 +66,7 @@ Nos modes de vie ont considérablement évolué au cours de la dernière décenn
 **2. Une meilleure performance énergétique (L'enjeu du DPE)**  
 En Charente, les étés peuvent être caniculaires et les hivers particulièrement humides. Profitez de vos travaux d'embellissement (comme le doublage des murs en Placo) pour revoir l'isolation de vos murs par l'intérieur. Résultat :
 
-- **Baisse significative de vos factures** : Un logement bien isolé consomme jusqu'à 30% de chauffage en moins.
+- **Baisse significative de vos factures** : Une bonne isolation réduit sensiblement les besoins de chauffage (l'ampleur dépend du logement et des travaux réalisés).
 - **Confort d'été et d'hiver** : Suppression de la désagréable sensation de "paroi froide" en hiver et maintien de la fraîcheur en été.
 - **Valorisation verte** : Une meilleure note au DPE (Diagnostic de Performance Énergétique) est aujourd'hui un argument de poids sur le marché immobilier.
 
@@ -104,7 +104,7 @@ Il est temps d'envisager des travaux si vous constatez un ou plusieurs de ces si
 
 ## Le processus étape par étape avec VPRR : La garantie d'un chantier serein
 
-Un chantier de rénovation peut faire peur. C'est pourquoi chez VPRR, nous avons mis en place une méthodologie stricte pour vous garantir une expérience fluide, de la première poignée de main à la remise des clés.
+Un chantier de rénovation peut faire peur. C'est pourquoi chez VPRR, nous avons mis en place une méthode claire pour vous offrir une expérience fluide, de la première poignée de main à la remise des clés.
 
 ### 1. Étude approfondie et conception du projet (Avant chantier)
 
@@ -130,7 +130,7 @@ C'est ici que la magie opère et que votre nouvel espace prend physiquement form
 - **Pose de l'isolation** (laine de verre, laine de roche, ou isolants biosourcés) sur les murs périphériques et les plafonds.
 - **Montage des structures métalliques** (rails et montants) et pose experte des plaques de plâtre (BA13 standard, hydrofuge pour les pièces d'eau, ou phonique pour les chambres).
 - **Création de faux-plafonds** (idéal pour encastrer des spots LED et cacher les gaines techniques) et de coffrages sur-mesure.
-- **Traitement millimétré des bandes à joints** : une étape cruciale réalisée par nos jointeurs pour garantir des murs parfaitement plans et lisses, sans aucune démarcation visible après peinture.
+- **Traitement millimétré des bandes à joints** : une étape cruciale réalisée avec soin pour obtenir des murs plans et lisses, sans démarcation visible après peinture.
 
 ### 4. Finitions : Peinture de haute qualité et Sols (La touche finale)
 
@@ -156,13 +156,13 @@ Le prix d'une rénovation se calcule généralement au mètre carré (m²) au so
 
 ### Ce qui fait la différence dans notre devis
 
-Un devis signé **VPRR** est une garantie sans surprise. Il inclut de facto :
+Un devis signé **VPRR** est détaillé et sans surprise. Il inclut en général :
 
 - Le conseil personnalisé technique et esthétique.
 - La fourniture exclusive de matériaux de qualité professionnelle (Seigneurie, Zolpan, Placoplatre, Tarkett...).
 - Une main-d'œuvre locale, qualifiée et déclarée.
 - La protection rigoureuse des lieux et la gestion écologique des déchets.
-- **L'assurance responsabilité civile et la garantie décennale** sur les ouvrages structurels concernés.
+- **Notre assurance responsabilité civile** et la **garantie décennale** pour les ouvrages qui en relèvent.
 
 ## Nos 3 domaines d'expertise absolue pour votre aménagement
 
@@ -182,7 +182,7 @@ Une belle peinture nécessite avant tout une préparation du support irréprocha
 
 - **Ratissage et enduisage complet** des vieux murs abîmés ou crépis pour retrouver une surface lisse et contemporaine.
 - Pose de toiles de verre ou de voiles à peindre pour consolider les murs micro-fissurés.
-- Application experte (au rouleau ou à l'Airless pour les grandes surfaces) de peintures professionnelles très couvrantes, lavables, acryliques ou biosourcées, garantissant un tendu parfait et une tenue dans le temps exceptionnelle.
+- Application experte (au rouleau ou à l'Airless pour les grandes surfaces) de peintures professionnelles très couvrantes, lavables, acryliques ou biosourcées, pour un rendu tendu et une bonne tenue dans le temps.
 
 ### 3. Revêtements de sols souples et parquets
 
@@ -190,7 +190,7 @@ Le choix du sol définit l'ambiance de la pièce. Nous vous conseillons et assur
 
 - **Préparation du support** : Réalisation de ragréages fibrés si le sol d'origine présente des défauts de planéité (indispensable dans les vieilles maisons).
 - **Parquets** : Pose flottante de parquets stratifiés ou contrecollés, pour apporter le côté chaleureux du bois.
-- **Sols souples nouvelle génération** : Pose de dalles ou lames PVC (LVT / SPC) clipsables. Ultra-résistants aux chocs, 100% étanches (parfaits pour les pièces d'eau) et offrant des imitations bois ou béton ciré bluffantes de réalisme.
+- **Sols souples nouvelle génération** : Pose de dalles ou lames PVC (LVT / SPC) clipsables. Très résistants aux chocs, étanches à l'eau (adaptés aux pièces d'eau) et offrant des imitations bois ou béton ciré bluffantes de réalisme.
 
 ## Questions fréquentes sur la rénovation intérieure en Charente
 
@@ -200,7 +200,7 @@ Le choix du sol définit l'ambiance de la pièce. Nous vous conseillons et assur
 
 ### Faut-il demander une autorisation en mairie pour rénover son intérieur ?
 
-**Dans 90% des cas, non.** L'aménagement strictement intérieur (pose de cloisons, modification des peintures, changement de sols, isolation par l'intérieur) ne nécessite aucune déclaration préalable de travaux.  
+**Le plus souvent, non.** L'aménagement strictement intérieur (pose de cloisons, modification des peintures, changement de sols, isolation par l'intérieur) ne nécessite aucune déclaration préalable de travaux.  
 *Exceptions* : Vous devrez faire une demande si vous modifiez l'aspect extérieur de la maison (création d'une fenêtre de toit de type Velux), si vous touchez à un mur porteur (nécessitant parfois l'avis d'un bureau d'études ou de la copropriété), ou si vous transformez un garage (surface non habitable) en chambre (surface habitable).
 
 ### Combien de temps durent concrètement les travaux ?
@@ -224,7 +224,7 @@ Faire appel à VPRR, c'est choisir de ne pas subir ses travaux :
 - **Devis gratuit, détaillé et transparent** transmis sous quelques jours ouvrés après notre visite.
 - **Un interlocuteur unique** (le patron) sur le terrain pour faciliter la communication et la prise de décision rapide.
 - **Des artisans salariés qualifiés**, formés, et passionnés par le travail bien fait et les finitions extrêmement soignées.
-- **La Garantie Décennale** et l'assurance Responsabilité Civile Professionnelle pour sécuriser votre investissement sur 10 ans.
+- **L'assurance Responsabilité Civile Professionnelle** et la **garantie décennale** pour les travaux qui en relèvent.
 - **Le respect de votre habitat** : Protection méticuleuse de vos meubles, de vos sols existants et de vos parties communes.
 
 ## Conclusion

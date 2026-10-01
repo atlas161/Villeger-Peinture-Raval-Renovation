@@ -168,7 +168,7 @@ Les facteurs qui font varier le prix :
 2. **Traiter sans nettoyer** : sur mousse épaisse, le produit n’atteint pas les racines et la reprise est rapide.
 3. **Hydrofuger sur support sale/humide** : l’adhérence est mauvaise, résultat décevant.
 4. **Négliger les gouttières** : elles se bouchent, l’eau déborde, la façade se tache.
-5. **Oublier l’entretien** : un contrôle visuel annuel évite un gros chantier tous les 10 ans.
+5. **Oublier l’entretien** : un contrôle visuel annuel permet d'intervenir avant que la mousse ne s'installe durablement.
 
 ## Démoussage toiture et rénovation : quand faut-il aller plus loin ?
 

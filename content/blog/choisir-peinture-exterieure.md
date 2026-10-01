@@ -95,7 +95,7 @@ Le choix de la finition n'est pas qu'une question de goût personnel, il impacte
 
 ## La méthode VPRR : Pourquoi la préparation est-elle la clé de la réussite ?
 
-Une peinture de façade haut de gamme appliquée sur un mur mal préparé s'écaillera en moins d'un an. C'est une règle d'or dans le bâtiment. Chez VPRR, nous considérons que **la préparation minutieuse du support représente 70% de notre temps de travail sur un chantier**. Voici les étapes rigoureuses que nous appliquons :
+Une peinture de façade haut de gamme appliquée sur un mur mal préparé s'écaillera en moins d'un an. C'est une règle d'or dans le bâtiment. Chez VPRR, nous considérons que **la préparation du support représente une part très importante du temps de travail sur un chantier**. Voici les étapes rigoureuses que nous appliquons :
 
 1. **Le diagnostic préalable et la sécurisation** : Avant même d'ouvrir un pot, nous sondons le mur avec un marteau de façadier pour repérer les zones qui "sonnent creux" (enduit décollé). Nous installons un échafaudage sécurisé et bâchons méticuleusement vos menuiseries, vos terrasses et vos massifs floraux.
 2. **Le nettoyage curatif en profondeur** : Un simple coup de jet d'eau ne suffit pas. Nous procédons à un lavage haute pression adapté (ou à un hydro-gommage à basse pression pour les supports fragiles) afin d'éliminer la pollution incrustée, la pellicule de farinage et les anciennes peintures cloquées.
@@ -146,12 +146,12 @@ Une façade s'entretient ! Nous conseillons un nettoyage très doux (au jet d'ea
 
 ## Pourquoi confier votre peinture extérieure à VPRR ?
 
-Artisans peintres et façadiers reconnus pour notre sérieux sur le bassin d'Angoulême, nous ne faisons aucun compromis sur la qualité. Nous vous garantissons :
+Artisans peintres et façadiers reconnus pour notre sérieux sur le bassin d'Angoulême, nous soignons la qualité de chaque chantier. Nous nous engageons sur :
 
 - **Une expertise technique locale** : Nous connaissons parfaitement le comportement des maçonneries charentaises et les spécificités de notre climat pour vous orienter vers la résine la plus adaptée.
 - **Des matériaux professionnels exclusifs** : Nous n'utilisons que des peintures haut de gamme issues de distributeurs professionnels (Seigneurie Gauthier, Zolpan, Tollens) introuvables dans les grandes surfaces de bricolage. Le pouvoir couvrant et la longévité n'ont rien à voir.
 - **Un devis transparent, gratuit et détaillé** : Pas de mauvaises surprises, chaque poste (nettoyage, réparation, peinture) est clairement chiffré.
-- **Sérénité et Garantie Décennale** : Notre entreprise est couverte par une assurance Responsabilité Civile et une Garantie Décennale pour protéger votre investissement.
+- **Sérénité et Garantie Décennale** : Notre entreprise est couverte par une assurance Responsabilité Civile Professionnelle et une garantie décennale pour les travaux qui en relèvent.
 
 ## Conclusion
 

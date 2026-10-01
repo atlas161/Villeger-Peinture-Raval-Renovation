@@ -32,7 +32,7 @@ Le **ravalement de façade** est bien plus qu'un simple nettoyage ou un coup de 
 
 ### Le principe de l'intervention
 
-Un ravalement dans les règles de l'art traite le mur en profondeur. Il comprend systématiquement :
+Un ravalement dans les règles de l'art traite le mur en profondeur. Il comprend en général :
 
 - **Le nettoyage et le décapage** : pour repartir sur une base saine
 - **La réparation** : traitement des fissures, reprise des joints, maçonnerie
@@ -78,9 +78,9 @@ Laisser une façade se dégrader, c'est mettre en péril la structure même du b
 |  |  |  |  |  |
 | ------------------ | ----------------------- | ------------------------ | ---------------------------- | ---------------------- |
 | **Intervention** | **Objectif principal** | **Durée de vie estimée** | **Avantages** | **Limites** |
-| **Nettoyage seul** | Retirer la saleté | 3 à 5 ans | Rapide, peu coûteux | Ne répare pas les murs |
-| **Peinture** | Rafraîchir la couleur | 5 à 10 ans | Esthétique, économique | Cache les défauts |
-| **Ravalement** | **Rénover et protéger** | **15 à 25 ans** | **Traitement en profondeur** | Budget plus conséquent |
+| **Nettoyage seul** | Retirer la saleté | 3 à 5 ans environ | Rapide, peu coûteux | Ne répare pas les murs |
+| **Peinture** | Rafraîchir la couleur | 10 à 15 ans environ | Esthétique, économique | Cache les défauts |
+| **Ravalement** | **Rénover et protéger** | **jusqu'à 15 à 25 ans** | **Traitement en profondeur** | Budget plus conséquent |
 
 
 > **Notre recommandation** : Si votre façade présente des fissures ou que l'enduit sonne creux, un simple nettoyage ne suffira pas. Le ravalement complet est la seule solution pérenne.
@@ -100,7 +100,7 @@ Il est urgent d'agir si vous constatez :
 
 Pour maintenir votre patrimoine en bon état :
 
-- **Tous les 10 à 15 ans** : délai moyen recommandé pour un ravalement complet
+- **Tous les 10 à 15 ans** : repère courant pour refaire une façade
 - **Inspection visuelle annuelle** : pour repérer rapidement les premières pathologies
 
 ## Le processus étape par étape
@@ -154,13 +154,13 @@ Le prix varie fortement selon l'état des murs et les matériaux choisis :
 
 ### Ce qui est inclus dans notre devis
 
-Un devis VPRR transparent comprend toujours :
+Un devis VPRR transparent comprend en général :
 
 - Le diagnostic technique gratuit
 - La fourniture et pose de l'échafaudage
 - L'ensemble des étapes de préparation et réparation
 - Les matériaux haut de gamme
-- La garantie décennale
+- Nos assurances (responsabilité civile professionnelle et garantie décennale pour les travaux qui en relèvent)
 
 ## Un ravalement pour quels types de façades ?
 
@@ -195,7 +195,7 @@ Le ravalement met en valeur le charme authentique de l'architecture locale.
 
 C'est le revêtement star pour les maisons anciennes d'Angoulême.
 
-- **Avantages** : 100% naturel, laisse parfaitement respirer les murs anciens, s'adapte aux légers mouvements du bâti (très souple).
+- **Avantages** : Matériau naturel, laisse respirer les murs anciens, s'adapte aux légers mouvements du bâti (très souple).
 - **Esthétique** : Offre une patine unique et chaleureuse.
 
 ### La Peinture Siloxane
@@ -213,7 +213,7 @@ Idéale pour les façades récentes ou déjà peintes.
 
 ### Peut-on faire son ravalement soi-même ?
 
-**Fortement déconseillé**. Outre le risque de chute (travail en hauteur), une erreur de diagnostic (ex: bloquer l'humidité avec un mauvais ciment) peut causer des dégâts structurels irréversibles. De plus, seul un professionnel vous fait bénéficier de la garantie décennale.
+**Fortement déconseillé**. Outre le risque de chute (travail en hauteur), une erreur de diagnostic (ex: bloquer l'humidité avec un mauvais ciment) peut causer des dégâts importants. De plus, un professionnel assuré apporte des garanties (responsabilité civile, décennale pour les travaux qui en relèvent).
 
 ### Quelle est la meilleure saison ?
 
@@ -224,7 +224,7 @@ Idéale pour les façades récentes ou déjà peintes.
 
 ### Combien de temps dure le résultat ?
 
-Un ravalement réalisé dans les règles de l'art par des professionnels protège votre maison pour **15 à 25 ans** en moyenne.
+Un ravalement réalisé dans les règles de l'art par des professionnels protège votre maison pendant de longues années : comptez jusqu'à **15 à 25 ans** selon les matériaux et l'exposition.
 
 ## Pourquoi choisir VPRR pour votre ravalement ?
 
@@ -240,12 +240,12 @@ Artisans passionnés à Angoulême, nous maîtrisons les codes architecturaux de
 
 - **Devis gratuit** détaillé et sur-mesure
 - **Interlocuteur unique** tout au long de votre projet
-- **Garantie décennale** (10 ans de tranquillité)
+- **Assurances** : responsabilité civile professionnelle et garantie décennale pour les travaux qui en relèvent
 - **Assurance** responsabilité civile professionnelle
 - **Chantier propre** et respectueux de votre environnement
 
 ## Conclusion
 
-Le ravalement de façade est l'investissement le plus rentable pour protéger votre maison charentaise, garantir sa longévité et sublimer son architecture. Ne laissez pas les fissures et l'humidité s'installer.
+Le ravalement de façade est un investissement utile pour protéger votre maison charentaise, préserver sa longévité et mettre en valeur son architecture. Ne laissez pas les fissures et l'humidité s'installer.
 
 **Votre maison mérite l'expertise de vrais artisans.** Confiez-nous vos murs pour un résultat esthétique, durable et réalisé dans les règles de l'art.
