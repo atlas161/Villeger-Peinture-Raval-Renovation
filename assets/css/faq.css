@@ -13,6 +13,49 @@
 .faq-page-controls {
   max-width: 720px; /* même colonne que la liste des questions (.faq-accordion) */
   margin: var(--space-xl) auto 0 auto;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.faq-search {
+  position: relative;
+}
+
+.faq-search i {
+  position: absolute;
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.faq-search-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 var(--space-md) 0 calc(var(--space-md) + 1.75rem);
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-search-input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Filtres : puces qui passent à la ligne (plus de rangée coupée) */
+.faq-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.faq-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,17 +63,22 @@
   flex-wrap: wrap;
 }
 
-.faq-filters {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  overflow-x: auto;
-  padding: 6px 2px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+.faq-count {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
 }
 
-.faq-filters::-webkit-scrollbar {
+.faq-empty {
+  margin: var(--space-md) 0 0;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--brand-accent-light);
+  border-left: 3px solid var(--brand-accent);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+}
+
+.faq-empty[hidden] {
   display: none;
 }
 
@@ -67,28 +115,25 @@
 .faq-bulk {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-md);
 }
 
 .faq-bulk-btn {
   min-height: 44px;
-  padding: 0.625rem 1.25rem;
+  padding: 0 var(--space-xs);
+  font: inherit;
   font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
 }
 
-@media (max-width: 640px) {
-  .faq-page-controls {
-    align-items: stretch;
-  }
-
-  .faq-bulk {
-    width: 100%;
-  }
-
-  .faq-bulk-btn {
-    width: 50%;
-    justify-content: center;
-  }
+.faq-bulk-btn:hover {
+  color: var(--color-primary-hover);
 }
 
 .faq-item {

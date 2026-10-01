@@ -159,7 +159,7 @@
   <body>
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
 
-                        <header class="site-header" id="top">
+                            <header class="site-header" id="top">
       <div class="container header-inner">
         <a href="index.html#top" class="logo" aria-label="VPRR - Accueil">
           <img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villéger Peinture Raval Rénovation" width="150" height="40" />
@@ -211,18 +211,25 @@
           </header>
 
           <div class="faq-page-controls" data-faq-controls>
+            <div class="faq-search">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <input type="search" class="faq-search-input" data-faq-search placeholder="Rechercher une question…" aria-label="Rechercher dans la FAQ" autocomplete="off" enterkeyhint="search" />
+            </div>
             <div class="faq-filters" aria-label="Catégories FAQ">
               <button type="button" class="faq-filter-btn active" data-faq-filter="all" aria-pressed="true">Toutes</button>
               <button type="button" class="faq-filter-btn" data-faq-filter="localisation" aria-pressed="false">Localisation</button>
-              <button type="button" class="faq-filter-btn" data-faq-filter="devis" aria-pressed="false">Devis & délais</button>
+              <button type="button" class="faq-filter-btn" data-faq-filter="devis" aria-pressed="false">Devis &amp; délais</button>
               <button type="button" class="faq-filter-btn" data-faq-filter="facade" aria-pressed="false">Façade</button>
               <button type="button" class="faq-filter-btn" data-faq-filter="toiture" aria-pressed="false">Toiture</button>
               <button type="button" class="faq-filter-btn" data-faq-filter="administratif" aria-pressed="false">Administratif</button>
               <button type="button" class="faq-filter-btn" data-faq-filter="assurance" aria-pressed="false">Assurance</button>
             </div>
-            <div class="faq-bulk">
-              <button type="button" class="btn btn-secondary faq-bulk-btn" data-faq-expand>Tout déplier</button>
-              <button type="button" class="btn btn-secondary faq-bulk-btn" data-faq-collapse>Tout replier</button>
+            <div class="faq-toolbar">
+              <p class="faq-count" data-faq-count role="status" aria-live="polite">14 questions</p>
+              <div class="faq-bulk">
+                <button type="button" class="faq-bulk-btn" data-faq-expand>Tout déplier</button>
+                <button type="button" class="faq-bulk-btn" data-faq-collapse>Tout replier</button>
+              </div>
             </div>
           </div>
 
@@ -334,6 +341,7 @@
                 </div>
               </details>
             </div>
+            <p class="faq-empty" data-faq-empty hidden>Aucune question ne correspond à votre recherche. <a href="contact.html">Posez-nous la vôtre</a> ou appelez le <a href="tel:+33545912270">05 45 91 22 70</a>.</p>
           </section>
 
           <div class="faq-actions">

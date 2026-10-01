@@ -787,21 +787,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = Array.from(controls.querySelectorAll('[data-faq-filter]'));
     const expandBtn = controls.querySelector('[data-faq-expand]');
     const collapseBtn = controls.querySelector('[data-faq-collapse]');
+    const searchInput = controls.querySelector('[data-faq-search]');
+    const countEl = controls.querySelector('[data-faq-count]');
+    const emptyEl = document.querySelector('[data-faq-empty]');
+
+    const normalize = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’']/g, ' ').toLowerCase().trim();
+    const texts = new Map(details.map((d) => [d, normalize(d.textContent)]));
+    let currentFilter = 'all';
+
+    // Filtre de catégorie + recherche texte, combinés.
+    const apply = () => {
+      const q = normalize(searchInput ? searchInput.value : '');
+      let shown = 0;
+      details.forEach((d) => {
+        const cat = d.getAttribute('data-faq-category') || '';
+        const visible = (currentFilter === 'all' || cat === currentFilter) && (q === '' || texts.get(d).indexOf(q) !== -1);
+        d.hidden = !visible;
+        if (!visible) d.removeAttribute('open');
+        else shown += 1;
+      });
+      if (countEl) countEl.textContent = shown + (shown > 1 ? ' questions' : ' question');
+      if (emptyEl) emptyEl.hidden = shown !== 0;
+    };
 
     const setFilter = (filterValue) => {
+      currentFilter = filterValue;
       filterButtons.forEach((btn) => {
         const isActive = btn.getAttribute('data-faq-filter') === filterValue;
         btn.classList.toggle('active', isActive);
         btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
-
-      details.forEach((d) => {
-        const cat = d.getAttribute('data-faq-category') || '';
-        const visible = filterValue === 'all' || cat === filterValue;
-        d.hidden = !visible;
-        if (!visible) d.removeAttribute('open');
-      });
+      apply();
     };
+
+    if (searchInput && !searchInput.__vprrBound) {
+      searchInput.__vprrBound = true;
+      searchInput.addEventListener('input', apply);
+    }
 
     if (filterButtons.length > 0) {
       filterButtons.forEach((btn) => {

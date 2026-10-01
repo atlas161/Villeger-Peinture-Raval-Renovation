@@ -54,6 +54,15 @@ S'appuie sur [`../design-audit-2026-09-21.md`](../design-audit-2026-09-21.md) (8
 
 L'accueil n'a aucun composant modifié (sa hauteur varie de ±3 % d'un chargement à l'autre : carrousel et vidéo). L'erreur console `_leaflet_pos` de la page zone est antérieure à ces changements (identique avant) ; les tuiles de carte ne se chargent pas dans l'environnement de test.
 
+## E. Passe 4 (2026-10-02) — blog, FAQ, mentions, accueil, pages de contenu
+
+- **Blog** : carte « à la une » (`.has-featured`), grille 3 colonnes, titres entiers ; article : image 16:7, « À lire aussi » (`.related-card`), CTA double.
+- **FAQ** : `.faq-search`, puces de filtre à la ligne, `.faq-toolbar` (compteur + liens « déplier / replier »).
+- **Mentions légales** : `.legal-doc` + `.legal-toc` (document lisible, titres à l'échelle).
+- **Accueil** : `.home-steps` (4 étapes avec filet pointillé entre les cartes).
+- **À propos / Réalisations** : `.about-facts` (4 faits), `.real-card` + `.filter-chip`.
+- Reste à valider avec le client : un portrait pour « À propos », plus de photos de chantiers, pages « ville ».
+
 ## D. Passe 3 (2026-10-02) — contact dédié et zone
 
 - **Bande d'appel** `.contact-cta` (accueil + pages de service) : carte blanche, trait or, 3 points de réassurance, bouton primaire « Demander mon devis » + téléphone en secondaire.

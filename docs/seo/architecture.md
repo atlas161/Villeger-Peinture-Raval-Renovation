@@ -197,6 +197,11 @@ ignorée avec un avertissement) puis transmet à Netlify Forms (`POST /`) → re
 Les anciens formulaires par page (`contact-ravalement-facade`…) n'existent plus ; leurs anciennes demandes restent consultables dans Netlify.
 Tests : `tests/contact-function.test.js`, `tests/contact-page.test.js`.
 
+## 10 ter. Pages de contenu et blog
+- `a-propos.html`, `realisations.html` : pages écrites à la main (menu injecté par `sync-header.js`), styles `assets/css/content-pages.css`, filtre `assets/js/realisations.js`.
+- Blog : la liste (`blog/index.html`) est pré-rendue par `build-blog.js` (cartes + classe `has-featured`) puis ré-affichée par `blog-list.js` (filtres) ; les articles reçoivent un bloc « À lire aussi » (`renderRelatedArticles`) via le gabarit `scripts/template-article.html`.
+- FAQ : recherche + filtres dans `main.js` (`initFaqPageControls`). Mentions légales : classe `.legal-doc` (`styles.css`).
+
 ## 10 bis. Zone d'intervention
 - **Accueil** : schéma SVG en ligne (contour de `data/charente.geojson`, rayon ≈ 50 km, communes) généré par
   `node scripts/build-zone-schema.js --inject` (entre `<!-- zone-schema:start/end -->`) — aucun service tiers, plus de Leaflet.
