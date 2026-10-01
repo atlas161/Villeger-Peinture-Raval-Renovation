@@ -52,9 +52,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
    il manque un **modèle de contenu** : décider avec le client quelles communes (Cognac, Jarnac, Soyaux, La Couronne,
    Champniers…), écrire un texte réellement différent par commune (éviter le contenu dupliqué), photos locales.
    Pour chaque page : `page.json` + sitemap + menu (`sync-header.js`) + liens depuis `zone-desservie-charente.html`.
-2. **Tokeniser le reste du design system** — échelle typographique (≈ 50 tailles), ombres (≈ 60), breakpoints (≈ 12 dont
-   991/992 et 768/769), échelle de z-index. *(Fait le 2026-10-01 : palette, bouton unique, logo.)* Changement visible :
-   valider avec des mesures avant/après.
+2. ~~**Tokeniser le reste du design system**~~ — **fait le 2026-10-02** : 13 tailles de texte, 4 ombres, couches `z-index` nommées, points de rupture alignés par paires ; vérifié par `npm test` (`design-tokens`). Voir [`design/tokens.md`](./design/tokens.md) et le bilan avant/après dans [`design/direction-artistique.md`](./design/direction-artistique.md) §F. Reste : rayons (`border-radius`) et espacements en dur résiduels.
 3. **Durcir la CSP** — retirer `'unsafe-inline'` de `script-src` : externaliser les 2 scripts inline de `index.html` et les
    attributs `onclick` restants (puis évaluer `style-src`). Tester toutes les pages avec la CSP en `Report-Only` d'abord.
 4. **Consentement des tiers** — *(tuiles OpenStreetMap : fait le 2026-10-01 — carte à la demande sur la page zone, plus de Leaflet sur l'accueil)* Vimeo (hero desktop) et Elfsight/Instagram se chargent avant tout

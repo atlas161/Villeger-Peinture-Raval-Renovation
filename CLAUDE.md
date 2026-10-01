@@ -36,7 +36,7 @@ si le SEO ou une action client est concernée.
 | `npm run build:pages` | régénère les 5 pages de service depuis `content/pages/` |
 | `npm run build:blog` | régénère le blog depuis `content/blog/*.md` |
 | `npm run sync:header` | réinjecte le menu dans les pages écrites à la main |
-| `npm test` | 20 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc) |
+| `npm test` | 35 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu) |
 | `node scripts/build-zone-schema.js --inject` | régénère le schéma SVG de la zone dans `index.html` |
 | `node scripts/tokenize-css.js` | remplace les valeurs CSS en dur par les variables `:root` identiques |
 | `npm run dev` | `npx serve .` (le footer est alors chargé en JS) |
@@ -53,12 +53,14 @@ si le SEO ou une action client est concernée.
   Gabarit : `scripts/template-article.html`. CSS/JS du blog : `assets/css/blog*.css`, `assets/js/blog-*.js`.
 - **Publication = liste blanche** (`scripts/build-site.js`) : un nouveau dossier/fichier public doit être ajouté à
   `PUBLIC_DIRS` / `PUBLIC_ROOT_FILES`. Les docs, scripts, tests et `content/` ne sont jamais publiés.
-- **CSS** : utiliser les variables de `:root` (`--color-*`, `--radius*`, `--space-*`…) plutôt que des valeurs en dur.
+- **CSS** : utiliser les variables de `:root` (`--color-*`, `--radius*`, `--space-*`, `--text-*`, `--shadow-*`, `--z-*`…) plutôt que des valeurs en dur.
+  Échelles et points de rupture : [`docs/design/tokens.md`](docs/design/tokens.md) — **vérifiés par `npm test`** (`design-tokens`) : une taille de police, une ombre, un `z-index` ou un `@media` hors échelle fait échouer les tests ;
+  `node scripts/tokenize-scale.js` remplace automatiquement les valeurs hors échelle par le token le plus proche.
   Or : `--brand-accent` = décor uniquement ; texte doré = `--brand-accent-text` (clair) / `--brand-accent-on-dark` (sombre).
   Boutons : pilule, hover = assombrissement seul, 2 tailles (`.btn`, `.btn--sm`) — pas de soulèvement ni de dégradé.
   Logo : `media/VPRR-LOGO.svg` (`<img class="logo-img">`, généré par `scripts/sync-header.js`, `template-article.html`, `404.html`).
   Le logo **B2** est retenu mais non déployé : tout est dans `docs/design/logo-b2.md` (ne pas l'appliquer sans demande du client).
-  Le mobile compact (≤ 768 px) est dans `assets/css/responsive.css` ; le repli de blocs pilotés par JS
+  Le mobile compact (≤ 767 px) est dans `assets/css/responsive.css` ; le repli de blocs pilotés par JS
   (`data-m-limit`, `data-m-collapse`) dans `assets/js/mobile-condense.js`. Rien n'est replié sur ordinateur.
 - **Tiers / CSP** : ajouter un outil tiers (pixel, widget, vidéo…) = ajouter son domaine dans la
   `Content-Security-Policy` de `netlify.toml` **et** le citer dans les mentions légales, sinon il est bloqué.
@@ -73,7 +75,7 @@ si le SEO ou une action client est concernée.
 ## Chantiers et audits (état au 2026-09-30)
 
 - **Qualité de code** (depuis 2026-09-18) : largement fait (tokens CSS, pages générées, CSS mort supprimé, tests).
-  Reste : tokeniser typo/ombres/breakpoints/z-index, durcir la CSP — liste dans `docs/README.md`.
+  Tokens typo/ombres/breakpoints/z-index : faits le 2026-10-02. Reste : durcir la CSP, ménage de `styles.css` / `zone.css` / `main.js` — voir `docs/roadmap.md`.
 - **SEO** : suivi dans `docs/seo/` (consulter `README.md` en premier avant de proposer une action SEO). Objectif du
   client : booster le référencement long terme du site, de la fiche Google Business Profile et de la fiche
   Solocal/PagesJaunes. Actions en attente du client : `docs/seo/blockers.md`.

@@ -525,7 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const isMobile = () => {
       if (!window.matchMedia) return false;
-      return window.matchMedia('(max-width: 768px)').matches;
+      return window.matchMedia('(max-width: 767px)').matches;
     };
 
     const ensureButtons = () => {

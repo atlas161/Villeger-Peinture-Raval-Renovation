@@ -68,3 +68,22 @@ L'accueil n'a aucun composant modifié (sa hauteur varie de ±3 % d'un chargemen
 - **Bande d'appel** `.contact-cta` (accueil + pages de service) : carte blanche, trait or, 3 points de réassurance, bouton primaire « Demander mon devis » + téléphone en secondaire.
 - **Page contact** : formulaire + coordonnées (téléphone, e-mail, horaires, adresse + itinéraire, Instagram) + note de zone.
 - **Zone, accueil** : schéma SVG (`.zone-schema`) + puces (`.zone-chips`) + adresse. **Page zone** : `.zone-finder` (recherche), `.zone-sector` (3 secteurs), `.zone-map-block` (carte à la demande).
+
+## F. Passe 5 (2026-10-02) — conversion aux échelles du design system : bilan visuel
+
+Méthode : captures pleines page de 17 pages (accueil, contact, à propos, réalisations, zone, FAQ, mentions, merci, 404, 5 pages de service, liste du blog, 2 articles) à 375 / 768 / 820 / 1024 / 1440 px, avant et après, comparées pixel par pixel
+(seuil de différence par pixel > 30 sur la somme RVB), puis contrôle à l'œil des écarts les plus importants. Plancher de bruit (deux captures identiques de l'état « avant ») : ≈ 0,1 %.
+
+| Largeur | Écart moyen | Médiane | Écart de hauteur | Lecture |
+|---|---|---|---|---|
+| 375 px (téléphone) | 2,7 % | 0,6 % | 0,2 % | tailles de texte ramenées à l'échelle (≤ 1 px) ; 404 : un retour à la ligne de plus |
+| 820 px (tablette) | 2,6 % | 1,5 % | 0,0 % | idem |
+| 1440 px (bureau) | 2,1 % | 1,0 % | 0,2 % | idem ; l'article de blog est maintenant aligné sur son conteneur |
+| 1024 px exactement | 16,7 % | 16,4 % | 8,6 % | **voulu** : 1024 px passe en gabarit « bureau » (avant : gabarit « tablette » ET « bureau » mélangés) |
+| 768 px exactement | variable | — | — | **voulu** : 768 px passe en gabarit « tablette » (2 colonnes), comme 820 px |
+
+À retenir : les chiffres de 375, 820 et 1440 px montrent que la conversion ne change presque rien à l'œil ; les différences visibles viennent
+de l'alignement des points de rupture, qui n'affecte que les écrans dont la largeur est exactement 768 ou 1024 px (iPad classique en portrait / paysage, petits portables).
+
+Corrigé en cours de route : (1) débordement de la colonne de texte des articles entre 1025 et ≈ 1250 px ; (2) cartes « problème » trop serrées en tablette (icône 48 px, marges réduites) ;
+(3) une règle CSS cassée par une insertion maladroite, détectée par la relecture visuelle avant livraison.

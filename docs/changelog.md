@@ -17,6 +17,14 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-02 (nuit) — Design system : échelles typographique, d'ombres, de couches et de points de rupture
+
+- **Tokens** (`:root` de `styles.css`, détail dans [`design/tokens.md`](./design/tokens.md)) : 13 tailles de texte `--text-2xs…7xl` (avant : 38), ombres neutres ramenées à `--shadow-sm/md/lg/xl` (avant : 45 variantes), 10 couches `--z-*` (avant : 12 valeurs jusqu'à 9999), points de rupture alignés par paires (767/768, 639/640, 991/992, 1023/1024 ; avant : 14 valeurs dont 767/768/769 et 859/860/900/800/420/380). 309 `font-size`, 35 `box-shadow`, 14 `z-index` et 26 `@media` remplacés par `scripts/tokenize-scale.js` (idempotent).
+- **Garde-fou** : nouveau test `design-tokens` (5) — une taille, une ombre neutre, un `z-index` ou un `@media` hors échelle fait échouer `npm test`. Tests : 35/35.
+- **Bug corrigé au passage** : sur les articles de blog, la colonne de texte débordait du conteneur entre 1025 et ≈ 1250 px (un tableau large élargissait la grille) → `minmax(0, 1fr)`. Aucun débordement horizontal sur 17 pages × 10 largeurs (375 → 1440) après correction.
+- **Points de rupture** : « mobile » = ≤ 767 px et « tablette » = à partir de 768 px (avant : ≤ 768 *et* ≥ 768 s'appliquaient ensemble à 768 px exactement). `main.js`, `mobile-condense.js` et la précharge du hero alignés. Tablette (2 colonnes étroites) : cartes « problème » plus compactes.
+- **Mesure avant/après** (17 pages, captures pleine page, comparaison pixel par pixel) : 375 px → écart moyen 2,7 % (médiane 0,6 %), hauteurs ±0,2 % ; 820 px → 2,6 % (médiane 1,5 %), hauteurs identiques ; 1440 px → 2,1 % (médiane 1,0 %), hauteurs ±0,2 %. Les largeurs exactement égales à un point de rupture (768 et 1024 px) changent volontairement de gabarit (tablette / bureau) : voir `design/direction-artistique.md` §F.
+
 ## 2026-10-02 (soir) — Blog, FAQ, mentions légales, accueil + pages « À propos » et « Réalisations »
 
 - **Blog, liste** : article « à la une » (grande carte horizontale) + grille de 3 colonnes (7 articles = 1 + 3 + 3, plus de carte orpheline ; la classe `has-featured` est calculée par `build-blog.js` et par `blog-list.js` : seulement si n − 1 est multiple de 3). Titres de cartes **affichés en entier** (plus de « … », y compris carrousel de l'accueil). Cartes sans soulèvement au survol.
