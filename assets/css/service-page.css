@@ -193,10 +193,22 @@
 
 /* Cards avec design Apple */
 .feature-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-md);
   margin-top: var(--space-3xl);
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* Nombre impair (ex. 4 cartes + 1 mise en avant) : la dernière prend toute la largeur. */
+  .feature-grid > .feature-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 .feature-card {
@@ -205,7 +217,7 @@
   border-radius: var(--radius-lg);
   border: 2px solid var(--color-border-light);
   box-shadow: 0 2px 12px rgba(45, 36, 30, 0.04);
-  transition: all var(--duration-normal) var(--ease-spring);
+  transition: box-shadow var(--duration-normal) var(--ease-out), border-color var(--duration-normal) var(--ease-out);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -227,7 +239,6 @@
 }
 
 .feature-card:hover {
-  transform: translateX(8px);
   box-shadow: 0 8px 32px rgba(45, 36, 30, 0.12);
   border-color: var(--brand-accent);
 }
@@ -247,14 +258,13 @@
   font-size: 1.875rem;
   color: var(--color-primary);
   box-shadow: 0 2px 8px rgba(45, 36, 30, 0.06);
-  transition: all var(--duration-normal) var(--ease-spring);
+  transition: background-color var(--duration-normal) var(--ease-out), color var(--duration-normal) var(--ease-out);
   flex-shrink: 0;
 }
 
 .feature-card:hover .feature-icon {
   background: var(--color-primary);
   color: var(--color-white);
-  transform: scale(1.05);
 }
 
 .feature-card-content {
@@ -282,17 +292,29 @@
 }
 
 .problem-content {
-  max-width: 900px;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
 .problem-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-md);
   margin-top: var(--space-2xl);
   list-style: none;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  .problem-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* Nombre impair : la dernière carte prend toute la largeur (jamais de carte orpheline). */
+  .problem-list > .problem-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 .problem-item {
@@ -428,7 +450,6 @@
   background: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
-  transform: translateY(-2px);
 }
 
 /* Grille "Nos autres services" (section services, distincte de .feature-grid) */
@@ -861,7 +882,7 @@
 }
 
 .reassurance-item--accent {
-  background: linear-gradient(135deg, #f8f5f2 0%, #fff 100%);
+  background: var(--color-white);
   border: 2px solid var(--brand-accent);
   /* Occupe toute la largeur : évite qu'elle se retrouve seule sur sa ligne
      (7 cartes dans une grille à 3 colonnes) et referme la section en accent. */
@@ -903,10 +924,11 @@
 }
 
 .pricing-card {
-  background: #f8f5f2;
+  background: var(--color-bg);
   padding: var(--space-lg);
   border-radius: var(--radius);
-  border-left: 4px solid var(--pricing-card-accent, var(--color-primary));
+  border: 1px solid var(--color-border-light);
+  border-top: 3px solid var(--brand-accent);
 }
 
 .pricing-card h4 {
@@ -916,8 +938,10 @@
 }
 
 .pricing-card .price {
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   font-weight: 700;
+  line-height: 1.15;
+  margin: var(--space-xs) 0 var(--space-sm);
   color: var(--color-primary);
 }
 
@@ -934,7 +958,7 @@
 }
 
 .why-now-box {
-  background: linear-gradient(135deg, #f8f5f2 0%, #fbf9f6 100%);
+  background: var(--color-bg);
   /* Rendu actuel = 12px, pas 16px : voir note sur .cta-glass plus haut. */
   border-radius: var(--radius);
   padding: var(--space-2xl);
@@ -988,5 +1012,88 @@
   .service-hero-cta .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+
+/* ===================================================================
+   BANDE DE PREUVES (sous le hero) : note Google, garantie, délai de devis
+   =================================================================== */
+.proof-bar {
+  background: var(--color-white);
+  border-block: 1px solid var(--color-border-light);
+}
+
+.proof-bar-list {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-lg);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.proof-bar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  text-align: left;
+}
+
+.proof-bar-icon {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  background: var(--brand-accent-light);
+  color: var(--color-primary);
+  font-size: 1.125rem;
+}
+
+.proof-bar-text {
+  display: block;
+}
+
+.proof-bar-text strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.proof-bar-text span {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 639px) {
+  .proof-bar-list {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .proof-bar-item {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+
+  .proof-bar-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .proof-bar-text strong {
+    font-size: 0.875rem;
+  }
+
+  .proof-bar-text span {
+    font-size: 0.8125rem;
   }
 }

@@ -44,14 +44,6 @@
   margin: 0 auto;
 }
 
-@media (min-width: 769px) {
-  .zone-content {
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-3xl);
-    align-items: stretch;
-  }
-}
-
 /* Container de la carte */
 .zone-map-container {
   background: var(--color-white);
@@ -76,25 +68,15 @@
 }
 
 @media (min-width: 769px) {
+  /* Carte pleine largeur, hauteur fixe raisonnable (plus d'étirement sur la colonne d'infos). */
   .zone-map-container {
     aspect-ratio: auto;
     min-height: unset;
-    height: 100%;
-    /* Sans plafond, la carte s'étire à la hauteur de la colonne d'infos (souvent très
-       longue) et devient démesurée. On la plafonne et on la rend "sticky" pour qu'elle
-       reste visible pendant qu'on lit la colonne d'infos, sans forcer un scroll inutile. */
-    max-height: 620px;
-    position: sticky;
-    top: calc(var(--header-height) + var(--space-lg));
+    height: clamp(340px, 38vw, 460px);
   }
 
   .zone-map {
     min-height: 100%;
-  }
-
-  .zone-info {
-    align-self: stretch;
-    height: 100%;
   }
 }
 
@@ -413,33 +395,30 @@
   color: var(--color-primary);
 }
 
+/* En colonnes (et non en grille) : un nom sur 2 lignes n'agrandit pas la ligne voisine. */
 .zone-cities-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xs);
+  column-count: 1;
+  column-gap: var(--space-md);
 }
 
 @media (min-width: 380px) {
   .zone-cities-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xs) var(--space-sm);
+    column-count: 2;
   }
 }
 
 @media (min-width: 640px) {
   .zone-cities-list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xs) var(--space-md);
+    column-count: 3;
   }
 }
 
-@media (min-width: 860px) {
+@media (min-width: 992px) {
   .zone-cities-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xs) var(--space-md);
+    column-count: 1;
   }
 }
 
@@ -453,6 +432,7 @@
   display: flex;
   align-items: center;
   min-height: 32px;
+  break-inside: avoid;
 }
 
 .zone-cities-list li::before {
@@ -889,5 +869,37 @@
     width: 40px;
     height: 40px;
     font-size: 1rem;
+  }
+}
+
+/* Ordinateur : carte pleine largeur en tête, puis adresse + notes, puis les 3 listes de communes côte à côte. */
+@media (min-width: 992px) {
+  .zone-content {
+    max-width: var(--container-max);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-xl);
+    align-items: stretch;
+  }
+
+  /* Les blocs d'infos deviennent des cases de la grille parente. */
+  .zone-info {
+    display: contents;
+  }
+
+  .zone-map-container,
+  .zone-info > .zone-note,
+  .zone-actions {
+    grid-column: 1 / -1;
+  }
+
+  .zone-info > .zone-address + .zone-note {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+  }
+
+  .zone-actions {
+    display: flex;
+    justify-content: center;
   }
 }

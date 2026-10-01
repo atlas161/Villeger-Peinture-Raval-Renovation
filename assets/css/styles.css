@@ -1696,7 +1696,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 /* Sur mobile, la bannière se place au-dessus de la barre d'appel collante */
 @media (max-width: 768px) {
   #cookie-banner {
-    bottom: calc(64px + var(--space-sm) + env(safe-area-inset-bottom));
+    bottom: calc(var(--space-md) + 64px + var(--space-sm) + env(safe-area-inset-bottom));
   }
 }
 
@@ -1729,7 +1729,6 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 }
 
 .reassurance-item:hover {
-  transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(103, 58, 18, 0.15);
 }
 
@@ -1805,14 +1804,21 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 .reassurance-item:hover .reassurance-icon {
   background: var(--color-primary);
   color: var(--color-white);
-  transform: scale(1.05);
 }
 
 .reassurance-text h3 {
   font-size: 1.125rem;
   font-weight: 600;
+  line-height: 1.3;
   color: var(--color-text);
   margin-bottom: var(--space-sm);
+}
+
+/* Grille à 3 colonnes : le titre réserve 2 lignes pour que les textes démarrent à la même hauteur. */
+@media (min-width: 1025px) {
+  .reassurance-text h3 {
+    min-height: 2.6em;
+  }
 }
 
 .reassurance-text p {
