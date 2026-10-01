@@ -8,121 +8,14 @@
     <meta name="description" content="La page demandée n'existe pas ou a été déplacée. Retournez à l'accueil ou contactez VPRR pour vos projets de rénovation en Charente." />
     <link rel="stylesheet" href="assets/css/styles.css?v=20260929" />
     <link rel="stylesheet" href="assets/css/nav.css?v=20260929" />
+    <link rel="stylesheet" href="assets/css/status-pages.css?v=20260929" />
+    <link rel="stylesheet" href="/assets/fonts/inter.css" />
     <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
     <link rel="icon" type="image/png" href="media/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="media/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="VPRR" />
     <link rel="manifest" href="media/favicon/site.webmanifest" />
-    <style>
-      /* Styles 404 avec les couleurs du site VPRR */
-      .error-page {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: #F9F7F5;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      }
-      .error-main {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 96px 24px;
-        text-align: center;
-      }
-      .error-content {
-        max-width: 560px;
-        background: #FFFFFF;
-        padding: 64px 48px;
-        border-radius: 16px;
-        box-shadow: var(--shadow-lg);
-        border: 1px solid #E8E4DE;
-      }
-      .error-icon {
-        width: 80px;
-        height: 80px;
-        background: rgba(168, 139, 94, 0.15);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 32px;
-      }
-      .error-icon i {
-        font-size: 32px;
-        color: #673A12;
-      }
-      .error-code {
-        font-size: 96px;
-        font-weight: 700;
-        color: #A88B5E;
-        line-height: 1;
-        margin-bottom: 16px;
-        opacity: 0.6;
-        letter-spacing: -4px;
-      }
-      .error-title {
-        font-size: var(--text-5xl);
-        font-weight: 600;
-        color: #2D241E;
-        margin-bottom: 16px;
-        line-height: 1.3;
-      }
-      .error-text {
-        font-size: var(--text-xl);
-        color: #6B5D52;
-        margin-bottom: 40px;
-        line-height: 1.6;
-      }
-      .error-actions {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .error-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 16px 32px;
-        border-radius: 12px;
-        font-weight: 600;
-        font-size: var(--text-base);
-        text-decoration: none;
-        transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        cursor: pointer;
-      }
-      .error-btn-primary {
-        background: #673A12;
-        color: white;
-        border: 2px solid #673A12;
-      }
-      .error-btn-primary:hover {
-        background: #522e0e;
-        border-color: #522e0e;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(103, 58, 18, 0.25);
-      }
-      .error-btn-secondary {
-        background: transparent;
-        color: #673A12;
-        border: 2px solid #E8E4DE;
-      }
-      .error-btn-secondary:hover {
-        background: rgba(103, 58, 18, 0.08);
-        border-color: #673A12;
-        transform: translateY(-2px);
-      }
-      @media (max-width: 480px) {
-        .error-main { padding: 48px 16px; }
-        .error-content { padding: 48px 24px; }
-        .error-code { font-size: 72px; }
-        .error-title { font-size: var(--text-4xl); }
-        .error-actions { flex-direction: column; }
-        .error-btn { width: 100%; justify-content: center; }
-      }
-    </style>
   </head>
   <body class="error-page">
     <header class="site-header" id="top">
@@ -154,11 +47,11 @@
         <h1 class="error-title">Page introuvable</h1>
         <p class="error-text">Désolé, la page que vous recherchez n'existe pas ou a été déplacée.</p>
         <div class="error-actions">
-          <a href="/" class="error-btn error-btn-primary">
+          <a href="/" class="btn btn-primary">
             <i class="fas fa-home"></i>
             Retour à l'accueil
           </a>
-          <a href="/blog/" class="error-btn error-btn-secondary">
+          <a href="/blog/" class="btn btn-secondary">
             <i class="fas fa-newspaper"></i>
             Voir le blog
           </a>

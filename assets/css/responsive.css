@@ -75,57 +75,9 @@
 
 /* Service Pages */
 @media (max-width: 767px) {
-  .service-page .reassurance-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-  
-  .service-page .reassurance-item {
-    flex-direction: column;
-    text-align: center;
-    padding: var(--space-lg);
-  }
-  
-  .service-page .reassurance-icon {
-    margin: 0 auto var(--space-md);
-  }
-  
-  .service-page .reassurance-text h3 {
-    font-size: var(--text-xl);
-  }
-  
-  .service-page .reassurance-text p {
-    font-size: var(--text-sm);
-  }
   
   .service-page .faq-item {
     padding: var(--space-md);
-  }
-  
-  .service-page .faq-question {
-    font-size: var(--text-base);
-    padding-right: var(--space-lg);
-  }
-}
-
-@media (max-width: 480px) {
-  .service-page .reassurance-icon {
-    width: 56px;
-    height: 56px;
-    min-width: 56px;
-  }
-  
-  .service-page .reassurance-icon i {
-    font-size: var(--text-2xl);
-  }
-  
-  .service-page .reassurance-item {
-    padding: var(--space-md);
-  }
-  
-  .service-page .faq-answer {
-    padding-top: var(--space-sm);
-    font-size: var(--text-sm);
   }
 }
 
@@ -134,30 +86,12 @@
   .site-footer {
     padding-block: var(--space-2xl) var(--space-lg);
   }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-    text-align: center;
-  }
-  
-  .footer-col {
-    margin-bottom: var(--space-lg);
-  }
-  
-  .footer-col h3 {
-    margin-bottom: var(--space-md);
-  }
 }
 
 @media (max-width: 480px) {
   .site-footer {
     padding-block: var(--space-xl) var(--space-md);
     font-size: var(--text-sm);
-  }
-  
-  .footer-col h3 {
-    font-size: var(--text-2xs);
   }
 }
 

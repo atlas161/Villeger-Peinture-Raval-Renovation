@@ -49,19 +49,30 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 - [ ] **A9 — Faire valider les tarifs par le client** : fourchettes au m² du tableau de [`seo/decisions.md`](./seo/decisions.md) (estimations de marché charentais, pas des prix du client). Ajuster d'un seul endroit puis propager.
 - [ ] **A10 — Statut RGE / assureur** : la FAQ isolation renvoie vers France Rénov' sans promettre d'aides ; si l'entreprise est RGE, le dire (pages isolation + FAQ).
-- [ ] **CSS orphelin du blog** : `.cta-icon`, `.cta-actions`, `.cta-card`, `.blog-cta` (`blog-article.css`, `blog-list.css`) ne servent plus.
 
 - [ ] **Vérifier Pages CMS en conditions réelles** (première connexion du client sur app.pagescms.org) : ouverture de chaque fichier, import d'une photo, enregistrement, build Netlify, rendu des photos via Netlify Image CDN sur l'aperçu. Si un champ se comporte mal, ajuster `scripts/cms-config.js` puis `npm run build:cms`.
 
-## B2. Points relevés à l'issue de l'audit du 2026-10-03 (à décider / à faire)
+## B2. Points relevés à l'issue de l'audit du 2026-10-03
 
-- [ ] **Article « étude de cas » (hydrogommage, Marc et Sophie)** : contient des clients nommés et une citation entre guillemets. À confirmer avec le client que c'est un vrai chantier ; sinon reformuler en cas **type** (sans noms ni citation) — un faux témoignage est un risque légal et de confiance.
-- [ ] **Voix « équipe / experts »** : 7 articles et l'accueil parlent d'« équipe » alors que l'entreprise est un artisan (Stéphane Villéger). Harmoniser avec la voix des pages de service (« nous », un interlocuteur).
-- [ ] **Affirmations de blog non sourcées** (ex. « les agents immobiliers locaux sont unanimes », ROI, durées de 5 à 10 ans) : relire article par article et retirer ou nuancer.
-- [ ] **CSS orphelin** : `.cta-icon`, `.cta-actions`, `.cta-card`, `.blog-cta` (blog) ; ménage de `styles.css` / `zone.css` / `main.js` (voir C.2).
-- [ ] **Bonnes pratiques Lighthouse 75 sur les aperçus Netlify** (100 en prod au dernier relevé) : refaire une mesure sur la prod pour confirmer que c'est propre à l'aperçu.
-- [ ] **Tiers avant consentement** : Vimeo (hero) et Elfsight/Instagram se chargent avant le choix des cookies (voir C.4).
-- [ ] **Avis Google statiques** (4,1 / 14 avis, 7 avis copiés à la main) : se périment ; prévoir une mise à jour manuelle trimestrielle ou un widget avec consentement.
+Faits le 2026-10-03 (voir [`changelog.md`](./changelog.md)) : étude de cas réécrite en chantier type (sans client ni citation), affirmations de blog nuancées, gros ménage CSS/JS, pages 404 et merci passées au design system.
+
+- [x] ~~Voix « équipe »~~ — **décidé** : on garde « nous / notre équipe » (l'entreprise compte environ 4 à 6 personnes ; ne pas annoncer de chiffre exact). Éviter « un seul artisan » ; titre À propos : « Un artisan et son équipe… ».
+- [x] ~~Tiers avant consentement (Vimeo, Instagram)~~ — **décidé par le client : on ne s'en occupe pas** (retiré du chantier C.4).
+- [ ] **Avis Google** : choisir la solution d'affichage (options et recommandation ci-dessous), puis la brancher.
+- [ ] **Bonnes pratiques Lighthouse 75 sur les aperçus Netlify** (100 en prod) : à remesurer sur la prod, puis revoir « Bonnes pratiques » (à traiter après le ménage, sur demande du client).
+- [ ] **Relecture éditoriale du blog** : les 6 articles ont été nuancés ; une relecture par le client (exactitude métier : durées, produits, méthodes) reste utile.
+
+### Avis Google : options étudiées (2026-10-03)
+
+Règle Google à connaître : des avis d'une entreprise affichés **sur son propre site** (balisage ou widget) ne donnent **pas** d'étoiles dans les résultats de recherche (« avis auto-promus », LocalBusiness/Organization). Le gain SEO vient donc de la **fiche Google elle-même** (nombre et fraîcheur des avis, réponses du propriétaire), pas du balisage sur le site. Sur le site, les avis servent la confiance et la conversion.
+
+| Option | Coût | Mise en place | À savoir |
+|---|---|---|---|
+| **A. Widget gratuit Featurable** (ou équivalent) | 0 € à vie, vues illimitées, petit lien « Powered by » | coller un script, relier la fiche Google | mises à jour automatiques ; script tiers (CSP + mentions légales à compléter) ; rendu en JS, donc peu de texte indexé |
+| **B. Avis statiques (actuel) + mise à jour trimestrielle** | 0 € | modifier `index.html` à la main | texte indexable et totalement maîtrisé ; demande un geste manuel |
+| **C. API Google Places** (récupération par script) | gratuit sous quota mais **carte bancaire obligatoire** | clé API + tâche planifiée | 5 avis maximum ; les conditions d'usage de Google limitent le stockage des avis : non recommandé |
+
+**Recommandation** : A pour l'affichage (auto-actualisé, gratuit), en gardant dans la page un court texte statique (note, nombre d'avis, lien « Voir tous les avis sur Google ») pour l'indexation ; et surtout travailler la **collecte d'avis** (lien direct d'avis `https://g.page/r/CZZJ5Bogt13fEBM/review`, QR code, SMS après chantier — voir A4), car c'est ce qui améliore le référencement local de la fiche.
 
 ## C. Chantiers moyens (une session chacun)
 
@@ -72,8 +83,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 2. ~~**Tokeniser le reste du design system**~~ — **fait le 2026-10-02** : 13 tailles de texte, 4 ombres, couches `z-index` nommées, points de rupture alignés par paires ; vérifié par `npm test` (`design-tokens`). Voir [`design/tokens.md`](./design/tokens.md) et le bilan avant/après dans [`design/direction-artistique.md`](./design/direction-artistique.md) §F. Reste : rayons (`border-radius`) et espacements en dur résiduels.
 3. **Durcir la CSP** — retirer `'unsafe-inline'` de `script-src` : externaliser les 2 scripts inline de `index.html` et les
    attributs `onclick` restants (puis évaluer `style-src`). Tester toutes les pages avec la CSP en `Report-Only` d'abord.
-4. **Consentement des tiers** — *(tuiles OpenStreetMap : fait le 2026-10-01 — carte à la demande sur la page zone, plus de Leaflet sur l'accueil)* Vimeo (hero desktop) et Elfsight/Instagram se chargent avant tout
-   consentement (cités dans les mentions légales) : les mettre derrière un clic (« Charger la carte / la galerie »).
+4. ~~Consentement des tiers~~ — carte OpenStreetMap à la demande (fait le 2026-10-01) ; **Vimeo et Elfsight/Instagram : le client a décidé de ne pas les mettre derrière un clic (2026-10-03)**.
 5. **URLs sans `.html`** — décision SEO : impacte canonicals, sitemap, JSON-LD, liens internes et redirections 301 (~50
    URL à migrer d'un coup) ; à faire seulement si le gain est jugé utile.
 6. **Condensation mobile, suite** (non demandée mais possible) : carrousel des avis de l'accueil, bloc « zone » de

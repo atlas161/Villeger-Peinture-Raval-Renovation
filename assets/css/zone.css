@@ -35,15 +35,6 @@
   line-height: 1.6;
 }
 
-/* Contenu principal */
-.zone-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-2xl);
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
 /* Container de la carte */
 .zone-map-container {
   background: var(--color-white);
@@ -293,15 +284,6 @@
   border-radius: var(--radius-sm) !important;
 }
 
-/* Popup personnalisé */
-
-/* Informations zone */
-.zone-info {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
 /* Adresse */
 .zone-address {
   display: flex;
@@ -395,54 +377,6 @@
 
 .zone-cities h3 i {
   color: var(--color-primary);
-}
-
-/* En colonnes (et non en grille) : un nom sur 2 lignes n'agrandit pas la ligne voisine. */
-.zone-cities-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  column-count: 1;
-  column-gap: var(--space-md);
-}
-
-@media (min-width: 480px) {
-  .zone-cities-list {
-    column-count: 2;
-  }
-}
-
-@media (min-width: 640px) {
-  .zone-cities-list {
-    column-count: 3;
-  }
-}
-
-.zone-cities-list li {
-  font-size: var(--text-sm);
-  color: var(--color-text-light);
-  padding: var(--space-xs) 0;
-  position: relative;
-  padding-left: var(--space-md);
-  transition: color var(--duration-fast) var(--ease-out);
-  display: flex;
-  align-items: center;
-  min-height: 32px;
-  break-inside: avoid;
-}
-
-.zone-cities-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
-  background: var(--brand-accent);
-  border-radius: 50%;
-  transition: transform var(--duration-fast) var(--ease-spring);
-  flex-shrink: 0;
 }
 
 .zone-cities-list li:hover {

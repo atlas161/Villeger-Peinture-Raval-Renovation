@@ -274,10 +274,6 @@
     text-shadow: 0 10px 26px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.35);
   }
 
-  .hero-title br {
-    display: none;
-  }
-
   .hero-desc {
     font-size: var(--text-base);
     line-height: 1.65;

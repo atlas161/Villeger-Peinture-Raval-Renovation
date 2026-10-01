@@ -55,3 +55,9 @@ Fourchettes **TTC, particulier, Charente, hors échafaudage** (échafaudage : 8 
 | Rénovation intérieure (blog) | 150–1 000 €/m² | rafraîchissement 150–300 · intermédiaire 300–600 · lourde 600–1 000+ |
 
 TVA : 10 % (logement de plus de 2 ans), 5,5 % possible pour certains travaux d'isolation. Les fourchettes sont des estimations éditoriales de marché provincial : **à faire valider par le client** (A9 de la feuille de route). Source unique de la FAQ des pages de service : la section `faq` de `page.json` (le JSON-LD en est dérivé) ; FAQ générale : `faq-renovation-angouleme.html` (l'accueil en reprend 5 questions avec les mêmes réponses) — un test vérifie que le JSON-LD reprend les questions affichées.
+
+## Voix éditoriale et tiers (2026-10-03)
+
+- **Voix** : « nous / notre équipe ». L'entreprise est un artisan (Stéphane Villéger, gérant) **et son équipe** (environ 4 à 6 personnes : ne jamais afficher un nombre précis). Pas de clients inventés, de témoignages non vérifiés ni de superlatifs absolus (« 100 % », « jamais », « garantit ») : le client ne veut pas prêter le flanc à des contestations.
+- **Tiers avant consentement** : Vimeo (hero) et Elfsight/Instagram restent chargés d'emblée (décision du client) ; seule la carte OpenStreetMap est à la demande.
+

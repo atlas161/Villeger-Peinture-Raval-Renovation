@@ -680,37 +680,6 @@
 }
 
 /* ===================================================================
-   7. CTA SECTION
-   =================================================================== */
-
-.cta-icon {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--brand-accent-light);
-  border-radius: 50%;
-}
-
-.cta-icon i {
-  font-size: var(--text-6xl);
-  color: var(--brand-accent);
-}
-
-.cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-}
-
-.btn-sm {
-  padding: var(--space-sm) var(--space-md);
-  font-size: var(--text-sm);
-}
-
-/* ===================================================================
    8. FOOTER
    =================================================================== */
 
@@ -946,11 +915,6 @@
   .nav-back {
     order: -1;
   }
-  
-  .cta-actions {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 480px) {
@@ -977,7 +941,6 @@
     justify-content: center;
   }
 }
-
 
 /* ===================================================================
    À LIRE AUSSI (3 articles liés) + CTA de fin
