@@ -606,6 +606,62 @@
   transform: translateY(0) scale(0.98);
 }
 
+/* Bandeau « Laisser un avis » : discret (fond clair), pour ne pas concurrencer le CTA devis juste en dessous */
+.google-reviews-section--wide {
+  position: relative;
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.google-reviews-badge {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--brand-accent-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+}
+
+.google-reviews-section--wide .google-reviews-content {
+  flex: 1;
+  gap: var(--space-xs);
+}
+
+.google-reviews-stars {
+  display: flex;
+  gap: 3px;
+  color: var(--color-star);
+  font-size: var(--text-sm);
+}
+
+.google-reviews-section--wide .google-reviews-title {
+  font-size: var(--text-xl);
+}
+
+.google-reviews-section--wide .google-reviews-text {
+  font-size: var(--text-sm);
+}
+
+.google-reviews-section--wide .btn-google-review {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  padding: 0.625rem 1.25rem;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.google-reviews-section--wide .btn-google-review:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
 @media (max-width: 639px) {
   .google-reviews-section {
     padding: var(--space-md);
@@ -631,6 +687,14 @@
   }
 
   .google-reviews-section--wide .google-reviews-title {
+    justify-content: center;
+  }
+
+  .google-reviews-badge {
+    align-self: center;
+  }
+
+  .google-reviews-stars {
     justify-content: center;
   }
 
