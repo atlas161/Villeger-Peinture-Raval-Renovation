@@ -68,7 +68,7 @@
       banner.style.display = 'none';
     };
     const show = () => {
-      banner.style.display = 'block';
+      banner.style.display = 'flex';
       void banner.offsetWidth; // reflow : déclenche la transition d'apparition
       banner.classList.add('cookie-banner-visible');
     };

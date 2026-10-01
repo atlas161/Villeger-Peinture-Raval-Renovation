@@ -47,7 +47,7 @@ const SECTIONS = [
   { key: 'services', label: 'Services' },
   { key: 'realisations', label: 'Réalisations', page: 'realisations.html' },
   { key: 'blog', label: 'Blog', page: 'blog/' },
-  { key: 'zone', label: "Zone d'intervention", page: 'zone-desservie-charente.html' },
+  { key: 'zone', label: 'Où ?', page: 'zone-desservie-charente.html' },
   { key: 'faq', label: 'FAQ', page: 'faq-renovation-angouleme.html' },
   { key: 'contact', label: 'Contact', page: 'contact.html' },
 ];

@@ -13,7 +13,7 @@
 }
 
 .zone-chips li {
-  padding: 0.3rem 0.8rem;
+  padding: var(--space-xs) var(--space-smd);
   font-size: var(--text-sm);
   color: var(--color-text);
   background: var(--color-bg);

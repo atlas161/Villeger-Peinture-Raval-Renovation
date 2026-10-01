@@ -92,7 +92,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-xs);
-  padding: 0.75rem 1.25rem;
+  padding: var(--space-smd) var(--space-md);
   font-family: var(--font-sans);
   font-size: var(--text-md);
   font-weight: var(--font-weight-medium);
@@ -282,7 +282,7 @@
   
   .filter-btn {
     width: 100%;
-    padding: 0.75rem 0.5rem;
+    padding: var(--space-smd) var(--space-sm);
     font-size: var(--text-xs);
     min-height: 48px; /* Slightly larger for mobile fingers */
     border-radius: var(--radius); /* Less rounded for better grid appearance */

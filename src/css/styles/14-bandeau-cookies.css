@@ -8,53 +8,60 @@
   bottom: var(--space-md);
   z-index: var(--z-banner);
   display: none;
-  width: calc(100% - (2 * var(--space-md)));
-  max-width: 520px;
-  padding: var(--space-md) var(--space-lg);
+  align-items: center;
+  gap: var(--space-md);
+  width: max-content;
+  max-width: calc(100% - (2 * var(--space-md)));
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-lg);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-pill);
   box-shadow: var(--shadow-lg);
-  text-align: center;
   opacity: 0;
   transform: translate(-50%, 16px);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 #cookie-banner.cookie-banner-visible {
+  display: flex;
   opacity: 1;
   transform: translate(-50%, 0);
 }
 
 #cookie-banner p {
-  margin: 0 0 var(--space-md);
+  margin: 0;
   font-size: var(--text-sm);
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--color-text-light);
 }
 
 #cookie-banner p a {
   color: var(--color-primary);
   text-decoration: underline;
+  white-space: nowrap;
 }
 
 .cookie-banner-actions {
   display: flex;
-  justify-content: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
+  flex-shrink: 0;
 }
 
 #cookie-banner .btn {
-  flex: 1;
-  max-width: 200px;
-  padding: 0.625rem 1rem;
+  padding: var(--space-sm) var(--space-md);
   font-size: var(--text-sm);
+  white-space: nowrap;
 }
 
-/* Sur mobile, la bannière se place au-dessus de la barre d'appel collante */
+/* Sur mobile : deux lignes (texte, puis boutons), au-dessus de la barre d'appel collante */
 @media (max-width: 767px) {
-  #cookie-banner {
+  #cookie-banner.cookie-banner-visible {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% - (2 * var(--space-md)));
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    text-align: center;
     bottom: calc(var(--space-md) + 64px + var(--space-sm) + env(safe-area-inset-bottom));
   }
 }
-

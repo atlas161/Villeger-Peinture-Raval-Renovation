@@ -13,7 +13,7 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
-  gap: 4px;
+  gap: var(--space-xs);
   z-index: var(--z-menu-controls);
   /* Rendu actuel = 12px, pas 10px : cette valeur venait d'une ancienne règle générique
      `button { border-radius: 12px !important }` qui écrasait tous les <button> du site

@@ -10,7 +10,7 @@
 }
 
 .legal-toc a {
-  padding: 0.4rem 0.9rem;
+  padding: var(--space-sm) var(--space-md);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
@@ -58,7 +58,7 @@
 
 .legal-doc ul {
   margin: 0 0 var(--space-md);
-  padding-left: 1.25rem;
+  padding-left: var(--space-md);
 }
 
 .legal-doc li + li {

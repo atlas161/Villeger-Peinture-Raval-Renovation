@@ -44,7 +44,7 @@
 
   .zone-section .reassurance-item {
     padding: var(--space-md);
-    border-radius: 14px;
+    border-radius: var(--radius);
   }
 
   .zone-section .reassurance-icon {

@@ -120,14 +120,14 @@
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
-  padding-left: 2px;
+  padding-left: var(--space-2xs);
 }
 
 .form-field input,
 .form-field textarea {
   border-radius: var(--radius);
   border: 1.5px solid var(--color-border);
-  padding: 0.75rem 0.875rem;
+  padding: var(--space-smd) var(--space-smd);
   font: inherit;
   font-size: var(--text-base);
   background-color: var(--color-surface-alt);
@@ -144,7 +144,7 @@
 @media (min-width: 640px) {
   .form-field input,
   .form-field textarea {
-    padding: 0.875rem 1rem;
+    padding: var(--space-smd) var(--space-md);
   }
 }
 
@@ -182,7 +182,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 0.875rem;
+  padding: var(--space-smd) var(--space-smd);
   font-size: var(--text-base);
   min-height: 44px;
   transition: 
@@ -194,7 +194,7 @@
 
 @media (min-width: 640px) {
   .apple-select-trigger {
-    padding: 0.875rem 1rem;
+    padding: var(--space-smd) var(--space-md);
   }
 }
 
@@ -227,7 +227,7 @@
   transition: 
     transform var(--duration-fast) var(--ease-out),
     color var(--duration-fast) var(--ease-out);
-  margin-left: 0.5rem;
+  margin-left: var(--space-sm);
 }
 
 .apple-select.active .apple-select-arrow {
@@ -271,7 +271,7 @@
 }
 
 .apple-select-option {
-  padding: 0.75rem 1rem;
+  padding: var(--space-smd) var(--space-md);
   color: var(--color-text);
   cursor: pointer;
   font-size: var(--text-base);
@@ -450,8 +450,8 @@
 .contact-info-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding-top: 2px;
+  gap: var(--space-2xs);
+  padding-top: var(--space-2xs);
 }
 
 .contact-info-label {
@@ -464,7 +464,7 @@
 
 .contact-info-text a {
   display: inline-block;
-  padding-block: 0.375rem; /* cible tactile ≥ 32 px */
+  padding-block: var(--space-xs); /* cible tactile ≥ 32 px */
 }
 
 .contact-info-text a,
@@ -577,7 +577,7 @@
   background: var(--color-primary);
   color: var(--color-white);
   border: none;
-  padding: 0.625rem 1.25rem;
+  padding: var(--space-sm) var(--space-md);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   border-radius: var(--radius);
@@ -635,7 +635,7 @@
 
 .google-reviews-stars {
   display: flex;
-  gap: 3px;
+  gap: var(--space-2xs);
   color: var(--color-star);
   font-size: var(--text-sm);
 }
@@ -652,8 +652,8 @@
   background: transparent;
   color: var(--color-primary);
   border: 1.5px solid var(--color-primary);
-  padding: 0.625rem 1.25rem;
-  border-radius: 999px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-pill);
   box-shadow: none;
 }
 
@@ -673,7 +673,7 @@
   }
   
   .btn-google-review {
-    padding: 0.6875rem 1.25rem;
+    padding: var(--space-smd) var(--space-md);
     font-size: var(--text-sm);
   }
 }
@@ -761,7 +761,7 @@
 .reviews-stars {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   color: var(--color-star);
 }
 
@@ -801,12 +801,12 @@
   background: #fee2e2;
   border: 1px solid #ef4444;
   color: #dc2626;
-  padding: 12px 16px;
+  padding: var(--space-smd) var(--space-md);
   border-radius: var(--radius);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-md);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-sm);
   font-size: var(--text-sm);
   animation: shake 0.5s ease-in-out;
 }
@@ -814,7 +814,7 @@
 .field-error {
   color: #dc2626;
   font-size: var(--text-2xs);
-  margin-top: 4px;
+  margin-top: var(--space-xs);
   display: block;
 }
 

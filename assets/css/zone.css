@@ -99,7 +99,7 @@
 .zone-address-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-xs);
   margin-top: var(--space-sm);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
@@ -108,7 +108,7 @@
 }
 
 .zone-address-link:hover .zone-address-cta {
-  gap: 10px;
+  gap: var(--space-sm);
 }
 
 .zone-address-cta i {
@@ -198,7 +198,7 @@
 .zone-note i {
   float: left;
   color: var(--brand-accent);
-  margin: 2px var(--space-sm) 0 0;
+  margin: var(--space-2xs) var(--space-sm) 0 0;
 }
 
 .zone-actions {
@@ -285,7 +285,7 @@
 
   .zone-section .reassurance-item {
     padding: var(--space-md);
-    border-radius: 14px;
+    border-radius: var(--radius);
   }
 
   .zone-section .reassurance-icon {
@@ -320,9 +320,9 @@
 .services-cta-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-smd);
+  border-radius: var(--radius-pill);
   background: rgba(103, 58, 18, 0.08);
   border: 1px solid rgba(103, 58, 18, 0.12);
   color: var(--color-primary);
@@ -399,7 +399,7 @@
 .service-cta-icon {
   width: 46px;
   height: 46px;
-  border-radius: 14px;
+  border-radius: var(--radius);
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -419,7 +419,7 @@
 .service-cta-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-2xs);
   min-width: 0;
 }
 
@@ -440,7 +440,7 @@
   margin-left: auto;
   width: 34px;
   height: 34px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   display: grid;
   place-items: center;
   background: rgba(103, 58, 18, 0.08);
@@ -478,7 +478,7 @@
 }
 
 .zone-chips li {
-  padding: 0.3rem 0.8rem;
+  padding: var(--space-xs) var(--space-smd);
   font-size: var(--text-sm);
   color: var(--color-text);
   background: var(--color-bg);

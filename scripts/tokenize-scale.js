@@ -1,6 +1,7 @@
 'use strict';
 /**
- * Applique l'échelle du design system aux CSS : tailles de police, ombres, z-index et points de rupture.
+ * Applique l'échelle du design system aux CSS : tailles de police, ombres, z-index, points de rupture,
+ * rayons de bordure et espacements (padding, margin, gap).
  * Idempotent : on peut le relancer, il ne touche que les valeurs hors échelle.
  * Les valeurs de référence sont définies dans :root (assets/css/styles.css) et décrites dans docs/design/tokens.md.
  *
@@ -40,7 +41,18 @@ const BP_MAP = {
   'min-width: 380px': 'min-width: 480px',
 };
 
-const stats = { font: 0, shadow: 0, z: 0, bp: 0 };
+// ---------- Rayons : px → --radius-* (les traits fins ≤ 5 px restent libres) ----------
+const RADIUS_SCALE = [[8, '--radius-sm'], [12, '--radius'], [16, '--radius-lg'], [24, '--radius-xl']];
+const radiusToken = (px) => (px >= 99 ? '--radius-pill' : RADIUS_SCALE.reduce((b, c) => (Math.abs(c[0] - px) < Math.abs(b[0] - px) ? c : b))[1]);
+
+// ---------- Espacements : px/rem → --space-* (ex æquo : le pas inférieur) ----------
+const SPACE_SCALE = [
+  [2, '--space-2xs'], [4, '--space-xs'], [8, '--space-sm'], [12, '--space-smd'], [16, '--space-md'],
+  [24, '--space-lg'], [32, '--space-xl'], [48, '--space-2xl'], [64, '--space-3xl'], [96, '--space-4xl'],
+];
+const spaceToken = (px) => SPACE_SCALE.reduce((b, c) => (Math.abs(c[0] - px) < Math.abs(b[0] - px) ? c : b))[1];
+
+const stats = { font: 0, shadow: 0, z: 0, bp: 0, radius: 0, space: 0 };
 
 function processFile(file) {
   // Les fichiers de src/css/zone/ gardent la règle de zone.css (px des icônes Leaflet).
@@ -80,7 +92,34 @@ function processFile(file) {
       return `${pre}var(${t})${post}`;
     });
 
-    // 4. points de rupture
+    // 4. border-radius (hors calc, 50 %, traits fins ≤ 5 px)
+    l = l.replace(/^(\s*border-radius:\s*)([^;]*?)(\s*(?:!important)?\s*;)/, (m, pre, val, post) => {
+      if (/calc\(|var\(/.test(val)) return m;
+      let changed = false;
+      const next = val.replace(/(\d+(?:\.\d+)?)px/g, (mm, n) => {
+        if (parseFloat(n) <= 5) return mm;
+        changed = true;
+        return `var(${radiusToken(parseFloat(n))})`;
+      });
+      if (changed) stats.radius += 1;
+      return changed ? `${pre}${next}${post}` : m;
+    });
+
+    // 5. padding / margin / gap en px ou rem (hors calc/env/clamp, hors valeurs négatives et 1 px)
+    l = l.replace(/^(\s*(?:padding|margin|gap|row-gap|column-gap)(?:-(?:top|right|bottom|left|block|inline)(?:-(?:start|end))?)?:\s*)([^;]*?)(\s*(?:!important)?\s*;)/, (m, pre, val, post) => {
+      if (/calc\(|env\(|clamp\(|-\d/.test(val)) return m;
+      let changed = false;
+      const next = val.replace(/(\d*\.?\d+)(px|rem)\b/g, (mm, n, unit) => {
+        const px = unit === 'rem' ? parseFloat(n) * 16 : parseFloat(n);
+        if (px === 0 || px === 1 || px > 100) return mm;
+        changed = true;
+        return `var(${spaceToken(px)})`;
+      });
+      if (changed) stats.space += 1;
+      return changed ? `${pre}${next}${post}` : m;
+    });
+
+    // 6. points de rupture
     if (/^\s*@media/.test(l)) {
       let changed = l;
       for (const [from, to] of Object.entries(BP_MAP)) changed = changed.split(from).join(to);
@@ -94,4 +133,4 @@ function processFile(file) {
 for (const f of fs.readdirSync(CSS_DIR).filter((x) => x.endsWith('.css') && !BUNDLED.has(x))) processFile(path.join(CSS_DIR, f));
 for (const f of cssSourceFiles()) processFile(f);
 if (!DRY) build(); // régénère les bundles depuis src/
-console.log(`${DRY ? '[simulation] ' : ''}font-size : ${stats.font} · box-shadow : ${stats.shadow} · z-index : ${stats.z} · @media : ${stats.bp}`);
+console.log(`${DRY ? '[simulation] ' : ''}font-size : ${stats.font} · box-shadow : ${stats.shadow} · z-index : ${stats.z} · @media : ${stats.bp} · rayons : ${stats.radius} · espacements : ${stats.space}`);

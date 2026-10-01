@@ -82,13 +82,13 @@ Règle Google à connaître : des avis d'une entreprise affichés **sur son prop
    il manque un **modèle de contenu** : décider avec le client quelles communes (Cognac, Jarnac, Soyaux, La Couronne,
    Champniers…), écrire un texte réellement différent par commune (éviter le contenu dupliqué), photos locales.
    Pour chaque page : `page.json` + sitemap + menu (`sync-header.js`) + liens depuis `zone-desservie-charente.html`.
-2. ~~**Tokeniser le reste du design system**~~ — **fait le 2026-10-02** : 13 tailles de texte, 4 ombres, couches `z-index` nommées, points de rupture alignés par paires ; vérifié par `npm test` (`design-tokens`). Voir [`design/tokens.md`](./design/tokens.md) et le bilan avant/après dans [`design/direction-artistique.md`](./design/direction-artistique.md) §F. Reste : rayons (`border-radius`) et espacements en dur résiduels.
+2. ~~**Tokeniser le reste du design system**~~ — **fait le 2026-10-02** : 13 tailles de texte, 4 ombres, couches `z-index` nommées, points de rupture alignés par paires ; vérifié par `npm test` (`design-tokens`). Voir [`design/tokens.md`](./design/tokens.md) et le bilan avant/après dans [`design/direction-artistique.md`](./design/direction-artistique.md) §F. Rayons et espacements : **faits le 2026-10-01** (voir changelog).
 3. **Durcir la CSP** — retirer `'unsafe-inline'` de `script-src` : externaliser les 2 scripts inline de `index.html` et les
    attributs `onclick` restants (puis évaluer `style-src`). Tester toutes les pages avec la CSP en `Report-Only` d'abord.
 4. ~~Consentement des tiers~~ — carte de zone passée en SVG maison, plus aucun tiers (2026-10-02) ; **Vimeo et Elfsight/Instagram : le client a décidé de ne pas les mettre derrière un clic (2026-10-03)**.
 5. **URLs sans `.html`** — décision SEO : impacte canonicals, sitemap, JSON-LD, liens internes et redirections 301 (~50
    URL à migrer d'un coup) ; à faire seulement si le gain est jugé utile.
-6. **Condensation mobile, suite** (non demandée mais possible) : carrousel des avis de l'accueil, bloc « zone » de
+6. ~~Accueil trop long sur ordinateur~~ — fait le 2026-10-01 (−18 %). **Condensation mobile, suite** (non demandée mais possible) : carrousel des avis de l'accueil, bloc « zone » de
    l'accueil, réduction du hero. Mêmes garde-fous : contenu conservé dans le HTML, desktop inchangé.
 7. **Refonte du blog** (pistes du 21/09) : liste en grille compacte au lieu d'une colonne de 5 000 px, remplacer les
    emojis des filtres par des icônes Font Awesome, style des champs du formulaire.

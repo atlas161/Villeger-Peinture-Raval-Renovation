@@ -1,7 +1,6 @@
 ---
 category: Toiture
-title: "Démoussage et nettoyage de toiture à Angoulême (Charente): le guide
-  complet 2026"
+title: "Démoussage de toiture à Angoulême : le guide complet"
 seoTitle: "Démoussage toiture à Angoulême (Charente 16)"
 slug: demoussage-nettoyage-toiture-charente
 description: "Guide concret pour réussir un démoussage et un nettoyage de

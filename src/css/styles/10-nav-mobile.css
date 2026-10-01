@@ -153,7 +153,7 @@
   .menu li.menu-tel {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: var(--space-2xs);
     margin-top: auto;
     padding: var(--space-lg) var(--space-lg) var(--space-md);
     background: var(--color-bg);
@@ -291,7 +291,7 @@
   }
 
   .primary-nav .has-submenu.submenu-open .submenu .submenu-back-btn {
-    gap: 10px;
+    gap: var(--space-sm);
     justify-content: flex-start;
     width: 100%;
     color: var(--color-primary);

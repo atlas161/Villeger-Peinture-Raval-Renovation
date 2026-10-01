@@ -24,7 +24,7 @@
 .zone-address-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-xs);
   margin-top: var(--space-sm);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
@@ -33,7 +33,7 @@
 }
 
 .zone-address-link:hover .zone-address-cta {
-  gap: 10px;
+  gap: var(--space-sm);
 }
 
 .zone-address-cta i {
@@ -123,7 +123,7 @@
 .zone-note i {
   float: left;
   color: var(--brand-accent);
-  margin: 2px var(--space-sm) 0 0;
+  margin: var(--space-2xs) var(--space-sm) 0 0;
 }
 
 .zone-actions {

@@ -78,3 +78,33 @@ test('@media : uniquement les points de rupture du design system', () => {
   }
   assert.deepEqual(bad, [], `points de rupture hors échelle :\n${bad.join('\n')}`);
 });
+
+test('border-radius : variables --radius-*, 50 %, 0 ou trait fin (≤ 5 px)', () => {
+  const bad = [];
+  for (const f of files) {
+    css(f).split('\n').forEach((line, i) => {
+      const m = line.match(/^\s*border-radius:\s*([^;]+);/);
+      if (!m) return;
+      const v = m[1].replace(/!important/, '').trim();
+      if (/calc\(/.test(v)) return;
+      const lits = [...v.matchAll(/(\d*\.?\d+)(px|rem)\b/g)].filter((x) => (x[2] === 'rem' ? parseFloat(x[1]) * 16 : parseFloat(x[1])) > 5);
+      if (lits.length) bad.push(`${f}:${i + 1} border-radius: ${v}`);
+    });
+  }
+  assert.deepEqual(bad, [], `rayons en dur à remplacer par --radius-* :\n${bad.join('\n')}`);
+});
+
+test('padding / margin / gap : variables --space-* (valeurs en px/rem en dur interdites, hors 0, 1 px, calc/env/clamp)', () => {
+  const bad = [];
+  for (const f of files) {
+    css(f).split('\n').forEach((line, i) => {
+      const m = line.match(/^\s*(?:padding|margin|gap|row-gap|column-gap)(?:-(?:top|right|bottom|left|block|inline)(?:-(?:start|end))?)?:\s*([^;]+);/);
+      if (!m) return;
+      const v = m[1].replace(/!important/, '').trim();
+      if (/calc\(|env\(|clamp\(|-\d/.test(v)) return;
+      const lits = [...v.matchAll(/(\d*\.?\d+)(px|rem)\b/g)].filter((x) => { const px = x[2] === 'rem' ? parseFloat(x[1]) * 16 : parseFloat(x[1]); return px > 1 && px <= 100; });
+      if (lits.length) bad.push(`${f}:${i + 1} ${line.trim()}`);
+    });
+  }
+  assert.deepEqual(bad, [], `espacements en dur à remplacer par --space-* :\n${bad.join('\n')}`);
+});

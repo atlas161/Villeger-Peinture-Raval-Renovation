@@ -128,7 +128,7 @@
 
 .ft-info i {
   flex: 0 0 18px;
-  margin-top: 3px;
+  margin-top: var(--space-2xs);
   text-align: center;
   color: var(--brand-accent);
 }

@@ -48,8 +48,10 @@
   --color-panel: #FAF8F5;
 
   /* Espacements (système 8px) */
+  --space-2xs: 0.125rem; /* 2px : interstices fins */
   --space-xs: 0.25rem;   /* 4px */
   --space-sm: 0.5rem;    /* 8px */
+  --space-smd: 0.75rem;  /* 12px */
   --space-md: 1rem;      /* 16px */
   --space-lg: 1.5rem;    /* 24px */
   --space-xl: 2rem;      /* 32px */
@@ -294,7 +296,7 @@ a:hover {
   justify-content: center;
   gap: var(--space-sm);
   min-height: 48px;
-  padding: 0.75rem var(--space-xl);
+  padding: var(--space-smd) var(--space-xl);
   background: var(--color-primary);
   color: var(--color-white);
   border: 1.5px solid transparent;
@@ -353,7 +355,7 @@ a:hover {
 /* Deux tailles seulement : 48 px (défaut) et 40 px (.btn--sm). .btn--lg = défaut. */
 .btn--sm {
   min-height: 40px;
-  padding: 0.5rem var(--space-lg);
+  padding: var(--space-sm) var(--space-lg);
   font-size: var(--text-sm);
 }
 
@@ -482,7 +484,7 @@ a:hover {
 
   .menu-cta .btn {
     min-height: 40px;
-    padding: 0.5rem 1.25rem;
+    padding: var(--space-sm) var(--space-md);
     font-size: var(--text-md);
   }
 
@@ -491,10 +493,10 @@ a:hover {
     top: 100%;
     left: -14px;
     min-width: 280px;
-    padding: 10px;
-    margin: 12px 0 0 0;
+    padding: var(--space-sm);
+    margin: var(--space-smd) 0 0 0;
     list-style: none;
-    border-radius: 14px;
+    border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(103, 58, 18, 0.12);
     box-shadow: var(--shadow-xl);
@@ -525,8 +527,8 @@ a:hover {
   .submenu a {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-smd);
     border-radius: var(--radius);
     text-decoration: none;
     color: var(--color-text);
@@ -572,7 +574,7 @@ a:hover {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
-  gap: 4px;
+  gap: var(--space-xs);
   z-index: var(--z-menu-controls);
   /* Rendu actuel = 12px, pas 10px : cette valeur venait d'une ancienne règle générique
      `button { border-radius: 12px !important }` qui écrasait tous les <button> du site
@@ -779,7 +781,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   .menu li.menu-tel {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: var(--space-2xs);
     margin-top: auto;
     padding: var(--space-lg) var(--space-lg) var(--space-md);
     background: var(--color-bg);
@@ -917,7 +919,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   }
 
   .primary-nav .has-submenu.submenu-open .submenu .submenu-back-btn {
-    gap: 10px;
+    gap: var(--space-sm);
     justify-content: flex-start;
     width: 100%;
     color: var(--color-primary);
@@ -1055,7 +1057,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--space-xs);
 }
 
 .svc-tags li {
@@ -1063,7 +1065,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
   background: var(--color-primary-light);
-  padding: 3px 10px;
+  padding: var(--space-2xs) var(--space-sm);
   border-radius: var(--radius-pill);
   line-height: 1.7;
   transition: background 150ms var(--ease-out), color 150ms var(--ease-out);
@@ -1258,7 +1260,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 
 .ft-info i {
   flex: 0 0 18px;
-  margin-top: 3px;
+  margin-top: var(--space-2xs);
   text-align: center;
   color: var(--brand-accent);
 }
@@ -1423,52 +1425,60 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   bottom: var(--space-md);
   z-index: var(--z-banner);
   display: none;
-  width: calc(100% - (2 * var(--space-md)));
-  max-width: 520px;
-  padding: var(--space-md) var(--space-lg);
+  align-items: center;
+  gap: var(--space-md);
+  width: max-content;
+  max-width: calc(100% - (2 * var(--space-md)));
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-lg);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-pill);
   box-shadow: var(--shadow-lg);
-  text-align: center;
   opacity: 0;
   transform: translate(-50%, 16px);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 #cookie-banner.cookie-banner-visible {
+  display: flex;
   opacity: 1;
   transform: translate(-50%, 0);
 }
 
 #cookie-banner p {
-  margin: 0 0 var(--space-md);
+  margin: 0;
   font-size: var(--text-sm);
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--color-text-light);
 }
 
 #cookie-banner p a {
   color: var(--color-primary);
   text-decoration: underline;
+  white-space: nowrap;
 }
 
 .cookie-banner-actions {
   display: flex;
-  justify-content: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
+  flex-shrink: 0;
 }
 
 #cookie-banner .btn {
-  flex: 1;
-  max-width: 200px;
-  padding: 0.625rem 1rem;
+  padding: var(--space-sm) var(--space-md);
   font-size: var(--text-sm);
+  white-space: nowrap;
 }
 
-/* Sur mobile, la bannière se place au-dessus de la barre d'appel collante */
+/* Sur mobile : deux lignes (texte, puis boutons), au-dessus de la barre d'appel collante */
 @media (max-width: 767px) {
-  #cookie-banner {
+  #cookie-banner.cookie-banner-visible {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% - (2 * var(--space-md)));
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    text-align: center;
     bottom: calc(var(--space-md) + 64px + var(--space-sm) + env(safe-area-inset-bottom));
   }
 }
@@ -1858,7 +1868,7 @@ html {
 .article-meta span {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .article-title {
@@ -1961,7 +1971,7 @@ html {
   bottom: 8px;
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius); /* était 8px inline, forcé à 12px par la règle *[style*="border-radius"] */
   font-size: var(--text-2xs);
 }
@@ -2131,7 +2141,7 @@ html {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    padding: 6px;
+    padding: var(--space-xs);
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -2289,8 +2299,8 @@ html {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: 0.375rem 0.875rem;
-  border-radius: 999px;
+  padding: var(--space-xs) var(--space-smd);
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -2382,7 +2392,7 @@ html {
 }
 
 .legal-toc a {
-  padding: 0.4rem 0.9rem;
+  padding: var(--space-sm) var(--space-md);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
@@ -2430,7 +2440,7 @@ html {
 
 .legal-doc ul {
   margin: 0 0 var(--space-md);
-  padding-left: 1.25rem;
+  padding-left: var(--space-md);
 }
 
 .legal-doc li + li {
@@ -2532,5 +2542,166 @@ html {
     right: calc(var(--space-lg) / -1);
     width: var(--space-lg);
     border-top: 2px dashed var(--brand-accent);
+  }
+}
+
+/* ▸ 25-accueil-compact.css */
+/* ===================================================================
+   ACCUEIL COMPACT (ordinateur et tablette ≥ 768 px) : sections plus denses pour raccourcir la page.
+   Le contenu HTML est inchangé ; le mobile compact reste dans responsive.css.
+   =================================================================== */
+@media (min-width: 768px) {
+  #services,
+  #deroulement,
+  #galerie,
+  #zone,
+  #faq,
+  #avis {
+    padding-block: var(--space-3xl);
+  }
+
+  #services .section-header,
+  #deroulement .section-header,
+  #galerie .section-header,
+  #faq .section-header,
+  #avis .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  #blog .section-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Services : icône à gauche du titre, flèche en coin, 3 pastilles au plus */
+  #services .svc-grid {
+    gap: var(--space-md);
+    margin-top: 0;
+  }
+
+  #services .svc-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-content: start;
+    column-gap: var(--space-md);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  #services .svc-icon {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    font-size: var(--text-2xl);
+  }
+
+  #services .svc-body {
+    margin: 0;
+  }
+
+  #services .svc-card h3 {
+    margin-bottom: var(--space-xs);
+    padding-right: var(--space-xl);
+    font-size: var(--text-xl);
+  }
+
+  #services .svc-body > p {
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  #services .svc-tags li:nth-child(n+4) {
+    display: none;
+  }
+
+  #services .svc-footer {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  #services .svc-footer > span:first-child {
+    display: none;
+  }
+
+  /* Étapes : cartes plus basses */
+  .home-step {
+    padding: var(--space-lg);
+  }
+
+  .home-step-num {
+    width: 36px;
+    height: 36px;
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-md);
+  }
+
+  .home-step h3 {
+    font-size: var(--text-base);
+  }
+
+  .home-step p {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .home-steps-more {
+    margin-top: var(--space-lg);
+  }
+
+  /* Galerie : photos et marges réduites */
+  #galerie .gallery-grid {
+    gap: var(--space-md);
+    margin-top: 0;
+  }
+
+  .gallery-figure img {
+    height: 120px;
+  }
+
+  .gallery-card-body {
+    padding: var(--space-md);
+  }
+
+  .gallery-more {
+    margin-top: var(--space-lg);
+  }
+
+  .gallery-instagram {
+    margin-top: var(--space-2xl);
+  }
+
+  /* Blog : titre sur 2 lignes, pas d'extrait sur l'accueil */
+  .home-articles {
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+  }
+
+  .home-articles .article-title {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .home-articles .article-excerpt {
+    display: none;
+  }
+
+  /* Zone : 8 communes sur l'accueil (la liste complète est sur la page zone), pas de phrase en doublon du bouton */
+  #zone .zone-chips li:nth-child(n+9),
+  #zone .zone-home-note {
+    display: none;
+  }
+
+  #zone .zone-header {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-step:not(:last-child)::after {
+    top: calc(var(--space-lg) + 18px);
   }
 }

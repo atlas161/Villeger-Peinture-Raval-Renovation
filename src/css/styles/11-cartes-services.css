@@ -121,7 +121,7 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--space-xs);
 }
 
 .svc-tags li {
@@ -129,7 +129,7 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
   background: var(--color-primary-light);
-  padding: 3px 10px;
+  padding: var(--space-2xs) var(--space-sm);
   border-radius: var(--radius-pill);
   line-height: 1.7;
   transition: background 150ms var(--ease-out), color 150ms var(--ease-out);

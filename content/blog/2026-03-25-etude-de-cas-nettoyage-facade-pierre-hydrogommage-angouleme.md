@@ -1,6 +1,6 @@
 ---
 category: Façade
-title: "Nettoyage de façade en pierre à Angoulême : un chantier type d'hydrogommage"
+title: "Hydrogommage d'une façade en pierre : un chantier type"
 seoTitle: "Nettoyage façade pierre à Angoulême : hydrogommage"
 slug: etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme
 description: Façade en pierre noircie ? Voici le déroulé type d'un nettoyage par

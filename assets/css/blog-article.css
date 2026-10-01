@@ -31,7 +31,7 @@
 .breadcrumb-item a {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   color: var(--color-text-light);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -108,7 +108,7 @@
 .read-time {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .article-title {
@@ -312,7 +312,7 @@
   padding: var(--space-lg) var(--space-xl);
   background: var(--color-surface-alt);
   border-left: 4px solid var(--brand-accent);
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .article-content blockquote p {
@@ -441,7 +441,7 @@
   color: var(--color-text);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .tag-link {
@@ -732,7 +732,7 @@
 
   .article-content {
     padding: var(--space-xl);
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
   }
 
   .article-content .table-wrapper {
@@ -762,7 +762,7 @@
 
   .article-content {
     padding: var(--space-lg);
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
     overflow-wrap: anywhere;
     word-break: break-word;
     hyphens: auto;
@@ -791,7 +791,7 @@
   }
 
   .article-content .table-wrapper {
-    border-radius: 14px;
+    border-radius: var(--radius);
   }
 }
 

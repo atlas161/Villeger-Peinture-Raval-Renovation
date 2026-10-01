@@ -1,0 +1,159 @@
+/* ===================================================================
+   ACCUEIL COMPACT (ordinateur et tablette ≥ 768 px) : sections plus denses pour raccourcir la page.
+   Le contenu HTML est inchangé ; le mobile compact reste dans responsive.css.
+   =================================================================== */
+@media (min-width: 768px) {
+  #services,
+  #deroulement,
+  #galerie,
+  #zone,
+  #faq,
+  #avis {
+    padding-block: var(--space-3xl);
+  }
+
+  #services .section-header,
+  #deroulement .section-header,
+  #galerie .section-header,
+  #faq .section-header,
+  #avis .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  #blog .section-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Services : icône à gauche du titre, flèche en coin, 3 pastilles au plus */
+  #services .svc-grid {
+    gap: var(--space-md);
+    margin-top: 0;
+  }
+
+  #services .svc-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-content: start;
+    column-gap: var(--space-md);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  #services .svc-icon {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    font-size: var(--text-2xl);
+  }
+
+  #services .svc-body {
+    margin: 0;
+  }
+
+  #services .svc-card h3 {
+    margin-bottom: var(--space-xs);
+    padding-right: var(--space-xl);
+    font-size: var(--text-xl);
+  }
+
+  #services .svc-body > p {
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  #services .svc-tags li:nth-child(n+4) {
+    display: none;
+  }
+
+  #services .svc-footer {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  #services .svc-footer > span:first-child {
+    display: none;
+  }
+
+  /* Étapes : cartes plus basses */
+  .home-step {
+    padding: var(--space-lg);
+  }
+
+  .home-step-num {
+    width: 36px;
+    height: 36px;
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-md);
+  }
+
+  .home-step h3 {
+    font-size: var(--text-base);
+  }
+
+  .home-step p {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .home-steps-more {
+    margin-top: var(--space-lg);
+  }
+
+  /* Galerie : photos et marges réduites */
+  #galerie .gallery-grid {
+    gap: var(--space-md);
+    margin-top: 0;
+  }
+
+  .gallery-figure img {
+    height: 120px;
+  }
+
+  .gallery-card-body {
+    padding: var(--space-md);
+  }
+
+  .gallery-more {
+    margin-top: var(--space-lg);
+  }
+
+  .gallery-instagram {
+    margin-top: var(--space-2xl);
+  }
+
+  /* Blog : titre sur 2 lignes, pas d'extrait sur l'accueil */
+  .home-articles {
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+  }
+
+  .home-articles .article-title {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .home-articles .article-excerpt {
+    display: none;
+  }
+
+  /* Zone : 8 communes sur l'accueil (la liste complète est sur la page zone), pas de phrase en doublon du bouton */
+  #zone .zone-chips li:nth-child(n+9),
+  #zone .zone-home-note {
+    display: none;
+  }
+
+  #zone .zone-header {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-step:not(:last-child)::after {
+    top: calc(var(--space-lg) + 18px);
+  }
+}

@@ -17,6 +17,15 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (suite 3) — Accueil raccourci, menu « Où ? », bannière cookies en une ligne, rayons et espacements tokenisés (non déployé)
+
+- **Accueil plus court sur ordinateur/tablette** (`src/css/styles/25-accueil-compact.css`, ≥ 768 px) : hauteur desktop **8 665 → ≈ 7 070 px** (−18 %), tablette 768 px ≈ 8 770 px, téléphone ≈ 11 600 px (mobile inchangé, déjà condensé). Services : icône à gauche du titre, flèche en coin, 3 pastilles ; étapes, galerie et blog plus denses (pas d'extrait sur les cartes du blog) ; zone : 8 communes + bouton (la liste complète reste sur la page zone) ; FAQ de l'accueil : 4 questions (le test impose ≥ 4) ; chapôs de section raccourcis. Le contenu HTML des services/étapes est conservé.
+- **Menu** : « Zone d'intervention » devient **« Où ? »** (`scripts/sync-header.js`, puis `npm run sync:header`). Le titre de la section et le pied de page gardent « Zone d'intervention ».
+- **Bannière cookies** : pilule d'une seule ligne (« Cookies de mesure d'audience pour améliorer le site. En savoir plus » + 2 boutons) ; sur mobile, 2 lignes. Aucun changement de logique de consentement.
+- **Blog** : 6 titres d'articles raccourcis (`content/blog/*.md`, le `seoTitle` et les URL ne changent pas) ; regénéré par `npm run build`.
+- **Tokens : rayons et espacements** : nouveaux `--space-2xs` (2 px) et `--space-smd` (12 px) ; `scripts/tokenize-scale.js` remplace désormais aussi `border-radius` et `padding/margin/gap` en dur (12 rayons + 69 espacements convertis, par arrondi au pas le plus proche — écarts ≤ 4 px) ; 2 nouveaux tests dans `design-tokens` (rayons : traits fins ≤ 5 px tolérés ; espacements : 0, 1 px, `calc/env/clamp` tolérés).
+- Vérifié : `npm test` 53/53, aucun débordement horizontal à 375 / 768 / 1440 px. Instagram (Elfsight) contrôlé : photos pertinentes, bouton brun.
+
 ## 2026-10-02 (suite 2) — Footer refait (clair) et menu vers les pages dédiées
 
 - **Footer clair et compact** (`includes/footer.html`, `src/css/styles/13-footer.css`, classes `ft-*`) : 3 colonnes (marque + Instagram + badge décennale / services / contact avec horaires et bouton « Devis gratuit », masqué sur mobile car la barre collante existe), une ligne de navigation (Réalisations · À propos · Blog · Zone d'intervention · FAQ · Contact), une barre de mentions sur une ligne. Plus d'icônes devant les liens, doublons FAQ/Zone fusionnés, logo SVG réel, bouton rond « retour en haut ». `12-footer-base.css` et les règles de footer périmées de `blog-article.css` / `responsive.css` supprimés.

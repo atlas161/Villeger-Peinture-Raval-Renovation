@@ -61,6 +61,13 @@ Valeurs 0 à 10 (et 600 pour les calques Leaflet) = empilement **local** à un c
 Règle : un `max-width` et son `min-width` se suivent d'un pixel (767/768, 639/640, 991/992, 1023/1024) — jamais de zone où les deux s'appliquent.
 Côté JavaScript : `(max-width: 767px)` (condensation mobile) et `(max-width: 991px)` / `(min-width: 992px)` (menu) ; garder ces valeurs alignées.
 
+## Espacements et rayons (2026-10-01)
+
+`padding`, `margin` et `gap` : **`var(--space-…)`** — 2xs 2 px · xs 4 · sm 8 · smd 12 · md 16 · lg 24 · xl 32 · 2xl 48 · 3xl 64 · 4xl 96.
+Tolérés tels quels : `0`, `1px`, valeurs négatives, `calc()`, `env()`, `clamp()`, `em`.
+`border-radius` : **`var(--radius-…)`** — sm 8 · (défaut) 12 · lg 16 · xl 24 · pill ; `50%` et les traits fins ≤ 5 px restent libres.
+`node scripts/tokenize-scale.js` les applique (ex æquo : pas inférieur) ; `npm test` (`design-tokens`) les vérifie.
+
 ## Comment appliquer / vérifier
 - `node scripts/tokenize-scale.js` (idempotent, `--dry-run` pour simuler) remplace les valeurs hors échelle par le token le plus proche.
 - `npm test` — `design-tokens` échoue si une taille, une ombre neutre, un `z-index` ou un point de rupture sort de l'échelle.

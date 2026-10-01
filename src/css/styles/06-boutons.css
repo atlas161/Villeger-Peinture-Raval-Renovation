@@ -8,7 +8,7 @@
   justify-content: center;
   gap: var(--space-sm);
   min-height: 48px;
-  padding: 0.75rem var(--space-xl);
+  padding: var(--space-smd) var(--space-xl);
   background: var(--color-primary);
   color: var(--color-white);
   border: 1.5px solid transparent;
@@ -67,7 +67,7 @@
 /* Deux tailles seulement : 48 px (défaut) et 40 px (.btn--sm). .btn--lg = défaut. */
 .btn--sm {
   min-height: 40px;
-  padding: 0.5rem var(--space-lg);
+  padding: var(--space-sm) var(--space-lg);
   font-size: var(--text-sm);
 }
 
