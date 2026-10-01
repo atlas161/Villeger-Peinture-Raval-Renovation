@@ -185,33 +185,7 @@
         }
       ]
     },
-    "breadcrumbName": "Isolation Intérieure Charente",
-    "faq": [
-      {
-        "q": "Faites-vous de l'isolation extérieure (ITE) ?",
-        "a": "Non, nous ne réalisons pas d'isolation thermique par l'extérieur (ITE) sous forme de bardage ou d'enduit isolant. En revanche, nos peintures et traitements de façade apportent une protection hydrofuge qui limite les déperditions liées à l'humidité : voir notre page peinture extérieure. Pour l'isolation de votre logement, notre expertise porte sur l'isolation intérieure : combles, murs par l'intérieur et menuiseries."
-      },
-      {
-        "q": "Quel est le prix moyen d'une isolation de combles en Charente ?",
-        "a": "Le prix d'une isolation de combles perdus en Charente varie généralement entre 20€ et 45€ par m², selon la technique (soufflage ou déroulé), l'épaisseur d'isolant posée et l'accessibilité des combles. Exemple concret : pour des combles perdus de 80m² isolés par soufflage, comptez environ 1 800€ à 3 000€ TTC. Un devis gratuit après visite sur place permet d'avoir un tarif précis et d'étudier les aides disponibles."
-      },
-      {
-        "q": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-        "a": "Oui, absolument. Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). Après votre demande, nous convenons d'un rendez-vous pour visiter votre logement, évaluer l'isolation existante et identifier les travaux nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif."
-      },
-      {
-        "q": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-        "a": "Oui. Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Contactez-nous pour vérifier votre commune et organiser une visite."
-      },
-      {
-        "q": "Combien de temps dure une prestation d'isolation intérieure ?",
-        "a": "La durée dépend du type de travaux : isolation de combles perdus par soufflage, en général 1 journée. Isolation de combles aménagés ou de murs par doublage, 2 à 5 jours selon la surface. Remplacement de menuiseries, une demi-journée à 2 jours selon le nombre de fenêtres. Nous confirmons la durée exacte lors de la visite technique."
-      },
-      {
-        "q": "L'isolation intérieure est-elle éligible à des aides financières ?",
-        "a": "Selon votre situation et les matériaux posés, certains travaux d'isolation peuvent être éligibles à des aides comme MaPrimeRénov' ou les Certificats d'Économies d'Énergie (CEE). Nous vous orientons sur les dispositifs qui peuvent s'appliquer à votre projet ; le montant exact dépend de votre éligibilité et doit être confirmé auprès des organismes concernés."
-      }
-    ]
+    "breadcrumbName": "Isolation Intérieure Charente"
   },
   "beforeAfterScript": false,
   "contact": {
@@ -392,36 +366,46 @@
       "introHtml": "Trouvez rapidement les réponses à vos questions sur l'isolation intérieure, les tarifs et les devis.",
       "items": [
         {
-          "icon": "fa-solid fa-circle-question",
-          "question": "Faites-vous de l'isolation extérieure (ITE) ?",
-          "answerHtml": "<p>\n  <strong>Non</strong>, nous ne réalisons pas d'isolation thermique par l'extérieur (ITE) sous forme de bardage ou d'enduit isolant. Nos peintures et traitements de façade apportent en revanche une protection hydrofuge utile contre l'humidité : voir notre page <a href=\"peinture-exterieure-charente.html\">peinture extérieure</a>.\n</p>\n<p>\n  Pour l'isolation de votre logement, notre expertise porte sur l'<strong>isolation intérieure</strong> : combles, murs par l'intérieur et menuiseries.\n</p>"
-        },
-        {
           "icon": "fa-solid fa-tag",
-          "accent": true,
-          "question": "Quel est le prix moyen d'une isolation de combles en Charente ?",
-          "answerHtml": "<p>\n  Le prix d'une isolation de combles perdus en Charente varie généralement entre <strong>20€ et 45€ par m²</strong>, selon la technique (soufflage ou déroulé), l'épaisseur d'isolant posée et l'accessibilité des combles.\n</p>\n<p>\n  <strong>Exemple concret :</strong> pour des combles perdus de 80m² isolés par soufflage, comptez environ 1 800€ à 3 000€ TTC. Un devis gratuit après visite sur place permet d'avoir un tarif précis et d'étudier les aides disponibles.\n</p>"
+          "question": "Quel est le prix d'une isolation intérieure au m² en Charente ?",
+          "answerHtml": "<p>Le prix dépend de la zone isolée :</p>\n<ul>\n  <li><strong>Combles perdus</strong> (soufflage) : 18 à 30&nbsp;€/m²</li>\n  <li><strong>Combles aménagés / sous rampants</strong> : 40 à 65&nbsp;€/m²</li>\n  <li><strong>Murs par l'intérieur</strong> (doublage) : 45 à 70&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 80&nbsp;m² de combles perdus isolés par soufflage, comptez environ 1&nbsp;500 à 2&nbsp;400&nbsp;€ TTC (TVA à 5,5&nbsp;% pour ce type de travaux d'isolation sous conditions). Le devis est gratuit après visite des combles.</p>"
         },
         {
-          "icon": "fa-solid fa-file-signature",
-          "question": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-          "answerHtml": "<p>\n  <strong>Oui, absolument.</strong> Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16).\n</p>\n<p>\n  Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre logement, évaluer l'isolation existante et identifier les travaux nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-map-location-dot",
-          "accent": true,
-          "question": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-          "answerHtml": "<p>\n  <strong>Oui.</strong> Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment <strong>Cognac</strong>, <strong>Jarnac</strong>, <strong>Ruffec</strong>, <strong>Barbezieux-Saint-Hilaire</strong> et <strong>La Rochefoucauld-en-Angoumois</strong>.\n</p>\n<p>\n  Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d'intervention et vous transmettons un devis gratuit.\n</p>"
+          "icon": "fa-solid fa-ruler-vertical",
+          "question": "Quelle épaisseur d'isolant faut-il pour mes combles ?",
+          "answerHtml": "<p>Pour des combles perdus, on vise en général une résistance thermique <strong>R ≥ 7 m²·K/W</strong>, soit environ 30 à 35&nbsp;cm de laine soufflée selon le matériau. Pour des rampants ou des murs, l'épaisseur dépend de la place disponible. Nous dimensionnons l'isolant lors de la visite technique.</p>"
         },
         {
           "icon": "fa-solid fa-clock",
           "question": "Combien de temps dure une prestation d'isolation intérieure ?",
-          "answerHtml": "<p>\n  La durée dépend du type de travaux :\n</p>\n<ul>\n  <li><strong>Combles perdus par soufflage :</strong> en général 1 journée</li>\n  <li><strong>Combles aménagés ou murs par doublage :</strong> 2 à 5 jours selon la surface</li>\n  <li><strong>Remplacement de menuiseries :</strong> une demi-journée à 2 jours selon le nombre de fenêtres</li>\n</ul>\n<p>\n  Nous confirmons la durée exacte lors de la visite technique.\n</p>"
+          "answerHtml": "<p>La durée dépend du type de travaux :</p>\n<ul>\n  <li>Combles perdus par soufflage : en général 1 journée</li>\n  <li>Combles aménagés ou murs par doublage : 2 à 5 jours selon la surface</li>\n  <li>Remplacement de menuiseries : une demi-journée à 2 jours selon le nombre de fenêtres</li>\n</ul>\n<p>Nous confirmons la durée exacte lors de la visite technique.</p>"
+        },
+        {
+          "icon": "fa-solid fa-layer-group",
+          "question": "Soufflage ou rouleaux : quelle technique pour les combles ?",
+          "answerHtml": "<p>Le <strong>soufflage</strong> convient aux combles perdus : rapide, sans joints, il épouse toutes les formes. Les <strong>rouleaux ou panneaux</strong> sont adaptés aux combles aménagés, rampants ou murs. Le choix dépend de l'accessibilité, de l'état de l'isolation existante et du budget : nous vous conseillons la meilleure option.</p>"
+        },
+        {
+          "icon": "fa-solid fa-house",
+          "question": "Faites-vous de l'isolation extérieure (ITE) ?",
+          "answerHtml": "<p>Non, nous ne réalisons pas d'isolation thermique par l'extérieur (ITE) sous forme de bardage ou d'enduit isolant. Notre expertise porte sur l'<strong>isolation intérieure</strong> : combles, murs par l'intérieur et menuiseries. Pour protéger la façade de l'humidité, voir notre page <a href=\"peinture-exterieure-charente.html\">peinture extérieure</a>.</p>"
         },
         {
           "icon": "fa-solid fa-hand-holding-dollar",
           "question": "L'isolation intérieure est-elle éligible à des aides financières ?",
-          "answerHtml": "<p>\n  Selon votre situation et les matériaux posés, certains travaux d'isolation peuvent être éligibles à des aides comme <strong>MaPrimeRénov'</strong> ou les <strong>Certificats d'Économies d'Énergie (CEE)</strong>. Nous vous orientons sur les dispositifs qui peuvent s'appliquer à votre projet ; le montant exact dépend de votre éligibilité et doit être confirmé auprès des organismes concernés.\n</p>"
+          "answerHtml": "<p>Certains travaux d'isolation peuvent ouvrir droit à des aides (MaPrimeRénov', Certificats d'Économies d'Énergie) et à la TVA à 5,5&nbsp;%. L'éligibilité dépend de votre situation et des <strong>conditions en vigueur, qui évoluent régulièrement</strong>, notamment de la qualification de l'entreprise pour la plupart des aides. Renseignez-vous auprès de France Rénov' avant de signer et demandez-nous ce qui s'applique à votre projet.</p>",
+          "accent": true
+        },
+        {
+          "icon": "fa-solid fa-receipt",
+          "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
+          "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La visite technique et le dimensionnement de l'isolant</li>\n  <li>La préparation (dépose de l'ancienne isolation si nécessaire)</li>\n  <li>La fourniture et la pose de l'isolant</li>\n  <li>Le nettoyage du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "question": "Vos travaux d'isolation sont-ils assurés ?",
+          "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle et une garantie décennale pour les travaux qui en relèvent. Nos attestations d'assurance sont à jour et disponibles sur simple demande, avant le début du chantier.</p>",
+          "accent": true
         }
       ]
     },

@@ -222,3 +222,28 @@
   }
 }
 
+.faq-actions {
+  text-align: center;
+  margin-top: var(--space-3xl);
+}
+
+.faq-actions-text {
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-lg) 0;
+  line-height: 1.6;
+}
+
+.faq-actions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .faq-actions-btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 360px;
+  }
+}

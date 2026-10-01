@@ -146,11 +146,11 @@ Dernière étape pour l'esthétique et l'imperméabilité :
 
 Le prix varie fortement selon l'état des murs et les matériaux choisis :
 
-- **Ravalement peinture (façade saine)** : 25€ à 45€ / m²
-- **Ravalement enduit projeté** : 50€ à 80€ / m²
-- **Ravalement pierre apparente (rejointoiement)** : 70€ à 120€ / m²
+- **Ravalement peinture (façade saine)** : 25€ à 40€ / m²
+- **Ravalement enduit projeté** : 40€ à 65€ / m²
+- **Ravalement complet (enduit + peinture haute performance)** : 60€ à 90€ / m²
 
-**Exemple concret** : Pour une maison de ville à Angoulême avec 100m² de façade nécessitant un nouvel enduit gratté, comptez entre 5 000€ et 8 000€ TTC, échafaudage inclus.
+**Exemple concret** : Pour une maison de ville à Angoulême avec 100m² de façade nécessitant un nouvel enduit gratté, comptez entre 4 500€ et 7 000€ TTC, échafaudage inclus.
 
 ### Ce qui est inclus dans notre devis
 

@@ -160,37 +160,7 @@
         }
       ]
     },
-    "breadcrumbName": "Ravalement de Façade Angoulême",
-    "faq": [
-      {
-        "q": "Quel est le prix moyen d'un ravalement de façade au m² à Angoulême ?",
-        "a": "Le prix d'un ravalement de façade en Charente varie généralement entre 40€ et 80€ par m², selon l'état de votre façade et les travaux nécessaires. Un simple nettoyage et peinture coûte moins cher qu'une réfection complète avec réparation de fissures et enduit. Exemple concret : Pour une façade de 100m² nécessitant une rénovation moyenne (réparations + enduit + peinture), comptez environ 5 000€ à 7 000€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place."
-      },
-      {
-        "q": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-        "a": "Oui, absolument. Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre façade, évaluer son état précis et identifier les travaux nécessaires (réparations, enduit, peinture). Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché."
-      },
-      {
-        "q": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-        "a": "Oui. Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit."
-      },
-      {
-        "q": "Combien de temps dure un ravalement de façade ?",
-        "a": "La durée d'un ravalement dépend de la surface et de l'état de votre façade : Façade simple (nettoyage + peinture) : 3-5 jours. Ravalement moyen (réparations + enduit + peinture) : 1 à 2 semaines. Rénovation complète (structure + enduit + finition) : 2 à 3 semaines. Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal."
-      },
-      {
-        "q": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-        "a": "Transparence totale garantie. Notre devis détaillé comprend : Le diagnostic initial et la visite technique, la protection des zones sensibles (fenêtres, sols), les réparations structurelles si nécessaires (fissures, éclats), l'application de l'enduit et des couches de finition, la peinture de façade haute qualité, le nettoyage complet du chantier, la TVA et les assurances décennales. Promesse VPRR : Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise."
-      },
-      {
-        "q": "Vos travaux de ravalement sont-ils garantis ?",
-        "a": "Oui. Nous intervenons avec une assurance Responsabilité Civile Professionnelle, et une assurance décennale lorsque la nature des travaux relève de la garantie décennale (ouvrages). Les finitions et corrections éventuelles sont couvertes dans le cadre de la garantie de parfait achèvement. Nous pouvons fournir nos attestations d'assurance sur demande."
-      },
-      {
-        "q": "Quels matériaux et finitions utilisez-vous (enduit, peinture) ?",
-        "a": "Nous adaptons les matériaux au support (enduit, brique, pierre, façade déjà peinte) et à l'exposition (pluie, UV). Après diagnostic, nous choisissons une préparation compatible, des enduits de réparation si besoin, puis une finition durable (peinture microporeuse, revêtement adapté, etc.). L'objectif : protéger la façade, éviter les reprises prématurées et garantir une finition propre."
-      }
-    ]
+    "breadcrumbName": "Ravalement de Façade Angoulême"
   },
   "beforeAfterScript": true,
   "contact": {
@@ -381,51 +351,51 @@
       "items": [
         {
           "icon": "fa-solid fa-tag",
-          "question": "Quel est le prix moyen d'un ravalement de façade au m² à Angoulême ?",
-          "answerHtml": "<p>\n  Le prix d'un ravalement de façade en Charente varie généralement entre <strong>40€ et 80€ par m²</strong>, selon l'état de votre façade et les travaux nécessaires. Un simple nettoyage et peinture coûte moins cher qu'une réfection complète avec réparation de fissures et enduit. \n</p>\n<p>\n  <strong>Exemple concret :</strong> Pour une façade de 100m² nécessitant une rénovation moyenne (réparations + enduit + peinture), comptez environ 5 000€ à 7 000€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-file-signature",
-          "question": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-          "answerHtml": "<p>\n  <strong>Oui, absolument.</strong> Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). \n</p>\n<p>\n  Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre façade, évaluer son état précis et identifier les travaux nécessaires (réparations, enduit, peinture). Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-map-location-dot",
-          "accent": true,
-          "question": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-          "answerHtml": "<p>\n  <strong>Oui.</strong> Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment <strong>Cognac</strong>, <strong>Jarnac</strong>, <strong>Ruffec</strong>, <strong>Barbezieux-Saint-Hilaire</strong> et <strong>La Rochefoucauld-en-Angoumois</strong>.\n</p>\n<p>\n  Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit.\n</p>"
+          "question": "Quel est le prix d'un ravalement de façade au m² en Charente ?",
+          "answerHtml": "<p>En Charente, un ravalement de façade coûte en général entre <strong>25&nbsp;€ et 90&nbsp;€ par m²</strong> selon ce qu'il faut faire :</p>\n<ul>\n  <li><strong>Nettoyage + peinture</strong> (façade saine) : 25 à 40&nbsp;€/m²</li>\n  <li><strong>Réfection d'enduit</strong> (réparations + enduit + finition) : 40 à 65&nbsp;€/m²</li>\n  <li><strong>Ravalement complet</strong> (enduit, peinture haute performance, zinguerie) : 60 à 90&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 100&nbsp;m² de façade avec réparations, enduit et peinture, comptez environ 4&nbsp;500 à 7&nbsp;000&nbsp;€ TTC, échafaudage compris. Seule une visite permet de chiffrer précisément : le devis est gratuit.</p>"
         },
         {
           "icon": "fa-solid fa-clock",
           "question": "Combien de temps dure un ravalement de façade ?",
-          "answerHtml": "<p>\n  La durée d'un ravalement dépend de la surface et de l'état de votre façade :\n</p>\n<ul>\n  <li><strong>Façade simple (nettoyage + peinture) :</strong> 3-5 jours</li>\n  <li><strong>Ravalement moyen (réparations + enduit + peinture) :</strong> 1 à 2 semaines</li>\n  <li><strong>Rénovation complète (structure + enduit + finition) :</strong> 2 à 3 semaines</li>\n</ul>\n<p>\n  Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal.\n</p>"
+          "answerHtml": "<p>La durée dépend de la surface et de l'état de la façade :</p>\n<ul>\n  <li>Nettoyage + peinture : 3 à 5 jours</li>\n  <li>Réparations + enduit + peinture : 1 à 2 semaines</li>\n  <li>Rénovation complète : 2 à 3 semaines</li>\n</ul>\n<p>Nous planifions selon la météo (pas d'enduit ni de peinture sous la pluie ou au gel) et nettoyons le chantier chaque soir.</p>"
         },
         {
           "icon": "fa-solid fa-calendar-check",
           "question": "Quand faut-il faire un ravalement de façade ?",
-          "answerHtml": "<p>\n  Plusieurs signaux d'alerte indiquent qu'il est temps de rénover votre façade :\n</p>\n<ul>\n  <li><strong>Fissures visibles</strong> : fines ou plus larges, elles laissent entrer l'eau</li>\n  <li><strong>Enduit qui s'écaille ou se décolle</strong> : perte de protection thermique</li>\n  <li><strong>Peinture écaillée ou décolorée</strong> : manque d'entretien depuis plus de 10 ans</li>\n  <li><strong>Traces d'humidité ou moisissures</strong> : infiltrations problématiques</li>\n  <li><strong>Aspect général dégradé</strong> : baisse de la valeur immobilière</li>\n</ul>\n<p>\n  <strong>Règle d'or :</strong> Un ravalement préventif coûte moins cher qu'une réparation tardive. N'hésitez pas à nous contacter pour un diagnostic gratuit.\n</p>"
+          "answerHtml": "<p>Plusieurs signes montrent qu'il est temps d'agir :</p>\n<ul>\n  <li><strong>Fissures</strong> visibles : elles laissent entrer l'eau dans le mur</li>\n  <li><strong>Enduit</strong> qui s'écaille ou sonne creux</li>\n  <li><strong>Peinture</strong> qui farine, s'écaille ou se décolore</li>\n  <li><strong>Humidité</strong>, moisissures ou mousses installées</li>\n</ul>\n<p>Une façade se rénove en général tous les 10 à 15 ans. Intervenir tôt coûte moins cher que réparer des dégâts d'infiltration : nous faisons un diagnostic gratuit.</p>"
+        },
+        {
+          "icon": "fa-solid fa-landmark",
+          "question": "Faut-il une autorisation de la mairie pour refaire sa façade ?",
+          "answerHtml": "<p>Oui, une déclaration préalable de travaux (DP) est souvent nécessaire, surtout si l'aspect extérieur change (couleur, enduit, ouvertures). Les règles dépendent de votre commune (PLU, secteur protégé, périmètre d'un monument historique) : le plus sûr est de se renseigner en mairie avant de choisir la teinte. <strong>Nous pouvons vous accompagner dans la constitution du dossier.</strong></p>",
+          "accent": true
+        },
+        {
+          "icon": "fa-solid fa-stairs",
+          "question": "Faut-il un échafaudage, et est-il compris dans le prix ?",
+          "answerHtml": "<p>Dès que la façade dépasse la hauteur d'une échelle (rez-de-chaussée haut, étage, pignon), un échafaudage est nécessaire pour travailler en sécurité. Il est <strong>chiffré dans le devis</strong> (montage, location, démontage) : comptez en général 8 à 15&nbsp;€ par m² de façade. Pour un petit chantier de plain-pied, il peut ne pas être nécessaire.</p>"
         },
         {
           "icon": "fa-solid fa-hand-holding-dollar",
-          "accent": true,
           "question": "Existe-t-il des aides pour financer un ravalement ?",
-          "answerHtml": "<p>\n  <strong>Les travaux de peinture et ravalement classiques ne sont pas éligibles</strong> aux aides énergétiques comme MaPrimeRénov' ou le crédit d'impôt. Ces aides concernent uniquement l'isolation thermique par l'extérieur (ITE) avec pose de panneaux isolants, ce que nous ne proposons pas dans nos services.\n</p>\n<p>\n  <strong>Cependant, un ravalement reste un investissement rentable :</strong>\n</p>\n<ul>\n  <li><strong>Prévention des dégradations</strong> : réparer à temps coûte 10x moins cher qu'une rénovation tardive</li>\n  <li><strong>Revalorisation immobilière</strong> : +5 à 15% sur la valeur de votre bien</li>\n  <li><strong>Économies d'énergie</strong> : un enduit et une peinture de qualité améliorent l'étanchéité thermique (10-15% d'économies)</li>\n</ul>\n<p>\n  Pour les travaux d'isolation thermique par l'extérieur (ITE) éligibles aux aides, nous pouvons vous orienter vers des partenaires spécialisés de confiance dans la région.\n</p>"
+          "answerHtml": "<p>Un ravalement classique (enduit, peinture) n'est en général <strong>pas éligible</strong> aux aides à la rénovation énergétique comme MaPrimeRénov'. Certaines communes ou intercommunalités proposent des aides ou des obligations de ravalement dans des secteurs précis (centres anciens) : renseignez-vous auprès de votre mairie.</p>\n<p>Côté fiscalité, la TVA réduite à 10&nbsp;% s'applique pour un logement de plus de 2 ans.</p>",
+          "accent": true
         },
         {
           "icon": "fa-solid fa-receipt",
           "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-          "answerHtml": "<p>\n  <strong>Transparence totale garantie.</strong> Notre devis détaillé comprend :\n</p>\n<ul>\n  <li>Le diagnostic initial et la visite technique</li>\n  <li>La protection des zones sensibles (fenêtres, sols)</li>\n  <li>Les réparations structurelles si nécessaires (fissures, éclats)</li>\n  <li>L'application de l'enduit et des couches de finition</li>\n  <li>La peinture de façade haute qualité</li>\n  <li>Le nettoyage complet du chantier</li>\n  <li>La TVA et les assurances décennales</li>\n</ul>\n<p>\n  <strong class=\"text-primary\">Promesse VPRR :</strong> Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise.\n</p>"
+          "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La visite technique et le diagnostic de la façade</li>\n  <li>La protection des fenêtres, sols et abords</li>\n  <li>Les réparations (fissures, éclats, enduit)</li>\n  <li>L'enduit et les couches de finition ou la peinture de façade</li>\n  <li>Le nettoyage complet du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
         },
         {
           "icon": "fa-solid fa-shield-halved",
-          "accent": true,
           "question": "Vos travaux de ravalement sont-ils garantis ?",
-          "answerHtml": "<p>\n  <strong>Oui.</strong> Nous intervenons avec une assurance Responsabilité Civile Professionnelle, et une assurance décennale lorsque la nature des travaux relève de la garantie décennale (ouvrages). Les finitions et corrections éventuelles sont couvertes dans le cadre de la garantie de parfait achèvement. Nos attestations d'assurance peuvent être fournies sur demande.\n</p>"
+          "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle et une garantie décennale pour les travaux qui en relèvent. Nos attestations d'assurance sont à jour et disponibles sur simple demande, avant le début du chantier. Les finitions et corrections éventuelles sont couvertes par la garantie de parfait achèvement (1 an).</p>",
+          "accent": true
         },
         {
           "icon": "fa-solid fa-trowel",
           "question": "Quels matériaux et finitions utilisez-vous (enduit, peinture) ?",
-          "answerHtml": "<p>\n  Nous adaptons les produits au support (enduit, brique, pierre, façade déjà peinte) et à l'exposition (pluie, UV). Après diagnostic, nous choisissons la préparation compatible, les réparations nécessaires (enduit), puis une finition durable (peinture microporeuse, revêtement adapté, etc.). L'objectif : protéger la façade et obtenir une finition propre qui tient dans le temps.\n</p>"
+          "answerHtml": "<p>Nous adaptons les produits au support (enduit, brique, pierre, façade déjà peinte) et à l'exposition (pluie, soleil). Après diagnostic : préparation compatible, réparations à l'enduit, puis finition durable (peinture microporeuse ou siloxane, enduit gratté ou taloché). L'objectif : protéger la façade et obtenir une finition propre qui tient dans le temps.</p>"
         }
       ]
     },

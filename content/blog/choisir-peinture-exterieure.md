@@ -112,11 +112,11 @@ Le budget d'un chantier de peinture extérieure ne se calcule pas uniquement au 
 
 Voici nos estimations indicatives (prix au m² incluant la protection, la préparation, la fourniture des produits et la main-d'œuvre qualifiée) :
 
-- **Rafraîchissement sur façade saine (Acrylique ou Hydro-pliolite)** : *Nettoyage léger + traitement fongicide + sous-couche + 2 couches de finition.* Comptez entre **25€ et 40€ / m²**.
-- **Peinture de rénovation avec réparations (Pliolite ou Siloxane standard)** : *Nettoyage approfondi + égrenage + reprise des micro-fissures (masticage) + fixateur + 2 couches.* Comptez entre **45€ et 60€ / m²**.
-- **Rénovation haut de gamme (Siloxane extrême ou système d'imperméabilité de façade de type I1 à I3)** : *Traitement lourd + pontage des fissures avec entoilage + peinture très haute performance.* Comptez entre **65€ et 85€ / m²**.
+- **Rafraîchissement sur façade saine (Acrylique ou Hydro-pliolite)** : *Nettoyage léger + traitement fongicide + sous-couche + 2 couches de finition.* Comptez entre **20€ et 30€ / m²**.
+- **Peinture de rénovation avec réparations (Pliolite ou Siloxane standard)** : *Nettoyage approfondi + égrenage + reprise des micro-fissures (masticage) + fixateur + 2 couches.* Comptez entre **30€ et 45€ / m²**.
+- **Rénovation haut de gamme (Siloxane extrême ou système d'imperméabilité de façade de type I1 à I3)** : *Traitement lourd + pontage des fissures avec entoilage + peinture très haute performance.* Comptez entre **45€ et 65€ / m²**.
 
-> **Exemple de devis typique VPRR** : Pour repeindre une maison de plain-pied standard de 100m² de surface murale à Champniers, avec une peinture hydro-pliolite nécessitant un nettoyage et quelques réparations mineures, le budget se situe généralement autour de 4 500€ à 5 500€ TTC.
+> **Exemple de devis typique VPRR** : Pour repeindre une maison de plain-pied standard de 100m² de surface murale à Champniers, avec une peinture hydro-pliolite nécessitant un nettoyage et quelques réparations mineures, le budget se situe généralement autour de 3 000€ à 4 500€ TTC.
 
 ## Urbanisme et couleurs : Ce qu'il faut savoir en Charente
 

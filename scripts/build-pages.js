@@ -57,6 +57,19 @@ const BUSINESS_TAIL = {
 
 const ldScript = (obj) => `    <script type="application/ld+json">\n${S.indent(JSON.stringify(obj, null, 2), 6)}\n    </script>`;
 
+/** Texte brut d'un fragment HTML (pour le JSON-LD) : la FAQ affichée est la seule source. */
+function plain(html) {
+  return html
+    .replace(/<\/(li|p)>/g, ' ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const faqItems = (page) => page.sections.filter((x) => x.type === 'faq').flatMap((x) => x.items);
+
 function jsonLd(page) {
   const url = `https://vprr.fr/${page.file}`;
   const l = page.ld;
@@ -74,7 +87,7 @@ function jsonLd(page) {
     {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: l.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+      mainEntity: faqItems(page).map((i) => ({ '@type': 'Question', name: plain(i.question), acceptedAnswer: { '@type': 'Answer', text: plain(i.answerHtml) } })),
     },
   ];
   return blocks.map(ldScript).join('\n\n');

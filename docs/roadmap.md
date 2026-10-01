@@ -46,8 +46,8 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 - [x] *(fait, à déployer ; reste : liens en ligne dans les paragraphes, carte Leaflet)* **Accessibilité résiduelle** (audit du 29/09) : ~9 cibles tactiles < 40 px et ~8 textes < 13 px sur mobile ; images sans
   `width`/`height` (≈ 4 par page de service, 9 sur l'accueil) ; vérifier le contraste des cartes d'avis.
 
-- [ ] **À confirmer avec le client — tarifs** : les fourchettes de prix diffèrent entre pages de service et articles de blog (ex. ravalement : FAQ « 40–80 €/m² » vs tableau jusqu'à 120). Choisir une référence unique puis aligner.
-- [ ] **FAQ en double** : plusieurs questions sont posées sur l'accueil, la page FAQ et les pages de service avec des réponses différentes ; choisir une source de vérité par question.
+- [ ] **A9 — Faire valider les tarifs par le client** : fourchettes au m² du tableau de [`seo/decisions.md`](./seo/decisions.md) (estimations de marché charentais, pas des prix du client). Ajuster d'un seul endroit puis propager.
+- [ ] **A10 — Statut RGE / assureur** : la FAQ isolation renvoie vers France Rénov' sans promettre d'aides ; si l'entreprise est RGE, le dire (pages isolation + FAQ).
 - [ ] **CSS orphelin du blog** : `.cta-icon`, `.cta-actions`, `.cta-card`, `.blog-cta` (`blog-article.css`, `blog-list.css`) ne servent plus.
 
 ## C. Chantiers moyens (une session chacun)

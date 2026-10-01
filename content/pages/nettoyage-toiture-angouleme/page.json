@@ -184,37 +184,7 @@
         }
       ]
     },
-    "breadcrumbName": "Nettoyage de Toiture Angoulême",
-    "faq": [
-      {
-        "q": "Quel est le prix moyen d'un nettoyage de toiture au m² à Angoulême ?",
-        "a": "Le prix d'un nettoyage de toiture en Charente varie généralement entre 12€ et 25€ par m², selon l'état de votre toiture et les traitements nécessaires. Un simple démoussage coûte moins cher qu'un nettoyage complet avec traitement hydrofuge. Exemple concret : Pour une toiture de 100m² en bon état général nécessitant un démoussage standard, comptez environ 1 000€ à 1 500€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place."
-      },
-      {
-        "q": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-        "a": "Oui, absolument. Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre toiture, évaluer son état précis et identifier les traitements nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché."
-      },
-      {
-        "q": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-        "a": "Oui. Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit."
-      },
-      {
-        "q": "Combien de temps dure l'intervention de nettoyage de toiture ?",
-        "a": "La durée d'intervention dépend de la surface et de l'état de votre toiture : Petite toiture (moins de 80m²) : 1 jour. Toiture moyenne (80-150m²) : 1 à 2 jours. Grande toiture ou très encrassée : 2 à 3 jours. Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal. Nous nettoyons le chantier chaque soir pour minimiser les nuisances."
-      },
-      {
-        "q": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-        "a": "Transparence totale garantie. Notre devis détaillé comprend : La protection des zones sensibles (gouttières, façade), le nettoyage complet (démoussage et élimination des lichens), les traitements protecteurs si nécessaires (hydrofuge), le nettoyage du chantier et des gouttières, la TVA et les assurances. Promesse VPRR : Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise. Si nous découvrons un problème imprévu lors de l'intervention, nous vous en informons avant tout travail supplémentaire."
-      },
-      {
-        "q": "Le nettoyage de toiture est-il garanti ?",
-        "a": "Nous intervenons avec une assurance Responsabilité Civile Professionnelle. La tenue dans le temps dépend du support, de l'exposition et des traitements appliqués (traitement, hydrofuge) : nous vous conseillons l'option la plus pertinente lors de la visite et nous la détaillons dans le devis."
-      },
-      {
-        "q": "Sur quels types de toitures intervenez-vous ?",
-        "a": "Nous intervenons sur les toitures les plus courantes (tuiles, selon l'état et la configuration). Lors de la visite, nous vérifions la fragilité des éléments, l'accès, l'état des gouttières et des points sensibles afin d'adapter la méthode et de travailler en sécurité."
-      }
-    ]
+    "breadcrumbName": "Nettoyage de Toiture Angoulême"
   },
   "beforeAfterScript": true,
   "contact": {
@@ -398,40 +368,39 @@
       "items": [
         {
           "icon": "fa-solid fa-tag",
-          "question": "Quel est le prix moyen d'un nettoyage de toiture au m² à Angoulême ?",
-          "answerHtml": "<p>\n  Le prix d'un nettoyage de toiture en Charente varie généralement entre <strong>12€ et 25€ par m²</strong>, selon l'état de votre toiture et les traitements nécessaires. Un simple démoussage coûte moins cher qu'un nettoyage complet avec traitement hydrofuge. \n</p>\n<p>\n  <strong>Exemple concret :</strong> Pour une toiture de 100m² en bon état général nécessitant un démoussage standard, comptez environ 1 000€ à 1 500€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-file-signature",
-          "question": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-          "answerHtml": "<p>\n  <strong>Oui, absolument.</strong> Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). \n</p>\n<p>\n  Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre toiture, évaluer son état précis et identifier les traitements nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-map-location-dot",
-          "accent": true,
-          "question": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-          "answerHtml": "<p>\n  <strong>Oui.</strong> Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment <strong>Cognac</strong>, <strong>Jarnac</strong>, <strong>Ruffec</strong>, <strong>Barbezieux-Saint-Hilaire</strong> et <strong>La Rochefoucauld-en-Angoumois</strong>.\n</p>\n<p>\n  Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit.\n</p>"
+          "question": "Quel est le prix d'un nettoyage de toiture au m² en Charente ?",
+          "answerHtml": "<p>Un nettoyage de toiture coûte en général entre <strong>8&nbsp;€ et 25&nbsp;€ par m²</strong> :</p>\n<ul>\n  <li><strong>Démoussage</strong> : 8 à 12&nbsp;€/m²</li>\n  <li><strong>Démoussage + traitement anti-mousse</strong> : 12 à 18&nbsp;€/m²</li>\n  <li><strong>Démoussage + traitement + hydrofuge</strong> : 18 à 25&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour une toiture de 100&nbsp;m² en tuiles, démoussage + traitement : environ 1&nbsp;200 à 1&nbsp;800&nbsp;€ TTC. La pente, la hauteur (échafaudage) et l'épaisseur de mousse font varier le prix : devis gratuit après visite.</p>"
         },
         {
           "icon": "fa-solid fa-clock",
           "question": "Combien de temps dure l'intervention de nettoyage de toiture ?",
-          "answerHtml": "<p>\n  La durée d'intervention dépend de la surface et de l'état de votre toiture :\n</p>\n<ul>\n  <li><strong>Petite toiture (moins de 80m²) :</strong> 1 jour</li>\n  <li><strong>Toiture moyenne (80-150m²) :</strong> 1 à 2 jours</li>\n  <li><strong>Grande toiture ou très encrassée :</strong> 2 à 3 jours</li>\n</ul>\n<p>\n  Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal. Nous nettoyons le chantier chaque soir pour minimiser les nuisances.\n</p>"
+          "answerHtml": "<p>La durée dépend de la surface et de l'état de la toiture :</p>\n<ul>\n  <li>Petite toiture (moins de 80&nbsp;m²) : 1 jour</li>\n  <li>Toiture moyenne (80 à 150&nbsp;m²) : 1 à 2 jours</li>\n  <li>Grande toiture ou très envahie : 2 à 3 jours</li>\n</ul>\n<p>Le traitement agit ensuite progressivement : les mousses disparaissent en quelques semaines sous l'effet de la pluie.</p>"
+        },
+        {
+          "icon": "fa-solid fa-calendar-days",
+          "question": "Tous les combien faut-il démousser sa toiture ?",
+          "answerHtml": "<p>En général tous les 5 à 10 ans, plus souvent si la toiture est ombragée, proche d'arbres ou exposée au nord (zone humide). Un traitement préventif ou un hydrofuge allonge cet intervalle. Une toiture envahie de mousse retient l'humidité et fragilise les tuiles : mieux vaut intervenir avant les infiltrations.</p>"
+        },
+        {
+          "icon": "fa-solid fa-droplet",
+          "question": "Démoussage seul ou avec hydrofuge : que choisir ?",
+          "answerHtml": "<p>Le démoussage élimine mousses et lichens ; l'<strong>hydrofuge</strong> limite l'absorption d'eau par les tuiles et retarde le retour des mousses. Sur une toiture en bon état et bien exposée, un démoussage avec anti-mousse suffit souvent. Sur des tuiles poreuses ou très exposées, l'hydrofuge est un bon complément. Nous vous conseillons la bonne option lors de la visite.</p>"
+        },
+        {
+          "icon": "fa-solid fa-house-chimney",
+          "question": "Sur quels types de toitures intervenez-vous ?",
+          "answerHtml": "<p>Nous intervenons sur les toitures en tuiles (canal, mécaniques, plates) et en ardoise selon leur état. Lors de la visite, nous vérifions la fragilité des éléments, l'accès, l'état des gouttières et des points sensibles afin d'adapter la méthode et de travailler en sécurité.</p>"
         },
         {
           "icon": "fa-solid fa-receipt",
           "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-          "answerHtml": "<p>\n  <strong>Transparence totale garantie.</strong> Notre devis détaillé comprend :\n</p>\n<ul>\n  <li>La protection des zones sensibles (gouttières, façade)</li>\n  <li>Le nettoyage complet (démoussage et élimination des lichens)</li>\n  <li>Les traitements protecteurs si nécessaires (hydrofuge)</li>\n  <li>Le nettoyage du chantier et des gouttières</li>\n  <li>La TVA et les assurances</li>\n</ul>\n<p>\n  <strong class=\"text-primary\">Promesse VPRR :</strong> Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise. Si nous découvrons un problème imprévu lors de l'intervention, nous vous en informons avant tout travail supplémentaire.\n</p>"
+          "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La protection des zones sensibles (gouttières, façade, abords)</li>\n  <li>Le démoussage complet (mousses et lichens)</li>\n  <li>Les traitements protecteurs choisis avec vous (anti-mousse, hydrofuge)</li>\n  <li>Le nettoyage des gouttières et du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
         },
         {
           "icon": "fa-solid fa-shield-halved",
-          "accent": true,
           "question": "Le nettoyage de toiture est-il garanti ?",
-          "answerHtml": "<p>\n  Nous intervenons avec une assurance Responsabilité Civile Professionnelle. La tenue dans le temps dépend du support, de l'exposition et des traitements appliqués (traitement, hydrofuge) : nous vous conseillons l'option la plus pertinente lors de la visite et nous la détaillons dans le devis.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-house",
-          "question": "Sur quels types de toitures intervenez-vous ?",
-          "answerHtml": "<p>\n  Nous intervenons sur les toitures les plus courantes (tuiles, selon l'état et la configuration). Lors de la visite, nous vérifions la fragilité des éléments, l'accès, l'état des gouttières et des points sensibles afin d'adapter la méthode et de travailler en sécurité.\n</p>"
+          "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle. La tenue dans le temps dépend du support, de l'exposition et des traitements appliqués : nous conseillons l'option la plus pertinente lors de la visite et la détaillons dans le devis.</p>",
+          "accent": true
         }
       ]
     },

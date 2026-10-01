@@ -148,11 +148,11 @@ La touche finale qui donne vie, couleur et chaleur à votre intérieur :
 
 Le prix d'une rénovation se calcule généralement au mètre carré (m²) au sol, et dépend intimement de l'état initial du bien, de la complexité des démolitions et de la gamme de matériaux choisis :
 
-- **Rafraîchissement simple** (préparation légère des murs, peinture complète murs/plafonds, pose d'un sol souple ou stratifié standard) : **200€ à 400€ / m²**
-- **Rénovation partielle ou intermédiaire** (démolition légère, création de quelques cloisons Placo, isolation partielle, faux-plafonds, ratissage, peinture de qualité supérieure et sols type parquet contrecollé ou LVT) : **400€ à 800€ / m²**
-- **Rénovation lourde** (restructuration totale des espaces, création trémies, isolation complète, doublages, ragréage lourd, finitions haut de gamme) : **800€ à 1 500€+ / m²**
+- **Rafraîchissement simple** (préparation légère des murs, peinture complète murs/plafonds, pose d'un sol souple ou stratifié standard) : **150€ à 300€ / m²**
+- **Rénovation partielle ou intermédiaire** (démolition légère, création de quelques cloisons Placo, isolation partielle, faux-plafonds, ratissage, peinture de qualité supérieure et sols type parquet contrecollé ou LVT) : **300€ à 600€ / m²**
+- **Rénovation lourde** (restructuration totale des espaces, création trémies, isolation complète, doublages, ragréage lourd, finitions haut de gamme) : **600€ à 1 000€+ / m²**
 
-**Exemple concret charentais** : Pour redonner un coup de jeune et redistribuer une grande pièce de vie de 40m² (démolition d'une cloison séparative, création d'un faux-plafond avec spots, isolation d'un mur pignon, ratissage, peinture complète et pose d'un beau parquet stratifié haute résistance), comptez entre 14 000€ et 22 000€ TTC selon les spécificités.
+**Exemple concret charentais** : Pour redonner un coup de jeune et redistribuer une grande pièce de vie de 40m² (démolition d'une cloison séparative, création d'un faux-plafond avec spots, isolation d'un mur pignon, ratissage, peinture complète et pose d'un beau parquet stratifié haute résistance), comptez entre 10 000€ et 16 000€ TTC selon les spécificités.
 
 ### Ce qui fait la différence dans notre devis
 

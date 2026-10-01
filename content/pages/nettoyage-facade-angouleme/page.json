@@ -194,37 +194,7 @@
         }
       ]
     },
-    "breadcrumbName": "Nettoyage de Façade Angoulême",
-    "faq": [
-      {
-        "q": "Quel est le prix moyen d'un nettoyage de façade au m² à Angoulême ?",
-        "a": "Le prix d'un nettoyage de façade en Charente varie généralement entre 15€ et 35€ par m², selon l'état de vos murs et les traitements nécessaires. Un simple démoussage coûte moins cher qu'un hydro-gommage complet avec traitement protecteur. Exemple concret : Pour une façade de 80m² en bon état général nécessitant un nettoyage standard, comptez environ 1 200€ à 1 800€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place."
-      },
-      {
-        "q": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-        "a": "Oui, absolument. Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre façade, évaluer son état précis et identifier les traitements nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché."
-      },
-      {
-        "q": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-        "a": "Oui. Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit."
-      },
-      {
-        "q": "Combien de temps dure l'intervention de nettoyage ?",
-        "a": "La durée d'intervention dépend de la surface et de l'état de votre façade : Petite façade (moins de 50m²) : 1 jour. Façade moyenne (50-100m²) : 1 à 2 jours. Grande façade ou très encrassée : 2 à 3 jours. Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal. Nous nettoyons le chantier chaque soir pour minimiser les nuisances."
-      },
-      {
-        "q": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-        "a": "Transparence totale garantie. Notre devis détaillé comprend : La préparation et la protection des zones sensibles, le nettoyage complet (hydro-gommage ou démoussage), les traitements protecteurs si nécessaires, le nettoyage du chantier, la TVA et les assurances. Promesse VPRR : Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise. Si nous découvrons un problème imprévu lors de l'intervention, nous vous en informons avant tout travail supplémentaire."
-      },
-      {
-        "q": "Le nettoyage de façade est-il garanti ?",
-        "a": "Nous intervenons avec une assurance Responsabilité Civile Professionnelle. La tenue dans le temps dépend du support, de l'exposition et des traitements appliqués : nous détaillons les options (traitement, protection) dans le devis. Nous travaillons proprement et revenons si un point doit être ajusté après l'intervention."
-      },
-      {
-        "q": "Quels supports pouvez-vous nettoyer (pierre, brique, enduit) ?",
-        "a": "Nous intervenons sur la majorité des supports courants : enduit, façade peinte, brique et pierre, avec une méthode adaptée. L'hydro-gommage est particulièrement intéressant pour les façades sensibles car il est plus doux qu'un nettoyage haute pression. Lors de la visite, nous validons la compatibilité et le niveau de pression/abrasif pour préserver le support."
-      }
-    ]
+    "breadcrumbName": "Nettoyage de Façade Angoulême"
   },
   "beforeAfterScript": true,
   "contact": {
@@ -408,40 +378,39 @@
       "items": [
         {
           "icon": "fa-solid fa-tag",
-          "question": "Quel est le prix moyen d'un nettoyage de façade au m² à Angoulême ?",
-          "answerHtml": "<p>\n  Le prix d'un nettoyage de façade en Charente varie généralement entre <strong>15€ et 35€ par m²</strong>, selon l'état de vos murs et les traitements nécessaires. Un simple démoussage coûte moins cher qu'un hydro-gommage complet avec traitement protecteur. \n</p>\n<p>\n  <strong>Exemple concret :</strong> Pour une façade de 80m² en bon état général nécessitant un nettoyage standard, comptez environ 1 200€ à 1 800€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-file-signature",
-          "question": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-          "answerHtml": "<p>\n  <strong>Oui, absolument.</strong> Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). \n</p>\n<p>\n  Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre façade, évaluer son état précis et identifier les traitements nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-map-location-dot",
-          "accent": true,
-          "question": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-          "answerHtml": "<p>\n  <strong>Oui.</strong> Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment <strong>Cognac</strong>, <strong>Jarnac</strong>, <strong>Ruffec</strong>, <strong>Barbezieux-Saint-Hilaire</strong> et <strong>La Rochefoucauld-en-Angoumois</strong>.\n</p>\n<p>\n  Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit.\n</p>"
+          "question": "Quel est le prix d'un nettoyage de façade au m² en Charente ?",
+          "answerHtml": "<p>Un nettoyage de façade coûte en général entre <strong>8&nbsp;€ et 30&nbsp;€ par m²</strong> :</p>\n<ul>\n  <li><strong>Démoussage + traitement</strong> : 8 à 15&nbsp;€/m²</li>\n  <li><strong>Hydro-gommage</strong> (façade standard) : 15 à 30&nbsp;€/m²</li>\n  <li><strong>Protection hydrofuge</strong> en complément : +5 à 8&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 80&nbsp;m² de façade en pierre ou enduit à hydro-gommer, comptez environ 1&nbsp;200 à 2&nbsp;000&nbsp;€ TTC. Une façade très encrassée ou difficile d'accès (échafaudage) augmente le prix : le devis est gratuit après visite.</p>"
         },
         {
           "icon": "fa-solid fa-clock",
           "question": "Combien de temps dure l'intervention de nettoyage ?",
-          "answerHtml": "<p>\n  La durée d'intervention dépend de la surface et de l'état de votre façade :\n</p>\n<ul>\n  <li><strong>Petite façade (moins de 50m²) :</strong> 1 jour</li>\n  <li><strong>Façade moyenne (50-100m²) :</strong> 1 à 2 jours</li>\n  <li><strong>Grande façade ou très encrassée :</strong> 2 à 3 jours</li>\n</ul>\n<p>\n  Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal. Nous nettoyons le chantier chaque soir pour minimiser les nuisances.\n</p>"
+          "answerHtml": "<p>La durée dépend de la surface et de l'état de la façade :</p>\n<ul>\n  <li>Petite façade (moins de 50&nbsp;m²) : 1 jour</li>\n  <li>Façade moyenne (50 à 100&nbsp;m²) : 1 à 2 jours</li>\n  <li>Grande façade ou très encrassée : 2 à 3 jours</li>\n</ul>\n<p>Nous planifions selon la météo et nettoyons le chantier chaque soir.</p>"
         },
         {
-          "icon": "fa-solid fa-receipt",
-          "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-          "answerHtml": "<p>\n  <strong>Transparence totale garantie.</strong> Notre devis détaillé comprend :\n</p>\n<ul>\n  <li>La préparation et la protection des zones sensibles</li>\n  <li>Le nettoyage complet (hydro-gommage ou démoussage)</li>\n  <li>Les traitements protecteurs si nécessaires</li>\n  <li>Le nettoyage du chantier</li>\n  <li>La TVA et les assurances</li>\n</ul>\n<p>\n  <strong class=\"text-primary\">Promesse VPRR :</strong> Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise. Si nous découvrons un problème imprévu lors de l'intervention, nous vous en informons avant tout travail supplémentaire.\n</p>"
+          "icon": "fa-solid fa-droplet",
+          "question": "Hydro-gommage ou nettoyage haute pression : quelle différence ?",
+          "answerHtml": "<p>Le nettoyage haute pression projette de l'eau sous forte pression : efficace sur un support solide, mais il peut creuser les joints, écailler l'enduit ou abîmer la pierre tendre. <strong>L'hydro-gommage</strong> projette un mélange d'eau et de poudre minérale à basse pression : il décape la pollution, les mousses, les graffitis ou une ancienne peinture sans altérer le support. Nous choisissons la méthode lors de la visite, après un essai si besoin.</p>"
         },
         {
-          "icon": "fa-solid fa-shield-halved",
-          "accent": true,
-          "question": "Le nettoyage de façade est-il garanti ?",
-          "answerHtml": "<p>\n  Nous intervenons avec une assurance Responsabilité Civile Professionnelle. La tenue dans le temps dépend du support, de l'exposition et des traitements appliqués : nous détaillons les options (traitement, protection) dans le devis. Nous travaillons proprement et revenons si un point doit être ajusté après l'intervention.\n</p>"
+          "icon": "fa-solid fa-spray-can",
+          "question": "Faut-il traiter la façade après le nettoyage ?",
+          "answerHtml": "<p>C'est conseillé : un traitement anti-mousse ou une protection hydrofuge limite le retour des mousses et de l'humidité, et prolonge la propreté de la façade de plusieurs années (en général 5 à 10 ans selon l'exposition). Il est proposé en option et détaillé dans le devis, pour que vous décidiez en connaissance de cause.</p>"
         },
         {
           "icon": "fa-solid fa-layer-group",
           "question": "Quels supports pouvez-vous nettoyer (pierre, brique, enduit) ?",
-          "answerHtml": "<p>\n  Nous intervenons sur la majorité des supports courants : enduit, façade peinte, brique et pierre, avec une méthode adaptée. L'hydro-gommage est particulièrement intéressant pour les façades sensibles car il est plus doux qu'un nettoyage haute pression. Lors de la visite, nous validons la compatibilité et le réglage pour préserver le support.\n</p>"
+          "answerHtml": "<p>Nous intervenons sur la majorité des supports courants : enduit, façade peinte, brique, pierre (dont la pierre calcaire charentaise). Pour les supports fragiles ou anciens, nous validons le réglage lors de la visite pour préserver la matière.</p>"
+        },
+        {
+          "icon": "fa-solid fa-receipt",
+          "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
+          "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La protection des zones sensibles (menuiseries, végétation, sols)</li>\n  <li>Le nettoyage complet (hydro-gommage ou démoussage)</li>\n  <li>Les traitements protecteurs choisis avec vous</li>\n  <li>Le nettoyage du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "question": "Le nettoyage de façade est-il garanti ?",
+          "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle, et nous revenons ajuster un point si nécessaire après l'intervention. La tenue dans le temps dépend du support, de l'exposition et du traitement appliqué : nous détaillons les options dans le devis.</p>",
+          "accent": true
         }
       ]
     },

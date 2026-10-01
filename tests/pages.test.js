@@ -32,6 +32,25 @@ test('chaque page de service a des données complètes et des sections valides',
     for (const s of page.sections.filter((x) => x.type === 'raw')) {
       assert.ok(fs.existsSync(path.join(dir, s.file)), `${slug} : fragment ${s.file} introuvable`);
     }
-    assert.ok(page.ld.faq.length > 0, `${slug} : FAQ JSON-LD vide`);
+    assert.ok(page.sections.some((x) => x.type === 'faq' && x.items.length > 0), `${slug} : FAQ vide`);
+    assert.ok(!page.ld.faq, `${slug} : ld.faq supprimé (le JSON-LD est dérivé de la section faq)`);
+  }
+});
+
+// La FAQ visible et son JSON-LD (FAQPage) doivent dire la même chose, page par page (SEO : pas de rich result trompeur).
+test('FAQ : le JSON-LD FAQPage reprend exactement les questions affichées', () => {
+  const pages = ['index.html', 'faq-renovation-angouleme.html', 'zone-desservie-charente.html', ...fs.readdirSync(path.join(__dirname, '..')).filter((f) => /^(ravalement|nettoyage|peinture|isolation)-.*\.html$/.test(f))];
+  const norm = (t) => t.replace(/<[^>]+>/g, '').replace(/&nbsp;| /g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  for (const f of pages) {
+    const html = fs.readFileSync(path.join(__dirname, '..', f), 'utf8');
+    const ld = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1])).find((j) => j['@type'] === 'FAQPage');
+    assert.ok(ld, `${f} : FAQPage manquant`);
+    const shown = [...html.matchAll(/<(?:summary|span)[^>]*>(?:\s*<span class="faq-icon-badge[\s\S]*?<\/span>\s*<span>)?([\s\S]*?)<\/(?:summary|span)>/g)]
+      .filter((m) => /faq-question/.test(m[0]) || m[0].startsWith('<summary'))
+      .map((m) => norm(m[1]));
+    assert.ok(shown.length >= 4, `${f} : questions affichées introuvables`);
+    const asked = ld.mainEntity.map((q) => norm(q.name));
+    for (const q of asked) assert.ok(shown.includes(q), `${f} : question du JSON-LD absente de la page : « ${q} »`);
+    assert.equal(new Set(asked).size, asked.length, `${f} : question en double dans le JSON-LD`);
   }
 });

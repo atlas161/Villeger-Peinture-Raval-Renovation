@@ -149,9 +149,9 @@ Les périodes les plus favorables :
 
 Un prix sérieux dépend toujours du diagnostic, mais voici des repères (TTC, indicatifs) :
 
-- **Démoussage + traitement anti-mousse** : 8 à 18 €/m²
-- **Nettoyage doux + anti-mousse + rinçage contrôlé** : 12 à 25 €/m²
-- **Hydrofuge en complément** : +6 à +12 €/m²
+- **Démoussage** : 8 à 12 €/m²
+- **Démoussage + traitement anti-mousse** : 12 à 18 €/m²
+- **Démoussage + traitement + hydrofuge** : 18 à 25 €/m²
 
 Les facteurs qui font varier le prix :
 
