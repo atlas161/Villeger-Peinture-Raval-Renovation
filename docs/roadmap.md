@@ -17,7 +17,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 | A4 | **Process d'avis Google après chantier** | Choisir le canal (SMS, QR code, carte, mail) puis préparer le support. `seo/blockers.md` §3. |
 | A5 | ~~Vidéo du hero sur téléphone~~ | **Fait le 2026-09-30** : la vidéo se lance sur tous les écrans (décision du client). À surveiller : Lighthouse mobile (perf) après déploiement. |
 | A6 | **Contenus/photos** | Nouvelles photos de chantiers (avant/après), Instagram : le fil Elfsight montre des photos hors sujet (à trier côté compte Instagram). |
-| A7 | **Avis Google : fournir les 14 avis** | Le client enverra le texte d'origine (prénom, note, date, texte) ; à intégrer dans `index.html` (carrousel `.reviews-track`). Ma lecture de Google Maps n'en a ramené que 3, traduits et tronqués : ne rien inventer. |
+| A7 | ~~Avis Google : fournir les 14 avis~~ | **Fait le 2026-10-01** : carrousel de `index.html` remplacé par 7 vrais avis lus sur Google Maps (4-5★ avec texte ; les 1-2★ et les avis sans texte ne sont pas affichés). Les anciens Gregory Themot, Sylvie B. et Marc Deschamps n'existent pas sur la fiche Google. Note et nombre (4,1 · 14) inchangés. |
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 

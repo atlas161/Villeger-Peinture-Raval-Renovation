@@ -17,6 +17,10 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (nuit) — Avis Google : carrousel remplacé par les vrais avis
+
+- `index.html` : 7 avis réels lus sur Google Maps (4-5★ avec texte), notes fidèles (Florence Pluvieux 4★). Retrait de 3 avis absents de la fiche (Gregory Themot, Sylvie B., Marc Deschamps). Note 4,1 · 14 avis inchangée. Vérifié à 375 / 768 / 1280 px : pas de débordement, flèches et « Lire la suite » OK.
+
 ## 2026-10-01 (soir) — Logo : retour à l'ancien logo, B2 retenue et documentée
 
 Le client a comparé 4 variantes (A à D) puis la variante B avec deux portes (B1 agrandie, B2 allongée) : **B2 est choisie**,
