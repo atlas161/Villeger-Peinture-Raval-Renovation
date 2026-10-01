@@ -435,8 +435,7 @@
 
 /* Accessibilité mobile : cibles tactiles ≥ 40 px et textes ≥ 13 px (audit du 2026-09-29) */
 @media (max-width: 767px) {
-  .footer-bottom a,
-  .footer-contact a,
+  .ft-legal-links a,
   .contact-info-text a,
   .gallery-card-link {
     display: inline-flex;

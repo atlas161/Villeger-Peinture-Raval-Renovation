@@ -205,6 +205,19 @@ const initDesktopSubmenus = () => {
     li.addEventListener('focusin', open);
     li.addEventListener('focusout', close);
 
+    // « Services » n'est pas une page : un clic (ou Entrée) ouvre seulement le sous-menu, sans naviguer.
+    // Sur mobile, l'ouverture/fermeture est gérée par 50-nav-menu-mobile.js (qui passe après celui-ci).
+    const trigger = li.querySelector('a.nav-link');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!isDesktopNav()) return;
+        clearTimeout(closeTimer);
+        closeAll();
+        li.classList.add('submenu-open');
+      });
+    }
+
     const submenu = li.querySelector('.submenu');
     if (submenu) {
       submenu.addEventListener('click', () => {

@@ -17,6 +17,11 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-02 (suite 2) — Footer refait (clair) et menu vers les pages dédiées
+
+- **Footer clair et compact** (`includes/footer.html`, `src/css/styles/13-footer.css`, classes `ft-*`) : 3 colonnes (marque + Instagram + badge décennale / services / contact avec horaires et bouton « Devis gratuit », masqué sur mobile car la barre collante existe), une ligne de navigation (Réalisations · À propos · Blog · Zone d'intervention · FAQ · Contact), une barre de mentions sur une ligne. Plus d'icônes devant les liens, doublons FAQ/Zone fusionnés, logo SVG réel, bouton rond « retour en haut ». `12-footer-base.css` et les règles de footer périmées de `blog-article.css` / `responsive.css` supprimés.
+- **Menu principal → pages dédiées** (`scripts/sync-header.js`, `scripts/template-article.html`, `blog/index.html`) : Réalisations (ex-« Galerie »), Blog, Zone d'intervention, FAQ ouvrent leur page et non plus une section de l'accueil. Le lien de la page courante est marqué actif côté serveur. « Services » n'est plus un lien : il ouvre seulement le sous-menu des 5 pages de service (bureau et mobile, `40-nav-sous-menus-bureau.js`). Liens du corps corrigés : bouton « Voir nos réalisations » de l'accueil → `realisations.html`, CTA du header de `blog/index.html` → `contact.html`, JSON-LD de navigation de l'accueil → vraies pages.
+
 ## 2026-10-02 (suite) — Carte de zone : Google Maps
 
 - **Carte Google Maps classique** sur l'accueil et la page zone (centrée sur la Charente), chargée d'emblée (sans clic), mêmes paramètres sur les deux pages. CSP `frame-src` et mentions légales mises à jour.

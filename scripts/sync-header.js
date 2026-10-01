@@ -27,7 +27,7 @@ const PAGES = [
   { file: 'faq-renovation-angouleme.html', currentSection: 'faq' },
   { file: 'contact.html', currentSection: 'contact' },
   { file: 'a-propos.html' },
-  { file: 'realisations.html' },
+  { file: 'realisations.html', currentSection: 'realisations' },
   { file: 'mentions-legales.html' },
   { file: 'merci.html' },
 ];
@@ -40,22 +40,22 @@ const SERVICE_LINKS = [
   { href: 'isolation-interieure-charente.html', label: 'Isolation intérieure', meta: 'Charente' },
 ];
 
-// { key, label, id } — l'ordre des sections de la home, dans l'ordre du menu.
+// Les entrées du menu pointent vers les pages dédiées, pas vers des sections de l'accueil.
+// « Services » n'a pas de page : il ouvre seulement le sous-menu des 5 pages de service (voir 40-nav-sous-menus-bureau.js).
 const SECTIONS = [
   { key: 'home', label: 'Accueil' },
   { key: 'services', label: 'Services' },
-  { key: 'galerie', label: 'Galerie' },
-  { key: 'blog', label: 'Blog' },
-  { key: 'zone', label: "Zone d'intervention" },
-  { key: 'faq', label: 'FAQ' },
-  { key: 'contact', label: 'Contact' },
+  { key: 'realisations', label: 'Réalisations', page: 'realisations.html' },
+  { key: 'blog', label: 'Blog', page: 'blog/' },
+  { key: 'zone', label: "Zone d'intervention", page: 'zone-desservie-charente.html' },
+  { key: 'faq', label: 'FAQ', page: 'faq-renovation-angouleme.html' },
+  { key: 'contact', label: 'Contact', page: 'contact.html' },
 ];
 
-function sectionHref(section, { isHome, currentSection }) {
-  if (section.key === 'contact') return 'contact.html';
-  if (isHome) return `#${section.key}`;
-  if (currentSection === section.key) return `#${section.key}`;
-  return `index.html#${section.key}`;
+function sectionHref(section, { isHome }) {
+  if (section.page) return section.page;
+  if (section.key === 'home') return isHome ? '#home' : 'index.html';
+  return isHome ? `#${section.key}` : `index.html#${section.key}`;
 }
 
 function generateHeader({ isHome = false, currentSection = null, contactHref = 'contact.html' }) {
@@ -63,11 +63,11 @@ function generateHeader({ isHome = false, currentSection = null, contactHref = '
 
   const navItems = SECTIONS.filter((s) => s.key !== 'services').map((section) => {
     const href = sectionHref(section, { isHome, currentSection });
-    const current = !isHome && currentSection === section.key ? ' aria-current="page"' : '';
-    return `            <li><a class="nav-link" href="${href}"${current}>${section.label}</a></li>`;
+    const current = currentSection === section.key ? ' aria-current="page"' : '';
+    const active = current ? ' active' : '';
+    return `            <li><a class="nav-link${active}" href="${href}"${current}>${section.label}</a></li>`;
   });
 
-  const servicesHref = sectionHref({ key: 'services' }, { isHome, currentSection });
   const submenu = SERVICE_LINKS.map(
     (s) => `                <li><a href="${s.href}">${s.label} <span class="submenu-meta">${s.meta}</span></a></li>`
   ).join('\n');
@@ -91,7 +91,7 @@ function generateHeader({ isHome = false, currentSection = null, contactHref = '
           <ul class="menu">
             <li><a class="nav-link" href="${sectionHref(SECTIONS[0], { isHome, currentSection })}">Accueil</a></li>
             <li class="has-submenu">
-              <a class="nav-link" href="${servicesHref}">Services</a>
+              <a class="nav-link" href="#" role="button" aria-haspopup="true">Services</a>
               <ul class="submenu" aria-label="Pages services">
 ${submenu}
               </ul>

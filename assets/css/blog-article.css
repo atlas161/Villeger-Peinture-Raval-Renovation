@@ -679,39 +679,6 @@
   }
 }
 
-/* ===================================================================
-   8. FOOTER
-   =================================================================== */
-
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--space-xl);
-  margin-bottom: var(--space-2xl);
-}
-
-.footer-brand {
-  max-width: 300px;
-}
-
-.footer-brand img {
-  height: 32px;
-  margin-bottom: var(--space-md);
-}
-
-.footer-brand p {
-  font-size: var(--text-md);
-  color: var(--color-text-light);
-}
-
-.footer-bottom {
-  padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-border);
-  text-align: center;
-}
-
 @media (max-width: 1023px) {
   .article-content-wrapper {
     grid-template-columns: 240px minmax(0, 1fr);
@@ -841,11 +808,6 @@
   }
 }
 
-.footer-bottom p {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-bottom: 0;
-}
 
 /* ===================================================================
    9. RESPONSIVE
