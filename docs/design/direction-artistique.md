@@ -18,22 +18,38 @@ S'appuie sur [`../design-audit-2026-09-21.md`](../design-audit-2026-09-21.md) (8
 | 3 | **Orange hors palette** : barre « Réfection enduit » (`#D9742B`) et ombre des cartes « problème ». | Remplacés par `--brand-accent-text` (or foncé) et un brun transparent. |
 | 4 | **Cartes « problème » qui glissent de 8 px au survol**, contraire à la règle « hover = assombrissement seul ». | Suppression du déplacement. |
 
-## B. Constats restants — petites corrections possibles (prochaine passe)
+## B. Défauts restants — **corrigés le 2026-10-01 (passe 2)**
 
-- Pages service : titres de cartes de réassurance sur 1 ou 2 lignes → les textes ne s'alignent pas d'une carte à l'autre.
-- Page zone : les deux colonnes de communes ont des lignes de hauteur inégale quand un nom passe sur 2 lignes (« La Rochefoucauld-en-Angoumois »).
-- Mobile : la barre « Devis gratuit » et la bannière cookies se touchent au premier affichage.
-- `#f8f5f2` (3 occurrences dans `service-page.css`) et ~50 tailles de police : à tokeniser (voir roadmap C2).
+| Constat | Correctif |
+|---|---|
+| Titres de réassurance sur 1 ou 2 lignes → textes désalignés | `.reassurance-text h3` réserve 2 lignes en grille 3 colonnes (≥ 1025 px). Mesuré : 2 rangées désalignées avant, **0** après. |
+| Page zone : lignes de communes de hauteur inégale | Listes en colonnes CSS (`column-count`) au lieu d'une grille : un nom sur 2 lignes n'agrandit plus la ligne voisine. |
+| Mobile : barre « Devis gratuit » et bannière cookies qui se touchent | Bannière remontée : écart mesuré **−6 px (chevauchement) → +10 px** à 375 px. |
+| `#f8f5f2` en dur, hover à déplacement (cartes solution, réassurance, puces de zone) | Tokens `--color-bg` / `--color-white` ; hover = ombre et couleur seulement. |
 
-## C. Propositions de redesign — **à valider par le client avant toute modification**
+## C. Redesign — propositions 1 à 6 **réalisées le 2026-10-01** (validées par le client) ; 7 en attente
 
-1. **Une seule largeur de lecture sur les pages service.** Aujourd'hui trois largeurs se succèdent (900 px « problème », 1200 px
-   « solution », 600 px sous-titres). Proposition : conteneur 1200 px pour les grilles, 800 px pour le texte seul.
-2. **Section « Le problème » en grille 2 × 2** au lieu d'une colonne de 4 longues cartes : −45 % de hauteur, même contenu.
-3. **Section « Notre solution » en grille 2 colonnes** (5 cartes → la 5ᵉ accentuée en pleine largeur) plutôt que 5 bandeaux pleine largeur.
-4. **Tarifs** : cartes de prix avec le montant en grand et un seul trait or en haut (au lieu de trois barres de couleurs différentes).
-5. **Page zone** : carte Leaflet pleine largeur en tête, puis les 3 listes de communes en 3 colonnes ; la colonne de droite actuelle
-   (7 blocs empilés) est le point faible de la page.
-6. **Accueil des pages service** : photo avant/après dans le hero déjà bonne — proposer une bande de 3 preuves (note Google, décennale,
-   délai de devis) sous le hero plutôt qu'en bas de page.
-7. **Logo B2** : prêt, non déployé ([`logo-b2.md`](./logo-b2.md)).
+1. **Largeur unique** : « Le problème » passe de 900 px à la largeur du conteneur (1200 px), comme les autres grilles. Les chapôs de section restent à 600 px (lecture de texte).
+2. **Le problème en grille 2 × 2** (1 colonne < 768 px).
+3. **Notre solution en grille 2 colonnes** ; la carte impaire (mise en avant) en pleine largeur.
+4. **Tarifs** : montant en grand, un seul trait or en haut, identique pour les 3 cartes.
+5. **Page zone** (≥ 992 px) : carte pleine largeur (340–460 px de haut, plus de carte sticky), puis adresse + note, puis les 3 listes de communes côte à côte, note, bouton. En dessous de 992 px : une colonne, listes en 2-3 colonnes.
+6. **Bande de preuves** sous le hero de chaque page de service (générée par `scripts/lib/service-sections.js` → `proofBar()`) : 4,1/5 Google (14 avis), décennale & RC Pro, devis sous 48 h.
+7. **Logo B2** : prêt, **non déployé** — en attente de la validation du client ([`logo-b2.md`](./logo-b2.md)).
+
+### Preuves (mesures Playwright sur `dist/`, avant → après)
+
+| Mesure | Avant | Après |
+|---|---|---|
+| Ravalement, hauteur desktop 1440 px | 13 769 px | **13 151 px** (−4,5 %) |
+| Ravalement, tablette 768 px | 13 062 px | **12 519 px** (−4,2 %) |
+| Ravalement, téléphone 375 px | 16 257 px | 16 420 px (+163 px : la bande de preuves) |
+| Zone, desktop 1440 px | 5 300 px | 5 291 px |
+| Zone, téléphone 375 px | 8 361 px | 8 269 px |
+| Problème (4 cartes), 768 / 1440 px | 4 rangées | **2 rangées** |
+| Solution (ravalement, 5 cartes), 1440 px | 5 rangées | **3 rangées** (2 + 2 + 1 pleine largeur) |
+| Débordement horizontal, 7 pages × 3 tailles | — | **aucun** |
+| Cartes de réassurance désalignées (1440 px) | 2 rangées | **0** |
+| `npm test` | 20/20 | 20/20 |
+
+L'accueil n'a aucun composant modifié (sa hauteur varie de ±3 % d'un chargement à l'autre : carrousel et vidéo). L'erreur console `_leaflet_pos` de la page zone est antérieure à ces changements (identique avant) ; les tuiles de carte ne se chargent pas dans l'environnement de test.

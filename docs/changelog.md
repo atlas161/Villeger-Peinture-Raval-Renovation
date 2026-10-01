@@ -17,6 +17,13 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-01 (nuit 3) — Redesign pages de service et zone (propositions 1 à 6) + défauts restants
+
+- **Pages de service** (5, régénérées) : « Le problème » en grille 2 × 2 à largeur de conteneur, « Notre solution » en grille 2 colonnes, tarifs avec montant en grand et trait or, **bande de preuves** (note Google, décennale, délai de devis) sous le hero. Hover sans déplacement sur les cartes. Ravalement : −4,5 % de hauteur desktop.
+- **Page zone** : carte pleine largeur, puis adresse + note, 3 listes de communes côte à côte (≥ 992 px).
+- **Défauts corrigés** : textes de réassurance alignés, listes de communes en colonnes, bannière cookies ne touche plus la barre « Devis gratuit » (mobile), couleurs en dur remplacées par des tokens.
+- Logo B2 : **non déployé** (attente du client). Mesures avant/après : [`design/direction-artistique.md`](./design/direction-artistique.md).
+
 ## 2026-10-01 (nuit 2) — Menu burger, cohérence des cartes, guide de direction artistique
 
 - **Menu burger** (`assets/js/main.js`) : « Services » ne s'ouvre plus au survol en mode mobile/tablette (la largeur est testée à chaque événement, plus seulement au chargement).
