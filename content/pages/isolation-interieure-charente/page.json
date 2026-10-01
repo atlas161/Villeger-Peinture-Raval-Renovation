@@ -12,7 +12,7 @@
     "twitterDescription": "Isolation des combles et des murs par l'intérieur en Charente. Devis gratuit sous 48h.",
     "twitterImage": "https://vprr.fr/data/hero.webp",
     "twitterImageAlt": "Isolation intérieure en Charente (16) - VPRR",
-    "extraStyle": ".hero-placeholder {\n  color: var(--color-primary);\n}\n\n.hero-placeholder-text {\n  font-size: 0.9375rem;\n  color: var(--color-text-light);\n  text-align: center;\n  max-width: 260px;\n  line-height: 1.5;\n  opacity: 1;\n}"
+    "extraStyle": ".hero-placeholder {\n  color: var(--color-primary);\n}\n\n.hero-placeholder-text {\n  font-size: var(--text-md);\n  color: var(--color-text-light);\n  text-align: center;\n  max-width: 260px;\n  line-height: 1.5;\n  opacity: 1;\n}"
   },
   "ld": {
     "areaServed": [

@@ -10,7 +10,7 @@
  * Sur ordinateur (> 768px), rien n'est replié.
  */
 (function () {
-  var mq = window.matchMedia('(max-width: 768px)');
+  var mq = window.matchMedia('(max-width: 767px)');
 
   // ---- Listes limitées ------------------------------------------------------
   function setupLimited(list) {

@@ -36,7 +36,7 @@
 
 .about-facts dt {
   margin-bottom: var(--space-xs);
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -131,12 +131,12 @@
 .real-card .gallery-card-body h2 {
   margin: 0 0 var(--space-sm);
   text-align: left;
-  font-size: 1.25rem;
+  font-size: var(--text-2xl);
 }
 
 .real-tag {
   margin: 0 0 var(--space-xs);
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
