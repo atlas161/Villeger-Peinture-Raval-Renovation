@@ -19,6 +19,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 | A6 | **Contenus/photos** | Nouvelles photos de chantiers (avant/après), Instagram : le fil Elfsight montre des photos hors sujet (à trier côté compte Instagram). |
 | A7 | ~~Avis Google : fournir les 14 avis~~ | **Fait le 2026-10-01** : carrousel de `index.html` remplacé par 7 vrais avis lus sur Google Maps (4-5★ avec texte ; les 1-2★ et les avis sans texte ne sont pas affichés). Les anciens Gregory Themot, Sylvie B. et Marc Deschamps n'existent pas sur la fiche Google. Note et nombre (4,1 · 14) inchangés. |
 | A8 | **Photos à fournir (plus tard, par le client)** | (1) **Portrait de Stéphane Villéger** (+ quelques lignes sur son parcours) → section « Qui est derrière VPRR » sur `a-propos.html`. (2) **Photos de chantiers** pour les **pages de service** (hero avant/après) et pour **`realisations.html`** (une carte par chantier : commune, prestation, avant/après). **Depuis le 2026-10-03 le client peut les ajouter lui-même dans Pages CMS** ([`cms.md`](./cms.md)) : plus de conversion WebP manuelle (Netlify Image CDN). Aujourd'hui seules 4 paires avant/après existent (`media/services/`), et celles du ravalement et du nettoyage de façade se ressemblent. Si elles arrivent par un autre canal : les déposer dans `media/uploads/` et renseigner `content/realisations.json` / `page.json`. |
+| A11 | **À remplacer plus tard (demande du client, 2026-10-03)** | (1) **Photos des 5 pages de service** (en-tête avant/après) ; (2) **photos des articles de blog** (couvertures actuelles = images génériques, plusieurs se ressemblent) ; (3) **une image pour la page À propos** et le **portrait de Stéphane Villéger** (voir A8). Tout se fait dans Pages CMS ([`cms.md`](./cms.md)) : rien à coder. |
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
@@ -48,9 +49,30 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 - [ ] **A9 — Faire valider les tarifs par le client** : fourchettes au m² du tableau de [`seo/decisions.md`](./seo/decisions.md) (estimations de marché charentais, pas des prix du client). Ajuster d'un seul endroit puis propager.
 - [ ] **A10 — Statut RGE / assureur** : la FAQ isolation renvoie vers France Rénov' sans promettre d'aides ; si l'entreprise est RGE, le dire (pages isolation + FAQ).
-- [ ] **CSS orphelin du blog** : `.cta-icon`, `.cta-actions`, `.cta-card`, `.blog-cta` (`blog-article.css`, `blog-list.css`) ne servent plus.
 
 - [ ] **Vérifier Pages CMS en conditions réelles** (première connexion du client sur app.pagescms.org) : ouverture de chaque fichier, import d'une photo, enregistrement, build Netlify, rendu des photos via Netlify Image CDN sur l'aperçu. Si un champ se comporte mal, ajuster `scripts/cms-config.js` puis `npm run build:cms`.
+
+## B2. Points relevés à l'issue de l'audit du 2026-10-03
+
+Faits le 2026-10-03 (voir [`changelog.md`](./changelog.md)) : étude de cas réécrite en chantier type (sans client ni citation), affirmations de blog nuancées, gros ménage CSS/JS, pages 404 et merci passées au design system.
+
+- [x] ~~Voix « équipe »~~ — **décidé** : on garde « nous / notre équipe » (l'entreprise compte environ 4 à 6 personnes ; ne pas annoncer de chiffre exact). Éviter « un seul artisan » ; titre À propos : « Un artisan et son équipe… ».
+- [x] ~~Tiers avant consentement (Vimeo, Instagram)~~ — **décidé par le client : on ne s'en occupe pas** (retiré du chantier C.4).
+- [ ] **Avis Google** : choisir la solution d'affichage (options et recommandation ci-dessous), puis la brancher.
+- [ ] **Bonnes pratiques Lighthouse 75 sur les aperçus Netlify** (100 en prod) : à remesurer sur la prod, puis revoir « Bonnes pratiques » (à traiter après le ménage, sur demande du client).
+- [ ] **Relecture éditoriale du blog** : les 6 articles ont été nuancés ; une relecture par le client (exactitude métier : durées, produits, méthodes) reste utile.
+
+### Avis Google : options étudiées (2026-10-03)
+
+Règle Google à connaître : des avis d'une entreprise affichés **sur son propre site** (balisage ou widget) ne donnent **pas** d'étoiles dans les résultats de recherche (« avis auto-promus », LocalBusiness/Organization). Le gain SEO vient donc de la **fiche Google elle-même** (nombre et fraîcheur des avis, réponses du propriétaire), pas du balisage sur le site. Sur le site, les avis servent la confiance et la conversion.
+
+| Option | Coût | Mise en place | À savoir |
+|---|---|---|---|
+| **A. Widget gratuit Featurable** (ou équivalent) | 0 € à vie, vues illimitées, petit lien « Powered by » | coller un script, relier la fiche Google | mises à jour automatiques ; script tiers (CSP + mentions légales à compléter) ; rendu en JS, donc peu de texte indexé |
+| **B. Avis statiques (actuel) + mise à jour trimestrielle** | 0 € | modifier `index.html` à la main | texte indexable et totalement maîtrisé ; demande un geste manuel |
+| **C. API Google Places** (récupération par script) | gratuit sous quota mais **carte bancaire obligatoire** | clé API + tâche planifiée | 5 avis maximum ; les conditions d'usage de Google limitent le stockage des avis : non recommandé |
+
+**Recommandation** : A pour l'affichage (auto-actualisé, gratuit), en gardant dans la page un court texte statique (note, nombre d'avis, lien « Voir tous les avis sur Google ») pour l'indexation ; et surtout travailler la **collecte d'avis** (lien direct d'avis `https://g.page/r/CZZJ5Bogt13fEBM/review`, QR code, SMS après chantier — voir A4), car c'est ce qui améliore le référencement local de la fiche.
 
 ## C. Chantiers moyens (une session chacun)
 
@@ -61,8 +83,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 2. ~~**Tokeniser le reste du design system**~~ — **fait le 2026-10-02** : 13 tailles de texte, 4 ombres, couches `z-index` nommées, points de rupture alignés par paires ; vérifié par `npm test` (`design-tokens`). Voir [`design/tokens.md`](./design/tokens.md) et le bilan avant/après dans [`design/direction-artistique.md`](./design/direction-artistique.md) §F. Reste : rayons (`border-radius`) et espacements en dur résiduels.
 3. **Durcir la CSP** — retirer `'unsafe-inline'` de `script-src` : externaliser les 2 scripts inline de `index.html` et les
    attributs `onclick` restants (puis évaluer `style-src`). Tester toutes les pages avec la CSP en `Report-Only` d'abord.
-4. **Consentement des tiers** — *(tuiles OpenStreetMap : fait le 2026-10-01 — carte à la demande sur la page zone, plus de Leaflet sur l'accueil)* Vimeo (hero desktop) et Elfsight/Instagram se chargent avant tout
-   consentement (cités dans les mentions légales) : les mettre derrière un clic (« Charger la carte / la galerie »).
+4. ~~Consentement des tiers~~ — carte OpenStreetMap à la demande (fait le 2026-10-01) ; **Vimeo et Elfsight/Instagram : le client a décidé de ne pas les mettre derrière un clic (2026-10-03)**.
 5. **URLs sans `.html`** — décision SEO : impacte canonicals, sitemap, JSON-LD, liens internes et redirections 301 (~50
    URL à migrer d'un coup) ; à faire seulement si le gain est jugé utile.
 6. **Condensation mobile, suite** (non demandée mais possible) : carrousel des avis de l'accueil, bloc « zone » de

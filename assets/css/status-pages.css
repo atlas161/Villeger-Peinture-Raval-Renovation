@@ -1,0 +1,153 @@
+/* Pages « système » : 404 et remerciement après envoi du formulaire (aucune valeur en dur : variables de :root) */
+
+/* ── 404 ── */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.error-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4xl) var(--space-lg);
+  text-align: center;
+}
+
+.error-content {
+  max-width: 560px;
+  background: var(--color-surface);
+  padding: var(--space-3xl) var(--space-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.error-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--brand-accent-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-xl);
+}
+
+.error-icon i {
+  font-size: var(--text-7xl);
+  color: var(--color-primary);
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--brand-accent);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+  opacity: 0.6;
+  letter-spacing: -0.04em;
+}
+
+.error-title {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-md);
+  line-height: 1.3;
+}
+
+.error-text {
+  font-size: var(--text-xl);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .error-main { padding: var(--space-2xl) var(--space-md); }
+  .error-content { padding: var(--space-2xl) var(--space-lg); }
+  .error-code { font-size: 72px; }
+  .error-title { font-size: var(--text-4xl); }
+  .error-actions { flex-direction: column; }
+  .error-actions .btn { width: 100%; justify-content: center; }
+}
+
+/* ── Merci ── */
+.thank-you-main {
+  min-height: calc(80vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
+  padding: var(--space-xl) var(--space-lg);
+  margin-top: var(--header-height); /* l'en-tête est fixe : il ne doit pas masquer le contenu */
+}
+
+.thank-you-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2xl);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.thank-you-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg) auto;
+  color: var(--color-white);
+  font-size: var(--text-7xl);
+  box-shadow: var(--shadow-md);
+}
+
+.thank-you-title {
+  font-size: var(--text-6xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.thank-you-text {
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  font-size: var(--text-xl);
+}
+
+.thank-you-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .thank-you-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thank-you-card { animation: none; }
+}

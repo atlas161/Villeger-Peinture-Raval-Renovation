@@ -138,7 +138,7 @@ Articles en Markdown + frontmatter dans `content/blog/*.md` → `blog/<slug>.htm
 ## 6. CSS
 Fichiers (`assets/css/`) : `styles.css` (base, composants, accueil), `nav.css`, `utilities.css`, `responsive.css`
 (points de rupture + **bloc de densité mobile**), `service-page.css` (pages de service), `contact.css`, `faq.css`,
-`hero.css`, `zone.css`, `blog.css`, `blog-list.css`, `blog-article.css`. Ordre de chargement important :
+`hero.css`, `zone.css`, `blog.css`, `blog-list.css`, `blog-article.css`, `status-pages.css` (404 et page de remerciement, sans style inline). Ordre de chargement important :
 `responsive.css` après `service-page.css` pour gagner la cascade sans `!important`.
 - **Tokens** dans `:root` de `styles.css` : `--color-*`, `--brand-accent`, `--space-*`, `--radius*`, `--shadow-*`,
   `--font-*`, `--duration-*`. Utiliser les variables plutôt que des valeurs en dur ; `tokenize-css.js` remplace
@@ -162,7 +162,7 @@ Fichiers (`assets/css/`) : `styles.css` (base, composants, accueil), `nav.css`, 
 | `mobile-condense.js` | repli mobile (listes limitées, encadrés repliables) — §8 |
 | `zone-map-leaflet.js` | carte statique de la zone (Leaflet auto-hébergé, tuiles OpenStreetMap) |
 | `blog-home.js`, `blog-list.js`, `blog-article.js` | carrousel/accueil du blog, liste paginée, actions d'article |
-| `performance.js` | chargements différés et préchargements divers |
+| *(supprimé le 2026-10-03)* `performance.js` | ne faisait plus rien d'utile (observateurs vides, `lazy` déjà natif) ; la coupure des transitions en « mouvement réduit » est désormais en CSS (`styles.css`) |
 
 ## 8. Condensation mobile (≤ 768 px)
 Objectif : des pages moins longues sur téléphone **sans retirer de contenu du HTML** (indexation intacte, tout

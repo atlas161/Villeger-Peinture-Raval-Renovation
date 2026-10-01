@@ -168,6 +168,8 @@ Compteurs de styles inline restants sur les pages de service (après tout le tra
 
 ## Décisions produit actées
 
+> **Mise à jour 2026-10-03 : le hack `*[style*="border-radius"]` a été supprimé.** Plus aucun élément du site ne porte de `style` inline avec `border-radius` (vérifié : HTML, JS, gabarits) et la couverture CSS sur 22 pages × 10 largeurs montrait la règle inutilisée ; les captures avant/après sont identiques. La règle de fond reste valable : tout `border-radius` extrait d'un style inline s'écrit explicitement en classe, jamais avec la valeur inline d'origine.
+
 - **Hack `*[style*="border-radius"]` (2026-09-21)** : le client a tranché explicitement — le rendu
   visuel actuel doit être conservé tel quel partout, y compris là où le hack transforme un cercle prévu
   en carré à bord arrondi (ex. `.blog-cta-icon`). **Ne jamais "corriger" ce rendu** ; toute nouvelle

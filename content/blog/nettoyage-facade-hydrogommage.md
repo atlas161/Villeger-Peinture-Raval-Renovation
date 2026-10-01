@@ -82,13 +82,13 @@ Contrairement au nettoyage haute pression qui peut creuser les joints et abîmer
 
 | Technique | Pression | Support | Avantages | Inconvénients |
 | ------------------ | -------------------- | ------------------ | ------------------------ | --------------------- |
-| **Hydro-gommage** | Basse (0,5-3 bars) | Tous types | Doux, précis, écologique | Coût plus élevé |
+| **Hydro-gommage** | Basse (0,5-3 bars) | Tous types | Doux, précis, peu d'eau | Coût plus élevé |
 | **Haute pression** | Haute (100-200 bars) | Béton, pierre dure | Rapide, économique | Risque d'abrasion |
 | **Sablage** | Moyenne | Pierre très dure | Très efficace | Agressif, poussiéreux |
 | **Peeling** | Chimique | Enduits | Pas de pression | Produits toxiques |
 
 
-> **Notre recommandation** : Pour 90% des façades en Charente (pierre calcaire, enduit), l'hydro-gommage est la solution optimale.
+> **Notre recommandation** : Pour la plupart des façades en pierre calcaire ou en enduit en Charente, l'hydro-gommage est une solution adaptée ; nous la confirmons après un essai sur place.
 
 ## Quand faire nettoyer sa façade ?
 
@@ -137,7 +137,7 @@ Dernière étape cruciale :
 - Vérification de l'uniformité du résultat
 - Nettoyage complet du chantier
 - Application d'un traitement hydrofuge (optionnel)
-- Application 100% naturel lait de chaux (optionnel)
+- Application d'un lait de chaux, traitement d'origine minérale (optionnel)
 
 ## Combien coûte un nettoyage de façade par hydro-gommage ?
 
@@ -161,7 +161,7 @@ Un devis professionnel comprend :
 - Hydro-gommage complet
 - Rinçage final
 - Nettoyage et évacuation des déchets en structure spécialisée
-- Garantie décennale
+- Nos assurances (responsabilité civile professionnelle, décennale pour les travaux qui en relèvent)
 
 ## Hydro-gommage : pour quels types de façades ?
 
@@ -226,7 +226,7 @@ Après le nettoyage, nous conseillons d'appliquer un **traitement hydrofuge** :
 Après le nettoyage, nous conseillons d'appliquer un **traitement lait de chaux** :
 
 - Protège contre l'humidité et les infiltrations
-- Procédé 100% naturel, 0 pollution
+- Traitement d'origine minérale, sans solvant
 - Ralentit la réapparition des mousses
 - Prolonge la propreté de 5 à 10 ans
 - Laisse respirer le support (contrairement à un film étanche)
@@ -268,7 +268,7 @@ Pour maintenir votre façade propre :
 
 ### Combien de temps dure le résultat ?
 
-Avec un traitement hydrofuge, votre façade reste propre **10 à 15 ans** selon l'exposition et l'environnement. Sans traitement, comptez **5 à 8 ans** selon l'exposition et l'environnement.
+Avec un traitement hydrofuge, votre façade reste propre en général **5 à 10 ans** selon l'exposition et l'environnement. Sans traitement, les mousses reviennent plus vite (souvent en **3 à 5 ans**).
 
 ## Pourquoi choisir VPRR pour votre nettoyage de façade ?
 
@@ -285,7 +285,7 @@ Spécialistes du nettoyage de façade à Angoulême depuis plus de 15 ans, nous 
 - **Devis gratuit** sous 48h avec visite technique
 - **Matériel professionnel** dernière génération
 - **Équipe formée** aux techniques douces
-- **Garantie décennale** sur tous nos travaux
+- **Assurances** : responsabilité civile professionnelle et garantie décennale pour les travaux qui en relèvent
 - **Assurance** responsabilité civile professionnelle
 
 ### Nos réalisations
@@ -299,6 +299,6 @@ Plus de **300 façades nettoyées** en Charente :
 
 ## Conclusion
 
-L'hydro-gommage est la technique de référence pour nettoyer votre façade en douceur et en profondeur. Respectueuse des matériaux, écologique et durable, elle redonne tout son éclat à votre maison sans l'abîmer.
+L'hydro-gommage est la technique de référence pour nettoyer votre façade en douceur et en profondeur. Respectueuse des matériaux et économe en eau, elle redonne tout son éclat à votre maison sans l'abîmer.
 
 **Votre façade mérite le meilleur traitement.** Confiez-la à des professionnels expérimentés qui sauront révéler sa beauté tout en la préservant pour les années à venir.

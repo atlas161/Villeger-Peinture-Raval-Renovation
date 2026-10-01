@@ -310,11 +310,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-lg);
   }
-
-  /* Nombre impair : la dernière carte prend toute la largeur (jamais de carte orpheline). */
-  .problem-list > .problem-item:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-  }
 }
 
 .problem-item {
@@ -741,13 +736,6 @@
   line-height: 1.7;
 }
 
-.jobsheet-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  margin-top: var(--space-xl);
-}
-
 .jobsheet-actions .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -781,17 +769,6 @@
 
 .feature-grid--pricing {
   margin-top: var(--space-2xl);
-}
-
-.section-cta {
-  text-align: center;
-  margin-top: var(--space-3xl);
-}
-
-.section-cta p {
-  font-size: var(--text-xl);
-  color: var(--color-text);
-  margin-bottom: var(--space-lg);
 }
 
 .section-cta .btn {
@@ -967,7 +944,6 @@
   font-size: var(--text-md);
 }
 
-
 /* Mobile : les deux boutons du hero (devis, téléphone) ont la même largeur. */
 @media (max-width: 639px) {
   .service-hero-cta .btn {
@@ -975,7 +951,6 @@
     justify-content: center;
   }
 }
-
 
 /* ===================================================================
    BANDE DE PREUVES (sous le hero) : note Google, garantie, délai de devis

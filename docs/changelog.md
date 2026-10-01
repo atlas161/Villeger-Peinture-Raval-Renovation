@@ -17,6 +17,14 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-03 (soir) — Gros ménage et nettoyage éditorial
+
+- **Blog** : l'article « étude de cas » (clients nommés, citation) est réécrit en **chantier type** (même URL), sans témoignage ; affirmations absolues retirées ou nuancées (« 100 % naturel », « 0 pollution », « unanimes », « 90 % des façades », « garantit »…), durées de tenue harmonisées avec les pages de service (peinture 10-15 ans, nettoyage 5-10 ans avec hydrofuge), assurances décrites comme sur le reste du site (RC Pro + décennale pour les travaux qui en relèvent). Titre À propos : « Un artisan et son équipe… ».
+- **CSS** : ≈ 50 règles inutilisées supprimées, repérées par la **couverture CSS de Chromium sur 22 pages × 10 largeurs** (états ouverts, FAQ, filtres, bannière cookies) croisée avec les classes citées dans le JS ; hack `*[style*="border-radius"]` retiré (plus aucun style inline concerné), keyframes orphelines (`logoGlow`, `fadeInUp` vide) retirées. Vérifié par **captures avant/après de 22 pages × 3 largeurs : identiques** (seule la 404 change, volontairement).
+- **JS** : `performance.js` supprimé (observateurs vides, lazy-loading déjà natif, `fonts-loaded` inutilisé) ; la coupure des transitions en « mouvement réduit » passe en CSS et s'applique maintenant à **toutes** les pages ; `main.js` : bloc de debug de navigation et carrousel de navigation d'article (jamais chargé sur ces pages) retirés. Aucune erreur JS sur 16 pages à 375 et 1440 px.
+- **Pages 404 et merci** : styles inline remplacés par `assets/css/status-pages.css` (variables du design system, boutons `.btn` — fin des boutons maison avec soulèvement et des couleurs en dur), police Inter chargée sur la 404.
+- Décisions du client : on garde la voix « nous / notre équipe » ; pas de clic préalable pour Vimeo/Instagram ; avis Google : options et recommandation dans la roadmap (B2).
+
 ## 2026-10-03 (suite) — Pages CMS branché sur tout le contenu
 
 - **Tout est éditable dans Pages CMS** ([`cms.md`](./cms.md)) : pages de service (texte, FAQ, photos avant/après), **tarifs** (`content/tarifs.json`, une seule saisie pour les 5 pages), **À propos** (dont portrait de Stéphane Villéger : la section s'affiche dès que photo + texte sont remplis), **Réalisations** (une carte avant/après par chantier : photos, catégorie, commune, durée, brouillon), textes communs (communes, services, « pourquoi nous choisir »), blog.

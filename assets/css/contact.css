@@ -23,10 +23,6 @@
   margin-bottom: var(--space-sm);
 }
 
-.contact-header h2 {
-  margin-bottom: var(--space-md);
-}
-
 .contact-header p:not(.contact-eyebrow) {
   color: var(--color-text-light);
   font-size: var(--text-lg);
@@ -608,10 +604,6 @@
 
 .btn-google-review:active {
   transform: translateY(0) scale(0.98);
-}
-
-.btn-google-review i {
-  font-size: var(--text-base);
 }
 
 @media (max-width: 639px) {
