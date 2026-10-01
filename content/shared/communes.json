@@ -1,0 +1,24 @@
+{
+  "noteTitle": "Votre commune n'est pas listée ?",
+  "noteText": "Contactez-nous, nous intervenons également dans les communes voisines.",
+  "communes": [
+    "Angoulême",
+    "L'Isle-d'Espagnac",
+    "Gond-Pontouvre",
+    "Saint-Yrieix-sur-Charente",
+    "Soyaux",
+    "La Couronne",
+    "Puymoyen",
+    "Fléac",
+    "Ruelle-sur-Touvre",
+    "Magnac-sur-Touvre",
+    "Saint-Michel",
+    "Champniers",
+    "Cognac",
+    "Jarnac",
+    "Châteauneuf-sur-Charente",
+    "La Rochefoucauld-en-Angoumois",
+    "Barbezieux-Saint-Hilaire",
+    "Ruffec"
+  ]
+}

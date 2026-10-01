@@ -160,3 +160,67 @@
   height: auto;
   aspect-ratio: 4 / 3;
 }
+
+.real-meta {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+}
+
+.real-meta i {
+  color: var(--brand-accent-text);
+}
+
+/* À propos : portrait du dirigeant (affiché seulement si photo + texte sont renseignés dans le CMS) */
+.about-owner {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.about-owner-photo {
+  margin: 0;
+  max-width: 380px;
+  justify-self: center;
+  width: 100%;
+}
+
+.about-owner-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.about-owner-text {
+  text-align: left;
+}
+
+.about-owner-text h2 {
+  margin: 0 0 var(--space-md);
+  text-align: left;
+}
+
+.about-owner-role {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--brand-accent-text);
+}
+
+.about-owner-text p {
+  margin: 0 0 var(--space-md);
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .about-owner {
+    grid-template-columns: 380px 1fr;
+    gap: var(--space-3xl);
+  }
+}

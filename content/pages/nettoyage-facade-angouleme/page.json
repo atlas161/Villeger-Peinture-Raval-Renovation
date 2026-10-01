@@ -1,457 +1,217 @@
 {
-  "file": "nettoyage-facade-angouleme.html",
-  "head": {
+  "seo": {
     "title": "Nettoyage de façade à Angoulême (16) | Devis gratuit | VPRR",
     "description": "Nettoyage de façade à Angoulême et en Charente (16) : hydro-gommage, démoussage, traitement anti-pollution. Devis gratuit sous 48h. ☎️ 05 45 91 22 70",
-    "keywords": "nettoyage façade Angoulême, hydro-gommage Charente, démoussage façade 16, nettoyage mur extérieur Angoulême, traitement façade pierre",
-    "geoPlacename": "Angoulême, Charente",
-    "ogTitle": "Nettoyage de façade à Angoulême (16) | Devis gratuit | VPRR",
-    "ogDescription": "Nettoyage de façade à Angoulême et en Charente (16) : hydro-gommage, démoussage et traitements. Devis gratuit sous 48h.",
-    "ogImage": "https://vprr.fr/media/og-nettoyage-facade.webp",
-    "twitterTitle": "Nettoyage de façade à Angoulême (Charente 16) | VPRR",
-    "twitterDescription": "Nettoyage de façade à Angoulême et en Charente (16). Devis gratuit sous 48h.",
-    "twitterImage": "https://vprr.fr/media/og-nettoyage-facade.webp",
-    "twitterImageAlt": "Nettoyage de façade professionnelle à Angoulême par VPRR",
-    "extraStyle": ".process-step {\n  position: relative;\n}\n\n.process-step h3 {\n  margin-bottom: var(--space-sm);\n}\n\n.zone-tag {\n  padding: var(--space-sm) var(--space-lg);\n  border: 1px solid var(--color-border);\n}",
-    "ogExtra": [
-      "<meta property=\"og:image:width\" content=\"1200\">",
-      "<meta property=\"og:image:height\" content=\"630\">",
-      "<meta property=\"og:image:alt\" content=\"Nettoyage de façade professionnelle à Angoulême par VPRR\">"
-    ],
-    "twitterExtra": [
-      "<meta name=\"twitter:site\" content=\"@VPRR_Angouleme\">",
-      "<meta name=\"twitter:creator\" content=\"@VPRR_Angouleme\">"
-    ]
+    "keywords": "nettoyage façade Angoulême, hydro-gommage Charente, démoussage façade 16, nettoyage mur extérieur Angoulême, traitement façade pierre"
   },
-  "ld": {
-    "areaServed": [
+  "hero": {
+    "title": "Nettoyage de Façade à Angoulême et en Charente",
+    "ctaLabel": "Obtenir mon devis gratuit en 48h",
+    "before": "/media/services/nettoyage_facade/facade_avant-900w.webp",
+    "after": "/media/services/nettoyage_facade/facade_apres-900w.webp",
+    "altBefore": "Façade avant nettoyage",
+    "altAfter": "Façade après nettoyage",
+    "subtitle": "Redonnez vie à vos murs avec notre technique d'hydro-gommage douce et efficace. Intervention rapide, devis gratuit en 48h."
+  },
+  "realisation": {
+    "title": "Avant / Après : nettoyage de façade type à Angoulême (Charente)",
+    "sheetTitle": "Fiche chantier (exemple)",
+    "facts": [
       {
-        "@type": "AdministrativeArea",
-        "name": "Charente"
+        "label": "Zone",
+        "text": "Angoulême & Charente (16)"
       },
       {
-        "@type": "City",
-        "name": "Angoulême"
+        "label": "Support",
+        "text": "enduit, pierre ou façade peinte (selon cas)"
       },
       {
-        "@type": "City",
-        "name": "L'Isle-d'Espagnac"
+        "label": "Problèmes",
+        "text": "pollution, mousses/lichens, traces noires"
       },
       {
-        "@type": "City",
-        "name": "Soyaux"
+        "label": "Solution",
+        "text": "nettoyage adapté + protection des abords + traitement si nécessaire"
       },
       {
-        "@type": "City",
-        "name": "La Couronne"
-      },
-      {
-        "@type": "City",
-        "name": "Champniers"
-      },
-      {
-        "@type": "City",
-        "name": "Ruelle-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Gond-Pontouvre"
-      },
-      {
-        "@type": "City",
-        "name": "Saint-Yrieix-sur-Charente"
-      },
-      {
-        "@type": "City",
-        "name": "Magnac-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Cognac"
-      },
-      {
-        "@type": "City",
-        "name": "Jarnac"
-      },
-      {
-        "@type": "City",
-        "name": "Ruffec"
-      },
-      {
-        "@type": "City",
-        "name": "Barbezieux-Saint-Hilaire"
-      },
-      {
-        "@type": "City",
-        "name": "La Rochefoucauld-en-Angoumois"
+        "label": "Durée",
+        "text": "confirmée après visite (surface, accès, état)"
       }
     ],
-    "businessCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services de nettoyage de façade",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Nettoyage de façade par hydro-gommage",
-            "description": "Nettoyage en douceur des façades en pierre, brique ou enduit à Angoulême",
-            "areaServed": "Angoulême, Charente (16)"
-          }
-        }
-      ]
-    },
-    "serviceType": "Nettoyage de façade",
-    "serviceAreaServed": [
+    "tipTitle": "Après le nettoyage, que faire ?",
+    "tipHtml": "Si la façade présente des <strong>fissures</strong> ou un enduit dégradé, voir <a href=\"ravalement-facade-angouleme.html\">ravalement de façade</a>. Pour une <strong>mise en peinture</strong> (protection + esthétique), voir <a href=\"peinture-exterieure-charente.html\">peinture extérieure</a>. Consultez aussi la <a href=\"zone-desservie-charente.html\">zone desservie</a>.",
+    "intro": "Exemple inspiré de nos interventions locales. Nous adaptons la méthode (hydro-gommage, démoussage, traitement) selon le support et l’encrassement."
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Une façade sale et négligée dégrade votre patrimoine",
+    "items": [
       {
-        "@type": "AdministrativeArea",
-        "name": "Charente"
+        "icon": "fa-solid fa-droplet",
+        "title": "Infiltrations d'eau",
+        "text": "Les mousses et lichens retiennent l'humidité, favorisant les fissures et les infiltrations dans vos murs."
       },
       {
-        "@type": "City",
-        "name": "Angoulême"
+        "icon": "fa-solid fa-smog",
+        "title": "Pollution atmosphérique",
+        "text": "Les particules de pollution s'incrustent dans la pierre et l'enduit, créant des traces noires difficiles à enlever."
       },
       {
-        "@type": "City",
-        "name": "L'Isle-d'Espagnac"
+        "icon": "fa-solid fa-arrow-trend-down",
+        "title": "Perte de valeur",
+        "text": "Une façade en mauvais état fait chuter la valeur de votre bien immobilier et décourage les acheteurs potentiels."
       },
       {
-        "@type": "City",
-        "name": "Soyaux"
-      },
-      {
-        "@type": "City",
-        "name": "La Couronne"
-      },
-      {
-        "@type": "City",
-        "name": "Champniers"
-      },
-      {
-        "@type": "City",
-        "name": "Ruelle-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Gond-Pontouvre"
-      },
-      {
-        "@type": "City",
-        "name": "Saint-Yrieix-sur-Charente"
-      },
-      {
-        "@type": "City",
-        "name": "Magnac-sur-Touvre"
-      },
-      {
-        "@type": "City",
-        "name": "Cognac"
-      },
-      {
-        "@type": "City",
-        "name": "Jarnac"
-      },
-      {
-        "@type": "City",
-        "name": "Ruffec"
-      },
-      {
-        "@type": "City",
-        "name": "Barbezieux-Saint-Hilaire"
-      },
-      {
-        "@type": "City",
-        "name": "La Rochefoucauld-en-Angoumois"
+        "icon": "fa-solid fa-triangle-exclamation",
+        "title": "Dégradations irréversibles",
+        "text": "Sans entretien régulier, les matériaux se détériorent et nécessitent des réparations coûteuses."
       }
     ],
-    "serviceCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Nettoyage de façade à Angoulême",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Hydro-gommage de façade",
-            "description": "Technique douce pour nettoyer pierre, brique et enduit sans abîmer"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Démoussage de façade",
-            "description": "Élimination des mousses, lichens et pollution atmosphérique"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Traitement anti-pollution",
-            "description": "Protection longue durée contre les salissures et l'humidité"
-          }
-        }
-      ]
-    },
-    "breadcrumbName": "Nettoyage de Façade Angoulême",
-    "faq": [
+    "intro": "Les façades non entretenues subissent des dégradations qui peuvent coûter cher à long terme."
+  },
+  "solution": {
+    "eyebrow": "Notre solution",
+    "title": "La méthode VPRR : Nettoyage en douceur, résultats spectaculaires",
+    "features": [
       {
-        "q": "Quel est le prix moyen d'un nettoyage de façade au m² à Angoulême ?",
-        "a": "Le prix d'un nettoyage de façade en Charente varie généralement entre 15€ et 35€ par m², selon l'état de vos murs et les traitements nécessaires. Un simple démoussage coûte moins cher qu'un hydro-gommage complet avec traitement protecteur. Exemple concret : Pour une façade de 80m² en bon état général nécessitant un nettoyage standard, comptez environ 1 200€ à 1 800€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place."
+        "icon": "fa-solid fa-spray-can-sparkles",
+        "title": "Hydro-gommage doux",
+        "text": "Projection d'eau et de poudre minérale à basse pression. Élimine salissures et mousses sans altérer la pierre, la brique ou l'enduit."
       },
       {
-        "q": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-        "a": "Oui, absolument. Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre façade, évaluer son état précis et identifier les traitements nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché."
+        "icon": "fa-solid fa-leaf",
+        "title": "Produits écologiques",
+        "text": "Nous utilisons des produits respectueux de l'environnement et de la santé, sans danger pour vos plantes et votre famille."
       },
       {
-        "q": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-        "a": "Oui. Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit."
+        "icon": "fa-solid fa-shield-halved",
+        "title": "Protection longue durée",
+        "text": "Application d'un traitement hydrofuge pour protéger votre façade contre l'humidité et ralentir la réapparition des mousses."
       },
       {
-        "q": "Combien de temps dure l'intervention de nettoyage ?",
-        "a": "La durée d'intervention dépend de la surface et de l'état de votre façade : Petite façade (moins de 50m²) : 1 jour. Façade moyenne (50-100m²) : 1 à 2 jours. Grande façade ou très encrassée : 2 à 3 jours. Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal. Nous nettoyons le chantier chaque soir pour minimiser les nuisances."
-      },
-      {
-        "q": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-        "a": "Transparence totale garantie. Notre devis détaillé comprend : La préparation et la protection des zones sensibles, le nettoyage complet (hydro-gommage ou démoussage), les traitements protecteurs si nécessaires, le nettoyage du chantier, la TVA et les assurances. Promesse VPRR : Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise. Si nous découvrons un problème imprévu lors de l'intervention, nous vous en informons avant tout travail supplémentaire."
-      },
-      {
-        "q": "Le nettoyage de façade est-il garanti ?",
-        "a": "Nous intervenons avec une assurance Responsabilité Civile Professionnelle. La tenue dans le temps dépend du support, de l'exposition et des traitements appliqués : nous détaillons les options (traitement, protection) dans le devis. Nous travaillons proprement et revenons si un point doit être ajusté après l'intervention."
-      },
-      {
-        "q": "Quels supports pouvez-vous nettoyer (pierre, brique, enduit) ?",
-        "a": "Nous intervenons sur la majorité des supports courants : enduit, façade peinte, brique et pierre, avec une méthode adaptée. L'hydro-gommage est particulièrement intéressant pour les façades sensibles car il est plus doux qu'un nettoyage haute pression. Lors de la visite, nous validons la compatibilité et le niveau de pression/abrasif pour préserver le support."
+        "icon": "fa-solid fa-clock",
+        "title": "Intervention rapide",
+        "text": "Devis gratuit sous 48h, planification flexible selon vos disponibilités. Chantier propre et soigné."
       }
-    ]
+    ],
+    "steps": [
+      {
+        "title": "Diagnostic gratuit",
+        "text": "Nous analysons l'état de votre façade et identifions les traitements nécessaires."
+      },
+      {
+        "title": "Devis détaillé",
+        "text": "Vous recevez un devis clair et transparent, sans surprise ni frais cachés."
+      },
+      {
+        "title": "Nettoyage professionnel",
+        "text": "Nos artisans interviennent avec du matériel professionnel et un savoir-faire éprouvé."
+      },
+      {
+        "title": "Protection & finitions",
+        "text": "Application d'un traitement protecteur pour garantir la durabilité du résultat."
+      }
+    ],
+    "intro": "Nous utilisons l'hydro-gommage, la technique la plus respectueuse pour nettoyer vos façades sans les abîmer."
   },
-  "beforeAfterScript": true,
-  "contact": {
-    "prestation": "nettoyage-facade",
-    "serviceLabel": "nettoyage de façade"
-  },
-  "related": [
+  "whyExtra": [
     {
-      "href": "ravalement-facade-angouleme.html",
-      "icon": "fa-solid fa-trowel",
-      "label": "Ravalement de façade"
+      "icon": "fa-solid fa-handshake",
+      "title": "Accompagnement administratif",
+      "text": "Nous vous aidons dans vos démarches de déclaration préalable de travaux si nécessaire."
     },
     {
-      "href": "nettoyage-toiture-angouleme.html",
-      "icon": "fa-solid fa-house-chimney",
-      "label": "Nettoyage de toiture"
-    },
-    {
-      "href": "peinture-exterieure-charente.html",
-      "icon": "fa-solid fa-palette",
-      "label": "Peinture extérieure"
+      "icon": "fa-solid fa-screwdriver-wrench",
+      "title": "Produits adaptés au support",
+      "text": "Nous choisissons les matériaux selon le support, l'exposition et l'usage : pas de solution standard appliquée partout."
     }
   ],
-  "sections": [
-    {
-      "type": "hero",
-      "title": "Nettoyage de Façade à Angoulême et en Charente",
-      "subtitleHtml": "Redonnez vie à vos murs avec notre technique d'hydro-gommage douce et efficace. Intervention rapide, devis gratuit en 48h.",
-      "ctaLabel": "Obtenir mon devis gratuit en 48h",
-      "slider": {
-        "dir": "media/services/nettoyage_facade",
-        "before": "facade_avant",
-        "after": "facade_apres",
-        "altBefore": "Façade avant nettoyage",
-        "altAfter": "Façade après nettoyage"
+  "zone": {
+    "eyebrow": "Zone d'intervention",
+    "title": "Nous intervenons à Angoulême et dans toute la Charente",
+    "intro": "Service de nettoyage de façade disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16)."
+  },
+  "others": {
+    "eyebrow": "Découvrez aussi",
+    "title": "Nos autres services de rénovation",
+    "services": [
+      "nettoyage-toiture-angouleme",
+      "ravalement-facade-angouleme",
+      "peinture-exterieure-charente"
+    ],
+    "intro": "VPRR vous accompagne dans tous vos projets de rénovation extérieure en Charente."
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte un nettoyage de façade à Angoulême ?",
+    "factors": [
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "title": "Surface de la façade",
+        "text": "Le prix varie selon la surface totale à traiter (au m²). Une façade plus grande nécessite plus de matériel et de temps d'intervention."
+      },
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "État des murs",
+        "text": "Façade légèrement sale ou très encrassée ? Niveau de pollution, présence de mousses, lichens ou graffitis influencent le temps de travail nécessaire."
+      },
+      {
+        "icon": "fa-solid fa-spray-can",
+        "title": "Traitements nécessaires",
+        "text": "Hydro-gommage simple, démoussage complet, traitement anti-pollution ou protection hydrofuge ? Chaque option a son impact sur le budget."
+      },
+      {
+        "icon": "fa-solid fa-stairs",
+        "title": "Accessibilité du chantier",
+        "text": "Étage, nécessité d'échafaudage ou nacelle ? L'accessibilité de votre façade peut influencer les coûts de mise en œuvre."
       }
-    },
-    {
-      "type": "raw",
-      "file": "realisation.html"
-    },
-    {
-      "type": "problem",
-      "eyebrow": "Le problème",
-      "title": "Une façade sale et négligée dégrade votre patrimoine",
-      "introHtml": "Les façades non entretenues subissent des dégradations qui peuvent coûter cher à long terme.",
-      "items": [
-        {
-          "icon": "fa-solid fa-droplet",
-          "title": "Infiltrations d'eau",
-          "text": "Les mousses et lichens retiennent l'humidité, favorisant les fissures et les infiltrations dans vos murs."
-        },
-        {
-          "icon": "fa-solid fa-smog",
-          "title": "Pollution atmosphérique",
-          "text": "Les particules de pollution s'incrustent dans la pierre et l'enduit, créant des traces noires difficiles à enlever."
-        },
-        {
-          "icon": "fa-solid fa-arrow-trend-down",
-          "title": "Perte de valeur",
-          "text": "Une façade en mauvais état fait chuter la valeur de votre bien immobilier et décourage les acheteurs potentiels."
-        },
-        {
-          "icon": "fa-solid fa-triangle-exclamation",
-          "title": "Dégradations irréversibles",
-          "text": "Sans entretien régulier, les matériaux se détériorent et nécessitent des réparations coûteuses."
-        }
-      ]
-    },
-    {
-      "type": "solution",
-      "eyebrow": "Notre solution",
-      "title": "La méthode VPRR : Nettoyage en douceur, résultats spectaculaires",
-      "introHtml": "Nous utilisons l'hydro-gommage, la technique la plus respectueuse pour nettoyer vos façades sans les abîmer.",
-      "features": [
-        {
-          "icon": "fa-solid fa-spray-can-sparkles",
-          "title": "Hydro-gommage doux",
-          "text": "Projection d'eau et de poudre minérale à basse pression. Élimine salissures et mousses sans altérer la pierre, la brique ou l'enduit."
-        },
-        {
-          "icon": "fa-solid fa-leaf",
-          "title": "Produits écologiques",
-          "text": "Nous utilisons des produits respectueux de l'environnement et de la santé, sans danger pour vos plantes et votre famille."
-        },
-        {
-          "icon": "fa-solid fa-shield-halved",
-          "title": "Protection longue durée",
-          "text": "Application d'un traitement hydrofuge pour protéger votre façade contre l'humidité et ralentir la réapparition des mousses."
-        },
-        {
-          "icon": "fa-solid fa-clock",
-          "title": "Intervention rapide",
-          "text": "Devis gratuit sous 48h, planification flexible selon vos disponibilités. Chantier propre et soigné."
-        }
-      ],
-      "steps": [
-        {
-          "title": "Diagnostic gratuit",
-          "text": "Nous analysons l'état de votre façade et identifions les traitements nécessaires."
-        },
-        {
-          "title": "Devis détaillé",
-          "text": "Vous recevez un devis clair et transparent, sans surprise ni frais cachés."
-        },
-        {
-          "title": "Nettoyage professionnel",
-          "text": "Nos artisans interviennent avec du matériel professionnel et un savoir-faire éprouvé."
-        },
-        {
-          "title": "Protection &amp; finitions",
-          "text": "Application d'un traitement protecteur pour garantir la durabilité du résultat."
-        }
-      ]
-    },
-    {
-      "type": "why"
-    },
-    {
-      "type": "zone",
-      "eyebrow": "Zone d'intervention",
-      "title": "Nous intervenons à Angoulême et dans toute la Charente",
-      "introHtml": "Service de nettoyage de façade disponible sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16).",
-      "cities": [
-        "Angoulême",
-        "L'Isle-d'Espagnac",
-        "Gond-Pontouvre",
-        "Saint-Yrieix-sur-Charente",
-        "Soyaux",
-        "La Couronne",
-        "Puymoyen",
-        "Fléac",
-        "Ruelle-sur-Touvre",
-        "Magnac-sur-Touvre",
-        "Saint-Michel",
-        "Champniers",
-        "Cognac",
-        "Jarnac",
-        "Châteauneuf-sur-Charente",
-        "La Rochefoucauld-en-Angoumois",
-        "Barbezieux-Saint-Hilaire",
-        "Ruffec"
-      ],
-      "noteHtml": "<strong>Votre commune n'est pas listée ?</strong> Contactez-nous, nous intervenons également dans les communes voisines."
-    },
-    {
-      "type": "others",
-      "eyebrow": "Découvrez aussi",
-      "title": "Nos autres services de rénovation",
-      "introHtml": "VPRR vous accompagne dans tous vos projets de rénovation extérieure en Charente.",
-      "cards": [
-        {
-          "icon": "fa-solid fa-house-chimney",
-          "title": "Nettoyage de Toiture",
-          "text": "Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.",
-          "href": "nettoyage-toiture-angouleme.html"
-        },
-        {
-          "icon": "fa-solid fa-screwdriver-wrench",
-          "title": "Ravalement de Façade",
-          "text": "Rénovation complète de vos façades : réparation, enduit, peinture et protection longue durée.",
-          "href": "ravalement-facade-angouleme.html"
-        },
-        {
-          "icon": "fa-solid fa-palette",
-          "title": "Peinture Extérieure",
-          "text": "Embellissez vos façades et boiseries avec nos peintures haute qualité résistantes aux UV.",
-          "href": "peinture-exterieure-charente.html"
-        }
-      ]
-    },
-    {
-      "type": "raw",
-      "file": "tarifs.html"
-    },
-    {
-      "type": "contact"
-    },
-    {
-      "type": "faq",
-      "eyebrow": "F.A.Q",
-      "title": "Questions fréquentes : Prix &amp; Devis",
-      "introHtml": "Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de nettoyage de façade.",
-      "items": [
-        {
-          "icon": "fa-solid fa-tag",
-          "question": "Quel est le prix moyen d'un nettoyage de façade au m² à Angoulême ?",
-          "answerHtml": "<p>\n  Le prix d'un nettoyage de façade en Charente varie généralement entre <strong>15€ et 35€ par m²</strong>, selon l'état de vos murs et les traitements nécessaires. Un simple démoussage coûte moins cher qu'un hydro-gommage complet avec traitement protecteur. \n</p>\n<p>\n  <strong>Exemple concret :</strong> Pour une façade de 80m² en bon état général nécessitant un nettoyage standard, comptez environ 1 200€ à 1 800€ TTC. Le meilleur moyen d'avoir un tarif précis ? Demandez votre devis gratuit et personnalisé après visite sur place.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-file-signature",
-          "question": "Faites-vous des devis gratuits sur Angoulême et alentours ?",
-          "answerHtml": "<p>\n  <strong>Oui, absolument.</strong> Nous réalisons des devis gratuits et sans engagement sur Angoulême et dans tout le département de la Charente (16). \n</p>\n<p>\n  Notre processus est simple : après votre demande, nous convenons d'un rendez-vous pour visiter votre façade, évaluer son état précis et identifier les traitements nécessaires. Vous recevez ensuite un devis détaillé sous 48h, avec un prix transparent et définitif. Aucune surprise, aucun frais caché.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-map-location-dot",
-          "accent": true,
-          "question": "Intervenez-vous à Cognac, Jarnac, Ruffec, Barbezieux… en Charente (16) ?",
-          "answerHtml": "<p>\n  <strong>Oui.</strong> Nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente (16), notamment <strong>Cognac</strong>, <strong>Jarnac</strong>, <strong>Ruffec</strong>, <strong>Barbezieux-Saint-Hilaire</strong> et <strong>La Rochefoucauld-en-Angoumois</strong>.\n</p>\n<p>\n  Pour vérifier votre commune et organiser une visite, contactez-nous : nous confirmons rapidement la zone d’intervention et vous transmettons un devis gratuit.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-clock",
-          "question": "Combien de temps dure l'intervention de nettoyage ?",
-          "answerHtml": "<p>\n  La durée d'intervention dépend de la surface et de l'état de votre façade :\n</p>\n<ul>\n  <li><strong>Petite façade (moins de 50m²) :</strong> 1 jour</li>\n  <li><strong>Façade moyenne (50-100m²) :</strong> 1 à 2 jours</li>\n  <li><strong>Grande façade ou très encrassée :</strong> 2 à 3 jours</li>\n</ul>\n<p>\n  Nous nous adaptons à vos contraintes et planifions les travaux selon la météo pour garantir un résultat optimal. Nous nettoyons le chantier chaque soir pour minimiser les nuisances.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-receipt",
-          "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
-          "answerHtml": "<p>\n  <strong>Transparence totale garantie.</strong> Notre devis détaillé comprend :\n</p>\n<ul>\n  <li>La préparation et la protection des zones sensibles</li>\n  <li>Le nettoyage complet (hydro-gommage ou démoussage)</li>\n  <li>Les traitements protecteurs si nécessaires</li>\n  <li>Le nettoyage du chantier</li>\n  <li>La TVA et les assurances</li>\n</ul>\n<p>\n  <strong class=\"text-primary\">Promesse VPRR :</strong> Le prix indiqué sur le devis est le prix final. Aucun supplément, aucune surprise. Si nous découvrons un problème imprévu lors de l'intervention, nous vous en informons avant tout travail supplémentaire.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-shield-halved",
-          "accent": true,
-          "question": "Le nettoyage de façade est-il garanti ?",
-          "answerHtml": "<p>\n  Nous intervenons avec une assurance Responsabilité Civile Professionnelle. La tenue dans le temps dépend du support, de l'exposition et des traitements appliqués : nous détaillons les options (traitement, protection) dans le devis. Nous travaillons proprement et revenons si un point doit être ajusté après l'intervention.\n</p>"
-        },
-        {
-          "icon": "fa-solid fa-layer-group",
-          "question": "Quels supports pouvez-vous nettoyer (pierre, brique, enduit) ?",
-          "answerHtml": "<p>\n  Nous intervenons sur la majorité des supports courants : enduit, façade peinte, brique et pierre, avec une méthode adaptée. L'hydro-gommage est particulièrement intéressant pour les façades sensibles car il est plus doux qu'un nettoyage haute pression. Lors de la visite, nous validons la compatibilité et le réglage pour préserver le support.\n</p>"
-        }
-      ],
-      "cta": {
-        "text": "Vous avez d'autres questions ?",
-        "icon": "fa-solid fa-comments",
-        "label": "Poser ma question et obtenir un devis"
+    ],
+    "intro": "Le prix d'un nettoyage de façade dépend de plusieurs facteurs. Découvrez comment est calculé votre devis personnalisé."
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : Prix & Devis",
+    "items": [
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix d'un nettoyage de façade au m² en Charente ?",
+        "answerHtml": "<p>Un nettoyage de façade coûte en général entre <strong>8&nbsp;€ et 30&nbsp;€ par m²</strong> :</p>\n<ul>\n  <li><strong>Démoussage + traitement</strong> : 8 à 15&nbsp;€/m²</li>\n  <li><strong>Hydro-gommage</strong> (façade standard) : 15 à 30&nbsp;€/m²</li>\n  <li><strong>Protection hydrofuge</strong> en complément : +5 à 8&nbsp;€/m²</li>\n</ul>\n<p><strong>Exemple concret :</strong> pour 80&nbsp;m² de façade en pierre ou enduit à hydro-gommer, comptez environ 1&nbsp;200 à 2&nbsp;000&nbsp;€ TTC. Une façade très encrassée ou difficile d'accès (échafaudage) augmente le prix : le devis est gratuit après visite.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Combien de temps dure l'intervention de nettoyage ?",
+        "answerHtml": "<p>La durée dépend de la surface et de l'état de la façade :</p>\n<ul>\n  <li>Petite façade (moins de 50&nbsp;m²) : 1 jour</li>\n  <li>Façade moyenne (50 à 100&nbsp;m²) : 1 à 2 jours</li>\n  <li>Grande façade ou très encrassée : 2 à 3 jours</li>\n</ul>\n<p>Nous planifions selon la météo et nettoyons le chantier chaque soir.</p>"
+      },
+      {
+        "icon": "fa-solid fa-droplet",
+        "question": "Hydro-gommage ou nettoyage haute pression : quelle différence ?",
+        "answerHtml": "<p>Le nettoyage haute pression projette de l'eau sous forte pression : efficace sur un support solide, mais il peut creuser les joints, écailler l'enduit ou abîmer la pierre tendre. <strong>L'hydro-gommage</strong> projette un mélange d'eau et de poudre minérale à basse pression : il décape la pollution, les mousses, les graffitis ou une ancienne peinture sans altérer le support. Nous choisissons la méthode lors de la visite, après un essai si besoin.</p>"
+      },
+      {
+        "icon": "fa-solid fa-spray-can",
+        "question": "Faut-il traiter la façade après le nettoyage ?",
+        "answerHtml": "<p>C'est conseillé : un traitement anti-mousse ou une protection hydrofuge limite le retour des mousses et de l'humidité, et prolonge la propreté de la façade de plusieurs années (en général 5 à 10 ans selon l'exposition). Il est proposé en option et détaillé dans le devis, pour que vous décidiez en connaissance de cause.</p>"
+      },
+      {
+        "icon": "fa-solid fa-layer-group",
+        "question": "Quels supports pouvez-vous nettoyer (pierre, brique, enduit) ?",
+        "answerHtml": "<p>Nous intervenons sur la majorité des supports courants : enduit, façade peinte, brique, pierre (dont la pierre calcaire charentaise). Pour les supports fragiles ou anciens, nous validons le réglage lors de la visite pour préserver la matière.</p>"
+      },
+      {
+        "icon": "fa-solid fa-receipt",
+        "question": "Qu'est-ce qui est inclus dans le devis ? Y a-t-il des frais cachés ?",
+        "answerHtml": "<p>Le devis est détaillé et chiffré poste par poste, sans mauvaise surprise. Il comprend :</p>\n<ul>\n  <li>La protection des zones sensibles (menuiseries, végétation, sols)</li>\n  <li>Le nettoyage complet (hydro-gommage ou démoussage)</li>\n  <li>Les traitements protecteurs choisis avec vous</li>\n  <li>Le nettoyage du chantier</li>\n</ul>\n<p>Les prix annoncés sont TTC pour un particulier (logement de plus de 2 ans : TVA à 10&nbsp;%, ou 5,5&nbsp;% pour certains travaux d'isolation énergétique). <strong>Le prix du devis signé est le prix final</strong> : si un problème imprévu apparaît en cours de chantier, nous vous prévenons et vous validez avant tout travail supplémentaire.</p>"
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "question": "Le nettoyage de façade est-il garanti ?",
+        "answerHtml": "<p>Nous intervenons avec une assurance Responsabilité Civile Professionnelle, et nous revenons ajuster un point si nécessaire après l'intervention. La tenue dans le temps dépend du support, de l'exposition et du traitement appliqué : nous détaillons les options dans le devis.</p>",
+        "accent": true
       }
-    }
-  ]
+    ],
+    "intro": "Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de nettoyage de façade."
+  },
+  "contact": {
+    "serviceLabel": "de nettoyage de façade"
+  }
 }

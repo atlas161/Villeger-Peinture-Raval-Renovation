@@ -19,6 +19,7 @@ const fs = require('fs');
 const path = require('path');
 const { generateHeader } = require('./sync-header.js');
 const { readPartial, renderContact } = require('./lib/partials.js');
+const { loadPage, listSlugs } = require('./lib/content-loader.js');
 const S = require('./lib/service-sections.js');
 
 const ROOT = path.join(__dirname, '..');
@@ -57,6 +58,19 @@ const BUSINESS_TAIL = {
 
 const ldScript = (obj) => `    <script type="application/ld+json">\n${S.indent(JSON.stringify(obj, null, 2), 6)}\n    </script>`;
 
+/** Texte brut d'un fragment HTML (pour le JSON-LD) : la FAQ affichée est la seule source. */
+function plain(html) {
+  return html
+    .replace(/<\/(li|p)>/g, ' ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const faqItems = (page) => page.sections.filter((x) => x.type === 'faq').flatMap((x) => x.items);
+
 function jsonLd(page) {
   const url = `https://vprr.fr/${page.file}`;
   const l = page.ld;
@@ -74,13 +88,13 @@ function jsonLd(page) {
     {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: l.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+      mainEntity: faqItems(page).map((i) => ({ '@type': 'Question', name: plain(i.question), acceptedAnswer: { '@type': 'Answer', text: plain(i.answerHtml) } })),
     },
   ];
   return blocks.map(ldScript).join('\n\n');
 }
 
-function renderSections(page, dir) {
+function renderSections(page) {
   return page.sections
     .map((s) => {
       switch (s.type) {
@@ -90,9 +104,11 @@ function renderSections(page, dir) {
         case 'zone': return S.zone(s);
         case 'others': return S.others(s);
         case 'faq': return S.faq(s);
-        case 'why': return readPartial('why-artisan.html');
+        case 'realisation': return S.realisation(s);
+        case 'ite': return S.ite(s);
+        case 'why': return S.why(s);
+        case 'tarifs': return S.tarifs(s);
         case 'contact': return renderContact(readPartial('contact-cta.html'), page.contact);
-        case 'raw': return fs.readFileSync(path.join(dir, s.file), 'utf8').replace(/\r\n/g, '\n').trimEnd();
         default: throw new Error(`${page.file} : type de section inconnu « ${s.type} »`);
       }
     })
@@ -102,7 +118,7 @@ function renderSections(page, dir) {
     .replace(/href="#contact"/g, `href="contact.html?service=${page.contact.prestation}"`);
 }
 
-function render(page, dir) {
+function render(page) {
   const h = page.head;
   const metaLines = (arr) => (arr && arr.length ? arr.map((m) => `    ${m}\n`).join('') : '');
   const extraStyle = h.extraStyle
@@ -119,7 +135,7 @@ function render(page, dir) {
     JSONLD: jsonLd(page),
     SLIDER_SCRIPT: page.beforeAfterScript ? '    <script src="assets/js/before-after.js?v=20260929" defer></script>\n' : '',
     HEADER: generateHeader({ isHome: false, contactHref: `contact.html?service=${page.contact.prestation}` }),
-    SECTIONS: renderSections(page, dir),
+    SECTIONS: renderSections(page),
     RELATED: S.indent(S.related(page.related), 4),
   };
   return TEMPLATE.replace(/\{\{([A-Z_]+)\}\}/g, (_, k) => {
@@ -130,12 +146,11 @@ function render(page, dir) {
 
 function main() {
   const check = process.argv.includes('--check');
-  const slugs = fs.readdirSync(PAGES_DIR, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name);
+  const slugs = listSlugs();
   const stale = [];
   for (const slug of slugs) {
-    const dir = path.join(PAGES_DIR, slug);
-    const page = JSON.parse(fs.readFileSync(path.join(dir, 'page.json'), 'utf8'));
-    const html = render(page, dir);
+    const page = loadPage(slug);
+    const html = render(page);
     const out = path.join(ROOT, page.file);
     const current = fs.existsSync(out) ? fs.readFileSync(out, 'utf8').replace(/\r\n/g, '\n') : null;
     if (current !== html) {

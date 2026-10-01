@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Pourquoi nous choisir",
+  "title": "Votre artisan de confiance à Angoulême",
+  "intro": "Plus de 15 ans d'expérience au service de votre patrimoine en Charente.",
+  "items": [
+    {
+      "icon": "fa-solid fa-award",
+      "title": "Artisan local",
+      "text": "Basés à L'Isle-d'Espagnac, nous connaissons parfaitement les spécificités des bâtiments charentais."
+    },
+    {
+      "icon": "fa-solid fa-clipboard-check",
+      "title": "Visite et diagnostic sur place",
+      "text": "Nous nous déplaçons pour évaluer l'état réel du support avant de chiffrer : pas de devis à l'aveugle."
+    },
+    {
+      "icon": "fa-solid fa-user-tie",
+      "title": "Un seul interlocuteur",
+      "text": "De la visite à la fin du chantier, vous échangez avec la même personne, par téléphone ou via le formulaire."
+    },
+    {
+      "icon": "fa-solid fa-broom",
+      "title": "Chantier propre",
+      "text": "Nous nettoyons et rangeons le chantier chaque soir. Votre confort est notre priorité."
+    }
+  ]
+}

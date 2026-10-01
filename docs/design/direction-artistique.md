@@ -87,3 +87,10 @@ de l'alignement des points de rupture, qui n'affecte que les écrans dont la lar
 
 Corrigé en cours de route : (1) débordement de la colonne de texte des articles entre 1025 et ≈ 1250 px ; (2) cartes « problème » trop serrées en tablette (icône 48 px, marges réduites) ;
 (3) une règle CSS cassée par une insertion maladroite, détectée par la relecture visuelle avant livraison.
+
+## G. Cohérence des appels à l'action (2026-10-03)
+
+- **Doctrine** : un appel en haut (bouton du hero / « Obtenez un devis » de l'en-tête) et **une seule** bande `.contact-cta` en fin de page (`includes/partials/contact-cta.html`, recopiée à la main sur les pages écrites à la main et dans `scripts/template-article.html`). Pas de CTA intermédiaire (fiches, tarifs, FAQ, barre latérale, fin d'article).
+- Le texte éditorial des articles ne contient plus d'appel à contacter : c'est le rôle de la bande.
+- Libellés : bouton principal « Demander mon devis », secondaire = téléphone ; délai annoncé partout : **48 h**.
+

@@ -40,3 +40,18 @@ l'absence d'ITE et redirige vers les pages peinture extérieure / ravalement de 
 - **Boutons** : pilule, animation sobre (assombrissement seul, jamais de soulèvement ni d'ombre qui grandit).
 - **Logo du site** : variante **B2** choisie (4 lignes « Villéger / Peinture / Ravalement / Rénovation », porte allongée à la hauteur du texte, jamais « VPRR ») mais **pas déployée** : le logo d'origine reste en ligne jusqu'à nouvel ordre. Détail : [`../design/logo-b2.md`](../design/logo-b2.md).
 - **Or** : `--brand-accent` = décor seulement ; texte doré sur clair = `--brand-accent-text`, sur sombre = `--brand-accent-on-dark`.
+
+## Tarifs affichés (2026-10-03) — référence unique
+
+Fourchettes **TTC, particulier, Charente, hors échafaudage** (échafaudage : 8 à 15 €/m² de façade). Toute page, FAQ ou article qui cite un prix doit reprendre ce tableau :
+
+| Prestation | Fourchette | Détail |
+|---|---|---|
+| Ravalement de façade | 25–90 €/m² | nettoyage + peinture 25–40 · réfection d'enduit 40–65 · ravalement complet 60–90 · exemple 100 m² : 4 500–7 000 € échafaudage compris |
+| Nettoyage de façade | 8–30 €/m² | démoussage + traitement 8–15 · hydro-gommage 15–30 · hydrofuge +5–8 · exemple 80 m² : 1 200–2 000 € |
+| Nettoyage de toiture | 8–25 €/m² | démoussage 8–12 · + anti-mousse 12–18 · + hydrofuge 18–25 · exemple 100 m² : 1 200–1 800 € |
+| Peinture extérieure | 20–65 €/m² | rafraîchissement 20–30 · avec préparation 30–45 · haute performance 45–65 · exemple 100 m² : 3 000–4 500 € |
+| Isolation intérieure | 18–70 €/m² | combles perdus (soufflage) 18–30 · rampants 40–65 · murs (doublage) 45–70 · exemple 80 m² de combles : 1 500–2 400 € |
+| Rénovation intérieure (blog) | 150–1 000 €/m² | rafraîchissement 150–300 · intermédiaire 300–600 · lourde 600–1 000+ |
+
+TVA : 10 % (logement de plus de 2 ans), 5,5 % possible pour certains travaux d'isolation. Les fourchettes sont des estimations éditoriales de marché provincial : **à faire valider par le client** (A9 de la feuille de route). Source unique de la FAQ des pages de service : la section `faq` de `page.json` (le JSON-LD en est dérivé) ; FAQ générale : `faq-renovation-angouleme.html` (l'accueil en reprend 5 questions avec les mêmes réponses) — un test vérifie que le JSON-LD reprend les questions affichées.

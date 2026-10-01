@@ -1,0 +1,182 @@
+{
+  "file": "isolation-interieure-charente.html",
+  "prestation": "isolation",
+  "breadcrumbName": "Isolation Intérieure Charente",
+  "geoPlacename": "Charente, Angoulême",
+  "twitterImageAlt": "Isolation intérieure en Charente (16) - VPRR",
+  "ogImage": "https://vprr.fr/data/hero.webp",
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "businessCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services d'isolation intérieure",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Isolation intérieure professionnelle",
+            "description": "Isolation des combles et des murs par l'intérieur en Charente",
+            "areaServed": "Angoulême, Charente (16)"
+          }
+        }
+      ]
+    },
+    "serviceType": "Isolation intérieure",
+    "serviceAreaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Isolation intérieure en Charente",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Isolation des combles",
+            "description": "Isolation thermique des combles perdus ou aménagés"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Isolation des murs par l'intérieur",
+            "description": "Doublage isolant sur murs et cloisons pour améliorer le confort thermique"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Remplacement de menuiseries",
+            "description": "Remplacement de fenêtres pour renforcer l'étanchéité thermique du logement"
+          }
+        }
+      ]
+    }
+  },
+  "extraStyle": ".hero-placeholder {\n  color: var(--color-primary);\n}\n\n.hero-placeholder-text {\n  font-size: var(--text-md);\n  color: var(--color-text-light);\n  text-align: center;\n  max-width: 260px;\n  line-height: 1.5;\n  opacity: 1;\n}",
+  "whyAlt": false
+}

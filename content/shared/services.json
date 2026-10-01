@@ -1,0 +1,44 @@
+{
+  "services": [
+    {
+      "key": "ravalement",
+      "slug": "ravalement-facade-angouleme",
+      "label": "Ravalement de façade",
+      "icon": "fa-solid fa-paint-roller",
+      "card": "Rénovation complète de vos façades : réparation, enduit, peinture et protection longue durée.",
+      "about": "Réparation des fissures, enduit et peinture de protection pour redonner à vos façades leur éclat."
+    },
+    {
+      "key": "nettoyage-facade",
+      "slug": "nettoyage-facade-angouleme",
+      "label": "Nettoyage de façade",
+      "icon": "fa-solid fa-spray-can-sparkles",
+      "card": "Hydro-gommage doux et efficace pour redonner vie à vos murs extérieurs sans les abîmer.",
+      "about": "Hydrogommage et démoussage pour retrouver une façade propre sans l’abîmer."
+    },
+    {
+      "key": "toiture",
+      "slug": "nettoyage-toiture-angouleme",
+      "label": "Nettoyage de toiture",
+      "icon": "fa-solid fa-house-chimney",
+      "card": "Démoussage professionnel et traitement hydrofuge pour prolonger la durée de vie de votre toiture.",
+      "about": "Démoussage et traitement protecteur pour prolonger la durée de vie de votre couverture."
+    },
+    {
+      "key": "peinture",
+      "slug": "peinture-exterieure-charente",
+      "label": "Peinture extérieure",
+      "icon": "fa-solid fa-paintbrush",
+      "card": "Embellissez vos façades et boiseries avec nos peintures haute qualité résistantes aux UV.",
+      "about": "Façades, boiseries, portails et clôtures : préparation soignée et peinture adaptée à la météo charentaise."
+    },
+    {
+      "key": "isolation",
+      "slug": "isolation-interieure-charente",
+      "label": "Isolation intérieure",
+      "icon": "fa-solid fa-temperature-half",
+      "card": "Combles, murs par l’intérieur et menuiseries : améliorez le confort thermique de votre logement.",
+      "about": "Isolation des combles et des murs par l’intérieur pour gagner en confort."
+    }
+  ]
+}

@@ -615,17 +615,20 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
     {
       match: ['facade', 'ravalement'],
       url: `${CONFIG.siteUrl}/ravalement-facade-angouleme.html`,
-      label: 'Ravalement de façade (Charente)'
+      label: 'Ravalement de façade (Charente)',
+      prestation: 'ravalement'
     },
     {
       match: ['toiture'],
       url: `${CONFIG.siteUrl}/nettoyage-toiture-angouleme.html`,
-      label: 'Nettoyage de toiture (Charente)'
+      label: 'Nettoyage de toiture (Charente)',
+      prestation: 'toiture'
     },
     {
       match: ['peinture'],
       url: `${CONFIG.siteUrl}/peinture-exterieure-charente.html`,
-      label: 'Peinture extérieure (Charente)'
+      label: 'Peinture extérieure (Charente)',
+      prestation: 'peinture'
     }
   ];
 
@@ -633,11 +636,7 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
   const internalLinksHtml = matchedService
     ? `
 <div class="article-seo-links">
-  <p><strong>Besoin d’un artisan en Charente (16) ?</strong></p>
-  <ul>
-    <li><a href="${matchedService.url}">${matchedService.label}</a></li>
-    <li><a href="${CONFIG.siteUrl}/contact.html">Demander un devis gratuit</a></li>
-  </ul>
+  <p><strong>Notre service associé :</strong> <a href="${matchedService.url}">${matchedService.label}</a></p>
 </div>
 `.trim()
     : '';
@@ -661,6 +660,7 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
 
   // Remplacements dans le template
   const replacements = {
+    '{{CTA_QUERY}}': matchedService ? `?service=${matchedService.prestation}` : '',
     '{{TITLE}}': frontmatter.title,
     '{{DESCRIPTION}}': frontmatter.description,
     '{{SEO_TITLE}}': seoTitle,

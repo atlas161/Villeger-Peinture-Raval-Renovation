@@ -302,7 +302,3 @@ Plus de **300 façades nettoyées** en Charente :
 L'hydro-gommage est la technique de référence pour nettoyer votre façade en douceur et en profondeur. Respectueuse des matériaux, écologique et durable, elle redonne tout son éclat à votre maison sans l'abîmer.
 
 **Votre façade mérite le meilleur traitement.** Confiez-la à des professionnels expérimentés qui sauront révéler sa beauté tout en la préservant pour les années à venir.
-
----
-
-*Besoin d'un devis pour le nettoyage de votre façade à Angoulême ?* *[Contactez-nous](https://vprr.fr/contact.html)* *pour une étude gratuite et personnalisée. Intervention rapide en Charente.*

@@ -26,17 +26,20 @@ si le SEO ou une action client est concernée.
 - Formulaire : **une seule page, `contact.html`** (Cloudflare Turnstile → fonction Netlify `/api/contact` → Netlify Forms ;
   secret `TURNSTILE_SECRET` côté Netlify, jamais dans le dépôt). Accueil et pages de service : bande d'appel vers
   `contact.html?service=…`. Ne jamais remettre un `<form>` ailleurs (test `contact-page`).
-- Blog : Markdown dans `content/blog/` (édité via **Pages CMS**, `.pages.yml`).
+- Contenu éditable via **Pages CMS** : blog (`content/blog/`), pages de service, tarifs, À propos, Réalisations, textes communs.
+  `.pages.yml` est **généré** depuis `scripts/cms-config.js` (`npm run build:cms`) ; guide client : [`docs/cms.md`](docs/cms.md).
 
 ## Commandes
 
 | Commande | Rôle |
 |---|---|
-| `npm run build` | build complet (pages → blog → `dist/`) — celui de Netlify |
+| `npm run build` | build complet (pages → À propos/Réalisations → blog → `dist/`) — celui de Netlify |
+| `npm run build:content` | régénère `a-propos.html` et `realisations.html` depuis `content/a-propos.json` / `content/realisations.json` |
+| `npm run build:cms` | régénère `.pages.yml` depuis `scripts/cms-config.js` |
 | `npm run build:pages` | régénère les 5 pages de service depuis `content/pages/` |
 | `npm run build:blog` | régénère le blog depuis `content/blog/*.md` |
 | `npm run sync:header` | réinjecte le menu dans les pages écrites à la main |
-| `npm test` | 35 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu) |
+| `npm test` | 52 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu, Pages CMS) |
 | `node scripts/build-zone-schema.js --inject` | régénère le schéma SVG de la zone dans `index.html` |
 | `node scripts/tokenize-css.js` | remplace les valeurs CSS en dur par les variables `:root` identiques |
 | `npm run dev` | `npx serve .` (le footer est alors chargé en JS) |
@@ -47,8 +50,12 @@ si le SEO ou une action client est concernée.
   étape » : un commit = une idée, attendre le déploiement, revérifier la prod avant l'étape suivante.
 - **Pages de service générées** : ne jamais éditer `ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.html`,
   `nettoyage-toiture-angouleme.html`, `peinture-exterieure-charente.html`, `isolation-interieure-charente.html` à la main
-  → éditer `content/pages/<slug>/page.json` (ou son fragment `.html`) puis `npm run build:pages`. Ajouter une page de
+  → éditer `content/pages/<slug>/page.json` (texte/photos, aussi édité via Pages CMS), `meta.json` (technique), `content/tarifs.json`
+  (prix) ou `content/shared/*.json` puis `npm run build:pages`. Ajouter une page de
   service ou de ville = copier un dossier de `content/pages/` (voir `docs/seo/architecture.md` §4.2).
+- **À propos / Réalisations** : `a-propos.html` et `realisations.html` sont écrites à la main **sauf** la zone entre `<!-- cms:begin -->` et
+  `<!-- cms:end -->` (et les balises title/description), générée depuis `content/a-propos.json` / `content/realisations.json`
+  (`npm run build:content`) : ne jamais éditer cette zone à la main.
 - **Blog** : ne jamais éditer `blog/*.html` (générés) ; modifier `content/blog/*.md` puis `npm run build:blog`.
   Gabarit : `scripts/template-article.html`. CSS/JS du blog : `assets/css/blog*.css`, `assets/js/blog-*.js`.
 - **Publication = liste blanche** (`scripts/build-site.js`) : un nouveau dossier/fichier public doit être ajouté à

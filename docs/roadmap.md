@@ -18,7 +18,7 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 | A5 | ~~Vidéo du hero sur téléphone~~ | **Fait le 2026-09-30** : la vidéo se lance sur tous les écrans (décision du client). À surveiller : Lighthouse mobile (perf) après déploiement. |
 | A6 | **Contenus/photos** | Nouvelles photos de chantiers (avant/après), Instagram : le fil Elfsight montre des photos hors sujet (à trier côté compte Instagram). |
 | A7 | ~~Avis Google : fournir les 14 avis~~ | **Fait le 2026-10-01** : carrousel de `index.html` remplacé par 7 vrais avis lus sur Google Maps (4-5★ avec texte ; les 1-2★ et les avis sans texte ne sont pas affichés). Les anciens Gregory Themot, Sylvie B. et Marc Deschamps n'existent pas sur la fiche Google. Note et nombre (4,1 · 14) inchangés. |
-| A8 | **Photos à fournir (plus tard, par le client)** | (1) **Portrait de Stéphane Villéger** (+ quelques lignes sur son parcours) → section « Qui est derrière VPRR » sur `a-propos.html`. (2) **Photos de chantiers** pour les **pages de service** (`content/pages/<slug>/`, hero avant/après et galeries) et pour **`realisations.html`** (une carte par chantier : commune, prestation, avant/après). Aujourd'hui seules 4 paires avant/après existent (`media/services/`), et celles du ravalement et du nettoyage de façade se ressemblent. Quand elles arrivent : les mettre en WebP en 600/900/1200 px comme les existantes. |
+| A8 | **Photos à fournir (plus tard, par le client)** | (1) **Portrait de Stéphane Villéger** (+ quelques lignes sur son parcours) → section « Qui est derrière VPRR » sur `a-propos.html`. (2) **Photos de chantiers** pour les **pages de service** (hero avant/après) et pour **`realisations.html`** (une carte par chantier : commune, prestation, avant/après). **Depuis le 2026-10-03 le client peut les ajouter lui-même dans Pages CMS** ([`cms.md`](./cms.md)) : plus de conversion WebP manuelle (Netlify Image CDN). Aujourd'hui seules 4 paires avant/après existent (`media/services/`), et celles du ravalement et du nettoyage de façade se ressemblent. Si elles arrivent par un autre canal : les déposer dans `media/uploads/` et renseigner `content/realisations.json` / `page.json`. |
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
@@ -45,6 +45,12 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
   301 vers `.html`), surveiller « Pages » et « Expérience » (Core Web Vitals) sur 28 jours.
 - [x] *(fait, à déployer ; reste : liens en ligne dans les paragraphes, carte Leaflet)* **Accessibilité résiduelle** (audit du 29/09) : ~9 cibles tactiles < 40 px et ~8 textes < 13 px sur mobile ; images sans
   `width`/`height` (≈ 4 par page de service, 9 sur l'accueil) ; vérifier le contraste des cartes d'avis.
+
+- [ ] **A9 — Faire valider les tarifs par le client** : fourchettes au m² du tableau de [`seo/decisions.md`](./seo/decisions.md) (estimations de marché charentais, pas des prix du client). Ajuster d'un seul endroit puis propager.
+- [ ] **A10 — Statut RGE / assureur** : la FAQ isolation renvoie vers France Rénov' sans promettre d'aides ; si l'entreprise est RGE, le dire (pages isolation + FAQ).
+- [ ] **CSS orphelin du blog** : `.cta-icon`, `.cta-actions`, `.cta-card`, `.blog-cta` (`blog-article.css`, `blog-list.css`) ne servent plus.
+
+- [ ] **Vérifier Pages CMS en conditions réelles** (première connexion du client sur app.pagescms.org) : ouverture de chaque fichier, import d'une photo, enregistrement, build Netlify, rendu des photos via Netlify Image CDN sur l'aperçu. Si un champ se comporte mal, ajuster `scripts/cms-config.js` puis `npm run build:cms`.
 
 ## C. Chantiers moyens (une session chacun)
 

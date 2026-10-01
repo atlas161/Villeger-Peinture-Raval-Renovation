@@ -112,11 +112,11 @@ Le budget d'un chantier de peinture extérieure ne se calcule pas uniquement au 
 
 Voici nos estimations indicatives (prix au m² incluant la protection, la préparation, la fourniture des produits et la main-d'œuvre qualifiée) :
 
-- **Rafraîchissement sur façade saine (Acrylique ou Hydro-pliolite)** : *Nettoyage léger + traitement fongicide + sous-couche + 2 couches de finition.* Comptez entre **25€ et 40€ / m²**.
-- **Peinture de rénovation avec réparations (Pliolite ou Siloxane standard)** : *Nettoyage approfondi + égrenage + reprise des micro-fissures (masticage) + fixateur + 2 couches.* Comptez entre **45€ et 60€ / m²**.
-- **Rénovation haut de gamme (Siloxane extrême ou système d'imperméabilité de façade de type I1 à I3)** : *Traitement lourd + pontage des fissures avec entoilage + peinture très haute performance.* Comptez entre **65€ et 85€ / m²**.
+- **Rafraîchissement sur façade saine (Acrylique ou Hydro-pliolite)** : *Nettoyage léger + traitement fongicide + sous-couche + 2 couches de finition.* Comptez entre **20€ et 30€ / m²**.
+- **Peinture de rénovation avec réparations (Pliolite ou Siloxane standard)** : *Nettoyage approfondi + égrenage + reprise des micro-fissures (masticage) + fixateur + 2 couches.* Comptez entre **30€ et 45€ / m²**.
+- **Rénovation haut de gamme (Siloxane extrême ou système d'imperméabilité de façade de type I1 à I3)** : *Traitement lourd + pontage des fissures avec entoilage + peinture très haute performance.* Comptez entre **45€ et 65€ / m²**.
 
-> **Exemple de devis typique VPRR** : Pour repeindre une maison de plain-pied standard de 100m² de surface murale à Champniers, avec une peinture hydro-pliolite nécessitant un nettoyage et quelques réparations mineures, le budget se situe généralement autour de 4 500€ à 5 500€ TTC.
+> **Exemple de devis typique VPRR** : Pour repeindre une maison de plain-pied standard de 100m² de surface murale à Champniers, avec une peinture hydro-pliolite nécessitant un nettoyage et quelques réparations mineures, le budget se situe généralement autour de 3 000€ à 4 500€ TTC.
 
 ## Urbanisme et couleurs : Ce qu'il faut savoir en Charente
 
@@ -158,5 +158,3 @@ Artisans peintres et façadiers reconnus pour notre sérieux sur le bassin d'Ang
 Le choix de votre peinture extérieure, la préparation minutieuse des murs et l'application dans les règles de l'art ne s'improvisent pas. C'est un investissement important qui protégera et embellira votre patrimoine pour les 15 prochaines années.
 
 **Ne laissez pas votre maison perdre de sa superbe et se dégrader face aux intempéries.** Confiez sa rénovation à des experts passionnés qui sauront la traiter et la mettre en valeur.
-
-*Besoin d'un diagnostic et d'un devis pour vos travaux de peinture extérieure à Angoulême, Champniers, La Couronne, Ruelle-sur-Touvre ou partout ailleurs en Charente ?* [Contactez l'équipe VPRR dès aujourd'hui sur vprr.fr](https://vprr.fr/contact.html) *pour une étude gratuite et totalement personnalisée de votre projet.*
