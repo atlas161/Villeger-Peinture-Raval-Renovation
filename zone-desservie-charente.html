@@ -184,12 +184,13 @@
 
     <script defer src="assets/js/performance.js?v=20260929"></script>
     <script defer src="assets/js/zone-map-leaflet.js?v=20260929"></script>
+    <script defer src="assets/js/zone-page.js?v=20260929"></script>
     <script defer src="assets/js/main.js?v=20260929"></script>
   </head>
   <body>
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
 
-                <header class="site-header" id="top">
+                        <header class="site-header" id="top">
       <div class="container header-inner">
         <a href="index.html#top" class="logo" aria-label="VPRR - Accueil">
           <img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villéger Peinture Raval Rénovation" width="150" height="40" />
@@ -218,13 +219,13 @@
             <li><a class="nav-link" href="index.html#blog">Blog</a></li>
             <li><a class="nav-link" href="#zone" aria-current="page">Zone d'intervention</a></li>
             <li><a class="nav-link" href="index.html#faq">FAQ</a></li>
-            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
             <li class="menu-tel">
               <a href="tel:+33545912270" aria-label="Appeler le 05 45 91 22 70">05 45 91 22 70</a>
               <span>Lun–ven 9 h–17 h · sam 9 h–12 h</span>
             </li>
             <li class="menu-cta">
-              <a class="btn btn-primary" href="index.html#contact">Obtenir un devis</a>
+              <a class="btn btn-primary" href="contact.html">Obtenez un devis</a>
             </li>
           </ul>
         </nav>
@@ -240,17 +241,14 @@
             <p>Basés à L’Isle-d’Espagnac (16340), nous intervenons sur Angoulême, le Grand Angoulême et de nombreuses communes en Charente pour le ravalement de façade, la peinture, le nettoyage de façade (hydro-gommage) et l’entretien de toiture (démoussage).</p>
           </header>
 
-          <div class="zone-content zone-content--lists">
-            <div class="zone-map-container">
-              <div id="zone-map" class="zone-map" role="application" aria-label="Carte de la zone d'intervention">
-                <div class="zone-map-fallback" role="note" aria-label="Chargement de la carte">
-                  <div class="zone-map-fallback-title">Chargement de la carte…</div>
-                  <div class="zone-map-fallback-text">Si rien ne s’affiche, vérifiez votre connexion.</div>
-                </div>
+          <div class="zone-page">
+            <div class="zone-top">
+              <div class="zone-finder">
+                <label class="zone-finder-label" for="zone-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Ma commune est-elle desservie&nbsp;?</label>
+                <input class="zone-finder-input" id="zone-search" type="search" placeholder="Nom de votre commune" autocomplete="off" enterkeyhint="search" />
+                <p class="zone-finder-result" id="zone-search-result" role="status" aria-live="polite">Plus de 25 communes desservies autour d’Angoulême, dans un rayon d’environ 50&nbsp;km.</p>
               </div>
-            </div>
 
-            <div class="zone-info">
               <a class="zone-address zone-address-link" href="https://www.google.com/maps/dir/?api=1&destination=136+Avenue+de+la+R%C3%A9publique,+16340+L%27Isle-d%27Espagnac" target="_blank" rel="noopener noreferrer" aria-label="Itinéraire vers notre base à L'Isle-d'Espagnac">
                 <div class="zone-info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
                 <div class="zone-info-content">
@@ -259,64 +257,79 @@
                   <span class="zone-address-cta">Ouvrir l’itinéraire <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
               </a>
+            </div>
 
-              <div class="zone-note">
-                <p><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Vous recherchez une entreprise locale pour des travaux de façade, peinture ou toiture en Charente&nbsp;? Cette page liste nos secteurs d’intervention et les communes les plus fréquentes.</p>
-              </div>
-
-              <div class="zone-cities">
-                <h3><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Grand Angoulême</h3>
-                <ul class="zone-cities-list">
-                  <li>Angoulême</li>
-                  <li>L’Isle-d’Espagnac</li>
-                  <li>Gond-Pontouvre</li>
-                  <li>Saint-Yrieix-sur-Charente</li>
-                  <li>Soyaux</li>
-                  <li>Ruelle-sur-Touvre</li>
-                  <li>Magnac-sur-Touvre</li>
-                  <li>La Couronne</li>
-                  <li>Puymoyen</li>
-                  <li>Champniers</li>
-                  <li>Fléac</li>
-                  <li>Saint-Michel</li>
+            <div class="zone-sectors" id="zone-sectors">
+              <section class="zone-sector" data-zone-sector aria-label="Grand Angoulême">
+                <h3><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Grand Angoulême <span class="zone-sector-count">12 communes</span></h3>
+                <ul class="zone-chips">
+                  <li data-zone-city>Angoulême</li>
+                  <li data-zone-city>L’Isle-d’Espagnac</li>
+                  <li data-zone-city>Gond-Pontouvre</li>
+                  <li data-zone-city>Saint-Yrieix-sur-Charente</li>
+                  <li data-zone-city>Soyaux</li>
+                  <li data-zone-city>Ruelle-sur-Touvre</li>
+                  <li data-zone-city>Magnac-sur-Touvre</li>
+                  <li data-zone-city>La Couronne</li>
+                  <li data-zone-city>Puymoyen</li>
+                  <li data-zone-city>Champniers</li>
+                  <li data-zone-city>Fléac</li>
+                  <li data-zone-city>Saint-Michel</li>
                 </ul>
-              </div>
-
-              <div class="zone-cities">
-                <h3><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ouest Charente (Cognac, Jarnac…)</h3>
-                <ul class="zone-cities-list">
-                  <li>Cognac</li>
-                  <li>Jarnac</li>
-                  <li>Châteauneuf-sur-Charente</li>
-                  <li>Segonzac</li>
-                  <li>Rouillac</li>
+              </section>
+              <section class="zone-sector" data-zone-sector aria-label="Ouest Charente (Cognac, Jarnac…)">
+                <h3><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ouest Charente (Cognac, Jarnac…) <span class="zone-sector-count">5 communes</span></h3>
+                <ul class="zone-chips">
+                  <li data-zone-city>Cognac</li>
+                  <li data-zone-city>Jarnac</li>
+                  <li data-zone-city>Châteauneuf-sur-Charente</li>
+                  <li data-zone-city>Segonzac</li>
+                  <li data-zone-city>Rouillac</li>
                 </ul>
-              </div>
-
-              <div class="zone-cities">
-                <h3><i class="fa-solid fa-map" aria-hidden="true"></i> Nord, Est & Sud Charente</h3>
-                <ul class="zone-cities-list">
-                  <li>Ruffec</li>
-                  <li>Mansle</li>
-                  <li>Aigre</li>
-                  <li>La Rochefoucauld-en-Angoumois</li>
-                  <li>Montbron</li>
-                  <li>Confolens</li>
-                  <li>Barbezieux-Saint-Hilaire</li>
-                  <li>Montmoreau</li>
-                  <li>Chalais</li>
+              </section>
+              <section class="zone-sector" data-zone-sector aria-label="Nord, Est &amp; Sud Charente">
+                <h3><i class="fa-solid fa-map" aria-hidden="true"></i> Nord, Est &amp; Sud Charente <span class="zone-sector-count">9 communes</span></h3>
+                <ul class="zone-chips">
+                  <li data-zone-city>Ruffec</li>
+                  <li data-zone-city>Mansle</li>
+                  <li data-zone-city>Aigre</li>
+                  <li data-zone-city>La Rochefoucauld-en-Angoumois</li>
+                  <li data-zone-city>Montbron</li>
+                  <li data-zone-city>Confolens</li>
+                  <li data-zone-city>Barbezieux-Saint-Hilaire</li>
+                  <li data-zone-city>Montmoreau</li>
+                  <li data-zone-city>Chalais</li>
                 </ul>
-              </div>
+              </section>
+            </div>
 
-              <div class="zone-note">
-                <p><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Pour un <a href="ravalement-facade-angouleme.html">ravalement de façade en Charente (16)</a>, nous intervenons sur Angoulême et les communes environnantes, mais aussi sur des secteurs comme Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Demandez un devis gratuit pour vérifier votre commune.</p>
-              </div>
+            <p class="zone-finder-empty" id="zone-search-empty" hidden><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Cette commune n’est pas dans la liste, mais nous intervenons aussi dans les communes voisines&nbsp;: <a href="contact.html">contactez-nous</a> ou appelez le <a href="tel:+33545912270">05 45 91 22 70</a>.</p>
 
-              <div class="zone-actions">
-                <a href="index.html#contact" class="btn btn-primary zone-actions-btn">
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i> Vérifier votre commune et obtenir un devis
-                </a>
+            <div class="zone-note">
+              <p><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Pour un <a href="ravalement-facade-angouleme.html">ravalement de façade en Charente (16)</a>, nous intervenons sur Angoulême et les communes environnantes, mais aussi sur des secteurs comme Cognac, Jarnac, Ruffec, Barbezieux-Saint-Hilaire et La Rochefoucauld-en-Angoumois. Demandez un devis gratuit pour vérifier votre commune.</p>
+            </div>
+
+            <div class="zone-map-block">
+              <button type="button" class="btn btn-secondary" id="zone-map-toggle" aria-expanded="false" aria-controls="zone-map-wrap">
+                <i class="fa-solid fa-map" aria-hidden="true"></i> Afficher la carte interactive
+              </button>
+              <p class="zone-map-hint">La carte utilise OpenStreetMap et ne se charge que si vous l’affichez.</p>
+              <div class="zone-map-wrap" id="zone-map-wrap" hidden>
+                <div class="zone-map-container">
+                  <div id="zone-map" class="zone-map" data-zone-lazy="1" role="application" aria-label="Carte de la zone d'intervention">
+                    <div class="zone-map-fallback" role="note" aria-label="Chargement de la carte">
+                      <div class="zone-map-fallback-title">Chargement de la carte…</div>
+                      <div class="zone-map-fallback-text">Si rien ne s’affiche, vérifiez votre connexion.</div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            <div class="zone-actions">
+              <a href="contact.html" class="btn btn-primary zone-actions-btn">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i> Vérifier votre commune et obtenir un devis
+              </a>
             </div>
           </div>
 

@@ -162,7 +162,7 @@
       if (el.closest('.site-header')) return 'menu';
       if (el.closest('.service-hero, #home, .hero')) return 'hero';
       if (el.closest('.site-footer')) return 'pied_de_page';
-      if (el.closest('#contact')) return 'contact';
+      if (el.closest('#contact, .contact-cta-section')) return 'contact';
       return 'page';
     };
 
@@ -171,7 +171,7 @@
       if (!a) return;
       const href = a.getAttribute('href') || '';
       if (href.indexOf('tel:') === 0) send('phone_click', { placement: placement(a) });
-      else if (/(^|\/|\.html)#contact$/.test(href) || href === '#contact') send('quote_cta_click', { placement: placement(a) });
+      else if (/(^|\/)contact\.html(\?[^#]*)?$/.test(href)) send('quote_cta_click', { placement: placement(a) });
     }, { passive: true });
 
     // Page de remerciement = formulaire envoyé avec succès (le visiteur y est redirigé par /api/contact)

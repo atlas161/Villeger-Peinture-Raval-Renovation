@@ -543,6 +543,9 @@
 
   function autoInit() {
     try {
+      // Page zone : la carte (tuiles OpenStreetMap) ne se charge qu'au clic sur « Afficher la carte » (zone-page.js).
+      var lazy = root.document.getElementById('zone-map');
+      if (lazy && lazy.dataset && lazy.dataset.zoneLazy === '1') return;
       initZoneMap({ containerId: 'zone-map', rootMargin: '200px' });
     } catch (_) {}
   }

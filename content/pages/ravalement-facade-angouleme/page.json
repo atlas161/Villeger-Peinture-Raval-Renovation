@@ -194,28 +194,8 @@
   },
   "beforeAfterScript": true,
   "contact": {
-    "formName": "contact-ravalement-facade",
-    "service": "Ravalement de façade Angoulême",
-    "placeholder": "Ravalement de façade",
     "prestation": "ravalement",
-    "options": [
-      [
-        "ravalement",
-        "Ravalement de façade"
-      ],
-      [
-        "nettoyage-facade",
-        "Nettoyage de façade"
-      ],
-      [
-        "peinture",
-        "Peinture extérieure"
-      ],
-      [
-        "autre",
-        "Autre"
-      ]
-    ]
+    "serviceLabel": "ravalement de façade"
   },
   "related": [
     {

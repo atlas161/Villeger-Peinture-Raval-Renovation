@@ -218,28 +218,8 @@
   },
   "beforeAfterScript": true,
   "contact": {
-    "formName": "contact-nettoyage-toiture",
-    "service": "Nettoyage de toiture Angoulême",
-    "placeholder": "Nettoyage de toiture",
-    "prestation": "nettoyage-toiture",
-    "options": [
-      [
-        "nettoyage-toiture",
-        "Nettoyage de toiture"
-      ],
-      [
-        "nettoyage-facade",
-        "Nettoyage de façade"
-      ],
-      [
-        "ravalement",
-        "Ravalement de façade"
-      ],
-      [
-        "autre",
-        "Autre"
-      ]
-    ]
+    "prestation": "toiture",
+    "serviceLabel": "nettoyage de toiture"
   },
   "related": [
     {

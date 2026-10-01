@@ -228,28 +228,8 @@
   },
   "beforeAfterScript": true,
   "contact": {
-    "formName": "contact-nettoyage-facade",
-    "service": "Nettoyage de façade Angoulême",
-    "placeholder": "Nettoyage de façade",
     "prestation": "nettoyage-facade",
-    "options": [
-      [
-        "nettoyage-facade",
-        "Nettoyage de façade"
-      ],
-      [
-        "nettoyage-toiture",
-        "Nettoyage de toiture"
-      ],
-      [
-        "ravalement",
-        "Ravalement de façade"
-      ],
-      [
-        "autre",
-        "Autre"
-      ]
-    ]
+    "serviceLabel": "nettoyage de façade"
   },
   "related": [
     {
