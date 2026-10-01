@@ -364,6 +364,11 @@ function markdownToHtml(markdown) {
         i += 1;
       }
 
+      // En-tête vide dans le Markdown (| | | |) : la première ligne devient l'en-tête (accessibilité, WCAG 1.3.1).
+      if (headerCells.every((c) => !c.replace(/<[^>]*>/g, '').trim()) && bodyRows.length > 1) {
+        headerCells.splice(0, headerCells.length, ...bodyRows.shift().map((c) => c.replace(/<\/?strong>/g, '')));
+      }
+
       const thead = `<thead><tr>${headerCells.map((c) => `<th scope="col">${c}</th>`).join('')}</tr></thead>`;
       const tbody = bodyRows.length
         ? `<tbody>${bodyRows
@@ -681,7 +686,8 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
     '{{PREV_DISABLED}}': prevDisabled,
     '{{NEXT_ARTICLE_URL}}': nextUrl,
     '{{NEXT_ARTICLE_TITLE}}': nextTitle,
-    '{{NEXT_DISABLED}}': nextDisabled
+    '{{NEXT_DISABLED}}': nextDisabled,
+    '{{RELATED_ARTICLES}}': renderRelatedArticles(frontmatter)
   };
   
   let html = template;
@@ -847,6 +853,40 @@ function normalizeSlug(value, fallback) {
   return noExt;
 }
 
+// Liste des articles (renseignée par build() avant la génération) : sert aux « À lire aussi ».
+let ALL_ARTICLES = [];
+
+/** Trois autres articles : d'abord la même catégorie, puis les plus récents. */
+function renderRelatedArticles(current) {
+  const labels = { peinture: 'Peinture', facade: 'Façade', toiture: 'Toiture', isolation: 'Isolation', conseils: 'Conseils' };
+  const slugOf = (a) => getBlogCategorySlug(a);
+  const others = ALL_ARTICLES.filter((a) => !a.draft && a.slug !== current.slug);
+  const sameCat = others.filter((a) => slugOf(a) === slugOf(current));
+  const rest = others.filter((a) => slugOf(a) !== slugOf(current));
+  const picks = sameCat.concat(rest).slice(0, 3);
+  if (picks.length === 0) return '';
+  const cards = picks.map((a) => {
+    const { src, srcset } = deriveCardImageVariants(a.image || '/data/hero.webp');
+    const srcsetAttr = srcset ? ` srcset="${escapeHtml(srcset)}" sizes="(max-width: 768px) 100vw, 380px"` : '';
+    return `<a class="related-card" href="./${escapeHtml(a.slug)}.html">
+            <span class="related-image"><img src="${escapeHtml(src)}"${srcsetAttr} alt="" loading="lazy" width="600" height="375"></span>
+            <span class="related-body">
+              <span class="related-tag">${labels[slugOf(a)] || 'Conseils'}</span>
+              <span class="related-title">${escapeHtml(a.title)}</span>
+              <span class="related-more">Lire l'article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </span>
+          </a>`;
+  }).join('\n          ');
+  return `<section class="article-related" aria-labelledby="related-title">
+      <div class="container">
+        <h2 id="related-title">À lire aussi</h2>
+        <div class="related-grid">
+          ${cards}
+        </div>
+      </div>
+    </section>`;
+}
+
 function deriveCardImageVariants(imagePublicPath) {
   const normalized = normalizePublicPath(imagePublicPath || '/data/hero.webp');
   if (!normalized) return { src: '/data/hero.webp', srcset: '', sizes: '(max-width: 768px) 100vw, 600px' };
@@ -918,7 +958,7 @@ function renderBlogIndexCards(articles) {
 
     return `
           <article class="article-card" data-category="${categorySlug}" data-date="${escapeHtml(article.date)}">
-            <a href="./${escapeHtml(article.slug)}.html" class="article-link" aria-label="Lire ${title}">
+            <a href="./${escapeHtml(article.slug)}.html" class="article-link">
               <div class="article-image">
                 <img src="${escapeHtml(src)}"${srcsetAttr} alt="${title}" loading="lazy" width="600" height="338">
                 <span class="article-tag">${categoryLabels[categorySlug] || 'Conseils'}</span>
@@ -1014,6 +1054,9 @@ function updateBlogIndexPage(articles) {
   const cardsHtml = renderBlogIndexCards(articles);
 
   let html = replaceElementInnerHtmlById(raw, 'articles-grid', cardsHtml);
+  // Article « à la une » seulement si les cartes restantes remplissent des rangées de 3 (pas de carte orpheline).
+  const publicCount = articles.filter((x) => !x.draft).length;
+  html = html.replace(/(<div id="articles-grid" class="articles-grid)(?: has-featured)?"/, `$1${publicCount >= 4 && publicCount % 3 === 1 ? ' has-featured' : ''}"`);
   html = upsertBlogItemListSchema(html, articles);
 
   fs.writeFileSync(blogIndexPath, html, 'utf-8');
@@ -1091,6 +1134,8 @@ async function build() {
   // Trier par date (du plus récent au plus ancien)
   parsedArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
   
+  ALL_ARTICLES = parsedArticles;
+
   // Deuxième passe : générer les HTML avec navigation
   for (let i = 0; i < parsedArticles.length; i++) {
     const article = parsedArticles[i];

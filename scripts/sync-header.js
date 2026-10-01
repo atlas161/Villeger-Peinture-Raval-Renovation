@@ -26,6 +26,8 @@ const PAGES = [
   { file: 'zone-desservie-charente.html', currentSection: 'zone' },
   { file: 'faq-renovation-angouleme.html', currentSection: 'faq' },
   { file: 'contact.html', currentSection: 'contact' },
+  { file: 'a-propos.html' },
+  { file: 'realisations.html' },
   { file: 'mentions-legales.html' },
   { file: 'merci.html' },
 ];

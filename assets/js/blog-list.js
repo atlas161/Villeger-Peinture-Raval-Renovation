@@ -171,7 +171,7 @@ function createArticleCard(article) {
   
   return `
     <article class="article-card" data-category="${category}" data-date="${article.date}">
-      <a href="./${article.slug}.html" class="article-link" aria-label="Lire ${article.title}">
+      <a href="./${article.slug}.html" class="article-link">
         <div class="article-image">
           <img src="${imageSrc || baseImage}" ${imageSrcset ? `srcset=\"${imageSrcset}\"${imageSizes ? ` sizes=\"${imageSizes}\"` : ''}` : ''} alt="${article.title}" loading="lazy" width="600" height="338">
           <span class="article-tag">${categoryLabels[category] || 'Conseil'}</span>
@@ -226,6 +226,8 @@ function displayArticles(articles, page = 1) {
   
   // Générer HTML
   grid.innerHTML = pageArticles.map(createArticleCard).join('');
+  // En vue « Tous », page 1 : le premier article est mis à la une (voir blog-list.css).
+  grid.classList.toggle('has-featured', page === 1 && pageArticles.length >= 4 && pageArticles.length % 3 === 1);
   
   // Mettre à jour pagination
   if (totalPages > 1) {

@@ -21,6 +21,9 @@ Contexte technique : [`seo/architecture.md`](./seo/architecture.md) · méthode 
 
 ## B. Petits chantiers rapides (≤ 1 h chacun)
 
+- [ ] **Page « À propos » : ajouter l'humain.** Elle ne contient que des faits vérifiables. Quand le client fournit un portrait de Stéphane Villéger et quelques lignes sur son parcours : ajouter une section « Qui est derrière VPRR » (photo + texte) — c'est le levier de confiance principal d'un site d'artisan.
+- [ ] **Page « Réalisations » : plus de chantiers.** Aujourd'hui 4 paires avant/après (les photos de « Ravalement » et « Nettoyage de façade » se ressemblent beaucoup). Ajouter de vraies photos de chantiers récents (A6), une carte par chantier avec commune et durée.
+
 - [ ] **Netlify Forms : vérifier la réception** du premier envoi depuis `contact.html` (le formulaire garde le nom `contact`). Après déploiement : envoyer un message test, vérifier l'e-mail de notification et l'événement `generate_lead`.
 
 - [x] *(fait le 2026-10-01)* Propositions de redesign 1 à 6 des pages service et zone ([`design/direction-artistique.md`](./design/direction-artistique.md)). Reste la n° 7 (logo B2, en attente du client). Le guide visuel [`design/guide-direction-artistique.html`](./design/guide-direction-artistique.html) est à tenir à jour à chaque évolution de composant.

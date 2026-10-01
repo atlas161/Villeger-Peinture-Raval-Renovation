@@ -17,6 +17,16 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-02 (soir) — Blog, FAQ, mentions légales, accueil + pages « À propos » et « Réalisations »
+
+- **Blog, liste** : article « à la une » (grande carte horizontale) + grille de 3 colonnes (7 articles = 1 + 3 + 3, plus de carte orpheline ; la classe `has-featured` est calculée par `build-blog.js` et par `blog-list.js` : seulement si n − 1 est multiple de 3). Titres de cartes **affichés en entier** (plus de « … », y compris carrousel de l'accueil). Cartes sans soulèvement au survol.
+- **Blog, article** : image d'en-tête 16:7 (460 px max) au lieu de pleine hauteur ; nouveau bloc **« À lire aussi »** (3 articles, même catégorie d'abord) ; CTA de fin « Demander mon devis » + téléphone ; étiquette de catégorie plus contrastée ; tableau Markdown à en-tête vide → première ligne promue en `<th>` (accessibilité).
+- **FAQ** : recherche instantanée (insensible aux accents) combinée aux filtres, compteur, message « aucun résultat », puces de filtre qui passent à la ligne (la rangée n'est plus coupée), « Tout déplier / replier » en liens.
+- **Mentions légales** : mise en page de document (titres à l'échelle, sommaire en puces, espacements), mention OpenStreetMap mise à jour (carte à la demande).
+- **Accueil** : section « Comment ça se passe » (4 étapes) ; lien « Voir toutes nos réalisations ».
+- **Nouvelles pages** : `a-propos.html` (faits vérifiables seulement : dirigeant, siège, zone, horaires, métier, engagements) et `realisations.html` (4 avant / après filtrables). Ajoutées au sitemap, au footer, à `llms.txt`, au menu injecté (`sync-header.js`). CSS : `assets/css/content-pages.css`.
+- Accessibilité Lighthouse (local) : 100 sur accueil, liste du blog, articles, FAQ, mentions, À propos, Réalisations. Tests : 30/30 (nouveau `content-pages`).
+
 ## 2026-10-02 — Page de contact dédiée + refonte de la zone d'intervention
 
 - **`contact.html`** : le formulaire de devis vit sur une page à part (accueil et 5 pages de service : simple bande d'appel). Service pré-sélectionné via `?service=…`, champs cachés `service` et `source`. Nom Netlify conservé (`contact`). Tous les liens `#contact` (menu, hero, tarifs, barre mobile, footer, blog, JSON-LD, llms.txt, security.txt) migrés. Ajoutée au sitemap. Nouveau test `contact-page` (6).

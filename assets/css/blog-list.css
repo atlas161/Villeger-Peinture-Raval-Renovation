@@ -135,8 +135,59 @@
 
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--space-xl);
+}
+
+/* Trois colonnes sur ordinateur ; en vue « Tous », le premier article est mis « à la une » sur toute la largeur
+   (1 + 6 cartes = pas de carte orpheline). */
+@media (min-width: 1024px) {
+  .articles-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .articles-grid.has-featured > .article-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .articles-grid.has-featured > .article-card:first-child .article-link {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  }
+
+  .articles-grid.has-featured > .article-card:first-child .article-image {
+    aspect-ratio: auto;
+    min-height: 340px;
+  }
+
+  .articles-grid.has-featured > .article-card:first-child .article-content {
+    padding: var(--space-2xl);
+    justify-content: center;
+  }
+
+  .articles-grid.has-featured > .article-card:first-child .article-title {
+    font-size: 1.75rem;
+  }
+
+  .articles-grid.has-featured > .article-card:first-child .article-excerpt {
+    font-size: 1rem;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    flex: none;
+  }
+
+  .articles-grid.has-featured > .article-card:first-child .article-image::after {
+    content: 'À la une';
+    position: absolute;
+    right: var(--space-md);
+    bottom: var(--space-md);
+    padding: var(--space-xs) var(--space-md);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    background: var(--color-white);
+    border-radius: var(--radius-pill);
+  }
 }
 
 /* Carte d'article - Style Apple */
@@ -153,13 +204,20 @@
   height: 100%;
 }
 
+.article-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+}
+
 .article-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--blog-shadow-card-hover);
 }
 
 .article-card:hover .article-image img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .article-image {
@@ -222,11 +280,6 @@
   line-height: 1.3;
   color: var(--color-text);
   margin-bottom: var(--space-sm);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .article-excerpt {
