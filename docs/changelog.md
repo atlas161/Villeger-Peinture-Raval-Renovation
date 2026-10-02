@@ -17,6 +17,14 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-02 (suite 3) — Tokens : couleurs d'état, réseaux, opacités, cible tactile (aucun changement visuel voulu)
+
+- **Nouveaux tokens** (`src/css/styles/02-tokens.css`) : `--color-error*` (bloc d'erreur du formulaire, `contact.css`), `--social-facebook/x/linkedin` (partage du blog), `--touch-target` (44 px, remplace 25 occurrences), et une échelle d'opacités `--white-aNN`, `--black-aNN`, `--primary-aNN`, `--accent-aNN`, `--scrim-aNN` (voile du hero) qui remplace ~60 `rgba(...)` en dur. `#fff` → `var(--color-white)`.
+- `scripts/tokenize-alpha.js` : remplace les `rgba()` par le cran d'opacité le plus proche (écart ≤ 0,05, invisible) ; idempotent.
+- `15-reassurance.css` : −24 `!important` (rustines Font Awesome inutiles) ; rendu des icônes mesuré identique avant/après.
+- Reste : 25 `!important` (en-tête, burger, menu mobile : à démêler avec un contrôle visuel complet), `--font-weight-regular` utilisé dans `08-nav-bureau.css:138` mais jamais défini (laissé tel quel pour ne pas changer le rendu).
+- Vérifié : `npm test` 53/53, `npm run build` OK, accueil et icônes contrôlés dans le navigateur.
+
 ## 2026-10-01 (suite 3) — Accueil raccourci, menu « Où ? », bannière cookies en une ligne, rayons et espacements tokenisés (non déployé)
 
 - **Accueil plus court sur ordinateur/tablette** (`src/css/styles/25-accueil-compact.css`, ≥ 768 px) : hauteur desktop **8 665 → ≈ 7 070 px** (−18 %), tablette 768 px ≈ 8 770 px, téléphone ≈ 11 600 px (mobile inchangé, déjà condensé). Services : icône à gauche du titre, flèche en coin, 3 pastilles ; étapes, galerie et blog plus denses (pas d'extrait sur les cartes du blog) ; zone : 8 communes + bouton (la liste complète reste sur la page zone) ; FAQ de l'accueil : 4 questions (le test impose ≥ 4) ; chapôs de section raccourcis. Le contenu HTML des services/étapes est conservé.

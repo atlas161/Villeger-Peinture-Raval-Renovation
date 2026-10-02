@@ -42,6 +42,7 @@ si le SEO ou une action client est concernée.
 | `npm run sync:header` | réinjecte le menu dans les pages écrites à la main |
 | `npm test` | 55 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu, Pages CMS) |
 | `node scripts/tokenize-css.js` | remplace les valeurs CSS en dur par les variables `:root` identiques |
+| `node scripts/tokenize-alpha.js` | remplace les `rgba()` en dur par les tokens d'opacité (`--white-a80`, `--scrim-a65`…) |
 | `npm run dev` | `npx serve .` (le footer est alors chargé en JS) |
 
 ## Règles de travail (à respecter)

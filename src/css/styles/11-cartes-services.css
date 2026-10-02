@@ -54,7 +54,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(103,58,18,0.04) 0%, transparent 55%);
+  background: linear-gradient(135deg, var(--primary-a4) 0%, transparent 55%);
   opacity: 0;
   transition: opacity 280ms var(--ease-out);
   pointer-events: none;
@@ -74,7 +74,7 @@
   width: 54px;
   height: 54px;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(168,139,94,0.10) 100%);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--accent-a12) 100%);
   display: grid;
   place-items: center;
   font-size: var(--text-3xl);
@@ -88,7 +88,7 @@
 
 .svc-card:hover .svc-icon {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* Contenu */
@@ -136,7 +136,7 @@
 }
 
 .svc-card:hover .svc-tags li {
-  background: rgba(103,58,18,0.12);
+  background: var(--primary-a12);
 }
 
 /* Footer "Découvrir →" */
@@ -172,7 +172,7 @@
 
 .svc-card:hover .svc-arrow {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* ── Responsive ── */

@@ -28,8 +28,8 @@
 .home-step-num {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target);
+  height: var(--touch-target);
   margin-bottom: var(--space-md);
   font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);

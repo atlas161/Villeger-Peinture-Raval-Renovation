@@ -104,7 +104,7 @@
   cursor: pointer;
   transition: var(--blog-transition);
   white-space: nowrap;
-  min-height: 44px; /* Minimum WCAG touch target height */
+  min-height: var(--touch-target); /* Minimum WCAG touch target height */
 }
 
 .filter-btn:hover {

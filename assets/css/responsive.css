@@ -56,8 +56,8 @@
     /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5). Note : blog/article.css
        (chargé après ce fichier sur les pages d'article) définit .share-btn en 44px sans media
        query et l'emporte déjà ; cette règle reste pour les autres pages ".blog-page". */
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
   }
 
 }
@@ -232,9 +232,9 @@
   .reassurance-icon {
     grid-column: 1;
     grid-row: 1;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    min-width: var(--touch-target);
     font-size: var(--text-2xl);
   }
 
@@ -243,8 +243,8 @@
   }
 
   .step-number {
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     font-size: var(--text-2xl);
   }
 
@@ -303,8 +303,8 @@
   }
 
   .service-icon {
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     font-size: var(--text-2xl);
     margin-bottom: var(--space-sm);
   }
@@ -325,8 +325,8 @@
   }
 
   .svc-icon {
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     font-size: var(--text-xl);
     margin-bottom: var(--space-md);
   }
@@ -450,7 +450,7 @@
   .gallery-figure figcaption,
   .before-after-images figcaption { font-size: 0.8125rem; }
 
-  .form-actions .btn { min-height: 44px; }
+  .form-actions .btn { min-height: var(--touch-target); }
   .hero-eyebrow,
   .hero-chip-stars,
   .contact-info-label,

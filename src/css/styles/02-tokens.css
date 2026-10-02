@@ -25,6 +25,53 @@
   --color-border-light: #F0EDE8;
   --color-panel: #FAF8F5;
 
+  /* Statuts (erreur du formulaire) */
+  --color-error: #DC2626;
+  --color-error-border: #EF4444;
+  --color-error-bg: #FEE2E2;
+
+  /* Réseaux sociaux (couleurs de marque imposées, boutons de partage du blog) */
+  --social-facebook: #1877F2;
+  --social-x: #1DA1F2;
+  --social-linkedin: #0077B5;
+
+  /* Opacités : blanc, noir, brun de marque, or et voile sombre du hero. Un cran = un token (--white-a80 = blanc à 80 %). */
+  --white-a8: rgba(255, 255, 255, 0.08);
+  --white-a12: rgba(255, 255, 255, 0.12);
+  --white-a16: rgba(255, 255, 255, 0.16);
+  --white-a28: rgba(255, 255, 255, 0.28);
+  --white-a36: rgba(255, 255, 255, 0.36);
+  --white-a55: rgba(255, 255, 255, 0.55);
+  --white-a65: rgba(255, 255, 255, 0.65);
+  --white-a80: rgba(255, 255, 255, 0.8);
+  --white-a88: rgba(255, 255, 255, 0.88);
+  --white-a95: rgba(255, 255, 255, 0.95);
+  --black-a5: rgba(0, 0, 0, 0.05);
+  --black-a10: rgba(0, 0, 0, 0.1);
+  --black-a15: rgba(0, 0, 0, 0.15);
+  --black-a20: rgba(0, 0, 0, 0.2);
+  --black-a25: rgba(0, 0, 0, 0.25);
+  --black-a30: rgba(0, 0, 0, 0.3);
+  --black-a35: rgba(0, 0, 0, 0.35);
+  --black-a45: rgba(0, 0, 0, 0.45);
+  --black-a55: rgba(0, 0, 0, 0.55);
+  --primary-a4: rgba(103, 58, 18, 0.04);
+  --primary-a6: rgba(103, 58, 18, 0.06);
+  --primary-a8: rgba(103, 58, 18, 0.08);
+  --primary-a12: rgba(103, 58, 18, 0.12);
+  --primary-a16: rgba(103, 58, 18, 0.16);
+  --primary-a20: rgba(103, 58, 18, 0.2);
+  --primary-a80: rgba(103, 58, 18, 0.8);
+  --accent-a8: rgba(168, 139, 94, 0.08);
+  --accent-a12: rgba(168, 139, 94, 0.12);
+  --accent-a45: rgba(168, 139, 94, 0.45);
+  --scrim-a20: rgba(10, 5, 2, 0.2);
+  --scrim-a45: rgba(10, 5, 2, 0.45);
+  --scrim-a55: rgba(10, 5, 2, 0.55);
+  --scrim-a65: rgba(10, 5, 2, 0.65);
+  --scrim-a75: rgba(10, 5, 2, 0.75);
+  --scrim-a88: rgba(10, 5, 2, 0.88);
+
   /* Espacements (système 8px) */
   --space-2xs: 0.125rem; /* 2px : interstices fins */
   --space-xs: 0.25rem;   /* 4px */
@@ -85,6 +132,7 @@
   --container-max: 1200px;
   --container-narrow: 800px;
   --header-height: 72px;
+  --touch-target: 44px;   /* taille minimale d'une cible tactile */
 
   /* Typographie avec fallback optimisé */
   --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;

@@ -4,10 +4,10 @@
 
 /* Navbar sur pages blog */
 .blog-page .site-header {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--white-a95);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--black-a10);
 }
 
 .blog-page .logo {
@@ -46,7 +46,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--black-a45);
   z-index: var(--z-overlay);
   pointer-events: all;
 }
@@ -60,7 +60,7 @@
 .blog-page .site-footer,
 article .site-footer {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--white-a88);
 }
 
 .blog-page .site-footer *,
@@ -70,13 +70,13 @@ article .site-footer * {
 
 .blog-page .site-footer a,
 article .site-footer a {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white-a88);
 }
 
 .blog-page .site-footer a:hover,
 article .site-footer a:hover {
   color: var(--color-white);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px var(--black-a20);
 }
 
 /* Icônes de partage dans les articles */
@@ -95,17 +95,17 @@ article .site-footer a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target);
+  height: var(--touch-target);
   border-radius: 50%;
   /* !important nécessaire : blog/article.css définit aussi .share-btn et
      .share-btn.facebook/.twitter/.linkedin/.email/.copy avec un fond différent
      (couleur accent par réseau) ; ce fond neutre doit gagner sur les 5 variantes. */
-  background: rgba(103, 58, 18, 0.1) !important;
+  background: var(--primary-a12) !important;
   color: var(--color-primary) !important;
   text-decoration: none;
   transition: all 0.2s ease;
-  border: 1px solid rgba(103, 58, 18, 0.2);
+  border: 1px solid var(--primary-a20);
 }
 
 .share-btn:hover {
@@ -121,18 +121,18 @@ article .site-footer a:hover {
 
 /* Correction spécifique pour les réseaux sociaux */
 .share-btn.facebook:hover {
-  background: #1877F2;
-  border-color: #1877F2;
+  background: var(--social-facebook);
+  border-color: var(--social-facebook);
 }
 
 .share-btn.twitter:hover {
-  background: #1DA1F2;
-  border-color: #1DA1F2;
+  background: var(--social-x);
+  border-color: var(--social-x);
 }
 
 .share-btn.linkedin:hover {
-  background: #0077B5;
-  border-color: #0077B5;
+  background: var(--social-linkedin);
+  border-color: var(--social-linkedin);
 }
 
 .share-btn.email:hover {

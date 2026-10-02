@@ -23,7 +23,7 @@
   background: var(--color-surface-alt);
   border-radius: var(--radius-lg);
   transition: all 0.3s ease;
-  border: 1px solid rgba(103, 58, 18, 0.08);
+  border: 1px solid var(--primary-a8);
 }
 
 .reassurance-item:hover {
@@ -34,7 +34,7 @@
   width: 72px;
   height: 72px;
   min-width: 72px;
-  background: rgba(103, 58, 18, 0.08);
+  background: var(--primary-a8);
   border-radius: var(--radius);
   display: grid;
   place-items: center;
@@ -46,55 +46,17 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* Assurer l'affichage des icônes FontAwesome */
+/* Les icônes viennent de Font Awesome (famille, graisse et glyphes via ses classes fa-solid / fa-*) ;
+   seule la mise en forme propre à la carte est définie ici. */
 .reassurance-icon i {
-  display: block !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  text-rendering: auto !important;
-  line-height: 1 !important;
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
+  display: block;
+  line-height: 1;
 }
 
-.reassurance-icon i:before {
-  display: block !important;
-}
-
-/* Forcer FontAwesome - override tout le reste */
-.reassurance-icon i.fa-solid,
-.reassurance-icon i.fas {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-}
-
-/* Empêcher les fallbacks */
-.reassurance-icon i:before {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-}
-
-/* S'assurer que les icônes FontAwesome sont bien chargées */
-@supports (font-family: "Font Awesome 6 Free") {
-  .reassurance-icon i.fa-award:before { content: "\f559" !important; }
-  .reassurance-icon i.fa-file-contract:before { content: "\f56c" !important; }
-  .reassurance-icon i.fa-certificate:before { content: "\f0a3" !important; }
-  .reassurance-icon i.fa-handshake:before { content: "\f2b5" !important; }
-  .reassurance-icon i.fa-broom:before { content: "\f51a" !important; }
-}
-
-/* Force l'affichage des icônes reassurance spécifiques */
 .reassurance-item .reassurance-icon {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.reassurance-item .reassurance-icon i {
-  visibility: visible !important;
-  opacity: 1 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reassurance-item:hover .reassurance-icon {

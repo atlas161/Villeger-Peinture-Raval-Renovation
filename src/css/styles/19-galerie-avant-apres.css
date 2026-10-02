@@ -54,8 +54,8 @@
   position: absolute;
   left: 8px;
   bottom: 8px;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
+  background: var(--black-a55);
+  color: var(--color-white);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius); /* était 8px inline, forcé à 12px par la règle *[style*="border-radius"] */
   font-size: var(--text-2xs);

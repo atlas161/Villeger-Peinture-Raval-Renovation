@@ -47,6 +47,53 @@
   --color-border-light: #F0EDE8;
   --color-panel: #FAF8F5;
 
+  /* Statuts (erreur du formulaire) */
+  --color-error: #DC2626;
+  --color-error-border: #EF4444;
+  --color-error-bg: #FEE2E2;
+
+  /* Réseaux sociaux (couleurs de marque imposées, boutons de partage du blog) */
+  --social-facebook: #1877F2;
+  --social-x: #1DA1F2;
+  --social-linkedin: #0077B5;
+
+  /* Opacités : blanc, noir, brun de marque, or et voile sombre du hero. Un cran = un token (--white-a80 = blanc à 80 %). */
+  --white-a8: rgba(255, 255, 255, 0.08);
+  --white-a12: rgba(255, 255, 255, 0.12);
+  --white-a16: rgba(255, 255, 255, 0.16);
+  --white-a28: rgba(255, 255, 255, 0.28);
+  --white-a36: rgba(255, 255, 255, 0.36);
+  --white-a55: rgba(255, 255, 255, 0.55);
+  --white-a65: rgba(255, 255, 255, 0.65);
+  --white-a80: rgba(255, 255, 255, 0.8);
+  --white-a88: rgba(255, 255, 255, 0.88);
+  --white-a95: rgba(255, 255, 255, 0.95);
+  --black-a5: rgba(0, 0, 0, 0.05);
+  --black-a10: rgba(0, 0, 0, 0.1);
+  --black-a15: rgba(0, 0, 0, 0.15);
+  --black-a20: rgba(0, 0, 0, 0.2);
+  --black-a25: rgba(0, 0, 0, 0.25);
+  --black-a30: rgba(0, 0, 0, 0.3);
+  --black-a35: rgba(0, 0, 0, 0.35);
+  --black-a45: rgba(0, 0, 0, 0.45);
+  --black-a55: rgba(0, 0, 0, 0.55);
+  --primary-a4: rgba(103, 58, 18, 0.04);
+  --primary-a6: rgba(103, 58, 18, 0.06);
+  --primary-a8: rgba(103, 58, 18, 0.08);
+  --primary-a12: rgba(103, 58, 18, 0.12);
+  --primary-a16: rgba(103, 58, 18, 0.16);
+  --primary-a20: rgba(103, 58, 18, 0.2);
+  --primary-a80: rgba(103, 58, 18, 0.8);
+  --accent-a8: rgba(168, 139, 94, 0.08);
+  --accent-a12: rgba(168, 139, 94, 0.12);
+  --accent-a45: rgba(168, 139, 94, 0.45);
+  --scrim-a20: rgba(10, 5, 2, 0.2);
+  --scrim-a45: rgba(10, 5, 2, 0.45);
+  --scrim-a55: rgba(10, 5, 2, 0.55);
+  --scrim-a65: rgba(10, 5, 2, 0.65);
+  --scrim-a75: rgba(10, 5, 2, 0.75);
+  --scrim-a88: rgba(10, 5, 2, 0.88);
+
   /* Espacements (système 8px) */
   --space-2xs: 0.125rem; /* 2px : interstices fins */
   --space-xs: 0.25rem;   /* 4px */
@@ -107,6 +154,7 @@
   --container-max: 1200px;
   --container-narrow: 800px;
   --header-height: 72px;
+  --touch-target: 44px;   /* taille minimale d'une cible tactile */
 
   /* Typographie avec fallback optimisé */
   --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
@@ -370,7 +418,7 @@ a:hover {
   left: 0;
   right: 0;
   z-index: var(--z-header);
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--white-a88);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--color-border-light);
@@ -497,8 +545,8 @@ a:hover {
     margin: var(--space-smd) 0 0 0;
     list-style: none;
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(103, 58, 18, 0.12);
+    background: var(--white-a95);
+    border: 1px solid var(--primary-a12);
     box-shadow: var(--shadow-xl);
     backdrop-filter: saturate(180%) blur(16px);
     -webkit-backdrop-filter: saturate(180%) blur(16px);
@@ -540,7 +588,7 @@ a:hover {
 
   .submenu a:hover,
   .submenu a:focus-visible {
-    background: rgba(103, 58, 18, 0.06);
+    background: var(--primary-a6);
     transform: translateY(-1px);
     outline: none;
   }
@@ -567,12 +615,12 @@ a:hover {
   align-items: center;
   /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5), c'est le contrôle
      de navigation mobile le plus utilisé du site. Header de 72px : marge inchangée. */
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.8);
+  width: var(--touch-target);
+  height: var(--touch-target);
+  background: var(--white-a80);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--black-a5);
   cursor: pointer;
   gap: var(--space-xs);
   z-index: var(--z-menu-controls);
@@ -630,7 +678,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
    Le logo et le bouton (burger → croix) du header restent visibles au-dessus du panneau. */
 @media (max-width: 991px) {
   .site-header {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--white-a95);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     position: fixed;
@@ -791,7 +839,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 
   .menu li.menu-tel a {
     display: inline-flex;
-    min-height: 44px;
+    min-height: var(--touch-target);
     padding: 0;
     font-size: var(--text-3xl);
     font-weight: var(--font-weight-bold);
@@ -990,7 +1038,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(103,58,18,0.04) 0%, transparent 55%);
+  background: linear-gradient(135deg, var(--primary-a4) 0%, transparent 55%);
   opacity: 0;
   transition: opacity 280ms var(--ease-out);
   pointer-events: none;
@@ -1010,7 +1058,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   width: 54px;
   height: 54px;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(168,139,94,0.10) 100%);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--accent-a12) 100%);
   display: grid;
   place-items: center;
   font-size: var(--text-3xl);
@@ -1024,7 +1072,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 
 .svc-card:hover .svc-icon {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* Contenu */
@@ -1072,7 +1120,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 }
 
 .svc-card:hover .svc-tags li {
-  background: rgba(103,58,18,0.12);
+  background: var(--primary-a12);
 }
 
 /* Footer "Découvrir →" */
@@ -1108,7 +1156,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 
 .svc-card:hover .svc-arrow {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* ── Responsive ── */
@@ -1509,7 +1557,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   background: var(--color-surface-alt);
   border-radius: var(--radius-lg);
   transition: all 0.3s ease;
-  border: 1px solid rgba(103, 58, 18, 0.08);
+  border: 1px solid var(--primary-a8);
 }
 
 .reassurance-item:hover {
@@ -1520,7 +1568,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   width: 72px;
   height: 72px;
   min-width: 72px;
-  background: rgba(103, 58, 18, 0.08);
+  background: var(--primary-a8);
   border-radius: var(--radius);
   display: grid;
   place-items: center;
@@ -1532,55 +1580,17 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   box-shadow: var(--shadow-sm);
 }
 
-/* Assurer l'affichage des icônes FontAwesome */
+/* Les icônes viennent de Font Awesome (famille, graisse et glyphes via ses classes fa-solid / fa-*) ;
+   seule la mise en forme propre à la carte est définie ici. */
 .reassurance-icon i {
-  display: block !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  text-rendering: auto !important;
-  line-height: 1 !important;
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
+  display: block;
+  line-height: 1;
 }
 
-.reassurance-icon i:before {
-  display: block !important;
-}
-
-/* Forcer FontAwesome - override tout le reste */
-.reassurance-icon i.fa-solid,
-.reassurance-icon i.fas {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-}
-
-/* Empêcher les fallbacks */
-.reassurance-icon i:before {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-}
-
-/* S'assurer que les icônes FontAwesome sont bien chargées */
-@supports (font-family: "Font Awesome 6 Free") {
-  .reassurance-icon i.fa-award:before { content: "\f559" !important; }
-  .reassurance-icon i.fa-file-contract:before { content: "\f56c" !important; }
-  .reassurance-icon i.fa-certificate:before { content: "\f0a3" !important; }
-  .reassurance-icon i.fa-handshake:before { content: "\f2b5" !important; }
-  .reassurance-icon i.fa-broom:before { content: "\f51a" !important; }
-}
-
-/* Force l'affichage des icônes reassurance spécifiques */
 .reassurance-item .reassurance-icon {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.reassurance-item .reassurance-icon i {
-  visibility: visible !important;
-  opacity: 1 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reassurance-item:hover .reassurance-icon {
@@ -1969,8 +1979,8 @@ html {
   position: absolute;
   left: 8px;
   bottom: 8px;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
+  background: var(--black-a55);
+  color: var(--color-white);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius); /* était 8px inline, forcé à 12px par la règle *[style*="border-radius"] */
   font-size: var(--text-2xs);
@@ -2142,7 +2152,7 @@ html {
     align-items: center;
     gap: var(--space-sm);
     padding: var(--space-xs);
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white-a88);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--color-border);
@@ -2278,7 +2288,7 @@ html {
 }
 
 .contact-cta-text > p {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--white-a80);
   font-size: var(--text-lg);
   margin-bottom: var(--space-md);
   max-width: 52ch;
@@ -2301,8 +2311,8 @@ html {
   gap: var(--space-xs);
   padding: var(--space-xs) var(--space-smd);
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--white-a12);
+  border: 1px solid var(--white-a16);
 }
 
 .contact-cta-points i {
@@ -2329,7 +2339,7 @@ html {
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   padding-inline: var(--space-md);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px var(--black-a30);
 }
 
 .contact-cta .contact-cta-actions .btn-primary::after {
@@ -2353,12 +2363,12 @@ html {
 /* Bouton téléphone : contour clair, fond translucide au survol */
 .contact-cta .contact-cta-actions .btn-secondary {
   background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border: 1.5px solid var(--white-a55);
   color: var(--color-white);
 }
 
 .contact-cta .contact-cta-actions .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--white-a16);
   border-color: var(--color-white);
   color: var(--color-white);
 }
@@ -2483,8 +2493,8 @@ html {
 .home-step-num {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target);
+  height: var(--touch-target);
   margin-bottom: var(--space-md);
   font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
@@ -2588,8 +2598,8 @@ html {
   }
 
   #services .svc-icon {
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     margin: 0;
     font-size: var(--text-2xl);
   }

@@ -40,8 +40,8 @@
   }
 
   #services .svc-icon {
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     margin: 0;
     font-size: var(--text-2xl);
   }

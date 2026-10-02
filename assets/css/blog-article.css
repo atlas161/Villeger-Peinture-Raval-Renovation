@@ -404,7 +404,7 @@
 }
 
 .article-content thead th {
-  background: rgba(103, 58, 18, 0.08);
+  background: var(--primary-a8);
   color: var(--color-text);
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
@@ -487,8 +487,8 @@
   align-items: center;
   justify-content: center;
   /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5). */
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target);
+  height: var(--touch-target);
   border-radius: 50%;
   color: var(--color-white);
   text-decoration: none;
@@ -522,7 +522,7 @@
 }
 
 .share-btn:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--black-a15);
 }
 
 /* ===================================================================
@@ -650,12 +650,12 @@
     top: 50%;
     transform: translateY(-50%);
     /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5). */
-    width: 44px;
-    height: 44px;
+    width: var(--touch-target);
+    height: var(--touch-target);
     /* Rendu actuel = 12px, pas une pilule : voir note sur .burger dans assets/css/styles.css. */
     border-radius: var(--radius);
-    border: 1px solid rgba(103, 58, 18, 0.16);
-    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--primary-a16);
+    background: var(--white-a95);
     color: var(--color-primary);
     display: inline-flex;
     align-items: center;

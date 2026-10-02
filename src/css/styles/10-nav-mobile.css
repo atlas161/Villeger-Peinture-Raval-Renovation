@@ -2,7 +2,7 @@
    Le logo et le bouton (burger → croix) du header restent visibles au-dessus du panneau. */
 @media (max-width: 991px) {
   .site-header {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--white-a95);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     position: fixed;
@@ -163,7 +163,7 @@
 
   .menu li.menu-tel a {
     display: inline-flex;
-    min-height: 44px;
+    min-height: var(--touch-target);
     padding: 0;
     font-size: var(--text-3xl);
     font-weight: var(--font-weight-bold);

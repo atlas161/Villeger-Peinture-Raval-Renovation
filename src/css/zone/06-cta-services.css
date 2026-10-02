@@ -24,8 +24,8 @@
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-smd);
   border-radius: var(--radius-pill);
-  background: rgba(103, 58, 18, 0.08);
-  border: 1px solid rgba(103, 58, 18, 0.12);
+  background: var(--primary-a8);
+  border: 1px solid var(--primary-a12);
   color: var(--color-primary);
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-semibold);
@@ -64,8 +64,8 @@
   gap: var(--space-md);
   padding: var(--space-lg);
   border-radius: var(--radius-lg);
-  border: 1.5px solid rgba(103, 58, 18, 0.12);
-  background: rgba(255, 255, 255, 0.82);
+  border: 1.5px solid var(--primary-a12);
+  background: var(--white-a80);
   text-decoration: none;
   color: var(--color-text);
   transition: transform 240ms var(--ease-spring), box-shadow 240ms var(--ease-out), border-color 160ms var(--ease-out), background 160ms var(--ease-out);
@@ -80,7 +80,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(103, 58, 18, 0.06) 0%, transparent 55%);
+  background: linear-gradient(135deg, var(--primary-a6) 0%, transparent 55%);
   opacity: 0;
   transition: opacity 240ms var(--ease-out);
   pointer-events: none;
@@ -89,8 +89,8 @@
 .service-cta-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-xl);
-  border-color: rgba(168, 139, 94, 0.45);
-  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--accent-a45);
+  background: var(--white-a95);
 }
 
 .service-cta-card:hover::after {
@@ -104,17 +104,17 @@
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  background: rgba(103, 58, 18, 0.08);
+  background: var(--primary-a8);
   color: var(--color-primary);
-  border: 1px solid rgba(103, 58, 18, 0.12);
+  border: 1px solid var(--primary-a12);
 }
 
 .service-cta-card.primary .service-cta-icon {
-  background: rgba(103, 58, 18, 0.1);
+  background: var(--primary-a12);
 }
 
 .service-cta-card.secondary .service-cta-icon {
-  background: rgba(168, 139, 94, 0.12);
+  background: var(--accent-a12);
 }
 
 .service-cta-text {
@@ -144,8 +144,8 @@
   border-radius: var(--radius-pill);
   display: grid;
   place-items: center;
-  background: rgba(103, 58, 18, 0.08);
-  border: 1px solid rgba(103, 58, 18, 0.12);
+  background: var(--primary-a8);
+  border: 1px solid var(--primary-a12);
   color: var(--color-primary);
   flex-shrink: 0;
   transition: transform 200ms var(--ease-out), background 200ms var(--ease-out), color 200ms var(--ease-out);

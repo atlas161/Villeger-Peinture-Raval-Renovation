@@ -93,7 +93,7 @@
 }
 
 .contact-cta-text > p {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--white-a80);
   font-size: var(--text-lg);
   margin-bottom: var(--space-md);
   max-width: 52ch;
@@ -116,8 +116,8 @@
   gap: var(--space-xs);
   padding: var(--space-xs) var(--space-smd);
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--white-a12);
+  border: 1px solid var(--white-a16);
 }
 
 .contact-cta-points i {
@@ -144,7 +144,7 @@
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   padding-inline: var(--space-md);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px var(--black-a30);
 }
 
 .contact-cta .contact-cta-actions .btn-primary::after {
@@ -168,12 +168,12 @@
 /* Bouton téléphone : contour clair, fond translucide au survol */
 .contact-cta .contact-cta-actions .btn-secondary {
   background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border: 1.5px solid var(--white-a55);
   color: var(--color-white);
 }
 
 .contact-cta .contact-cta-actions .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--white-a16);
   border-color: var(--color-white);
   color: var(--color-white);
 }

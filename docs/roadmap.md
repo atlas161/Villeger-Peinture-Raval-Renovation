@@ -90,8 +90,7 @@ Règle Google à connaître : des avis d'une entreprise affichés **sur son prop
    URL à migrer d'un coup) ; à faire seulement si le gain est jugé utile.
 6. ~~Accueil trop long sur ordinateur~~ — fait le 2026-10-01 (−18 %). **Condensation mobile, suite** (non demandée mais possible) : carrousel des avis de l'accueil, bloc « zone » de
    l'accueil, réduction du hero. Mêmes garde-fous : contenu conservé dans le HTML, desktop inchangé.
-7. **Refonte du blog** (pistes du 21/09) : liste en grille compacte au lieu d'une colonne de 5 000 px, remplacer les
-   emojis des filtres par des icônes Font Awesome, style des champs du formulaire.
+7. ~~**Refonte du blog**~~ — déjà faite (grille avec article à la une, filtres à icônes Font Awesome).
 8. **Contenu SEO** : nouveaux articles (`content/blog/`), publications Google Business Profile, cohérence NAP
    GBP ↔ PagesJaunes ↔ site.
 

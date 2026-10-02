@@ -6,12 +6,12 @@
   align-items: center;
   /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5), c'est le contrôle
      de navigation mobile le plus utilisé du site. Header de 72px : marge inchangée. */
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.8);
+  width: var(--touch-target);
+  height: var(--touch-target);
+  background: var(--white-a80);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--black-a5);
   cursor: pointer;
   gap: var(--space-xs);
   z-index: var(--z-menu-controls);

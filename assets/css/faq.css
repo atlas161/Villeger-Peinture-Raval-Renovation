@@ -83,15 +83,15 @@
 }
 
 .faq-filter-btn {
-  border: 1px solid rgba(103, 58, 18, 0.14);
-  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--primary-a16);
+  background: var(--white-a88);
   color: var(--color-text);
   /* Rendu actuel = 12px, pas une pilule : voir note sur .burger dans styles.css. */
   border-radius: var(--radius-pill);
   padding: var(--space-sm) var(--space-smd);
   /* 44px : cible tactile minimale recommandée (Apple HIG / WCAG 2.5.5) ; le padding seul ne
      donnait que 37px de haut. inline-flex pour garder le texte centré verticalement. */
-  min-height: 44px;
+  min-height: var(--touch-target);
   display: inline-flex;
   align-items: center;
   font-weight: var(--font-weight-medium);
@@ -103,7 +103,7 @@
 }
 
 .faq-filter-btn:hover {
-  background: rgba(103, 58, 18, 0.06);
+  background: var(--primary-a6);
 }
 
 .faq-filter-btn.active {
@@ -119,7 +119,7 @@
 }
 
 .faq-bulk-btn {
-  min-height: 44px;
+  min-height: var(--touch-target);
   padding: 0 var(--space-xs);
   font: inherit;
   font-size: var(--text-md);

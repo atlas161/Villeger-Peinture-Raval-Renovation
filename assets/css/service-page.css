@@ -21,7 +21,7 @@
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(168, 139, 94, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent-a8) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -133,7 +133,7 @@
   height: 48px;
   background: var(--color-white);
   border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px var(--black-a20);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,7 @@
   position: absolute;
   top: var(--space-lg);
   padding: var(--space-xs) var(--space-md);
-  background: rgba(103, 58, 18, 0.8);
+  background: var(--primary-a80);
   color: white;
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-semibold);
@@ -338,7 +338,7 @@
 
 .problem-item:hover {
   box-shadow: var(--shadow-lg);
-  border-color: rgba(103, 58, 18, 0.1);
+  border-color: var(--primary-a12);
 }
 
 .problem-item-icon {
@@ -678,8 +678,8 @@
   position: absolute;
   left: 12px;
   bottom: 12px;
-  background: rgba(0,0,0,0.55);
-  color: #fff;
+  background: var(--black-a55);
+  color: var(--color-white);
   padding: var(--space-xs) var(--space-sm);
   /* Rendu actuel = 12px, pas 10px : voir note sur .cta-glass plus haut. */
   border-radius: var(--radius);
@@ -717,7 +717,7 @@
   /* Rendu actuel = 12px, pas 14px : voir note sur .cta-glass plus haut. */
   border-radius: var(--radius);
   background: var(--color-bg);
-  border: 1px solid rgba(103, 58, 18, 0.12);
+  border: 1px solid var(--primary-a12);
 }
 
 .jobsheet-tip-title {
@@ -979,8 +979,8 @@
 }
 
 .proof-bar-icon {
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target);
+  height: var(--touch-target);
   flex: none;
   display: grid;
   place-items: center;
