@@ -68,7 +68,7 @@ si le SEO ou une action client est concernée.
 - **Publication = liste blanche** (`scripts/build-site.js`) : un nouveau dossier/fichier public doit être ajouté à
   `PUBLIC_DIRS` / `PUBLIC_ROOT_FILES`. Les docs, scripts, tests et `content/` ne sont jamais publiés.
 - **CSS** : utiliser les variables de `:root` (`--color-*`, `--radius*`, `--space-*`, `--text-*`, `--shadow-*`, `--z-*`…) plutôt que des valeurs en dur.
-  Échelles et points de rupture : [`docs/design/tokens.md`](docs/design/tokens.md) — **vérifiés par `npm test`** (`design-tokens`) : une taille de police, une ombre, un `z-index` ou un `@media` hors échelle fait échouer les tests ;
+  Échelles et points de rupture : [`docs/design/tokens.md`](docs/design/tokens.md) — **vérifiés par `npm test`** (`design-tokens`) : une taille de police, une ombre, un `z-index`, un `@media` hors échelle, un `!important` (hors `.visually-hidden`) ou une `var(--x)` non définie fait échouer les tests ;
   `node scripts/tokenize-scale.js` remplace automatiquement les valeurs hors échelle par le token le plus proche.
   Or : `--brand-accent` = décor uniquement ; texte doré = `--brand-accent-text` (clair) / `--brand-accent-on-dark` (sombre).
   Boutons : pilule, hover = assombrissement seul, 2 tailles (`.btn`, `.btn--sm`) — pas de soulèvement ni de dégradé.

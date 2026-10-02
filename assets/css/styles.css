@@ -52,11 +52,6 @@
   --color-error-border: #EF4444;
   --color-error-bg: #FEE2E2;
 
-  /* Réseaux sociaux (couleurs de marque imposées, boutons de partage du blog) */
-  --social-facebook: #1877F2;
-  --social-x: #1DA1F2;
-  --social-linkedin: #0077B5;
-
   /* Opacités : blanc, noir, brun de marque, or et voile sombre du hero. Un cran = un token (--white-a80 = blanc à 80 %). */
   --white-a8: rgba(255, 255, 255, 0.08);
   --white-a12: rgba(255, 255, 255, 0.12);
@@ -437,17 +432,17 @@ a:hover {
 }
 
 .logo-img {
-  height: 48px !important;
-  width: auto !important;
-  max-height: 48px !important;
+  height: 48px;
+  width: auto;
+  max-height: 48px;
   display: block;
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 
 @media (max-width: 991px) {
   .logo-img {
-    height: 40px !important;
-    max-height: 40px !important;
+    height: 40px;
+    max-height: 40px;
   }
 }
 
@@ -470,8 +465,6 @@ a:hover {
 }
 
 @media (min-width: 992px) {
-  .burger { display: none !important; }
-  
   .primary-nav {
     display: block;
     position: static;
@@ -597,7 +590,7 @@ a:hover {
     display: none;
     margin-left: auto;
     color: var(--color-text-light);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-normal);
     font-size: var(--text-xs);
   }
 
@@ -625,7 +618,7 @@ a:hover {
   gap: var(--space-xs);
   z-index: var(--z-menu-controls);
   /* Rendu actuel = 12px, pas 10px : cette valeur venait d'une ancienne règle générique
-     `button { border-radius: 12px !important }` qui écrasait tous les <button> du site
+     `button { border-radius: 12px }` qui écrasait tous les <button> du site
      (voir docs/code-quality-refactor.md). Fixé ici explicitement pour ne rien changer
      visuellement une fois cette règle générique supprimée. */
   border-radius: 50%;
@@ -636,7 +629,7 @@ a:hover {
 
 @media (max-width: 991px) {
   .burger {
-    display: flex !important;
+    display: flex;
   }
 
   .burger-bar {
@@ -648,14 +641,14 @@ a:hover {
   }
 
   body.nav-open .burger {
-    background: transparent !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
-    transform: none !important; /* Neutralize hover transform */
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
   }
 
   body.nav-open .burger-bar {
-    background-color: var(--color-primary) !important;
+    background-color: var(--color-primary);
     width: 22px;
   }
 }
@@ -690,11 +683,11 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
   }
 
   body.nav-open .site-header {
-    background: transparent !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .logo {
@@ -712,7 +705,7 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
 
   /* Cacher la navigation desktop sur mobile */
   .primary-nav:not(.open) {
-    display: none !important;
+    display: none;
   }
 
   .primary-nav.open {
@@ -759,15 +752,14 @@ body.nav-open .burger-bar:nth-child(3) { transform: translateY(-5.5px) rotate(-4
     opacity: 1;
     visibility: visible;
     transition: opacity var(--duration-normal) var(--ease-out), visibility 0ms;
-    display: flex !important;
   }
 
   /* Empêcher le scroll du body quand le menu est ouvert */
   body.nav-open {
-    overflow: hidden !important;
-    position: fixed !important;
-    width: 100% !important;
-    height: 100% !important;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
   }
 
   .menu {

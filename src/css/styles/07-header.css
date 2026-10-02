@@ -27,17 +27,17 @@
 }
 
 .logo-img {
-  height: 48px !important;
-  width: auto !important;
-  max-height: 48px !important;
+  height: 48px;
+  width: auto;
+  max-height: 48px;
   display: block;
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 
 @media (max-width: 991px) {
   .logo-img {
-    height: 40px !important;
-    max-height: 40px !important;
+    height: 40px;
+    max-height: 40px;
   }
 }
 

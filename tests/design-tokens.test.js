@@ -108,3 +108,24 @@ test('padding / margin / gap : variables --space-* (valeurs en px/rem en dur int
   }
   assert.deepEqual(bad, [], `espacements en dur à remplacer par --space-* :\n${bad.join('\n')}`);
 });
+
+test('!important : réservé à la classe utilitaire .visually-hidden (utilities.css) ; ailleurs, régler la spécificité', () => {
+  const bad = [];
+  for (const f of files.filter((n) => n !== 'utilities.css')) {
+    css(f).replace(/\/\*[\s\S]*?\*\//g, '').split('\n').forEach((line, i) => {
+      if (line.includes('!important')) bad.push(`${f}:${i + 1} ${line.trim()}`);
+    });
+  }
+  assert.deepEqual(bad, [], `!important interdit (voir docs/design/tokens.md) :\n${bad.join('\n')}`);
+});
+
+test('chaque variable CSS var(--x) utilisée est définie dans :root', () => {
+  const defined = new Set([...rootCss.matchAll(/(--[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
+  const bad = new Set();
+  for (const f of files) {
+    for (const m of css(f).matchAll(/var\((--[a-z0-9-]+)/g)) {
+      if (!defined.has(m[1]) && !css(f).includes(`${m[1]}:`)) bad.add(`${f} ${m[1]}`);
+    }
+  }
+  assert.deepEqual([...bad], [], `variables non définies :\n${[...bad].join('\n')}`);
+});

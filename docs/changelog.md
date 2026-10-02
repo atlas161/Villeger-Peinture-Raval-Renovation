@@ -17,12 +17,19 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-02 (suite 4) — Plus aucun `!important` hors `.visually-hidden`
+
+- **En-tête, burger, menu mobile** (`07-header`, `08-nav-bureau`, `09-burger`, `10-nav-mobile`) : les 25 `!important` sont retirés. Chacun était redondant (la règle gagne déjà par spécificité ou par ordre) ou masquait une règle morte : les tailles de logo de `responsive.css` (120×32 / 100×27 px) n'ont jamais été appliquées, écrasées par `07-header` — supprimées.
+- **Partage du blog** : `.share-btn` utilisait `!important` pour écraser les couleurs par réseau de `blog-article.css`, elles-mêmes mortes (toutes `--brand-accent`) ; les variantes Facebook/X/LinkedIn au survol de `blog.css` n'ont jamais eu d'effet (le survol restait brun). Variantes mortes supprimées, rendu inchangé, tokens `--social-*` retirés.
+- **`--font-weight-regular`** (jamais défini) → `--font-weight-normal`. Sans effet visible : le seul usage (`.submenu-meta`, desktop) est masqué (`display: none`) ; `zone.css` avait déjà un repli à 400.
+- **Garde-fous** : 2 tests ajoutés à `design-tokens` — aucun `!important` hors `utilities.css`, et toute `var(--x)` utilisée doit être définie.
+- **Vérification** : styles calculés comparés avant/après sur 6 pages × 375 / 800 / 1440 px × menu fermé / ouvert / refermé (54 cas) : identiques, sauf le poids de police du `.submenu-meta` masqué (500 → 400).
+
 ## 2026-10-02 (suite 3) — Tokens : couleurs d'état, réseaux, opacités, cible tactile (aucun changement visuel voulu)
 
 - **Nouveaux tokens** (`src/css/styles/02-tokens.css`) : `--color-error*` (bloc d'erreur du formulaire, `contact.css`), `--social-facebook/x/linkedin` (partage du blog), `--touch-target` (44 px, remplace 25 occurrences), et une échelle d'opacités `--white-aNN`, `--black-aNN`, `--primary-aNN`, `--accent-aNN`, `--scrim-aNN` (voile du hero) qui remplace ~60 `rgba(...)` en dur. `#fff` → `var(--color-white)`.
 - `scripts/tokenize-alpha.js` : remplace les `rgba()` par le cran d'opacité le plus proche (écart ≤ 0,05, invisible) ; idempotent.
 - `15-reassurance.css` : −24 `!important` (rustines Font Awesome inutiles) ; rendu des icônes mesuré identique avant/après.
-- Reste : 25 `!important` (en-tête, burger, menu mobile : à démêler avec un contrôle visuel complet), `--font-weight-regular` utilisé dans `08-nav-bureau.css:138` mais jamais défini (laissé tel quel pour ne pas changer le rendu).
 - Vérifié : `npm test` 53/53, `npm run build` OK, accueil et icônes contrôlés dans le navigateur.
 
 ## 2026-10-01 (suite 3) — Accueil raccourci, menu « Où ? », bannière cookies en une ligne, rayons et espacements tokenisés (non déployé)

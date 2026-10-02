@@ -490,32 +490,13 @@
   width: var(--touch-target);
   height: var(--touch-target);
   border-radius: 50%;
-  color: var(--color-white);
   text-decoration: none;
   transition: all 0.2s ease;
   border: none;
   cursor: pointer;
-  background: var(--brand-accent);
-}
-
-.share-btn.facebook {
-  background: var(--brand-accent);
-}
-
-.share-btn.twitter {
-  background: var(--brand-accent);
-}
-
-.share-btn.linkedin {
-  background: var(--brand-accent);
-}
-
-.share-btn.email {
-  background: var(--brand-accent);
 }
 
 .share-btn.copy {
-  background: var(--color-text-light);
   /* .copy est un <button> (les autres sont des <a>) : rendu actuel = 12px, pas un cercle.
      Voir note sur .burger dans assets/css/styles.css. */
   border-radius: var(--radius);

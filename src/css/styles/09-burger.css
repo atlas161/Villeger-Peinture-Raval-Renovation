@@ -16,7 +16,7 @@
   gap: var(--space-xs);
   z-index: var(--z-menu-controls);
   /* Rendu actuel = 12px, pas 10px : cette valeur venait d'une ancienne règle générique
-     `button { border-radius: 12px !important }` qui écrasait tous les <button> du site
+     `button { border-radius: 12px }` qui écrasait tous les <button> du site
      (voir docs/code-quality-refactor.md). Fixé ici explicitement pour ne rien changer
      visuellement une fois cette règle générique supprimée. */
   border-radius: 50%;
@@ -27,7 +27,7 @@
 
 @media (max-width: 991px) {
   .burger {
-    display: flex !important;
+    display: flex;
   }
 
   .burger-bar {
@@ -39,14 +39,14 @@
   }
 
   body.nav-open .burger {
-    background: transparent !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
-    transform: none !important; /* Neutralize hover transform */
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
   }
 
   body.nav-open .burger-bar {
-    background-color: var(--color-primary) !important;
+    background-color: var(--color-primary);
     width: 22px;
   }
 }

@@ -98,19 +98,16 @@ article .site-footer a:hover {
   width: var(--touch-target);
   height: var(--touch-target);
   border-radius: 50%;
-  /* !important nécessaire : blog/article.css définit aussi .share-btn et
-     .share-btn.facebook/.twitter/.linkedin/.email/.copy avec un fond différent
-     (couleur accent par réseau) ; ce fond neutre doit gagner sur les 5 variantes. */
-  background: var(--primary-a12) !important;
-  color: var(--color-primary) !important;
+  background: var(--primary-a12);
+  color: var(--color-primary);
   text-decoration: none;
   transition: all 0.2s ease;
   border: 1px solid var(--primary-a20);
 }
 
 .share-btn:hover {
-  background: var(--color-primary) !important;
-  color: var(--color-white) !important;
+  background: var(--color-primary);
+  color: var(--color-white);
   box-shadow: var(--shadow-md);
 }
 
@@ -119,23 +116,3 @@ article .site-footer a:hover {
   color: inherit;
 }
 
-/* Correction spécifique pour les réseaux sociaux */
-.share-btn.facebook:hover {
-  background: var(--social-facebook);
-  border-color: var(--social-facebook);
-}
-
-.share-btn.twitter:hover {
-  background: var(--social-x);
-  border-color: var(--social-x);
-}
-
-.share-btn.linkedin:hover {
-  background: var(--social-linkedin);
-  border-color: var(--social-linkedin);
-}
-
-.share-btn.email:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-}

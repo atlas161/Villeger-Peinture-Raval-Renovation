@@ -2,7 +2,8 @@
    UTILITIES - Classes utilitaires
    =================================================================== */
 
-/* Masquer visuellement mais garder accessible pour les lecteurs d'écran */
+/* Masquer visuellement mais garder accessible pour les lecteurs d'écran. Seul endroit du site où !important est
+   autorisé (patron standard « sr-only » : la classe doit gagner partout) ; ailleurs, régler la spécificité (test design-tokens). */
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;

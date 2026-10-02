@@ -74,6 +74,9 @@ Tolérés tels quels : `0`, `1px`, valeurs négatives, `calc()`, `env()`, `clamp
 - Méthode de contrôle visuel : captures avant/après à 375 / 768 / 1440 px des pages principales, comparaison pixel par pixel
   (voir `docs/design/direction-artistique.md` §F pour le bilan du 2026-10-02).
 
+## `!important`
+Interdit hors `.visually-hidden` (`utilities.css`) — vérifié par `npm test`. En cas de conflit, régler la spécificité (ex. `body.nav-open .burger`) ou supprimer la règle morte. Toute `var(--x)` doit aussi être définie dans `:root`.
+
 ## Historique de la conversion (2026-10-02)
 Avant : 38 tailles de police, 45 ombres, 14 points de rupture (767/768/769, 991/992…), 12 niveaux de `z-index` jusqu'à 9999.
 Après : 13 tailles, 4 ombres (+ cas libres documentés), 11 points de rupture alignés par paires, 10 couches nommées.

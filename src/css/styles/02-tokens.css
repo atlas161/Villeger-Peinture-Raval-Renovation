@@ -30,11 +30,6 @@
   --color-error-border: #EF4444;
   --color-error-bg: #FEE2E2;
 
-  /* Réseaux sociaux (couleurs de marque imposées, boutons de partage du blog) */
-  --social-facebook: #1877F2;
-  --social-x: #1DA1F2;
-  --social-linkedin: #0077B5;
-
   /* Opacités : blanc, noir, brun de marque, or et voile sombre du hero. Un cran = un token (--white-a80 = blanc à 80 %). */
   --white-a8: rgba(255, 255, 255, 0.08);
   --white-a12: rgba(255, 255, 255, 0.12);
