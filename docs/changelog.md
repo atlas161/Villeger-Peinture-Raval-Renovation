@@ -17,6 +17,11 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-24 (suite) — Kit réseaux sociaux : Instagram + Google Business Profile
+
+- Nouveau dossier [`social/`](./social/README.md) : visuels (post 4:5, carrousel de 4 slides, story 9:16, publication et photos Google) construits à partir des photos du nettoyage de façade, recalées sur un même cadrage avec curseur avant/après ; **plaques d'immatriculation floutées**. Légendes, hashtags, texte de la publication Google et points à confirmer (commune, méthode, accord du syndic) dans `social/README.md`.
+- Les JPG d'origine (plaques lisibles) ne sont **pas** dans le dépôt. Rien de tout cela n'est publié sur le site (`docs/` n'est jamais publié).
+
 ## 2026-10-24 — Vraies photos avant/après pour le nettoyage de façade
 
 - Photos de chantier (immeuble collectif, avant 23/09, après 28/09) converties en WebP 600/900/1200 px (4/3) : `media/services/nettoyage_facade/nettoyage_facade_{avant,apres}-*w.webp` (nouveaux noms, anciens `facade_*` supprimés).
