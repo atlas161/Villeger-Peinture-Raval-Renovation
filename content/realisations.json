@@ -21,15 +21,15 @@
       "altAfter": "Façade rénovée après ravalement"
     },
     {
-      "before": "/media/services/nettoyage_facade/facade_avant-900w.webp",
-      "after": "/media/services/nettoyage_facade/facade_apres-900w.webp",
+      "before": "/media/services/nettoyage_facade/nettoyage_chantier_avant-900w.webp",
+      "after": "/media/services/nettoyage_facade/nettoyage_chantier_apres-900w.webp",
       "title": "Nettoyage de façade",
       "category": "facade",
       "service": "nettoyage-facade-angouleme",
       "commune": "",
       "duration": "",
-      "altBefore": "Façade avant nettoyage par hydrogommage",
-      "altAfter": "Façade propre après nettoyage"
+      "altBefore": "Immeuble d’habitation : façade encrassée avant nettoyage",
+      "altAfter": "Même immeuble après nettoyage : façade propre"
     },
     {
       "before": "/media/services/nettoyag_toiture/toiture_avant-900w.webp",
