@@ -17,6 +17,11 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-10-24 (suite 2) — Étanchéité extérieure + posts Google optimisés
+
+- **Étanchéité extérieure** (balcons, terrasses) confirmée comme service par le client : question ajoutée à la FAQ de [peinture extérieure](../peinture-exterieure-charente.html) (`content/pages/peinture-exterieure-charente/page.json`, donc aussi dans le JSON-LD FAQ), mot-clé `étanchéité balcon Charente`, ligne dans `llms.txt`, `CLAUDE.md` mis à jour. Pas de nouvelle page dédiée pour l'instant.
+- **Fiche Google (faite dans Chrome)** : post avant/après publié ; 3 anciens posts réécrits (étanchéité balcon, guide peinture extérieure, guide hydrogommage) avec lieu, mots-clés et bouton ; ils sont « en attente » de validation Google. Le post COVID de 5 ans reste à supprimer à la main.
+
 ## 2026-10-24 (suite) — Kit réseaux sociaux : Instagram + Google Business Profile
 
 - Nouveau dossier [`social/`](./social/README.md) : visuels (post 4:5, carrousel de 4 slides, story 9:16, publication et photos Google) construits à partir des photos du nettoyage de façade, recalées sur un même cadrage avec curseur avant/après ; **plaques d'immatriculation floutées**. Légendes, hashtags, texte de la publication Google et points à confirmer (commune, méthode, accord du syndic) dans `social/README.md`.

@@ -101,7 +101,7 @@ si le SEO ou une action client est concernée.
 - Téléphone : 05 45 91 22 70 · Adresse : 136 Avenue de la République, 16340 L'Isle-d'Espagnac.
 - Horaires : lun–ven 9 h–17 h, sam 9 h–12 h, dim fermé.
 - Services réels : ravalement de façade, nettoyage de façade (hydrogommage, démoussage), nettoyage/
-  démoussage de toiture, peinture extérieure, rénovation intérieure, **isolation intérieure** (pas
+  démoussage de toiture, peinture extérieure (+ **étanchéité extérieure** de balcons/terrasses, confirmé par le client le 2026-10-24), rénovation intérieure, **isolation intérieure** (pas
   d'isolation extérieure/ITE — voir [`docs/seo/decisions.md`](docs/seo/decisions.md)).
 - Zone d'intervention : Angoulême et Charente (16), rayon ~50 km autour de L'Isle-d'Espagnac.
 - Contenu affiché (FAQ, villes desservies, options du formulaire, textes) : dans le HTML des pages, ou dans
