@@ -19,9 +19,10 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
 ## 2026-10-24 — Vraies photos avant/après pour le nettoyage de façade
 
-- Photos de chantier (immeuble collectif, avant 23/09, après 28/09) converties en WebP 600/900/1200 px (4/3) : `media/services/nettoyage_facade/nettoyage_chantier_{avant,apres}-*w.webp` (nouveaux noms, anciens `facade_*` supprimés).
+- Photos de chantier (immeuble collectif, avant 23/09, après 28/09) converties en WebP 600/900/1200 px (4/3) : `media/services/nettoyage_facade/nettoyage_facade_{avant,apres}-*w.webp` (nouveaux noms, anciens `facade_*` supprimés).
 - Utilisées dans l'en-tête et le bloc Avant/Après de la page nettoyage de façade (`page.json`), la carte de l'accueil et `content/realisations.json` ; textes alternatifs neutres (méthode non précisée).
 - CSS `service-page.css` : quand la fiche chantier est à côté (conteneur ≥ 700 px), les photos avant/après s'empilent au lieu de deux bandes verticales qui rognaient les photos paysage (container query, valable pour toutes les pages de service).
+- Photos redressées (rotation 5° avant, 4° après, recadrage 4/3).
 - Vérifié : `npm test` 55/55, pas de débordement.
 
 ## 2026-10-02 (suite 4) — Plus aucun `!important` hors `.visually-hidden`
