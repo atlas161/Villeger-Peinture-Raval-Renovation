@@ -677,7 +677,7 @@
 
 @media (max-width: 991px) {
   .article-content-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "content"
       "sidebar";
@@ -796,7 +796,7 @@
 
 @media (max-width: 1023px) {
   .article-content-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-2xl);
   }
   
