@@ -7,15 +7,19 @@
   "hero": {
     "title": "Peinture Extérieure en Charente",
     "ctaLabel": "Obtenir mon devis gratuit en 48h",
-    "before": "/media/services/peinture_exterieur/peinture_avant-900w.webp",
-    "after": "/media/services/peinture_exterieur/peinture_apres-900w.webp",
-    "altBefore": "Façade avant peinture",
-    "altAfter": "Façade après peinture",
+    "before": "/media/services/etancheite_balcon/balcon_avant-900w.webp",
+    "after": "/media/services/etancheite_balcon/balcon_apres-900w.webp",
+    "altBefore": "Balcon fissuré et encrassé avant étanchéité à Angoulême",
+    "altAfter": "Même balcon après étanchéité : revêtement gris uniforme et relevés propres",
     "subtitle": "Embellissez et protégez vos façades, boiseries et volets avec nos peintures haute qualité. Résistance garantie aux UV et aux intempéries. Devis gratuit en 48h."
   },
   "realisation": {
-    "title": "Avant / Après : peinture extérieure type en Charente (16)",
-    "sheetTitle": "Fiche chantier (exemple)",
+    "title": "Avant / Après : étanchéité de balcon en Charente (16)",
+    "before": "/media/services/etancheite_balcon/balcon2_avant-900w.webp",
+    "after": "/media/services/etancheite_balcon/balcon2_apres-900w.webp",
+    "altBefore": "Sol de balcon fissuré et terni avant étanchéité",
+    "altAfter": "Balcon après étanchéité : sol gris uniforme, garde-corps conservé",
+    "sheetTitle": "Fiche chantier : balcon (exemple)",
     "facts": [
       {
         "label": "Zone",
@@ -23,15 +27,15 @@
       },
       {
         "label": "Support",
-        "text": "façade/enduit + boiseries (selon cas)"
+        "text": "dalle de balcon béton (façade, boiseries selon cas)"
       },
       {
         "label": "Problèmes",
-        "text": "peinture farinante, microfissures, décoloration UV"
+        "text": "microfissures, sol terni, risque d’infiltrations"
       },
       {
         "label": "Solution",
-        "text": "préparation, réparations, sous-couche, finition extérieure"
+        "text": "nettoyage, reprise des fissures, relevés d’étanchéité, revêtement"
       },
       {
         "label": "Durée",

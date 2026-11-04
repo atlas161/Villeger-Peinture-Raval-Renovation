@@ -17,6 +17,13 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-11-04 — Étanchéité de balcon : vraies photos de chantier
+
+- 2 paires avant/après réelles (balcon, étanchéité) dans `media/services/etancheite_balcon/` (recadrées 4/3, sources client basse résolution).
+- **Accueil** : la carte « Peinture extérieure » (photo générée par IA) devient « Étanchéité de balcon » (lien vers la page peinture extérieure).
+- **Page peinture extérieure** : hero = paire 1, bloc « Réalisation » = paire 2 + fiche chantier balcon. **Réalisations** : carte peinture remplacée + 2ᵉ carte balcon.
+- Restent des photos non réelles (IA/stock) : ravalement de façade et nettoyage de toiture (accueil, réalisations, pages).
+
 ## 2026-10-24 (suite 2) — Étanchéité extérieure + posts Google optimisés
 
 - **Étanchéité extérieure** (balcons, terrasses) confirmée comme service par le client : question ajoutée à la FAQ de [peinture extérieure](../peinture-exterieure-charente.html) (`content/pages/peinture-exterieure-charente/page.json`, donc aussi dans le JSON-LD FAQ), mot-clé `étanchéité balcon Charente`, ligne dans `llms.txt`, `CLAUDE.md` mis à jour. Pas de nouvelle page dédiée pour l'instant.

@@ -1,12 +1,12 @@
 {
   "seo": {
     "title": "Réalisations avant / après en Charente | VPRR",
-    "description": "Avant / après de nos chantiers en Charente : ravalement de façade, nettoyage de façade, démoussage de toiture et peinture extérieure par VPRR, artisan à Angoulême."
+    "description": "Avant / après de nos chantiers en Charente : ravalement de façade, nettoyage de façade, démoussage de toiture, peinture extérieure et étanchéité de balcon par VPRR, artisan à Angoulême."
   },
   "intro": {
     "eyebrow": "Réalisations",
     "title": "Nos chantiers en Charente : avant / après",
-    "text": "Ravalement, nettoyage, démoussage, peinture : des résultats concrets, chantier après chantier."
+    "text": "Ravalement, nettoyage, démoussage, peinture, étanchéité : des résultats concrets, chantier après chantier."
   },
   "chantiers": [
     {
@@ -43,15 +43,26 @@
       "altAfter": "Toiture propre après démoussage"
     },
     {
-      "before": "/media/services/peinture_exterieur/peinture_avant-900w.webp",
-      "after": "/media/services/peinture_exterieur/peinture_apres-900w.webp",
-      "title": "Peinture extérieure",
+      "before": "/media/services/etancheite_balcon/balcon_avant-900w.webp",
+      "after": "/media/services/etancheite_balcon/balcon_apres-900w.webp",
+      "title": "Étanchéité de balcon",
       "category": "peinture",
       "service": "peinture-exterieure-charente",
       "commune": "",
       "duration": "",
-      "altBefore": "Façade avant peinture extérieure",
-      "altAfter": "Façade repeinte après peinture extérieure"
+      "altBefore": "Balcon fissuré et encrassé avant étanchéité",
+      "altAfter": "Même balcon après étanchéité : revêtement uniforme"
+    },
+    {
+      "before": "/media/services/etancheite_balcon/balcon2_avant-900w.webp",
+      "after": "/media/services/etancheite_balcon/balcon2_apres-900w.webp",
+      "title": "Étanchéité de balcon (2)",
+      "category": "peinture",
+      "service": "peinture-exterieure-charente",
+      "commune": "",
+      "duration": "",
+      "altBefore": "Sol de balcon fissuré avant étanchéité",
+      "altAfter": "Balcon après étanchéité : sol gris uniforme"
     }
   ]
 }
