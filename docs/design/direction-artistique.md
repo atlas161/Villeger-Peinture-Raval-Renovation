@@ -1,3 +1,6 @@
+> **2026-11-04 — Direction en vigueur : « Chantier »** (palette du logo seule, Barlow Condensed en capitales + Barlow, angles droits de 2 px, filet brun sur les cartes, fonds pierre/brun/blanc/encre).
+> Détail et maquette : [`propositions-direction-artistique.html`](./propositions-direction-artistique.html) (proposition B) et `docs/changelog.md`. Le reste de ce document est historique.
+
 # Direction artistique — audit design des pages service et zone, et propositions (2026-10-01)
 
 **Référence visuelle vivante : [`guide-direction-artistique.html`](./guide-direction-artistique.html)** — page unique qui montre,

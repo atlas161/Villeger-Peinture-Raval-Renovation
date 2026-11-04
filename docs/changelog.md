@@ -17,6 +17,17 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 | Dépendances npm | **0** |
 | Pages de service | 5, générées depuis `content/pages/` |
 
+## 2026-11-04 — Direction artistique « Chantier » sur tout le site (non commité, en attente de validation)
+
+- **Pourquoi** : la 1re refonte (or miel étranger au logo, fonds crème sur crème) a été jugée laide. Trois propositions comparées dans
+  [`design/propositions-direction-artistique.html`](./design/propositions-direction-artistique.html) ; le client a choisi **B · Chantier**. Logo inchangé.
+- **Palette = logo uniquement** : encre `#261E16`, brun `#673A12`, bronze `#9F814F`, sable `#C9B99F` + pierre neutre `#ECE8E1` (fond de page) ; plus aucun jaune/orange.
+- **Polices** : Barlow Condensed (titres, **majuscules** h1-h3 ; titres d'articles de blog en casse normale) + Barlow (texte), hébergées dans `assets/fonts/` (`fonts.css`) ; Inter supprimée. Repli métriques ajusté (`01-fonts-fallback.css`) contre le CLS.
+- **Formes** : tous les rayons (`--radius-*`, y compris `--radius-pill`) passent à 2 px : angles droits sur tout le site. Cartes à filet brun.
+- **Tokens** : `--color-bg`, `--color-surface-alt`, `--color-border*`, `--brand-accent*` recalés sur le logo ; nouveaux `--color-sand`, `--color-sand-border`, `--color-ink`, `--color-ink-soft`, `--font-head`.
+- **Accueil** (`26-accueil-direction.css`, modificateurs `.section--white/sand/dark/ink`) : hero à très gros titre, barre de preuves (4,1/5 · 15 ans · 10 ans · 48 h) à cheval sur le hero, rythme pierre / brun / blanc / encre, textes d'accroche réécrits. H1 et mots-clés SEO inchangés.
+- Tests 55/55, build OK. Vérifié : accueil à 375 et 1440 px, page ravalement à 1440 px. **À contrôler** : les autres pages à 375/768 px (titres en capitales plus larges), Lighthouse après déploiement.
+
 ## 2026-11-04 — Étanchéité de balcon : vraies photos de chantier
 
 - 2 paires avant/après réelles (balcon, étanchéité) dans `media/services/etancheite_balcon/` (recadrées 4/3, sources client basse résolution).

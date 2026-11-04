@@ -1,0 +1,7 @@
+/* Barlow (texte) et Barlow Condensed (titres) — hébergées sur vprr.fr, licence SIL OFL (voir license.txt).
+   Sous-ensemble « latin » (accents français, œ, €, guillemets) ; font-display: swap. */
+@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 400; font-display: swap; src: url('barlow-400.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 500; font-display: swap; src: url('barlow-500.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 600; font-display: swap; src: url('barlow-600.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url('barlowcond-600.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url('barlowcond-700.woff2') format('woff2'); }

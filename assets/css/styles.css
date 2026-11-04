@@ -1,22 +1,32 @@
 /* GÉNÉRÉ par scripts/build-bundles.js depuis src/css/styles/ — ne pas éditer ce fichier. */
 /* ▸ 01-fonts-fallback.css */
 /* ===================================================================
-   VILLEGER PEINTURE - DESIGN SYSTEM (Apple-inspired)
+   VILLEGER PEINTURE - DESIGN SYSTEM « Chantier » (2026-11)
    =================================================================== */
 
 /* ===================================================================
    0. FONT-FACE AVEC FALLBACK METRICS (évite CLS)
+   Barlow (texte) et Barlow Condensed (titres) sont plus étroites qu'Arial :
+   le repli est réduit pour que la mise en page ne saute pas au chargement.
    =================================================================== */
-
-/* Fallback font avec métriques ajustées pour Inter */
 @font-face {
-  font-family: 'Inter Fallback';
+  font-family: 'Barlow Fallback';
   src: local('Arial');
   font-display: swap;
-  ascent-override: 90%;
-  descent-override: 22%;
+  ascent-override: 100%;
+  descent-override: 20%;
   line-gap-override: 0%;
-  size-adjust: 107%;
+  size-adjust: 94%;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  font-display: swap;
+  ascent-override: 98%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+  size-adjust: 80%;
 }
 
 /* ▸ 02-tokens.css */
@@ -30,22 +40,30 @@
   --color-primary-hover: #522E0E;
   --color-primary-active: #3F2209;
   --color-primary-light: rgba(103, 58, 18, 0.08);
-  --color-text: #2A211B;
+  --color-text: #261E16;      /* encre du logo */
   --color-text-light: #5C4D41;  /* 7,6:1 sur --color-bg */
   --color-text-muted: #6A5C50;  /* 6,1:1 sur --color-bg (était #77695E, 4,9:1) */
-  --brand-accent: #A88B5E;      /* or DÉCORATIF uniquement (bordures, icônes, puces) : 3:1 */
+  --brand-accent: #9F814F;      /* bronze du logo : DÉCORATIF uniquement (filets, icônes, puces) */
   --brand-accent-text: #7A5A2B; /* or pour du TEXTE sur fond clair : 6:1 */
   --color-star: #F5B301;
   --brand-accent-light: rgba(168, 139, 94, 0.15);
-  --brand-accent-on-dark: #D9C4A1; /* accent lisible sur le fond brun du footer et du hero (≈ 6:1) */
+  --brand-accent-on-dark: #C9B99F; /* sable du logo : accent sur fond encre/brun (≥ 6:1) */
   --footer-text: #F3E9D8;          /* texte courant du footer (≥ 10:1 sur le brun) */
-  --color-bg: #FAF8F5;
+  --color-bg: #ECE8E1;           /* pierre : fond de page, les cartes blanches s'en détachent */
   --color-white: #ffffff;
   --color-surface: #FFFFFF;
-  --color-surface-alt: #F3EEE8;
-  --color-border: #E6E0D8;
-  --color-border-light: #F0EDE8;
-  --color-panel: #FAF8F5;
+  --color-surface-alt: #E3DED4;
+  --color-border: #CFC8BC;
+  --color-border-light: #DDD7CB;
+  --color-panel: #ECE8E1;
+
+  /* Direction artistique « Chantier » (2026-11) — voir docs/design/direction-artistique.md
+     Pierre = fond de section qui fait ressortir les cartes blanches (liseré + filet brun) · Encre = bande sombre
+     Sable (--brand-accent-on-dark) = seul accent clair, issu du logo : jamais de jaune/orange étranger au logo. */
+  --color-sand: #ECE8E1;        /* pierre */
+  --color-sand-border: #CFC8BC;
+  --color-ink: #261E16;
+  --color-ink-soft: #30261C;
 
   /* Statuts (erreur du formulaire) */
   --color-error: #DC2626;
@@ -102,11 +120,11 @@
   --space-4xl: 6rem;     /* 96px */
 
   /* Rayons de bordure */
-  --radius-sm: 8px;
-  --radius: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-pill: 100px;
+  --radius-sm: 2px;
+  --radius: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+  --radius-pill: 2px;
 
   /* Ombres (style Apple) */
   /* Typographie : une seule échelle (rem). Les titres fluides utilisent clamp() directement. */
@@ -152,7 +170,8 @@
   --touch-target: 44px;   /* taille minimale d'une cible tactile */
 
   /* Typographie avec fallback optimisé */
-  --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  --font-sans: 'Barlow', 'Barlow Fallback', 'Segoe UI', Arial, sans-serif;
+  --font-head: 'Barlow Condensed', 'Barlow Condensed Fallback', 'Arial Narrow', Impact, sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -222,40 +241,51 @@ body {
    3. TYPOGRAPHIE (Apple-style)
    =================================================================== */
 
+/* Titres « Chantier » : Barlow Condensed en MAJUSCULES (h1-h3), lisibles de loin, façon panneau de chantier.
+   Les titres d'articles de blog (.article-content) restent en casse normale : phrases longues, confort de lecture. */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.15;
+  font-family: var(--font-head);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.05;
   color: var(--color-text);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 
-/* Titre principal - Grand et impactant */
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
 h1 {
-  font-size: clamp(2rem, 4.2vw, 3rem); /* 48 px max : les titres longs (FAQ, zone) tenaient sur 4 lignes à 60 px */
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -0.03em;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: var(--space-lg);
 }
 
-/* Titre de section - Élégant et centré */
 h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(2.125rem, 4.6vw, 3.25rem);
   text-align: center;
   margin-bottom: var(--space-md);
 }
 
-/* Titre de carte/composant */
 h3 {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-4xl);
   margin-bottom: var(--space-sm);
   color: var(--color-text);
+}
+
+h4, h5, h6 {
+  font-size: var(--text-2xl);
+}
+
+.article-content h2,
+.article-content h3 {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 p {
   margin-bottom: var(--space-lg);
   color: var(--color-text-light);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   line-height: 1.7;
 }
 
@@ -2707,3 +2737,225 @@ html {
     top: calc(var(--space-lg) + 18px);
   }
 }
+
+/* ▸ 26-accueil-direction.css */
+/* ===================================================================
+   DIRECTION ARTISTIQUE « CHANTIER » — sections de l'accueil (2026-11)
+   Palette = logo uniquement (encre, brun, bronze, sable) + pierre neutre pour les fonds.
+   Rythme : hero vidéo → preuves → pierre → brun → blanc → pierre → blanc → pierre → blanc → encre.
+   Formes : angles droits ; cartes blanches cerclées d'un liseré + filet brun en haut ; titres Barlow Condensed en capitales.
+   Les modificateurs .section--* sont opt-in : une page qui ne les utilise pas garde ses fonds par défaut.
+   Référence visuelle : docs/design/propositions-direction-artistique.html (proposition B).
+   =================================================================== */
+
+/* ── Fonds de section ── */
+main .section--white { background: var(--color-white); }
+main .section--sand  { background: var(--color-sand); }
+main .section--dark  { background: var(--color-primary); } /* bande brun logo */
+main .section--ink   { background: var(--color-ink); }
+
+main .section--white,
+main .section--sand { border-top: 1px solid var(--color-sand-border); }
+
+/* ── Titres de section ── */
+:is(.section--white, .section--sand, .section--dark) .section-header {
+  max-width: 780px;
+}
+
+:is(.section--white, .section--sand, .section--dark) .section-header h2 {
+  text-wrap: balance;
+}
+
+:is(.section--white, .section--sand, .section--dark) .section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-smd);
+  font-size: var(--text-sm);
+  letter-spacing: 0.16em;
+  color: var(--color-primary);
+}
+
+:is(.section--white, .section--sand, .section--dark) .section-eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 3px;
+  background: var(--color-primary);
+}
+
+.section--dark .section-eyebrow { color: var(--brand-accent-on-dark); }
+.section--dark .section-eyebrow::before { background: var(--brand-accent-on-dark); }
+.section--dark .section-header h2 { color: var(--color-white); }
+.section--dark .section-header p:not(.section-eyebrow) { color: var(--white-a88); }
+
+/* ── Hero : très gros titre condensé ── */
+.hero .hero-title {
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  max-width: 13ch;
+}
+
+.hero .hero-btn-primary {
+  background: var(--brand-accent-on-dark);
+  color: var(--color-ink);
+  box-shadow: none;
+  font-weight: var(--font-weight-semibold);
+}
+
+.hero .hero-btn-primary:hover {
+  background: var(--color-white);
+  color: var(--color-ink);
+  box-shadow: none;
+}
+
+/* ── Barre de preuves : carte blanche à cheval sur le bas du hero ── */
+.proof-bar {
+  position: relative;
+  z-index: 3;
+  margin-top: calc(var(--space-2xl) * -1);
+  padding-inline: var(--space-lg);
+  /* transparent sur la partie qui chevauche le hero, pierre dessous (continuité avec « Services ») */
+  background: linear-gradient(180deg, transparent var(--space-2xl), var(--color-sand) var(--space-2xl));
+}
+
+.proof-bar-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  background: var(--color-white);
+  border: 1px solid var(--color-sand-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.proof-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  border-right: 1px solid var(--color-sand-border);
+  border-bottom: 1px solid var(--color-sand-border);
+}
+
+.proof-bar-item:nth-child(2n) { border-right: 0; }
+.proof-bar-item:nth-last-child(-n+2) { border-bottom: 0; }
+
+.proof-bar-value {
+  font-family: var(--font-head);
+  font-size: var(--text-7xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.proof-bar-value small {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.proof-bar-stars {
+  color: var(--color-star);
+  font-size: var(--text-xs);
+  letter-spacing: 2px;
+}
+
+.proof-bar-label {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .proof-bar-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .proof-bar-item { padding: var(--space-xl) var(--space-md); border-bottom: 0; }
+  .proof-bar-item:nth-child(2n) { border-right: 1px solid var(--color-sand-border); }
+  .proof-bar-item:last-child { border-right: 0; }
+  .proof-bar-value { font-size: var(--text-7xl); }
+}
+
+@media (max-width: 639px) {
+  .hero .hero-inner { padding-bottom: calc(var(--space-2xl) + var(--space-xl)); }
+}
+
+/* ── Cartes de service : blanc cerclé, filet brun en haut, icône carrée pleine ── */
+.section--sand .svc-card {
+  border: 1px solid var(--color-sand-border);
+  border-top: 4px solid var(--color-primary);
+  box-shadow: none;
+}
+
+.section--sand .svc-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); }
+
+.section--sand .svc-icon {
+  background: var(--color-primary);
+  color: var(--brand-accent-on-dark);
+}
+
+.section--sand .svc-card:hover .svc-icon {
+  background: var(--color-ink);
+  color: var(--brand-accent-on-dark);
+}
+
+.section--sand .svc-tags li {
+  background: var(--color-sand);
+  color: var(--color-ink);
+}
+
+.section--sand .svc-footer { border-top-color: var(--color-sand-border); }
+
+/* ── Étapes : bande brun logo, numéros sable ── */
+.section--dark .home-step {
+  background: var(--color-primary-hover);
+  border: 1px solid var(--white-a28);
+  box-shadow: none;
+}
+
+.section--dark .home-step-num {
+  width: 52px;
+  height: 52px;
+  font-family: var(--font-head);
+  font-size: var(--text-5xl);
+  color: var(--color-ink);
+  background: var(--brand-accent-on-dark);
+  border: 0;
+  border-radius: var(--radius);
+}
+
+.section--dark .home-step h3 { color: var(--color-white); }
+.section--dark .home-step p { color: var(--white-a88); }
+.section--dark .home-steps-more a { color: var(--brand-accent-on-dark); }
+
+@media (min-width: 1024px) {
+  .section--dark .home-step:not(:last-child)::after {
+    top: calc(var(--space-xl) + 26px);
+    border-top-color: var(--brand-accent-on-dark);
+  }
+}
+
+/* ── FAQ sur pierre ── */
+.section--sand .faq-item {
+  border: 1px solid var(--color-sand-border);
+  border-left: 4px solid var(--color-primary);
+  box-shadow: none;
+}
+
+.section--sand .faq-item:hover,
+.section--sand .faq-item[open] { border-color: var(--color-primary); }
+
+/* ── Zone : fond blanc franc ── */
+main .zone-section.section--white { background: var(--color-white); }
+
+/* ── Bande devis : section encre, carte brune ── */
+main #contact.section.contact-cta-section { background: var(--color-ink); }
+
+#contact .contact-cta { border: 1px solid var(--white-a28); }

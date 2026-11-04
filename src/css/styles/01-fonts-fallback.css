@@ -1,19 +1,29 @@
 /* ===================================================================
-   VILLEGER PEINTURE - DESIGN SYSTEM (Apple-inspired)
+   VILLEGER PEINTURE - DESIGN SYSTEM « Chantier » (2026-11)
    =================================================================== */
 
 /* ===================================================================
    0. FONT-FACE AVEC FALLBACK METRICS (évite CLS)
+   Barlow (texte) et Barlow Condensed (titres) sont plus étroites qu'Arial :
+   le repli est réduit pour que la mise en page ne saute pas au chargement.
    =================================================================== */
-
-/* Fallback font avec métriques ajustées pour Inter */
 @font-face {
-  font-family: 'Inter Fallback';
+  font-family: 'Barlow Fallback';
   src: local('Arial');
   font-display: swap;
-  ascent-override: 90%;
-  descent-override: 22%;
+  ascent-override: 100%;
+  descent-override: 20%;
   line-gap-override: 0%;
-  size-adjust: 107%;
+  size-adjust: 94%;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  font-display: swap;
+  ascent-override: 98%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+  size-adjust: 80%;
 }
 

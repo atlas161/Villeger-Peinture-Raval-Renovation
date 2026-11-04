@@ -8,22 +8,30 @@
   --color-primary-hover: #522E0E;
   --color-primary-active: #3F2209;
   --color-primary-light: rgba(103, 58, 18, 0.08);
-  --color-text: #2A211B;
+  --color-text: #261E16;      /* encre du logo */
   --color-text-light: #5C4D41;  /* 7,6:1 sur --color-bg */
   --color-text-muted: #6A5C50;  /* 6,1:1 sur --color-bg (était #77695E, 4,9:1) */
-  --brand-accent: #A88B5E;      /* or DÉCORATIF uniquement (bordures, icônes, puces) : 3:1 */
+  --brand-accent: #9F814F;      /* bronze du logo : DÉCORATIF uniquement (filets, icônes, puces) */
   --brand-accent-text: #7A5A2B; /* or pour du TEXTE sur fond clair : 6:1 */
   --color-star: #F5B301;
   --brand-accent-light: rgba(168, 139, 94, 0.15);
-  --brand-accent-on-dark: #D9C4A1; /* accent lisible sur le fond brun du footer et du hero (≈ 6:1) */
+  --brand-accent-on-dark: #C9B99F; /* sable du logo : accent sur fond encre/brun (≥ 6:1) */
   --footer-text: #F3E9D8;          /* texte courant du footer (≥ 10:1 sur le brun) */
-  --color-bg: #FAF8F5;
+  --color-bg: #ECE8E1;           /* pierre : fond de page, les cartes blanches s'en détachent */
   --color-white: #ffffff;
   --color-surface: #FFFFFF;
-  --color-surface-alt: #F3EEE8;
-  --color-border: #E6E0D8;
-  --color-border-light: #F0EDE8;
-  --color-panel: #FAF8F5;
+  --color-surface-alt: #E3DED4;
+  --color-border: #CFC8BC;
+  --color-border-light: #DDD7CB;
+  --color-panel: #ECE8E1;
+
+  /* Direction artistique « Chantier » (2026-11) — voir docs/design/direction-artistique.md
+     Pierre = fond de section qui fait ressortir les cartes blanches (liseré + filet brun) · Encre = bande sombre
+     Sable (--brand-accent-on-dark) = seul accent clair, issu du logo : jamais de jaune/orange étranger au logo. */
+  --color-sand: #ECE8E1;        /* pierre */
+  --color-sand-border: #CFC8BC;
+  --color-ink: #261E16;
+  --color-ink-soft: #30261C;
 
   /* Statuts (erreur du formulaire) */
   --color-error: #DC2626;
@@ -80,11 +88,11 @@
   --space-4xl: 6rem;     /* 96px */
 
   /* Rayons de bordure */
-  --radius-sm: 8px;
-  --radius: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-pill: 100px;
+  --radius-sm: 2px;
+  --radius: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+  --radius-pill: 2px;
 
   /* Ombres (style Apple) */
   /* Typographie : une seule échelle (rem). Les titres fluides utilisent clamp() directement. */
@@ -130,7 +138,8 @@
   --touch-target: 44px;   /* taille minimale d'une cible tactile */
 
   /* Typographie avec fallback optimisé */
-  --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  --font-sans: 'Barlow', 'Barlow Fallback', 'Segoe UI', Arial, sans-serif;
+  --font-head: 'Barlow Condensed', 'Barlow Condensed Fallback', 'Arial Narrow', Impact, sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;

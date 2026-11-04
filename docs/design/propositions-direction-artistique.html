@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VPRR — 3 propositions de direction artistique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  Page de COMPARAISON (non publiée : docs/ n'est jamais déployé). Le CSS est dans cette page, tout est lisible d'un coup.
+  Les 3 propositions n'utilisent QUE les couleurs du logo (media/VPRR-LOGO.svg) :
+    encre #261E16 · brun #673A12 · bronze #9F814F · sable #C9B99F
+  Plus de jaune/orange étranger au logo. Le logo n'est pas modifié.
+  Chaque proposition = un jeu de variables (couleurs, polices, rayons) appliqué à la même maquette d'accueil.
+-->
+<style>
+  :root {
+    --logo-ink: #261E16; --logo-brown: #673A12; --logo-bronze: #9F814F; --logo-sand: #C9B99F;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: #fff; color: #261E16; line-height: 1.5; }
+  img { max-width: 100%; display: block; }
+
+  /* ── Bandeau de navigation de la page de comparaison ── */
+  .picker { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    padding: 10px 16px; background: #261E16; color: #F4EEE4; font-size: 14px; }
+  .picker strong { margin-right: 8px; }
+  .picker a { color: #261E16; background: #C9B99F; padding: 6px 14px; border-radius: 99px; text-decoration: none; font-weight: 600; }
+  .picker a:hover { background: #fff; }
+
+  .da-intro { max-width: 1100px; margin: 0 auto; padding: 40px 20px 24px; }
+  .da-intro h2 { font: 700 28px/1.2 Inter, sans-serif; margin-bottom: 6px; }
+  .da-intro p { color: #5C4D41; max-width: 70ch; }
+  .meta { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 20px; }
+  @media (min-width: 800px) { .meta { grid-template-columns: 1fr 1fr; } }
+  .swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sw { width: 92px; font-size: 11px; line-height: 1.3; }
+  .sw i { display: block; height: 48px; border-radius: 6px; border: 1px solid rgba(0,0,0,.12); margin-bottom: 4px; }
+  .fonts { font-size: 14px; }
+  .fonts b { display: block; font-size: 24px; line-height: 1.2; margin-bottom: 4px; }
+
+  /* ===== MAQUETTE D'ACCUEIL (variables par proposition) ===== */
+  .da { background: var(--bg); color: var(--text); font-family: var(--font-body); border-block: 1px solid #d8d0c4; }
+  .da h1, .da h2, .da h3 { font-family: var(--font-head); font-weight: var(--head-weight); text-transform: var(--head-case);
+    letter-spacing: var(--head-track); line-height: 1.1; color: inherit; }
+  .da .wrap { max-width: 1100px; margin: 0 auto; padding-inline: 20px; }
+  .da .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 26px; border-radius: var(--btn-radius);
+    font: 600 16px var(--font-body); text-decoration: none; border: 2px solid transparent; cursor: pointer; }
+  .da .btn-main { background: var(--btn-bg); color: var(--btn-fg); }
+  .da .btn-main:hover { background: var(--btn-bg-hover); }
+  .da .btn-line { border-color: currentColor; color: inherit; background: transparent; }
+
+  .da .top { background: var(--header-bg); border-bottom: 1px solid var(--line); }
+  .da .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .da .top img { height: 48px; width: auto; }
+  .da .top nav { display: none; gap: 22px; font-size: 15px; font-weight: 500; }
+  .da .top nav span { color: var(--text); }
+  @media (min-width: 900px) { .da .top nav { display: flex; } }
+
+  .da .hero { position: relative; color: #fff; background: #1a130d url('../../data/hero-poster-1280w.webp') center 30% / cover; }
+  .da .hero::before { content: ''; position: absolute; inset: 0; background: var(--hero-veil); }
+  .da .hero .wrap { position: relative; padding-block: 88px 120px; }
+  .da .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-accent); margin-bottom: 14px; }
+  .da .hero h1 { font-size: clamp(2.1rem, 6vw, 4rem); max-width: 14ch; margin-bottom: 18px; }
+  .da .hero h1 em { font-style: normal; color: var(--on-dark-accent); }
+  .da .hero p.lead { max-width: 56ch; font-size: 18px; color: rgba(255,255,255,.9); margin-bottom: 26px; }
+  .da .hero .row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .da .proof { position: relative; margin-top: -56px; }
+  .da .proof ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); background: var(--surface);
+    border: 1px solid var(--line); border-radius: var(--card-radius); box-shadow: 0 16px 40px rgba(38,30,22,.16); overflow: hidden; }
+  @media (min-width: 800px) { .da .proof ul { grid-template-columns: repeat(4, 1fr); } }
+  .da .proof li { padding: 22px 12px; text-align: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .da .proof b { display: block; font: var(--head-weight) 38px/1 var(--font-head); text-transform: var(--head-case); color: var(--brand); }
+  .da .proof span { font-size: 14px; color: var(--muted); }
+
+  .da section.s { padding-block: 72px; }
+  .da .s-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+  .da .s-head .eyebrow { color: var(--eyebrow); }
+  .da .s-head h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin-bottom: 10px; }
+  .da .s-head p { color: var(--muted); font-size: 17px; }
+
+  .da .cards { display: grid; gap: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 800px) { .da .cards { grid-template-columns: repeat(3, 1fr); } }
+  .da .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--card-radius);
+    padding: 28px; box-shadow: 0 2px 10px rgba(38,30,22,.06); }
+  .da .card .ico { width: 52px; height: 52px; border-radius: var(--icon-radius); display: grid; place-items: center;
+    background: var(--brand); color: var(--icon-fg); font-size: 22px; margin-bottom: 16px; }
+  .da .card h3 { font-size: 22px; margin-bottom: 8px; }
+  .da .card p { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+  .da .card a { font-weight: 600; color: var(--brand); text-decoration: none; }
+
+  .da .band { background: var(--band-bg); color: var(--band-fg); }
+  .da .band .s-head p { color: var(--band-muted); }
+  .da .band .s-head .eyebrow { color: var(--on-dark-accent); }
+  .da .steps { display: grid; gap: 16px; grid-template-columns: 1fr; list-style: none; padding: 0; }
+  @media (min-width: 800px) { .da .steps { grid-template-columns: repeat(4, 1fr); } }
+  .da .steps li { border: 1px solid var(--band-line); border-radius: var(--card-radius); padding: 24px; background: var(--band-card); }
+  .da .steps .n { font: var(--head-weight) 34px/1 var(--font-head); text-transform: var(--head-case); color: var(--on-dark-accent); display: block; margin-bottom: 10px; }
+  .da .steps h3 { font-size: 19px; margin-bottom: 6px; }
+  .da .steps p { font-size: 14.5px; color: var(--band-muted); }
+
+  .da .cta { background: var(--cta-bg); color: var(--cta-fg); text-align: center; padding-block: 72px; }
+  .da .cta h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); max-width: 20ch; margin: 0 auto 12px; }
+  .da .cta p { max-width: 54ch; margin: 0 auto 26px; opacity: .9; font-size: 17px; }
+  .da .cta .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .da .cta .btn-main { background: var(--cta-btn-bg); color: var(--cta-btn-fg); }
+  .da .cta .btn-main:hover { background: #fff; }
+
+  /* ───────── A · ATELIER : chaleureux, éditorial, serif ───────── */
+  .da--a {
+    --bg: #F6F1E8; --surface: #FFFFFF; --text: #261E16; --muted: #5C4D41; --line: #DDD2BF;
+    --brand: #673A12; --eyebrow: #7A5A2B; --on-dark-accent: #C9B99F;
+    --header-bg: #FBF8F2; --hero-veil: linear-gradient(100deg, rgba(38,30,22,.9), rgba(38,30,22,.55) 55%, rgba(38,30,22,.25));
+    --font-head: Fraunces, Georgia, serif; --font-body: Inter, sans-serif;
+    --head-weight: 600; --head-case: none; --head-track: -0.015em;
+    --btn-radius: 8px; --card-radius: 10px; --icon-radius: 8px; --icon-fg: #F6F1E8;
+    --btn-bg: #C9B99F; --btn-fg: #261E16; --btn-bg-hover: #fff;
+    --band-bg: #261E16; --band-fg: #F6F1E8; --band-muted: #CFC4B2; --band-line: rgba(201,185,159,.28); --band-card: #30261C;
+    --cta-bg: #673A12; --cta-fg: #FBF6EC; --cta-btn-bg: #C9B99F; --cta-btn-fg: #261E16;
+  }
+
+  /* ───────── B · CHANTIER : franc, graphique, majuscules condensées ───────── */
+  .da--b {
+    --bg: #ECE8E1; --surface: #FFFFFF; --text: #261E16; --muted: #50453A; --line: #CFC8BC;
+    --brand: #673A12; --eyebrow: #673A12; --on-dark-accent: #C9B99F;
+    --header-bg: #FFFFFF; --hero-veil: linear-gradient(180deg, rgba(38,30,22,.72), rgba(38,30,22,.88));
+    --font-head: 'Barlow Condensed', Impact, sans-serif; --font-body: Barlow, Inter, sans-serif;
+    --head-weight: 700; --head-case: uppercase; --head-track: 0.01em;
+    --btn-radius: 2px; --card-radius: 2px; --icon-radius: 2px; --icon-fg: #C9B99F;
+    --btn-bg: #673A12; --btn-fg: #fff; --btn-bg-hover: #4D2B0D;
+    --band-bg: #673A12; --band-fg: #fff; --band-muted: #E7DCCB; --band-line: rgba(255,255,255,.28); --band-card: #5A3210;
+    --cta-bg: #261E16; --cta-fg: #F6F1E8; --cta-btn-bg: #C9B99F; --cta-btn-fg: #261E16;
+  }
+  .da--b .hero h1 { font-size: clamp(2.6rem, 8vw, 5.4rem); line-height: .95; max-width: 12ch; }
+  .da--b .hero .btn-main { background: #C9B99F; color: #261E16; }
+  .da--b .card { border-top: 4px solid #673A12; box-shadow: none; }
+  .da--b .s-head h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+
+  /* ───────── C · MAISON : brun dominant, arrondi, contrasté ───────── */
+  .da--c {
+    --bg: #F8F3EA; --surface: #FFFFFF; --text: #261E16; --muted: #5E4F42; --line: #E3D8C6;
+    --brand: #673A12; --eyebrow: #7A5A2B; --on-dark-accent: #D9C9AE;
+    --header-bg: #FFFFFF; --hero-veil: linear-gradient(100deg, rgba(103,58,18,.94), rgba(103,58,18,.72) 55%, rgba(38,30,22,.35));
+    --font-head: 'DM Serif Display', Georgia, serif; --font-body: 'DM Sans', Inter, sans-serif;
+    --head-weight: 400; --head-case: none; --head-track: 0;
+    --btn-radius: 999px; --card-radius: 24px; --icon-radius: 50%; --icon-fg: #F8F3EA;
+    --btn-bg: #F8F3EA; --btn-fg: #673A12; --btn-bg-hover: #fff;
+    --band-bg: #673A12; --band-fg: #FBF6EC; --band-muted: #E9DDCA; --band-line: rgba(255,255,255,.26); --band-card: rgba(255,255,255,.07);
+    --cta-bg: #261E16; --cta-fg: #FBF6EC; --cta-btn-bg: #F8F3EA; --cta-btn-fg: #673A12;
+  }
+  .da--c .card { border: 0; box-shadow: 0 10px 30px rgba(103,58,18,.12); }
+  .da--c .hero h1 { font-size: clamp(2.3rem, 6.4vw, 4.4rem); max-width: 15ch; }
+</style>
+</head>
+<body>
+
+<nav class="picker" aria-label="Choisir une proposition">
+  <strong>Directions artistiques VPRR :</strong>
+  <a href="#a">A · Atelier</a><a href="#b">B · Chantier</a><a href="#c">C · Maison</a>
+</nav>
+
+<template id="page">
+  <header class="top"><div class="wrap">
+    <img src="../../media/VPRR-LOGO.svg" alt="Villéger Peinture Ravalement Rénovation">
+    <nav><span>Accueil</span><span>Services</span><span>Réalisations</span><span>Blog</span><span>Où ?</span><span>FAQ</span><span>Contact</span></nav>
+    <a class="btn btn-main" href="#" style="min-height:42px;padding:8px 20px">Devis gratuit</a>
+  </div></header>
+
+  <section class="hero"><div class="wrap">
+    <p class="eyebrow">Artisan local · Angoulême · Charente</p>
+    <h1>Ravalement, toiture et peinture <em>à Angoulême</em></h1>
+    <p class="lead">Façade qui s'écaille, toiture noircie de mousse&nbsp;? Ne laissez pas les dégâts s'aggraver. Stéphane Villéger et son équipe remettent votre maison à neuf&nbsp;: devis gratuit sous 48&nbsp;h, garantie décennale.</p>
+    <div class="row"><a class="btn btn-main" href="#">Obtenir mon devis gratuit →</a><a class="btn btn-line" href="#">05 45 91 22 70</a></div>
+  </div></section>
+
+  <section class="proof"><div class="wrap"><ul>
+    <li><b>4,1/5</b><span>14 avis Google</span></li>
+    <li><b>15 ans</b><span>d'expérience en Charente</span></li>
+    <li><b>10 ans</b><span>de garantie décennale</span></li>
+    <li><b>48 h</b><span>pour recevoir votre devis</span></li>
+  </ul></div></section>
+
+  <section class="s"><div class="wrap">
+    <div class="s-head"><p class="eyebrow">Nos métiers</p><h2>Un seul artisan pour tous vos travaux</h2><p>Du diagnostic aux finitions, une seule équipe et un seul devis.</p></div>
+    <div class="cards">
+      <article class="card"><div class="ico">▣</div><h3>Ravalement &amp; façade</h3><p>Fissures, écaillage, enduit : votre façade retrouve sa tenue et sa protection.</p><a href="#">Découvrir →</a></article>
+      <article class="card"><div class="ico">⌂</div><h3>Toiture &amp; couverture</h3><p>Démoussage, traitement hydrofuge : une toiture propre et durable.</p><a href="#">Découvrir →</a></article>
+      <article class="card"><div class="ico">✎</div><h3>Peinture &amp; intérieur</h3><p>Peinture extérieure et rénovation intérieure, finitions soignées.</p><a href="#">Découvrir →</a></article>
+    </div>
+  </div></section>
+
+  <section class="s band"><div class="wrap">
+    <div class="s-head"><p class="eyebrow">Notre méthode</p><h2>Simple, clair, sans mauvaise surprise</h2><p>Un seul interlocuteur, de votre premier appel à la dernière finition.</p></div>
+    <ol class="steps">
+      <li><span class="n">1</span><h3>Votre demande</h3><p>Un appel ou le formulaire : réponse sous 48&nbsp;h.</p></li>
+      <li><span class="n">2</span><h3>Visite &amp; diagnostic</h3><p>Nous venons voir l'état réel, gratuitement.</p></li>
+      <li><span class="n">3</span><h3>Devis détaillé</h3><p>Un prix transparent, sans engagement.</p></li>
+      <li><span class="n">4</span><h3>Travaux &amp; finitions</h3><p>Chantier rangé, finitions soignées.</p></li>
+    </ol>
+  </div></section>
+
+  <section class="cta"><div class="wrap">
+    <h2>Prêt à redonner du caractère à votre maison&nbsp;?</h2>
+    <p>Décrivez-nous votre projet en deux minutes : devis détaillé sous 48&nbsp;h, sans engagement.</p>
+    <div class="row"><a class="btn btn-main" href="#">Demander mon devis →</a><a class="btn btn-line" href="#">05 45 91 22 70</a></div>
+  </div></section>
+</template>
+
+<!-- Chaque proposition : fiche (palette + polices) puis maquette -->
+<section id="a">
+  <div class="da-intro">
+    <h2>A · Atelier — chaleureux et haut de gamme</h2>
+    <p>Titres en serif (Fraunces) : on lit « artisan de métier », pas « franchise ». Fonds crème, bande encre, accent sable tiré du logo. Boutons à angles légèrement arrondis.</p>
+    <div class="meta">
+      <div class="swatches">
+        <div class="sw"><i style="background:#261E16"></i>Encre #261E16<br>(logo)</div><div class="sw"><i style="background:#673A12"></i>Brun #673A12<br>(logo)</div>
+        <div class="sw"><i style="background:#9F814F"></i>Bronze #9F814F<br>(logo)</div><div class="sw"><i style="background:#C9B99F"></i>Sable #C9B99F<br>(logo)</div>
+        <div class="sw"><i style="background:#F6F1E8"></i>Crème #F6F1E8</div><div class="sw"><i style="background:#DDD2BF"></i>Liseré #DDD2BF</div>
+      </div>
+      <div class="fonts"><b style="font-family:Fraunces,serif;font-weight:600">Fraunces — titres</b><b style="font-family:Inter;font-weight:500;font-size:20px">Inter — texte (déjà sur le site)</b></div>
+    </div>
+  </div>
+  <div class="da da--a" data-page></div>
+</section>
+
+<section id="b">
+  <div class="da-intro">
+    <h2>B · Chantier — franc et graphique</h2>
+    <p>Titres en majuscules condensées (Barlow Condensed), angles droits, filet brun en haut des cartes : le look « entreprise du bâtiment sérieuse ». Le plus différent de l'existant.</p>
+    <div class="meta">
+      <div class="swatches">
+        <div class="sw"><i style="background:#261E16"></i>Encre #261E16<br>(logo)</div><div class="sw"><i style="background:#673A12"></i>Brun #673A12<br>(logo)</div>
+        <div class="sw"><i style="background:#C9B99F"></i>Sable #C9B99F<br>(logo)</div><div class="sw"><i style="background:#ECE8E1"></i>Pierre #ECE8E1</div>
+        <div class="sw"><i style="background:#CFC8BC"></i>Liseré #CFC8BC</div>
+      </div>
+      <div class="fonts"><b style="font-family:'Barlow Condensed';text-transform:uppercase;font-weight:700">Barlow Condensed — titres</b><b style="font-family:Barlow;font-weight:500;font-size:20px">Barlow — texte</b></div>
+    </div>
+  </div>
+  <div class="da da--b" data-page></div>
+</section>
+
+<section id="c">
+  <div class="da-intro">
+    <h2>C · Maison — brun dominant, doux et rassurant</h2>
+    <p>Le brun du logo devient la couleur forte (hero, étapes). Titres DM Serif Display, boutons pilule, cartes très arrondies avec ombre brune. Proche du style actuel mais bien plus affirmé.</p>
+    <div class="meta">
+      <div class="swatches">
+        <div class="sw"><i style="background:#673A12"></i>Brun #673A12<br>(logo)</div><div class="sw"><i style="background:#261E16"></i>Encre #261E16<br>(logo)</div>
+        <div class="sw"><i style="background:#D9C9AE"></i>Sable clair #D9C9AE</div><div class="sw"><i style="background:#F8F3EA"></i>Crème #F8F3EA</div>
+      </div>
+      <div class="fonts"><b style="font-family:'DM Serif Display'">DM Serif Display — titres</b><b style="font-family:'DM Sans';font-weight:500;font-size:20px">DM Sans — texte</b></div>
+    </div>
+  </div>
+  <div class="da da--c" data-page></div>
+</section>
+
+<script>
+  const tpl = document.getElementById('page');
+  document.querySelectorAll('[data-page]').forEach(el => el.appendChild(tpl.content.cloneNode(true)));
+</script>
+</body>
+</html>

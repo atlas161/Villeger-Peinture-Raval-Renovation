@@ -76,8 +76,8 @@
     <link rel="stylesheet" href="assets/css/zone.css?v=20260929" />
     
     <!-- Google Fonts avec display=swap pour éviter FOIT -->
-    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/assets/fonts/inter.css" />
+    <link rel="preload" href="/assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/fonts/fonts.css" />
     
     <!-- Font Awesome CDN complet -->
     <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
@@ -90,7 +90,7 @@
       <link rel="stylesheet" href="assets/css/contact.css?v=20261002" />
       <link rel="stylesheet" href="assets/css/faq.css?v=20260929" />
       <link rel="stylesheet" href="assets/css/zone.css?v=20260929" />
-      <link rel="stylesheet" href="/assets/fonts/inter.css" />
+      <link rel="stylesheet" href="/assets/fonts/fonts.css" />
       <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
     </noscript>
     
@@ -506,38 +506,19 @@
 
             <!-- Sous-titre -->
             <p class="hero-desc">
-              Façade abîmée, toiture encrassée, intérieur à rénover&nbsp;? VPRR, artisan local à L'Isle-d'Espagnac, intervient dans toute la Charente - devis gratuit sous 48h, garantie décennale.
+              Façade qui s'écaille, toiture noircie de mousse, pièces qui ont vieilli&nbsp;? Ne laissez pas les dégâts s'aggraver. Stéphane Villéger et son équipe remettent votre maison à neuf, partout en Charente&nbsp;: devis gratuit sous 48&nbsp;h, garantie décennale.
             </p>
 
             <!-- CTAs -->
             <div class="hero-actions">
               <a class="btn hero-btn-primary" href="contact.html">
-                Demander un devis gratuit
-              </a>
-              <a class="btn hero-btn-ghost" href="realisations.html">
-                Voir nos réalisations
+                Obtenir mon devis gratuit
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
               </a>
-            </div>
-
-            <!-- Chips de confiance -->
-            <div class="hero-chips" aria-label="Nos engagements">
-              <span class="hero-chip">
-                <span class="hero-chip-stars" aria-hidden="true">★★★★☆</span>
-                <span>4,1 · 14 avis Google</span>
-              </span>
-              <span class="hero-chip">
-                <i class="fa-solid fa-medal" aria-hidden="true"></i>
-                <span>15 ans d'expérience</span>
-              </span>
-              <span class="hero-chip">
-                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-                <span>Garanti décennal</span>
-              </span>
-              <span class="hero-chip">
-                <i class="fa-solid fa-clock" aria-hidden="true"></i>
-                <span>Devis sous 48h</span>
-              </span>
+              <a class="btn hero-btn-ghost" href="tel:+33545912270">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                05 45 91 22 70
+              </a>
             </div>
 
           </div>
@@ -545,16 +526,36 @@
 
       </section>
 
-            <!-- Séparateur visuel entre les sections -->
-      <div class="section-divider" role="separator" aria-hidden="true"></div>
+      <!-- Barre de preuves : 4 chiffres de confiance, à cheval sur le bas du hero -->
+      <section class="proof-bar" aria-label="Nos engagements">
+        <ul class="proof-bar-list">
+          <li class="proof-bar-item">
+            <span class="proof-bar-value">4,1<small>/5</small></span>
+            <span class="proof-bar-stars" aria-hidden="true">★★★★☆</span>
+            <span class="proof-bar-label">14 avis Google</span>
+          </li>
+          <li class="proof-bar-item">
+            <span class="proof-bar-value">15<small> ans</small></span>
+            <span class="proof-bar-label">d'expérience en Charente</span>
+          </li>
+          <li class="proof-bar-item">
+            <span class="proof-bar-value">10<small> ans</small></span>
+            <span class="proof-bar-label">de garantie décennale</span>
+          </li>
+          <li class="proof-bar-item">
+            <span class="proof-bar-value">48<small> h</small></span>
+            <span class="proof-bar-label">pour recevoir votre devis</span>
+          </li>
+        </ul>
+      </section>
 
             <!-- Section 'Services' : présentation des expertises -->
-      <section id="services" class="section" aria-labelledby="services-title">
+      <section id="services" class="section section--sand" aria-labelledby="services-title">
         <div class="container">
           <header class="section-header">
-            <p class="section-eyebrow">Services</p>
-            <h2 id="services-title">Ce que nous faisons</h2>
-            <p>Façade, toiture, peinture, isolation : un artisan local pour tous vos travaux.</p>
+            <p class="section-eyebrow">Nos métiers</p>
+            <h2 id="services-title">Un seul artisan pour tous vos travaux</h2>
+            <p>Façade, toiture, peinture, isolation : du diagnostic aux finitions, une seule équipe et un seul devis.</p>
           </header>
 
           <div class="svc-grid" itemscope itemtype="https://schema.org/ItemList">
@@ -690,12 +691,12 @@
       </section>
 
             <!-- Section 'Comment ça se passe' : 4 étapes -->
-      <section id="deroulement" class="section section--steps" aria-labelledby="steps-title">
+      <section id="deroulement" class="section section--steps section--dark" aria-labelledby="steps-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Notre méthode</p>
-            <h2 id="steps-title">Comment ça se passe</h2>
-            <p>Un seul interlocuteur, de l'appel à la fin du chantier.</p>
+            <h2 id="steps-title">Simple, clair, sans mauvaise surprise</h2>
+            <p>Un seul interlocuteur, de votre premier appel à la dernière finition.</p>
           </header>
           <ol class="home-steps">
             <li class="home-step">
@@ -724,12 +725,12 @@
       </section>
 
             <!-- Section 'Galerie' : affiche les réalisations via un widget Instagram (Elfsight) -->
-      <section id="galerie" class="section" aria-labelledby="galerie-title">
+      <section id="galerie" class="section section--white" aria-labelledby="galerie-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Galerie</p>
-            <h2 id="galerie-title">Nos réalisations</h2>
-            <p>Avant / après de nos derniers chantiers en Charente.</p>
+            <h2 id="galerie-title">Des chantiers qui parlent d'eux-mêmes</h2>
+            <p>Avant / après de nos derniers travaux en Charente : voyez la différence.</p>
           </header>
 
           <!-- Galerie avant/après hébergée sur le site (indexable Google Images) -->
@@ -823,7 +824,7 @@
       </section>
 
       <!-- Section Blog : Derniers articles -->
-      <section id="blog" class="section blog-section" aria-labelledby="blog-title">
+      <section id="blog" class="section section--sand blog-section" aria-labelledby="blog-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Blog</p>
@@ -908,7 +909,7 @@
       </section>
 
             <!-- Section 'Zone d'intervention' : carte SVG (aucun service tiers) + communes principales -->
-      <section id="zone" class="section zone-section" aria-labelledby="zone-title">
+      <section id="zone" class="section section--white zone-section" aria-labelledby="zone-title">
         <div class="container">
           <header class="zone-header">
             <p class="zone-eyebrow">Zone d'intervention</p>
@@ -967,7 +968,7 @@
       </section>
 
             <!-- Section FAQ -->
-      <section id="faq" class="section" aria-labelledby="faq-title">
+      <section id="faq" class="section section--sand" aria-labelledby="faq-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">FAQ</p>
@@ -1021,12 +1022,12 @@
         </div>
       </section>
 
-      <section id="avis" class="section reviews-section" aria-labelledby="reviews-title">
+      <section id="avis" class="section section--white reviews-section" aria-labelledby="reviews-title">
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Avis Google</p>
-            <h2 id="reviews-title">Ils nous font confiance</h2>
-            <p>Ce que nos clients disent de nous sur Google.</p>
+            <h2 id="reviews-title">Ils nous ont fait confiance</h2>
+            <p>Les avis de nos clients sur Google, tels qu'ils les ont écrits.</p>
           </header>
 
           <div class="reviews-grid">
@@ -1072,8 +1073,8 @@
           <div class="contact-cta">
             <div class="contact-cta-text">
               <p class="contact-eyebrow">Devis gratuit</p>
-              <h2 id="contact-cta-title">Parlons de votre projet</h2>
-              <p>Une question, un devis&nbsp;? Décrivez-nous vos travaux : réponse personnalisée sous 48&nbsp;h, sans engagement.</p>
+              <h2 id="contact-cta-title">Prêt à redonner du caractère à votre maison&nbsp;?</h2>
+              <p>Décrivez-nous votre projet en deux minutes : nous venons sur place et vous remettons un devis détaillé sous 48&nbsp;h, sans engagement.</p>
               <ul class="contact-cta-points">
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Visite et devis gratuits</li>
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Réponse sous 48&nbsp;h</li>

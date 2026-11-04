@@ -2,40 +2,51 @@
    3. TYPOGRAPHIE (Apple-style)
    =================================================================== */
 
+/* Titres « Chantier » : Barlow Condensed en MAJUSCULES (h1-h3), lisibles de loin, façon panneau de chantier.
+   Les titres d'articles de blog (.article-content) restent en casse normale : phrases longues, confort de lecture. */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.15;
+  font-family: var(--font-head);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.05;
   color: var(--color-text);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 
-/* Titre principal - Grand et impactant */
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
 h1 {
-  font-size: clamp(2rem, 4.2vw, 3rem); /* 48 px max : les titres longs (FAQ, zone) tenaient sur 4 lignes à 60 px */
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -0.03em;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: var(--space-lg);
 }
 
-/* Titre de section - Élégant et centré */
 h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(2.125rem, 4.6vw, 3.25rem);
   text-align: center;
   margin-bottom: var(--space-md);
 }
 
-/* Titre de carte/composant */
 h3 {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-4xl);
   margin-bottom: var(--space-sm);
   color: var(--color-text);
+}
+
+h4, h5, h6 {
+  font-size: var(--text-2xl);
+}
+
+.article-content h2,
+.article-content h3 {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 p {
   margin-bottom: var(--space-lg);
   color: var(--color-text-light);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   line-height: 1.7;
 }
 
