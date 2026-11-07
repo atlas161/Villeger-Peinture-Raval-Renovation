@@ -69,3 +69,59 @@ Compte à vérifier : profil **Professionnel** (pas Personnel) pour avoir statis
 2. Instagram : carrousel (ou post simple) puis story épinglée.
 3. Google : publication « Nouveauté » + 2 photos.
 4. Le même jour, une phrase sur le site n'est pas nécessaire : les photos y sont déjà (page nettoyage de façade, accueil, Réalisations).
+
+---
+
+# Publications « Ravalement de façade » et « Étanchéité de balcon » (2026-11-07)
+
+Chantier ravalement : maison individuelle, photos du 28/04 (avant) et d'octobre/novembre (après), deux angles (rue et cour).
+Les images sont **recadrées, alignées sur le même cadrage, légèrement retouchées** (contraste, saturation) ; la **plaque d'immatriculation est floutée**.
+Les visuels sont dans [`envoi-stephane/`](./envoi-stephane/) (JPG 1080×1350, prêts pour Instagram) ; le mail à envoyer est [`envoi-stephane/mail-stephane.md`](./envoi-stephane/mail-stephane.md).
+
+| Dossier / fichier | Contenu |
+|---|---|
+| `envoi-stephane/ravalement/` | Carrousel Instagram de 5 images : couverture avant/après, avant, après, côté cour, contact |
+| `envoi-stephane/balcon/` | Carrousel Instagram de 4 images : 3 avant/après (3 balcons), contact |
+| `visuels/google-post-ravalement-1200x900.png` | Publication Google / Solocal (curseur avant/après) |
+| `visuels/google-photo-ravalement-avant-1200x900.jpg`, `…-apres-…` | Photos de la fiche Google (Photos → Travaux) et de la fiche Solocal |
+
+Style : direction artistique « Chantier » (pierre `#ECE8E1`, brun `#673A12`, encre `#261E16`, sable `#C9B99F`, Barlow Condensed + Barlow, angles de 2 px, logo officiel).
+
+## Google Business Profile — ravalement (publication « Nouveauté », visuel `google-post-ravalement-1200x900.png`)
+
+> Avant / Après : ravalement de façade à Angoulême et en Charente.
+>
+> Une façade grisée et vieillie, une maison qui retrouve toute sa personnalité : nouvelle teinte, soubassement blanc, volets conservés. Un ravalement soigné protège votre bien et le valorise pour longtemps.
+>
+> Une façade à rénover ? Visite et devis gratuits sous 48 h, sans engagement.
+
+Bouton « En savoir plus » → `https://vprr.fr/ravalement-facade-angouleme`. Pas de numéro dans le texte.
+
+## Google Business Profile — étanchéité de balcon (visuel `google-post-balcon-1200x900.png`)
+
+> Avant / Après : étanchéité de balcon à Angoulême et en Charente.
+>
+> Un sol fissuré et noirci, remplacé par un revêtement continu et étanche : l'eau ne s'infiltre plus et le balcon est protégé durablement.
+>
+> Balcon ou terrasse qui fuit ? Visite et devis gratuits sous 48 h, sans engagement.
+
+Bouton « En savoir plus » → `https://vprr.fr/peinture-exterieure-charente`.
+
+## Solocal / PagesJaunes (Solocal Manager → publication / actualité, même visuel que Google)
+
+**Ravalement** — *Ravalement de façade à Angoulême : avant / après*
+> Façade grisée et vieillie : elle retrouve une teinte ocre, un soubassement blanc et tout son caractère. VPRR, artisan à L'Isle-d'Espagnac, réalise votre ravalement de façade en Charente. Devis gratuit sous 48 h : 05 45 91 22 70.
+
+**Balcon** — *Étanchéité de balcon à Angoulême : avant / après*
+> Sol de balcon fissuré et noirci : il devient un revêtement continu et étanche. VPRR protège vos balcons et terrasses en Charente. Devis gratuit sous 48 h : 05 45 91 22 70.
+
+(Solocal accepte le numéro dans le texte ; vérifier le nombre de caractères autorisé dans Solocal Manager.)
+
+## Instagram
+
+Les deux légendes (ravalement, balcon) sont dans le mail à Stéphane : [`envoi-stephane/mail-stephane.md`](./envoi-stephane/mail-stephane.md).
+
+## À confirmer avant de publier
+
+- [ ] Accord des clients pour diffuser les photos (maison, balcon).
+- [ ] Commune et méthode/produits utilisés (non inventés dans les textes).

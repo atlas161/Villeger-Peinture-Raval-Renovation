@@ -5,6 +5,11 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-07 — Photos du ravalement (maison) et kit réseaux sociaux
+
+- **Site** : les photos de ravalement (stock) sont remplacées par un vrai chantier (maison, avant/après aligné, plaque floutée) : `media/services/ravalement_facade/ravalement_{avant,apres}-*w.webp` (page ravalement, accueil, Réalisations) ; second angle (côté cour) ajouté aux Réalisations (`ravalement2_*`). Textes alternatifs et « Fiche chantier » de la page ravalement mis à jour (plus « exemple »).
+- **Réseaux sociaux** : carrousels Instagram ravalement (5 images) et balcon (4 images), publication Google ravalement, textes Google / Solocal / Instagram et mail à Stéphane : [`social/README.md`](./social/README.md), [`social/envoi-stephane/`](./social/envoi-stephane/).
+
 ## Photo de l'état actuel (2026-09-30)
 
 | Mesure | Valeur |

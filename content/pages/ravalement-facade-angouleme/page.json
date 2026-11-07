@@ -9,13 +9,13 @@
     "ctaLabel": "Obtenir mon devis gratuit en 48h",
     "before": "/media/services/ravalement_facade/ravalement_avant-900w.webp",
     "after": "/media/services/ravalement_facade/ravalement_apres-900w.webp",
-    "altBefore": "Façade avant ravalement",
-    "altAfter": "Façade après ravalement",
+    "altBefore": "Maison avant ravalement : façade grise et encrassée",
+    "altAfter": "Même maison après ravalement : façade ocre, soubassement blanc",
     "subtitle": "Rénovation complète de vos façades : réparation, enduit, peinture. Redonnez une seconde jeunesse à votre patrimoine. Devis gratuit en 48h."
   },
   "realisation": {
-    "title": "Avant / Après : un ravalement de façade type en Charente (16)",
-    "sheetTitle": "Fiche chantier (exemple)",
+    "title": "Avant / Après : un ravalement de façade en Charente (16)",
+    "sheetTitle": "Fiche chantier",
     "facts": [
       {
         "label": "Zone",
@@ -23,15 +23,15 @@
       },
       {
         "label": "Support",
-        "text": "enduit / façade peinte"
+        "text": "maison individuelle, enduit gratté/projeté"
       },
       {
         "label": "Problèmes",
-        "text": "microfissures, encrassement, peinture farinante"
+        "text": "façade grisée, encrassée, enduit vieilli"
       },
       {
         "label": "Solution",
-        "text": "préparation, réparations, enduit/finition, peinture de protection"
+        "text": "préparation du support, peinture de façade ocre, soubassement blanc"
       },
       {
         "label": "Durée",
@@ -40,7 +40,7 @@
     ],
     "tipTitle": "Maillage utile pour votre cas",
     "tipHtml": "Si votre façade est surtout <strong>encrassée</strong>, un <a href=\"nettoyage-facade-angouleme.html\">nettoyage de façade</a> peut suffire avant de passer à la finition. Pour une <strong>mise en peinture</strong> seule, voir <a href=\"peinture-exterieure-charente.html\">peinture extérieure</a>. Consultez aussi la <a href=\"zone-desservie-charente.html\">zone desservie</a>.",
-    "intro": "Exemple inspiré de nos interventions locales. Chaque façade est différente : nous confirmons la méthode et le planning après une visite sur place."
+    "intro": "Maison individuelle en Charente : façade grisée et vieillie, reprise en teinte ocre avec soubassement blanc, volets conservés. Chaque façade est différente : nous confirmons la méthode et le planning après une visite sur place."
   },
   "problem": {
     "eyebrow": "Le problème",
