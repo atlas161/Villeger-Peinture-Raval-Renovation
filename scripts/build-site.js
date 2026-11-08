@@ -9,13 +9,18 @@
  *  2. Inclusion statique du footer (includes/footer.html) dans chaque page qui charge footer.js
  *     (visible sans JavaScript, pas de décalage de mise en page). En local (`npx serve .`),
  *     footer.js continue de le charger par fetch.
- *  3. Génération de dist/_redirects : /blog/<slug> → /blog/<slug>.html (301), pour qu'un
+ *  3. Versionnage des images : chaque référence à une image de media/, assets/img/ ou data/ reçoit
+ *     `?v=<empreinte du fichier>` dans les pages de dist/. Les images sont mises en cache 30 jours sous
+ *     un nom inchangé : sans ça, remplacer une photo ne la change pas chez les visiteurs déjà venus.
+ *     Le fichier source n'est pas modifié ; l'empreinte change seulement si l'image change.
+ *  4. Génération de dist/_redirects : /blog/<slug> → /blog/<slug>.html (301), pour qu'un
  *     article n'existe que sous une seule URL, comme les pages du site.
  *
  * Usage : node scripts/build-site.js   (lancé par `npm run build`, après build:blog)
  */
 
 const fs = require('fs');
+const crypto = require('crypto');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
@@ -49,6 +54,19 @@ function collectHtml(dir) {
   return out;
 }
 
+// Ajoute ?v=<empreinte> aux URLs d'images (src, srcset, og:image, JSON-LD…) d'une page de dist/.
+const IMG_URL = /((?:https:\/\/vprr\.fr)?\/?)((?:media|assets\/img|data)\/[^\s"'()<>,?#]+?\.(?:webp|jpe?g|png|gif|svg|avif))(?![\w?])/g;
+function versionImages(html, hashes) {
+  return html.replace(IMG_URL, (m, prefix, rel) => {
+    if (!hashes.has(rel)) {
+      const f = path.join(DIST, rel);
+      hashes.set(rel, fs.existsSync(f) ? crypto.createHash('md5').update(fs.readFileSync(f)).digest('hex').slice(0, 8) : null);
+    }
+    const h = hashes.get(rel);
+    return h ? `${prefix}${rel}?v=${h}` : m;
+  });
+}
+
 function main() {
   fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
@@ -76,6 +94,19 @@ function main() {
     inlined += 1;
   }
 
+  // Versionnage des images (voir l'étape 3 en tête de fichier)
+  const hashes = new Map();
+  let versioned = 0;
+  for (const file of collectHtml(DIST)) {
+    if (file.includes(`${path.sep}includes${path.sep}`)) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    const out = versionImages(html, hashes);
+    if (out !== html) {
+      fs.writeFileSync(file, out);
+      versioned += 1;
+    }
+  }
+
   // Redirections /blog/<slug> → .html
   const blogDir = path.join(ROOT, 'blog');
   const slugs = fs
@@ -85,7 +116,7 @@ function main() {
   const redirects = slugs.map((s) => `/blog/${s} /blog/${s}.html 301!`).join('\n') + '\n';
   fs.writeFileSync(path.join(DIST, '_redirects'), redirects);
 
-  console.log(`✅ dist/ généré : footer inclus dans ${inlined} page(s), ${slugs.length} redirection(s) blog.`);
+  console.log(`✅ dist/ généré : footer inclus dans ${inlined} page(s), images versionnées dans ${versioned} page(s), ${slugs.length} redirection(s) blog.`);
 }
 
 main();

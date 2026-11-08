@@ -81,6 +81,7 @@ si le SEO ou une action client est concernée.
 - **Cookies & mesure** : bannière binaire « Tout refuser / Tout accepter » (`localStorage['cookie-consent']`) ;
   GTM + Clarity et les événements `phone_click`, `quote_cta_click`, `generate_lead` (`footer.js`) ne partent
   qu'après « Tout accepter ». Ne jamais charger de traceur avant consentement.
+- Remplacer une photo : garder le même nom de fichier suffit — `scripts/build-site.js` ajoute `?v=<empreinte>` à chaque image dans `dist/`, donc les visiteurs ne gardent pas l'ancienne en cache (30 j). Penser à changer **toutes** les pages qui l'utilisent (`grep` du nom : accueil, page de service, Réalisations, blog).
 - Caches : CSS/JS revalidés (`max-age=0, must-revalidate`), noms **non versionnés** — ne jamais remettre `immutable`.
   Une lib tierce mise à jour = nouveau dossier versionné dans `assets/vendor/`.
 - Après une modification de code : `npm test`, puis vérifier le rendu à 375 / 768 / 1440 px (méthode dans

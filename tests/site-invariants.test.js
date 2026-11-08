@@ -66,3 +66,24 @@ test('le build publie uniquement les fichiers publics, avec footer statique', ()
   }
   assert.match(fs.readFileSync(dist('index.html'), 'utf8'), /id="site-footer-wrapper"/);
 });
+
+test('dist : toute image référencée par une page porte ?v=<empreinte> (sinon une photo remplacée reste ancienne en cache)', () => {
+  const crypto = require('crypto');
+  const distDir = path.join(ROOT, 'dist');
+  const pages = ['index.html', 'realisations.html', 'ravalement-facade-angouleme.html', 'blog/index.html'];
+  const unversioned = [];
+  let checked = 0;
+  for (const page of pages) {
+    const html = fs.readFileSync(path.join(distDir, page), 'utf8');
+    for (const m of html.matchAll(/(?:media|assets\/img|data)\/[^\s"'()<>,?#]+?\.(?:webp|jpe?g|png|gif|svg|avif)(\?v=([0-9a-f]{8}))?(?![\w])/g)) {
+      const rel = m[0].split('?')[0];
+      const file = path.join(distDir, rel);
+      if (!fs.existsSync(file)) continue;
+      checked += 1;
+      const hash = crypto.createHash('md5').update(fs.readFileSync(file)).digest('hex').slice(0, 8);
+      if (m[2] !== hash) unversioned.push(`${page} → ${m[0]}`);
+    }
+  }
+  assert.ok(checked > 20, `trop peu d'images vérifiées (${checked})`);
+  assert.deepEqual(unversioned, [], `images sans empreinte à jour : ${unversioned.slice(0, 10).join(' | ')}`);
+});

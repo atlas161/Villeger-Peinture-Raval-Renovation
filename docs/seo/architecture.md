@@ -38,7 +38,7 @@ npm run build
 `CLAUDE.md`…) n'est **jamais public**. Il n'y a plus de liste noire de 404 dans `netlify.toml` : c'est une liste
 blanche. Pour publier un nouveau dossier/fichier : l'ajouter à `PUBLIC_DIRS` / `PUBLIC_ROOT_FILES`.
 Le script inclut aussi `includes/footer.html` dans le HTML de chaque page qui charge `footer.js` (footer visible
-sans JavaScript, pas de décalage de mise en page) et génère `dist/_redirects` (`/blog/<slug>` → `.html`, 301).
+sans JavaScript, pas de décalage de mise en page) génère `dist/_redirects` (`/blog/<slug>` → `.html`, 301) et **versionne les images** : chaque `media/…`, `assets/img/…` ou `data/…` référencé dans les pages de `dist/` reçoit `?v=<empreinte md5 du fichier>` (les images sont en cache 30 jours sous un nom inchangé : sans ça, une photo remplacée reste l'ancienne chez les visiteurs déjà venus). Vérifié par `npm test`.
 
 ⚠ Sous Windows, `npm run build` échoue avec `EPERM` si un `npx serve dist` tourne encore (il verrouille le
 dossier) : arrêter le serveur avant de reconstruire.

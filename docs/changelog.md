@@ -10,7 +10,12 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - **Site** : les photos de ravalement (stock) sont remplacées par un vrai chantier (maison, avant/après aligné, plaque floutée) : `media/services/ravalement_facade/ravalement_{avant,apres}-*w.webp` (page ravalement, accueil, Réalisations) ; second angle (côté cour) ajouté aux Réalisations (`ravalement2_*`). Textes alternatifs et « Fiche chantier » de la page ravalement mis à jour (plus « exemple »).
 - **Réseaux sociaux** : carrousels Instagram ravalement (5 images) et balcon (4 images), publication Google ravalement, textes Google / Solocal / Instagram et mail à Stéphane : [`social/README.md`](./social/README.md), [`social/envoi-stephane/`](./social/envoi-stephane/).
 
-## Photo de l'état actuel (2026-09-30)
+## 2026-11-08 — Images versionnées (plus d'ancienne photo en cache)
+
+- **Bug** : la photo de ravalement remplacée le 2026-11-07 restait l'ancienne sur l'accueil pour les visiteurs déjà venus (images de `/media/` en cache 30 jours sous le même nom). La prod servait bien la nouvelle.
+- **Correctif durable** : `scripts/build-site.js` ajoute `?v=<empreinte md5>` à toute image (`media/`, `assets/img/`, `data/`) référencée dans les pages de `dist/` ; le fichier source n'est pas touché. Nouveau test dans `tests/site-invariants.test.js` (56 tests).
+
+ (2026-09-30)
 
 | Mesure | Valeur |
 |---|---|

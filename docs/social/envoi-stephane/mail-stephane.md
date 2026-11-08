@@ -42,20 +42,9 @@ Description à coller :
 >
 > #etancheite #balcon #terrasse #angouleme #charente #16 #avantapres #renovationexterieure #peintreenbatiment #artisan #batiment #nouvelleaquitaine #villegerpeinture
 
-**Pour les poster**
-1. Instagram → « + » → Publication → sélectionne les images dans l'ordre (le symbole « plusieurs photos » en haut à droite).
-2. Colle la description, ajoute le lieu « Angoulême ».
-3. Poste en semaine, de préférence entre 12 h et 14 h ou entre 18 h et 20 h. Une publication par chantier, à quelques jours d'écart.
-4. Pense à mettre `vprr.fr` dans le lien de ta bio : les liens dans les descriptions ne sont pas cliquables.
-5. Réponds aux commentaires dans l'heure, ça aide beaucoup la visibilité.
+**Un conseil important :** poste en semaine, de préférence **entre 12 h et 14 h ou entre 18 h et 20 h**. C'est là que tu auras le plus de vues. Une publication par chantier, à quelques jours d'écart.
 
-**Deux petites choses à me confirmer**
-- Tu es bien d'accord pour qu'on montre ces deux chantiers (maison et balcon) ? Si les clients préfèrent que ça ne soit pas diffusé, on retire.
-- Tu veux que j'ajoute la commune du chantier ou la méthode utilisée (peinture, enduit, système d'étanchéité…) ? Dis-moi ce que tu veux mettre, je ne l'invente pas.
-
-J'ai aussi mis les nouvelles photos de la maison sur le site (page ravalement de façade, accueil et Réalisations), et je prépare les publications pour la fiche Google et Solocal.
-
-Dis-moi si tu veux changer quelque chose, je peux modifier un visuel en quelques minutes.
+De mon côté, j'ai fait la publication du ravalement sur la fiche Google, sur Solocal et sur le site. Tu peux aller voir si tu veux.
 
 À très vite,
 Angelo
