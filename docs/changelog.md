@@ -5,6 +5,10 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — Article « Couleur de façade en Charente »
+
+- Nouvel article `blog/couleur-facade-charente.html` (`service: peinture`) : déclaration de la teinte (références fabricant/RAL/NCS), PLU, nuancier de l'ABF en secteur protégé (Cognac, Barbezieux), palette charentaise, méthode en 6 points (échantillons de 1 m², exposition, teintes foncées), erreurs qui font refuser un dossier, FAQ. Liens vers peinture extérieure, ravalement et l'article « déclaration préalable » (lien retour ajouté). Couverture `couleur_facade*.webp`. Vérifié 375 / 768 / 1440 px, 60 tests.
+
 ## 2026-11-17 — Article « Ravalement tous les 10 ans : est-ce obligatoire ? »
 
 - Nouvel article `blog/ravalement-obligatoire-10-ans.html` : obligation limitée aux communes où elle est applicable et à l'injonction du maire, procédure (injonction, arrêté, exécution d'office), responsabilité du propriétaire, copropriété, isolation imposée lors d'un gros ravalement (et ses exceptions), signes qu'il est temps d'agir. Lié à la page ravalement, au nettoyage de façade et aux deux autres articles du cluster (lien ajouté depuis l'article « déclaration préalable »). Couverture `ravalement_obligatoire*.webp`.

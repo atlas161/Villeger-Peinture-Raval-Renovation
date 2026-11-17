@@ -69,7 +69,7 @@ Si la mairie demande une pièce manquante, le délai repart à réception du dos
 En secteur protégé, l'Architecte des Bâtiments de France (ABF) vérifie que le projet respecte le caractère des lieux. Il peut imposer :
 
 - un **enduit à la chaux** plutôt qu'un enduit ciment ou une peinture filmogène sur un mur ancien ;
-- une **teinte** choisie dans le nuancier local ;
+- une **teinte** choisie dans le nuancier local (voir [bien choisir la couleur de sa façade](/blog/couleur-facade-charente.html)) ;
 - la conservation de la **pierre apparente** (encadrements, chaînes d'angle, corniches) ;
 - des **menuiseries en bois** plutôt qu'en PVC.
 
