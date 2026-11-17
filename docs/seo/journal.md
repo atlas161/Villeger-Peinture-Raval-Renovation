@@ -382,3 +382,26 @@ l'assureur décennale (`blockers.md` §5), URLs sans `.html` (décision à part)
 - **Avis Google** : widget Featurable en production (CSP script/connect/img/font, mentions légales) ; avis réels et à jour, sans balisage `Review` ajouté.
 - **Accueil / blog** : les 3 derniers articles sont désormais dans le **HTML statique** (liens internes crawlables, plus de carte périmée) via `scripts/build-blog.js` ; carte commune avec `/blog/`.
 - **Code** : `styles.css`, `zone.css`, `main.js` générés depuis `src/` (`npm run build:bundles`) — aucun effet SEO, aucun changement visuel. Détail : [`../changelog.md`](../changelog.md).
+
+---
+
+## 2026-11-17 — Analyse SEO complète, focus ravalement
+
+Analyse lecture seule (code, prod, SERP Google, règlements municipaux). Rien de modifié sur le site.
+Plan priorisé : [`plan-seo-2026-11.md`](./plan-seo-2026-11.md). Points clés :
+- **Cannibalisation** : les articles de blog « … à Angoulême » visent les mêmes requêtes que les pages de service.
+- **Pages ville ravalement** : 5-6 pages réellement différentes (chantier local, réglementation, aides), pas une série
+  copiée. Contenu unique déjà trouvé : aide au ravalement de Cognac (25 %, plafond 5 000 €) et de La Couronne (30 %,
+  plafond 3 000 €, jusqu'à déc. 2026).
+- **Fiche Google** (avis, catégories, posts) et **annuaires** qui occupent la 1ʳᵉ page (obat, travaux.com…) : actions client.
+- Page ravalement : 2 H3 vides, arguments « chauffage / isolation » à retirer.
+- Pas d'accès Search Console : export à demander pour recaler les priorités.
+- Correction : les « 2 H3 vides » signalés étaient un faux positif (titres sur plusieurs lignes) ; retiré du plan.
+
+## 2026-11-17 (suite) — Blog dé-cannibalisé, page ravalement enrichie
+
+Étapes 2 et 3 du [plan](./plan-seo-2026-11.md), détail dans [`../changelog.md`](../changelog.md) : 5 guides du blog
+réorientés vers l'intention information (titres sans « à Angoulême », URLs inchangées) avec un encadré vers la bonne page
+de service ; page ravalement : section « Démarches & aides » (déclaration préalable, ABF, PLU, aides de Cognac et
+La Couronne) et deux arguments contestables remplacés. Non commité. À surveiller dans Search Console après déploiement :
+la page ravalement doit remplacer l'article sur « ravalement façade angoulême ».

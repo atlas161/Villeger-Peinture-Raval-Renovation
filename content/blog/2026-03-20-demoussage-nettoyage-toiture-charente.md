@@ -1,13 +1,14 @@
 ---
 category: Toiture
-title: "Démoussage de toiture à Angoulême : le guide complet"
-seoTitle: "Démoussage toiture à Angoulême (Charente 16)"
+title: "Démoussage de toiture : méthodes, prix et erreurs à éviter"
+seoTitle: "Démoussage de toiture : méthodes, prix, erreurs"
 slug: demoussage-nettoyage-toiture-charente
 description: "Guide concret pour réussir un démoussage et un nettoyage de
   toiture en Charente (Angoulême, Cognac, Jarnac...) : méthodes, prix, erreurs à
   éviter, hydrofuge et entretien."
-metaDescription: "Guide démoussage et nettoyage de toiture en Charente
-  (Angoulême, Cognac, Jarnac) : méthodes, prix et erreurs à éviter."
+metaDescription: "Démoussage et nettoyage de toiture : méthodes, bon moment,
+  prix au m² en Charente et erreurs à éviter (haute pression, produits)."
+service: toiture
 date: 2026-03-19
 image: /assets/img/blog/toiture_avant.webp
 draft: false
@@ -24,7 +25,7 @@ tags:
   - angouleme
 readtime: 9
 ---
-# Démoussage et nettoyage de toiture en Charente (16) : le guide complet
+# Démoussage de toiture : méthodes, prix et erreurs à éviter
 
 En Charente, les toitures vivent au rythme d’un climat souvent humide, de brouillards matinaux, et de nombreuses zones arborées (haies, pins, chênes, peupliers). Résultat : les mousses, lichens et algues s’installent vite sur les tuiles, surtout sur les pans **exposés au nord** ou peu ensoleillés. Un simple “coup de karcher” peut sembler tentant, mais c’est rarement la bonne solution pour une toiture.
 

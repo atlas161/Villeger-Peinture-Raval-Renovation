@@ -1,7 +1,10 @@
 ---
 category: Façade
-title: "Nettoyage de façade par hydro-gommage : le guide complet"
-seoTitle: "Nettoyage façade par hydrogommage à Angoulême"
+title: "Hydrogommage de façade : principe, étapes et prix"
+seoTitle: "Hydrogommage de façade : principe, étapes et prix"
+metaDescription: "Comment fonctionne l'hydrogommage, sur quelles façades
+  l'utiliser, comment se déroule le chantier et combien il coûte au m²."
+service: nettoyage-facade
 slug: nettoyage-facade-hydrogommage
 description: "Technique douce et précise pour nettoyer une façade sans l’abîmer
   : principe, avantages, étapes et prix à Angoulême (Charente)."
@@ -18,7 +21,7 @@ tags:
   - angouleme
 readtime: 9
 ---
-# Nettoyage de façade par hydro-gommage à Angoulême : le guide complet 2026
+# Hydrogommage de façade : principe, étapes et prix
 
 Votre façade noircit avec le temps ? Les mousses et la pollution s'accumulent ? L'hydro-gommage est la solution idéale pour redonner un coup de jeune à vos murs extérieurs sans les abîmer. Découvrez tout ce qu'il faut savoir sur cette technique de nettoyage révolutionnaire.
 

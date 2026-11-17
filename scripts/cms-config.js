@@ -120,6 +120,12 @@ function serviceFields(slug) {
     ]));
   }
   f.push(obj('tarifs', '10. Tarifs (les prix au m² se modifient dans « Tarifs »)', tarifs));
+  if (page.rules) {
+    f.push(obj('rules', '10 bis. Démarches et aides (autorisations, aides des communes)', [
+      ...sectionHead(),
+      list('items', 'Cartes', [icon(), str('title', 'Titre'), text('text', 'Texte'), { name: 'accent', label: 'Carte mise en avant', type: 'boolean' }], '{title}'),
+    ], { description: 'Montants et dates des aides : à vérifier chaque année auprès des mairies.' }));
+  }
   f.push(obj('faq', '11. Questions fréquentes', [
     ...sectionHead(),
     list('items', 'Questions et réponses', [
@@ -225,6 +231,7 @@ const blog = {
     str('seoTitle', 'Titre SEO (balise <title>, 55-60 caractères max)', { description: 'Optionnel. Si vide, reprend le champ Titre ci-dessus. À remplir uniquement si le Titre H1 dépasse 60 caractères, pour éviter que Google le tronque dans les résultats de recherche.' }),
     str('slug', 'Slug (URL)', { required: true }),
     text('description', 'Chapeau de l\'article (affiché sous le H1)', { required: true }),
+    { name: 'service', label: 'Page de service associée', type: 'select', description: 'Page vers laquelle l’article renvoie (encadré en haut et lien en bas). Si vide : déduite de la catégorie.', options: { values: [{ value: 'ravalement', label: 'Ravalement de façade' }, { value: 'nettoyage-facade', label: 'Nettoyage de façade' }, { value: 'toiture', label: 'Nettoyage de toiture' }, { value: 'peinture', label: 'Peinture extérieure' }, { value: 'isolation', label: 'Isolation intérieure' }] } },
     text('metaDescription', 'Meta description SEO (150-160 caractères max)', { description: 'Optionnel. Si vide, reprend le champ Chapeau ci-dessus. À remplir uniquement si le Chapeau dépasse 160 caractères, pour éviter que Google le tronque dans les résultats de recherche.' }),
     { name: 'date', label: 'Date de publication', type: 'date', required: true },
     { name: 'image', label: 'Image de couverture', type: 'image', options: { media: 'blog' } },

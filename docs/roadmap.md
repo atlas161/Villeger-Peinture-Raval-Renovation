@@ -78,7 +78,7 @@ Règle Google à connaître : des avis d'une entreprise affichés **sur son prop
 
 ## C. Chantiers moyens (une session chacun)
 
-1. **Pages « ville » (SEO local)** — le gabarit est prêt (`content/pages/<slug>/page.json`, voir `seo/architecture.md` §4.2) ;
+1. **Pages « ville » (SEO local)** — **plan détaillé le 2026-11-17 : [`seo/plan-seo-2026-11.md`](./seo/plan-seo-2026-11.md)** (ravalement seulement, 5-6 communes, Cognac et La Couronne en premier grâce à leurs aides municipales). Blog dé-cannibalisé et section « Démarches & aides » faits le 2026-11-17 (non commités). — le gabarit est prêt (`content/pages/<slug>/page.json`, voir `seo/architecture.md` §4.2) ;
    il manque un **modèle de contenu** : décider avec le client quelles communes (Cognac, Jarnac, Soyaux, La Couronne,
    Champniers…), écrire un texte réellement différent par commune (éviter le contenu dupliqué), photos locales.
    Pour chaque page : `page.json` + sitemap + menu (`sync-header.js`) + liens depuis `zone-desservie-charente.html`.

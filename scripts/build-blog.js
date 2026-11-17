@@ -592,6 +592,15 @@ function normalizeTextForMatch(value) {
 /**
  * Génère le HTML d'une page article avec navigation
  */
+// Pages de service vers lesquelles un article peut renvoyer (champ `service` ou catégorie).
+const SERVICE_LINKS = [
+  { key: 'ravalement', match: ['ravalement'], url: `${CONFIG.siteUrl}/ravalement-facade-angouleme.html`, label: 'ravalement de façade à Angoulême', question: 'Un projet de ravalement ?', prestation: 'ravalement' },
+  { key: 'nettoyage-facade', match: ['facade'], url: `${CONFIG.siteUrl}/nettoyage-facade-angouleme.html`, label: 'nettoyage de façade à Angoulême', question: 'Une façade à nettoyer ?', prestation: 'nettoyage-facade' },
+  { key: 'toiture', match: ['toiture'], url: `${CONFIG.siteUrl}/nettoyage-toiture-angouleme.html`, label: 'nettoyage de toiture à Angoulême', question: 'Une toiture à démousser ?', prestation: 'toiture' },
+  { key: 'peinture', match: ['peinture'], url: `${CONFIG.siteUrl}/peinture-exterieure-charente.html`, label: 'peinture extérieure en Charente', question: 'Une façade à repeindre ?', prestation: 'peinture' },
+  { key: 'isolation', match: ['isolation'], url: `${CONFIG.siteUrl}/isolation-interieure-charente.html`, label: 'isolation intérieure en Charente', question: 'Un projet d\'isolation ?', prestation: 'isolation' }
+];
+
 function generateArticleHTML(frontmatter, content, template, prevArticle, nextArticle) {
   const { html: bodyHtml, headers } = markdownToHtml(content);
   const toc = generateTOC(headers);
@@ -610,38 +619,29 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
   const heroImageSrcset = variants.heroSrcset || '';
   const heroImageSizes = variants.heroSizes || '(max-width: 768px) 100vw, 900px';
 
-  const categoryKey = normalizeTextForMatch(category);
-  const serviceLinksByCategory = [
-    {
-      match: ['facade', 'ravalement'],
-      url: `${CONFIG.siteUrl}/ravalement-facade-angouleme.html`,
-      label: 'Ravalement de façade (Charente)',
-      prestation: 'ravalement'
-    },
-    {
-      match: ['toiture'],
-      url: `${CONFIG.siteUrl}/nettoyage-toiture-angouleme.html`,
-      label: 'Nettoyage de toiture (Charente)',
-      prestation: 'toiture'
-    },
-    {
-      match: ['peinture'],
-      url: `${CONFIG.siteUrl}/peinture-exterieure-charente.html`,
-      label: 'Peinture extérieure (Charente)',
-      prestation: 'peinture'
-    }
-  ];
-
-  const matchedService = serviceLinksByCategory.find((s) => s.match.some((m) => categoryKey.includes(m)));
+  // Page de service associée : champ `service` du frontmatter (prioritaire), sinon déduite de la catégorie.
+  // L'article vise l'intention « information » (guide) ; la requête « service + ville » est laissée à la
+  // page de service, que l'article renforce par deux liens (encadré en haut, rappel en bas).
+  const serviceKey = normalizeTextForMatch(frontmatter.service || '');
+  const matchedService = SERVICE_LINKS.find((s) => s.key === serviceKey)
+    || SERVICE_LINKS.find((s) => s.match.some((m) => normalizeTextForMatch(category).includes(m)));
   const internalLinksHtml = matchedService
     ? `
 <div class="article-seo-links">
-  <p><strong>Notre service associé :</strong> <a href="${matchedService.url}">${matchedService.label}</a></p>
+  <p><strong>Notre service associé :</strong> <a href="${matchedService.url}">${matchedService.label.charAt(0).toUpperCase()}${matchedService.label.slice(1)}</a></p>
 </div>
 `.trim()
     : '';
+  const calloutHtml = matchedService
+    ? `<aside class="article-service-callout" aria-label="Notre service associé"><p><strong>${matchedService.question}</strong> VPRR intervient à Angoulême et dans toute la Charente : <a href="${matchedService.url}">${matchedService.label}</a>, devis gratuit.</p></aside>`
+    : '';
 
-  const bodyHtmlWithLinks = internalLinksHtml ? `${bodyHtml}\n\n${internalLinksHtml}` : bodyHtml;
+  // Encadré inséré après le premier paragraphe (le chapeau garde son style `p:first-child`).
+  const firstParagraphEnd = bodyHtml.indexOf('</p>');
+  const bodyWithCallout = calloutHtml && firstParagraphEnd !== -1
+    ? `${bodyHtml.slice(0, firstParagraphEnd + 4)}\n${calloutHtml}${bodyHtml.slice(firstParagraphEnd + 4)}`
+    : bodyHtml;
+  const bodyHtmlWithLinks = internalLinksHtml ? `${bodyWithCallout}\n\n${internalLinksHtml}` : bodyWithCallout;
   
   // Navigation prev/next
   const prevUrl = prevArticle ? `./${prevArticle.slug}.html` : '#';

@@ -108,6 +108,7 @@ function renderSections(page) {
         case 'ite': return S.ite(s);
         case 'why': return S.why(s);
         case 'tarifs': return S.tarifs(s);
+        case 'rules': return S.rules(s);
         case 'contact': return renderContact(readPartial('contact-cta.html'), page.contact);
         default: throw new Error(`${page.file} : type de section inconnu « ${s.type} »`);
       }

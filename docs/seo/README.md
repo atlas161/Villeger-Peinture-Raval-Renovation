@@ -12,6 +12,7 @@ pour qu'on puisse reprendre le fil à tout moment sans perdre le contexte.
 - [`journal.md`](./journal.md) — historique daté de tout ce qui a été fait, session par session.
 - [`blockers.md`](./blockers.md) — ce qui bloque et nécessite une action de votre part (accès, décisions, comptes externes).
 - [`architecture.md`](./architecture.md) — comment le site est construit techniquement (utile avant de toucher au code).
+- [`plan-seo-2026-11.md`](./plan-seo-2026-11.md) — **plan SEO en cours** (focus ravalement : pages ville, fiche Google, cannibalisation du blog, annuaires).
 - [`decisions.md`](./decisions.md) — décisions produit/contenu actées (ex. périmètre du service Isolation).
 
 ## Où trouver l'audit complet

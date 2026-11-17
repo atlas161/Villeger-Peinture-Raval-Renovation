@@ -5,6 +5,13 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — SEO : blog dé-cannibalisé, page ravalement « démarches & aides » (non commité)
+
+- **Blog** : les 5 guides qui visaient « service + Angoulême » (ravalement, peinture, démoussage, hydrogommage, chantier type) passent en intention *information* (H1, `seoTitle`, `metaDescription` sans « à Angoulême ») ; URLs inchangées. La requête locale est laissée aux pages de service.
+- **Lien vers le service** : nouveau champ frontmatter `service` (Pages CMS : « Page de service associée ») ; `scripts/build-blog.js` insère un encadré `.article-service-callout` après le chapeau et corrige le lien du bas (les articles hydrogommage pointaient vers le ravalement au lieu du nettoyage de façade). Ancre : « ravalement de façade à Angoulême », etc.
+- **Page ravalement** : « Coûts de chauffage élevés » → « Salissures et mousses » ; « Peinture façade isolation active » → « Enduits à la chaux sur pierre » ; nouvelle section optionnelle `rules` (« Démarches & aides », `#demarches`, après les tarifs) : déclaration préalable, ABF/secteurs protégés, couleurs du PLU, aides de Cognac et La Couronne. Même grille que « Pourquoi nous choisir », 2 cartes + « Voir plus » sur téléphone (`data-m-limit`). Champ CMS « 10 bis ».
+- Vérifié : 56/56 tests ; 1440 px (3 colonnes), 768 (2), 375 (1, 2 cartes visibles), pas de débordement ; page ravalement téléphone ≈ 13 880 px.
+
 ## 2026-11-07 — Photos du ravalement (maison) et kit réseaux sociaux
 
 - **Site** : les photos de ravalement (stock) sont remplacées par un vrai chantier (maison, avant/après aligné, plaque floutée) : `media/services/ravalement_facade/ravalement_{avant,apres}-*w.webp` (page ravalement, accueil, Réalisations) ; second angle (côté cour) ajouté aux Réalisations (`ravalement2_*`). Textes alternatifs et « Fiche chantier » de la page ravalement mis à jour (plus « exemple »).

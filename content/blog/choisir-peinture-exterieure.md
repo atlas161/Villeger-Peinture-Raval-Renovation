@@ -1,7 +1,10 @@
 ---
 category: Peinture
-title: "Peinture extérieure à Angoulême : le guide complet"
-seoTitle: "Peinture extérieure à Angoulême : guide complet"
+title: "Peinture de façade : quelle peinture choisir ?"
+seoTitle: "Peinture de façade : quelle peinture choisir ?"
+metaDescription: "Acrylique, pliolite, siloxane : choisir sa peinture de façade,
+  préparer le mur, respecter les couleurs autorisées et estimer le prix."
+service: peinture
 slug: peinture-exterieure-facade-angouleme
 description: "Spécialiste de la peinture extérieure à Angoulême, VPRR vous guide
   : choix de peinture, préparation et prix. Protégez votre façade en Charente.
@@ -27,7 +30,7 @@ tags:
   - quelle peinture pour façade abîmée
 readtime: 5
 ---
-# Peinture extérieure à Angoulême (Charente) : le guide complet 2026 pour sublimer votre façade
+# Peinture de façade : quelle peinture choisir ?
 
 *Choix des matériaux, préparation des murs, règles d'urbanisme, nuanciers locaux et prix au m² : tout ce qu'il faut savoir pour repeindre, assainir et protéger sa maison en Charente.*
 

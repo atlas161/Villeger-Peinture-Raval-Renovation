@@ -55,6 +55,7 @@ function loadPage(slug) {
     { type: 'zone', ...cms.zone, cities: communes.communes, noteTitle: communes.noteTitle, noteText: communes.noteText },
     { type: 'others', ...cms.others, cards: others },
     { type: 'tarifs', ...cms.tarifs, price: tarif },
+    ...(cms.rules ? [{ type: 'rules', ...cms.rules }] : []),
     { type: 'faq', ...cms.faq },
     { type: 'contact' },
   ];

@@ -1,7 +1,8 @@
 ---
 category: Façade
 title: "Hydrogommage d'une façade en pierre : un chantier type"
-seoTitle: "Nettoyage façade pierre à Angoulême : hydrogommage"
+seoTitle: "Hydrogommage d'une façade en pierre : chantier type"
+service: nettoyage-facade
 slug: etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme
 description: Façade en pierre noircie ? Voici le déroulé type d'un nettoyage par
   hydrogommage en Charente : diagnostic, protection, projection douce et
@@ -24,7 +25,7 @@ tags:
   - nettoyer façade sans abîmer
 readtime: 7
 ---
-# Nettoyage de façade en pierre à Angoulême : un chantier type d'hydrogommage
+# Hydrogommage d'une façade en pierre : un chantier type
 
 *Exemple de chantier : voici, étape par étape, comment se déroule un nettoyage de façade en pierre par hydrogommage en Charente, et pourquoi cette technique est souvent préférée à la haute pression sur une façade ancienne.*
 

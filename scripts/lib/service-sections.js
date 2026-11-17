@@ -258,7 +258,7 @@ function ite(i) {
 </section>`;
 }
 
-function why(w) {
+function why(w, id = 'why-title') {
   const cards = w.items
     .map(
       (i) => `    <div class="reassurance-item${i.accent ? ' reassurance-item--accent' : ''}">
@@ -270,16 +270,19 @@ function why(w) {
     </div>`
     )
     .join('\n\n');
-  return `<section class="section${w.alt ? ' section--bg-surface-alt' : ''}" aria-labelledby="why-title">
+  return `<section class="section${w.alt ? ' section--bg-surface-alt' : ''}${w.bg ? ` ${w.bg}` : ''}"${w.anchor ? ` id="${w.anchor}"` : ''} aria-labelledby="${id}">
   <div class="container">
-${indent(header({ eyebrow: w.eyebrow, title: w.title, id: 'why-title', intro: w.intro }), 4)}
+${indent(header({ eyebrow: w.eyebrow, title: w.title, id, intro: w.intro }), 4)}
 
-    <div class="reassurance-grid">
+    <div class="reassurance-grid"${w.gridAttrs || ''}>
 ${cards}
     </div>
   </div>
 </section>`;
 }
+
+// Démarches et aides (optionnel, champ `rules` du page.json) : même grille de cartes que « Pourquoi nous choisir ».
+const rules = (r) => why({ ...r, alt: false, bg: 'section--bg-white', anchor: 'demarches', gridAttrs: ' data-m-limit="2" data-m-more="Voir les autres démarches"' }, 'rules-title');
 
 function tarifs(t) {
   const factors = t.factors
@@ -370,4 +373,4 @@ ${links}
 </nav>`;
 }
 
-module.exports = { indent, proofBar, hero, realisation, ite, why, tarifs, problem, solution, zone, others, faq, related };
+module.exports = { indent, proofBar, hero, realisation, ite, why, rules, tarifs, problem, solution, zone, others, faq, related };

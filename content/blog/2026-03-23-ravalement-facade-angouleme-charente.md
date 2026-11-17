@@ -1,7 +1,10 @@
 ---
 category: Façade
-title: "Ravalement de façade à Angoulême : le guide complet"
-seoTitle: "Ravalement de façade à Angoulême (Charente)"
+title: "Ravalement de façade : étapes, prix et démarches"
+seoTitle: "Ravalement de façade : étapes, prix et démarches"
+metaDescription: "Déroulé d'un ravalement de façade, prix au m² en Charente et
+  démarches (déclaration préalable, ABF) : le guide d'un façadier local."
+service: ravalement
 slug: ravalement-facade-angouleme-charente
 description: "Rénovation complète et durable pour protéger et sublimer votre
   façade : principe, avantages, étapes et prix à Angoulême (Charente)."
@@ -21,7 +24,7 @@ tags:
   - ravalement
 readtime: 7
 ---
-# Ravalement de façade à Angoulême : le guide complet 2026
+# Ravalement de façade : étapes, prix et démarches
 
 Votre façade se dégrade avec le temps ? Fissures, peintures écaillées, mousses et pollution ternissent l'aspect de votre maison ? Le ravalement de façade est l'intervention indispensable pour protéger, assainir et sublimer vos murs extérieurs. Découvrez tout ce qu'il faut savoir sur cette étape cruciale de la vie de votre bâti en Charente.
 

@@ -321,6 +321,21 @@
   color: var(--color-text);
 }
 
+/* Encadré « service associé » inséré après le chapeau (scripts/build-blog.js) */
+.article-content .article-service-callout {
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--color-surface-alt);
+  border-left: 4px solid var(--brand-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.article-content .article-service-callout p {
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
 .article-content a {
   color: var(--color-primary);
   text-decoration: underline;

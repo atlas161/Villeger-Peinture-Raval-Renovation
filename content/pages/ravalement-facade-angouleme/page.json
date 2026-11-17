@@ -62,9 +62,9 @@
         "text": "Une façade en mauvais état fait chuter la valeur de votre bien et complique toute revente ou location."
       },
       {
-        "icon": "fa-solid fa-euro-sign",
-        "title": "Coûts de chauffage élevés",
-        "text": "Une façade dégradée réduit l'efficacité de l'isolation thermique et augmente vos factures d'énergie."
+        "icon": "fa-solid fa-spray-can-sparkles",
+        "title": "Salissures et mousses",
+        "text": "Pollution, mousses et coulures noircissent la façade et retiennent l'humidité dans le mur, surtout sur les pans exposés au nord."
       }
     ],
     "intro": "Les fissures, l'enduit qui s'écaille et la peinture qui se décolle ne sont pas que des problèmes esthétiques."
@@ -94,9 +94,9 @@
         "text": "Traitement hydrofuge et anti-mousse pour protéger votre façade pendant de nombreuses années."
       },
       {
-        "icon": "fa-solid fa-wand-magic-sparkles",
-        "title": "Peinture façade isolation active",
-        "text": "Peintures spéciales à haut pouvoir isolant qui améliorent l'étanchéité thermique de vos murs. Solution complémentaire à un ravalement complet.",
+        "icon": "fa-solid fa-landmark",
+        "title": "Enduits à la chaux sur pierre",
+        "text": "Sur les maisons en pierre de Charente, enduits et joints à la chaux laissent le mur respirer, là où un enduit ciment piège l'humidité.",
         "highlight": true
       }
     ],
@@ -195,6 +195,34 @@
       "note": "Note : Les travaux de peinture et ravalement classiques ne sont pas éligibles aux aides énergétiques type MaPrimeRénov'. Elles concernent la rénovation énergétique (isolation, chauffage…), pas l'entretien d'une façade."
     },
     "intro": "Le prix d'un ravalement de façade dépend de plusieurs facteurs. Découvrez comment est calculé votre devis personnalisé."
+  },
+  "rules": {
+    "eyebrow": "Démarches & aides",
+    "title": "Ravalement de façade : autorisations et aides en Charente",
+    "intro": "Avant un ravalement, quelques démarches s'imposent. Nous préparons avec vous les pièces techniques (descriptif, teintes, devis détaillé).",
+    "items": [
+      {
+        "icon": "fa-solid fa-file-signature",
+        "title": "Déclaration préalable",
+        "text": "Un ravalement qui modifie l'aspect de la façade (teinte, enduit, matériau) se déclare en mairie avant les travaux. Le délai d'instruction est en principe d'un mois."
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "title": "Secteurs protégés",
+        "text": "Aux abords d'un monument historique ou dans un site patrimonial remarquable (comme le centre de Cognac), l'Architecte des Bâtiments de France donne son avis sur les teintes et les matériaux. Le délai passe alors à deux mois."
+      },
+      {
+        "icon": "fa-solid fa-swatchbook",
+        "title": "Couleurs autorisées",
+        "text": "Le plan local d'urbanisme de votre commune encadre les teintes de façade. Nous vérifions la teinte autorisée avant de commander l'enduit ou la peinture."
+      },
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "title": "Aides des communes",
+        "text": "Certaines communes aident le ravalement des façades sur rue : Cognac en centre-ville (jusqu'à 25 % des travaux HT, plafond 5 000 €) et La Couronne (30 %, plafond 3 000 €, dispositif prévu jusqu'à fin 2026). Le dossier doit être accepté avant le début des travaux.",
+        "accent": true
+      }
+    ]
   },
   "faq": {
     "eyebrow": "F.A.Q",
