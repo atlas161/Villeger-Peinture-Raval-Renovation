@@ -130,8 +130,10 @@ visible. Si un client hésite, lui dire : « Google, c'est celui qui nous aide l
 
 ## Signature email
 
-Fichier : [`signature-email.html`](signature-email.html). Logo, filet bronze, coordonnées, services, « devis gratuit
-sous 48 h », liens Instagram et « ★ Votre avis » (Google) : chaque mail envoyé fait aussi la demande d'avis, en discret.
+Fichier : [`signature-email.html`](signature-email.html). Version « carte » : logo à gauche, coordonnées avec icônes
+rondes marron à droite, bandeau marron en bas (services, « devis gratuit sous 48 h », « ★★★★★ Votre avis » vers Google :
+chaque mail envoyé fait aussi la demande d'avis, en discret). Angles droits (2 px) comme sur le site.
+Icônes : `media/email/icon-*.png` (Font Awesome du site, rendues en PNG car les messageries n'affichent ni SVG ni police d'icônes).
 
 **Gmail (ordinateur)** :
 1. Ouvrir `signature-email.html` dans **Chrome** → `Ctrl + A` → `Ctrl + C`.
