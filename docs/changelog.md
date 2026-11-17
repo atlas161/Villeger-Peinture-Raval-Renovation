@@ -11,6 +11,7 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - Signature email `avis-clients/signature-email.html` (direction artistique du site, lien d'avis Google discret) + mode d'emploi Gmail/Outlook.
 - Signature refaite en version « carte » (icônes `media/email/icon-*.png`, bandeau marron) ; signature et email passés en **angles droits 2 px** comme le site (boutons et cadres étaient arrondis).
 - Signature « aplatie » (un seul tableau, une ligne par info, sans `<div>` ni tableau imbriqué) : l'éditeur de signature de Gmail mettait chaque icône au-dessus de son texte et remplaçait « vprr.fr » par l'URL complète.
+- Puis signature passée en **image** (`media/email/signature-vprr.png`, polices Barlow / Barlow Condensed du site, carte blanche + filet brun en haut, angles droits), source `avis-clients/signature-source.html` ; liens téléphone et avis Google en texte sous l'image.
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
 ## 2026-11-17 — Maillage interne : guides sur les pages de service, fil d'Ariane, liens de l'accueil, lastmod fiables
