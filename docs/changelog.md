@@ -14,6 +14,10 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - Puis signature passée en **image** (`media/email/signature-vprr.png`, polices Barlow / Barlow Condensed du site, carte blanche + filet brun en haut, angles droits), source `avis-clients/signature-source.html` ; liens téléphone et avis Google en texte sous l'image.
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
+## 2026-11-17 — Accueil : liste des services du JSON-LD à jour
+
+- `hasOfferCatalog` de l'accueil : les 7 services réels avec leur URL (au lieu de 4 dont « Isolation thermique », ambigu vis-à-vis de l'ITE, et « Peinture intérieure »).
+
 ## 2026-11-17 — Deux nouvelles pages de service : étanchéité balcon & terrasse, rénovation intérieure
 
 - **`etancheite-balcon-terrasse-angouleme.html`** : vraies photos avant/après de balcons (en-tête + bloc réalisation), problèmes (infiltrations en dessous, béton qui éclate, carrelage, coulures), méthode (diagnostic, reprise du support, revêtement continu, relevés), facteurs de prix, FAQ (6) dont prix, carrelage, copropriété. Visuel de partage `og-etancheite`.
