@@ -6,6 +6,7 @@ fiche Google (4,1 ★ · 14 avis au 2026-11-17) et sur PagesJaunes.
 | Fichier | Rôle |
 |---|---|
 | [`email-demande-avis.html`](email-demande-avis.html) | l'email mis en page (logo, boutons Google + PagesJaunes) |
+| [`signature-email.html`](signature-email.html) | la signature email de Stéphane (logo, coordonnées, services, lien d'avis) — installation en bas de ce fichier |
 | `media/email/vprr-logo-email.png` | le logo de l'email, **servi par le site** (`https://vprr.fr/media/email/vprr-logo-email.png`) : ne pas supprimer ni renommer |
 
 Liens directs (déjà dans l'email et les SMS) :
@@ -124,3 +125,26 @@ note) pour les coller en deux secondes.
 **Google d'abord** : c'est là que les clients cherchent (« peintre façade Angoulême ») et c'est ce qui fait monter la
 fiche dans la carte. PagesJaunes en second. Dans l'email, les deux boutons sont proposés, Google en premier et en plus
 visible. Si un client hésite, lui dire : « Google, c'est celui qui nous aide le plus ».
+
+---
+
+## Signature email
+
+Fichier : [`signature-email.html`](signature-email.html). Logo, filet bronze, coordonnées, services, « devis gratuit
+sous 48 h », liens Instagram et « ★ Votre avis » (Google) : chaque mail envoyé fait aussi la demande d'avis, en discret.
+
+**Gmail (ordinateur)** :
+1. Ouvrir `signature-email.html` dans **Chrome** → `Ctrl + A` → `Ctrl + C`.
+2. Gmail → ⚙ → **Voir tous les paramètres** → onglet **Général** → **Signature** → **Créer** → nom « VPRR ».
+3. Cliquer dans la zone de texte → `Ctrl + V` (ne rien retoucher dedans).
+4. Juste en dessous : **Pour les nouveaux e-mails** et **Pour les réponses/transferts** → « VPRR ».
+   Cocher **« Insérer cette signature avant le texte cité dans les réponses »**.
+5. **Enregistrer les modifications** (tout en bas de la page), puis s'envoyer un mail de test.
+
+**Gmail sur téléphone** : l'appli n'accepte que du texte. Soit laisser la signature du téléphone vide (les mails
+partent sans signature), soit mettre en texte : `Stéphane Villéger – VPRR – 05 45 91 22 70 – vprr.fr`.
+
+**Outlook** : Paramètres → Comptes → **Signatures** → Nouvelle signature → coller → l'associer aux nouveaux messages
+et aux réponses.
+
+Ne pas utiliser la signature dans l'email de demande d'avis : il a déjà sa propre signature et son pied de page.
