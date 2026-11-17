@@ -42,7 +42,7 @@ Le cas le plus fréquent en Charente est le premier : dès qu'on change la teint
 
 ### Comment savoir si ma maison est en secteur protégé ?
 
-Les périmètres de protection sont consultables gratuitement sur l'**Atlas des patrimoines** du ministère de la Culture et sur le **Géoportail de l'urbanisme**. En Charente, beaucoup de centres anciens sont concernés : à Angoulême, la cathédrale Saint-Pierre et l'hôtel de ville sont des monuments historiques, et leurs abords couvrent une grande partie du plateau ; le centre de Cognac est un site patrimonial remarquable.
+Les périmètres de protection sont consultables gratuitement sur l'**Atlas des patrimoines** du ministère de la Culture et sur le **Géoportail de l'urbanisme**. En Charente, beaucoup de centres anciens sont concernés : le centre-ville d'Angoulême est couvert par un plan de sauvegarde et de mise en valeur (PSMV, approuvé en 2019), qui y remplace le PLU et dont les projets sont instruits par la Ville ; les centres de Cognac et de Barbezieux-Saint-Hilaire sont des sites patrimoniaux remarquables.
 
 ## Les pièces du dossier
 

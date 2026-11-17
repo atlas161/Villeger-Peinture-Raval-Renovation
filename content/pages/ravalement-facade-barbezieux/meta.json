@@ -1,0 +1,66 @@
+{
+  "file": "ravalement-facade-barbezieux.html",
+  "prestation": "ravalement",
+  "service": "ravalement-facade-angouleme",
+  "kind": "ville",
+  "rulesFirst": true,
+  "breadcrumbName": "Ravalement de façade à Barbezieux",
+  "parent": {
+    "name": "Ravalement de façade",
+    "file": "ravalement-facade-angouleme.html"
+  },
+  "geoPlacename": "Barbezieux-Saint-Hilaire, Charente",
+  "twitterImageAlt": "Ravalement de façade à Barbezieux-Saint-Hilaire (16) - VPRR",
+  "ogImage": "https://vprr.fr/media/og/og-ravalement.jpg",
+  "related": [
+    {
+      "href": "ravalement-facade-angouleme.html",
+      "icon": "fa-solid fa-paint-roller",
+      "label": "Ravalement de façade (Angoulême)"
+    },
+    {
+      "href": "ravalement-facade-cognac.html",
+      "icon": "fa-solid fa-location-dot",
+      "label": "Ravalement à Cognac"
+    },
+    {
+      "href": "nettoyage-facade-angouleme.html",
+      "icon": "fa-solid fa-spray-can-sparkles",
+      "label": "Nettoyage de façade"
+    },
+    {
+      "href": "zone-desservie-charente.html",
+      "icon": "fa-solid fa-map-location-dot",
+      "label": "Zone d'intervention"
+    }
+  ],
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Sud Charente"
+      }
+    ],
+    "serviceType": "Ravalement de façade",
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ravalement de façade à Barbezieux-Saint-Hilaire",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ravalement de façade",
+            "description": "Réparation, enduit et peinture de façades à Barbezieux-Saint-Hilaire",
+            "areaServed": "Barbezieux-Saint-Hilaire, Charente (16)"
+          }
+        }
+      ]
+    }
+  },
+  "whyAlt": true
+}

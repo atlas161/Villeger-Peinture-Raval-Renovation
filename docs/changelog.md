@@ -10,6 +10,13 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - [`avis-clients/`](./avis-clients/) : email HTML mis en page (logo, boutons Google + PagesJaunes, compatible Gmail/Outlook, testé 375 / 600 px), 3 objets, relance, 3 SMS (≤ 2 SMS chacun, sans emoji ni caractère hors GSM) et mode d'emploi pour Stéphane (modèle Gmail).
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
+## 2026-11-17 — Page ville Barbezieux-Saint-Hilaire, PSMV d'Angoulême, aides complétées
+
+- **Nouvelle page** `ravalement-facade-barbezieux.html` : Opération Façades (30 % HT, 3 000 € par façade ; menuiseries 1 000 € ; devanture 1 500 €, cumulables — source : site de la mairie), site patrimonial remarquable et ABF, permanence mensuelle du Pôle Habitat avec l'architecte conseil du CAUE, bâti local, FAQ (6 questions). Liée depuis la page ravalement (automatique), la zone, le sitemap, `llms.txt`, redirection Netlify. Test anti-duplication OK (62 tests).
+- **Angoulême** : le centre-ville est couvert par un PSMV (arrêté du 3 décembre 2019, tient lieu de PLU, instruction par la Ville — source : angouleme.fr) → carte « Secteurs protégés » de la page ravalement et article « déclaration préalable ».
+- **Article « aides »** : Barbezieux (tableau) et ORT de Cognac étendue à Châteauneuf, Jarnac, Segonzac (règlement d'aide de Châteauneuf, 2020).
+- **Pas de page pour Ruelle-sur-Touvre ni Gond-Pontouvre** : aucune aide ni particularité locale vérifiable trouvée ; une page sans contenu propre serait une page satellite. À créer quand un chantier y sera documenté.
+
 ## 2026-11-17 — Article « Fissures de façade : lesquelles sont graves ? »
 
 - Nouvel article `blog/fissures-facade-gravite.html` : tableau microfissure / fissure / lézarde, lecture des formes, sols argileux en Charente (Géorisques, catastrophe naturelle et délai de déclaration), méthode de surveillance, quand appeler un expert (garantie décennale), réparations lors du ravalement, FAQ. Liens vers ravalement, pages ville et enduit à la chaux (lien retour depuis l'article « 10 ans »). Couverture : gros plan du mur avant ravalement (`fissures_facade*.webp`). Vérifié 375 / 768 / 1440 px, 61 tests.

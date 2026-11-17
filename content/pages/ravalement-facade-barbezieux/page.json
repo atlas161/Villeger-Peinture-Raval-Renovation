@@ -1,0 +1,169 @@
+{
+  "seo": {
+    "title": "Ravalement de façade à Barbezieux (16) | VPRR",
+    "description": "Ravalement de façade à Barbezieux-Saint-Hilaire : Opération Façades (30 %, jusqu'à 3 000 €), site patrimonial, enduits à la chaux. Devis gratuit : 05 45 91 22 70.",
+    "keywords": "ravalement façade Barbezieux, opération façades Barbezieux, aide façade Barbezieux-Saint-Hilaire, façadier Barbezieux, enduit chaux Sud Charente"
+  },
+  "hero": {
+    "title": "Ravalement de façade à Barbezieux-Saint-Hilaire",
+    "ctaLabel": "Demander mon devis gratuit",
+    "subtitle": "Maisons de ville en pierre, façades du centre ancien, pavillons enduits : nous ravalons les façades de Barbezieux dans le respect du site patrimonial, et préparons avec vous le dossier de l'Opération Façades de la commune.",
+    "placeholderIcon": "fa-solid fa-landmark",
+    "placeholderText": "Barbezieux-Saint-Hilaire : site patrimonial remarquable, Opération Façades, enduits à la chaux"
+  },
+  "note": {
+    "title": "Barbezieux et notre page ravalement",
+    "textHtml": "Cette page rassemble ce qui est propre à Barbezieux-Saint-Hilaire (Opération Façades, site patrimonial, conseils gratuits en mairie). Nos méthodes, les étapes d'un chantier et nos photos sont sur la page <a href=\"ravalement-facade-angouleme.html\">ravalement de façade à Angoulême et en Charente</a>. Dans l'ouest du département, voir aussi <a href=\"ravalement-facade-cognac.html\">ravalement à Cognac</a>. Toutes les aides possibles : <a href=\"blog/aides-ravalement-facade-charente.html\">aides au ravalement de façade en Charente</a>."
+  },
+  "rules": {
+    "eyebrow": "Démarches & aides à Barbezieux",
+    "title": "L'Opération Façades de Barbezieux-Saint-Hilaire",
+    "intro": "La commune soutient la rénovation des façades, des menuiseries et des devantures commerciales. Les montants annoncés par la mairie :",
+    "items": [
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "title": "30 % de la rénovation de façade",
+        "text": "La commune finance 30 % du coût hors taxes d'une rénovation globale de façade, dans la limite de 3 000 € par façade.",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-door-open",
+        "title": "Menuiseries et devantures",
+        "text": "Volets, fenêtres et portes : 30 % HT, jusqu'à 1 000 € par façade. Devanture commerciale : 30 % HT, jusqu'à 1 500 €. Ces aides se cumulent avec celle de la façade."
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "title": "Site patrimonial remarquable",
+        "text": "Dans le site patrimonial, tout changement d'aspect extérieur passe par l'avis et les prescriptions de l'Architecte des Bâtiments de France : matériaux, teintes, menuiseries."
+      },
+      {
+        "icon": "fa-solid fa-user-tie",
+        "title": "Conseils gratuits en mairie",
+        "text": "Le Pôle Habitat tient une permanence en mairie le premier mardi du mois, avec un architecte conseil du CAUE : idéal pour valider un projet avant le dossier."
+      }
+    ]
+  },
+  "problem": {
+    "eyebrow": "Les façades de Barbezieux",
+    "title": "Ce que nous rencontrons sur les façades barbeziliennes",
+    "intro": "Ville ancienne perchée sur son coteau, Barbezieux mêle pierre de taille, maisons de bourg enduites et quartiers plus récents.",
+    "items": [
+      {
+        "icon": "fa-solid fa-cubes-stacked",
+        "title": "Pierre de taille du centre",
+        "text": "Encadrements, corniches et chaînes d'angle en pierre calcaire restent apparents : on les nettoie en douceur et on refait les joints à la chaux."
+      },
+      {
+        "icon": "fa-solid fa-house-crack",
+        "title": "Enduits anciens fatigués",
+        "text": "Sur les maisons de bourg en moellons, les enduits farinent, se fissurent ou ont été repris au ciment, ce qui retient l'humidité dans le mur."
+      },
+      {
+        "icon": "fa-solid fa-store",
+        "title": "Rez-de-chaussée commerçants",
+        "text": "Dans les rues commerçantes, la devanture et la façade des étages se traitent ensemble : la commune aide les deux."
+      },
+      {
+        "icon": "fa-solid fa-leaf",
+        "title": "Pignons exposés",
+        "text": "Les pignons tournés vers l'ouest et le nord verdissent et se tachent de coulures : nettoyage et traitement avant toute reprise."
+      }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre méthode à Barbezieux",
+    "title": "Un ravalement pensé pour le site patrimonial",
+    "intro": "Nous partons de l'état de la façade et des prescriptions applicables à votre rue.",
+    "features": [
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "Visite et devis détaillé",
+        "text": "Diagnostic sur place et devis poste par poste (façade, menuiseries, devanture), tel que le demande le dossier de l'Opération Façades."
+      },
+      {
+        "icon": "fa-solid fa-trowel",
+        "title": "Chaux et pierre",
+        "text": "Enduits et joints à la chaux, compatibles avec la pierre calcaire ; pas de ciment sur les murs anciens.",
+        "highlight": true
+      },
+      {
+        "icon": "fa-solid fa-swatchbook",
+        "title": "Teintes validées",
+        "text": "Échantillons et références de teintes préparés pour l'avis de l'Architecte des Bâtiments de France."
+      },
+      {
+        "icon": "fa-solid fa-route",
+        "title": "Intervention depuis Angoulême",
+        "text": "Barbezieux est à environ 40 minutes de nos locaux de L'Isle-d'Espagnac : visite et devis gratuits."
+      }
+    ]
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte un ravalement de façade à Barbezieux ?",
+    "intro": "Les fourchettes au m² sont celles de toute la Charente ; quatre points pèsent sur le devis à Barbezieux.",
+    "factors": [
+      {
+        "icon": "fa-solid fa-cubes-stacked",
+        "title": "Pierre apparente",
+        "text": "Rejointoiement et reprises de pierre demandent plus de main-d'œuvre qu'une façade enduite."
+      },
+      {
+        "icon": "fa-solid fa-road",
+        "title": "Rues étroites",
+        "text": "En centre ancien, l'échafaudage sur le trottoir nécessite une autorisation de voirie et parfois un balisage."
+      },
+      {
+        "icon": "fa-solid fa-door-open",
+        "title": "Menuiseries",
+        "text": "Volets et fenêtres repeints ou remplacés dans le même chantier : un poste à part, aidé séparément par la commune."
+      },
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "title": "Aide déduite",
+        "text": "Pour une façade éligible, l'Opération Façades (30 % HT, jusqu'à 3 000 €) réduit le reste à charge."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : ravalement à Barbezieux",
+    "intro": "Les questions que posent le plus souvent les propriétaires de Barbezieux-Saint-Hilaire.",
+    "items": [
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "question": "Comment bénéficier de l'Opération Façades de Barbezieux ?",
+        "answerHtml": "<p>Renseignez-vous auprès du service urbanisme de la mairie, qui fournit le formulaire de demande de subvention et le règlement de l'opération. Le dossier comprend en général l'autorisation de travaux, les devis détaillés et des photos de la façade. <strong>Attendez l'accord de la commune avant de commencer les travaux.</strong></p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-euro-sign",
+        "question": "Quel est le montant de l'aide aux façades à Barbezieux ?",
+        "answerHtml": "<p>Selon la mairie : <strong>30&nbsp;% du coût HT</strong> d'une rénovation globale de façade, plafonné à <strong>3&nbsp;000&nbsp;€ par façade</strong> ; 30&nbsp;% pour les menuiseries (jusqu'à 1&nbsp;000&nbsp;€) et pour une devanture commerciale (jusqu'à 1&nbsp;500&nbsp;€). Ces aides sont cumulables. Les montants peuvent évoluer : vérifiez-les en mairie.</p>"
+      },
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix d'un ravalement de façade à Barbezieux ?",
+        "answerHtml": "<p>Comme dans le reste de la Charente, comptez <strong>25 à 90&nbsp;€ par m²</strong> selon les travaux :</p>\n<ul>\n  <li><strong>Nettoyage + peinture</strong> (façade saine) : 25 à 40&nbsp;€/m²</li>\n  <li><strong>Réfection d'enduit</strong> : 40 à 65&nbsp;€/m²</li>\n  <li><strong>Ravalement complet</strong> : 60 à 90&nbsp;€/m²</li>\n</ul>\n<p>L'échafaudage s'ajoute (8 à 15&nbsp;€/m² de façade). L'aide de la commune vient en déduction pour une façade éligible. Le devis, après visite, est gratuit.</p>"
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "question": "Faut-il l'avis de l'Architecte des Bâtiments de France ?",
+        "answerHtml": "<p>Dans le site patrimonial remarquable de Barbezieux, oui : tout projet qui modifie l'aspect extérieur d'un bâtiment est soumis à son avis et à ses prescriptions. La déclaration préalable est alors instruite en deux mois au lieu d'un.</p>"
+      },
+      {
+        "icon": "fa-solid fa-user-tie",
+        "question": "Peut-on se faire conseiller gratuitement avant les travaux ?",
+        "answerHtml": "<p>Oui : le Pôle Habitat tient une permanence en mairie le premier mardi du mois, avec notamment un architecte conseil du CAUE. C'est le bon moment pour valider teintes et matériaux avant de déposer le dossier.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Intervenez-vous à Barbezieux depuis Angoulême ?",
+        "answerHtml": "<p>Oui. Barbezieux-Saint-Hilaire est à environ 40 minutes de nos locaux de L'Isle-d'Espagnac. La visite et le devis sont gratuits.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "serviceLabel": "de ravalement à Barbezieux"
+  }
+}

@@ -67,6 +67,12 @@
   force = true
 
 [[redirects]]
+  from = "/ravalement-facade-barbezieux"
+  to = "/ravalement-facade-barbezieux.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/nettoyage-facade-angouleme"
   to = "/nettoyage-facade-angouleme.html"
   status = 301

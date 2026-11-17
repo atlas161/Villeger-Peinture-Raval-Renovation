@@ -209,7 +209,7 @@
       {
         "icon": "fa-solid fa-landmark",
         "title": "Secteurs protégés",
-        "text": "Aux abords d'un monument historique ou dans un site patrimonial remarquable (comme le centre de Cognac), l'Architecte des Bâtiments de France donne son avis sur les teintes et les matériaux. Le délai passe alors à deux mois."
+        "text": "Le centre-ville d'Angoulême est couvert par un plan de sauvegarde et de mise en valeur (PSMV, 2019), aux règles plus strictes ; aux abords d'un monument historique ou dans un site patrimonial remarquable (comme le centre de Cognac ou de Barbezieux), l'Architecte des Bâtiments de France donne son avis sur les teintes et les matériaux. Le délai passe alors à deux mois."
       },
       {
         "icon": "fa-solid fa-swatchbook",
@@ -219,7 +219,7 @@
       {
         "icon": "fa-solid fa-hand-holding-dollar",
         "title": "Aides des communes",
-        "text": "Certaines communes aident le ravalement des façades sur rue : Cognac en centre-ville (jusqu'à 25 % des travaux HT, plafond 5 000 €) et La Couronne (30 %, plafond 3 000 €, dispositif prévu jusqu'à fin 2026). Le dossier doit être accepté avant le début des travaux.",
+        "text": "Certaines communes aident le ravalement des façades sur rue : Cognac en centre-ville (jusqu'à 25 % des travaux HT, plafond 5 000 €), La Couronne (30 %, plafond 3 000 €, dispositif prévu jusqu'à fin 2026) et Barbezieux-Saint-Hilaire (30 %, jusqu'à 3 000 € par façade). Le dossier doit être accepté avant le début des travaux.",
         "accent": true
       }
     ]

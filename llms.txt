@@ -91,7 +91,7 @@ ravalement façade Angoulême, peintre Angoulême, isolation thermique Charente,
 - **FAQ** (/#faq): Réponses aux questions courantes
 - **À propos** (/a-propos.html) : entreprise, dirigeant, engagements
 - **Réalisations** (/realisations.html) : chantiers avant / après
-- **Ravalement de façade** (/ravalement-facade-angouleme.html), avec des pages par commune : **Cognac** (/ravalement-facade-cognac.html : aide de la Ville jusqu'à 25 %, secteur protégé, façades noircies près des chais) et **La Couronne** (/ravalement-facade-la-couronne.html : aide de la mairie de 30 %, abords de l'abbaye)
+- **Ravalement de façade** (/ravalement-facade-angouleme.html), avec des pages par commune : **Cognac** (/ravalement-facade-cognac.html : aide de la Ville jusqu'à 25 %, secteur protégé, façades noircies près des chais) **La Couronne** (/ravalement-facade-la-couronne.html : aide de la mairie de 30 %, abords de l'abbaye) et **Barbezieux-Saint-Hilaire** (/ravalement-facade-barbezieux.html : Opération Façades 30 %, site patrimonial remarquable)
 - **Contact** (/contact.html) : formulaire de demande de devis, téléphone, horaires
 - **Mentions légales** (/mentions-legales.html): Informations légales
 

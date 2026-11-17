@@ -64,6 +64,22 @@ La Couronne, qui fait partie de l'opération de revitalisation du territoire (OR
 
 Plus de détails : [ravalement de façade à La Couronne](/ravalement-facade-la-couronne.html).
 
+### Barbezieux-Saint-Hilaire : l'Opération Façades
+
+Barbezieux soutient la rénovation des façades, des menuiseries et des devantures commerciales :
+
+| Travaux | Aide annoncée par la mairie |
+| --- | --- |
+| Rénovation globale de façade | 30 % du coût HT, jusqu'à 3 000 € par façade |
+| Menuiseries (volets, fenêtres, portes) | 30 % du coût HT, jusqu'à 1 000 € par façade |
+| Devanture commerciale | 30 % du coût HT, jusqu'à 1 500 € |
+
+Les trois aides se cumulent. Le centre étant un site patrimonial remarquable, l'Architecte des Bâtiments de France donne son avis sur le projet. Détails : [ravalement de façade à Barbezieux](/ravalement-facade-barbezieux.html).
+
+### Châteauneuf-sur-Charente, Jarnac, Segonzac
+
+L'opération de revitalisation du territoire de Cognac a été étendue en 2019 à Châteauneuf-sur-Charente, Jarnac et Segonzac. Châteauneuf a adopté en 2020 un règlement d'aide municipale au ravalement dans ce cadre (une aide accordée en 2022 couvrait par exemple 15 % des travaux de façade et de menuiseries, plafonnée à 2 400 € pour un immeuble situé dans le périmètre de l'Architecte des Bâtiments de France). Si vous êtes à Jarnac ou Segonzac, demandez à votre mairie si un dispositif équivalent existe.
+
 ### Et dans les autres communes ?
 
 D'autres communes peuvent avoir leur propre dispositif, parfois limité à une rue ou à un quartier. Le bon réflexe : **demander au service urbanisme de votre mairie** s'il existe une « aide aux façades » ou une « campagne de ravalement ». Dans l'agglomération d'Angoulême, les communes de l'ORT (Angoulême, Gond-Pontouvre, La Couronne, Ruelle-sur-Touvre) bénéficient aussi d'un programme d'amélioration de l'habitat avec l'Anah, surtout pour la réhabilitation des logements anciens.
@@ -106,4 +122,4 @@ La demande doit être déposée par le propriétaire (ou le syndic en coproprié
 
 ## Conclusion
 
-Un ravalement en Charente ne se finance pas avec MaPrimeRénov', mais une aide communale peut couvrir jusqu'à 25 à 30 % de la facture dans certaines villes. La clé est de **se renseigner avant de signer** et de préparer un dossier complet. Pour un devis détaillé utilisable dans votre demande d'aide, consultez notre page [ravalement de façade à Angoulême et en Charente](/ravalement-facade-angouleme.html).
+Un ravalement en Charente ne se finance pas avec MaPrimeRénov', mais une aide communale peut couvrir jusqu'à 25 à 30 % de la facture dans certaines villes (Cognac, La Couronne, Barbezieux). La clé est de **se renseigner avant de signer** et de préparer un dossier complet. Pour un devis détaillé utilisable dans votre demande d'aide, consultez notre page [ravalement de façade à Angoulême et en Charente](/ravalement-facade-angouleme.html).
