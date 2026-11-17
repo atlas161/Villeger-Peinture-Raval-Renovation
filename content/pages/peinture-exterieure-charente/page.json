@@ -43,7 +43,7 @@
       }
     ],
     "tipTitle": "Maillage utile pour votre cas",
-    "tipHtml": "Si la façade doit d’abord être <strong>nettoyée</strong>, voir <a href=\"nettoyage-facade-angouleme.html\">nettoyage de façade</a>. S’il y a des <strong>fissures/enduit</strong> à reprendre, voir <a href=\"ravalement-facade-angouleme.html\">ravalement de façade</a>. Consultez la <a href=\"zone-desservie-charente.html\">zone desservie</a>.",
+    "tipHtml": "Si la façade doit d’abord être <strong>nettoyée</strong>, voir <a href=\"nettoyage-facade-angouleme.html\">nettoyage de façade</a>. S’il y a des <strong>fissures/enduit</strong> à reprendre, voir <a href=\"ravalement-facade-angouleme.html\">ravalement de façade</a>. Pour un balcon ou une terrasse qui fuit, voir <a href=\"etancheite-balcon-terrasse-angouleme.html\">étanchéité de balcon et terrasse</a>. Consultez la <a href=\"zone-desservie-charente.html\">zone desservie</a>.",
     "intro": "Exemple inspiré de nos interventions locales. La durabilité dépend surtout de la préparation du support et du type de peinture choisi."
   },
   "problem": {
@@ -216,7 +216,7 @@
       {
         "icon": "fa-solid fa-droplet",
         "question": "Faites-vous l'étanchéité extérieure des balcons et terrasses ?",
-        "answerHtml": "<p>Oui. L'<strong>étanchéité extérieure</strong> de balcons et de terrasses fait partie de nos travaux, en complément de la peinture extérieure : nous contrôlons le support, reprenons les fissures et appliquons un revêtement d'étanchéité adapté pour stopper les infiltrations d'eau dans la dalle et la façade.</p>\n<p>Chaque balcon est différent (état du support, pente, accès) : la méthode et le prix sont confirmés dans un <strong>devis gratuit après visite sur place</strong>.</p>"
+        "answerHtml": "<p>Oui. L'<strong>étanchéité extérieure</strong> de balcons et de terrasses fait partie de nos travaux, en complément de la peinture extérieure : nous contrôlons le support, reprenons les fissures et appliquons un revêtement d'étanchéité adapté pour stopper les infiltrations d'eau dans la dalle et la façade. Tout le détail : <a href=\"etancheite-balcon-terrasse-angouleme.html\">étanchéité de balcons et terrasses</a>.</p>\n<p>Chaque balcon est différent (état du support, pente, accès) : la méthode et le prix sont confirmés dans un <strong>devis gratuit après visite sur place</strong>.</p>"
       }
     ],
     "intro": "Trouvez rapidement les réponses à vos questions sur les tarifs et les devis de peinture extérieure."

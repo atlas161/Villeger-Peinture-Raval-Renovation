@@ -10,6 +10,7 @@
     'nettoyage-facade': 'Nettoyage de façade',
     toiture: 'Toiture & Couverture',
     peinture: 'Peinture',
+    etancheite: 'Étanchéité balcon / terrasse',
     isolation: 'Isolation',
     renovation: 'Rénovation intérieure',
     autre: 'Autre'

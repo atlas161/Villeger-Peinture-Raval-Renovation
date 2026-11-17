@@ -54,7 +54,8 @@ Fourchettes **TTC, particulier, Charente, hors échafaudage** (échafaudage : 8 
 | Nettoyage de toiture | 8–25 €/m² | démoussage 8–12 · + anti-mousse 12–18 · + hydrofuge 18–25 · exemple 100 m² : 1 200–1 800 € |
 | Peinture extérieure | 20–65 €/m² | rafraîchissement 20–30 · avec préparation 30–45 · haute performance 45–65 · exemple 100 m² : 3 000–4 500 € |
 | Isolation intérieure | 18–70 €/m² | combles perdus (soufflage) 18–30 · rampants 40–65 · murs (doublage) 45–70 · exemple 80 m² de combles : 1 500–2 400 € |
-| Rénovation intérieure (blog) | 150–1 000 €/m² | rafraîchissement 150–300 · intermédiaire 300–600 · lourde 600–1 000+ |
+| Rénovation intérieure (page de service + blog) | 150–1 000 €/m² | rafraîchissement 150–300 · intermédiaire 300–600 · lourde 600–1 000+ |
+| Étanchéité balcon et terrasse (page créée le 2026-11-17) | 50–150 €/m² | dalle saine 50–80 · avec reprise des fissures et relevés 80–120 · avec réparation du béton 100–150 · minimum de chantier pour un petit balcon — **estimation à faire valider en priorité** |
 
 TVA : 10 % (logement de plus de 2 ans), 5,5 % possible pour certains travaux d'isolation. Les fourchettes sont des estimations éditoriales de marché provincial : **à faire valider par le client** (A9 de la feuille de route). Source unique de la FAQ des pages de service : la section `faq` de `page.json` (le JSON-LD en est dérivé) ; FAQ générale : `faq-renovation-angouleme.html` (l'accueil en reprend 5 questions avec les mêmes réponses) — un test vérifie que le JSON-LD reprend les questions affichées.
 

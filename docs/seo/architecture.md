@@ -18,7 +18,7 @@ Dernière mise à jour complète : 2026-09-30. L'historique de ce qui a changé 
 
 ```
 npm run build
- ├─ build:pages   scripts/build-pages.js   → régénère les 5 pages de service (racine) depuis content/pages/
+ ├─ build:pages   scripts/build-pages.js   → régénère les 7 pages de service et les pages ville (racine) depuis content/pages/
  ├─ build:blog    scripts/build-blog.js    → régénère blog/*.html, blog/articles.json, blog/index.html, sitemap.xml
  └─ scripts/build-site.js                  → construit dist/ (liste blanche), inclut le footer, écrit _redirects
 ```
@@ -46,7 +46,7 @@ dossier) : arrêter le serveur avant de reconstruire.
 ## 3. Arborescence
 
 ```
-/                         pages à la racine : index, 5 pages de service (générées), zone, faq, mentions, merci, 404
+/                         pages à la racine : index, 7 pages de service + pages ville (générées), zone, faq, mentions, merci, 404
 assets/css/               styles (voir §6)            assets/js/   scripts (voir §7)
 assets/fonts, vendor/     Inter, Font Awesome 6.5.1 — auto-hébergés, chemins versionnés
 assets/img/blog/          images des articles (+ déclinaisons -400w/-600w/-800w/-1200w)
@@ -66,7 +66,7 @@ docs/                     toute la documentation (index : docs/README.md)
 | Page(s) | Source de vérité | Comment modifier |
 |---|---|---|
 | `index.html`, `zone-desservie-charente.html`, `faq-renovation-angouleme.html`, `mentions-legales.html`, `merci.html`, `404.html` | le fichier HTML lui-même | éditer le HTML ; le menu vient de `sync:header` (sauf `404.html`, exclu volontairement) |
-| 5 pages de service | `content/pages/<slug>/page.json` + fragments | voir §4.2 — **ne jamais éditer le `.html` racine** |
+| 7 pages de service + pages ville | `content/pages/<slug>/page.json` + fragments | voir §4.2 — **ne jamais éditer le `.html` racine** |
 | `blog/*.html`, `blog/index.html`, `blog/articles.json`, `sitemap.xml` | `content/blog/*.md` | voir §4.3 |
 | `dist/` | build | jamais |
 

@@ -1,0 +1,218 @@
+{
+  "seo": {
+    "title": "Étanchéité balcon et terrasse à Angoulême | VPRR",
+    "description": "Balcon ou terrasse qui fuit à Angoulême et en Charente : reprise des fissures, relevés et revêtement d'étanchéité. Visite et devis gratuits : 05 45 91 22 70.",
+    "keywords": "étanchéité balcon Angoulême, étanchéité terrasse Charente, balcon qui fuit, infiltration balcon, résine étanchéité balcon 16"
+  },
+  "hero": {
+    "title": "Étanchéité de balcons et terrasses à Angoulême",
+    "ctaLabel": "Obtenir mon devis gratuit en 48h",
+    "before": "/media/services/etancheite_balcon/balcon_avant-900w.webp",
+    "after": "/media/services/etancheite_balcon/balcon_apres-900w.webp",
+    "altBefore": "Balcon fissuré et encrassé avant étanchéité à Angoulême",
+    "altAfter": "Même balcon après étanchéité : revêtement gris uniforme et relevés propres",
+    "subtitle": "Balcon fissuré, terrasse qui fuit, plafond taché en dessous : nous reprenons le support et posons un revêtement d'étanchéité continu pour stopper les infiltrations. Visite et devis gratuits."
+  },
+  "realisation": {
+    "title": "Avant / Après : étanchéité de balcon en Charente (16)",
+    "before": "/media/services/etancheite_balcon/balcon2_avant-900w.webp",
+    "after": "/media/services/etancheite_balcon/balcon2_apres-900w.webp",
+    "altBefore": "Sol de balcon fissuré et terni avant étanchéité",
+    "altAfter": "Balcon après étanchéité : sol gris uniforme, garde-corps conservé",
+    "sheetTitle": "Fiche chantier : balcon",
+    "facts": [
+      {
+        "label": "Zone",
+        "text": "Charente (16)"
+      },
+      {
+        "label": "Support",
+        "text": "dalle de balcon en béton"
+      },
+      {
+        "label": "Problèmes",
+        "text": "microfissures, sol terni, risque d'infiltrations"
+      },
+      {
+        "label": "Solution",
+        "text": "nettoyage, reprise des fissures, relevés d'étanchéité, revêtement"
+      },
+      {
+        "label": "Durée",
+        "text": "confirmée après visite (surface, accès, météo)"
+      }
+    ],
+    "tipTitle": "Pour aller plus loin",
+    "tipHtml": "Si la façade sous le balcon est tachée ou fissurée, voir <a href=\"ravalement-facade-angouleme.html\">ravalement de façade</a> ou <a href=\"nettoyage-facade-angouleme.html\">nettoyage de façade</a>. En immeuble, le balcon peut relever de la copropriété : voir <a href=\"blog/ravalement-copropriete.html\">ravalement en copropriété</a>.",
+    "intro": "Deux balcons traités : le sol fissuré et terni devient un revêtement continu, sans joint par où l'eau peut passer."
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Un balcon qui n'est plus étanche abîme la maison",
+    "intro": "Sur un balcon ou une terrasse, l'eau qui s'infiltre ne se voit souvent qu'en dessous, quand les dégâts ont commencé.",
+    "items": [
+      {
+        "icon": "fa-solid fa-droplet",
+        "title": "Infiltrations en dessous",
+        "text": "Taches, auréoles ou peinture qui cloque au plafond de la pièce ou du balcon du dessous : l'eau traverse la dalle."
+      },
+      {
+        "icon": "fa-solid fa-house-crack",
+        "title": "Béton qui éclate",
+        "text": "L'eau atteint les armatures, qui rouillent et gonflent : le béton éclate en nez de dalle et les fers apparaissent."
+      },
+      {
+        "icon": "fa-solid fa-border-all",
+        "title": "Carrelage et joints fatigués",
+        "text": "Carreaux qui sonnent creux ou se décollent, joints fissurés : l'eau passe dessous et stagne."
+      },
+      {
+        "icon": "fa-solid fa-water",
+        "title": "Coulures sur la façade",
+        "text": "Traînées noires sous le balcon, enduit qui se dégrade : l'eau mal évacuée salit et abîme la façade."
+      }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre solution",
+    "title": "Un revêtement d'étanchéité continu, sur un support sain",
+    "intro": "Une étanchéité ne tient que si le support est préparé : c'est l'essentiel du travail.",
+    "features": [
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "Diagnostic du support",
+        "text": "État de la dalle, fissures, carrelage existant, pente et évacuation de l'eau : la méthode est choisie après visite."
+      },
+      {
+        "icon": "fa-solid fa-screwdriver-wrench",
+        "title": "Reprise des fissures et du béton",
+        "text": "Fissures ouvertes et traitées ; béton éclaté purgé et reconstitué après traitement des armatures."
+      },
+      {
+        "icon": "fa-solid fa-layer-group",
+        "title": "Revêtement d'étanchéité",
+        "text": "Primaire puis revêtement d'étanchéité continu, armé sur les zones sensibles, adapté au support et à l'usage.",
+        "highlight": true
+      },
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "title": "Relevés et finitions",
+        "text": "Jonctions avec le mur, seuils et nez de dalle traités : c'est souvent par là que l'eau entre."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Visite et diagnostic",
+        "text": "Nous examinons le balcon, son support et la façade en dessous."
+      },
+      {
+        "title": "Préparation",
+        "text": "Nettoyage, ponçage ou décapage, reprise des fissures et du béton."
+      },
+      {
+        "title": "Étanchéité",
+        "text": "Primaire, revêtement d'étanchéité et relevés, en respectant les temps de séchage."
+      },
+      {
+        "title": "Finitions et contrôle",
+        "text": "Finition antidérapante si besoin, contrôle et nettoyage du chantier."
+      }
+    ]
+  },
+  "whyExtra": [
+    {
+      "icon": "fa-solid fa-handshake",
+      "title": "Un seul interlocuteur",
+      "text": "Du diagnostic aux finitions, la même équipe suit votre chantier et reste joignable."
+    },
+    {
+      "icon": "fa-solid fa-screwdriver-wrench",
+      "title": "Produits adaptés au support",
+      "text": "Nous choisissons les matériaux selon le support et l'usage : pas de solution standard appliquée partout.",
+      "accent": true
+    }
+  ],
+  "zone": {
+    "eyebrow": "Zone d'intervention",
+    "title": "Nous intervenons à Angoulême et dans toute la Charente",
+    "intro": "Étanchéité de balcons et terrasses à Angoulême, dans le Grand Angoulême et dans de nombreuses communes de Charente (16)."
+  },
+  "others": {
+    "eyebrow": "Nos autres services",
+    "title": "Nos autres services de rénovation extérieure",
+    "intro": "Un balcon se traite souvent avec la façade qui le porte.",
+    "services": [
+      "peinture-exterieure-charente",
+      "ravalement-facade-angouleme",
+      "nettoyage-facade-angouleme"
+    ]
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte l'étanchéité d'un balcon ?",
+    "intro": "Le prix dépend surtout de l'état du support. Voici ce qui fait varier le devis.",
+    "factors": [
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "title": "Surface",
+        "text": "Balcon de quelques m² ou grande terrasse : le prix au m² baisse avec la surface, mais un minimum de chantier s'applique."
+      },
+      {
+        "icon": "fa-solid fa-house-crack",
+        "title": "État de la dalle",
+        "text": "Dalle saine, fissurée ou béton éclaté : les réparations avant étanchéité font la différence."
+      },
+      {
+        "icon": "fa-solid fa-border-all",
+        "title": "Revêtement existant",
+        "text": "Carrelage à déposer ou à conserver, ancien revêtement à décaper : à voir sur place."
+      },
+      {
+        "icon": "fa-solid fa-stairs",
+        "title": "Accès",
+        "text": "Étage, accès par l'intérieur du logement, protection des menuiseries : l'organisation du chantier compte."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : étanchéité de balcon et terrasse",
+    "intro": "Les réponses aux questions que l'on nous pose le plus souvent.",
+    "items": [
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix de l'étanchéité d'un balcon ?",
+        "answerHtml": "<p>En Charente, comptez en général <strong>50 à 150&nbsp;€ par m²</strong> selon l'état du balcon :</p>\n<ul>\n  <li><strong>Revêtement sur dalle saine</strong> : 50 à 80&nbsp;€/m²</li>\n  <li><strong>Avec reprise des fissures</strong> et relevés : 80 à 120&nbsp;€/m²</li>\n  <li><strong>Avec réparation du béton</strong> (éclats, nez de dalle) : 100 à 150&nbsp;€/m²</li>\n</ul>\n<p>Un petit balcon a souvent un minimum de chantier (préparation, séchage, déplacement). Le devis, gratuit, est établi après visite.</p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-droplet",
+        "question": "Comment savoir si mon balcon fuit ?",
+        "answerHtml": "<p>Les signes les plus fréquents : taches ou auréoles au plafond en dessous, peinture qui cloque, coulures sur la façade sous le balcon, carrelage qui sonne creux, béton qui s'effrite en bordure. Plus on agit tôt, plus la réparation reste simple.</p>"
+      },
+      {
+        "icon": "fa-solid fa-border-all",
+        "question": "Peut-on faire l'étanchéité sans enlever le carrelage ?",
+        "answerHtml": "<p>Parfois : si le carrelage est bien adhérent, certains systèmes d'étanchéité peuvent être appliqués dessus après préparation. S'il sonne creux ou se décolle, il faut le déposer. Nous le vérifions lors de la visite.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Combien de temps durent les travaux ?",
+        "answerHtml": "<p>Pour un balcon courant, comptez en général quelques jours, temps de séchage compris entre les couches. Les travaux se font par temps sec et hors gel : nous planifions selon la météo.</p>"
+      },
+      {
+        "icon": "fa-solid fa-building",
+        "question": "Mon balcon est en copropriété : qui paie ?",
+        "answerHtml": "<p>Cela dépend du règlement de copropriété : la dalle et l'étanchéité sont souvent des parties communes, le revêtement de sol parfois privatif. Vérifiez auprès du syndic avant de lancer les travaux (voir <a href=\"blog/ravalement-copropriete.html\">ravalement en copropriété</a>).</p>"
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "question": "Les travaux sont-ils assurés ?",
+        "answerHtml": "<p>Nous intervenons avec une assurance responsabilité civile professionnelle et une garantie décennale pour les travaux qui en relèvent. Nos attestations sont disponibles sur simple demande avant le début du chantier.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "serviceLabel": "d'étanchéité de balcon ou de terrasse"
+  }
+}

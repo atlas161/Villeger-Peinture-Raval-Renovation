@@ -114,6 +114,52 @@
         }
       ],
       "note": "Prix TTC indicatifs pour un particulier en Charente (TVA à 5,5 % possible sous conditions pour l'isolation). Devis gratuit après visite."
+    },
+    {
+      "key": "etancheite",
+      "label": "Étanchéité balcon et terrasse",
+      "boxTitle": "Prix au m² selon l'état du balcon",
+      "cards": [
+        {
+          "title": "Revêtement sur dalle saine",
+          "price": "50-80 €/m²",
+          "desc": "Nettoyage, primaire et revêtement d'étanchéité"
+        },
+        {
+          "title": "Avec reprise des fissures",
+          "price": "80-120 €/m²",
+          "desc": "Fissures traitées, relevés, revêtement armé"
+        },
+        {
+          "title": "Avec réparation du béton",
+          "price": "100-150 €/m²",
+          "desc": "Éclats et nez de dalle repris avant étanchéité"
+        }
+      ],
+      "note": "Prix TTC indicatifs pour un particulier en Charente. Un petit balcon a souvent un minimum de chantier (préparation, séchage, accès) : le devis gratuit après visite donne le prix exact."
+    },
+    {
+      "key": "renovation",
+      "label": "Rénovation intérieure",
+      "boxTitle": "Prix au m² habitable selon l'ampleur",
+      "cards": [
+        {
+          "title": "Rafraîchissement",
+          "price": "150-300 €/m²",
+          "desc": "Préparation des murs, peinture, sol souple ou stratifié"
+        },
+        {
+          "title": "Rénovation intermédiaire",
+          "price": "300-600 €/m²",
+          "desc": "Cloisons, faux-plafonds, isolation partielle, parquet"
+        },
+        {
+          "title": "Rénovation lourde",
+          "price": "600-1000 €/m²",
+          "desc": "Redistribution des pièces, doublages, finitions haut de gamme"
+        }
+      ],
+      "note": "Prix TTC indicatifs par m² de surface rénovée, pour un particulier en Charente. Chaque logement est différent : le devis gratuit détaille chaque poste."
     }
   ]
 }

@@ -35,7 +35,7 @@ test('chaque page de service a des données complètes et des sections valides',
 
 // La FAQ visible et son JSON-LD (FAQPage) doivent dire la même chose, page par page (SEO : pas de rich result trompeur).
 test('FAQ : le JSON-LD FAQPage reprend exactement les questions affichées', () => {
-  const pages = ['index.html', 'faq-renovation-angouleme.html', 'zone-desservie-charente.html', ...fs.readdirSync(path.join(__dirname, '..')).filter((f) => /^(ravalement|nettoyage|peinture|isolation)-.*\.html$/.test(f))];
+  const pages = ['index.html', 'faq-renovation-angouleme.html', 'zone-desservie-charente.html', ...fs.readdirSync(path.join(__dirname, '..')).filter((f) => /^(ravalement|nettoyage|peinture|isolation|etancheite|renovation)-.*\.html$/.test(f))];
   const norm = (t) => t.replace(/<[^>]+>/g, '').replace(/&nbsp;| /g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
   for (const f of pages) {
     const html = fs.readFileSync(path.join(__dirname, '..', f), 'utf8');

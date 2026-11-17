@@ -1,0 +1,181 @@
+{
+  "file": "renovation-interieure-angouleme.html",
+  "prestation": "renovation",
+  "breadcrumbName": "Rénovation intérieure à Angoulême",
+  "geoPlacename": "Angoulême, Charente",
+  "twitterImageAlt": "Rénovation intérieure à Angoulême (16) - VPRR",
+  "ogImage": "https://vprr.fr/media/og/og-vprr.jpg",
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "businessCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de rénovation intérieure",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Rénovation intérieure",
+            "description": "Rénovation intérieure à Angoulême et en Charente",
+            "areaServed": "Angoulême, Charente (16)"
+          }
+        }
+      ]
+    },
+    "serviceType": "Rénovation intérieure",
+    "serviceAreaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Rénovation intérieure à Angoulême",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Plâtrerie et cloisons",
+            "description": "Cloisons, doublages et faux-plafonds en plaques de plâtre"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Peinture intérieure",
+            "description": "Préparation des murs et peinture des murs et plafonds"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Revêtements de sols",
+            "description": "Pose de sols souples, stratifiés et parquets"
+          }
+        }
+      ]
+    }
+  },
+  "whyAlt": true
+}

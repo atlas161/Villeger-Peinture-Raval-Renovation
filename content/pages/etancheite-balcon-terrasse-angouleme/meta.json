@@ -1,0 +1,181 @@
+{
+  "file": "etancheite-balcon-terrasse-angouleme.html",
+  "prestation": "etancheite",
+  "breadcrumbName": "Étanchéité balcon et terrasse à Angoulême",
+  "geoPlacename": "Angoulême, Charente",
+  "twitterImageAlt": "Étanchéité de balcon et terrasse à Angoulême (16) - VPRR",
+  "ogImage": "https://vprr.fr/media/og/og-etancheite.jpg",
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "businessCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de étanchéité de balcon et terrasse",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Étanchéité de balcon et terrasse",
+            "description": "Étanchéité de balcon et terrasse à Angoulême et en Charente",
+            "areaServed": "Angoulême, Charente (16)"
+          }
+        }
+      ]
+    },
+    "serviceType": "Étanchéité de balcon et terrasse",
+    "serviceAreaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Angoulême"
+      },
+      {
+        "@type": "City",
+        "name": "L'Isle-d'Espagnac"
+      },
+      {
+        "@type": "City",
+        "name": "Soyaux"
+      },
+      {
+        "@type": "City",
+        "name": "La Couronne"
+      },
+      {
+        "@type": "City",
+        "name": "Champniers"
+      },
+      {
+        "@type": "City",
+        "name": "Ruelle-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Gond-Pontouvre"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Yrieix-sur-Charente"
+      },
+      {
+        "@type": "City",
+        "name": "Magnac-sur-Touvre"
+      },
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      },
+      {
+        "@type": "City",
+        "name": "Ruffec"
+      },
+      {
+        "@type": "City",
+        "name": "Barbezieux-Saint-Hilaire"
+      },
+      {
+        "@type": "City",
+        "name": "La Rochefoucauld-en-Angoumois"
+      }
+    ],
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Étanchéité de balcon et terrasse à Angoulême",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Reprise des fissures",
+            "description": "Traitement des fissures et du support avant étanchéité"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Revêtement d'étanchéité",
+            "description": "Revêtement continu sur dalle de balcon ou terrasse"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Relevés d'étanchéité",
+            "description": "Traitement des jonctions avec la façade et les seuils"
+          }
+        }
+      ]
+    }
+  },
+  "whyAlt": true
+}

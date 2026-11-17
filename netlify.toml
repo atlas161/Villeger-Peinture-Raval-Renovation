@@ -73,6 +73,18 @@
   force = true
 
 [[redirects]]
+  from = "/etancheite-balcon-terrasse-angouleme"
+  to = "/etancheite-balcon-terrasse-angouleme.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/renovation-interieure-angouleme"
+  to = "/renovation-interieure-angouleme.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/nettoyage-facade-angouleme"
   to = "/nettoyage-facade-angouleme.html"
   status = 301

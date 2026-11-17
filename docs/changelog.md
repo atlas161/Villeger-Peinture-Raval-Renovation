@@ -14,6 +14,13 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - Puis signature passée en **image** (`media/email/signature-vprr.png`, polices Barlow / Barlow Condensed du site, carte blanche + filet brun en haut, angles droits), source `avis-clients/signature-source.html` ; liens téléphone et avis Google en texte sous l'image.
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
+## 2026-11-17 — Deux nouvelles pages de service : étanchéité balcon & terrasse, rénovation intérieure
+
+- **`etancheite-balcon-terrasse-angouleme.html`** : vraies photos avant/après de balcons (en-tête + bloc réalisation), problèmes (infiltrations en dessous, béton qui éclate, carrelage, coulures), méthode (diagnostic, reprise du support, revêtement continu, relevés), facteurs de prix, FAQ (6) dont prix, carrelage, copropriété. Visuel de partage `og-etancheite`.
+- **`renovation-interieure-angouleme.html`** : plâtrerie et cloisons, peinture intérieure, sols, lien vers l'isolation ; uniquement les métiers décrits sur le site (pas d'électricité ni de plomberie annoncées). L'article de blog « rénovation intérieure » y renvoie (`service: renovation`) et y apparaît en « Nos guides ».
+- Déclarées partout : `content/shared/services.json`, `content/tarifs.json` (fourchettes ajoutées dans `seo/decisions.md`, **à faire valider**), menu (7 services), pied de page, 2 cartes sur l'accueil (grille 3 + 2 + 2), formulaire de contact (`?service=etancheite`), Pages CMS, sitemap, redirections, `scripts/lib/articles.js`. Réalisations : les chantiers de balcon renvoient vers la nouvelle page ; la page peinture extérieure y renvoie (FAQ, encadré).
+- Vérifié 375 / 768 / 1440 px (pas de débordement), pré-sélection du formulaire, 64 tests.
+
 ## 2026-11-17 — Maillage interne : guides sur les pages de service, fil d'Ariane, liens de l'accueil, lastmod fiables
 
 - **Section « Nos guides »** (`#guides`, après la FAQ) sur chaque page de service et page ville : jusqu'à 6 articles du même service (champ `service` des articles), cartes du composant « Autres services », 3 visibles sur téléphone + « Voir les autres guides ». Ravalement : 6 guides (pages Angoulême, Cognac, La Couronne, Barbezieux) ; peinture 3 ; nettoyage de façade 2 ; toiture 1 ; isolation : aucune (pas d'article).

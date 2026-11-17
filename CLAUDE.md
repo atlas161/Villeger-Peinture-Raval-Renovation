@@ -37,7 +37,7 @@ si le SEO ou une action client est concernée.
 | `npm run build` | build complet (bundles → pages → À propos/Réalisations → blog → `dist/`) — celui de Netlify |
 | `npm run build:content` | régénère `a-propos.html` et `realisations.html` depuis `content/a-propos.json` / `content/realisations.json` |
 | `npm run build:cms` | régénère `.pages.yml` depuis `scripts/cms-config.js` |
-| `npm run build:pages` | régénère les 5 pages de service depuis `content/pages/` |
+| `npm run build:pages` | régénère les 7 pages de service et les pages ville depuis `content/pages/` |
 | `npm run build:blog` | régénère le blog depuis `content/blog/*.md`, puis les pages de service (section « Nos guides ») et les `<lastmod>` du sitemap (`scripts/update-lastmod.js`) |
 | `npm run sync:header` | réinjecte le menu dans les pages écrites à la main |
 | `npm test` | 55 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu, Pages CMS) |
@@ -56,7 +56,7 @@ si le SEO ou une action client est concernée.
 - **Ne jamais commit/push sans validation explicite de l'utilisateur.** Quand il demande de « pousser étape par
   étape » : un commit = une idée, attendre le déploiement, revérifier la prod avant l'étape suivante.
 - **Pages de service générées** : ne jamais éditer `ravalement-facade-angouleme.html`, `nettoyage-facade-angouleme.html`,
-  `nettoyage-toiture-angouleme.html`, `peinture-exterieure-charente.html`, `isolation-interieure-charente.html` à la main
+  `nettoyage-toiture-angouleme.html`, `peinture-exterieure-charente.html`, `isolation-interieure-charente.html`, `etancheite-balcon-terrasse-angouleme.html`, `renovation-interieure-angouleme.html` ni les pages ville (`ravalement-facade-<commune>.html`) à la main
   → éditer `content/pages/<slug>/page.json` (texte/photos, aussi édité via Pages CMS), `meta.json` (technique), `content/tarifs.json`
   (prix) ou `content/shared/*.json` puis `npm run build:pages`. Ajouter une page de
   service ou de ville = copier un dossier de `content/pages/` (voir `docs/seo/architecture.md` §4.2).

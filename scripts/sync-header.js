@@ -41,7 +41,9 @@ const SERVICE_LINKS = [
   { href: 'ravalement-facade-angouleme.html', label: 'Ravalement de façade', meta: 'Charente' },
   { href: 'nettoyage-toiture-angouleme.html', label: 'Nettoyage de toiture', meta: 'Angoulême' },
   { href: 'peinture-exterieure-charente.html', label: 'Peinture extérieure', meta: 'Charente' },
+  { href: 'etancheite-balcon-terrasse-angouleme.html', label: 'Étanchéité balcon & terrasse', meta: 'Angoulême' },
   { href: 'isolation-interieure-charente.html', label: 'Isolation intérieure', meta: 'Charente' },
+  { href: 'renovation-interieure-angouleme.html', label: 'Rénovation intérieure', meta: 'Angoulême' },
 ];
 
 // Les entrées du menu pointent vers les pages dédiées, pas vers des sections de l'accueil.

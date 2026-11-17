@@ -1,0 +1,183 @@
+{
+  "seo": {
+    "title": "Rénovation intérieure à Angoulême (16) | VPRR",
+    "description": "Rénovation intérieure à Angoulême et en Charente : plâtrerie, cloisons, peinture, sols. Du rafraîchissement à la rénovation complète. Devis gratuit : 05 45 91 22 70.",
+    "keywords": "rénovation intérieure Angoulême, peinture intérieure Charente, plâtrerie Angoulême, placo cloisons 16, pose parquet Angoulême"
+  },
+  "hero": {
+    "title": "Rénovation intérieure à Angoulême et en Charente",
+    "ctaLabel": "Obtenir mon devis gratuit en 48h",
+    "subtitle": "Plâtrerie, cloisons, peinture et sols : nous rafraîchissons une pièce ou rénovons un logement entier, avec un seul interlocuteur du début à la fin. Devis gratuit en 48h.",
+    "placeholderIcon": "fa-solid fa-couch",
+    "placeholderText": "Plâtrerie, peinture intérieure et revêtements de sols"
+  },
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Un intérieur fatigué pèse sur le confort et la valeur du logement",
+    "intro": "Murs abîmés, pièces mal agencées, sols usés : rénover l'intérieur change la vie dans la maison.",
+    "items": [
+      {
+        "icon": "fa-solid fa-paint-roller",
+        "title": "Murs et plafonds abîmés",
+        "text": "Fissures, traces d'humidité anciennes, papiers peints à retirer : les surfaces doivent être reprises avant toute peinture."
+      },
+      {
+        "icon": "fa-solid fa-table-cells-large",
+        "title": "Pièces mal agencées",
+        "text": "Une cloison en trop ou en moins, un couloir perdu : redistribuer l'espace rend le logement plus pratique."
+      },
+      {
+        "icon": "fa-solid fa-temperature-half",
+        "title": "Pièces froides",
+        "text": "Un mur froid ou des combles mal isolés : la rénovation est le bon moment pour améliorer le confort."
+      },
+      {
+        "icon": "fa-solid fa-house-chimney-window",
+        "title": "Logement à remettre au goût du jour",
+        "text": "Avant une vente, une location ou après un achat, un intérieur rafraîchi se valorise mieux."
+      }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre solution",
+    "title": "Plâtrerie, peinture et sols, avec une seule équipe",
+    "intro": "Nous intervenons sur les corps de métier de finition, du support à la dernière couche.",
+    "features": [
+      {
+        "icon": "fa-solid fa-layer-group",
+        "title": "Plâtrerie et cloisons",
+        "text": "Cloisons, doublages et faux-plafonds en plaques de plâtre, bandes et enduits pour des surfaces planes."
+      },
+      {
+        "icon": "fa-solid fa-paint-roller",
+        "title": "Peinture intérieure",
+        "text": "Préparation soignée des murs et plafonds (rebouchage, ratissage si besoin), puis peinture adaptée à chaque pièce.",
+        "highlight": true
+      },
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "title": "Revêtements de sols",
+        "text": "Sols souples, stratifiés et parquets, avec préparation du support."
+      },
+      {
+        "icon": "fa-solid fa-temperature-half",
+        "title": "Isolation intérieure",
+        "text": "Combles et murs par l'intérieur, à combiner avec la rénovation : voir notre page isolation intérieure."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Visite et projet",
+        "text": "Nous visitons le logement et définissons avec vous les travaux, pièce par pièce."
+      },
+      {
+        "title": "Protection et préparation",
+        "text": "Protection des lieux, dépose, reprise des supports."
+      },
+      {
+        "title": "Plâtrerie et sols",
+        "text": "Cloisons, doublages, faux-plafonds, puis préparation et pose des sols."
+      },
+      {
+        "title": "Peinture et finitions",
+        "text": "Peinture des murs et plafonds, finitions, nettoyage du chantier."
+      }
+    ]
+  },
+  "whyExtra": [
+    {
+      "icon": "fa-solid fa-handshake",
+      "title": "Un seul interlocuteur",
+      "text": "Du diagnostic aux finitions, la même équipe suit votre chantier et reste joignable."
+    },
+    {
+      "icon": "fa-solid fa-screwdriver-wrench",
+      "title": "Produits adaptés au support",
+      "text": "Nous choisissons les matériaux selon le support et l'usage : pas de solution standard appliquée partout.",
+      "accent": true
+    }
+  ],
+  "zone": {
+    "eyebrow": "Zone d'intervention",
+    "title": "Nous intervenons à Angoulême et dans toute la Charente",
+    "intro": "Rénovation intérieure à Angoulême, dans le Grand Angoulême et dans de nombreuses communes de Charente (16)."
+  },
+  "others": {
+    "eyebrow": "Nos autres services",
+    "title": "Nos autres services de rénovation",
+    "intro": "Intérieur et extérieur : une seule entreprise pour toute la maison.",
+    "services": [
+      "isolation-interieure-charente",
+      "peinture-exterieure-charente",
+      "ravalement-facade-angouleme"
+    ]
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte une rénovation intérieure à Angoulême ?",
+    "intro": "Le prix dépend de l'ampleur des travaux et de l'état du logement.",
+    "factors": [
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "title": "Surface et nombre de pièces",
+        "text": "Une pièce ou un logement entier : le prix se calcule au m² et selon les postes de travaux."
+      },
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "État des supports",
+        "text": "Murs à ratisser, plafonds fissurés, sols à niveler : la préparation pèse sur le devis."
+      },
+      {
+        "icon": "fa-solid fa-table-cells-large",
+        "title": "Travaux de plâtrerie",
+        "text": "Créer ou supprimer une cloison, poser un faux-plafond ou un doublage ajoute des postes."
+      },
+      {
+        "icon": "fa-solid fa-swatchbook",
+        "title": "Gamme de finitions",
+        "text": "Peinture, sols stratifiés ou parquet : le choix des matériaux fait varier le prix."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : rénovation intérieure",
+    "intro": "Les réponses aux questions que l'on nous pose le plus souvent.",
+    "items": [
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix d'une rénovation intérieure au m² ?",
+        "answerHtml": "<p>En Charente, selon l'ampleur des travaux, par m² de surface rénovée :</p>\n<ul>\n  <li><strong>Rafraîchissement</strong> (préparation des murs, peinture, sol souple ou stratifié) : 150 à 300&nbsp;€/m²</li>\n  <li><strong>Rénovation intermédiaire</strong> (cloisons, faux-plafonds, isolation partielle, parquet) : 300 à 600&nbsp;€/m²</li>\n  <li><strong>Rénovation lourde</strong> (redistribution des pièces, doublages, finitions haut de gamme) : 600 à 1000&nbsp;€/m² et plus</li>\n</ul>\n<p>Le devis, gratuit après visite, détaille chaque poste.</p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-house-user",
+        "question": "Faut-il quitter le logement pendant les travaux ?",
+        "answerHtml": "<p>Pour un rafraîchissement pièce par pièce, non : nous organisons le chantier pour que le logement reste habitable. Pour une rénovation lourde, il est souvent plus confortable de libérer les pièces concernées.</p>"
+      },
+      {
+        "icon": "fa-solid fa-file-signature",
+        "question": "Faut-il une autorisation pour rénover l'intérieur ?",
+        "answerHtml": "<p>En général non : les travaux intérieurs qui ne modifient ni la façade ni la structure ne demandent pas d'autorisation d'urbanisme. En copropriété, certains travaux (murs porteurs, parties communes) nécessitent l'accord de l'assemblée générale.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Combien de temps durent les travaux ?",
+        "answerHtml": "<p>Quelques jours pour rafraîchir une pièce, quelques semaines pour un logement complet avec plâtrerie et sols. Le planning est précisé dans le devis.</p>"
+      },
+      {
+        "icon": "fa-solid fa-ruler-combined",
+        "question": "Mes murs sont irréguliers : est-ce rattrapable ?",
+        "answerHtml": "<p>Oui : selon leur état, un ratissage (enduit sur toute la surface) ou un doublage en plaques de plâtre redonne des murs plans avant la peinture.</p>"
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "question": "Les travaux sont-ils assurés ?",
+        "answerHtml": "<p>Nous intervenons avec une assurance responsabilité civile professionnelle et une garantie décennale pour les ouvrages qui en relèvent. Nos attestations sont disponibles sur simple demande.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "serviceLabel": "de rénovation intérieure"
+  }
+}

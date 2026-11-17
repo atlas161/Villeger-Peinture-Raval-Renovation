@@ -33,12 +33,28 @@
       "about": "Façades, boiseries, portails et clôtures : préparation soignée et peinture adaptée à la météo charentaise."
     },
     {
+      "key": "etancheite",
+      "slug": "etancheite-balcon-terrasse-angouleme",
+      "label": "Étanchéité balcon et terrasse",
+      "icon": "fa-solid fa-droplet",
+      "card": "Balcon ou terrasse qui fuit : reprise du support et revêtement d'étanchéité pour stopper les infiltrations.",
+      "about": "Étanchéité de balcons et de terrasses : reprise des fissures, relevés et revêtement étanche."
+    },
+    {
       "key": "isolation",
       "slug": "isolation-interieure-charente",
       "label": "Isolation intérieure",
       "icon": "fa-solid fa-temperature-half",
       "card": "Combles, murs par l’intérieur et menuiseries : améliorez le confort thermique de votre logement.",
       "about": "Isolation des combles et des murs par l’intérieur pour gagner en confort."
+    },
+    {
+      "key": "renovation",
+      "slug": "renovation-interieure-angouleme",
+      "label": "Rénovation intérieure",
+      "icon": "fa-solid fa-couch",
+      "card": "Plâtrerie, peinture et sols : rafraîchissement ou rénovation complète de vos pièces.",
+      "about": "Plâtrerie, peinture intérieure et revêtements de sols, du rafraîchissement à la rénovation complète."
     }
   ]
 }

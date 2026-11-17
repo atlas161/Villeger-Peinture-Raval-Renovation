@@ -28,6 +28,8 @@ IMAGES = {
                             'Nettoyage de façade'),
     'og-toiture': (S + 'nettoyag_toiture/toiture_avant-1200w.webp', S + 'nettoyag_toiture/toiture_apres-1200w.webp',
                    'Nettoyage de toiture'),
+    'og-etancheite': (S + 'etancheite_balcon/balcon2_avant-1200w.webp', S + 'etancheite_balcon/balcon2_apres-1200w.webp',
+                      'Étanchéité de balcon & terrasse'),
     'og-peinture': (S + 'etancheite_balcon/balcon_avant-1200w.webp', S + 'etancheite_balcon/balcon_apres-1200w.webp',
                     'Peinture & étanchéité extérieure'),
 }

@@ -176,10 +176,12 @@ const SERVICE_LINKS = [
   { key: 'nettoyage-facade', match: ['facade'], url: `${SITE_URL}/nettoyage-facade-angouleme.html`, label: 'nettoyage de façade à Angoulême', question: 'Une façade à nettoyer ?', prestation: 'nettoyage-facade' },
   { key: 'toiture', match: ['toiture'], url: `${SITE_URL}/nettoyage-toiture-angouleme.html`, label: 'nettoyage de toiture à Angoulême', question: 'Une toiture à démousser ?', prestation: 'toiture' },
   { key: 'peinture', match: ['peinture'], url: `${SITE_URL}/peinture-exterieure-charente.html`, label: 'peinture extérieure en Charente', question: 'Une façade à repeindre ?', prestation: 'peinture' },
+  { key: 'etancheite', match: ['etancheite', 'balcon'], url: `${SITE_URL}/etancheite-balcon-terrasse-angouleme.html`, label: 'étanchéité de balcon et terrasse à Angoulême', question: 'Un balcon qui fuit ?', prestation: 'etancheite' },
+  { key: 'renovation', match: ['renovation interieure'], url: `${SITE_URL}/renovation-interieure-angouleme.html`, label: 'rénovation intérieure à Angoulême', question: 'Un projet de rénovation intérieure ?', prestation: 'renovation' },
   { key: 'isolation', match: ['isolation'], url: `${SITE_URL}/isolation-interieure-charente.html`, label: 'isolation intérieure en Charente', question: 'Un projet d\'isolation ?', prestation: 'isolation' }
 ];
 
-const OG_BY_SERVICE = { ravalement: 'og-ravalement', 'nettoyage-facade': 'og-nettoyage-facade', toiture: 'og-toiture', peinture: 'og-peinture', isolation: 'og-vprr' };
+const OG_BY_SERVICE = { ravalement: 'og-ravalement', 'nettoyage-facade': 'og-nettoyage-facade', toiture: 'og-toiture', peinture: 'og-peinture', isolation: 'og-vprr', etancheite: 'og-etancheite', renovation: 'og-vprr' };
 
 function serviceOf(frontmatter) {
   const key = normalizeTextForMatch(frontmatter.service || '');
