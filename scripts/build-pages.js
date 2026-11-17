@@ -48,7 +48,9 @@ const BUSINESS = {
   geo: { '@type': 'GeoCoordinates', latitude: 45.6667, longitude: 0.1833 },
 };
 const BUSINESS_TAIL = {
-  sameAs: ['https://www.instagram.com/vprr.16/', 'https://g.page/r/CZZJ5Bogt13fEBM/review'],
+  // Fiche Google (identifiant CID) et fiche PagesJaunes officielle : mêmes profils que sur l'accueil et la page zone.
+  hasMap: 'https://maps.google.com/?cid=16095221991810025878',
+  sameAs: ['https://www.instagram.com/vprr.16/', 'https://maps.google.com/?cid=16095221991810025878', 'https://www.pagesjaunes.fr/pros/63546590'],
   priceRange: '€€',
   openingHoursSpecification: [
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },

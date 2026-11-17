@@ -85,7 +85,7 @@ Pour un logement achevé depuis plus de deux ans, les travaux de ravalement fact
 ## Les 5 erreurs qui font perdre une aide
 
 1. **Commencer les travaux trop tôt.** Toutes les aides locales exigent un accord écrit **avant** le début du chantier. Un devis signé et un acompte versé peuvent suffire à rendre le dossier irrecevable.
-2. **Oublier la déclaration préalable.** Les communes demandent l'autorisation d'urbanisme dans le dossier d'aide : sans elle, pas de subvention.
+2. **Oublier la déclaration préalable.** Les communes demandent l'autorisation d'urbanisme dans le dossier d'aide : sans elle, pas de subvention (voir [la déclaration préalable de ravalement](/blog/declaration-prealable-ravalement-facade.html)).
 3. **Un devis trop vague.** Les commissions demandent un devis détaillé, poste par poste, avec la description des matériaux (type d'enduit, teinte, produit).
 4. **Faire un ravalement partiel.** La plupart des règlements exigent le traitement de toute la façade sur rue.
 5. **Choisir un matériau refusé.** Enduit ciment sur une pierre faite pour rester apparente, menuiseries PVC dans certains périmètres : ce qui ne respecte pas les prescriptions de l'Architecte des Bâtiments de France ou du PLU n'est pas aidé.

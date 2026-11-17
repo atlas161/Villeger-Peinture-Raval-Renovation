@@ -67,3 +67,10 @@ Les photos non suivies à la racine du dépôt (`2026*.jpg`, `image0000*.JPEG`) 
 qu'il dise où elles ont été prises. Même besoin pour chaque future page ville (Soyaux, Ruelle, Champniers, Jarnac…).
 Rappel : vérifier en mairie la prolongation de l'aide aux façades de La Couronne après décembre 2026.
 
+## 7. Nom de la fiche Google à harmoniser — À FAIRE (noté le 2026-11-17)
+
+Le lien de la fiche Google (`g.page/r/CZZJ5Bogt13fEBM`) ouvre une recherche « VPRR Rénovation », alors que le site, le JSON-LD
+et la fiche PagesJaunes officielle disent « Villéger Peinture Raval Rénovation ». Google compare ces informations (NAP) entre
+sources : utiliser **le même nom partout**, de préférence le nom légal exact (sans mots-clés ajoutés). À vérifier dans
+Google Business Profile > Informations > Nom de l'établissement.
+

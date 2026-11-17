@@ -5,6 +5,12 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — Fiche Google dans le JSON-LD, article « Déclaration préalable de ravalement »
+
+- **JSON-LD entreprise** (accueil, zone, 7 pages générées) : `hasMap` = fiche Google (`maps.google.com/?cid=16095221991810025878`, retrouvé depuis le lien `g.page`) ; `sameAs` = Instagram, fiche Google, PagesJaunes officielle `63546590` (le lien d'avis `g.page/…/review` retiré : ce n'est pas un profil).
+- **Article** `blog/declaration-prealable-ravalement-facade.html` : quand déclarer (tableau), secteurs protégés (Atlas des patrimoines, Angoulême, Cognac), pièces du Cerfa 13703, délais 1 / 2 mois, rôle de l'ABF, affichage, échafaudage, infraction ; lié aux pages ravalement, ville et à l'article sur les aides (et réciproquement). Couverture `declaration_ravalement*.webp`. Vérifié 375 / 768 / 1440 px, 60 tests.
+- **Constat (action client)** : la fiche Google s'appelle « VPRR Rénovation » alors que le site, le JSON-LD et PagesJaunes disent « Villéger Peinture Raval Rénovation » → nom à harmoniser (voir `seo/blockers.md` §7).
+
 ## 2026-11-17 — Article « Aides au ravalement de façade en Charente »
 
 - Nouvel article `blog/aides-ravalement-facade-charente.html` (`content/blog/2026-11-17-aides-ravalement-facade-charente.md`) : MaPrimeRénov' (non), aides de Cognac et de La Couronne (tableaux tirés des règlements), Anah, label de la Fondation du patrimoine, TVA à 10 %, 5 erreurs qui font perdre une aide, FAQ. Lié aux deux pages ville et à la page ravalement (encadré `service: ravalement`) ; les pages ville y renvoient (encadré `note`).

@@ -94,8 +94,8 @@ pas du site.
 - **Liens locaux** : annuaire des entreprises de la mairie de L'Isle-d'Espagnac, CMA Nouvelle-Aquitaine / CAPEB 16
   (si adhérent), fournisseurs de peinture (pages « applicateurs »), Qualibat / RGE si qualifié (confiance + lien),
   sponsoring d'un club local, article dans la presse locale sur un chantier remarquable.
-- **JSON-LD** : ajouter dans `sameAs` l'URL Maps de la fiche (pas seulement le lien d'avis), PagesJaunes et les autres
-  profils une fois créés ; ajouter `hasMap`.
+- ✅ *(fait le 2026-11-17)* **JSON-LD** : `hasMap` + `sameAs` (fiche Google par CID, PagesJaunes) ; ajouter les autres
+  profils une fois créés (Bing, Apple, annuaires).
 
 ## 5. Corrections sur l'existant
 
@@ -113,7 +113,7 @@ pas du site.
 
 Articles d'information qui répondent aux questions avant devis, chacun liant la page ravalement et une page ville :
 
-- Déclaration préalable pour un ravalement en Charente : quand, comment, délais.
+- ✅ *(publié le 2026-11-17 : `blog/declaration-prealable-ravalement-facade.html`)* Déclaration préalable pour un ravalement en Charente : quand, comment, délais.
 - ✅ *(publié le 2026-11-17 : `blog/aides-ravalement-facade-charente.html`)* Aides au ravalement de façade en Charente (Cognac, La Couronne, ORT GrandAngoulême, ANAH) — à mettre à jour chaque année.
 - Couleur de façade en Charente : nuancier, ABF, PLU.
 - Enduit à la chaux sur pierre calcaire : pourquoi pas de ciment sur une maison charentaise.
