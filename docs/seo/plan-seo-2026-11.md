@@ -119,8 +119,7 @@ Articles d'information qui répondent aux questions avant devis, chacun liant la
 - Enduit à la chaux sur pierre calcaire : pourquoi pas de ciment sur une maison charentaise.
 - Fissures de façade : lesquelles sont graves ?
 - Ravalement en copropriété : vote en AG, rôle du syndic.
-- « Ravalement obligatoire tous les 10 ans ? » : vrai seulement dans les communes désignées par arrêté — idée
-  reçue fréquente, bon sujet d'article.
+- ✅ *(publié le 2026-11-17 : `blog/ravalement-obligatoire-10-ans.html`)* « Ravalement obligatoire tous les 10 ans ? »
 
 ## 7. Mesure
 

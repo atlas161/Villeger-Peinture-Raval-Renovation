@@ -27,6 +27,8 @@ Avant de refaire une façade, une question revient toujours : « Faut-il demande
 
 ## Faut-il une déclaration préalable pour un ravalement ?
 
+À ne pas confondre avec l'obligation de ravaler sa façade, qui ne s'applique que dans certaines communes (voir [ravalement obligatoire tous les 10 ans : vrai ou faux ?](/blog/ravalement-obligatoire-10-ans.html)). Ici, la question est de savoir si des travaux que vous décidez doivent être déclarés.
+
 Tout dépend de deux questions : **l'aspect de la façade change-t-il ?** et **la maison est-elle dans un secteur protégé ?**
 
 | Situation | Déclaration préalable ? |

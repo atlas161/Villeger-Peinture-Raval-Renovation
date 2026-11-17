@@ -37,6 +37,24 @@
     "category": "Façade"
   },
   {
+    "slug": "ravalement-obligatoire-10-ans",
+    "title": "Ravalement obligatoire tous les 10 ans : vrai ou faux ?",
+    "description": "La règle des « 10 ans » ne s'applique pas partout. Qui doit ravaler sa façade, quand le maire peut l'imposer, ce que risque un propriétaire et les signes qui montrent qu'il est temps d'agir.",
+    "date": "2026-11-17",
+    "image": "/assets/img/blog/ravalement_obligatoire.webp",
+    "imageSrc": "/assets/img/blog/ravalement_obligatoire-800w.webp",
+    "imageSrcset": "/assets/img/blog/ravalement_obligatoire-400w.webp 400w, /assets/img/blog/ravalement_obligatoire-600w.webp 600w, /assets/img/blog/ravalement_obligatoire-800w.webp 800w, /assets/img/blog/ravalement_obligatoire-1200w.webp 1200w",
+    "imageSizes": "(max-width: 768px) 100vw, 900px",
+    "tags": [
+      "ravalement facade",
+      "reglementation",
+      "entretien",
+      "charente"
+    ],
+    "readtime": 5,
+    "category": "Façade"
+  },
+  {
     "slug": "etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme",
     "title": "Hydrogommage d'une façade en pierre : un chantier type",
     "description": "Façade en pierre noircie ? Voici le déroulé type d'un nettoyage par hydrogommage en Charente : diagnostic, protection, projection douce et traitement hydrofuge.",

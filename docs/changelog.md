@@ -5,6 +5,11 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — Article « Ravalement tous les 10 ans : est-ce obligatoire ? »
+
+- Nouvel article `blog/ravalement-obligatoire-10-ans.html` : obligation limitée aux communes où elle est applicable et à l'injonction du maire, procédure (injonction, arrêté, exécution d'office), responsabilité du propriétaire, copropriété, isolation imposée lors d'un gros ravalement (et ses exceptions), signes qu'il est temps d'agir. Lié à la page ravalement, au nettoyage de façade et aux deux autres articles du cluster (lien ajouté depuis l'article « déclaration préalable »). Couverture `ravalement_obligatoire*.webp`.
+- Pas de numéro d'article de loi cité : la recodification de 2021 rend les sources en ligne contradictoires. Vérifié 375 / 768 / 1440 px, 60 tests.
+
 ## 2026-11-17 — Fiche Google dans le JSON-LD, article « Déclaration préalable de ravalement »
 
 - **JSON-LD entreprise** (accueil, zone, 7 pages générées) : `hasMap` = fiche Google (`maps.google.com/?cid=16095221991810025878`, retrouvé depuis le lien `g.page`) ; `sameAs` = Instagram, fiche Google, PagesJaunes officielle `63546590` (le lien d'avis `g.page/…/review` retiré : ce n'est pas un profil).
