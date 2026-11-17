@@ -61,7 +61,7 @@ Une couleur d'enduit proche de la pierre locale vieillit bien et passe presque t
 3. **Testez en vrai.** Un nuancier papier trompe : faites appliquer des échantillons d'environ 1 m² sur la façade, et regardez-les le matin, à midi et en fin de journée. Une teinte paraît toujours plus claire en grand que sur un petit carré.
 4. **Tenez compte de l'exposition.** Au sud, le soleil fait pâlir les teintes soutenues ; au nord, les couleurs très claires se salissent plus vite et marquent les coulures.
 5. **Évitez les teintes très foncées sur de grandes surfaces.** Elles chauffent au soleil, ce qui fatigue l'enduit et accentue les microfissures. Certains fabricants limitent d'ailleurs les teintes foncées sur certains supports.
-6. **Pensez au produit, pas seulement à la couleur.** Un enduit à la chaux teinté dans la masse n'a pas le même rendu qu'une peinture : sur un mur ancien en pierre ou en moellons, la chaux est souvent la seule solution acceptée, et la plus durable.
+6. **Pensez au produit, pas seulement à la couleur.** Un enduit à la chaux teinté dans la masse n'a pas le même rendu qu'une peinture : sur un mur ancien en pierre ou en moellons, la chaux est souvent la seule solution acceptée, et la plus durable (voir [l'enduit à la chaux sur un mur en pierre](/blog/enduit-chaux-mur-pierre.html)).
 
 ## Les erreurs qui font refuser un dossier
 

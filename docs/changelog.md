@@ -10,6 +10,10 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - [`avis-clients/`](./avis-clients/) : email HTML mis en page (logo, boutons Google + PagesJaunes, compatible Gmail/Outlook, testé 375 / 600 px), 3 objets, relance, 3 SMS (≤ 2 SMS chacun, sans emoji ni caractère hors GSM) et mode d'emploi pour Stéphane (modèle Gmail).
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
+## 2026-11-17 — Article « Enduit à la chaux sur un mur en pierre »
+
+- Nouvel article `blog/enduit-chaux-mur-pierre.html` : pourquoi pas de ciment sur un mur ancien, tableau des chaux (aérienne, NHL 2 / 3,5 / 5), pierre de taille apparente ou moellons enduits, enduit 3 couches, rejointoiement, prix (fourchettes de `seo/decisions.md`), FAQ. Liens vers ravalement, hydrogommage, aides et couleur (lien retour ajouté depuis l'article « couleur »). Couverture : photo d'hydrogommage existante ; aperçu de partage : `og-ravalement`. Vérifié 375 / 768 / 1440 px, 61 tests.
+
 ## 2026-11-17 — Images de partage « avant / après » (aperçu des liens)
 
 - **Avant** : l'aperçu d'un lien partagé (SMS, WhatsApp, Messenger, Facebook) montrait `data/hero.webp` (800 × 381, recadré au hasard) ; la page nettoyage de façade pointait vers `media/og-nettoyage-facade.webp`, **qui n'existait pas** (aperçu vide).

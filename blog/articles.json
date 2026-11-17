@@ -56,6 +56,25 @@
     "category": "Façade"
   },
   {
+    "slug": "enduit-chaux-mur-pierre",
+    "title": "Enduit à la chaux sur un mur en pierre : pourquoi et comment",
+    "description": "Pourquoi le ciment abîme les maisons anciennes en pierre, quelle chaux choisir, comment se fait un enduit en trois couches ou un rejointoiement, et combien ça coûte en Charente.",
+    "date": "2026-11-17",
+    "image": "/assets/img/blog/hydrogommage_.webp",
+    "imageSrc": "/assets/img/blog/hydrogommage_-800w.webp",
+    "imageSrcset": "/assets/img/blog/hydrogommage_-400w.webp 400w, /assets/img/blog/hydrogommage_-600w.webp 600w, /assets/img/blog/hydrogommage_-800w.webp 800w, /assets/img/blog/hydrogommage_-1200w.webp 1200w",
+    "imageSizes": "(max-width: 768px) 100vw, 900px",
+    "tags": [
+      "enduit chaux",
+      "ravalement facade",
+      "pierre",
+      "maison ancienne",
+      "charente"
+    ],
+    "readtime": 7,
+    "category": "Façade"
+  },
+  {
     "slug": "ravalement-obligatoire-10-ans",
     "title": "Ravalement obligatoire tous les 10 ans : vrai ou faux ?",
     "description": "La règle des « 10 ans » ne s'applique pas partout. Qui doit ravaler sa façade, quand le maire peut l'imposer, ce que risque un propriétaire et les signes qui montrent qu'il est temps d'agir.",
