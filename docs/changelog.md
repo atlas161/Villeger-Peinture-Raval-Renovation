@@ -10,6 +10,7 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - [`avis-clients/`](./avis-clients/) : email HTML mis en page (logo, boutons Google + PagesJaunes, compatible Gmail/Outlook, testé 375 / 600 px), 3 objets, relance, 3 SMS (≤ 2 SMS chacun, sans emoji ni caractère hors GSM) et mode d'emploi pour Stéphane (modèle Gmail).
 - Signature email `avis-clients/signature-email.html` (direction artistique du site, lien d'avis Google discret) + mode d'emploi Gmail/Outlook.
 - Signature refaite en version « carte » (icônes `media/email/icon-*.png`, bandeau marron) ; signature et email passés en **angles droits 2 px** comme le site (boutons et cadres étaient arrondis).
+- Signature « aplatie » (un seul tableau, une ligne par info, sans `<div>` ni tableau imbriqué) : l'éditeur de signature de Gmail mettait chaque icône au-dessus de son texte et remplaçait « vprr.fr » par l'URL complète.
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
 ## 2026-11-17 — Maillage interne : guides sur les pages de service, fil d'Ariane, liens de l'accueil, lastmod fiables
