@@ -114,7 +114,7 @@ pas du site.
 Articles d'information qui répondent aux questions avant devis, chacun liant la page ravalement et une page ville :
 
 - Déclaration préalable pour un ravalement en Charente : quand, comment, délais.
-- Aides au ravalement de façade en Charente en 2027 (Cognac, La Couronne, ORT GrandAngoulême, ANAH) — à mettre à jour chaque année.
+- ✅ *(publié le 2026-11-17 : `blog/aides-ravalement-facade-charente.html`)* Aides au ravalement de façade en Charente (Cognac, La Couronne, ORT GrandAngoulême, ANAH) — à mettre à jour chaque année.
 - Couleur de façade en Charente : nuancier, ABF, PLU.
 - Enduit à la chaux sur pierre calcaire : pourquoi pas de ciment sur une maison charentaise.
 - Fissures de façade : lesquelles sont graves ?

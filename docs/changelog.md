@@ -5,6 +5,12 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — Article « Aides au ravalement de façade en Charente »
+
+- Nouvel article `blog/aides-ravalement-facade-charente.html` (`content/blog/2026-11-17-aides-ravalement-facade-charente.md`) : MaPrimeRénov' (non), aides de Cognac et de La Couronne (tableaux tirés des règlements), Anah, label de la Fondation du patrimoine, TVA à 10 %, 5 erreurs qui font perdre une aide, FAQ. Lié aux deux pages ville et à la page ravalement (encadré `service: ravalement`) ; les pages ville y renvoient (encadré `note`).
+- Couverture : `assets/img/blog/aides_ravalement*.webp` (photo du chantier de ravalement, 4 tailles). Vérifié à 375 px (tableaux défilants dans leur cadre, pas de débordement) et 1440 px. 60 tests.
+- **À revoir chaque année** (janvier) : montants et dates des aides, prolongation du dispositif de La Couronne.
+
 ## 2026-11-17 — Un seul menu sur tout le site (blog compris)
 
 - **Bug** : le blog avait son propre menu, copié à la main dans `scripts/template-article.html` et `blog/index.html` (libellé « Zone d'intervention » au lieu de « Où ? », attributs `data-nav` inutilisés) et des surcharges dans `assets/css/blog.css` (fond, logo, burger).

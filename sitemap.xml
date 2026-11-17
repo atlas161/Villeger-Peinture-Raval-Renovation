@@ -121,7 +121,16 @@
   </url>
   <url>
     <loc>https://vprr.fr/blog/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vprr.fr/blog/aides-ravalement-facade-charente.html</loc>
+    <lastmod>2026-11-17</lastmod>
+
+    <image:image>
+      <image:loc>https://vprr.fr/assets/img/blog/aides_ravalement-1200w.webp</image:loc>
+      <image:title>Aides au ravalement de façade en Charente : le point 2026-2027</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vprr.fr/blog/etude-de-cas-nettoyage-facade-pierre-hydrogommage-angouleme.html</loc>

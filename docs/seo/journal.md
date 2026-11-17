@@ -414,3 +414,10 @@ sitemap et `llms.txt`. Garde-fou : test automatique contre le contenu dupliqué 
 **À faire côté client** : une photo de chantier (avant/après) par commune pour remplacer l'icône de l'en-tête ;
 confirmer en mairie la prolongation de l'aide de La Couronne après décembre 2026. **À surveiller** (Search Console,
 J+30 / J+90) : impressions sur « ravalement façade cognac » et « ravalement façade la couronne ».
+
+## 2026-11-17 (nuit) — Menu unique et premier article du cluster ravalement
+
+- Le blog avait un menu copié à la main (libellés et styles différents) : il est désormais généré comme partout, avec un test.
+- Article « Aides au ravalement de façade en Charente » (étape 8 du plan) : cible l'intention informationnelle « aide ravalement façade »
+  et renforce les pages Cognac / La Couronne par des liens contextuels. À mettre à jour chaque janvier.
+
