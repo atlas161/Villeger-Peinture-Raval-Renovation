@@ -131,7 +131,7 @@ visible. Si un client hésite, lui dire : « Google, c'est celui qui nous aide l
 ## Signature email
 
 Fichier : [`signature-email.html`](signature-email.html). La signature est une **image** (`media/email/signature-vprr.png`,
-1120 px affichée en 520 px, nette sur écran Retina) : c'est la seule façon d'avoir les polices du site (Barlow Condensed
+1200 px affichée en 600 px, nette sur écran Retina) : c'est la seule façon d'avoir les polices du site (Barlow Condensed
 en capitales, Barlow) et une mise en page que Gmail ne peut pas casser. L'image est cliquable vers vprr.fr ; en dessous,
 une ligne en texte garde les liens utiles (« Appeler le 05 45 91 22 70 » et « ★ Laisser un avis Google »).
 
@@ -139,10 +139,10 @@ une ligne en texte garde les liens utiles (« Appeler le 05 45 91 22 70 » et «
 la régénérer avec Chrome (même nom de fichier, la signature se met à jour chez tous les destinataires) :
 
 ```bash
-"/c/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --hide-scrollbars --allow-file-access-from-files --force-device-scale-factor=2 --virtual-time-budget=3000 --window-size=560,265 --screenshot="D:/DEV/vprr/media/email/signature-vprr.png" "file:///D:/DEV/vprr/docs/avis-clients/signature-source.html"
+"/c/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --hide-scrollbars --allow-file-access-from-files --force-device-scale-factor=2 --virtual-time-budget=3000 --window-size=600,267 --screenshot="D:/DEV/vprr/media/email/signature-vprr.png" "file:///D:/DEV/vprr/docs/avis-clients/signature-source.html"
 ```
 
-(`265` = hauteur de la carte en px ; à ajuster si on ajoute une ligne.)
+(`267` = hauteur de la carte en px ; à ajuster si on ajoute une ligne.)
 
 **Gmail (ordinateur)** :
 1. Ouvrir `signature-email.html` dans **Chrome** → `Ctrl + A` → `Ctrl + C`.
