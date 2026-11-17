@@ -55,6 +55,18 @@
   force = true
 
 [[redirects]]
+  from = "/ravalement-facade-cognac"
+  to = "/ravalement-facade-cognac.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ravalement-facade-la-couronne"
+  to = "/ravalement-facade-la-couronne.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/nettoyage-facade-angouleme"
   to = "/nettoyage-facade-angouleme.html"
   status = 301

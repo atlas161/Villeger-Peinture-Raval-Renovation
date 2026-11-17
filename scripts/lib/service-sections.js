@@ -104,7 +104,7 @@ function solution(s) {
     </article>`
     )
     .join('\n\n');
-  const steps = s.steps
+  const steps = (s.steps || [])
     .map(
       (st, i) => `    <div class="process-step">
       <div class="step-number">${i + 1}</div>
@@ -119,11 +119,11 @@ ${indent(header({ ...s, id: 'solution-title' }), 4)}
 
     <div class="feature-grid">
 ${features}
-    </div>
+    </div>${steps ? `
 
     <div class="process-steps">
 ${steps}
-    </div>
+    </div>` : ''}
   </div>
 </section>`;
 }
@@ -139,7 +139,12 @@ ${indent(header({ ...z, id: 'zone-title' }).replace('</p>\n</header>', ' <a href
     <ul class="zone-list" data-m-limit="8" data-m-more="Voir les autres communes">
 ${cities}
     </ul>
-
+${z.cityPages && z.cityPages.length ? `
+    <p class="section-note">
+      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+      <strong>Pages par commune :</strong> ${z.cityPages.map((c) => `<a href="${c.file}">${esc(c.label)}</a>`).join(', ')}.
+    </p>
+` : ''}
     <p class="section-note">
       <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
       <strong>${esc(z.noteTitle)}</strong> ${esc(z.noteText)}
@@ -245,11 +250,11 @@ ${indent(facts, 4)}
 </section>`;
 }
 
-function ite(i) {
-  return `<section class="section section--bg-surface-alt" aria-labelledby="ite-iti-title">
+function ite(i, id = 'ite-iti-title', bg = 'section--bg-surface-alt') {
+  return `<section class="section ${bg}" aria-labelledby="${id}">
   <div class="container">
     <div class="info-box">
-      <h2 id="ite-iti-title"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>${esc(i.title)}</h2>
+      <h2 id="${id}"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>${esc(i.title)}</h2>
       <p>
         ${i.textHtml}
       </p>
@@ -280,6 +285,9 @@ ${cards}
   </div>
 </section>`;
 }
+
+// Encadré d'information (champ `note`) : même composant que l'encadré ITE (lien vers la page principale, communes voisines).
+const note = (n) => ite(n, 'note-title', 'section--bg-white');
 
 // Démarches et aides (optionnel, champ `rules` du page.json) : même grille de cartes que « Pourquoi nous choisir ».
 const rules = (r) => why({ ...r, alt: false, bg: 'section--bg-white', anchor: 'demarches', gridAttrs: ' data-m-limit="2" data-m-more="Voir les autres démarches"' }, 'rules-title');
@@ -373,4 +381,4 @@ ${links}
 </nav>`;
 }
 
-module.exports = { indent, proofBar, hero, realisation, ite, why, rules, tarifs, problem, solution, zone, others, faq, related };
+module.exports = { indent, proofBar, hero, realisation, ite, note, why, rules, tarifs, problem, solution, zone, others, faq, related };

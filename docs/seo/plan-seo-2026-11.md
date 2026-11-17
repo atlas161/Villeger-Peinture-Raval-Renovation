@@ -136,7 +136,7 @@ Articles d'information qui répondent aux questions avant devis, chacun liant la
 | 1 | Process d'avis Google après chantier + réponses aux avis | client | faible, continu |
 | 2 | ✅ Dé-cannibaliser les articles de blog (fait le 2026-11-17) | dev | 1 session |
 | 3 | ✅ Page ravalement : arguments, section démarches & aides (fait le 2026-11-17) ; reste la galerie par commune | dev | 1 session |
-| 4 | Gabarit « page ville » + pages Cognac et La Couronne (contenu aides déjà documenté) | dev + photos client | 1-2 sessions |
+| 4 | ✅ Gabarit « page ville » + pages Cognac et La Couronne (fait le 2026-11-17 ; reste : une photo de chantier par commune) | dev + photos client | 1-2 sessions |
 | 5 | GBP : catégories, services, zone, photos, posts | client (ou avec accès) | 1 h puis 30 min/mois |
 | 6 | Annuaires (obat, travaux.com, justacote, 118712, Bing, Apple) + doublon PagesJaunes | client | 2-3 h |
 | 7 | Pages ville suivantes (Soyaux, Ruelle/Gond-Pontouvre, Champniers, Jarnac) au rythme des chantiers | dev + client | 1 page / chantier |

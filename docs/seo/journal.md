@@ -405,3 +405,12 @@ réorientés vers l'intention information (titres sans « à Angoulême », URLs
 de service ; page ravalement : section « Démarches & aides » (déclaration préalable, ABF, PLU, aides de Cognac et
 La Couronne) et deux arguments contestables remplacés. Non commité. À surveiller dans Search Console après déploiement :
 la page ravalement doit remplacer l'article sur « ravalement façade angoulême ».
+
+## 2026-11-17 (soir) — Premières pages ville : Cognac et La Couronne
+
+Étape 4 du [plan](./plan-seo-2026-11.md). Deux pages ravalement par commune, au contenu réellement local (aides
+municipales tirées des règlements officiels, secteur protégé, bâti), liées depuis la page ravalement, la page zone, le
+sitemap et `llms.txt`. Garde-fou : test automatique contre le contenu dupliqué entre pages ville.
+**À faire côté client** : une photo de chantier (avant/après) par commune pour remplacer l'icône de l'en-tête ;
+confirmer en mairie la prolongation de l'aide de La Couronne après décembre 2026. **À surveiller** (Search Console,
+J+30 / J+90) : impressions sur « ravalement façade cognac » et « ravalement façade la couronne ».

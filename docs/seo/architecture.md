@@ -99,6 +99,15 @@ Pages : `ravalement-facade-angouleme`, `nettoyage-facade-angouleme`, `nettoyage-
 - **Photos** : le client importe n'importe quelle photo dans `media/uploads/` (Pages CMS). Les photos `xxx-900w.webp`
   historiques gardent leur `srcset` ; les autres passent par `/.netlify/images?url=…&w=…&fm=webp` (pas de redimensionnement
   à la main, pas de dépendance). En local (`npm run dev`) ces photos ne s'affichent pas : seul Netlify les sert.
+- **Pages de ville** (depuis le 2026-11-17 : `ravalement-facade-cognac`, `ravalement-facade-la-couronne`) : même dossier
+  `content/pages/<slug>/`, avec dans `meta.json` `kind: "ville"`, `service` (slug de la page de service parente : sert au
+  contrôle, au fil d'Ariane à 3 niveaux via `parent`, et au lien automatique « Pages par commune » de la section zone du
+  service), `rulesFirst` (démarches & aides juste après le problème) et `related` (liens du bas). Sections propres : `note`
+  (encadré de liens), `problem`, `rules`, `solution` (sans étapes), `tarifs` (facteurs locaux), `faq` (avec une question
+  « prix » : test de cohérence) ; pas de `zone` ni `others`. Pages CMS : groupe « Pages par commune », automatique.
+  **Règle anti-pages satellites** : chaque page ville a son propre texte (test `pages de ville : contenu propre` :
+  ≥ 30 phrases propres, < 15 % de phrases communes entre deux villes) ; ne créer une page que si la commune a un
+  contenu réel (chantier, aide, réglementation, bâti). Plan : [`plan-seo-2026-11.md`](./plan-seo-2026-11.md).
 - **Ajouter une page (service ou ville)** : copier un dossier de `content/pages/`, adapter `page.json` et `meta.json`
   (`file`, `prestation`, `ld`…), ajouter le service dans `content/shared/services.json` et `content/tarifs.json`, déclarer
   la page dans `scripts/cms-config.js` (automatique pour les services de `services.json`), `npm run build:cms`,

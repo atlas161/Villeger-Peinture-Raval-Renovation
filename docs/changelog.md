@@ -5,6 +5,13 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — Pages ville : ravalement à Cognac et à La Couronne (non commité)
+
+- **Nouvelles pages** `ravalement-facade-cognac.html` et `ravalement-facade-la-couronne.html`, générées depuis `content/pages/<slug>/` (`kind: "ville"`). Contenu propre à chaque commune : aide municipale (Cognac : 25 % HT, plafond 5 000 €, dossier avant le 28 février, site patrimonial remarquable ; La Couronne : 30 % HT, plafond 3 000 €, jusqu'à déc. 2026, abords de l'abbaye), bâti local (« torula » des chais à Cognac, pierre et pavillons à La Couronne), facteurs de prix et FAQ locale (6 questions, JSON-LD dérivé).
+- **Générateur** : sections `problem`, `solution`, `zone`, `others` devenues optionnelles ; étapes de `solution` optionnelles ; nouvelle section `note` (encadré, même composant que l'encadré ITE) ; fil d'Ariane JSON-LD à 3 niveaux (`meta.parent`) ; liens du bas personnalisables (`meta.related`). Les 5 pages de service existantes sont régénérées à l'identique (seule la page ravalement gagne la ligne « Pages par commune »).
+- **Maillage** : page ravalement (section zone), `zone-desservie-charente.html` (communes + paragraphe ravalement), sitemap, `llms.txt`. Pages CMS : groupe « Pages par commune ».
+- **Tests** : 59 (nouveau test anti-duplication des pages ville). Rendu vérifié à 1440 / 768 / 375 px, sans débordement. **Pas encore de photo de chantier local** : l'en-tête affiche une icône.
+
 ## 2026-11-17 — SEO : blog dé-cannibalisé, page ravalement « démarches & aides » (non commité)
 
 - **Blog** : les 5 guides qui visaient « service + Angoulême » (ravalement, peinture, démoussage, hydrogommage, chantier type) passent en intention *information* (H1, `seoTitle`, `metaDescription` sans « à Angoulême ») ; URLs inchangées. La requête locale est laissée aux pages de service.

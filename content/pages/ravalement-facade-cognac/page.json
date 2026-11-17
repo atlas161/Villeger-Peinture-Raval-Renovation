@@ -1,0 +1,169 @@
+{
+  "seo": {
+    "title": "Ravalement de façade à Cognac (16) | VPRR",
+    "description": "Ravalement de façade à Cognac : pierre, enduit à la chaux, façades noircies par le « torula », aide de la Ville jusqu'à 25 %. Devis gratuit, 05 45 91 22 70.",
+    "keywords": "ravalement façade Cognac, aide ravalement Cognac, façade noire Cognac torula, enduit chaux Cognac, façadier Cognac"
+  },
+  "hero": {
+    "title": "Ravalement de façade à Cognac",
+    "ctaLabel": "Demander mon devis gratuit",
+    "subtitle": "Pierre de taille du centre ancien, maisons enduites, façades noircies près des chais : nous ravalons les façades de Cognac dans le respect du site patrimonial et vous aidons à monter le dossier d'aide de la Ville.",
+    "placeholderIcon": "fa-solid fa-landmark",
+    "placeholderText": "Cognac, Ville d'art et d'histoire : pierre calcaire, enduits à la chaux, teintes encadrées"
+  },
+  "note": {
+    "title": "Cognac et notre page ravalement",
+    "textHtml": "Cette page rassemble ce qui est propre à Cognac (secteur protégé, aide de la Ville, façades noircies). Les étapes d'un ravalement, nos méthodes et nos photos de chantier sont sur notre page <a href=\"ravalement-facade-angouleme.html\">ravalement de façade à Angoulême et en Charente</a>. Nous intervenons aussi à Châteaubernard, Saint-Brice et Jarnac ; plus près d'Angoulême, voir <a href=\"ravalement-facade-la-couronne.html\">ravalement à La Couronne</a>."
+  },
+  "rules": {
+    "eyebrow": "Démarches & aides à Cognac",
+    "title": "L'aide de la Ville de Cognac au ravalement",
+    "intro": "Dans le cadre d'« Action Cœur de Ville », Cognac subventionne le ravalement des façades du centre-ville (règlement du 27 novembre 2024). Les points à connaître avant de signer un devis :",
+    "items": [
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "title": "Jusqu'à 25 % des travaux",
+        "text": "La Ville finance jusqu'à 25 % des travaux éligibles hors taxes, dans la limite de 5 000 €. Pour un immeuble au caractère patrimonial majeur, l'aide peut atteindre 35 %, plafonnée à 7 000 €.",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-map",
+        "title": "Façades concernées",
+        "text": "Les façades visibles depuis les rues et places listées par la Ville (plan annexé au règlement), sans condition de ressources. Ne sont pas aidés : le simple entretien, les ravalements partiels, la toiture, les droits de voirie et les immeubles déjà aidés depuis moins de 5 ans."
+      },
+      {
+        "icon": "fa-solid fa-calendar-days",
+        "title": "Dossier avant le 28 février",
+        "text": "Le dossier se dépose chaque année avant le 28 février auprès du service urbanisme. Les travaux ne doivent pas commencer avant l'accord de la Ville."
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "title": "Site patrimonial remarquable",
+        "text": "Le centre de Cognac est un site patrimonial remarquable : déclaration préalable obligatoire et avis de l'Architecte des Bâtiments de France sur les matériaux et les teintes."
+      }
+    ]
+  },
+  "problem": {
+    "eyebrow": "Les façades de Cognac",
+    "title": "Ce que nous rencontrons sur les façades cognaçaises",
+    "intro": "Le bâti de Cognac a ses particularités : elles décident de la méthode et des produits.",
+    "items": [
+      {
+        "icon": "fa-solid fa-droplet",
+        "title": "Façades noircies près des chais",
+        "text": "Le voile noir des murs proches des chais vient d'un champignon microscopique qui se nourrit des vapeurs d'alcool (le « torula »). Il se nettoie, mais revient : un traitement adapté espace les nettoyages."
+      },
+      {
+        "icon": "fa-solid fa-cubes-stacked",
+        "title": "Pierre calcaire tendre",
+        "text": "La pierre de taille du centre ancien ne supporte ni le sablage ni la haute pression. Nettoyage doux (hydrogommage) et rejointoiement à la chaux préservent l'épiderme de la pierre."
+      },
+      {
+        "icon": "fa-solid fa-house-crack",
+        "title": "Enduits ciment sur moellons",
+        "text": "Sur les maisons en moellons, un ancien enduit ciment piège l'humidité : il se décolle et fait gonfler le mur. On le remplace par un enduit à la chaux qui laisse le mur respirer."
+      },
+      {
+        "icon": "fa-solid fa-palette",
+        "title": "Teintes encadrées",
+        "text": "Dans le secteur protégé, la teinte de l'enduit, des menuiseries et des volets suit les prescriptions de l'Architecte des Bâtiments de France : nous préparons échantillons et références pour le dossier."
+      }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre méthode à Cognac",
+    "title": "Un ravalement adapté au bâti cognaçais",
+    "intro": "Nous partons de l'état réel de la façade, constaté sur place, et du cadre réglementaire de la rue.",
+    "features": [
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "Visite et diagnostic",
+        "text": "Nature de la pierre ou de l'enduit, fissures, humidité, salissures : nous établissons un devis détaillé, avec descriptif des matériaux, tel que le demande le dossier d'aide."
+      },
+      {
+        "icon": "fa-solid fa-spray-can-sparkles",
+        "title": "Nettoyage doux",
+        "text": "Hydrogommage à basse pression pour la pierre, puis traitement contre les micro-organismes sur les façades noircies."
+      },
+      {
+        "icon": "fa-solid fa-trowel",
+        "title": "Enduits et joints à la chaux",
+        "text": "Reprise des joints et enduits à la chaux aérienne ou hydraulique naturelle, compatibles avec la pierre calcaire.",
+        "highlight": true
+      },
+      {
+        "icon": "fa-solid fa-file-signature",
+        "title": "Pièces pour vos dossiers",
+        "text": "Devis détaillé, descriptif technique et références de teintes pour la déclaration préalable et la demande d'aide."
+      }
+    ]
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte un ravalement de façade à Cognac ?",
+    "intro": "Les fourchettes au m² sont les mêmes qu'à Angoulême ; à Cognac, quatre points pèsent souvent sur le devis.",
+    "factors": [
+      {
+        "icon": "fa-solid fa-cubes-stacked",
+        "title": "Pierre de taille",
+        "text": "Rejointoiement et reprises ponctuelles de pierre demandent plus de main-d'œuvre qu'une façade enduite."
+      },
+      {
+        "icon": "fa-solid fa-road",
+        "title": "Échafaudage en rue",
+        "text": "En centre-ville, l'échafaudage occupe le trottoir : une autorisation de voirie est nécessaire, et ses droits ne sont pas couverts par l'aide de la Ville."
+      },
+      {
+        "icon": "fa-solid fa-droplet",
+        "title": "Façades noircies",
+        "text": "Un traitement contre le « torula » s'ajoute au nettoyage sur les murs exposés aux vapeurs des chais."
+      },
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "title": "Aide déduite",
+        "text": "Pour une façade éligible, l'aide de la Ville (jusqu'à 25 % HT, plafond 5 000 €) réduit le reste à charge après travaux."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : ravalement à Cognac",
+    "intro": "Les questions que posent le plus souvent les propriétaires cognaçais.",
+    "items": [
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "question": "Comment obtenir l'aide de la Ville de Cognac pour un ravalement ?",
+        "answerHtml": "<p>La façade doit donner sur une rue ou une place du périmètre défini par la Ville (centre-ville). Le dossier se dépose avant le <strong>28&nbsp;février</strong> de l'année auprès du service urbanisme, avec l'autorisation de travaux (déclaration préalable), les devis détaillés, une photo de la façade, un RIB et l'attestation de propriété. Une commission examine les dossiers au deuxième trimestre, dans la limite du budget annuel. <strong>Ne commencez pas les travaux avant l'accord écrit.</strong></p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-euro-sign",
+        "question": "Quel est le montant de l'aide au ravalement à Cognac ?",
+        "answerHtml": "<p>Jusqu'à <strong>25&nbsp;% du montant hors taxes</strong> des travaux éligibles, plafonné à <strong>5&nbsp;000&nbsp;€</strong>. Pour un immeuble de grand intérêt patrimonial, la commission peut porter l'aide à 35&nbsp;%, plafonnée à 7&nbsp;000&nbsp;€. L'aide est versée en une fois, sur factures acquittées, après contrôle des travaux.</p>"
+      },
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix d'un ravalement de façade à Cognac ?",
+        "answerHtml": "<p>Comme dans le reste de la Charente, comptez <strong>25 à 90&nbsp;€ par m²</strong> selon les travaux :</p>\n<ul>\n  <li><strong>Nettoyage + peinture</strong> (façade saine) : 25 à 40&nbsp;€/m²</li>\n  <li><strong>Réfection d'enduit</strong> : 40 à 65&nbsp;€/m²</li>\n  <li><strong>Ravalement complet</strong> : 60 à 90&nbsp;€/m²</li>\n</ul>\n<p>L'échafaudage s'ajoute (8 à 15&nbsp;€/m² de façade). Sur une façade éligible du centre-ville, l'aide de la Ville (jusqu'à 25&nbsp;% HT, plafond 5&nbsp;000&nbsp;€) vient en déduction. Les droits de voirie de l'échafaudage en rue restent à votre charge. Le devis, après visite, est gratuit.</p>"
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "question": "Faut-il l'accord de l'Architecte des Bâtiments de France à Cognac ?",
+        "answerHtml": "<p>Dans le site patrimonial remarquable du centre de Cognac, oui : la déclaration préalable de ravalement est soumise à l'avis de l'Architecte des Bâtiments de France, qui fixe les matériaux et les teintes. Hors de ce secteur, une déclaration préalable reste nécessaire si le ravalement modifie l'aspect de la façade.</p>"
+      },
+      {
+        "icon": "fa-solid fa-droplet",
+        "question": "Pourquoi les murs sont-ils noirs près des chais de Cognac ?",
+        "answerHtml": "<p>Le dépôt noir est un champignon microscopique (<em>Baudoinia compniacensis</em>, appelé « torula ») qui se développe grâce aux vapeurs d'alcool qui s'échappent des chais. Il n'abîme pas la pierre en profondeur mais noircit les façades. Un nettoyage doux suivi d'un traitement adapté rend la façade claire ; le dépôt finit par revenir à proximité des chais.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Intervenez-vous vraiment à Cognac depuis L'Isle-d'Espagnac ?",
+        "answerHtml": "<p>Oui. Cognac est à environ trois quarts d'heure de nos locaux de L'Isle-d'Espagnac. La visite et le devis sont gratuits ; nous intervenons aussi à Châteaubernard, Saint-Brice et Jarnac.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "serviceLabel": "de ravalement à Cognac"
+  }
+}

@@ -23,7 +23,8 @@ function loadPage(slug) {
   const cms = read(dir, 'page.json');
   const meta = read(dir, 'meta.json');
   const all = services();
-  const self = all.find((s) => s.slug === slug);
+  // Page de ville : `meta.service` = slug de la page de service parente (ex. ravalement-facade-angouleme).
+  const self = all.find((s) => s.slug === (meta.service || slug));
   const tarif = read('content', 'tarifs.json').tarifs.find((t) => t.key === meta.prestation);
   if (!self || !tarif) throw new Error(`${slug} : service ou tarif introuvable (content/shared/services.json, content/tarifs.json)`);
   const communes = read('content', 'shared', 'communes.json');
@@ -33,7 +34,7 @@ function loadPage(slug) {
     if (!f) throw new Error(`${slug} : service inconnu « ${s} »`);
     return f;
   };
-  const others = cms.others.services.map(bySlug);
+  const others = cms.others ? cms.others.services.map(bySlug) : [];
 
   const s = cms.seo;
   const head = {
@@ -45,17 +46,25 @@ function loadPage(slug) {
     ...(meta.twitterExtra && { twitterExtra: meta.twitterExtra }),
   };
 
+  // Pages de ville rattachées à ce service (meta.service === slug) : liées depuis la section « zone ».
+  const cityPages = listSlugs()
+    .map((d) => ({ d, m: read('content', 'pages', d, 'meta.json') }))
+    .filter(({ m }) => m.service === slug)
+    .map(({ m }) => ({ file: m.file, label: m.breadcrumbName }));
+
   const sections = [
     { type: 'hero', ...cms.hero },
     ...(cms.realisation ? [{ type: 'realisation', ...cms.realisation, hero: cms.hero }] : []),
-    { type: 'problem', ...cms.problem },
-    { type: 'solution', ...cms.solution },
+    ...(cms.note ? [{ type: 'note', ...cms.note }] : []),
+    ...(cms.problem ? [{ type: 'problem', ...cms.problem }] : []),
+    ...(cms.rules && meta.rulesFirst ? [{ type: 'rules', ...cms.rules }] : []),
+    ...(cms.solution ? [{ type: 'solution', ...cms.solution }] : []),
     ...(cms.ite ? [{ type: 'ite', ...cms.ite, alt: true }] : []),
     { type: 'why', ...why, items: [...why.items, ...(cms.whyExtra || [])], alt: !!meta.whyAlt },
-    { type: 'zone', ...cms.zone, cities: communes.communes, noteTitle: communes.noteTitle, noteText: communes.noteText },
-    { type: 'others', ...cms.others, cards: others },
+    ...(cms.zone ? [{ type: 'zone', ...cms.zone, cities: communes.communes, noteTitle: communes.noteTitle, noteText: communes.noteText, cityPages }] : []),
+    ...(cms.others ? [{ type: 'others', ...cms.others, cards: others }] : []),
     { type: 'tarifs', ...cms.tarifs, price: tarif },
-    ...(cms.rules ? [{ type: 'rules', ...cms.rules }] : []),
+    ...(cms.rules && !meta.rulesFirst ? [{ type: 'rules', ...cms.rules }] : []),
     { type: 'faq', ...cms.faq },
     { type: 'contact' },
   ];
@@ -63,10 +72,10 @@ function loadPage(slug) {
   return {
     file: meta.file,
     head,
-    ld: { ...meta.ld, breadcrumbName: meta.breadcrumbName },
+    ld: { ...meta.ld, breadcrumbName: meta.breadcrumbName, ...(meta.parent && { parent: meta.parent }) },
     beforeAfterScript: !!(cms.hero.before && cms.hero.after),
     contact: { prestation: meta.prestation, serviceLabel: cms.contact.serviceLabel },
-    related: others.map((o) => ({ href: `${o.slug}.html`, icon: o.icon, label: o.label })),
+    related: meta.related || others.map((o) => ({ href: `${o.slug}.html`, icon: o.icon, label: o.label })),
     sections,
   };
 }

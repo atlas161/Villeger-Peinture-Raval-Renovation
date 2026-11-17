@@ -86,11 +86,14 @@ function serviceFields(slug) {
       html('tipHtml', 'Texte de l’encadré conseil (liens possibles)'),
     ]));
   }
-  f.push(obj('problem', '4. Le problème', [
+  if (page.note) {
+    f.push(obj('note', '3 bis. Encadré d’information (liens vers la page principale et les communes voisines)', [str('title', 'Titre'), html('textHtml', 'Texte')]));
+  }
+  if (page.problem) f.push(obj('problem', '4. Le problème', [
     ...sectionHead(),
     list('items', 'Les problèmes', [icon(), str('title', 'Titre'), text('text', 'Texte')], '{title}'),
   ]));
-  f.push(obj('solution', '5. Notre solution', [
+  if (page.solution) f.push(obj('solution', '5. Notre solution', [
     ...sectionHead(),
     list('features', 'Prestations', [icon(), str('title', 'Titre'), text('text', 'Texte'), { name: 'highlight', label: 'Mettre en avant', type: 'boolean' }], '{title}'),
     list('steps', 'Étapes du chantier (numérotées automatiquement)', [str('title', 'Titre'), text('text', 'Texte')], '{index}. {title}'),
@@ -101,10 +104,10 @@ function serviceFields(slug) {
   f.push(list('whyExtra', '7. « Pourquoi nous choisir » : cartes propres à cette page (les cartes communes se modifient dans « Textes communs »)', [
     icon(), str('title', 'Titre'), text('text', 'Texte'), { name: 'accent', label: 'Carte mise en avant', type: 'boolean' },
   ], '{title}'));
-  f.push(obj('zone', '8. Zone d’intervention', [
+  if (page.zone) f.push(obj('zone', '8. Zone d’intervention', [
     str('eyebrow', 'Petit titre'), str('title', 'Titre'), text('intro', 'Introduction'),
   ], { description: 'La liste des communes et la phrase « Votre commune n’est pas listée ? » se modifient dans « Textes communs > Communes desservies ».' }));
-  f.push(obj('others', '9. Autres services proposés', [
+  if (page.others) f.push(obj('others', '9. Autres services proposés', [
     ...sectionHead(),
     { name: 'services', label: 'Services affichés (3 conseillés, pas la page elle-même)', type: 'select', list: { min: 1, max: 4 }, options: { values: serviceOptions.filter((s) => s.value !== slug) } },
   ]));
@@ -142,6 +145,14 @@ function serviceFields(slug) {
 const pageEntries = SERVICES.map((s) => ({
   name: `page-${s.key}`, label: s.label, type: 'file', format: 'json', path: `content/pages/${s.slug}/page.json`, fields: serviceFields(s.slug),
 }));
+
+// Pages de ville (meta.json : `kind: "ville"`), ex. ravalement-facade-cognac. Une nouvelle page = un nouveau dossier.
+const cityEntries = fs.readdirSync(path.join(ROOT, 'content', 'pages'))
+  .filter((d) => readJson(`content/pages/${d}/meta.json`).kind === 'ville')
+  .map((d) => ({
+    name: `page-${d}`, label: `Ville : ${readJson(`content/pages/${d}/meta.json`).breadcrumbName}`, type: 'file', format: 'json',
+    path: `content/pages/${d}/page.json`, fields: serviceFields(d),
+  }));
 
 // ───────────────────────── Autres contenus ─────────────────────────
 const realisations = {
@@ -254,6 +265,7 @@ const config = {
   content: [
     realisations,
     { name: 'service-pages', label: 'Pages de service', type: 'group', items: pageEntries },
+    { name: 'city-pages', label: 'Pages par commune', type: 'group', items: cityEntries },
     tarifs,
     aPropos,
     shared,

@@ -1,0 +1,74 @@
+{
+  "file": "ravalement-facade-cognac.html",
+  "prestation": "ravalement",
+  "service": "ravalement-facade-angouleme",
+  "kind": "ville",
+  "rulesFirst": true,
+  "breadcrumbName": "Ravalement de façade à Cognac",
+  "parent": {
+    "name": "Ravalement de façade",
+    "file": "ravalement-facade-angouleme.html"
+  },
+  "geoPlacename": "Cognac, Charente",
+  "twitterImageAlt": "Ravalement de façade à Cognac (16) - VPRR",
+  "ogImage": "https://vprr.fr/data/hero.webp",
+  "related": [
+    {
+      "href": "ravalement-facade-angouleme.html",
+      "icon": "fa-solid fa-paint-roller",
+      "label": "Ravalement de façade (Angoulême)"
+    },
+    {
+      "href": "ravalement-facade-la-couronne.html",
+      "icon": "fa-solid fa-location-dot",
+      "label": "Ravalement à La Couronne"
+    },
+    {
+      "href": "nettoyage-facade-angouleme.html",
+      "icon": "fa-solid fa-spray-can-sparkles",
+      "label": "Nettoyage de façade"
+    },
+    {
+      "href": "zone-desservie-charente.html",
+      "icon": "fa-solid fa-map-location-dot",
+      "label": "Zone d'intervention"
+    }
+  ],
+  "ld": {
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Cognac"
+      },
+      {
+        "@type": "City",
+        "name": "Châteaubernard"
+      },
+      {
+        "@type": "City",
+        "name": "Saint-Brice"
+      },
+      {
+        "@type": "City",
+        "name": "Jarnac"
+      }
+    ],
+    "serviceType": "Ravalement de façade",
+    "serviceCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ravalement de façade à Cognac",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ravalement de façade",
+            "description": "Réparation, enduit et peinture de façades à Cognac",
+            "areaServed": "Cognac, Charente (16)"
+          }
+        }
+      ]
+    }
+  },
+  "whyAlt": true
+}

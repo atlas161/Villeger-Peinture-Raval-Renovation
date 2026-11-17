@@ -7,7 +7,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
-const SECTION_TYPES = ['hero', 'realisation', 'problem', 'solution', 'ite', 'why', 'zone', 'others', 'tarifs', 'rules', 'faq', 'contact'];
+const SECTION_TYPES = ['hero', 'realisation', 'problem', 'solution', 'ite', 'why', 'zone', 'others', 'tarifs', 'rules', 'note', 'faq', 'contact'];
 
 test('les pages de service sont à jour par rapport à content/pages (npm run build:pages)', () => {
   const r = spawnSync('node', [path.join(ROOT, 'scripts', 'build-pages.js'), '--check'], { encoding: 'utf8' });
@@ -48,5 +48,27 @@ test('FAQ : le JSON-LD FAQPage reprend exactement les questions affichées', () 
     const asked = ld.mainEntity.map((q) => norm(q.name));
     for (const q of asked) assert.ok(shown.includes(q), `${f} : question du JSON-LD absente de la page : « ${q} »`);
     assert.equal(new Set(asked).size, asked.length, `${f} : question en double dans le JSON-LD`);
+  }
+});
+
+// Pages de ville (meta.json `kind: "ville"`) : chacune doit avoir son propre texte, sinon Google les traite comme des
+// pages satellites. On compare les phrases des sections propres à la page (hors blocs communs : pourquoi nous, prix).
+test('pages de ville : contenu propre, peu de phrases communes entre elles', () => {
+  const dir = path.join(ROOT, 'content', 'pages');
+  const villes = fs.readdirSync(dir).filter((d) => JSON.parse(fs.readFileSync(path.join(dir, d, 'meta.json'), 'utf8')).kind === 'ville');
+  const sentences = (slug) => {
+    const p = JSON.parse(fs.readFileSync(path.join(dir, slug, 'page.json'), 'utf8'));
+    const own = ['hero', 'note', 'problem', 'rules', 'solution', 'faq'].map((k) => p[k]);
+    const text = JSON.stringify(own).replace(/<[^>]+>|\n|&nbsp;/g, ' ');
+    return new Set(text.split(/[.!?:;"]/).map((s) => s.trim().toLowerCase()).filter((s) => s.split(/\s+/).length >= 6));
+  };
+  for (let i = 0; i < villes.length; i++) {
+    const a = sentences(villes[i]);
+    assert.ok(a.size >= 30, `${villes[i]} : trop peu de texte propre (${a.size} phrases)`);
+    for (let j = i + 1; j < villes.length; j++) {
+      const b = sentences(villes[j]);
+      const common = [...a].filter((s) => b.has(s)).length;
+      assert.ok(common / Math.min(a.size, b.size) < 0.15, `${villes[i]} / ${villes[j]} : ${common} phrases identiques`);
+    }
   }
 });

@@ -82,7 +82,8 @@ function jsonLd(page) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://vprr.fr/' },
-        { '@type': 'ListItem', position: 2, name: l.breadcrumbName, item: url },
+        ...(l.parent ? [{ '@type': 'ListItem', position: 2, name: l.parent.name, item: `https://vprr.fr/${l.parent.file}` }] : []),
+        { '@type': 'ListItem', position: l.parent ? 3 : 2, name: l.breadcrumbName, item: url },
       ],
     },
     {
@@ -109,6 +110,7 @@ function renderSections(page) {
         case 'why': return S.why(s);
         case 'tarifs': return S.tarifs(s);
         case 'rules': return S.rules(s);
+        case 'note': return S.note(s);
         case 'contact': return renderContact(readPartial('contact-cta.html'), page.contact);
         default: throw new Error(`${page.file} : type de section inconnu « ${s.type} »`);
       }

@@ -1,0 +1,169 @@
+{
+  "seo": {
+    "title": "Ravalement de façade à La Couronne (16) | VPRR",
+    "description": "Ravalement de façade à La Couronne : aide de la mairie de 30 % (plafond 3 000 €), enduit, pierre, peinture. Artisan à 20 min, devis gratuit : 05 45 91 22 70.",
+    "keywords": "ravalement façade La Couronne, aide façade La Couronne, ravalement 16400, enduit façade La Couronne, façadier La Couronne"
+  },
+  "hero": {
+    "title": "Ravalement de façade à La Couronne",
+    "ctaLabel": "Demander mon devis gratuit",
+    "subtitle": "Maisons de bourg en pierre, pavillons enduits : nous ravalons les façades de La Couronne, à une vingtaine de minutes de nos locaux de L'Isle-d'Espagnac, et préparons avec vous la demande d'aide de la mairie.",
+    "placeholderIcon": "fa-solid fa-house-chimney",
+    "placeholderText": "La Couronne : bourg ancien en pierre, quartiers pavillonnaires, aide municipale aux façades"
+  },
+  "note": {
+    "title": "La Couronne et notre page ravalement",
+    "textHtml": "Cette page rassemble ce qui est propre à La Couronne (aide de la mairie, abords de l'abbaye, bâti local). Nos méthodes, les étapes d'un chantier et nos photos sont sur la page <a href=\"ravalement-facade-angouleme.html\">ravalement de façade à Angoulême et en Charente</a>. Nous intervenons aussi à Saint-Michel, Nersac et Roullet-Saint-Estèphe ; plus à l'ouest, voir <a href=\"ravalement-facade-cognac.html\">ravalement à Cognac</a>."
+  },
+  "rules": {
+    "eyebrow": "Démarches & aides à La Couronne",
+    "title": "L'aide de la mairie de La Couronne pour vos façades",
+    "intro": "La Couronne fait partie de l'opération de revitalisation du territoire (ORT) du GrandAngoulême et aide la restauration des façades sur rue (règlement du 13 mars 2023). À savoir avant de lancer les travaux :",
+    "items": [
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "title": "30 % des travaux",
+        "text": "La mairie finance 30 % du montant hors taxes des travaux, dans la limite de 3 000 €, et du budget voté. L'aide est cumulable avec celles de l'Anah (sous conditions de ressources).",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-hourglass-half",
+        "title": "Jusqu'en décembre 2026",
+        "text": "Le dispositif est prévu jusqu'en décembre 2026 : vérifiez auprès de la mairie s'il est prolongé avant de compter dessus."
+      },
+      {
+        "icon": "fa-solid fa-map",
+        "title": "Façades concernées",
+        "text": "Les façades visibles depuis la rue, dans le périmètre défini par la Ville : maisons, commerces, murs de clôture. Ne sont pas aidés : le simple entretien, les ravalements partiels, la toiture, les menuiseries PVC et le recouvrement d'une pierre faite pour rester apparente."
+      },
+      {
+        "icon": "fa-solid fa-file-signature",
+        "title": "Accord avant travaux",
+        "text": "Le dossier (autorisation de travaux, devis détaillés, photos, RIB) est déposé en mairie ; les travaux ne commencent qu'après l'accord, et doivent démarrer dans les 12 mois."
+      }
+    ]
+  },
+  "problem": {
+    "eyebrow": "Les façades de La Couronne",
+    "title": "Ce que nous rencontrons sur les façades couronnaises",
+    "intro": "Entre le bourg ancien et les lotissements plus récents, les façades de La Couronne ne demandent pas le même traitement.",
+    "items": [
+      {
+        "icon": "fa-solid fa-cubes-stacked",
+        "title": "Pierre et moellons du bourg",
+        "text": "Les maisons anciennes en pierre calcaire ont besoin de joints et d'enduits à la chaux. Le règlement de l'aide exclut d'ailleurs de recouvrir une pierre faite pour rester apparente."
+      },
+      {
+        "icon": "fa-solid fa-house-crack",
+        "title": "Crépis fissurés des pavillons",
+        "text": "Sur les pavillons enduits, les fissures fines et le faïençage laissent entrer l'eau : rebouchage, entoilage si besoin, puis revêtement souple."
+      },
+      {
+        "icon": "fa-solid fa-leaf",
+        "title": "Mousses et coulures",
+        "text": "Les pans à l'ombre, près des haies et de la vallée de la Charente, verdissent vite : un nettoyage et un traitement s'imposent avant toute peinture."
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "title": "Abords de l'abbaye",
+        "text": "Autour de l'abbaye, monument historique, l'Architecte des Bâtiments de France donne son avis sur les matériaux et les teintes de la façade."
+      }
+    ]
+  },
+  "solution": {
+    "eyebrow": "Notre méthode à La Couronne",
+    "title": "Un ravalement adapté à votre maison",
+    "intro": "Maison de bourg ou pavillon, nous choisissons la méthode après une visite sur place.",
+    "features": [
+      {
+        "icon": "fa-solid fa-magnifying-glass",
+        "title": "Visite et devis détaillé",
+        "text": "Diagnostic de la façade et devis poste par poste, la pièce que demande la mairie pour le dossier d'aide."
+      },
+      {
+        "icon": "fa-solid fa-trowel",
+        "title": "Pierre : chaux et rejointoiement",
+        "text": "Nettoyage doux, dégarnissage des joints abîmés et rejointoiement à la chaux, sans enduit couvrant sur la pierre apparente.",
+        "highlight": true
+      },
+      {
+        "icon": "fa-solid fa-paint-roller",
+        "title": "Pavillon : réparation et revêtement",
+        "text": "Traitement des fissures, puis enduit ou peinture de façade adaptés au support existant."
+      },
+      {
+        "icon": "fa-solid fa-truck-fast",
+        "title": "Proximité",
+        "text": "Nos locaux de L'Isle-d'Espagnac est à une vingtaine de minutes : visite rapide et suivi de chantier facilité."
+      }
+    ]
+  },
+  "tarifs": {
+    "eyebrow": "Tarifs & Devis",
+    "title": "Combien coûte un ravalement de façade à La Couronne ?",
+    "intro": "Les fourchettes au m² sont celles de toute la Charente ; quatre points font varier le devis à La Couronne.",
+    "factors": [
+      {
+        "icon": "fa-solid fa-cubes-stacked",
+        "title": "Pierre ou enduit",
+        "text": "Un rejointoiement de pierre demande plus de main-d'œuvre qu'une peinture sur un crépi sain."
+      },
+      {
+        "icon": "fa-solid fa-house-crack",
+        "title": "État des fissures",
+        "text": "Fissures fines ou structurelles : le traitement, et donc le prix, n'est pas le même."
+      },
+      {
+        "icon": "fa-solid fa-stairs",
+        "title": "Hauteur et accès",
+        "text": "Maison de plain-pied ou à étage, accès par la rue ou le jardin : l'échafaudage varie."
+      },
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "title": "Aide déduite",
+        "text": "Pour une façade éligible, l'aide de 30 % (plafond 3 000 €) réduit le reste à charge, versée après la visite de conformité."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "F.A.Q",
+    "title": "Questions fréquentes : ravalement à La Couronne",
+    "intro": "Les questions que posent le plus souvent les propriétaires de La Couronne.",
+    "items": [
+      {
+        "icon": "fa-solid fa-hand-holding-dollar",
+        "question": "Comment obtenir l'aide aux façades de La Couronne ?",
+        "answerHtml": "<p>Déposez en mairie (contre récépissé ou par courrier recommandé) le dossier : décision de déclaration préalable ou de permis, formulaire de demande, photos de la façade, devis détaillés et RIB. Une visite technique peut avoir lieu. <strong>Ne commencez pas les travaux avant l'accord</strong> : vous aurez ensuite 12 mois pour les démarrer.</p>",
+        "accent": true
+      },
+      {
+        "icon": "fa-solid fa-euro-sign",
+        "question": "Quel est le montant de l'aide ?",
+        "answerHtml": "<p><strong>30&nbsp;% du montant hors taxes</strong> des travaux, plafonné à <strong>3&nbsp;000&nbsp;€</strong>, dans la limite du budget municipal. L'Anah peut ajouter 25&nbsp;% (travaux plafonnés à 5&nbsp;000&nbsp;€ HT) pour les propriétaires sous conditions de ressources ou en loyer conventionné. L'aide est versée après une visite de conformité, sur factures acquittées.</p>"
+      },
+      {
+        "icon": "fa-solid fa-tag",
+        "question": "Quel est le prix d'un ravalement de façade à La Couronne ?",
+        "answerHtml": "<p>Comme dans le reste de la Charente, comptez <strong>25 à 90&nbsp;€ par m²</strong> selon les travaux :</p>\n<ul>\n  <li><strong>Nettoyage + peinture</strong> (façade saine) : 25 à 40&nbsp;€/m²</li>\n  <li><strong>Réfection d'enduit</strong> : 40 à 65&nbsp;€/m²</li>\n  <li><strong>Ravalement complet</strong> : 60 à 90&nbsp;€/m²</li>\n</ul>\n<p>L'échafaudage s'ajoute (8 à 15&nbsp;€/m² de façade). Sur une façade éligible, l'aide de la mairie (30&nbsp;% HT, plafond 3&nbsp;000&nbsp;€) vient en déduction, si le dispositif est toujours ouvert. Le devis, après visite, est gratuit.</p>"
+      },
+      {
+        "icon": "fa-solid fa-hourglass-half",
+        "question": "L'aide existe-t-elle encore en 2027 ?",
+        "answerHtml": "<p>Le règlement prévoit le dispositif jusqu'en <strong>décembre 2026</strong>. Renseignez-vous en mairie avant de lancer un projet en 2027 : nous mettrons cette page à jour dès qu'une prolongation est connue.</p>"
+      },
+      {
+        "icon": "fa-solid fa-landmark",
+        "question": "Ma maison est près de l'abbaye : quelles contraintes ?",
+        "answerHtml": "<p>Aux abords d'un monument historique, la déclaration préalable de ravalement passe par l'Architecte des Bâtiments de France, qui peut prescrire les matériaux (enduit à la chaux) et les teintes. Le délai d'instruction est alors de deux mois au lieu d'un.</p>"
+      },
+      {
+        "icon": "fa-solid fa-clock",
+        "question": "Quel délai pour un devis à La Couronne ?",
+        "answerHtml": "<p>La Couronne est à une vingtaine de minutes de nos locaux de L'Isle-d'Espagnac. Nous visitons la façade et envoyons le devis gratuit sous 48&nbsp;h ouvrées après la visite.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "serviceLabel": "de ravalement à La Couronne"
+  }
+}
