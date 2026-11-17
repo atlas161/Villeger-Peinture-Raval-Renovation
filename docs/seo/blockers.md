@@ -31,7 +31,8 @@ Décision à prendre côté vous : comment souhaitez-vous relancer les clients p
 existe déjà (`g.page/r/CZZJ5Bogt13fEBM/review`, dans le pied de page et la section avis), il manque juste le process
 régulier. Dites-moi quel canal vous préférez et je peux préparer le texte/support (SMS, QR code, etc.).
 
-**Statut** : en attente de votre préférence.
+**Statut (2026-11-17)** : **support prêt** — email HTML + SMS + relance + mode d'emploi dans
+[`docs/avis-clients/`](../avis-clients/README.md). **Reste (client)** : l'enregistrer en modèle Gmail et l'envoyer à chaque fin de chantier.
 
 ## 4. Google Tag Manager : déclencheurs des nouveaux événements (à faire par vous — 2026-09-30)
 

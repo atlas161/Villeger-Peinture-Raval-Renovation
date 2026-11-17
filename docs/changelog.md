@@ -5,6 +5,11 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — Kit « demande d'avis » en fin de chantier (email + SMS)
+
+- [`avis-clients/`](./avis-clients/) : email HTML mis en page (logo, boutons Google + PagesJaunes, compatible Gmail/Outlook, testé 375 / 600 px), 3 objets, relance, 3 SMS (≤ 2 SMS chacun, sans emoji ni caractère hors GSM) et mode d'emploi pour Stéphane (modèle Gmail).
+- Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
+
 ## 2026-11-17 — Article « Couleur de façade en Charente »
 
 - Nouvel article `blog/couleur-facade-charente.html` (`service: peinture`) : déclaration de la teinte (références fabricant/RAL/NCS), PLU, nuancier de l'ABF en secteur protégé (Cognac, Barbezieux), palette charentaise, méthode en 6 points (échantillons de 1 m², exposition, teintes foncées), erreurs qui font refuser un dossier, FAQ. Liens vers peinture extérieure, ravalement et l'article « déclaration préalable » (lien retour ajouté). Couverture `couleur_facade*.webp`. Vérifié 375 / 768 / 1440 px, 60 tests.
