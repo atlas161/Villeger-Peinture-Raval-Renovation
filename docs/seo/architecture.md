@@ -108,6 +108,9 @@ Pages : `ravalement-facade-angouleme`, `nettoyage-facade-angouleme`, `nettoyage-
   **Règle anti-pages satellites** : chaque page ville a son propre texte (test `pages de ville : contenu propre` :
   ≥ 30 phrases propres, < 15 % de phrases communes entre deux villes) ; ne créer une page que si la commune a un
   contenu réel (chantier, aide, réglementation, bâti). Plan : [`plan-seo-2026-11.md`](./plan-seo-2026-11.md).
+- **Image de partage** (`ogImage` du `meta.json`) : un visuel avant/après 1200 × 630 de `media/og/`, régénéré par
+  `python scripts/make-og-images.py` (ajouter une entrée dans `IMAGES` pour une nouvelle prestation). Articles de blog :
+  visuel du service associé (`OG_BY_SERVICE` dans `build-blog.js`).
 - **Ajouter une page (service ou ville)** : copier un dossier de `content/pages/`, adapter `page.json` et `meta.json`
   (`file`, `prestation`, `ld`…), ajouter le service dans `content/shared/services.json` et `content/tarifs.json`, déclarer
   la page dans `scripts/cms-config.js` (automatique pour les services de `services.json`), `npm run build:cms`,

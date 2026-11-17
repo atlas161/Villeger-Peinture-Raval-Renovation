@@ -10,6 +10,13 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - [`avis-clients/`](./avis-clients/) : email HTML mis en page (logo, boutons Google + PagesJaunes, compatible Gmail/Outlook, testé 375 / 600 px), 3 objets, relance, 3 SMS (≤ 2 SMS chacun, sans emoji ni caractère hors GSM) et mode d'emploi pour Stéphane (modèle Gmail).
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
+## 2026-11-17 — Images de partage « avant / après » (aperçu des liens)
+
+- **Avant** : l'aperçu d'un lien partagé (SMS, WhatsApp, Messenger, Facebook) montrait `data/hero.webp` (800 × 381, recadré au hasard) ; la page nettoyage de façade pointait vers `media/og-nettoyage-facade.webp`, **qui n'existait pas** (aperçu vide).
+- **Après** : 5 visuels JPEG 1200 × 630 dans `media/og/`, générés par `scripts/make-og-images.py` (Pillow, police Bahnschrift) à partir des vraies photos : moitié AVANT / moitié APRÈS, poignée comme le curseur du site, bandeau aux couleurs du logo (prestation, nom, téléphone). `og-vprr` (accueil, pages écrites à la main, blog, isolation), `og-ravalement` (ravalement + pages ville + articles ravalement), `og-nettoyage-facade`, `og-toiture`, `og-peinture` (balcon). Les articles prennent le visuel de leur service (`service` du frontmatter), sinon leur couverture.
+- Balises `og:image:width/height/type/alt` ajoutées au gabarit des pages de service et aux pages écrites à la main ; le build ajoute `?v=<empreinte>`. Nouveau test : chaque `og:image` existe (61 tests).
+- Les applis gardent l'ancien aperçu en cache quelque temps : pour Facebook/Messenger, « Récupérer à nouveau » dans l'outil de débogage de partage de Meta.
+
 ## 2026-11-17 — Article « Couleur de façade en Charente »
 
 - Nouvel article `blog/couleur-facade-charente.html` (`service: peinture`) : déclaration de la teinte (références fabricant/RAL/NCS), PLU, nuancier de l'ABF en secteur protégé (Cognac, Barbezieux), palette charentaise, méthode en 6 points (échantillons de 1 m², exposition, teintes foncées), erreurs qui font refuser un dossier, FAQ. Liens vers peinture extérieure, ravalement et l'article « déclaration préalable » (lien retour ajouté). Couverture `couleur_facade*.webp`. Vérifié 375 / 768 / 1440 px, 60 tests.

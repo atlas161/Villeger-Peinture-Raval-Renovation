@@ -83,3 +83,13 @@ test('le menu (header) est identique au gabarit sur les pages écrites à la mai
     assert.strictEqual(header(html), generateHeader(p).trim(), `${p.file} : menu différent du gabarit (npm run sync:header puis npm run build:blog)`);
   }
 });
+
+// Image d'aperçu des liens partagés : chaque og:image du site doit exister (un fichier manquant = aperçu vide sur WhatsApp, Facebook…).
+test('chaque og:image pointe vers un fichier existant', () => {
+  const files = [...fs.readdirSync(ROOT).filter((f) => f.endsWith('.html')), ...fs.readdirSync(path.join(ROOT, 'blog')).filter((f) => f.endsWith('.html')).map((f) => `blog/${f}`)];
+  for (const f of files) {
+    const m = fs.readFileSync(path.join(ROOT, f), 'utf8').match(/property="og:image" content="https:\/\/vprr\.fr\/([^"?]+)/);
+    if (!m) continue;
+    assert.ok(fs.existsSync(path.join(ROOT, m[1])), `${f} : og:image introuvable (${m[1]})`);
+  }
+});

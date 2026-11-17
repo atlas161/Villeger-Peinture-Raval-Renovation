@@ -601,6 +601,8 @@ const SERVICE_LINKS = [
   { key: 'isolation', match: ['isolation'], url: `${CONFIG.siteUrl}/isolation-interieure-charente.html`, label: 'isolation intérieure en Charente', question: 'Un projet d\'isolation ?', prestation: 'isolation' }
 ];
 
+const OG_BY_SERVICE = { ravalement: 'og-ravalement', 'nettoyage-facade': 'og-nettoyage-facade', toiture: 'og-toiture', peinture: 'og-peinture', isolation: 'og-vprr' };
+
 function generateArticleHTML(frontmatter, content, template, prevArticle, nextArticle) {
   const { html: bodyHtml, headers } = markdownToHtml(content);
   const toc = generateTOC(headers);
@@ -634,6 +636,13 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
     : '';
   const calloutHtml = matchedService
     ? `<aside class="article-service-callout" aria-label="Notre service associé"><p><strong>${matchedService.question}</strong> VPRR intervient à Angoulême et dans toute la Charente : <a href="${matchedService.url}">${matchedService.label}</a>, devis gratuit.</p></aside>`
+    : '';
+
+  // Image d'aperçu des liens partagés (SMS, WhatsApp, Facebook…) : le visuel avant/après du service associé
+  // (media/og/, généré par scripts/make-og-images.py), sinon la couverture de l'article.
+  const shareImageUrl = matchedService ? `${CONFIG.siteUrl}/media/og/${OG_BY_SERVICE[matchedService.key]}.jpg` : ogImageUrl;
+  const shareImageMeta = matchedService
+    ? ['width" content="1200', 'height" content="630', 'type" content="image/jpeg'].map((m) => `\n  <meta property="og:image:${m}">`).join('')
     : '';
 
   // Encadré inséré après le premier paragraphe (le chapeau garde son style `p:first-child`).
@@ -670,6 +679,8 @@ function generateArticleHTML(frontmatter, content, template, prevArticle, nextAr
     '{{DATE_MODIFIED}}': date.iso,
     '{{DATE_FORMATTED}}': date.formatted,
     '{{OG_IMAGE_URL}}': ogImageUrl,
+    '{{SHARE_IMAGE_URL}}': shareImageUrl,
+    '{{SHARE_IMAGE_META}}': shareImageMeta,
     '{{HERO_IMAGE_SRC}}': heroImageSrc,
     '{{HERO_IMAGE_SRCSET}}': heroImageSrcset,
     '{{HERO_IMAGE_SIZES}}': heroImageSizes,
