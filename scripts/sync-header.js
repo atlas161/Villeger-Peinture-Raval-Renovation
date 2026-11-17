@@ -30,6 +30,10 @@ const PAGES = [
   { file: 'realisations.html', currentSection: 'realisations' },
   { file: 'mentions-legales.html' },
   { file: 'merci.html' },
+  // Blog : même menu, liens préfixés par « ../ ». Le gabarit des articles est synchronisé ici, puis
+  // `npm run build:blog` régénère blog/*.html (blog/index.html est mis à jour directement).
+  { file: 'scripts/template-article.html', currentSection: 'blog', base: '../' },
+  { file: 'blog/index.html', currentSection: 'blog', base: '../' },
 ];
 
 const SERVICE_LINKS = [
@@ -52,33 +56,34 @@ const SECTIONS = [
   { key: 'contact', label: 'Contact', page: 'contact.html' },
 ];
 
-function sectionHref(section, { isHome }) {
-  if (section.page) return section.page;
-  if (section.key === 'home') return isHome ? '#home' : 'index.html';
-  return isHome ? `#${section.key}` : `index.html#${section.key}`;
+function sectionHref(section, { isHome, base = '' }) {
+  if (section.page) return base + section.page;
+  if (section.key === 'home') return isHome ? '#home' : `${base}index.html`;
+  return isHome ? `#${section.key}` : `${base}index.html#${section.key}`;
 }
 
-function generateHeader({ isHome = false, currentSection = null, contactHref = 'contact.html' }) {
-  const logoHref = isHome ? '#top' : 'index.html#top';
+/** `base` : préfixe des liens relatifs (« ../ » pour les pages du dossier blog/). */
+function generateHeader({ isHome = false, currentSection = null, contactHref = 'contact.html', base = '' }) {
+  const logoHref = isHome ? '#top' : `${base}index.html#top`;
 
   const navItems = SECTIONS.filter((s) => s.key !== 'services').map((section) => {
-    const href = sectionHref(section, { isHome, currentSection });
+    const href = sectionHref(section, { isHome, base });
     const current = currentSection === section.key ? ' aria-current="page"' : '';
     const active = current ? ' active' : '';
     return `            <li><a class="nav-link${active}" href="${href}"${current}>${section.label}</a></li>`;
   });
 
   const submenu = SERVICE_LINKS.map(
-    (s) => `                <li><a href="${s.href}">${s.label} <span class="submenu-meta">${s.meta}</span></a></li>`
+    (s) => `                <li><a href="${base}${s.href}">${s.label} <span class="submenu-meta">${s.meta}</span></a></li>`
   ).join('\n');
 
-  const ctaHref = contactHref;
+  const ctaHref = base + contactHref;
   const ctaText = 'Obtenez un devis';
 
   return `    <header class="site-header" id="top">
       <div class="container header-inner">
         <a href="${logoHref}" class="logo" aria-label="VPRR - Accueil">
-          <img src="media/VPRR-LOGO.svg" class="logo-img" alt="Villéger Peinture Raval Rénovation" width="150" height="40" />
+          <img src="${base}media/VPRR-LOGO.svg" class="logo-img" alt="Villéger Peinture Raval Rénovation" width="150" height="40" />
         </a>
 
         <button class="burger" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
@@ -89,7 +94,7 @@ function generateHeader({ isHome = false, currentSection = null, contactHref = '
 
         <nav class="primary-nav" id="primary-nav" aria-label="Navigation principale">
           <ul class="menu">
-            <li><a class="nav-link" href="${sectionHref(SECTIONS[0], { isHome, currentSection })}">Accueil</a></li>
+            <li><a class="nav-link" href="${sectionHref(SECTIONS[0], { isHome, base })}">Accueil</a></li>
             <li class="has-submenu">
               <a class="nav-link" href="#" role="button" aria-haspopup="true">Services</a>
               <ul class="submenu" aria-label="Pages services">
@@ -110,7 +115,7 @@ ${navItems.slice(1).join('\n')}
     </header>`;
 }
 
-function syncPage({ file, isHome, currentSection }) {
+function syncPage({ file, isHome, currentSection, base }) {
   const filePath = path.join(ROOT, file);
   const content = fs.readFileSync(filePath, 'utf8');
 
@@ -125,9 +130,10 @@ function syncPage({ file, isHome, currentSection }) {
     return false;
   }
 
-  const before = content.slice(0, start);
+  // Retire l'indentation devant la balise : le gabarit apporte la sienne (sinon elle s'accumule à chaque passage).
+  const before = content.slice(0, start).replace(/[ 	]*$/, '');
   const after = content.slice(end + '</header>'.length);
-  const newHeader = generateHeader({ isHome, currentSection });
+  const newHeader = generateHeader({ isHome, currentSection, base });
 
   const updated = before + newHeader + after;
   if (updated === content) {
@@ -151,4 +157,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { generateHeader };
+module.exports = { generateHeader, PAGES };

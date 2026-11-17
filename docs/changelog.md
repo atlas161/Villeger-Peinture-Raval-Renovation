@@ -5,6 +5,13 @@ Pour annuler une étape précise : `git revert <hash>` (chaque ligne = un commit
 sur vprr.fr avant de passer au suivant). Le détail des audits est dans les fichiers cités ; l'architecture actuelle
 est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 
+## 2026-11-17 — Un seul menu sur tout le site (blog compris)
+
+- **Bug** : le blog avait son propre menu, copié à la main dans `scripts/template-article.html` et `blog/index.html` (libellé « Zone d'intervention » au lieu de « Où ? », attributs `data-nav` inutilisés) et des surcharges dans `assets/css/blog.css` (fond, logo, burger).
+- **Correctif** : `scripts/sync-header.js` génère aussi le menu du blog (option `base: '../'` pour les liens) ; surcharges de `blog.css` supprimées (dont une règle `.blog-page body.nav-open` qui ne s'appliquait jamais). Le script n'accumule plus d'indentation à chaque passage.
+- **Test** : le header de chaque page écrite à la main et de chaque article doit être identique au gabarit (60 tests). Vérifié à 1440 / 768 / 375 px : mêmes hauteurs, liens, logo et burger que les pages de service.
+- Reste différent sur le blog : le **pied de page** (dégradé brun, `blog.css`) — choix d'origine, à aligner si souhaité.
+
 ## 2026-11-17 — Pages ville : ravalement à Cognac et à La Couronne (non commité)
 
 - **Nouvelles pages** `ravalement-facade-cognac.html` et `ravalement-facade-la-couronne.html`, générées depuis `content/pages/<slug>/` (`kind: "ville"`). Contenu propre à chaque commune : aide municipale (Cognac : 25 % HT, plafond 5 000 €, dossier avant le 28 février, site patrimonial remarquable ; La Couronne : 30 % HT, plafond 3 000 €, jusqu'à déc. 2026, abords de l'abbaye), bâti local (« torula » des chais à Cognac, pierre et pavillons à La Couronne), facteurs de prix et FAQ locale (6 questions, JSON-LD dérivé).

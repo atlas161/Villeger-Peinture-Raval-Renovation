@@ -27,7 +27,7 @@ npm run build
 |---|---|
 | `npm run build` | Build complet (celui de Netlify) |
 | `npm run build:pages` / `build:blog` | Une seule étape |
-| `npm run sync:header` | Réinjecte le menu dans les pages **écrites à la main** (accueil, zone, FAQ, mentions, merci) |
+| `npm run sync:header` | Réinjecte le menu dans les pages **écrites à la main** (accueil, zone, FAQ, mentions, merci) **et le blog** (`scripts/template-article.html`, `blog/index.html` ; puis `npm run build:blog`) — un test vérifie que toutes les pages ont le même menu |
 | `npm run dev` | `npx serve .` : sert la racine (le footer est alors chargé par `footer.js` en JS) |
 | `npm test` | Tests Node (`node --test`, dossier `tests/`) — 20 tests |
 | `node scripts/tokenize-css.js` | Remplace les valeurs CSS en dur identiques à un token de `:root` par la variable |

@@ -1,55 +1,6 @@
 /* ===================================================================
-   BLOG STYLES - Corrections des couleurs et navbar
+   BLOG STYLES - pied de page et partage (le menu est celui de tout le site : scripts/sync-header.js)
    =================================================================== */
-
-/* Navbar sur pages blog */
-.blog-page .site-header {
-  background: var(--white-a95);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--black-a10);
-}
-
-.blog-page .logo {
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: var(--text-2xl);
-}
-
-.blog-page .logo:hover {
-  opacity: 0.8;
-}
-
-.blog-page .burger {
-  background: transparent;
-  border: none;
-  padding: var(--space-sm);
-  cursor: pointer;
-  z-index: var(--z-header);
-}
-
-.blog-page .burger-bar {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-primary);
-  margin: var(--space-xs) 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 2px;
-}
-
-/* Overlay sombre derrière le menu sur pages blog */
-.blog-page body.nav-open::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--black-a45);
-  z-index: var(--z-overlay);
-  pointer-events: all;
-}
 
 /* Footer sur pages blog - dégradé et opacités de texte propres aux pages blog
    (différents du footer des autres pages : voir "FOOTER MODERNE" dans styles.css).

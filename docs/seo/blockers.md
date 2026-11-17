@@ -56,3 +56,14 @@ de l'assureur est obligatoire pour un artisan du bâtiment. À ajouter dans la s
 `mentions-legales.html` (et éventuellement `llms.txt`).
 
 **Statut** : en attente du nom de l'assureur (et éventuellement du n° de contrat / de la zone couverte).
+
+## 6. Photos de chantier des pages ville — À FAIRE PLUS TARD (noté le 2026-11-17)
+
+Les pages `ravalement-facade-cognac.html` et `ravalement-facade-la-couronne.html` affichent une **icône** dans
+l'en-tête faute de photo prise dans la commune (on n'utilise pas une photo d'ailleurs : ce serait trompeur). Plus tard,
+demander à Stéphane, pour chaque commune : **un chantier** (photos avant/après, rue ou quartier, année, type de façade,
+travaux faits). Ajout sans code : Pages CMS > « Pages par commune » > En-tête (photos avant/après).
+Les photos non suivies à la racine du dépôt (`2026*.jpg`, `image0000*.JPEG`) n'ont pas de géolocalisation : il faut
+qu'il dise où elles ont été prises. Même besoin pour chaque future page ville (Soyaux, Ruelle, Champniers, Jarnac…).
+Rappel : vérifier en mairie la prolongation de l'aide aux façades de La Couronne après décembre 2026.
+

@@ -72,3 +72,14 @@ test('pages de ville : contenu propre, peu de phrases communes entre elles', () 
     }
   }
 });
+
+// Un seul menu pour tout le site : chaque page (y compris le blog) porte exactement le header de scripts/sync-header.js.
+test('le menu (header) est identique au gabarit sur les pages écrites à la main et le blog', () => {
+  const { generateHeader, PAGES } = require('../scripts/sync-header.js');
+  const header = (html) => html.slice(html.indexOf('<header class="site-header"'), html.indexOf('</header>', html.indexOf('<header class="site-header"')) + 9);
+  const files = [...PAGES, ...fs.readdirSync(path.join(ROOT, 'blog')).filter((f) => f.endsWith('.html') && f !== 'index.html').map((f) => ({ file: `blog/${f}`, currentSection: 'blog', base: '../' }))];
+  for (const p of files) {
+    const html = fs.readFileSync(path.join(ROOT, p.file), 'utf8');
+    assert.strictEqual(header(html), generateHeader(p).trim(), `${p.file} : menu différent du gabarit (npm run sync:header puis npm run build:blog)`);
+  }
+});
