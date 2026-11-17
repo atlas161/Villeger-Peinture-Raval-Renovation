@@ -72,7 +72,7 @@ En pratique, pour une maison charentaise en pierre ou un ravalement en secteur p
 
 Plutôt qu'une règle des dix ans, fiez-vous à l'état de la façade :
 
-- **fissures** qui s'ouvrent ou se multiplient, surtout autour des fenêtres et aux angles ;
+- **fissures** qui s'ouvrent ou se multiplient, surtout autour des fenêtres et aux angles (voir [quelles fissures sont graves](/blog/fissures-facade-gravite.html)) ;
 - **enduit qui sonne creux**, se décolle ou tombe par plaques ;
 - **traces d'humidité** à l'intérieur sur les murs exposés à la pluie ;
 - **mousses, lichens et coulures noires** qui reviennent malgré les nettoyages ;

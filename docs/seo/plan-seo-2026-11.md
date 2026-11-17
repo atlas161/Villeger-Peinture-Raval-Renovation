@@ -117,7 +117,7 @@ Articles d'information qui répondent aux questions avant devis, chacun liant la
 - ✅ *(publié le 2026-11-17 : `blog/aides-ravalement-facade-charente.html`)* Aides au ravalement de façade en Charente (Cognac, La Couronne, ORT GrandAngoulême, ANAH) — à mettre à jour chaque année.
 - ✅ *(publié le 2026-11-17 : `blog/couleur-facade-charente.html`)* Couleur de façade en Charente : nuancier, ABF, PLU.
 - ✅ *(publié le 2026-11-17 : `blog/enduit-chaux-mur-pierre.html`)* Enduit à la chaux sur pierre calcaire : pourquoi pas de ciment sur une maison charentaise.
-- Fissures de façade : lesquelles sont graves ?
+- ✅ *(publié le 2026-11-17 : `blog/fissures-facade-gravite.html`)* Fissures de façade : lesquelles sont graves ?
 - Ravalement en copropriété : vote en AG, rôle du syndic.
 - ✅ *(publié le 2026-11-17 : `blog/ravalement-obligatoire-10-ans.html`)* « Ravalement obligatoire tous les 10 ans ? »
 

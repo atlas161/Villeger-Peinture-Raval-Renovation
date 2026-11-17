@@ -75,6 +75,24 @@
     "category": "Façade"
   },
   {
+    "slug": "fissures-facade-gravite",
+    "title": "Fissures de façade : lesquelles sont graves ?",
+    "description": "Microfissure, fissure ou lézarde : comment lire les fissures de sa façade, les surveiller, savoir quand appeler un expert et comment elles se réparent lors d'un ravalement.",
+    "date": "2026-11-17",
+    "image": "/assets/img/blog/fissures_facade.webp",
+    "imageSrc": "/assets/img/blog/fissures_facade-800w.webp",
+    "imageSrcset": "/assets/img/blog/fissures_facade-400w.webp 400w, /assets/img/blog/fissures_facade-600w.webp 600w, /assets/img/blog/fissures_facade-800w.webp 800w, /assets/img/blog/fissures_facade-1200w.webp 1200w",
+    "imageSizes": "(max-width: 768px) 100vw, 900px",
+    "tags": [
+      "fissures facade",
+      "ravalement facade",
+      "diagnostic",
+      "charente"
+    ],
+    "readtime": 7,
+    "category": "Façade"
+  },
+  {
     "slug": "ravalement-obligatoire-10-ans",
     "title": "Ravalement obligatoire tous les 10 ans : vrai ou faux ?",
     "description": "La règle des « 10 ans » ne s'applique pas partout. Qui doit ravaler sa façade, quand le maire peut l'imposer, ce que risque un propriétaire et les signes qui montrent qu'il est temps d'agir.",
