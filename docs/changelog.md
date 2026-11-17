@@ -11,6 +11,11 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - Signature email `avis-clients/signature-email.html` (direction artistique du site, lien d'avis Google discret) + mode d'emploi Gmail/Outlook.
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
+## 2026-11-17 — Article « Ravalement en copropriété »
+
+- Nouvel article `blog/ravalement-copropriete.html` : parties communes / privatives, vote à la majorité de l'article 24, mise en concurrence, recours (2 mois), répartition par tantièmes (non récupérable sur le locataire), fonds de travaux et PPPT, aides versées au syndicat (Cognac, La Couronne), déroulement du chantier, FAQ. Liens vers ravalement, nettoyage de façade et 3 articles du cluster (lien retour depuis l'article « 10 ans »). Couverture : résidence du chantier de nettoyage de façade. Vérifié 375 / 768 / 1440 px, 62 tests.
+- Tous les sujets d'articles du plan SEO sont publiés (7 articles ravalement).
+
 ## 2026-11-17 — Page ville Barbezieux-Saint-Hilaire, PSMV d'Angoulême, aides complétées
 
 - **Nouvelle page** `ravalement-facade-barbezieux.html` : Opération Façades (30 % HT, 3 000 € par façade ; menuiseries 1 000 € ; devanture 1 500 €, cumulables — source : site de la mairie), site patrimonial remarquable et ABF, permanence mensuelle du Pôle Habitat avec l'architecte conseil du CAUE, bâti local, FAQ (6 questions). Liée depuis la page ravalement (automatique), la zone, le sitemap, `llms.txt`, redirection Netlify. Test anti-duplication OK (62 tests).

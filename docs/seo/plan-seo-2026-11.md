@@ -118,7 +118,7 @@ Articles d'information qui répondent aux questions avant devis, chacun liant la
 - ✅ *(publié le 2026-11-17 : `blog/couleur-facade-charente.html`)* Couleur de façade en Charente : nuancier, ABF, PLU.
 - ✅ *(publié le 2026-11-17 : `blog/enduit-chaux-mur-pierre.html`)* Enduit à la chaux sur pierre calcaire : pourquoi pas de ciment sur une maison charentaise.
 - ✅ *(publié le 2026-11-17 : `blog/fissures-facade-gravite.html`)* Fissures de façade : lesquelles sont graves ?
-- Ravalement en copropriété : vote en AG, rôle du syndic.
+- ✅ *(publié le 2026-11-17 : `blog/ravalement-copropriete.html`)* Ravalement en copropriété : vote en AG, rôle du syndic.
 - ✅ *(publié le 2026-11-17 : `blog/ravalement-obligatoire-10-ans.html`)* « Ravalement obligatoire tous les 10 ans ? »
 
 ## 7. Mesure

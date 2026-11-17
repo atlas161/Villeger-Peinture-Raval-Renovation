@@ -56,7 +56,7 @@ Même sans injonction, laisser une façade se dégrader n'est pas sans risque :
 
 ## En copropriété
 
-Le ravalement des façades fait partie de l'entretien des parties communes. C'est le **syndic** qui le met à l'ordre du jour, et l'assemblée générale qui le vote, en général à la majorité simple des voix des copropriétaires présents ou représentés. En cas d'injonction du maire, c'est le syndicat des copropriétaires qui en est le destinataire.
+Le ravalement des façades fait partie de l'entretien des parties communes. C'est le **syndic** qui le met à l'ordre du jour, et l'assemblée générale qui le vote, en général à la majorité simple des voix des copropriétaires présents ou représentés. En cas d'injonction du maire, c'est le syndicat des copropriétaires qui en est le destinataire. Le détail : [ravalement en copropriété](/blog/ravalement-copropriete.html).
 
 ## Un gros ravalement peut imposer d'isoler
 

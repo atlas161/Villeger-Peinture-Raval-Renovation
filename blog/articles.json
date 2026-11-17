@@ -93,6 +93,24 @@
     "category": "Façade"
   },
   {
+    "slug": "ravalement-copropriete",
+    "title": "Ravalement en copropriété : vote, financement et déroulement",
+    "description": "Qui décide d'un ravalement en copropriété, à quelle majorité, qui paie quoi, comment l'anticiper avec le fonds de travaux et le plan pluriannuel, et comment se passe le chantier.",
+    "date": "2026-11-17",
+    "image": "/assets/img/blog/ravalement_copropriete.webp",
+    "imageSrc": "/assets/img/blog/ravalement_copropriete-800w.webp",
+    "imageSrcset": "/assets/img/blog/ravalement_copropriete-400w.webp 400w, /assets/img/blog/ravalement_copropriete-600w.webp 600w, /assets/img/blog/ravalement_copropriete-800w.webp 800w, /assets/img/blog/ravalement_copropriete-1200w.webp 1200w",
+    "imageSizes": "(max-width: 768px) 100vw, 900px",
+    "tags": [
+      "copropriete",
+      "ravalement facade",
+      "syndic",
+      "charente"
+    ],
+    "readtime": 7,
+    "category": "Façade"
+  },
+  {
     "slug": "ravalement-obligatoire-10-ans",
     "title": "Ravalement obligatoire tous les 10 ans : vrai ou faux ?",
     "description": "La règle des « 10 ans » ne s'applique pas partout. Qui doit ravaler sa façade, quand le maire peut l'imposer, ce que risque un propriétaire et les signes qui montrent qu'il est temps d'agir.",
