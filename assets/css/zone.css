@@ -523,6 +523,18 @@
   margin-right: var(--space-xs);
 }
 
+/* Liens vers les pages ravalement par commune (visibles aussi sur téléphone) */
+.zone-home-pages {
+  margin-top: var(--space-md);
+}
+
+.zone-home-pages a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--brand-accent);
+  text-underline-offset: 3px;
+}
+
 .zone-home-info .zone-actions {
   margin: 0;
 }

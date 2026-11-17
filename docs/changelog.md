@@ -12,6 +12,15 @@ est décrite dans [`seo/architecture.md`](./seo/architecture.md).
 - Signature refaite en version « carte » (icônes `media/email/icon-*.png`, bandeau marron) ; signature et email passés en **angles droits 2 px** comme le site (boutons et cadres étaient arrondis).
 - Nouveau fichier public `media/email/vprr-logo-email.png` (logo PNG 480 px : les messageries n'affichent pas le SVG) — **appelé par l'email, ne pas supprimer ni renommer**.
 
+## 2026-11-17 — Maillage interne : guides sur les pages de service, fil d'Ariane, liens de l'accueil, lastmod fiables
+
+- **Section « Nos guides »** (`#guides`, après la FAQ) sur chaque page de service et page ville : jusqu'à 6 articles du même service (champ `service` des articles), cartes du composant « Autres services », 3 visibles sur téléphone + « Voir les autres guides ». Ravalement : 6 guides (pages Angoulême, Cognac, La Couronne, Barbezieux) ; peinture 3 ; nettoyage de façade 2 ; toiture 1 ; isolation : aucune (pas d'article).
+  Lecture des articles mutualisée dans `scripts/lib/articles.js` (`parseFrontmatter`, `SERVICE_LINKS`, `listArticles`), utilisée par `build-blog.js` et `build-pages.js` ; `npm run build:blog` régénère aussi les pages de service.
+- **Fil d'Ariane visible** sur les pages de service et ville (Accueil › Ravalement de façade › Cognac), même composant que le blog : CSS déplacée de `blog-article.css` vers `src/css/styles/27-fil-ariane.css`. Libellés `breadcrumbName` harmonisés (« Ravalement de façade à Angoulême »…).
+- **Accueil** : ligne « Ravalement de façade : Angoulême, Cognac, La Couronne, Barbezieux » sous les communes de la section zone (visible aussi sur téléphone).
+- **Sitemap** : `scripts/update-lastmod.js` (lancé par `npm run build:blog`) date chaque URL de sa dernière vraie modification (fichier modifié → aujourd'hui, sinon dernier commit git) ; inactif sans historique git complet (Netlify). Plus besoin d'annuler le « bruit » de lastmod à la main.
+- Vérifié 375 / 768 / 1440 px (pas de débordement ; guides 3 / 2 / 1 colonnes), 62 tests.
+
 ## 2026-11-17 — Article « Ravalement en copropriété »
 
 - Nouvel article `blog/ravalement-copropriete.html` : parties communes / privatives, vote à la majorité de l'article 24, mise en concurrence, recours (2 mois), répartition par tantièmes (non récupérable sur le locataire), fonds de travaux et PPPT, aides versées au syndicat (Cognac, La Couronne), déroulement du chantier, FAQ. Liens vers ravalement, nettoyage de façade et 3 articles du cluster (lien retour depuis l'article « 10 ans »). Couverture : résidence du chantier de nettoyage de façade. Vérifié 375 / 768 / 1440 px, 62 tests.

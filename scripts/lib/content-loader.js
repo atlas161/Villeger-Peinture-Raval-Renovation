@@ -11,6 +11,7 @@
  * brut, échappé à l'affichage.
  */
 const fs = require('fs');
+const { listArticles } = require('./articles.js');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
@@ -52,6 +53,9 @@ function loadPage(slug) {
     .filter(({ m }) => m.service === slug)
     .map(({ m }) => ({ file: m.file, label: m.breadcrumbName }));
 
+  // Articles du blog sur ce service (6 plus récents) : section « Nos guides » avant la bande devis.
+  const guideList = listArticles().filter((a) => a.service && a.service.prestation === meta.prestation).slice(0, 6);
+
   const sections = [
     { type: 'hero', ...cms.hero },
     ...(cms.realisation ? [{ type: 'realisation', ...cms.realisation, hero: cms.hero }] : []),
@@ -66,6 +70,7 @@ function loadPage(slug) {
     { type: 'tarifs', ...cms.tarifs, price: tarif },
     ...(cms.rules && !meta.rulesFirst ? [{ type: 'rules', ...cms.rules }] : []),
     { type: 'faq', ...cms.faq },
+    ...(guideList.length ? [{ type: 'guides', title: `Nos guides : ${self.label.toLowerCase()}`, articles: guideList }] : []),
     { type: 'contact' },
   ];
 

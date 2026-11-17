@@ -113,6 +113,7 @@ function renderSections(page) {
         case 'tarifs': return S.tarifs(s);
         case 'rules': return S.rules(s);
         case 'note': return S.note(s);
+        case 'guides': return S.guides(s);
         case 'contact': return renderContact(readPartial('contact-cta.html'), page.contact);
         default: throw new Error(`${page.file} : type de section inconnu « ${s.type} »`);
       }
@@ -142,6 +143,11 @@ function render(page) {
     HEADER: generateHeader({ isHome: false, contactHref: `contact.html?service=${page.contact.prestation}` }),
     SECTIONS: renderSections(page),
     RELATED: S.indent(S.related(page.related), 4),
+    BREADCRUMB: S.breadcrumb([
+      { name: 'Accueil', href: 'index.html' },
+      ...(page.ld.parent ? [{ name: page.ld.parent.name, href: page.ld.parent.file }] : []),
+      { name: page.ld.breadcrumbName },
+    ]),
   };
   return TEMPLATE.replace(/\{\{([A-Z_]+)\}\}/g, (_, k) => {
     if (!(k in slots)) throw new Error(`Slot inconnu {{${k}}}`);

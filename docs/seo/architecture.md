@@ -108,6 +108,10 @@ Pages : `ravalement-facade-angouleme`, `nettoyage-facade-angouleme`, `nettoyage-
   **Règle anti-pages satellites** : chaque page ville a son propre texte (test `pages de ville : contenu propre` :
   ≥ 30 phrases propres, < 15 % de phrases communes entre deux villes) ; ne créer une page que si la commune a un
   contenu réel (chantier, aide, réglementation, bâti). Plan : [`plan-seo-2026-11.md`](./plan-seo-2026-11.md).
+- **Section « Nos guides »** : automatique, depuis les articles dont le `service` (ou la catégorie) correspond à
+  `meta.prestation` (`scripts/lib/articles.js`). Ajouter un article = `npm run build:blog` (qui relance aussi
+  `build-pages.js` et `update-lastmod.js`).
+- **Fil d'Ariane** : généré (`breadcrumb()` de `service-sections.js`) depuis `breadcrumbName` et, pour une page ville, `parent`.
 - **Image de partage** (`ogImage` du `meta.json`) : un visuel avant/après 1200 × 630 de `media/og/`, régénéré par
   `python scripts/make-og-images.py` (ajouter une entrée dans `IMAGES` pour une nouvelle prestation). Articles de blog :
   visuel du service associé (`OG_BY_SERVICE` dans `build-blog.js`).

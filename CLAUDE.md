@@ -38,7 +38,7 @@ si le SEO ou une action client est concernée.
 | `npm run build:content` | régénère `a-propos.html` et `realisations.html` depuis `content/a-propos.json` / `content/realisations.json` |
 | `npm run build:cms` | régénère `.pages.yml` depuis `scripts/cms-config.js` |
 | `npm run build:pages` | régénère les 5 pages de service depuis `content/pages/` |
-| `npm run build:blog` | régénère le blog depuis `content/blog/*.md` |
+| `npm run build:blog` | régénère le blog depuis `content/blog/*.md`, puis les pages de service (section « Nos guides ») et les `<lastmod>` du sitemap (`scripts/update-lastmod.js`) |
 | `npm run sync:header` | réinjecte le menu dans les pages écrites à la main |
 | `npm test` | 55 tests (liens, SEO de base, pages à jour, formulaire, carte, `dist/`, liens de la doc, design tokens, pages de contenu, Pages CMS) |
 | `node scripts/tokenize-css.js` | remplace les valeurs CSS en dur par les variables `:root` identiques |

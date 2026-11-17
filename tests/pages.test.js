@@ -7,7 +7,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
-const SECTION_TYPES = ['hero', 'realisation', 'problem', 'solution', 'ite', 'why', 'zone', 'others', 'tarifs', 'rules', 'note', 'faq', 'contact'];
+const SECTION_TYPES = ['hero', 'realisation', 'problem', 'solution', 'ite', 'why', 'zone', 'others', 'tarifs', 'rules', 'note', 'faq', 'guides', 'contact'];
 
 test('les pages de service sont à jour par rapport à content/pages (npm run build:pages)', () => {
   const r = spawnSync('node', [path.join(ROOT, 'scripts', 'build-pages.js'), '--check'], { encoding: 'utf8' });

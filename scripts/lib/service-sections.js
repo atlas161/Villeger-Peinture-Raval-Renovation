@@ -175,6 +175,67 @@ ${cards}
 </section>`;
 }
 
+// Fil d'Ariane visible (même balisage que les articles de blog) ; le JSON-LD BreadcrumbList dit la même chose.
+function breadcrumb(items) {
+  const sep = `
+          <li class="breadcrumb-separator" aria-hidden="true">
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>`;
+  const li = items
+    .map((it, i) => {
+      if (i === items.length - 1) {
+        return `
+          <li class="breadcrumb-item current" aria-current="page">
+            <span>${esc(it.name)}</span>
+          </li>`;
+      }
+      const icon = i === 0 ? `
+              <i class="fa-solid fa-home" aria-hidden="true"></i>` : '';
+      return `
+          <li class="breadcrumb-item">
+            <a href="${it.href}">${icon}
+              <span>${esc(it.name)}</span>
+            </a>
+          </li>`;
+    })
+    .join(sep);
+  return `      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <div class="container">
+          <ol class="breadcrumb-list">${li}
+          </ol>
+        </div>
+      </nav>`;
+}
+
+// « Nos guides » : articles du blog rattachés au service (champ `service` des articles), même carte que « Autres services ».
+function guides(g) {
+  const short = (t) => {
+    const s = String(t || '').replace(/\s+/g, ' ').trim();
+    return s.length <= 150 ? s : `${s.slice(0, s.lastIndexOf(' ', 147))}…`;
+  };
+  const cards = g.articles
+    .map(
+      (a) => `    <article class="service-card">
+      <div class="service-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></div>
+      <h3>${esc(a.title)}</h3>
+      <p>${esc(short(a.description))}</p>
+      <a href="blog/${a.slug}.html" class="btn btn-secondary btn--sm">Lire le guide</a>
+    </article>`
+    )
+    .join('\n\n');
+  const head = header({ eyebrow: 'Guides & conseils', title: g.title, id: 'guides-title', intro: 'Démarches, prix, techniques : nos articles pour préparer votre projet.' })
+    .replace('</p>\n</header>', ' <a href="blog/">Tous nos guides</a>.</p>\n</header>');
+  return `<section class="section section--bg-white" id="guides" aria-labelledby="guides-title">
+  <div class="container">
+${indent(head, 4)}
+
+    <div class="services-grid" data-m-limit="3" data-m-more="Voir les autres guides">
+${cards}
+    </div>
+  </div>
+</section>`;
+}
+
 function faq(f) {
   const items = f.items
     .map(
@@ -381,4 +442,4 @@ ${links}
 </nav>`;
 }
 
-module.exports = { indent, proofBar, hero, realisation, ite, note, why, rules, tarifs, problem, solution, zone, others, faq, related };
+module.exports = { indent, proofBar, hero, realisation, ite, note, why, rules, guides, breadcrumb, tarifs, problem, solution, zone, others, faq, related };

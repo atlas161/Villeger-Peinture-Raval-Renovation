@@ -99,7 +99,7 @@ Règle Google à connaître : des avis d'une entreprise affichés **sur son prop
 ```
 npm test                       # 20 tests
 npm run build                  # arrêter d'abord tout « serve dist » (Windows : EPERM)
-git checkout -- sitemap.xml blog/index.html   # annule le bruit de lastmod si besoin
+# sitemap : les <lastmod> sont recalculés par scripts/update-lastmod.js (npm run build:blog), plus de bruit à annuler
 ```
 Puis sur vprr.fr : pages principales en 200, `/docs/*` `/CLAUDE.md` `/content/*` en 404, bannière cookies visible,
 hauteurs de pages inchangées (ravalement : 13 934 px desktop / 16 133 px téléphone ; accueil : 9 864 / 12 176),
